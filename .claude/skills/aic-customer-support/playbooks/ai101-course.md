@@ -78,6 +78,24 @@ pattern**. Reporting a broken funnel to Alex off four snippets would have sent
 him hunting a bug that mostly is not there, while the one customer who really was
 stuck sat in the same undifferentiated pile
 
+### The real pattern: enrolment succeeds silently
+
+A fifth case, `19fb43ef99e0f1d7`, settled it. J.R. Bolaños wrote "link does not
+work" **nine minutes after** his enrolment completed. gogo wrote 73 seconds
+before hers completed. Bashar wrote 12 hours after his, while replying to class 1
+itself.
+
+Three people in one week, all enrolled, all convinced it had failed. The
+enrolment is not broken - it just gives no visible confirmation, so people finish
+the quiz, see nothing, and email support.
+
+For drafting: assume "the link is broken" on this course means "I got no
+confirmation" until beehiiv says otherwise. Lead with "you're in" rather than an
+apology for a bug, and ask whether the classes are arriving.
+
+For Alex: this is three support tickets from customers who needed no help. It is
+a confirmation screen, not an engineering problem.
+
 **Never say the lessons are on their way without checking.** Stefan Weigl
 (`19f9ebd89f8fe7de`) took the quiz on 26 July and has **zero** automation
 journeys - he was never enrolled, and twelve days later still is not. A draft
