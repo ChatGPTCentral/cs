@@ -68,18 +68,30 @@ thinks they are writing to Kris. That is why drafts sign as Kris.
 - examples: `19fc6bf8636dfd96`
 
 ### news.duplicate-sends
-- status: seeded
+- status: established (checked against beehiiv 2026-08-07)
 - seen: 1
 - last-seen: 2026-08-06
 - signals: "I keep receiving duplicate emails from you"
-- move: usually two subscriptions on near-identical addresses, or one address
-  subscribed through two forms. Do not guess which. Confirm you are looking, get
-  it deduplicated in beehiiv, confirm back. Left alone this becomes a spam
-  complaint
-- draft-shape: apologize, say you are fixing the duplicate, ask them to flag it
-  if it happens again after a few days
-- needs-from-alex: the beehiiv-side dedupe
+- move: **check beehiiv before saying anything.** Two calls, both cheap:
+  `list_subscriptions` filtered by their email, and `list_automation_journeys`
+  on the live automation filtered the same way. Only then decide what to tell
+  them. Left alone this becomes a spam complaint, which costs list-wide
+  deliverability, so it is worth the two calls
+- draft-shape: apologize, state what you actually found, then either confirm the
+  fix or ask for the one thing you need to find it. Never say "I'm removing the
+  duplicate" unless you have seen the duplicate
+- needs-from-alex: only if a real duplicate is found
 - examples: `19fd8476fb1b1950`
+
+**The seeded guess was wrong.** This entry originally assumed duplicate sends
+meant two subscriptions on near-identical addresses. The first live case,
+`19fd8476fb1b1950`, had exactly one subscription and one automation journey. A
+draft written to the old playbook would have promised to remove a duplicate that
+does not exist.
+
+Benign explanation to check first: a subscriber can be receiving the AI 101
+course automation **and** the regular broadcast at once. Different emails, close
+together, reads as duplication. Confirm which before treating it as a bug.
 
 ### news.address-change
 - status: seeded
