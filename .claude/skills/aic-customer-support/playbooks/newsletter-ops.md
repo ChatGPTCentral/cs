@@ -93,18 +93,28 @@ Benign explanation to check first: a subscriber can be receiving the AI 101
 course automation **and** the regular broadcast at once. Different emails, close
 together, reads as duplication. Confirm which before treating it as a bug.
 
+**But the double-subscription shape is real too.** Carol Boudreaux
+(`19fb44cfe276c61c`) is on the list twice, `carol.boudreaux@catalent.com` since
+June 2025 and `carol.boudreaux0@gmail.com` since March 2026, both active. She has
+never complained about duplicates. So: one report was not a duplicate, and one
+real duplicate has never been reported. Both shapes exist, neither is the
+default, and the only way to know is to look.
+
 ### news.address-change
 - status: seeded
 - seen: 1
 - last-seen: 2026-07-30
 - signals: changing jobs, retiring, "please update my address to". A subscriber
   actively asking to keep receiving us. Rare and worth handling well
-- move: move the subscription, confirm it, and do not make them re-subscribe.
-  Note that the old address may stop working imminently, so confirm to the new
-  one
+- move: **check beehiiv for both addresses first.** They may already be
+  subscribed at the new one, in which case the answer is reassurance rather than
+  action. Then move the subscription and remove the old one so they are not on
+  twice
 - draft-shape: confirm the switch, confirm which address it now goes to, one warm
-  line. Send to the new address
-- needs-from-alex: the beehiiv-side change
+  line. **Send to the new address, not the one that wrote in** - by the time
+  anyone replies, the old mailbox is often already closed, and a reply into a
+  dead mailbox looks identical to being ignored
+- needs-from-alex: the beehiiv-side removal of the old address
 - examples: `19fb44cfe276c61c`
 
 ### news.data-privacy-complaint
