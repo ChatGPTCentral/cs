@@ -21,7 +21,7 @@ disagree, the sent reply wins.
 
 1. Invoke the `aic-customer-support` skill and follow Loop 3 in
    `references/learning.md`
-2. Find our own replies in the three folders -- the folder queries from
+2. Find our own replies in the three folders - the folder queries from
    `references/inbox.md` plus `in:sent`, or filter thread messages for the `SENT`
    label. Our addresses are listed in `references/inbox.md`
 3. For each sent reply, find the inbound message it answered and classify that
@@ -33,15 +33,15 @@ disagree, the sent reply wins.
 
 Group proposals by confidence:
 
-- **Gaps** -- topics Alex answered that have no playbook. Include a pre-filled
+- **Gaps** - topics Alex answered that have no playbook. Include a pre-filled
   entry ready to paste, in the format from `playbooks/_index.md`
-- **Policy drift** -- where a `move` line no longer matches what we actually do.
+- **Policy drift** - where a `move` line no longer matches what we actually do.
   Quote the sent reply that shows it. Two independent instances required, or say
   it is a single instance
-- **Shape corrections** -- where his replies are consistently shorter, blunter or
+- **Shape corrections** - where his replies are consistently shorter, blunter or
   differently ordered than the `draft-shape`
-- **Voice rules** -- patterns worth adding to the Tone section of `SKILL.md`
-- **Observations** -- single instances, logged but not proposed
+- **Voice rules** - patterns worth adding to the Tone section of `SKILL.md`
+- **Observations** - single instances, logged but not proposed
 
 For each proposal state the exact file and field you would change.
 

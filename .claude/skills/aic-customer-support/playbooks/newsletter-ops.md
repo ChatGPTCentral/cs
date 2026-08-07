@@ -30,7 +30,7 @@ thinks they are writing to Kris. That is why drafts sign as Kris.
 - move: send the resource. That is the whole job. Do not explain the delivery
   system, do not ask them to re-subscribe, do not ask which email they used
   unless the address genuinely differs from the one that wrote in. If the form
-  itself is dropping submissions, that is a bug -- collect it
+  itself is dropping submissions, that is a bug - collect it
 - draft-shape: one line of apology if there was a real failure, the link, one
   line offering to send anything else they missed. Three lines maximum
 - needs-from-alex: the actual resource links, per campaign
@@ -44,7 +44,7 @@ thinks they are writing to Kris. That is why drafts sign as Kris.
 - signals: "the link doesn't work", "404", "tried multiple browsers", often
   naming the specific asset. One reporter has now sent this twice about different
   campaigns
-- move: thank them properly - - they did unpaid QA. Get the specific URL if they
+- move: thank them properly - they did unpaid QA. Get the specific URL if they
   did not name it. Send a working link if one exists, otherwise say it is being
   fixed without a date. Log it for the report
 - draft-shape: thanks, acknowledge the break, working link or an honest "fixing
@@ -59,7 +59,7 @@ thinks they are writing to Kris. That is why drafts sign as Kris.
 - signals: got a resource that does not match what the campaign announced. The
   customer usually names both, precisely
 - move: distinct from `broken-link` because the delivery worked and the mapping
-  is wrong - - which means every subscriber on that campaign got the wrong file,
+  is wrong - which means every subscriber on that campaign got the wrong file,
   not just this one. Send the right resource, and flag the campaign to Alex as a
   fix-at-source item, not a one-off
 - draft-shape: confirm they are right, send the correct resource, thank them for
@@ -120,7 +120,7 @@ together, reads as duplication. Confirm which before treating it as a bug.
   resource and an explanation, and neither can come from a template. If Alex
   wants a starting point, lead with the delivery failure and the fix, never with
   a defence of the form
-- draft-shape: n/a - - escalate
+- draft-shape: n/a - escalate
 - needs-from-alex: the decision on how to answer
 - examples: `19fd98313123ac96`
 
@@ -128,7 +128,7 @@ together, reads as duplication. Confirm which before treating it as a bug.
 - status: seeded
 - seen: 4
 - last-seen: 2026-08-02
-- signals: "can this do X for my use case" - - animate a circuit diagram, build a
+- signals: "can this do X for my use case" - animate a circuit diagram, build a
   timeline presentation, find the best AI bot. They are treating us as the expert
   on a tool we covered
 - move: answer if you actually know, briefly, and point at the specific issue or
@@ -147,7 +147,7 @@ together, reads as duplication. Confirm which before treating it as a bug.
 - seen: 2
 - last-seen: 2026-07-28
 - signals: "can you cover X next", "topics on MCP"
-- move: thank them and say it is noted, honestly - - collect these into the sweep
+- move: thank them and say it is noted, honestly - collect these into the sweep
   report so they actually reach editorial. Never promise it will run
 - draft-shape: two lines. Thanks, noted, and a question about what they would
   want from that piece
@@ -173,7 +173,7 @@ together, reads as duplication. Confirm which before treating it as a bug.
 - last-seen: 2026-08-03
 - signals: a reply with no discernible ask. "Hi", "Hello!", "I read every
   message", "I ran out of company tokens so I'm waiting". Often a phone reply
-- move: lowest priority in any sweep. Still worth two warm lines -- these are
+- move: lowest priority in any sweep. Still worth two warm lines - these are
   replies to a campaign that asked for replies, and ignoring them trains people
   that nobody is home. Never manufacture an ask that is not there
 - draft-shape: one line acknowledging what they said, one question. Do not exceed
@@ -186,7 +186,7 @@ together, reads as duplication. Confirm which before treating it as a bug.
 - status: seeded
 - seen: 1
 - last-seen: 2026-07-22
-- signals: wants free consulting on their own business - - "my cold emails get no
+- signals: wants free consulting on their own business - "my cold emails get no
   responses, can you help"
 - move: be kind and bounded. One genuinely useful pointer to a relevant resource,
   no offer of ongoing help, no pitch. Do not ignore it and do not write an essay
@@ -214,9 +214,9 @@ Flag for Alex, do not draft:
 
 - Submission guidelines, partnership pitches, ad sales, or "feature my product"
   requests, even when wrapped in praise (`19fc8f8f248ba32d` is praise plus a
-  submission pitch -- draft the praise half only if Alex asks)
+  submission pitch - draft the praise half only if Alex asks)
 - Anyone sharing their own content for promotion
 
 ## Changelog
 
-- 2026-08-07 - - seeded from the Feedback folder backfill, 25 threads
+- 2026-08-07 - seeded from the Feedback folder backfill, 25 threads

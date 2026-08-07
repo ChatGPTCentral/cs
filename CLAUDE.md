@@ -61,6 +61,12 @@ Two rules when editing by hand:
 
 ## Style
 
-The skill mandates its own output style: no em dashes (two hyphens with spaces
-instead), no trailing periods on bullets, brevity over completeness. The docs
-follow the same rules so that examples and doctrine do not contradict each other.
+The skill mandates its own output style: no em dashes (a single hyphen with a
+space each side instead), no trailing periods on bullets, brevity over
+completeness. The docs follow the same rules so that examples and doctrine do not
+contradict each other.
+
+One trap when bulk-editing dashes: the Gmail label display names are literally
+`- - - - Feedback` and `- - - - AI 101`. A find-and-replace over " - - " eats
+them, and the damage is silent - a wrong label name and an empty folder look
+identical. Check `references/inbox.md` after any such edit.

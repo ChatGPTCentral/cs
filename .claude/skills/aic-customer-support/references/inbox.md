@@ -1,7 +1,7 @@
 # Inbox mechanics
 
 Everything in this file is verified against the live account. Where a Gmail
-behaviour contradicts the MCP tool description, this file is right - - it was
+behaviour contradicts the MCP tool description, this file is right - it was
 tested.
 
 ## The three folders
@@ -35,7 +35,7 @@ malformed query look identical.
 
 A message from any of these is us, not a customer:
 
-- `kris@thecentral.ai` (the support alias - - what drafts go out as)
+- `kris@thecentral.ai` (the support alias - what drafts go out as)
 - `alex@thecentral.ai`
 - `editor@thecentral.ai`
 - `admin@theaicentral.net`
@@ -46,7 +46,7 @@ A message from any of these is us, not a customer:
 Most inbound support lands on `editor@thecentral.ai` (campaign replies) or
 `alex@thecentral.ai` / `admin@theaicentral.net` (direct tickets).
 
-## The sending alias - - read this before the first sweep
+## The sending alias - read this before the first sweep
 
 `create_draft` has **no `from` parameter**. The draft inherits whatever Gmail has
 set as the default send-as identity for the account. So:
@@ -66,16 +66,16 @@ voice signed Kris.
 1. **Pre-flight.** Note whether the Stripe connector is enabled this session
    (Step 0 depends on it) and restate the send-as caveat above
 2. **Pull threads.** Query each of the three folders. Default window is
-   `newer_than:30d`; widen only if Alex asks. Paginate to the end - - page size
+   `newer_than:30d`; widen only if Alex asks. Paginate to the end - page size
    caps at 50 and the folders run 15 to 25 threads
 3. **Skip what's handled.** Drop a thread if any of these hold:
    - the most recent message is from one of our addresses (it has `SENT`, or the
-     sender matches the list above) - - it is already answered
+     sender matches the list above) - it is already answered
    - a draft already exists on the thread (check `list_drafts`)
    - it is an automated bounce, an unsubscribe confirmation, or a campaign copy
      addressed to ourselves
    - it is a legal threat, chargeback notice, press inquiry, or partnership pitch
-     - - flag for Alex instead
+     - flag for Alex instead
 4. **Read the real body.** The snippet in search results is truncated and often
    cuts off before the actual ask. Call `get_thread` with `FULL_CONTENT` on every
    thread you intend to draft for. Several tickets in this inbox hide the request
@@ -98,7 +98,7 @@ starts a detached conversation and loses the customer's context.
 - Keep `subject` as the thread's existing subject so Gmail keeps it threaded
 - Plain `body` is right for these replies. Skip `htmlBody` unless a link needs
   to render as an anchor
-- The tool appends the original message under your body automatically - - do not
+- The tool appends the original message under your body automatically - do not
   paste the customer's message back in yourself
 
 ## Priority order for the report

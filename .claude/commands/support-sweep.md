@@ -13,7 +13,7 @@ If that is empty, sweep all three folders with a `newer_than:30d` window.
 ## Do this
 
 1. Invoke the `aic-customer-support` skill and follow it. Read
-   `references/inbox.md` in full before touching Gmail -- the folder queries have
+   `references/inbox.md` in full before touching Gmail - the folder queries have
    two failure modes that return an empty result identical to an empty folder
 2. Read `log/sweeps.md` for what the last run covered and deliberately skipped
 3. Work through the sweep procedure in `references/inbox.md`, steps 1 to 9
@@ -28,15 +28,18 @@ the send-as caveat.
 
 Then, in this order:
 
-- **Escalations** -- threads you deliberately did not draft, and why
-- **Broken links and delivery bugs** -- collected across all three folders, since
+- **Escalations** - threads you deliberately did not draft, and why
+- **Broken links and delivery bugs** - collected across all three folders, since
   each one is affecting readers who did not write in
-- **Drafts created** -- a table: customer, topic id, one-line summary of what the
-  draft does, and any `[NEEDS FROM ALEX: ...]` marker still open in it
-- **Buzzword tally** -- if the sweep caught `course.assignment-reply` threads
-- **Learning** -- new candidate topics, and any candidate now at `seen >= 3` that
+- **Drafts created** - one block per draft, each quoting the customer's original
+  message above the proposed reply, per **How to present a draft to Alex** in
+  `SKILL.md`. Never a bare summary table - Alex cannot approve a reply to a
+  message he has not read. If that makes the report too long, cut the batch size,
+  not the quotes
+- **Buzzword tally** - if the sweep caught `course.assignment-reply` threads
+- **Learning** - new candidate topics, and any candidate now at `seen >= 3` that
   you propose promoting
-- **Left undone** -- anything skipped for volume, with counts. Never truncate
+- **Left undone** - anything skipped for volume, with counts. Never truncate
   silently
 
 Sort drafts by the priority order in `references/inbox.md`: money wrongly taken,

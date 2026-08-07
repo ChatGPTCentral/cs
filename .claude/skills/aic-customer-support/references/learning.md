@@ -6,9 +6,9 @@ This file is how they get less wrong.
 
 Three loops, in increasing order of confidence:
 
-1. **Capture** - - every sweep, unmatched messages become candidate topics
-2. **Promote** - - a candidate that keeps recurring becomes a real playbook
-3. **Calibrate** - - Alex's actual sent replies correct the playbooks that exist
+1. **Capture** - every sweep, unmatched messages become candidate topics
+2. **Promote** - a candidate that keeps recurring becomes a real playbook
+3. **Calibrate** - Alex's actual sent replies correct the playbooks that exist
 
 All three write to git-tracked files. Every change is reviewable in a diff and
 revertible with `git revert`. Nothing here mutates silently.
@@ -70,7 +70,7 @@ On approval:
 4. Commit with `playbook: promote <id> (seen N)`
 
 Never promote silently. A new playbook changes how every future customer on that
-topic gets answered - - that is Alex's call, not yours.
+topic gets answered - that is Alex's call, not yours.
 
 **Retiring topics.** A playbook with `last-seen` more than 6 months old and
 `seen` under 3 is probably a one-off that got promoted too eagerly. Flag it as
@@ -109,14 +109,14 @@ Alex confirming it, before amending a `move` line. One-offs go to
 `log/learn-runs.md` as observations.
 
 **Alex's replies are the voice reference, not the style ceiling.** He writes in a
-hurry from his phone. Copy his register, his policy, and his brevity - - not his
+hurry from his phone. Copy his register, his policy, and his brevity - not his
 typos, and not his sign-off (he signs "A" or "Alex"; drafts sign "Kris").
 
 ---
 
 ## What the counts are and are not
 
-`seen` counts threads triaged by this skill. It is not inbox volume - - anything
+`seen` counts threads triaged by this skill. It is not inbox volume - anything
 answered before the first sweep, or answered by Alex directly, never passes
 through here. Treat the numbers as relative weight between topics, not as
 support metrics. Loop 3 is what pulls in the history the sweep never saw.

@@ -3,7 +3,7 @@
 Money and access. The highest-stakes domain: everything here involves either a
 charge the customer disputes or a product they paid for and cannot reach.
 
-All entries are `seeded` - - reverse-engineered from the Issues folder in August
+All entries are `seeded` - reverse-engineered from the Issues folder in August
 2026, never yet exercised. Read every draft from this file carefully.
 
 ## Facts established from the thread history
@@ -41,7 +41,7 @@ https://buy.stripe.com/14A5kC67m22McnWfBxdQQ0e
 ```
 
 - Apple Pay and PayPal are both available at that checkout, confirmed by Alex.
-  That is the answer to `library.payment-method` -- send the link rather than
+  That is the answer to `library.payment-method` - send the link rather than
   describing steps or attaching a screenshot
 - Send the **bare** link above. Campaign versions of it carry `utm_*` and
   `_bhlid` tracking parameters; pasting those into a support reply attributes the
@@ -121,7 +121,7 @@ messages, at the top of the report.
 - last-seen: 2025-11-27
 - signals: has credentials, they are rejected. "Yesterday I made access but now
   not work". Often a screenshot of an error
-- move: distinct from `paid-no-access` - - the handoff already happened and
+- move: distinct from `paid-no-access` - the handoff already happened and
   failed, so a second set of the same credentials will not help. Get the exact
   error and what they typed, then escalate to Alex with that detail attached.
   Do not guess at a cause
@@ -139,7 +139,7 @@ messages, at the top of the report.
   effective immediately", frequently with a request for written confirmation
 - move: this is where the retention doctrine in SKILL.md applies, but only on a
   first, calm contact. Read the tone. If they are neutral and it is a first
-  touch, one light retention move is fair -- long-timers get the lifetime
+  touch, one light retention move is fair - long-timers get the lifetime
   conversion, recent purchases get the guarantee framing. If they used the word
   "immediately", sent a formal-sounding notice, or have written twice, skip
   retention entirely and confirm the cancellation
@@ -170,7 +170,7 @@ messages, at the top of the report.
 - last-seen: 2025-11-27
 - signals: already cancelled, now asking to use what they paid for until the term
   ends. Warm tone, no complaint
-- move: easy yes if they cancelled a yearly term without a refund - - they paid
+- move: easy yes if they cancelled a yearly term without a refund - they paid
   for the term. Careful: if they took a refund, access ends. Check Stripe for
   which happened before answering, because getting this backwards either takes
   access from someone who paid or gives it to someone who was refunded
@@ -185,7 +185,7 @@ messages, at the top of the report.
 - seen: 2
 - last-seen: 2026-07-16
 - signals: took the paid trial and is asking what happens next. "After 30 days,
-  how much must I pay?", or the reverse -- believed it ran four weeks and lost
+  how much must I pay?", or the reverse - believed it ran four weeks and lost
   access early. Often asked **before** buying, so check Stripe before assuming
   they are a customer
 - move: say plainly that it auto-converts, name the price, and give the cancel
@@ -196,7 +196,7 @@ messages, at the top of the report.
   restore it, do not explain it
 - draft-shape: answer the question in the first line. State the conversion price
   and the interval. State the cancel path. Ask if they want the link. Four lines.
-  Quote `$59.75/year` and nothing else -- never present a monthly figure as a
+  Quote `$59.75/year` and nothing else - never present a monthly figure as a
   choice they could make
 - needs-from-alex: nothing for the standard answer. Confirm the exact renewal
   date in Stripe if the customer has already bought
@@ -204,7 +204,7 @@ messages, at the top of the report.
 
 Do **not** restate the trial price a customer was quoted in a campaign without
 checking it. Campaigns have shipped with the pre-May-2026 `$3.99` while the live
-trial was `$4.99` -- thread `19f6d2d33809cc6a` is one, sent 2026-07-16.
+trial was `$4.99` - thread `19f6d2d33809cc6a` is one, sent 2026-07-16.
 
 ### library.payment-method
 - status: seeded
@@ -215,7 +215,7 @@ trial was `$4.99` -- thread `19f6d2d33809cc6a` is one, sent 2026-07-16.
   polite. Frequently frustrated by an earlier reply that sent a screenshot
   instead of a working link
 - move: PayPal and Apple Pay both work, at the trial buy link above. Send the
-  actual link, not an image of one -- the one thread on this topic stalled for
+  actual link, not an image of one - the one thread on this topic stalled for
   days because a screenshot was sent where a link was needed. Do not describe the
   steps, do not talk them through a card form
 - draft-shape: confirm PayPal works, give the link, one line offering to sort it
@@ -229,7 +229,7 @@ trial was `$4.99` -- thread `19f6d2d33809cc6a` is one, sent 2026-07-16.
 - seen: 1
 - last-seen: 2025-11-26
 - signals: paid, is inside the Library, but the resource links push them to
-  LinkedIn, sometimes behind a login wall. Usually framed warmly - - "I love the
+  LinkedIn, sometimes behind a login wall. Usually framed warmly - "I love the
   platform, it's just that..."
 - move: this is the sharpest version of the "it's just LinkedIn content"
   objection, because it is a factual complaint rather than a value objection, and
@@ -246,7 +246,7 @@ trial was `$4.99` -- thread `19f6d2d33809cc6a` is one, sent 2026-07-16.
 - last-seen: n/a
 - signals: "all of this is free on LinkedIn", "I did not receive any exclusive
   content", usually within days of purchase and usually attached to a refund ask
-- move: the canonical retention reply. Reframe from content to access -- search,
+- move: the canonical retention reply. Reframe from content to access - search,
   permanence, organization, comparison. Never defensive. Close with a question
   about what they are working on. If they come back a second time, refund
 - draft-shape: see `references/examples.md`, example 1. Match its length
@@ -257,4 +257,4 @@ trial was `$4.99` -- thread `19f6d2d33809cc6a` is one, sent 2026-07-16.
 
 ## Changelog
 
-- 2026-08-07 - - seeded from the Issues folder backfill, 15 threads
+- 2026-08-07 - seeded from the Issues folder backfill, 15 threads

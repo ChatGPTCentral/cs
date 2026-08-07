@@ -20,7 +20,7 @@ different address.
 **2. Turn on Stripe for the session.**
 
 The skill looks up a customer's payment record before drafting anything about
-money -- how long they have been subscribed, whether a renewal just hit, whether
+money - how long they have been subscribed, whether a renewal just hit, whether
 they were already refunded. That changes the answer. The Stripe connector is
 installed but toggled off in chat; enable it in the connector settings. Without
 it the agent still drafts, but flags the account as unverified.
@@ -60,7 +60,7 @@ three folders, then a table of drafts with anything still missing marked
 
 ## How it gets better
 
-The topic list was seeded by reading every thread in those folders -- 28 topics
+The topic list was seeded by reading every thread in those folders - 28 topics
 across billing, newsletter ops and the course. It is not meant to stay that way.
 
 - Every sweep classifies each thread. Anything that fits nothing gets logged as a
@@ -68,7 +68,7 @@ across billing, newsletter ops and the course. It is not meant to stay that way.
 - A candidate seen three times gets proposed for promotion into a real playbook.
   You approve, then it becomes policy
 - `/support-learn` reads the replies **you** actually sent and diffs them against
-  the playbooks. Where they disagree, you win -- that is what catches policy
+  the playbooks. Where they disagree, you win - that is what catches policy
   drifting away from what is written down
 
 Everything is a git commit, so every change to how customers get answered is

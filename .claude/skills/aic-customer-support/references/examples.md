@@ -3,7 +3,7 @@
 Example 0 is the only one on this page that was actually sent. Read it first and
 match its warmth. The rest are constructed to cover the range of shapes: a long
 retention reply, a same-day fix, a two-line acknowledgement, and a message that
-should not be drafted at all. Match their length -- the most common failure mode
+should not be drafted at all. Match their length - the most common failure mode
 is padding a two-line reply into eight.
 
 ---
@@ -25,7 +25,7 @@ version is right.
 > Hi Lenny, Kris here - sorry for the slow reply.
 >
 > The trial is $4.99 for 4 weeks. After that it becomes a $59.75/year
-> subscription - - premium newsletter access plus the AI Library, updated weekly
+> subscription - premium newsletter access plus the AI Library, updated weekly
 > for our 2500+ members. If it's not for you, just tell us before the 4 weeks are
 > up and nothing further gets charged.
 >
@@ -49,7 +49,7 @@ version is right.
   question and inviting someone in. The draft was correct and cold
 - **The sign-off grew.** `Kris` became `Love,` / `👩🏻 Kris`
 
-The substance survived untouched -- price, interval, cancel path, link. The agent
+The substance survived untouched - price, interval, cancel path, link. The agent
 got the facts right and the person wrong. Assume that is the failure mode.
 
 ---
@@ -75,7 +75,7 @@ this long.
 
 > Hi [Name], Kris here from AI Central
 >
-> Thanks for your patience and honest feedback - - let me add some context. With
+> Thanks for your patience and honest feedback - let me add some context. With
 > your purchase you got **lifetime (aka FOREVER) access** to our curated AI
 > Library AND Premium Newsletter access.
 >
@@ -125,7 +125,7 @@ worse.
 
 > Hi [Name], Kris here
 >
-> That's on us - - sorry. I've asked my team to refund the $37.49 right away and
+> That's on us - sorry. I've asked my team to refund the $37.49 right away and
 > I've made sure the subscription is closed, so nothing else will come off your
 > card.
 >
@@ -138,7 +138,7 @@ worse.
 Why it works: apology in the first line, action in the second, no billing-cycle
 lecture, no request for a screenshot they already sent, and it closes a door
 rather than opening a conversation. Note it names the exact amount the customer
-quoted, which is safe -- it came from them. It does **not** name a refund date.
+quoted, which is safe - it came from them. It does **not** name a refund date.
 
 ---
 
@@ -146,7 +146,7 @@ quoted, which is safe -- it came from them. It does **not** name a refund date.
 
 `course.assignment-reply`. Highest volume topic in the inbox. The campaign
 promised "I read every answer," so the reply has to prove a human read *this*
-answer -- but it does not need to be long to do that.
+answer - but it does not need to be long to do that.
 
 **Customer message:**
 
@@ -158,7 +158,7 @@ answer -- but it does not need to be long to do that.
 
 > Hi Gillian, Kris here
 >
-> "Agent" is winning by a mile in these replies - - and you've put your finger on
+> "Agent" is winning by a mile in these replies - and you've put your finger on
 > exactly why it's confusing, since half the people saying it mean a chatbot and
 > half mean something that actually goes and does the work. Lesson 6 pulls those
 > apart.
@@ -187,10 +187,10 @@ broken the promise the campaign made.
 
 **Correct output:** no draft. A report line for Alex:
 
-> **Escalation - - `news.data-privacy-complaint`** - - rm@pasto.se, thread
+> **Escalation - `news.data-privacy-complaint`** - rm@pasto.se, thread
 > `19fd98313123ac96`, 6 Aug. Broken resource link plus a data-collection
 > objection, addressed to the wrong company entirely. One step from a formal
-> data request. Needs your words, not a template - - want me to draft from a
+> data request. Needs your words, not a template - want me to draft from a
 > position you give me?
 
 Why: the customer is owed both the resource and an explanation of what happened

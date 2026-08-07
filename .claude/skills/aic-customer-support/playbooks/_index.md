@@ -5,12 +5,12 @@ domain file for the full playbook.
 
 ## Status values
 
-- **seeded** - - reverse-engineered from the mail already sitting in the three
+- **seeded** - reverse-engineered from the mail already sitting in the three
   folders in August 2026. Never exercised. Treat the `move` as a hypothesis and
   read the draft carefully before sending
-- **established** - - promoted through `references/learning.md`, or confirmed by
+- **established** - promoted through `references/learning.md`, or confirmed by
   Alex. The `move` is policy
-- **stale** - - `last-seen` over 6 months and `seen` under 3. Flag for retirement
+- **stale** - `last-seen` over 6 months and `seen` under 3. Flag for retirement
 
 Seed counts came from a one-time backfill of the folders, not from live sweeps,
 so they measure what was in the inbox, not what this skill has handled. See the

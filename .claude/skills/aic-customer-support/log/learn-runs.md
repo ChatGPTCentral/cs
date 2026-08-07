@@ -22,7 +22,7 @@ observation; two independent instances make it a proposal.
 
 ## Runs
 
-## 2026-08-07 - - operator correction, not a full run
+## 2026-08-07 - operator correction, not a full run
 
 Alex corrected a belief mid-draft. Logging it here because it is Loop 3 input
 even though it did not come from reading sent replies.
@@ -30,10 +30,10 @@ even though it did not come from reading sent replies.
 - window: n/a, direct correction
 - topics with no playbook: none
 - **policy drift found:** `library.trial-terms`. The agent had inferred from two
-  signals that the paid trial does **not** auto-convert -- Cheryl's `$4.99`
+  signals that the paid trial does **not** auto-convert - Cheryl's `$4.99`
   produced a one-time charge with no subscription object, and the
   `revenue-recovery-outreach` skill describes the lapsed cohort as having "no
-  active sub, no failed payment - - they just walked." Both were wrong as a basis
+  active sub, no failed payment - they just walked." Both were wrong as a basis
   for that conclusion. Alex confirmed the 4-week trial **does** auto-convert, to
   `$59.75/year` or `$4.99/month`
 - applied: rewrote the `library.trial-terms` entry and promoted it to
@@ -54,7 +54,29 @@ trial before it ends.
   `playbooks/library-billing.md`, and added an explicit "quote $59.75/year and
   nothing else" rule to the `library.trial-terms` draft-shape
 
-**Fourth input, same day - - the first real Loop 3 signal.** Alex sent the Lenny
+**Fifth input, same day - two standing rules from Alex.**
+
+1. **Single hyphen everywhere.** "matches how i actually write". The ` - - `
+   convention is gone from every file, customer-facing and internal. This also
+   settles the conflict logged below: `revenue-recovery-outreach` already
+   mandated single `-`, so both skills now agree and a customer who gets mail
+   from both hears one voice
+2. **Always show the customer's original email above a proposed reply.** Added as
+   its own section in `SKILL.md` and enforced in the `/support-sweep` report
+   format. Alex is approving a reply to a person he has not read - without the
+   inbound message he cannot judge tone, completeness, or whether something was
+   missed at the bottom. If a batch is too big to quote every inbound, the batch
+   is too big
+
+- **near miss worth recording:** the bulk dash replacement silently corrupted the
+  Gmail label names. They are literally `- - - - Feedback` and `- - - - AI 101`,
+  so a find-and-replace over " - - " turned them into three dashes. A wrong label
+  name returns `{}`, which is indistinguishable from an empty folder - the sweep
+  would have reported both folders clean and drafted nothing. Caught on
+  verification, restored, and a warning added to `CLAUDE.md`. Verify
+  `references/inbox.md` after any bulk edit
+
+**Fourth input, same day - the first real Loop 3 signal.** Alex sent the Lenny
 reply and shared the version that actually went out. This is the highest-value
 correction so far, because it is the first time a draft could be diffed against
 a sent message rather than against Alex's description of what he wants.
@@ -69,17 +91,17 @@ a sent message rather than against Alex's description of what he wants.
     `i'd love to have you in our community ❤️`. The draft answered the question
     and left the person out
   - Lightly playful with men, purely warm with women. Recorded with the guard
-    that gender must never be inferred from a name - - the list is international
+    that gender must never be inferred from a name - the list is international
     and the agent has already been wrong twice today on safer inferences
 - applied: new **Who Kris is** section in `SKILL.md`, Tone section rewritten, all
   example sign-offs corrected, and the sent reply added to
   `references/examples.md` as Example 0, ground truth
 - **observations:**
   - The substance of the draft survived Alex's edit untouched: price, interval,
-    cancel path, link. Every change was warmth. Facts right, person wrong -- treat
+    cancel path, link. Every change was warmth. Facts right, person wrong - treat
     that as this agent's characteristic failure
   - Alex wrote `Kris here - sorry` with a single hyphen while keeping the draft's
-    ` - - ` elsewhere in the same email. The two skills disagree on this
+    ` - ` elsewhere in the same email. The two skills disagree on this
     (`revenue-recovery-outreach` mandates single `-`) and Alex uses both. Still
     unresolved, still worth one decision from him
   - He wrote `i'd` lowercase. Logged as an observation only. One instance is not
@@ -121,6 +143,6 @@ Pay and PayPal are available at that checkout.
     yearly subscribers, and that price predates the May 2026 change
 
 _Before this, no calibration run had been made. On the first run, use a 30-day window. Worth running
-once before the first sweep -- the Issues folder already holds Alex's replies on
+once before the first sweep - the Issues folder already holds Alex's replies on
 cancellations, refunds, credentials and PayPal, which is the fastest available
 correction to the seeded playbooks._
