@@ -57,6 +57,34 @@ sibling at the same `scheduled_at`. `get_post` on the sibling returns a public
 Check `recipients.web.tier_ids` before sending. If it includes `free`, anyone can
 read it. If it is premium-only, do not hand it to a non-member.
 
+### Download links expire after 7 days
+
+The single most useful thing in this file. Lead-magnet downloads are **presigned
+S3 URLs** on `beehiiv-publication-files.s3.amazonaws.com`, carrying
+`X-Amz-Expires=604800` - seven days from the moment the link is generated.
+
+After that the URL returns an error for everyone, forever. It is not a broken
+link, a bad browser, or a regional problem, and the customer cannot fix it by
+trying again.
+
+Confirmed on `19f8fafb18818de3`: the `99 Claude Power Codes` campaign shipped
+2026-07-06, the link expired around 13 July, and Justin wrote on 23 July having
+tried several browsers. Anyone reading a campaign more than a week late hits
+this, and almost none of them write in.
+
+What to do:
+
+1. `list_posts` to find the campaign, then `get_post_content` on it. The API
+   returns a **freshly signed** download URL, valid seven days from that moment
+2. Send the customer the public post URL - the last line of `get_post_content`
+   gives it, in the form `https://thecentral.ai/p/<slug>`. Cleaner than a
+   400-character signed URL, and it does not rot in their inbox
+3. Offer to send the file directly if that still fails. Do not promise the online
+   version will work if you have not confirmed it
+
+Treat "the link doesn't work" on any campaign older than a week as expiry until
+proven otherwise. Check the send date before anything else.
+
 ### Not every link in a campaign is ours
 
 **Check this before offering to fix anything.** beehiiv's ad network injects
@@ -91,9 +119,10 @@ break anything, and `rm@pasto.se` remains unexplained and still an escalation.
 - signals: "the link doesn't work", "404", "tried multiple browsers", often
   naming the specific asset. One reporter has now sent this twice about different
   campaigns
-- move: thank them properly - they did unpaid QA. Get the specific URL if they
-  did not name it. Send a working link if one exists, otherwise say it is being
-  fixed without a date. Log it for the report
+- move: thank them properly - they did unpaid QA. **First check whether the link
+  simply expired**, see below, because most of these are not broken links at all.
+  Then get the specific URL if they did not name it, send a working one if it
+  exists, otherwise say it is being fixed without a date. Log it for the report
 - draft-shape: thanks, acknowledge the break, working link or an honest "fixing
   it", ask if anything else 404'd for them
 - needs-from-alex: working replacements
