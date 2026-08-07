@@ -94,8 +94,20 @@ of drafts.
   a hedge reads as one. Certificates and deadlines are not confirmed: do not
   invent either. "No deadline, work at your pace" is safe only if Alex confirms it
 - draft-shape: one line per question they asked, in their order. No padding
-- needs-from-alex: whether a certificate exists, and whether there is any expiry
+- needs-from-alex: whether there is any expiry or deadline. **The certificate is
+  confirmed** - Alex wrote "By the end, you'll receive a certificate" in
+  `19f9ed3568836f3c`, 2026-07-26
 - examples: `19f9ebd89f8fe7de`, `19f9b31d74b6c4fc`
+
+On the deadline question, there is a true answer that needs no policy: the
+lessons arrive by email over roughly two weeks and stay in the customer's inbox,
+so they can work at their own pace. Say that. Do not claim "no time limit" as a
+policy until Alex confirms one exists.
+
+**Asked twice means the first answer did not land.** Stefan asked whether the
+course was free, got a clear answer from Alex, and asked again in his very next
+message. When someone repeats a question, lead with that answer, make it
+unambiguous, and do not bury it under the other things you are fixing.
 
 ### course.lesson-not-received
 - status: seeded

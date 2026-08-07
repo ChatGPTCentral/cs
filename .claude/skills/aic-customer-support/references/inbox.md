@@ -76,10 +76,29 @@ voice signed Kris.
      addressed to ourselves
    - it is a legal threat, chargeback notice, press inquiry, or partnership pitch
      - flag for Alex instead
+   - **it predates 2026-03-01 in the Issues folder.** Alex ruled on 2026-08-07
+     that the Nov 2025 to Feb 2026 Issues backlog is reference material, not a
+     work queue. Around ten threads sit there unanswered - unauthorized charges,
+     a broken login, a 30-day-guarantee refund request. Read them to understand
+     what goes wrong and to seed playbooks. Do not draft replies and do not
+     re-raise them in a report
 4. **Read the real body.** The snippet in search results is truncated and often
    cuts off before the actual ask. Call `get_thread` with `FULL_CONTENT` on every
    thread you intend to draft for. Several tickets in this inbox hide the request
    in the last line
+
+   Two traps here, both hit on the first real batch:
+
+   - **`FULL_CONTENT` blows the context window.** These threads quote the full
+     campaign HTML, so one four-message thread came back at 321,000 characters.
+     It gets written to a file instead. Do not try to read that file straight
+     through - `jq` the message bodies out of it
+   - **`plaintextBody` is often `null`.** Plenty of subscribers send HTML-only
+     mail, and every one of Stefan Weigl's messages in `19f9ebd89f8fe7de` had a
+     null `plaintextBody`. Falling back to `.snippet` silently truncates them at
+     roughly 200 characters, mid-sentence. Fall back to `htmlBody` and strip the
+     tags. The snippet made Stefan look like he was asking one question when he
+     was asking three and telling us something personal
 5. **Classify.** Assign a topic from `playbooks/_index.md`. Check for a second,
    hidden topic. If nothing fits, follow `references/learning.md`
 6. **Step 0.** For anything billing-related, pull the Stripe record
