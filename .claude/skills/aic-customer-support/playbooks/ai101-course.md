@@ -58,10 +58,23 @@ of drafts.
 - signals: completed the quiz and got nothing usable. "I got a pass but no link
   to class", "all the information disappeared after submit", "I get the landing
   page but can't click any section". Sometimes with a screenshot
-- move: the highest-signal topic in this folder - three independent reports of
-  the same handoff failing is a broken funnel, not three confused users. Get them
-  in manually, and flag the pattern to Alex separately from the individual
-  drafts. Do not tell them to retake the quiz unless Alex confirms that works
+- move: **check `list_automation_journeys` for their email before writing a
+  word.** Whether they are enrolled changes the entire reply, and you cannot tell
+  from the email. Then: the highest-signal topic in this folder - four
+  independent reports of the same handoff failing is a broken funnel, not four
+  confused users. Get them in manually, and flag the pattern to Alex separately
+  from the individual drafts. Do not tell them to retake the quiz unless Alex
+  confirms that works
+
+**Never say the lessons are on their way without checking.** Stefan Weigl
+(`19f9ebd89f8fe7de`) took the quiz on 26 July and has **zero** automation
+journeys - he was never enrolled, and twelve days later still is not. A draft
+reassuring him that lessons arrive over the next two weeks would have been
+false, and he would have waited another fortnight for nothing before writing
+again, or more likely giving up.
+
+Reaching the dead landing page and being enrolled are independent. Someone can
+complete the quiz and simply never enter the automation.
 - draft-shape: apologize for the wall, confirm they passed and are enrolled, give
   the direct link to lesson 1 rather than sending them back to the quiz, ask them
   to reply if it still fails
