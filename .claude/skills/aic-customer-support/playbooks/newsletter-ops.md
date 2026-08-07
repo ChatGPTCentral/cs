@@ -1,0 +1,210 @@
+# Newsletter ops
+
+Replies to the free newsletter and its campaigns. Highest volume, lowest stakes
+per message, but this is where the list either stays warm or quietly rots.
+
+Almost everything here arrives at `editor@thecentral.ai` as a reply to a campaign
+sent by "Kris from AI Central" `<gptcentral@mail.beehiiv.com>`. The customer
+thinks they are writing to Kris. That is why drafts sign as Kris.
+
+## Standing rules for this domain
+
+- **Never send a link you have not been given.** Half this domain is people
+  chasing a resource. Sending a second broken link is worse than sending none.
+  Mark `[NEEDS FROM ALEX: link to <resource>]`
+- **A broken link is a bug report.** Every one of these means other subscribers
+  hit the same wall silently. Collect them into a single **Broken links** section
+  at the top of the sweep report, not scattered through the thread list
+- These people are not customers. Do not pitch the Library in a reply to someone
+  reporting a 404
+
+---
+
+### news.lead-magnet-not-received
+- status: seeded
+- seen: 4
+- last-seen: 2026-08-06
+- signals: names the resource back at us, sometimes as the entire message body
+  ("The 6 nano banana prompts"). Or "please email me the X", or just "I want
+  more". Some completed a form and got nothing back
+- move: send the resource. That is the whole job. Do not explain the delivery
+  system, do not ask them to re-subscribe, do not ask which email they used
+  unless the address genuinely differs from the one that wrote in. If the form
+  itself is dropping submissions, that is a bug -- collect it
+- draft-shape: one line of apology if there was a real failure, the link, one
+  line offering to send anything else they missed. Three lines maximum
+- needs-from-alex: the actual resource links, per campaign
+- examples: `19fd82481b61481b`, `19fa69038fb56761`, `19fa4bfb90f9b4e2`,
+  `19faf44c1f4d808e`
+
+### news.broken-link
+- status: seeded
+- seen: 2
+- last-seen: 2026-07-26
+- signals: "the link doesn't work", "404", "tried multiple browsers", often
+  naming the specific asset. One reporter has now sent this twice about different
+  campaigns
+- move: thank them properly - - they did unpaid QA. Get the specific URL if they
+  did not name it. Send a working link if one exists, otherwise say it is being
+  fixed without a date. Log it for the report
+- draft-shape: thanks, acknowledge the break, working link or an honest "fixing
+  it", ask if anything else 404'd for them
+- needs-from-alex: working replacements
+- examples: `19f9fdf4cf8ae639`, `19f8fafb18818de3`
+
+### news.wrong-lead-magnet
+- status: seeded
+- seen: 1
+- last-seen: 2026-08-03
+- signals: got a resource that does not match what the campaign announced. The
+  customer usually names both, precisely
+- move: distinct from `broken-link` because the delivery worked and the mapping
+  is wrong - - which means every subscriber on that campaign got the wrong file,
+  not just this one. Send the right resource, and flag the campaign to Alex as a
+  fix-at-source item, not a one-off
+- draft-shape: confirm they are right, send the correct resource, thank them for
+  catching it
+- needs-from-alex: the correct resource, and whether the campaign was repaired
+- examples: `19fc6bf8636dfd96`
+
+### news.duplicate-sends
+- status: seeded
+- seen: 1
+- last-seen: 2026-08-06
+- signals: "I keep receiving duplicate emails from you"
+- move: usually two subscriptions on near-identical addresses, or one address
+  subscribed through two forms. Do not guess which. Confirm you are looking, get
+  it deduplicated in beehiiv, confirm back. Left alone this becomes a spam
+  complaint
+- draft-shape: apologize, say you are fixing the duplicate, ask them to flag it
+  if it happens again after a few days
+- needs-from-alex: the beehiiv-side dedupe
+- examples: `19fd8476fb1b1950`
+
+### news.address-change
+- status: seeded
+- seen: 1
+- last-seen: 2026-07-30
+- signals: changing jobs, retiring, "please update my address to". A subscriber
+  actively asking to keep receiving us. Rare and worth handling well
+- move: move the subscription, confirm it, and do not make them re-subscribe.
+  Note that the old address may stop working imminently, so confirm to the new
+  one
+- draft-shape: confirm the switch, confirm which address it now goes to, one warm
+  line. Send to the new address
+- needs-from-alex: the beehiiv-side change
+- examples: `19fb44cfe276c61c`
+
+### news.data-privacy-complaint
+- status: seeded
+- seen: 1
+- last-seen: 2026-08-06
+- signals: angry, and the anger is about the exchange rather than the product --
+  a promised free resource, a form that collected their details, and then nothing
+  delivered. May address us by the wrong company name, which means they have
+  entirely lost track of who we are
+- move: **do not draft this one to send.** Flag for Alex. It is one escalation
+  away from a GDPR request or a public complaint, the customer is owed both the
+  resource and an explanation, and neither can come from a template. If Alex
+  wants a starting point, lead with the delivery failure and the fix, never with
+  a defence of the form
+- draft-shape: n/a - - escalate
+- needs-from-alex: the decision on how to answer
+- examples: `19fd98313123ac96`
+
+### news.product-question
+- status: seeded
+- seen: 4
+- last-seen: 2026-08-02
+- signals: "can this do X for my use case" - - animate a circuit diagram, build a
+  timeline presentation, find the best AI bot. They are treating us as the expert
+  on a tool we covered
+- move: answer if you actually know, briefly, and point at the specific issue or
+  Library resource that covers it. If you do not know, say so and ask one
+  clarifying question rather than bluffing. This is the warmest lead type in the
+  folder and the only place a Library mention is natural, but only after the
+  question is genuinely answered
+- draft-shape: direct answer or honest "not sure, but", one pointer, one question
+  back
+- needs-from-alex: nothing usually
+- examples: `19fc3e1043c0f7cf`, `19f872501fb1fe79`, `19fb7413331fc6d5`,
+  `19f64c8c1f14fd41`
+
+### news.topic-request
+- status: seeded
+- seen: 2
+- last-seen: 2026-07-28
+- signals: "can you cover X next", "topics on MCP"
+- move: thank them and say it is noted, honestly - - collect these into the sweep
+  report so they actually reach editorial. Never promise it will run
+- draft-shape: two lines. Thanks, noted, and a question about what they would
+  want from that piece
+- needs-from-alex: nothing
+- examples: `19fa6a7db2640f46`, `19f66ef4f919d075`
+
+### news.praise
+- status: seeded
+- seen: 4
+- last-seen: 2026-08-03
+- signals: "good content", "thank you", "this is helping me learn". No ask
+- move: reply short and human. These are the people who become customers and
+  testimonials. Do not upsell. If the praise is specific and quotable, flag it
+  for Alex as a possible testimonial rather than acting on it yourself
+- draft-shape: two lines. Thanks, and one question about what they want more of
+- needs-from-alex: nothing
+- examples: `19fc111766de011e`, `19fc8f8f248ba32d`, `19f9df2fe84bb6e2`,
+  `19fbc1279a720e84`
+
+### news.conversational-reply
+- status: seeded
+- seen: 5
+- last-seen: 2026-08-03
+- signals: a reply with no discernible ask. "Hi", "Hello!", "I read every
+  message", "I ran out of company tokens so I'm waiting". Often a phone reply
+- move: lowest priority in any sweep. Still worth two warm lines -- these are
+  replies to a campaign that asked for replies, and ignoring them trains people
+  that nobody is home. Never manufacture an ask that is not there
+- draft-shape: one line acknowledging what they said, one question. Do not exceed
+  it
+- needs-from-alex: nothing
+- examples: `19fabdbf4b832088`, `19f951f302bd29c2`, `19fc6d9617b47634`,
+  `19fb8a4c96eb8a19`, `19fc73e949b6cbb3`
+
+### news.off-topic-ask
+- status: seeded
+- seen: 1
+- last-seen: 2026-07-22
+- signals: wants free consulting on their own business - - "my cold emails get no
+  responses, can you help"
+- move: be kind and bounded. One genuinely useful pointer to a relevant resource,
+  no offer of ongoing help, no pitch. Do not ignore it and do not write an essay
+- draft-shape: one line of empathy, one concrete pointer, warm close. Three lines
+- needs-from-alex: nothing
+- examples: `19f8afc77d8eab88`
+
+### news.unsubscribe
+- status: seeded
+- seen: 0
+- last-seen: n/a
+- signals: asks to be removed, or replies "unsubscribe"
+- move: remove them, confirm it in one line, do not ask why, do not attempt a
+  save. A reply-based unsubscribe that gets ignored becomes a spam report, which
+  costs the whole list deliverability
+- draft-shape: one line confirming removal. Nothing else
+- needs-from-alex: the beehiiv-side removal
+- examples: none yet. Anticipated, included so the first one is not a candidate
+
+---
+
+## Not this domain
+
+Flag for Alex, do not draft:
+
+- Submission guidelines, partnership pitches, ad sales, or "feature my product"
+  requests, even when wrapped in praise (`19fc8f8f248ba32d` is praise plus a
+  submission pitch -- draft the praise half only if Alex asks)
+- Anyone sharing their own content for promotion
+
+## Changelog
+
+- 2026-08-07 - - seeded from the Feedback folder backfill, 25 threads
