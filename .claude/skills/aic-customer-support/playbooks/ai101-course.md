@@ -60,11 +60,23 @@ of drafts.
   page but can't click any section". Sometimes with a screenshot
 - move: **check `list_automation_journeys` for their email before writing a
   word.** Whether they are enrolled changes the entire reply, and you cannot tell
-  from the email. Then: the highest-signal topic in this folder - four
-  independent reports of the same handoff failing is a broken funnel, not four
-  confused users. Get them in manually, and flag the pattern to Alex separately
-  from the individual drafts. Do not tell them to retake the quiz unless Alex
-  confirms that works
+  from the email. Then get them in manually if they really are not enrolled, and
+  do not tell anyone to retake the quiz unless Alex confirms that works
+
+**Most reports on this topic are not this topic.** Four threads looked like the
+same broken handoff. Checked one by one against beehiiv, only one was:
+
+| Who | Looked like | Actually was |
+| --- | --- | --- |
+| Stefan `19f9ebd89f8fe7de` | quiz-no-content | real. Never enrolled, still not, 12 days on |
+| gogo `19fb5562ae54f800` | quiz-no-content | enrolled 73 seconds **after** she emailed. Early, not broken |
+| bashar `19fb1aefe5e52f14` | quiz-no-content | enrolled, receiving, replying to class 1 itself. `course.how-to-start` |
+| sue `19faf44c1f4d808e` | quiz-no-content | a lead-magnet form. `news.lead-magnet-not-received` |
+
+The lesson is not "check before drafting", it is **check before claiming a
+pattern**. Reporting a broken funnel to Alex off four snippets would have sent
+him hunting a bug that mostly is not there, while the one customer who really was
+stuck sat in the same undifferentiated pile
 
 **Never say the lessons are on their way without checking.** Stefan Weigl
 (`19f9ebd89f8fe7de`) took the quiz on 26 July and has **zero** automation
