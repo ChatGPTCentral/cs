@@ -54,6 +54,38 @@ trial before it ends.
   `playbooks/library-billing.md`, and added an explicit "quote $59.75/year and
   nothing else" rule to the `library.trial-terms` draft-shape
 
+**Fourth input, same day - - the first real Loop 3 signal.** Alex sent the Lenny
+reply and shared the version that actually went out. This is the highest-value
+correction so far, because it is the first time a draft could be diffed against
+a sent message rather than against Alex's description of what he wants.
+
+- **voice notes, all applied:**
+  - Kris is a woman. Warm, affectionate, personal. The agent had written her as a
+    competent support desk, which is not who the readers have been hearing from
+  - Sign-off is `Love,` then `👩🏻 Kris`. A bare "Kris" is wrong
+  - Hearts are in register. ❤️ where the warmth is real
+  - Greeting and apology belong on one line. Two paragraphs reads like a form
+  - Alex **added** a line the draft did not have at all:
+    `i'd love to have you in our community ❤️`. The draft answered the question
+    and left the person out
+  - Lightly playful with men, purely warm with women. Recorded with the guard
+    that gender must never be inferred from a name - - the list is international
+    and the agent has already been wrong twice today on safer inferences
+- applied: new **Who Kris is** section in `SKILL.md`, Tone section rewritten, all
+  example sign-offs corrected, and the sent reply added to
+  `references/examples.md` as Example 0, ground truth
+- **observations:**
+  - The substance of the draft survived Alex's edit untouched: price, interval,
+    cancel path, link. Every change was warmth. Facts right, person wrong -- treat
+    that as this agent's characteristic failure
+  - Alex wrote `Kris here - sorry` with a single hyphen while keeping the draft's
+    ` - - ` elsewhere in the same email. The two skills disagree on this
+    (`revenue-recovery-outreach` mandates single `-`) and Alex uses both. Still
+    unresolved, still worth one decision from him
+  - He wrote `i'd` lowercase. Logged as an observation only. One instance is not
+    enough to tell a stylistic tic from a phone typo, and `learning.md` says copy
+    his register, not his typos
+
 **Third input, same day.** Alex supplied the trial buy link and confirmed Apple
 Pay and PayPal are available at that checkout.
 

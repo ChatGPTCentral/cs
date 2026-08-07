@@ -1,9 +1,56 @@
 # Worked examples
 
-Four shapes, chosen because they cover the range: a long retention reply, a
-same-day fix, a two-line acknowledgement, and a message that should not be
-drafted at all. Match their length. The most common failure mode is padding a
-two-line reply into eight.
+Example 0 is the only one on this page that was actually sent. Read it first and
+match its warmth. The rest are constructed to cover the range of shapes: a long
+retention reply, a same-day fix, a two-line acknowledgement, and a message that
+should not be drafted at all. Match their length -- the most common failure mode
+is padding a two-line reply into eight.
+
+---
+
+## Example 0 - Ground truth, sent by Alex 2026-08-07
+
+`library.trial-terms`. The agent drafted this, Alex edited it, and **this is the
+version that went to the customer.** Where it differs from the draft, the sent
+version is right.
+
+**Customer message:**
+
+> HI Kris. After 30 days, how much I must pay? Thnx for understanding.
+>
+> LENNY
+
+**Sent:**
+
+> Hi Lenny, Kris here - sorry for the slow reply.
+>
+> The trial is $4.99 for 4 weeks. After that it becomes a $59.75/year
+> subscription - - premium newsletter access plus the AI Library, updated weekly
+> for our 2500+ members. If it's not for you, just tell us before the 4 weeks are
+> up and nothing further gets charged.
+>
+> Here's the link: https://buy.stripe.com/14A5kC67m22McnWfBxdQQ0e
+>
+> Apple Pay and PayPal both work there if that's easier than a card
+>
+> i'd love to have you in our community ❤️
+>
+> Love,
+>
+> 👩🏻 Kris
+
+**What Alex changed, and why it matters:**
+
+- **Greeting and apology went onto one line.** The draft had "Hi Lenny, Kris
+  here" and "Sorry for the slow reply" as two separate paragraphs, which reads
+  like a form. One line reads like a person
+- **He added the warmth line.** `i'd love to have you in our community ❤️` was
+  not in the draft at all. This is the difference between answering a pricing
+  question and inviting someone in. The draft was correct and cold
+- **The sign-off grew.** `Kris` became `Love,` / `👩🏻 Kris`
+
+The substance survived untouched -- price, interval, cancel path, link. The agent
+got the facts right and the person wrong. Assume that is the failure mode.
 
 ---
 
@@ -52,8 +99,8 @@ this long.
 > Is there a specific AI challenge or project you're working on right now? I'd be
 > happy to personally point you to the most relevant resources in the Library
 >
-> Cheers,
-> Kris
+> Love,
+> 👩🏻 Kris
 
 Why it works: it opens by thanking them rather than arguing, reframes "free
 posts" into "you're paying to keep and find them," and closes with a question
@@ -85,8 +132,8 @@ worse.
 > If you spot any other charge from us that shouldn't be there, send it straight
 > to me and I'll deal with it
 >
-> Cheers,
-> Kris
+> Love,
+> 👩🏻 Kris
 
 Why it works: apology in the first line, action in the second, no billing-cycle
 lecture, no request for a screenshot they already sent, and it closes a door
@@ -118,7 +165,8 @@ answer -- but it does not need to be long to do that.
 >
 > What are you hoping to get one to do?
 >
-> Kris
+> Love,
+> 👩🏻 Kris
 
 Why it works: it engages with her specific word and her specific parenthetical,
 adds one thing she did not know, and asks a question. A generic "thanks for
