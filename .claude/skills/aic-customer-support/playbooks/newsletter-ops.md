@@ -33,9 +33,39 @@ thinks they are writing to Kris. That is why drafts sign as Kris.
   itself is dropping submissions, that is a bug - collect it
 - draft-shape: one line of apology if there was a real failure, the link, one
   line offering to send anything else they missed. Three lines maximum
-- needs-from-alex: the actual resource links, per campaign
+- needs-from-alex: nothing in most cases. You can find the link yourself - see
+  below. Only escalate if no sibling article exists
 - examples: `19fd82481b61481b`, `19fa69038fb56761`, `19fa4bfb90f9b4e2`,
   `19faf44c1f4d808e`
+
+### Finding the resource yourself
+
+Campaigns ship in pairs. The email and the article it promises are two separate
+beehiiv posts **published at the same timestamp**, one untitled-by-author and one
+authored by "Kris From AI Central" and tagged ⭐️ Featured Articles:
+
+| The send | The resource |
+| --- | --- |
+| `Bookmark: 22 Google AI tools to increase productivity` | `The Best 22 Google AI Tools` |
+| `Stop building presentations manually` | `The Ultimate Presentation Guide: Claude + Gamma` |
+| `New Release: 10 Canva Courses Worth Taking` | `10 Free Canva Courses To Master Canva (2026)` |
+
+So: `list_posts` filtered to published, find the campaign by title, then take the
+sibling at the same `scheduled_at`. `get_post` on the sibling returns a public
+`url` like `https://thecentral.ai/p/best-google-ai-tools`. Send that.
+
+Check `recipients.web.tier_ids` before sending. If it includes `free`, anyone can
+read it. If it is premium-only, do not hand it to a non-member.
+
+### The popup is eating form submissions
+
+`email_capture_type_override: "popup"` is set on these articles. Two independent
+reports describe the same failure: fill the form, the entered details vanish, and
+the content never appears - `19faf44c1f4d808e` (Sue Sutcliffe) and
+`19fd98313123ac96` (`rm@pasto.se`, who was angry enough to be an escalation).
+
+Existing subscribers should never see it at all. When someone reports it, send
+the direct article URL and tell them to close the box if it appears again.
 
 ### news.broken-link
 - status: seeded
