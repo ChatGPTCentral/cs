@@ -15,9 +15,24 @@ Verified from real replies in the account. Use these; do not extend them.
   "You're In! Here's Your Platform Credentials" email
 - Billing runs through Stripe and PayPal only. Card statements show the charge as
   **`BEEHIIV.COM MILANO IT`**, which customers frequently do not recognize as us
-- Observed prices: `$49.95` lifetime, `$37.49` to `$39` yearly, `$3.99` promo
-  entry offer
 - Refunds and cancellations are executed by Alex's team, not by this skill
+
+### Pricing, confirmed by Alex 2026-08-07
+
+- 4-week paid trial at **$4.99**
+- Converts automatically to **$59.75/year**, or **$4.99/month** on monthly
+- Legacy, seen in older threads only: `$39.75`/yr and `$3.99` trial before May
+  2026, `$37.49`, `$49.95` lifetime
+
+**The trial auto-converts.** This is the single most consequential fact in this
+file. A customer asking "what happens after the trial" is asking whether they
+are about to be charged, and the answer is yes. Say so, and give them the cancel
+path in the same breath. Answering vaguely is what turns this topic into
+`charge-after-cancel` a month later, and that folder is full of exactly that.
+
+**Never quote a price from an older thread or an older campaign.** Stripe carries
+eight active yearly prices between $29.75 and $119.00, and campaigns have shipped
+with stale figures. Confirm in Stripe, or say you will confirm.
 
 ## Standing rules for this domain
 
@@ -141,22 +156,28 @@ messages, at the top of the report.
 - examples: `19ac75ab2c71ac2a`
 
 ### library.trial-terms
-- status: seeded
+- status: established (Alex, 2026-08-07)
 - seen: 2
 - last-seen: 2026-07-16
-- signals: took the `$3.99` offer and is asking what happens next. "After 30
-  days, how much must I pay?", or the reverse -- believed it ran four weeks and
-  lost access early
-- move: answer the price question plainly and early. This topic turns into
-  `charge-after-cancel` a month later every time it is answered vaguely. If
-  their access ended sooner than the offer implied, that is our error: restore
-  it, do not explain it. Do not quote a renewal price you have not confirmed in
-  Stripe
-- draft-shape: state what they paid, state what happens at the end of the term,
-  state the exact renewal amount and date. Offer the cancel path in the same
-  breath so it does not feel like a trap. Ask if they want it left on
-- needs-from-alex: the real renewal amount and date for this customer
+- signals: took the paid trial and is asking what happens next. "After 30 days,
+  how much must I pay?", or the reverse -- believed it ran four weeks and lost
+  access early. Often asked **before** buying, so check Stripe before assuming
+  they are a customer
+- move: say plainly that it auto-converts, name the price, and give the cancel
+  path in the same sentence. Do not soften it and do not bury it below a pitch.
+  A prospect who is told clearly and buys anyway does not dispute the charge
+  later; one who is left to discover it becomes a `charge-after-cancel` thread.
+  If their access ended sooner than the offer implied, that is our error:
+  restore it, do not explain it
+- draft-shape: answer the question in the first line. State the conversion price
+  and the interval. State the cancel path. Ask if they want the link. Four lines
+- needs-from-alex: nothing for the standard answer. Confirm the exact renewal
+  date in Stripe if the customer has already bought
 - examples: `19f6d2d33809cc6a`, `19bc195e2eda7986`
+
+Do **not** restate the trial price a customer was quoted in a campaign without
+checking it. Campaigns have shipped with the pre-May-2026 `$3.99` while the live
+trial was `$4.99` -- thread `19f6d2d33809cc6a` is one, sent 2026-07-16.
 
 ### library.payment-method
 - status: seeded

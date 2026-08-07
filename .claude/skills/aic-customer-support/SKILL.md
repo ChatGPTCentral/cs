@@ -95,10 +95,21 @@ AI Central is an AI-focused newsletter with 250k+ weekly readers (50k on Beehiiv
 200k on LinkedIn), delivering practical AI tutorials and prompts for workplace
 implementation.
 
-The AI Library is a premium subscription ($49.95 lifetime or ~$39/year) with
-1,200+ curated AI tutorials and resources. Content is sourced from the LinkedIn
-feed, curated, republished, then added to the Library. Built with Spreadsimple
-(Google Sheets-based) and Memberstack for accounts.
+The AI Library is a premium subscription with 1,200+ curated AI tutorials and
+resources, actively curated for 2,500+ members. Content is sourced from the
+LinkedIn feed, curated, republished, then added to the Library. Built with
+Spreadsimple (Google Sheets-based) and Memberstack for accounts.
+
+Current pricing, confirmed by Alex 2026-08-07:
+
+- 4-week paid trial at $4.99
+- **The trial auto-converts.** At the end of the 4 weeks the customer is charged
+  $59.75/year, or $4.99/month if they chose monthly
+- Legacy prices still visible in older threads: $39.75/yr, $3.99 trial (pre May
+  2026), $49.95 lifetime
+
+Never quote a price from an older thread or an older campaign. Confirm against
+Stripe, and see the price-quoting rule in `playbooks/library-billing.md`.
 
 AI 101 is a free 9-email course delivered from the newsletter, gated behind an
 AI readiness quiz.

@@ -22,7 +22,37 @@ observation; two independent instances make it a proposal.
 
 ## Runs
 
-_No calibration run yet. On the first run, use a 30-day window. Worth running
+## 2026-08-07 - - operator correction, not a full run
+
+Alex corrected a belief mid-draft. Logging it here because it is Loop 3 input
+even though it did not come from reading sent replies.
+
+- window: n/a, direct correction
+- topics with no playbook: none
+- **policy drift found:** `library.trial-terms`. The agent had inferred from two
+  signals that the paid trial does **not** auto-convert -- Cheryl's `$4.99`
+  produced a one-time charge with no subscription object, and the
+  `revenue-recovery-outreach` skill describes the lapsed cohort as having "no
+  active sub, no failed payment - - they just walked." Both were wrong as a basis
+  for that conclusion. Alex confirmed the 4-week trial **does** auto-convert, to
+  `$59.75/year` or `$4.99/month`
+- applied: rewrote the `library.trial-terms` entry and promoted it to
+  `established`. Added a pricing block to `playbooks/library-billing.md` and
+  replaced the stale figures in `SKILL.md`. Added the audience figure, 2,500+
+  members
+- **observations:**
+  - The inference was reasonable and still wrong. Two corroborating signals were
+    not enough on a fact this consequential. Where being wrong would mean telling
+    a customer they will not be charged, ask rather than infer
+  - Absence of a Stripe subscription object does not prove absence of a renewal.
+    Do not use it as evidence again
+  - Campaign copy drifts from live pricing. Thread `19f6d2d33809cc6a` advertised
+    `$3.99` on 2026-07-16 against a live `$4.99`. Worth a standing check
+  - Open question for Alex: is lifetime access still sold? The retention doctrine
+    in `SKILL.md` still offers a `~$39.95` lifetime conversion to long-time
+    yearly subscribers, and that price predates the May 2026 change
+
+_Before this, no calibration run had been made. On the first run, use a 30-day window. Worth running
 once before the first sweep -- the Issues folder already holds Alex's replies on
 cancellations, refunds, credentials and PayPal, which is the fastest available
 correction to the seeded playbooks._
