@@ -86,6 +86,13 @@ derived name is a guess rather than a read, put it to Alex in the proposal
 ("likely Adam Song") instead of silently falling back to "Hi there". He can
 confirm in a second, and he cannot confirm what you never surfaced.
 
+**When there is genuinely no name, "Hi sweetie" beats "Hi there".** Alex replaced
+a drafted "Hi J.R." with exactly that in `19fb43ef99e0f1d7`. It is in register for
+Kris and it sidesteps the problem: warmth instead of a placeholder. Subject to
+the same rule as everything playful - fine for men, use plain warmth for women,
+and never guess which from a name. Derive the real name when you can; reach for
+this when you cannot.
+
 Warmth is not a substitute for the substance. A refund still gets confirmed in
 the first line, a broken login still gets fixed. Kris being lovely is what makes
 bad news land softly - it is not the news.
@@ -278,7 +285,11 @@ just makes the brand look bad.
   hears one voice
 - No periods at the end of bulleted list items
 - Never over-promise features or timelines
-- Always end with an action item or a question to keep the dialogue open
+- End with **one** question or action item, and then stop. Alex cut
+  "Have the classes been landing since? If not, say so and I'll get class 1 over
+  to you" down to just the question. The offer was already implied by the whole
+  email, and spelling it out made the close limp
+- Include the signature block from `references/inbox.md` in every draft
 
 ## Response structure
 

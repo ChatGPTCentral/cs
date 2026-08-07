@@ -120,6 +120,52 @@ starts a detached conversation and loses the customer's context.
 - The tool appends the original message under your body automatically - do not
   paste the customer's message back in yourself
 
+### The quoted original cannot be turned off
+
+Tested 2026-08-07. `replyToMessageId` is a single switch controlling **both**
+threading and the appended quote. Omitting it does drop the quote, and the draft
+lands on a **brand new thread** instead of the customer's.
+
+Do not do that. A detached reply leaves the original thread with an inbound
+message as its last entry, so step 3 of the sweep reads it as unanswered and
+drafts the whole thing again. The customer gets answered twice.
+
+Alex deletes the quote by hand in Gmail before sending. That is the workflow -
+one keystroke for him, and the alternative costs thread integrity.
+
+### The signature
+
+Alex's sign-off block is a **Gmail signature**, which Gmail inserts only when
+composing in the UI. It is never added to an API-created draft, so include it in
+`htmlBody` yourself. Paste this after the closing `</div>` of the body:
+
+```html
+<div><div dir="ltr" class="gmail_signature" data-smartmail="gmail_signature"><div dir="ltr"><div style="line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style="font-family:Arial;color:rgb(0,0,0)">—</span></div><div style="line-height:1.38;margin-top:0pt;margin-bottom:0pt"><b style="color:rgb(0,0,0);font-family:Arial;font-size:14px"><br></b></div><div style="line-height:1.38;margin-top:0pt;margin-bottom:0pt"><font color="#000000" face="Arial"><b><span style="font-size:14px">Kris K.</span></b></font></div><div style="line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style="color:rgb(34,34,34);font-family:Arial,Helvetica,sans-serif"><i>Founder </i></span><span style="font-size:14px"><span style="font-family:Arial;vertical-align:baseline">- </span><span style="font-family:Arial;font-weight:700;vertical-align:baseline">AI Central Media</span></span></div><div style="line-height:1.38;margin-top:0pt;margin-bottom:0pt"><br></div><div style="line-height:1.38;margin-top:0pt;margin-bottom:0pt"><img width="96" height="96" src="https://ci3.googleusercontent.com/mail-sig/AIorK4y6cRePULQsWTKfg4L-l4GkLs_FDZPDDJhhJOPjtPaYvmLC4d9gNV_xhZcou-_uSph6Rbz9uZqTuf6Q"></div><div style="line-height:1.38;margin-top:0pt;margin-bottom:0pt"><br></div><p style="font-family:Helvetica;font-size:12px;color:rgb(0,0,0);line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style="color:rgb(34,34,34);font-size:14px"><span style="font-family:Arial;vertical-align:baseline"><font color="#000000">📭 email: <a href="mailto:kris@thecentral.ai" style="color:rgb(17,85,204)" target="_blank">kris@thecentral.ai</a></font></span></span></p></div></div></div>
+```
+
+Always send `body` as well as `htmlBody` - it is the plaintext alternative, and
+it needs its own plain version of the signature:
+
+```
+—
+
+Kris K.
+Founder - AI Central Media
+
+📭 email: kris@thecentral.ai
+```
+
+Two notes. The signature image is served from a `googleusercontent.com/mail-sig/`
+URL tied to Alex's Gmail signature; if it ever stops rendering, drop the `<img>`
+rather than guessing at a replacement. And the `👱🏻‍♀️` in the sign-off keeps its
+zero-width joiner in `htmlBody`, which is what recipients see, but loses it in
+the plaintext alternative, where it degrades to `👱🏻♀️`. Not worth fixing.
+
+### The sender
+
+Confirmed across eight sends on 2026-08-07: drafts go out from
+`kris@thecentral.ai` with no per-draft action. The default send-as is correct.
+
 ## Priority order for the report
 
 1. Money already taken wrongly (double charge, charge after cancellation)
