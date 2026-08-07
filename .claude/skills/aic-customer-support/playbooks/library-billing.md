@@ -20,7 +20,14 @@ Verified from real replies in the account. Use these; do not extend them.
 ### Pricing, confirmed by Alex 2026-08-07
 
 - 4-week paid trial at **$4.99**
-- Converts automatically to **$59.75/year**, or **$4.99/month** on monthly
+- Converts automatically to **$59.75/year** unless the customer asks to stop the
+  trial before it ends
+- The $59.75/year covers premium newsletter access plus the AI Library, updated
+  weekly
+- **There is no monthly plan.** `$4.99/month` is `$59.75/year` divided by twelve.
+  Usable as framing, never as an option. Offering someone a monthly plan promises
+  a product that does not exist, and the first they would learn of it is a
+  $59.75 charge
 - Legacy, seen in older threads only: `$39.75`/yr and `$3.99` trial before May
   2026, `$37.49`, `$49.95` lifetime
 
@@ -170,7 +177,9 @@ messages, at the top of the report.
   If their access ended sooner than the offer implied, that is our error:
   restore it, do not explain it
 - draft-shape: answer the question in the first line. State the conversion price
-  and the interval. State the cancel path. Ask if they want the link. Four lines
+  and the interval. State the cancel path. Ask if they want the link. Four lines.
+  Quote `$59.75/year` and nothing else -- never present a monthly figure as a
+  choice they could make
 - needs-from-alex: nothing for the standard answer. Confirm the exact renewal
   date in Stripe if the customer has already bought
 - examples: `19f6d2d33809cc6a`, `19bc195e2eda7986`

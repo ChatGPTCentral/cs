@@ -103,9 +103,14 @@ Spreadsimple (Google Sheets-based) and Memberstack for accounts.
 Current pricing, confirmed by Alex 2026-08-07:
 
 - 4-week paid trial at $4.99
-- **The trial auto-converts.** At the end of the 4 weeks the customer is charged
-  $59.75/year, or $4.99/month if they chose monthly
-- Legacy prices still visible in older threads: $39.75/yr, $3.99 trial (pre May
+- **The trial auto-converts unless they cancel.** A customer who does not ask to
+  stop the trial before it ends moves onto a $59.75/year subscription
+- **There is no monthly plan.** $4.99/month is the same thing as $59.75/year,
+  expressed per month. Fine as framing ("works out around $5 a month"), never
+  offered as a billing option a customer can choose
+- The $59.75/year covers premium newsletter access plus the AI Library, updated
+  weekly
+- Legacy prices, seen in older threads only: $39.75/yr, $3.99 trial (pre May
   2026), $49.95 lifetime
 
 Never quote a price from an older thread or an older campaign. Confirm against

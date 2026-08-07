@@ -40,7 +40,26 @@ even though it did not come from reading sent replies.
   `established`. Added a pricing block to `playbooks/library-billing.md` and
   replaced the stale figures in `SKILL.md`. Added the audience figure, 2,500+
   members
+**Second correction, same day.** The first fix introduced a new error: it recorded
+`$4.99/month` as a plan a customer could choose. There is no monthly plan.
+`$4.99/month` is `$59.75/year` expressed per month, usable as framing only. A
+draft offering monthly billing would have promised a product that does not
+exist, and the customer would have found out via a $59.75 charge.
+
+Also captured: the $59.75/year covers premium newsletter access plus the
+weekly-updated AI Library, and the cancel path is the customer asking to stop the
+trial before it ends.
+
+- applied: rewrote the pricing block in both `SKILL.md` and
+  `playbooks/library-billing.md`, and added an explicit "quote $59.75/year and
+  nothing else" rule to the `library.trial-terms` draft-shape
+
 - **observations:**
+  - Two corrections on one fact in one sitting. Pricing is the highest-churn,
+    highest-consequence knowledge in this skill and the least safe to infer.
+    Confirm it with Alex or Stripe every time rather than carrying it forward
+  - Restating a correction back to Alex before drafting is cheap. Both errors
+    would have been caught by one sentence of confirmation
   - The inference was reasonable and still wrong. Two corroborating signals were
     not enough on a fact this consequential. Where being wrong would mean telling
     a customer they will not be charged, ask rather than infer
