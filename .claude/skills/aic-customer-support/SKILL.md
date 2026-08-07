@@ -112,6 +112,9 @@ Current pricing, confirmed by Alex 2026-08-07:
   weekly
 - Legacy prices, seen in older threads only: $39.75/yr, $3.99 trial (pre May
   2026), $49.95 lifetime
+- The trial buy link, and the answer to any "can I pay with PayPal" question, is
+  in `playbooks/library-billing.md`. Send the bare link, never a campaign version
+  carrying `utm_*` tracking
 
 Never quote a price from an older thread or an older campaign. Confirm against
 Stripe, and see the price-quoting rule in `playbooks/library-billing.md`.

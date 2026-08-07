@@ -54,7 +54,24 @@ trial before it ends.
   `playbooks/library-billing.md`, and added an explicit "quote $59.75/year and
   nothing else" rule to the `library.trial-terms` draft-shape
 
+**Third input, same day.** Alex supplied the trial buy link and confirmed Apple
+Pay and PayPal are available at that checkout.
+
+- applied: recorded the bare link in `playbooks/library-billing.md` with a rule
+  to strip campaign `utm_*` / `_bhlid` parameters before sending, since pasting a
+  campaign version misattributes the sale
+- **gap closed:** `library.payment-method` had been blocked on
+  `needs-from-alex: a working PayPal checkout link` since seeding. Resolved, and
+  the entry now points at the link. That topic could not be answered at all
+  before this
+- side effect: quoting `$4.99` in customer-facing copy is now unavoidable, since
+  the link charges it. The `$3.99` figure in the 2026-07-16 campaign is
+  superseded in practice
+
 - **observations:**
+  - Three of the four `needs-from-alex` markers that blocked batch 1 were closed
+    by two short messages. The markers did their job: they named the missing fact
+    precisely enough to be answerable in a sentence
   - Two corrections on one fact in one sitting. Pricing is the highest-churn,
     highest-consequence knowledge in this skill and the least safe to infer.
     Confirm it with Alex or Stripe every time rather than carrying it forward

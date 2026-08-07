@@ -31,6 +31,24 @@ Verified from real replies in the account. Use these; do not extend them.
 - Legacy, seen in older threads only: `$39.75`/yr and `$3.99` trial before May
   2026, `$37.49`, `$49.95` lifetime
 
+### The trial buy link
+
+Confirmed by Alex 2026-08-07. This is the link to send anyone who wants to start
+the paid trial:
+
+```
+https://buy.stripe.com/14A5kC67m22McnWfBxdQQ0e
+```
+
+- Apple Pay and PayPal are both available at that checkout, confirmed by Alex.
+  That is the answer to `library.payment-method` -- send the link rather than
+  describing steps or attaching a screenshot
+- Send the **bare** link above. Campaign versions of it carry `utm_*` and
+  `_bhlid` tracking parameters; pasting those into a support reply attributes the
+  sale to whichever campaign you copied from and corrupts the reporting
+- It charges `$4.99`. Do not send it to someone you have quoted a different
+  price to without saying what they will actually be charged
+
 **The trial auto-converts.** This is the single most consequential fact in this
 file. A customer asking "what happens after the trial" is asking whether they
 are about to be charged, and the answer is yes. Say so, and give them the cancel
@@ -196,13 +214,14 @@ trial was `$4.99` -- thread `19f6d2d33809cc6a` is one, sent 2026-07-16.
   checkout. Often non-US, often an older customer, usually persistent and
   polite. Frequently frustrated by an earlier reply that sent a screenshot
   instead of a working link
-- move: PayPal is supported. Send an actual payable link, not an image of one --
-  the one thread on this topic stalled for days because a screenshot was sent
-  where a link was needed. If you do not have a link, say so and get it from Alex
-  rather than describing the steps
-- draft-shape: confirm PayPal works. Provide the link. One line offering to just
-  handle it for them if the link fails again
-- needs-from-alex: a working PayPal checkout link
+- move: PayPal and Apple Pay both work, at the trial buy link above. Send the
+  actual link, not an image of one -- the one thread on this topic stalled for
+  days because a screenshot was sent where a link was needed. Do not describe the
+  steps, do not talk them through a card form
+- draft-shape: confirm PayPal works, give the link, one line offering to sort it
+  for them if it still fails. Three lines
+- needs-from-alex: nothing. Resolved 2026-08-07, the link is in the pricing
+  section above
 - examples: `19b7babb5f91f6b4`, `19b6f9d83eb6230a`
 
 ### library.links-open-in-linkedin
