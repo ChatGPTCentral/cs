@@ -54,6 +54,30 @@ trial before it ends.
   `playbooks/library-billing.md`, and added an explicit "quote $59.75/year and
   nothing else" rule to the `library.trial-terms` draft-shape
 
+**Seventh input, same day - the sign-off, and a name that was sitting right there.**
+
+1. **Sign-off is now `Love,` then `krissy 👱🏻‍♀️`** - lowercase, emoji after the
+   name. Kris in the body, krissy in the sign-off. This also settles the "krissy"
+   ambiguity flagged earlier: Alex did mean the name
+2. **`asong@sbgtv.com` was Adam Song.** The draft went out saying "Hi there". The
+   address is first-initial-plus-surname at Sinclair Broadcast Group, the most
+   ordinary corporate convention there is, and it was decodable without asking
+   anyone
+
+- applied: new **Getting their name right** section in `SKILL.md`, with an
+  escalation order - sign-off, display name, the email handle itself, beehiiv or
+  Stripe, then the company
+- **the actual error:** over-generalising a good rule. "Never infer gender from a
+  name" is right. It was quietly widened into "do not infer anything about a
+  person", which is not. Deriving a name from `firstinitial+lastname` is a
+  reading, not a guess
+- worse than the mistake: the hypothesis was never surfaced. "Likely Adam Song,
+  confirm?" costs Alex one second. Silently defaulting to "Hi there" gave him
+  nothing to correct until after it was sent
+- second time today caution has cost more than it saved. The other was padding
+  Stefan's draft around a question that could not be answered instead of asking
+  it
+
 **Sixth input, same day - the signature emoji.**
 
 Alex: use the blonde 👱🏻‍♀️. Applied across `SKILL.md` and every example. The

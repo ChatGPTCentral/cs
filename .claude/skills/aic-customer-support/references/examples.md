@@ -37,7 +37,7 @@ version is right.
 >
 > Love,
 >
-> 👱🏻‍♀️ Kris
+> krissy 👱🏻‍♀️
 
 **What Alex changed, and why it matters:**
 
@@ -47,7 +47,7 @@ version is right.
 - **He added the warmth line.** `i'd love to have you in our community ❤️` was
   not in the draft at all. This is the difference between answering a pricing
   question and inviting someone in. The draft was correct and cold
-- **The sign-off grew.** `Kris` became `Love,` / `👱🏻‍♀️ Kris`
+- **The sign-off grew.** `Kris` became `Love,` / `krissy 👱🏻‍♀️`
 
 The substance survived untouched - price, interval, cancel path, link. The agent
 got the facts right and the person wrong. Assume that is the failure mode.
@@ -100,7 +100,7 @@ this long.
 > happy to personally point you to the most relevant resources in the Library
 >
 > Love,
-> 👱🏻‍♀️ Kris
+> krissy 👱🏻‍♀️
 
 Why it works: it opens by thanking them rather than arguing, reframes "free
 posts" into "you're paying to keep and find them," and closes with a question
@@ -133,7 +133,7 @@ worse.
 > to me and I'll deal with it
 >
 > Love,
-> 👱🏻‍♀️ Kris
+> krissy 👱🏻‍♀️
 
 Why it works: apology in the first line, action in the second, no billing-cycle
 lecture, no request for a screenshot they already sent, and it closes a door
@@ -166,7 +166,7 @@ answer - but it does not need to be long to do that.
 > What are you hoping to get one to do?
 >
 > Love,
-> 👱🏻‍♀️ Kris
+> krissy 👱🏻‍♀️
 
 Why it works: it engages with her specific word and her specific parenthetical,
 adds one thing she did not know, and asks a question. A generic "thanks for
