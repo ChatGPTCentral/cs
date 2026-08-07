@@ -57,15 +57,32 @@ sibling at the same `scheduled_at`. `get_post` on the sibling returns a public
 Check `recipients.web.tier_ids` before sending. If it includes `free`, anyone can
 read it. If it is premium-only, do not hand it to a non-member.
 
-### The popup is eating form submissions
+### Not every link in a campaign is ours
 
-`email_capture_type_override: "popup"` is set on these articles. Two independent
-reports describe the same failure: fill the form, the entered details vanish, and
-the content never appears - `19faf44c1f4d808e` (Sue Sutcliffe) and
-`19fd98313123ac96` (`rm@pasto.se`, who was angry enough to be an escalation).
+**Check this before offering to fix anything.** beehiiv's ad network injects
+sponsor placements at send time, so they do **not** appear in
+`get_post_content`. Reading the campaign body and concluding a link is ours is
+exactly the wrong inference, and it was made once already: Sue Sutcliffe
+(`19faf44c1f4d808e`) filled in a **sponsor's** form, and the first draft to her
+confidently sent an AI Central guide that had nothing to do with what she
+clicked.
 
-Existing subscribers should never see it at all. When someone reports it, send
-the direct article URL and tell them to close the box if it appears again.
+When a form or link turns out to be a sponsor's:
+
+- say so plainly, and say it is outside AI Central. That is not deflection, it is
+  the reason we cannot just hand them the file
+- offer the one thing we actually can do - go back to the sponsor and ask
+- never send our own resource as a consolation for a sponsor's broken funnel. It
+  answers a question they did not ask
+
+If you cannot tell whose link it is, ask Alex rather than assuming. He can tell
+in a second which placements were sponsored.
+
+**An earlier claim here was wrong.** This file previously stated that
+`email_capture_type_override: "popup"` was the shared mechanism behind both Sue's
+report and `rm@pasto.se` (`19fd98313123ac96`). Sue's was a sponsor form. The
+popup setting is real and is on these articles, but it has not been shown to
+break anything, and `rm@pasto.se` remains unexplained and still an escalation.
 
 ### news.broken-link
 - status: seeded
