@@ -54,6 +54,21 @@ trial before it ends.
   `playbooks/library-billing.md`, and added an explicit "quote $59.75/year and
   nothing else" rule to the `library.trial-terms` draft-shape
 
+**Sixth input, same day - the signature emoji.**
+
+Alex: use the blonde 👱🏻‍♀️. Applied across `SKILL.md` and every example. The
+earlier 👩🏻 was the agent's own inference from the campaign HTML, not something
+Alex asked for - a third inference, and a third correction.
+
+- **send-as confirmed.** The Kim reply went out from `kris@thecentral.ai`. That
+  had been an open risk since the first sweep was designed: `create_draft` has no
+  `from` parameter, so drafts inherit the account default, and there was no way
+  to verify it without a real send. The default is right. The warning in
+  `references/inbox.md` can stay as a check but is no longer an unknown
+- open question for Alex: he wrote "signing from krissy". The signature still
+  says `Kris`, which is what every campaign has used. Not changed on one
+  ambiguous mention
+
 **Fifth input, same day - two standing rules from Alex.**
 
 1. **Single hyphen everywhere.** "matches how i actually write". The ` - - `

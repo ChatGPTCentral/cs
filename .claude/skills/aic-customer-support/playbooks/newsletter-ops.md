@@ -111,7 +111,7 @@ together, reads as duplication. Confirm which before treating it as a bug.
 - status: seeded
 - seen: 1
 - last-seen: 2026-08-06
-- signals: angry, and the anger is about the exchange rather than the product --
+- signals: angry, and the anger is about the exchange rather than the product -
   a promised free resource, a form that collected their details, and then nothing
   delivered. May address us by the wrong company name, which means they have
   entirely lost track of who we are
