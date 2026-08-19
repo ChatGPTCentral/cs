@@ -2,15 +2,19 @@
 
 Ranked by what needs Alex first. Refreshed by `/ledger`.
 
-**Last refresh: 2026-08-19, full sweep.** All 26 originally-registered labels
-now read in full (up from 12). Discovery ran across ~150 unlabelled threads,
-mid-June to today. The commitment scanner covered 90 days of sent mail. 23
-stories now tracked, up from 12.
+**Last refresh: 2026-08-19, widened again.** All 26 originally-registered
+labels read in full. Discovery now covers unlabelled threads from **3 June
+2026 to today** (was mid-June). The commitment scanner covered 90 days of
+sent mail. 28 stories now tracked, up from 23.
 
-**This is still not everything.** Unlabelled mail from before mid-June is
-unswept. The commitment scanner's phrase list is not exhaustive. Treat this as
-a much wider pass, not a complete one - see *Coverage* at the bottom for the
-honest count.
+**Alex asked for a full sweep back to 1 January 2026.** This refresh reached
+3 June, not January - roughly ten more weeks of history added, with five real
+finds. The character of the mail changed as the window widened: early June is
+dominated by a wave of cold conference outreach (London Tech Week, SXSW
+London) with very little signal per page. Continuing at the same exhaustive
+pace back to January is a much larger pull for a shrinking hit rate. See
+*Coverage* at the bottom for the honest count and the open question on how to
+finish it.
 
 **Three corrections this refresh**, all the same failure mode: a label
 captured one thread with one person, the relationship continued through an
@@ -44,6 +48,10 @@ The last word was theirs and nobody replied. Live or recent enough to prompt on.
 | [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-07-02 | 48d | jazmin@getjobstream.com |
 | [Cannes 2026 Follow-up](stories/cannes-2026.md) | 2026-06-29 | 51d | sarah@wavelength.now |
 | [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-05-06 | 105d | ben@madrev.co - *caveat: last message may be addressed to Katy, not Alex* |
+| [Pillsbury Law](stories/pillsbury-law.md) | 2026-06-04 | 76d | steven.james@pillsburylaw.com - possibly two contacts sharing a domain |
+| [Tim Bourquin](stories/tim-bourquin.md) | 2026-06-22 | 58d | tim.bourquin@gmail.com |
+| [Claudia Faith](stories/claudia-faith.md) | 2026-07-02 | 48d | claudiafaith.cf@gmail.com |
+| [King Capital Advisors](stories/king-capital-advisors.md) | 2026-07-14 | 36d | info@king-capital-advisors.com |
 
 ## ⏳ Waiting on them
 
@@ -52,6 +60,7 @@ Ball is legitimately in their court. Ranges from days to dormant.
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
 | [GTA whitepaper](stories/gta-whitepaper.md) | 2026-08-17 | 2d | marcduke@dukeconnect.co.uk |
+| [Mya Bishop (Informa)](stories/mya-bishop-informa.md) | 2026-08-17 | 2d | Mya.Bishop@informa.com - third outbound in a series, no reply yet |
 | [interviews](stories/interviews.md) | 2026-08-14 | 5d | elettra.fiumi@gmail.com |
 | [Jorge](stories/jorge.md) | 2026-08-05 | 14d | jorge@groou.xyz |
 | [Mark (Marwan)](stories/mark-marwan.md) | 2026-07-29 | 21d | mark@theaicentral.net |
@@ -157,18 +166,24 @@ no known address.
 
 Honest accounting, not a claim of completeness.
 
-- **26 of 26** originally-registered labels read (was 12 of 26)
-- **~150 unlabelled threads** read via participant clustering, mid-June to
-  19 August. Everything older is unswept
+- **26 of 26** originally-registered labels read in full
+- **~250 unlabelled threads** read via participant clustering, covering
+  **3 June 2026 to today**. Alex asked for this to reach 1 January 2026;
+  it does not yet. Everything before 3 June is unswept
 - **11 threads** read via the commitment scanner, 90-day window
-- **23 stories** now tracked with a file. Three carried real corrections this
-  sweep; treat any story not touched since seeding as provisionally accurate,
-  not verified
+- **28 stories** now tracked with a file. Three carried real corrections;
+  treat any story not touched since seeding as provisionally accurate, not
+  verified
 - Total inbox is far larger than what's covered here - SENT alone runs
   ~1,070 messages across ~497 threads, INBOX ~660 messages across ~246
   threads, before excluding the bulk feeds (beehiiv 1,762 threads,
   GrowthLetter 409, receipts 198 - correctly out of scope throughout)
-- **Next widening**: push discovery back past mid-June, and re-run it
-  periodically even on already-read stories - the Jorge/Digital
-  Boost/Jobstream pattern shows a label can go stale while the relationship
-  doesn't
+
+**Open question on finishing the January-to-June window.** The hit rate
+dropped sharply once discovery reached early June - that period is dominated
+by one-off conference outreach (London Tech Week, SXSW London) and automated
+event mail, not ongoing relationships. Continuing the same exhaustive
+thread-by-thread pass back to January is a large pull (likely 15-20 more
+pages) for comparatively few new stories. A lighter option: sample rather
+than exhaustively page through January-May, and only chase full detail on
+whatever a sample surfaces. Alex's call, not decided here.
