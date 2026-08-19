@@ -19,13 +19,20 @@ discovery on every refresh, not once - a story can hold both labelled and
 unlabelled threads at the same time, and reading only the label undercounts
 recency, not just existence.
 
+## ✏️ Drafted, blocked on Alex
+
+Reply is written and waiting in Gmail. One thing only Alex can supply.
+
+| Story | What's missing | Draft |
+| --- | --- | --- |
+| [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) | shipping address for tote bags | `1a00a41717b4a24b` |
+
 ## 🔴 Your move
 
 The last word was theirs and nobody replied.
 
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
-| [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) 🆕 | 2026-08-18 | **1d** | Richard@hewlettrand.com |
 | [Austin Conference / Amanda](stories/austin-jobstream.md) | 2026-03-12 | **160d** | amanda@getjobstream.com |
 | [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-05-06 | **105d** | ben@madrev.co |
 | [Cannes 2026 Follow-up](stories/cannes-2026.md) | 2026-06-29 | **51d** | sarah@wavelength.now |
