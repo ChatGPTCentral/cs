@@ -85,14 +85,22 @@ domain-level flag, not a ledger entry.
 
 ## 🤝 Open commitments
 
-Promises made in sent mail. **This section is not yet built** - it needs a pass
-over `in:sent`, which this refresh did not do.
-
-One is already known and overdue:
+Promises made in sent mail, from the commitment scanner. First real run
+2026-08-19, `references/commitments.md`, full log in `log/commitment-runs.md`.
 
 | Promise | To | Made | Age | Status |
 | --- | --- | --- | --- | --- |
-| "I'll go back to them and ask what happened to your details. I'll let you know what they say" | Sue Sutcliffe | 2026-08-07 | **12d** | **open** - Superhuman AI never contacted |
+| "I'll go back to them and ask what happened to your details. I'll let you know what they say" | Sue Sutcliffe | 2026-08-07 | 12d | **open** - Superhuman AI never contacted |
+| "Our team will start working on it and I'll let you know when we plan to publish the interview" | Faizan Alvi + Tahmid | 2026-08-02 | 17d | **open** - no publish date sent yet |
+| "i'll follow-up in the other thread regarding the progress on the XML integration" | Aneeka Velummylum (Netline) | 2026-06-29 | 51d | **unverified** - the follow-up thread wasn't found in this window, may exist outside it |
+
+**Not listed here, and deliberately so:** five commitments in a 19 June email
+to Tsvetelin about the GTA whitepaper - all overdue by the calendar, all
+downgraded to historical because the relationship visibly continued past their
+due dates. Treating a stale date as a broken promise without checking for
+later contact is the false-positive trap this scanner is built to avoid. Full
+reasoning in `references/commitments.md`, the actual content in
+`stories/gta-whitepaper.md`.
 
 ## 🆕 Proposed - not yet confirmed by Alex
 
@@ -124,9 +132,10 @@ Seeded 2026-08-19. One confirmed identity merge (**Marc Duke**, three addresses
 co-occurring in a single cc list), 25 orgs, and four story-to-story edges. One
 edge is `asserted` by Alex and unverified: `tla-new-york` <-> `gta-whitepaper`.
 
-Open: **Aneeka and Daniel at Netline.** Alex states both belong to one company
-and one story. Neither address has been read - the `👤 Aneeka (Netline)` label
-has one thread and nobody has opened it.
+Open: **Daniel at Netline.** Aneeka resolved 2026-08-19
+(`apatel@netline.com`, via the commitment scanner, not the label) - see
+`graph/people.md`. Daniel still has no known address and does not appear in
+any thread read so far.
 
 ## Not yet populated
 

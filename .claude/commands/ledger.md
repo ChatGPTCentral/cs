@@ -31,10 +31,13 @@ Empty means every story in the registry.
 
 ## Then, if the run includes commitments
 
-Sweep `in:sent` over the window for promise language - "I'll send", "I'll get
-back", "let me check", "I'll let you know", "by <day>". Every hit becomes a row
-in the commitments table, **quoted verbatim**, with who it was made to and when.
-Never paraphrase a promise into existence.
+Follow `references/commitments.md` - the exact search, and critically the
+false-positive check: before reporting any promise as open, verify the
+relationship didn't continue past its due date. A resumed relationship means
+the tactical promise was probably handled elsewhere; downgrade it to the story
+file's notes rather than the live table. Every commitment that does stay open
+is **quoted verbatim**, never paraphrased into existence, and logged in
+`ledger/log/commitment-runs.md`.
 
 ## Report back
 

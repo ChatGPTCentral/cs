@@ -22,3 +22,18 @@
   in one cc list - the evidence behind his identity merge in `graph/people.md`.
   Related to `ai-hackathon-bristol` through Marc Duke and the advocacy network -
   see `graph/relations.md`
+
+  **Origin story, found by the commitment scanner 2026-08-19.** A 19 June email
+  to Tsvetelin (`19edf97730365cd0`) laid out the original plan in detail: an
+  interview on "AI for RevOps," a vertical-specific survey/whitepaper ("How AI
+  Leaders Use AI for GTM," 20-40+ respondents, GTA leads participant vetting and
+  survey design, AI Central brings editorial/pagination/webdev/distribution to
+  half a million readers), and an in-person studio roundtable. Production
+  estimate was 40-45 days from a mid-June start - late July publish. Every date
+  in that email is now stale, but Tsvetelin is still active on GTA threads
+  through August, so treat the tactical steps (the Google Doc, the specific
+  July slot) as superseded by later conversation, not broken. The strategic
+  shape - interview, survey/whitepaper, roundtable - is very likely still the
+  plan; only the calendar moved. Tsvetelin also has two more addresses,
+  `tsvetelin.anastasov@gmail.com` and `tsvetelin@scapebridge.com` - see
+  `graph/people.md`

@@ -57,7 +57,9 @@ found them, and both were fresher than anything in the label registry. Procedure
 in `references/discovery.md`.
 
 **3. Broken promises.** The highest-value detector and the only one that needs
-reading sent mail. Scan outbound for commitment language - "I'll send", "I'll get
+reading sent mail. Procedure, the exact search, and the trap that produces
+false positives (a passed due date is not automatically a broken promise - see
+`references/commitments.md`) are all documented there, not here. Scan outbound for commitment language - "I'll send", "I'll get
 back to you", "let me check", "I'll let you know", "by Friday" - and open a loop
 with a due date.
 
@@ -130,6 +132,7 @@ the report** so he can switch the sender before sending.
 
 - `references/model.md` - the graph: identities, people, orgs, stories, edges
 - `references/discovery.md` - finding stories nobody labelled
+- `references/commitments.md` - the promise scanner, its search, and its false-positive trap
 - `references/stories.md` - the registry, verified queries, whose-move rules
 - `../aic-customer-support/references/inbox.md` - Gmail mechanics, signature,
   threading, the quoting trade-off
