@@ -2,9 +2,13 @@
 
 Ranked by what needs Alex first. Refreshed by `/ledger`.
 
-**Last refresh: 2026-08-19.** Twelve of twenty-six stories populated from live
-thread metadata. The rest are registered in `references/stories.md` and unread -
+**Last refresh: 2026-08-19.** Twelve of twenty-six labelled stories populated
+from live thread metadata, plus **two found by participant clustering that have
+no label at all**. The rest are registered in `references/stories.md` and unread -
 see *Not yet populated* at the bottom.
+
+The two unlabelled stories are the freshest things on this board. A ledger built
+only from labels would never have seen either.
 
 ## 🔴 Your move
 
@@ -12,6 +16,7 @@ The last word was theirs and nobody replied.
 
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
+| [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) 🆕 | 2026-08-18 | **1d** | Richard@hewlettrand.com |
 | [Austin Conference / Amanda](stories/austin-jobstream.md) | 2026-03-12 | **160d** | amanda@getjobstream.com |
 | [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-05-06 | **105d** | ben@madrev.co |
 | [Cannes 2026 Follow-up](stories/cannes-2026.md) | 2026-06-29 | **51d** | sarah@wavelength.now |
@@ -23,6 +28,7 @@ nudge or a decision to let them die.
 
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
+| [GTA whitepaper](stories/gta-whitepaper.md) 🆕 | 2026-08-17 | 2d | marcduke@dukeconnect.co.uk |
 | [Jorge](stories/jorge.md) | 2026-03-26 | **146d** | jorge@groou.xyz |
 | [Sunny >> Deals](stories/sunny-deals.md) | 2026-04-02 | **139d** | mike.mcconnon@perplexity.ai |
 | [Mark (Marwan)](stories/mark-marwan.md) | 2026-07-29 | 21d | mark@theaicentral.net |
@@ -71,6 +77,18 @@ One is already known and overdue:
 | Promise | To | Made | Age | Status |
 | --- | --- | --- | --- | --- |
 | "I'll go back to them and ask what happened to your details. I'll let you know what they say" | Sue Sutcliffe | 2026-08-07 | **12d** | **open** - Superhuman AI never contacted |
+
+## 🕸️ Graph
+
+`graph/people.md` · `graph/orgs.md` · `graph/relations.md`
+
+Seeded 2026-08-19. One confirmed identity merge (**Marc Duke**, three addresses
+co-occurring in a single cc list), 25 orgs, and four story-to-story edges. One
+edge is `asserted` by Alex and unverified: `tla-new-york` <-> `gta-whitepaper`.
+
+Open: **Aneeka and Daniel at Netline.** Alex states both belong to one company
+and one story. Neither address has been read - the `👤 Aneeka (Netline)` label
+has one thread and nobody has opened it.
 
 ## Not yet populated
 

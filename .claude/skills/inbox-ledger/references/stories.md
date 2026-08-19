@@ -1,8 +1,12 @@
 # The story registry
 
 A **story** is a durable thread of work with a person or a project. It spans many
-Gmail threads, months, and often several people. Alex already thinks this way -
-his labels are the taxonomy, so the ledger adopts them rather than inventing one.
+Gmail threads, months, and often several people.
+
+Alex's labels are a **seed**, not the taxonomy. They record the stories he got
+round to filing, which is a smaller set than the stories he is running - three of
+the four he named in conversation had no label, and two of those were live that
+week. This file covers the labelled ones; `discovery.md` finds the rest.
 
 ## The label query rule
 

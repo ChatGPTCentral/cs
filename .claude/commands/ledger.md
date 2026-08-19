@@ -15,13 +15,19 @@ Empty means every story in the registry.
 1. Invoke the `inbox-ledger` skill. Read `references/stories.md` **before**
    touching Gmail - the `label:` syntax fails silently and the rule is not
    guessable
-2. Read the current `ledger/_index.md` so you know what changed since last time
+2. Read the current `ledger/_index.md` so you know what changed since last time,
+   and `ledger/graph/` for identity merges already confirmed - re-proposing a
+   merge Alex has already approved wastes his attention
 3. For each story in scope, one `search_threads` with
    `THREAD_VIEW_METADATA_ONLY`, newest first. **Never fetch bodies during a
    refresh** - a single thread can return 321,000 characters
 4. From the newest thread's last message compute: whose move, last inbound, last
    outbound, idle days
 5. Rewrite the story file and re-rank `ledger/_index.md`
+6. **Run discovery** per `references/discovery.md` - cluster participants across
+   unlabelled threads and propose any story the registry is missing. Alex names
+   them; never auto-name. Record new people, orgs and story edges in
+   `ledger/graph/`, and propose identity merges rather than applying them
 
 ## Then, if the run includes commitments
 

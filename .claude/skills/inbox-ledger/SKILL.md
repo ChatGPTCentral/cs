@@ -27,9 +27,17 @@ A thread is one exchange. A story is the relationship: every thread with Mark
 Duke is one story, and the useful question is never "what did this email say" but
 **"where are we with Mark, and whose move is it".**
 
-Alex's Gmail labels already encode his stories. The registry, the verified query
-for each, and the whose-move rules are in `references/stories.md`. Read it before
-touching Gmail - the `label:` syntax is treacherous and fails silently.
+Alex's Gmail labels **seed** his stories but do not define them. He named four
+stories in conversation and three had no label at all - two of those were live
+that week, while most labelled stories were months cold. So stories come from two
+places: the label registry in `references/stories.md`, and participant clustering
+per `references/discovery.md`.
+
+Underneath is a graph, not a hierarchy: identities cluster into people, people
+into orgs, and stories relate to other stories. `references/model.md` has the
+node types, the merge rules and the two places the tree shape breaks. Read
+`references/stories.md` before touching Gmail regardless - the `label:` syntax is
+treacherous and fails silently.
 
 ## The three detectors
 
@@ -41,6 +49,12 @@ team. Alex owes a reply and nothing in Gmail says so.
 **2. Gone cold.** The last message is ours and nobody answered. Not a failure -
 but past a threshold it needs a nudge or a decision to let it die. Default
 thresholds: 7 days for a live deal, 30 for a warm relationship, 90 for dormant.
+
+**0. Unlabelled stories.** Recurring participant clusters that no label covers.
+This runs first because the other three cannot detect what they cannot see -
+`gta-whitepaper` and `ai-hackathon-bristol` were both invisible until clustering
+found them, and both were fresher than anything in the label registry. Procedure
+in `references/discovery.md`.
 
 **3. Broken promises.** The highest-value detector and the only one that needs
 reading sent mail. Scan outbound for commitment language - "I'll send", "I'll get
@@ -114,6 +128,8 @@ the report** so he can switch the sender before sending.
 
 ## References
 
+- `references/model.md` - the graph: identities, people, orgs, stories, edges
+- `references/discovery.md` - finding stories nobody labelled
 - `references/stories.md` - the registry, verified queries, whose-move rules
 - `../aic-customer-support/references/inbox.md` - Gmail mechanics, signature,
   threading, the quoting trade-off
