@@ -92,6 +92,25 @@ Ledger scope. 26 labels, excluding bulk feeds and the archive.
 | Mitali // Outskill | `label:👤-Mitali-//-Outskill` | `Label_7705408054980940104` | 1 |
 | Aneeka (Netline) | `label:👤-Aneeka-(Netline)` | `Label_8862489757389168107` | 1 |
 
+## Read and reclassified, 2026-08-19 full sweep
+
+Five labels from the original registry turned out not to be stories at all.
+Read in full; none needs tracking here.
+
+| Label | What it actually is |
+| --- | --- |
+| `testimonials` (34 threads) | 100% automated `noreply@senja.io` notifications. A collection tool's feed, not correspondence |
+| `Sparkloop` (104 threads) | 100% automated `support@sparkloop.app` reports to `admin@theaicentral.net`. Distinct from `Mitch // Sparkloop`, a real named contact - see `stories/mitch-sparkloop.md` |
+| `TRAVEL` (46 threads) | Booking confirmations - easyJet, Virgin, SNCF, booking.com. Operational logistics, same category as `💸 Admin / Receipts` |
+| `Gamma AI` | **Anomaly.** Both threads are `comments-noreply@docs.google.com` Google Docs comment notifications. Zero messages from or to anyone at Gamma |
+| `Hamed // Otio.ai` | **Same anomaly.** Both threads are the identical Google Docs comment notifications. Zero messages from or to Hamed |
+
+The last two are worth flagging distinctly: a label named after a person,
+containing zero correspondence with that person, is a real gap - either the
+actual Hamed/Gamma conversation lives somewhere unlabelled and undiscovered,
+or these labels were applied to the wrong thread at some point. Not resolved;
+recorded so it isn't silently forgotten.
+
 ## Out of scope
 
 Not stories. Do not ledger them.
