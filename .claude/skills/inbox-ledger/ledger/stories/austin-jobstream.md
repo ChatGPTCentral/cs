@@ -21,3 +21,12 @@
   Digital Boost: the label captures one person's thread, the relationship
   continues through someone else at the same company, unlabelled, and the
   label-only read misses it entirely
+- **background, January sweep.** The Austin conference itself is "New Media
+  Summit" (organizer: `matt.mcgarry@growletter.co`, `kolby@growletter.co`),
+  which Alex attended in person - confirmed by a 15-20 Jan run-up thread
+  ("41 days until New Media Summit... welcome to Austin next month") and by
+  `sean@meco.app` separately writing "Great to see you in Austin" on 3 Mar.
+  Sean/Meco.app is a related but separate vendor relationship (subscriber
+  acquisition), not part of the Jobstream thread - Alex paused their campaign
+  in May over subscriber quality; see `graph/relations.md` if that edge is
+  added

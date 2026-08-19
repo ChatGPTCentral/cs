@@ -43,18 +43,22 @@ Academic domains resolve to an institution, but the person is usually faculty
 rather than staff in the commercial sense. Fine for grouping, misleading if
 treated as a sales account.
 
-## Named by Alex, not yet resolved
+## Resolved this sweep
 
 | Org | Domain | Note |
 | --- | --- | --- |
-| Netline | unknown | Aneeka and Daniel both belong to it. Neither address read yet |
+| Netline | `netline.com` | Aneeka and Daniel both work here. See `stories/netline.md` |
 
 ## Found by the 2026-08-19 sweep, unlabelled
 
 | Org | Domain | Note |
 | --- | --- | --- |
 | Wellput | `wellput.io` | ad ops, Elizabeth-run, Alex mostly bcc |
-| Studio Galdieri | `sirev.it` + personal Gmail | org signal from local-part text, not domain - see `discovery.md` |
+| Studio Galdieri | `sirev.it` + personal Gmail | Alex's Italian accountant. Org signal from local-part text, not domain - see `discovery.md` |
 | Antidote Communications | `antidotecomms.com` | Becca Williams, PR. Cc'd on a Richard Lowe / Bristol thread - see `relations.md` |
-| Adastra Media | `adastramedia.biz` | Nate. Recurring, real dialogue, no label |
+| Adastra Media | `adastramedia.biz` | Ian Barto + Nate. Publisher agreement negotiation, no label - see `stories/ad-astra-media.md` |
 | Sponsor Scout | `sponsorscout.io` | Alex writing repeatedly, no reply seen in any thread read |
+| Guidde | `guidde.co` | Hod, Yoav. Chased repeatedly by Sam and Alex, no reply seen - see `stories/hod-guidde.md` |
+| Glide | `heyglide.com` | Andy. Declined then revived, see `stories/glide-andy.md` |
+| Meco | `meco.app` | Sean McCarney. Subscriber-acquisition vendor, met in Austin |
+| M&A advisory (3 firms) | `anny.biz`, `quietlight.com`, `justwebsitebrokerage.com` | all introduced by `theygotacquired.com` - see `stories/ma-exploration.md` |

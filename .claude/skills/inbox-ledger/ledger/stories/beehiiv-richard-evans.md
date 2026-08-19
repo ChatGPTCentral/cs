@@ -16,3 +16,17 @@
 - notes: a real back-and-forth across November 2025, then Richard's last reply
   went unanswered. Given how active the beehiiv relationship is through other
   contacts, this reads like the account rep changed rather than a dropped ball
+- **other beehiiv contacts, January sweep - not merged into this file, listed
+  for context.** Two more real beehiiv relationships turned up in the same
+  window, both separate people:
+  - **Tyler Denk** (`tyler@beehiiv.com`, beehiiv's CEO) - Alex pitched a
+    Claude x beehiiv integration directly to him, 2026-02-03. Tyler replied
+    positively 2026-02-15 ("on the roadmap"); Alex confirmed it shipped on
+    2026-03-24 ("saw you announced it today!"). Resolved, positive, no action
+    needed
+  - **Preeya Goenka + Luke McCgwire** (`preeya@beehiiv.com`,
+    `luke.mccgwire@beehiiv.com`) - "Local beehiiv community london", Alex met
+    Preeya at a Google/beehiiv event, she introduced Luke (London-based, then
+    moving to Madrid). Luke proposed a call twice (17 Feb, 24 Feb) with no
+    reply from Alex since - **your move** if reviving, 176 days idle as of
+    2026-08-19

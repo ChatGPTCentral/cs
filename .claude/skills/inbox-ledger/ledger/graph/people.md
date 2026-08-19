@@ -47,7 +47,7 @@ Recorded because they anchor stories, not because they are ambiguous.
 Alex refers to Tsvetelin as "tsvelin" in conversation. Recorded here so a future
 search for his spelling still resolves.
 
-## Unresolved
+## Resolved this sweep
 
 ### Aneeka and Daniel (Netline)
 - Alex states both belong to **Netline**, the company, and to the same story
@@ -56,8 +56,11 @@ search for his spelling still resolves.
   correspondent since March 2026 - case study, TradePub listing, payment terms,
   an XML integration Alex promised to follow up on 29 June (see
   `log/commitment-runs.md`, unverified whether it happened)
-- **Daniel is still unresolved.** Does not appear anywhere in the threads read
-  so far. Do not invent an address to satisfy the shape
+- **Daniel resolved 2026-08-19, January sweep**: `daniel@netline.com`, Daniel
+  Frignito, Director of Partner Development. Found in a Nov 2025 thread
+  ("AI Central Books ++ Partnerships") - real dialogue about a call, Philly
+  travel, and the NetLine Case Study, continuing until Aneeka picked up the
+  same thread by 26 Nov. Story file: `netline.md`
 
 ## Ours, not counterparties
 

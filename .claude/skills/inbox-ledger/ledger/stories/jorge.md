@@ -18,3 +18,11 @@
   This is the reason discovery has to run on *every* refresh, not once: a story
   can have both labelled and unlabelled threads at the same time, and reading
   only the label undercounts recency, not just existence
+- **historical depth, January sweep.** Jorge is one of the best-documented
+  relationships in the whole account: real back-and-forth found continuously
+  from 2026-01-05 ("Happy new year! Shall we meet Wednesday...") through
+  February (London lunches, a shared automation bug fixed together), March
+  ("Saw you on Substack Live!"), April ("AI Central x Jorge", "Jorge - Network
+  london"), and into August. This reads as a standing weekly/biweekly
+  in-person or working relationship, not an intermittent one - treat any
+  future "idle" reading with that base rate in mind

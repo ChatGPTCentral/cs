@@ -19,3 +19,7 @@
   second confirmed instance, which means it is a pattern, not a one-off - any
   "dormant" verdict reached from a label alone should be treated as provisional
   until discovery has actually run against that correspondent's raw address
+- **root pushed back, January sweep.** Found the original invite: a workshop
+  invitation dated 2026-02-20, forwarded internally by Alex on 3 Mar and again
+  on 13 Apr ("save this" / "up save this"). Confirms this has been on Alex's
+  radar since February, not just discovered in July

@@ -19,3 +19,7 @@
   - four consistent participants, five threads, one recurring cc list. Elizabeth
   owns the relationship; Alex is largely bcc, so this may be lower-priority for
   him specifically than the idle count suggests. Name and priority need Alex
+- **root pushed back, January sweep.** Found the original approval: "You're In
+  - Access to Wellput Campaigns Coming Soon", 2026-02-19. Confirms the
+  relationship has been running since February, consistent with five months of
+  ad ops traffic by August
