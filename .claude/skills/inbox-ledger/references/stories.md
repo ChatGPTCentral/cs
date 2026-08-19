@@ -8,6 +8,19 @@ round to filing, which is a smaller set than the stories he is running - three o
 the four he named in conversation had no label, and two of those were live that
 week. This file covers the labelled ones; `discovery.md` finds the rest.
 
+## Gmail thread links
+
+Every thread ID recorded anywhere in the ledger (story files, `_index.md`, the
+artifact) is clickable in Gmail via:
+
+`https://mail.google.com/mail/u/0/#all/<threadId>`
+
+`#all` searches every folder (inbox, sent, archive) so it works regardless of
+which label or folder the thread currently sits in. When writing or updating a
+story, wrap the thread ID in this pattern rather than leaving it bare - the
+whole point of tracking thread IDs is that Alex works in Gmail, and a bare ID
+he has to paste in himself defeats that.
+
 ## The label query rule
 
 Verified 2026-08-19 against the live account, after four failed attempts.
