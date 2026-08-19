@@ -37,3 +37,11 @@
   plan; only the calendar moved. Tsvetelin also has two more addresses,
   `tsvetelin.anastasov@gmail.com` and `tsvetelin@scapebridge.com` - see
   `graph/people.md`
+
+  **Actual origin found, January sweep, 2026-08-19.** The relationship itself
+  started 2025-07-24: Russ Shaw personally welcomed Alex to Tech London
+  Advocates and TLA CreativeTech following a London Tech Week panel session,
+  cc'ing `marcduke@dukeconnect.co.uk` immediately. Marc offered to add Alex to
+  the CreaTech Slack group and the two scheduled a first chat within days
+  (29 Jul 2025). The 19 June 2026 email that lays out the whitepaper plan is
+  eleven months into an already-established relationship, not the start of one

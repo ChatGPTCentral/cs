@@ -2,16 +2,17 @@
 
 Ranked by what needs Alex first. Refreshed by `/ledger`.
 
-**Last refresh: 2026-08-19, full historical sweep complete.** All 26
-originally-registered labels read in full. Discovery now covers unlabelled
-threads from **5 November 2025 to today** - Alex asked for the sweep to reach
-1 January 2026; it went further back and stopped naturally at the edge of the
-Gmail API's 365-day query window. 33 stories now tracked, up from 28 at the
-start of this refresh (5 new: `netline`, `ma-exploration`, `ad-astra-media`,
-`hod-guidde`, `glide-andy`), plus one promotion (`studio-galdieri`, from
-proposed to confirmed) and updates to six more. The commitment scanner still
-covers 90 days of sent mail - not widened this pass. See *Coverage* below for
-exact counts.
+**Last refresh: 2026-08-19, the sweep is now genuinely complete end to end.**
+All 26 originally-registered labels read in full. Discovery covers unlabelled
+threads from **today back to the actual floor of the account's correspondence
+history, ~April 2025** - Alex asked first for 1 January 2026, then explicitly
+asked to push past November 2025 "up until the very beginning." Both asks are
+now satisfied: the search ran out of pages, not effort - the last hits before
+the floor are literal test emails ("gggg prova ggg") from March 2025, and the
+account's real correspondence as "ChatGPT Central" (the pre-rebrand name)
+effectively starts in April 2025. 34 stories now tracked, up from 28 at the
+start of this refresh. See *Coverage* below for the full breakdown and exact
+counts.
 
 **A note on what "no reply" means.** Alex flagged directly: several of the
 senders below are newsletters he is subscribed to, not people waiting on a
@@ -40,7 +41,7 @@ addresses instead of trusting a label). Any "dormant" verdict reached from a
 label alone is provisional until discovery has run against that
 correspondent's raw address.
 
-**Five real finds from the January sweep**, all new stories:
+**Six real finds across the full sweep**, all new stories:
 
 | Story | What it is |
 | --- | --- |
@@ -49,6 +50,12 @@ correspondent's raw address.
 | [Ad Astra Media](stories/ad-astra-media.md) | Promoted from below-threshold - real contract negotiation, Mar-Apr 2026 |
 | [Hod // Guidde](stories/hod-guidde.md) | Chased six times over three months, no reply ever seen |
 | [Glide (Andy)](stories/glide-andy.md) | Declined then revived on schedule, no reply since May |
+| [GenAI Collective](stories/genai-collective.md) | Real 2025 chapter-building dialogue, right at the sweep's floor - stale over a year |
+
+Two existing stories also gained their actual origin points this pass:
+`gta-whitepaper` traces back to a 2025-07-24 London Tech Week introduction, and
+`austin-jobstream` picked up a second, separate growletter.co program
+(Flagship Advisory) that had a real call before going quiet.
 
 ## ✏️ Drafted, blocked on Alex
 
@@ -93,6 +100,7 @@ Ball is legitimately in their court. Ranges from days to dormant.
 | [beehiiv // Richard Evans](stories/beehiiv-richard-evans.md) | 2025-11-19 | 274d | richard.evans@beehiiv.com |
 | [Hugo // Passionfroot](stories/hugo-passionfroot.md) | 2026-04-07 | 134d | hugo@passionfroot.me - *may continue as `support@passionfroot.me`, unmerged* |
 | [Mark Duke (Intros)](stories/mark-duke.md) | - | 252d | dormant |
+| [GenAI Collective](stories/genai-collective.md) | 2025-05-20 | 456d | chappy@genaicollective.ai - historical, right at the sweep's floor |
 
 ## 📇 Old and unanswered - yours, low priority
 
@@ -154,6 +162,9 @@ continuous traffic confirmed it as a real, ongoing relationship. See
 | belle@tonileepr.com / mzucker@prophet.com | 2 threads, Jun-Jul | a PR/consulting cluster, one below the 3-thread bar so far |
 | kristinegan0822@gmail.com | 2 threads, 16 May | personal, not yet read in full |
 | bryan@recruitics.com | 1 discovery call, scheduled then updated, late Apr | single touch so far |
+| liza@recraft.ai | contract negotiation, Jun-Jul 2025 | stalled when Alex asked for a call, no resolution seen |
+| valeria@lowcode.agency | chased Alex 4 times, May-Jun 2025 | same one-way pattern as Hod/Guidde and sponsorscout.io |
+| Abhey Datta (AI CERTs) | Sam chased 3 times, May-Jun 2025 | no reply after Alex's first response |
 
 `nate@adastramedia.biz` promoted out of this section this sweep - see
 `stories/ad-astra-media.md`. `daniel@dbusta.com` moved to *Not a conversation*
@@ -204,33 +215,47 @@ sweep** - `daniel@netline.com`, found in a real Nov 2025 thread, not guessed.
 Honest accounting, not a claim of completeness.
 
 - **26 of 26** originally-registered labels read in full
-- **~450 unlabelled threads** read via participant clustering, covering
-  **5 November 2025 to today**. Alex asked for this to reach 1 January 2026;
-  it went further back and stopped at the edge of the Gmail search API's
-  365-day window for the `newer_than:365d` query this sweep used - there may
-  be relevant mail before 5 November 2025 that a differently-dated query
-  could still reach, but it was not attempted this pass
+- **~500 unlabelled threads** read via participant clustering, covering
+  **today back to the actual floor of the account's correspondence, ~April
+  2025**. Reached via two queries in sequence: `newer_than:365d` (today back
+  to 2025-08-19, the API's 365-day limit for that operator), then
+  `before:2025/08/20` with the same filters (2025-08-19 back to exhaustion -
+  no further page token was returned). The last hits before the floor are
+  literal test emails from 2025-03-19 and one stray automated SparkLoop
+  application from 2025-01-24; the account's real correspondence as "ChatGPT
+  Central" (the pre-rebrand name, changed to "AI Central Media" around
+  2025-10-20) effectively starts in April 2025. **There is no more unlabelled
+  mail left to discover before today** - this axis of the sweep is finished,
+  not paused
 - **11 threads** read via the commitment scanner, 90-day window (unchanged -
   not widened this pass)
-- **33 stories** now tracked with a file, up from 28 at the start of this
-  refresh: 5 new (`netline`, `ma-exploration`, `ad-astra-media`, `hod-guidde`,
-  `glide-andy`), 1 promoted from proposed (`studio-galdieri`), 6 more updated
-  with earlier history (`jorge`, `austin-jobstream`, `digital-boost`,
-  `wellput-adops`, `beehiiv-richard-evans`, plus the Daniel/Netline merge).
+- **34 stories** now tracked with a file, up from 28 at the start of this
+  refresh: 6 new (`netline`, `ma-exploration`, `ad-astra-media`, `hod-guidde`,
+  `glide-andy`, `genai-collective`), 1 promoted from proposed
+  (`studio-galdieri`), and updates to eight more with earlier or origin-point
+  history (`jorge`, `austin-jobstream`, `digital-boost`, `wellput-adops`,
+  `beehiiv-richard-evans`, `gta-whitepaper`, plus the Daniel/Netline merge).
   Treat any story not touched since seeding as provisionally accurate, not
   verified
 - Total inbox is far larger than what's covered here - SENT alone runs
   ~1,070 messages across ~497 threads, INBOX ~660 messages across ~246
   threads, before excluding the bulk feeds (beehiiv 1,762 threads,
-  GrowthLetter 409, receipts 198 - correctly out of scope throughout)
-- The hit rate dropped as the window widened, as expected: January-March
-  2026 carried five genuinely new stories (the M&A exploration cluster, Ad
-  Astra Media's contract negotiation, Hod/Guidde, Glide, Netline's Daniel)
-  plus real historical depth on six existing ones. November-December 2025 was
-  mostly customer-support refund/cancellation threads (out of this skill's
-  scope, belongs to `aic-customer-support`) and recurring subscribed
-  newsletters (see *Not a conversation*) - no new relationship stories found
-  in that stretch
-- **The January-1 target has been met and exceeded.** No open question
-  remains on this axis; a future refresh's open question is whether to push
-  past 5 November 2025 into 2025 proper, which was not attempted here
+  GrowthLetter 409, receipts 198 - correctly out of scope throughout). Most of
+  that gap is the labelled mail already read via the 26 labels, plus bulk
+  feeds correctly excluded - not unswept relationship mail
+- The hit rate dropped as the window widened, as expected, then leveled off
+  near the floor: January-March 2026 carried the richest new-story density
+  (M&A exploration, Ad Astra Media, Hod/Guidde, Glide, Netline's Daniel).
+  November 2025-January 2026 was mostly customer-support threads (out of this
+  skill's scope) and subscribed newsletters. April-August 2025, right at the
+  account's origin, produced one more real find (GenAI Collective) plus the
+  actual starting points of two already-tracked stories (GTA whitepaper,
+  Austin/Jobstream's growletter.co thread) - origin material more than new
+  relationships, which is the expected shape for a mailbox's earliest mail
+- **Both of Alex's asks are now satisfied**: the sweep reached 1 January 2026
+  (first ask) and then reached the literal beginning of the account's
+  correspondence (second ask, "up until the very beginning"). No open
+  question remains on how far back to go. The only remaining coverage gap is
+  breadth, not depth: mail that already carries a label but wasn't part of
+  the original 26, and non-Gmail channels (calls, Slack, LinkedIn) that
+  several stories above reference but this ledger can't see

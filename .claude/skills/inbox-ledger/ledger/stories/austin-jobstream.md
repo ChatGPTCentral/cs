@@ -30,3 +30,12 @@
   acquisition), not part of the Jobstream thread - Alex paused their campaign
   in May over subscriber quality; see `graph/relations.md` if that edge is
   added
+- **growletter.co runs a second, separate program - real engagement found,
+  further sweep.** `john.emerick@growletter.co` pitched a "Flagship Advisory,
+  Coaching, and Community" program, distinct from the New Media Summit
+  conference above (same parent company, different offering, different
+  contact). This was not cold outreach: a real call happened 2025-06-26
+  ("thank you for our call... action items"), after an invitation five days
+  earlier. Two more touches followed (Aug 2025) with no reply from Alex. Below
+  the bar for its own story file but worth knowing this one had real traction,
+  unlike most of growletter.co's other outreach
