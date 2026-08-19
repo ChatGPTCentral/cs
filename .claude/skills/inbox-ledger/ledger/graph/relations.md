@@ -21,3 +21,9 @@ and pretending otherwise in a draft would be obvious to Marc.
 The `asserted` row is the one to treat carefully. Alex knows things the mailbox
 does not, and an assertion is good enough to record - but it should not be
 repeated back to him later as though the agent found it.
+
+## Found by the 2026-08-19 sweep
+
+| A | B | Strength | Evidence |
+| --- | --- | --- | --- |
+| `ai-hackathon-bristol` | Becca Williams / Antidote Communications (not yet a story file) | **related** | Becca (`antidotecomms.com`) is cc'd on Richard Lowe's thread `19f948353d774397`, and separately corresponds with Alex directly across at least three more threads (30 July - 19 August). Likely PR support for the Bristol hackathon, but that is inferred from the cc, not confirmed - Becca's own thread may be a separate engagement entirely |

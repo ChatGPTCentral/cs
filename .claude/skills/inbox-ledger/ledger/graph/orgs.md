@@ -48,3 +48,13 @@ treated as a sales account.
 | Org | Domain | Note |
 | --- | --- | --- |
 | Netline | unknown | Aneeka and Daniel both belong to it. Neither address read yet |
+
+## Found by the 2026-08-19 sweep, unlabelled
+
+| Org | Domain | Note |
+| --- | --- | --- |
+| Wellput | `wellput.io` | ad ops, Elizabeth-run, Alex mostly bcc |
+| Studio Galdieri | `sirev.it` + personal Gmail | org signal from local-part text, not domain - see `discovery.md` |
+| Antidote Communications | `antidotecomms.com` | Becca Williams, PR. Cc'd on a Richard Lowe / Bristol thread - see `relations.md` |
+| Adastra Media | `adastramedia.biz` | Nate. Recurring, real dialogue, no label |
+| Sponsor Scout | `sponsorscout.io` | Alex writing repeatedly, no reply seen in any thread read |

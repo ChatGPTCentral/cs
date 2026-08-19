@@ -1,16 +1,20 @@
 # Jorge
-- query: `label:--👤-Jorge`
+- query: `label:--👤-Jorge` **plus an unlabelled thread the query misses**
 - label-id: `Label_7247179519478710266`
 - kind: person
-- people: Jorge (jorge@groou.xyz)
+- people: Jorge (jorge@groou.xyz), Elizabeth on cc in the recent thread
 - status: **theirs**
-- last-inbound: 2026-03-26 (jorge@groou.xyz)
-- last-outbound: 2026-03-26 (alex@thecentral.ai)
-- idle: 146 days
-- next-action: decide whether to revive or let it close. A five-month silence
-  after a rapid exchange is usually dead unless something changed
+- last-inbound: 2026-08-05 (jorge@groou.xyz) - **not March**
+- last-outbound: 2026-08-05 (alex@thecentral.ai)
+- idle: 14 days
+- next-action: none - ball is with Jorge, and recently
 - commitments: none recorded
-- threads: `19d2ab514c83a274` (live), 20 more unread
-- notes: 26 March was a real conversation - five messages inside an hour, Alex
-  writing last. 72 messages across 21 threads, so this was an active relationship
-  that stopped abruptly
+- threads: `19fccf36f95ad9c0` (live, **unlabelled**), `19d2ab514c83a274` (labelled, 21 more unread)
+- notes: **correction, 2026-08-19.** The prior version of this file read only the
+  labelled thread and reported 146 days idle. A participant-cluster sweep found
+  an unlabelled thread from 4-5 August: Jorge wrote to Alex and Elizabeth, Alex
+  replied the same day cc'ing Elizabeth, Jorge replied again. The relationship
+  never went cold - it just stopped using the label.
+  This is the reason discovery has to run on *every* refresh, not once: a story
+  can have both labelled and unlabelled threads at the same time, and reading
+  only the label undercounts recency, not just existence

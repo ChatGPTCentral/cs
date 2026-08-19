@@ -22,8 +22,18 @@ needed - the recipient lists alone give it away.
 
 Chosen, not derived. Tune them once there is enough evidence to.
 
-- **>= 3 external participants.** Two people across two threads is ordinary
-  correspondence, already covered by tracking the person
+- **>= 3 external participants** for a project cluster. Two people across two
+  threads is ordinarily just correspondence, already covered by tracking the
+  person - **except when it isn't.** The first real sweep (2026-08-19) found
+  Studio Galdieri: two people, `casucci.studiogaldieri@sirev.it` and
+  `valentina.studiogaldieri@gmail.com`, nine messages in three weeks, no label.
+  The participant count says "ordinary correspondence." The **local-part text**
+  says otherwise - both addresses carry the same firm fragment, on two different
+  domains, one of them personal Gmail. That is a second signal, independent of
+  participant count: **shared distinctive text in the local-part, across
+  different domains, co-occurring in time** proposes a story even at two
+  participants. Do not apply the 3-participant floor mechanically where this
+  signal fires
 - **>= 2 threads.** One thread is a thread
 - **>= 60% overlap** between participant sets to count as the same cluster.
   People join and leave a project; requiring an exact match splits one story into
@@ -59,6 +69,21 @@ graph, and propose story-to-story edges from shared participants.
 Optionally create a matching Gmail label so the story exists in Alex's inbox too.
 That is a structural change to his mail - **ask every time**, and follow the
 hyphen rule in `stories.md` when querying it afterwards.
+
+## Recurring single correspondents
+
+A different shape from a project cluster: one person, no cc, writing more than
+once, with no label. The 3-participant rule does not apply - and does not need
+to, since there is no clustering ambiguity with one person. The question is
+simpler: **has Alex actually answered them.**
+
+Found in the first sweep: `daniel@dbusta.com` wrote three times (22 July, 12,
+13 and 18 August) with no reply from Alex visible in any thread. That is not
+necessarily a story worth a file - it may be a solicitation Alex is right to
+ignore - but a stranger reading the ledger should be able to see the pattern:
+same address, repeated, unanswered. Log it as a candidate line in the sweep
+report rather than manufacturing a story file. Alex decides whether it is
+signal or noise; the ledger's job is to stop it being invisible.
 
 ## What not to do
 

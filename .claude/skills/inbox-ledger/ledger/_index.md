@@ -10,6 +10,15 @@ see *Not yet populated* at the bottom.
 The two unlabelled stories are the freshest things on this board. A ledger built
 only from labels would never have seen either.
 
+**Correction, same day.** A full participant-cluster sweep (100 threads,
+mid-June to now) found that the Jorge entry above was wrong: it read only the
+labelled thread and reported 146 days idle, missing an unlabelled thread from
+4-5 August where Jorge, Alex and Elizabeth exchanged three messages same-day.
+Jorge was never dormant. Fixed below. This is the argument for running
+discovery on every refresh, not once - a story can hold both labelled and
+unlabelled threads at the same time, and reading only the label undercounts
+recency, not just existence.
+
 ## 🔴 Your move
 
 The last word was theirs and nobody replied.
@@ -29,7 +38,7 @@ nudge or a decision to let them die.
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
 | [GTA whitepaper](stories/gta-whitepaper.md) 🆕 | 2026-08-17 | 2d | marcduke@dukeconnect.co.uk |
-| [Jorge](stories/jorge.md) | 2026-03-26 | **146d** | jorge@groou.xyz |
+| [Jorge](stories/jorge.md) | 2026-08-05 | 14d | jorge@groou.xyz |
 | [Sunny >> Deals](stories/sunny-deals.md) | 2026-04-02 | **139d** | mike.mcconnon@perplexity.ai |
 | [Mark (Marwan)](stories/mark-marwan.md) | 2026-07-29 | 21d | mark@theaicentral.net |
 | [interviews](stories/interviews.md) | 2026-08-14 | 5d | elettra.fiumi@gmail.com |
@@ -77,6 +86,28 @@ One is already known and overdue:
 | Promise | To | Made | Age | Status |
 | --- | --- | --- | --- | --- |
 | "I'll go back to them and ask what happened to your details. I'll let you know what they say" | Sue Sutcliffe | 2026-08-07 | **12d** | **open** - Superhuman AI never contacted |
+
+## 🆕 Proposed - not yet confirmed by Alex
+
+Found by the full sweep. Meet the discovery bar; names and priority are his call.
+
+| Story | People | Threads | Idle |
+| --- | --- | --- | --- |
+| [wellput.io ad ops](stories/wellput-adops.md) | adops@wellput.io + 3 recurring cc | 5 | 14d (Elizabeth-run, Alex mostly bcc) |
+| [Studio Galdieri](stories/studio-galdieri.md) | casucci + valentina @studiogaldieri | 6 | 13d |
+
+## 🔍 Below the story threshold - flagged, not filed
+
+No silent drops. These did not meet the bar for a full story file but should not
+disappear either.
+
+| Who | Pattern | Worth knowing |
+| --- | --- | --- |
+| daniel@dbusta.com | wrote 22 Jul, 12 Aug, 13 Aug, 18 Aug | **no reply found in any thread.** Either a solicitation rightly ignored, or four attempts nobody noticed |
+| nate@adastramedia.biz | 3 threads, 9 Jul - 29 Jul | real two-way dialogue, worth a look |
+| sponsorscout.io | Alex wrote 7, 13, 17 Aug | no reply seen. Alex chasing them, not the reverse |
+| support@passionfroot.me | 3 unlabelled threads, 14 Jul - 13 Aug | the `👤 Hugo // Passionfroot` label has only 1 thread - possibly the same relationship split across a label and not |
+| indianae@canneslions.com | 4 messages, 7-10 Aug | a **second** Cannes-related contact, distinct from `Cannes 2026 Follow-up` (Sarah, wavelength.now) |
 
 ## 🕸️ Graph
 
