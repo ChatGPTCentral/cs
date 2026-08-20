@@ -1,6 +1,6 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { addPerson } from "./actions";
-import { toggleStar } from "./[id]/actions";
+import { toggleStar, toggleArchive, updateBackground } from "./[id]/actions";
 
 export const dynamic = "force-dynamic";
 
@@ -53,8 +53,8 @@ export default async function PeoplePage({ searchParams }) {
         </div>
         {people.length === 0 && <p>{showArchived ? "Nobody archived." : "Nobody added yet."}</p>}
         {people.map((p) => (
-          <div key={p.id} className="entry" style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-            <form action={toggleStar}>
+          <div key={p.id} className="entry" style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+            <form action={toggleStar} style={{ marginTop: 2 }}>
               <input type="hidden" name="id" value={p.id} />
               <input type="hidden" name="starred" value={String(!!p.starred)} />
               <button
@@ -72,14 +72,38 @@ export default async function PeoplePage({ searchParams }) {
                 {p.starred ? "★" : "☆"}
               </button>
             </form>
-            <div>
-              <a href={`/people/${p.id}`}>
-                <strong>{p.name}</strong>
-              </a>
-              {p.org ? ` — ${p.org}` : ""}
+            <div style={{ flex: 1 }}>
+              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 8 }}>
+                <div>
+                  <a href={`/people/${p.id}`}>
+                    <strong>{p.name}</strong>
+                  </a>
+                  {p.org ? ` — ${p.org}` : ""}
+                </div>
+                <form action={toggleArchive}>
+                  <input type="hidden" name="id" value={p.id} />
+                  <input type="hidden" name="archived" value={String(!!p.archived)} />
+                  <button type="submit" style={{ fontSize: 12 }}>
+                    {p.archived ? "Unarchive" : "Archive"}
+                  </button>
+                </form>
+              </div>
               {p.identity && <div className="entry-meta">{p.identity}</div>}
               {p.stories && <div className="entry-meta">{p.stories}</div>}
-              {p.background && <p>{p.background}</p>}
+              <form action={updateBackground} className="crm-form" style={{ marginTop: 6 }}>
+                <input type="hidden" name="id" value={p.id} />
+                <span className="field-label">Background</span>
+                <textarea
+                  name="background"
+                  placeholder="Background - where you met them, who introduced them, what they actually do"
+                  defaultValue={p.background || ""}
+                  rows={2}
+                  style={{ fontSize: 13.5 }}
+                />
+                <button type="submit" style={{ fontSize: 12 }}>
+                  Save background
+                </button>
+              </form>
             </div>
           </div>
         ))}

@@ -20,6 +20,19 @@ export async function updatePerson(formData) {
   revalidatePath("/people");
 }
 
+export async function updateBackground(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_people", `?id=eq.${id}`, {
+    background: (formData.get("background") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath(`/people/${id}`);
+  revalidatePath("/people");
+}
+
 export async function toggleStar(formData) {
   const id = (formData.get("id") || "").toString();
   if (!id) return;
