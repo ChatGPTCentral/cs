@@ -33,10 +33,15 @@ confirmed.
 `deploy_to_vercel`, with the full file tree and `projectSettings: {framework:
 "nextjs"}` set explicitly. This forces a real build.
 
-**Until this failure mode is understood, treat git-triggered deploys as
-unreliable.** After every push, check the live site. If it 404s, redeploy
-manually with `deploy_to_vercel`. A second push already showed the same
-false-success pattern once.
+**Likely root cause, found 2026-08-20**: the project's Root Directory
+setting was not set to `platform`. A git-triggered build then looked in
+the repo root, found no `package.json` there (the real one lives in
+`platform/`), and produced an empty or stale deployment instead of an
+error. Manual deploys never hit this, since they scope the file tree to
+`platform/` directly. Alex set Root Directory to `platform` in Settings ->
+Build and Deployment on 2026-08-20. Verify this actually fixed it with the
+next few pushes before trusting git-triggered deploys again - see the
+commit log for whether this section was later marked resolved.
 
 ## Local development
 
