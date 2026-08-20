@@ -1,5 +1,6 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { addPerson } from "./actions";
+import { toggleStar } from "./[id]/actions";
 
 export const dynamic = "force-dynamic";
 
@@ -52,17 +53,34 @@ export default async function PeoplePage({ searchParams }) {
         </div>
         {people.length === 0 && <p>{showArchived ? "Nobody archived." : "Nobody added yet."}</p>}
         {people.map((p) => (
-          <div key={p.id} className="entry">
-            <a href={`/people/${p.id}`}>
-              <strong>
-                {p.starred ? "★ " : ""}
-                {p.name}
-              </strong>
-            </a>
-            {p.org ? ` — ${p.org}` : ""}
-            {p.identity && <div className="entry-meta">{p.identity}</div>}
-            {p.stories && <div className="entry-meta">{p.stories}</div>}
-            {p.background && <p>{p.background}</p>}
+          <div key={p.id} className="entry" style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+            <form action={toggleStar}>
+              <input type="hidden" name="id" value={p.id} />
+              <input type="hidden" name="starred" value={String(!!p.starred)} />
+              <button
+                type="submit"
+                title={p.starred ? "Unstar" : "Star"}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  fontSize: 16,
+                  padding: 0,
+                  color: p.starred ? "var(--accent)" : "var(--ink-faint)",
+                }}
+              >
+                {p.starred ? "★" : "☆"}
+              </button>
+            </form>
+            <div>
+              <a href={`/people/${p.id}`}>
+                <strong>{p.name}</strong>
+              </a>
+              {p.org ? ` — ${p.org}` : ""}
+              {p.identity && <div className="entry-meta">{p.identity}</div>}
+              {p.stories && <div className="entry-meta">{p.stories}</div>}
+              {p.background && <p>{p.background}</p>}
+            </div>
           </div>
         ))}
       </div>

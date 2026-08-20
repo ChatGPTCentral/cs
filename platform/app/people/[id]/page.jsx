@@ -46,9 +46,22 @@ export default async function PersonPage({ params }) {
             </form>
           </div>
         </div>
-        {person.org && <p style={{ color: "var(--ink-dim)", margin: "0 0 12px" }}>{person.org}</p>}
-        {person.identity && <p className="entry-meta">{person.identity}</p>}
-        {person.stories && <p className="entry-meta">Stories: {person.stories}</p>}
+        {person.org && (
+          <p style={{ color: "var(--ink-dim)", margin: "0 0 12px" }}>
+            <span className="field-label">Org</span> {person.org}
+          </p>
+        )}
+        {person.identity && (
+          <p className="entry-meta">
+            <span className="field-label">Identity</span> {person.identity}
+          </p>
+        )}
+        {person.stories && (
+          <p className="entry-meta">
+            <span className="field-label">Stories</span> {person.stories}
+          </p>
+        )}
+        <p className="field-label" style={{ marginTop: 12 }}>Background</p>
         {person.background ? (
           <p>{person.background}</p>
         ) : (
@@ -57,16 +70,24 @@ export default async function PersonPage({ params }) {
       </article>
 
       <form action={updatePerson} className="crm-form content" style={{ marginBottom: 20 }}>
+        <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>Edit record</h2>
         <input type="hidden" name="id" value={person.id} />
-        <input name="name" placeholder="Name" defaultValue={person.name || ""} required />
-        <input name="identity" placeholder="Email or identity" defaultValue={person.identity || ""} />
-        <input name="org" placeholder="Org" defaultValue={person.org || ""} />
+        <label className="field-label" htmlFor="f-name">Name</label>
+        <input id="f-name" name="name" placeholder="Name" defaultValue={person.name || ""} required />
+        <label className="field-label" htmlFor="f-identity">Email or identity</label>
+        <input id="f-identity" name="identity" placeholder="Email or identity" defaultValue={person.identity || ""} />
+        <label className="field-label" htmlFor="f-org">Org</label>
+        <input id="f-org" name="org" placeholder="Org" defaultValue={person.org || ""} />
+        <label className="field-label" htmlFor="f-stories">Story slugs</label>
         <input
+          id="f-stories"
           name="stories"
           placeholder="Story slugs this relates to, comma separated"
           defaultValue={person.stories || ""}
         />
+        <label className="field-label" htmlFor="f-background">Background</label>
         <textarea
+          id="f-background"
           name="background"
           placeholder="Add or update background - only what you actually know"
           defaultValue={person.background || ""}
