@@ -168,9 +168,17 @@ existing Valeria / precisionlabs.ai row, not a new row). Updated in place,
 not duplicated. Roster is now **197 people**.
 
 Both quarterly windows are now confirmed fully read for 2025-08 through
-2026-08. A next pass, if wanted, would need to go earlier than Jan 2025 or
-re-check a narrower slice (e.g. `cc:` fields, which metadata search does
-not filter on directly) - not run, no known gap prompts it yet.
+2026-08.
+
+**Checked: is there mail before Jan 2025?** Alex asked directly to go back
+to the start of the mailbox. Checked with three separate `before:` queries -
+the real, dated results start 23 Jan 2025 (SparkLoop onboarding mail to
+`admin@theaicentral.net`). Nothing earlier resolved to an actual message in
+any of the three checks; Gmail's `resultCountEstimate` returned a stray "1"
+with no thread behind it, most likely an estimate-API rounding artifact, not
+a real email. **The account's real history starts 23 Jan 2025** - both
+mining passes above already cover its entire span, start to now. There is
+no earlier mailbox history left to mine.
 
 ## Eventual goal: a network visualization
 

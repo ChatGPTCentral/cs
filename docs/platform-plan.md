@@ -153,9 +153,15 @@ and `in:inbox` both - inbox had never been checked and had a real gap too).
 Found 72 more people, resolved names for 4 records already in the roster
 instead of duplicating them, and merged one person's second email address
 into their existing row. **Roster is now 197 people.** Both quarterly
-windows are confirmed fully read for Aug 2025 - Aug 2026; going earlier
-than Jan 2025 is the next real gap, not yet run since nothing has flagged
-it as needed.
+windows are confirmed fully read for Aug 2025 - Aug 2026.
+
+Alex then asked to go back to the actual start of the mailbox and close
+this out for good. Checked directly: the account's real history starts
+**23 Jan 2025** (first real dated mail is SparkLoop onboarding to
+`admin@theaicentral.net`); nothing checked earlier resolved to an actual
+message. **Both passes above already cover the account's entire real
+history, start to now.** There is no earlier mailbox history left to mine -
+this is done.
 
 **Story log on the person page, same day.** Alex opened Andy's page and
 asked why the story or interaction log with him wasn't on it - the page
