@@ -78,7 +78,12 @@ function slugify_title(title) {
 // (waiting-on-them, proposed, below-threshold, anomalies, graph, coverage...)
 // is reference material, not a daily action list. Matched by substring so
 // small wording tweaks in the ledger don't silently drop a section.
-const TODAY_SECTION_MATCHERS = ["drafted", "your move", "open commitments"];
+const TODAY_SECTION_MATCHERS = [
+  "drafted",
+  "your move",
+  "open commitments",
+  "feedback",
+];
 
 export function getTodaySections() {
   const { sections } = getIndexSections();

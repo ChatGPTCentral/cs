@@ -24,6 +24,16 @@ export default function RootLayout({ children }) {
           <footer className="snapshot-note">
             Generated from the ledger&apos;s git-tracked markdown. Does not read Gmail live -
             refresh via <code>/ledger</code> in Claude Code, then redeploy.
+            <br />
+            Bug, correction, or something to add?{" "}
+            <a
+              href="https://www.notion.so/3fb46159954c470aaa774c3820e64f64"
+              target="_blank"
+              rel="noopener"
+            >
+              Drop a note in Ledger Feedback &rarr;
+            </a>{" "}
+            it&apos;s read and actioned on the next refresh.
           </footer>
         </div>
       </body>

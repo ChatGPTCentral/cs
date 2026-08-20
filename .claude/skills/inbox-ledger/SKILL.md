@@ -128,11 +128,20 @@ has no `from` parameter and inherits the account default, currently
 `kris@thecentral.ai` - so **any draft that should come from Alex must say so in
 the report** so he can switch the sender before sending.
 
+## The feedback loop
+
+The platform (`platform/`, deployed to Vercel) links to a Notion database,
+**💬 Ledger Feedback**, where Alex writes free-text notes - bugs,
+corrections, things to add. Read it every `/ledger` run, same as
+commitments. Procedure, database ID and the write-back rule are in
+`references/feedback.md`.
+
 ## References
 
 - `references/model.md` - the graph: identities, people, orgs, stories, edges
 - `references/discovery.md` - finding stories nobody labelled
 - `references/commitments.md` - the promise scanner, its search, and its false-positive trap
 - `references/stories.md` - the registry, verified queries, whose-move rules
+- `references/feedback.md` - the Notion feedback loop: database, procedure, write-back rule
 - `../aic-customer-support/references/inbox.md` - Gmail mechanics, signature,
   threading, the quoting trade-off

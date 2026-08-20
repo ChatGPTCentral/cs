@@ -35,11 +35,21 @@ the exact workflow.
   flagged the original all-13-sections dump as hard to use day to day. The
   full board lives at `/board`, all stories at `/stories`
 
-**(1) Live feedback, first pass** - superseded by moving off Artifacts (the
-original answer was Artifact comments, which no longer apply). No on-page
-feedback box exists yet. Current best answer: reuse the Notion connection
-below rather than build separate infrastructure - not yet done, see Open
-below.
+**(1) Live feedback** - not on the page itself; the platform is static with
+no backend, and there's no way to hold a Vercel env secret with the access
+this session has, so a custom write-capable box was never viable. Built as
+a Notion database instead - **💬 Ledger Feedback**
+(`collection://edbb1fdd-22f8-4e65-a067-d719ee53e0a7`,
+`https://www.notion.so/3fb46159954c470aaa774c3820e64f64`), linked from the
+platform footer ("Drop a note in Ledger Feedback"). Properties: Note
+(title), Status (New / Seen / Actioned), Reply (Claude writes back what it
+did), Context (optional link to a `/story` page). Read every `/ledger` run
+per `references/feedback.md` in the skill - acted on where possible, written
+back with Status + Reply either way, surfaced in the Today view (a
+"Feedback" section now counts toward the homepage same as drafted / your
+move / open commitments). Decided against folding it into the Task Board -
+feedback about the platform isn't a sales task, and mixing the two would
+make both harder to scan.
 
 **(5) Notion Task Board integration** - `⏩ Task Board`
 (`collection://29e656dd-7b67-80ef-b981-000b928858a9`) now receives proposed
@@ -63,12 +73,6 @@ relationship enrichment once connected; sponsor *discovery* (finding new
 prospects, not enriching known ones) still needs its own design pass once
 the tool surface is actually visible. Nothing to build until authorized.
 
-**(1) A real feedback mechanism** - the Notion connection is the likely
-path (a "Feedback" or similar view Alex writes into, that gets read back on
-the next `/ledger` or `/support-sweep` run) but this hasn't been scoped or
-built. Open question: does it live in the same Task Board database as a
-Bucket, or a separate small database.
-
 **(6) CRM layer - person background and offline colour** - proposed
 convention: a `## Background (Alex-provided)` section in each story's
 markdown, populated only from what Alex actually states (never inferred -
@@ -85,10 +89,8 @@ and ordering, the ledger owns what happened in the correspondence.
 
 ## Recommended next steps, in order
 
-1. Scope and build the feedback mechanism (1) - smallest remaining piece,
-   unblocks daily use without waiting on anything external
-2. Get Alex to authorize Breakcold and Appeared.in, then inspect
+1. Get Alex to authorize Breakcold and Appeared.in, then inspect
    `capabilities_list` / `crm_objects_list` before designing anything further
-3. Build the `Background` convention (6) once Alex supplies a first example
-4. Automate the Task Board proposal step so it runs as part of every
+2. Build the `Background` convention (6) once Alex supplies a first example
+3. Automate the Task Board proposal step so it runs as part of every
    `/ledger` refresh instead of being triggered by hand
