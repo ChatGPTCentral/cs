@@ -47,6 +47,26 @@ Recorded because they anchor stories, not because they are ambiguous.
 Alex refers to Tsvetelin as "tsvelin" in conversation. Recorded here so a future
 search for his spelling still resolves.
 
+## Background (Alex-provided)
+
+Context Alex gives directly about a person - offline history, connections,
+what they actually do. Recorded only from what Alex states, never inferred
+from the mailbox. Dated, and kept separate from mailbox-found evidence so the
+two sources never blur together. Procedure in `references/background.md`.
+
+### Richard Lowe
+- background (Alex, 2026-08-20): met at London Tech Week. A friend of Russ
+  Shaw. Part of West England Tech Advocates. Runs an education company. Also
+  does work like the DBT does, but on his own account - Alex's own shorthand,
+  not expanded here since he did not define the acronym
+- this confirms two things already in the ledger, rather than adding a
+  surprise: `graph/orgs.md` already lists TechWest England Advocates
+  (`techwestenglandadvocates.co.uk`) as the org Richard emails from, and
+  `graph/relations.md` already marks a `strong` edge between `gta-whitepaper`
+  and `ai-hackathon-bristol` through the same Russ Shaw / advocacy network
+- new facts, not previously in the ledger: the education company, and the
+  DBT-like independent work
+
 ## Resolved this sweep
 
 ### Aneeka and Daniel (Netline)

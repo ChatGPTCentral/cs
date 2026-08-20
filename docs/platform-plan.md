@@ -63,6 +63,28 @@ added to the data source schema to match (existing options and colors
 preserved). This is meant to repeat on every `/ledger` refresh, not a
 one-off - not yet automated.
 
+**(6) CRM layer - person background and offline colour** - convention set
+and tested against a first real entry. A `## Background (Alex-provided)`
+section holds what Alex states directly - never inferred, same rule as
+everything else in this system. It goes in the story file for a person tied
+to one story, or in `graph/people.md` for a person who spans several
+(most people who recur - Richard Lowe is the first case: `ai-hackathon-
+bristol`, `interviews`, related to `gta-whitepaper`). Full procedure and
+format in `references/background.md`.
+
+First entry: Richard Lowe (`graph/people.md`, 2026-08-20) - met at London
+Tech Week, a friend of Russ Shaw, part of West England Tech Advocates, runs
+an education company, does DBT-like work independently. The org and Russ
+Shaw connection **confirmed** what the mailbox had already found
+(`TechWest England Advocates` in `graph/orgs.md`, the `strong` edge in
+`graph/relations.md`); the education company and independent work are new.
+Alex's stated reason for this layer: it surfaces connections between
+stories the ledger cannot see on its own, and feeds an eventual **network
+visualization** of his relationships - not built, the graph files
+(`graph/people.md`, `graph/orgs.md`, `graph/relations.md`) are the data
+source once that's scoped. Not on the platform yet - the app doesn't render
+`graph/` files today, only `_index.md` and story pages.
+
 ## Open
 
 **(2) Breakcold + Appeared.in sponsor discovery** - still blocked on
@@ -73,12 +95,10 @@ relationship enrichment once connected; sponsor *discovery* (finding new
 prospects, not enriching known ones) still needs its own design pass once
 the tool surface is actually visible. Nothing to build until authorized.
 
-**(6) CRM layer - person background and offline colour** - proposed
-convention: a `## Background (Alex-provided)` section in each story's
-markdown, populated only from what Alex actually states (never inferred -
-same rule as everything else in this system: no invented facts). Not built.
-Waiting on Alex to supply a first real example to build and test the
-convention against.
+**Network visualization** - Alex's stated eventual goal for the CRM layer
+above. Not scoped: no decision yet on where it lives (the platform app vs.
+a separate tool) or what it should look like. The data it would draw on
+already exists (`graph/*.md`); do not start building until Alex scopes it.
 
 **Data ownership** - the ledger markdown (git) is the source of truth for
 correspondence stories; the Task Board (Notion) is the source of truth for
@@ -91,6 +111,12 @@ and ordering, the ledger owns what happened in the correspondence.
 
 1. Get Alex to authorize Breakcold and Appeared.in, then inspect
    `capabilities_list` / `crm_objects_list` before designing anything further
-2. Build the `Background` convention (6) once Alex supplies a first example
-3. Automate the Task Board proposal step so it runs as part of every
+2. Collect more Background entries (6) as Alex supplies them - the
+   convention is proven, this is now a running task, not a one-off build
+3. Decide whether the platform should render `graph/people.md` (a `/people`
+   or `/person/<slug>` page), so Background is visible somewhere other than
+   the raw markdown
+4. Automate the Task Board proposal step so it runs as part of every
    `/ledger` refresh instead of being triggered by hand
+5. Scope the network visualization once enough Background entries exist to
+   make one worth building

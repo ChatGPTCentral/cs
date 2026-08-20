@@ -136,6 +136,14 @@ corrections, things to add. Read it every `/ledger` run, same as
 commitments. Procedure, database ID and the write-back rule are in
 `references/feedback.md`.
 
+## Background - the CRM layer
+
+Alex can add context the mailbox does not carry: where he met someone, who
+introduced them, what they actually do. Recorded only from what he states,
+never inferred. Goes in the story file for a person tied to one story, or in
+`graph/people.md` for a person who spans several. Full procedure, format,
+and the eventual network-visualization goal are in `references/background.md`.
+
 ## References
 
 - `references/model.md` - the graph: identities, people, orgs, stories, edges
@@ -143,5 +151,6 @@ commitments. Procedure, database ID and the write-back rule are in
 - `references/commitments.md` - the promise scanner, its search, and its false-positive trap
 - `references/stories.md` - the registry, verified queries, whose-move rules
 - `references/feedback.md` - the Notion feedback loop: database, procedure, write-back rule
+- `references/background.md` - the CRM layer: Alex-provided context, format, the network-viz goal
 - `../aic-customer-support/references/inbox.md` - Gmail mechanics, signature,
   threading, the quoting trade-off
