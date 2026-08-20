@@ -2,11 +2,12 @@ import fs from "fs";
 import path from "path";
 import { marked } from "marked";
 
-const REPO_ROOT = path.join(process.cwd(), "..");
-const LEDGER_ROOT = path.join(
-  REPO_ROOT,
-  ".claude/skills/inbox-ledger/ledger"
-);
+// A checked-in copy of the ledger's markdown, kept in sync with
+// .claude/skills/inbox-ledger/ledger by scripts/sync-ledger.mjs. Copied
+// rather than read from the repo root so this app is self-contained -
+// it deploys the same way whether Vercel checks out the whole monorepo
+// or just this directory.
+const LEDGER_ROOT = path.join(process.cwd(), "data/ledger");
 const STORIES_DIR = path.join(LEDGER_ROOT, "stories");
 
 function linkifyThreadIds(html) {

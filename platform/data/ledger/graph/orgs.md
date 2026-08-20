@@ -1,0 +1,64 @@
+# Orgs
+
+Domain -> org, where the domain is corporate. Free and ISP domains are excluded
+per `references/model.md`.
+
+## The advocacy network
+
+The reason `gta-whitepaper` and `ai-hackathon-bristol` are related rather than
+coincidental.
+
+| Org | Domain | Note |
+| --- | --- | --- |
+| Global Tech Advocates | `globaltechadvocates.com` | Russ Shaw. The network |
+| TechWest England Advocates | `techwestenglandadvocates.co.uk` | regional chapter. Richard Lowe writes to `contact@` |
+| Tech London Advocates | unverified | Alex references "TLA New York". **No thread found** - see `relations.md` |
+
+## GTA whitepaper participants
+
+| Org | Domain |
+| --- | --- |
+| Duke Connect | `dukeconnect.co.uk` |
+| ThinkRevOps | `thinkrevops.com` |
+| Vajra Global | `vajraglobal.com` |
+| Future of Work | `futureofwork.uk` |
+| Propelling Tech | `propellingtech.com` |
+| Seven Hills | `wearesevenhills.com` |
+
+## Bristol hackathon participants
+
+| Org | Domain |
+| --- | --- |
+| Hewlett Rand | `hewlettrand.com` |
+| University of Bristol | `bristol.ac.uk` |
+| UWE Bristol | `uwe.ac.uk` |
+| NCC | `nccuk.com` |
+| Ingenium AI | `ingeniumai.com` |
+| Root Cause | `rootcause.ai` |
+| Capsule Cover | `capsulecover.com` |
+| SVV | `svv.ai` |
+| Hiscox | `hiscox.com` |
+
+Academic domains resolve to an institution, but the person is usually faculty
+rather than staff in the commercial sense. Fine for grouping, misleading if
+treated as a sales account.
+
+## Resolved this sweep
+
+| Org | Domain | Note |
+| --- | --- | --- |
+| Netline | `netline.com` | Aneeka and Daniel both work here. See `stories/netline.md` |
+
+## Found by the 2026-08-19 sweep, unlabelled
+
+| Org | Domain | Note |
+| --- | --- | --- |
+| Wellput | `wellput.io` | ad ops, Elizabeth-run, Alex mostly bcc |
+| Studio Galdieri | `sirev.it` + personal Gmail | Alex's Italian accountant. Org signal from local-part text, not domain - see `discovery.md` |
+| Antidote Communications | `antidotecomms.com` | Becca Williams, PR. Cc'd on a Richard Lowe / Bristol thread - see `relations.md` |
+| Adastra Media | `adastramedia.biz` | Ian Barto + Nate. Publisher agreement negotiation, no label - see `stories/ad-astra-media.md` |
+| Sponsor Scout | `sponsorscout.io` | Alex writing repeatedly, no reply seen in any thread read |
+| Guidde | `guidde.co` | Hod, Yoav. Chased repeatedly by Sam and Alex, no reply seen - see `stories/hod-guidde.md` |
+| Glide | `heyglide.com` | Andy. Declined then revived, see `stories/glide-andy.md` |
+| Meco | `meco.app` | Sean McCarney. Subscriber-acquisition vendor, met in Austin |
+| M&A advisory (3 firms) | `anny.biz`, `quietlight.com`, `justwebsitebrokerage.com` | all introduced by `theygotacquired.com` - see `stories/ma-exploration.md` |
