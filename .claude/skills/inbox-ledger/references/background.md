@@ -24,7 +24,14 @@ entry appear.
 `identity` (email/handle), `org`, `stories` (comma-separated slugs),
 `background` (free text - the actual content), `created_at`. RLS: the anon
 key (embedded in `platform/lib/supabase.js`, safe - it is publishable, not
-secret) can `select` and `insert` only.
+secret) can `select`, `insert` and `update` - Alex edits a person's own
+`background` directly on their `/people/<id>` page.
+
+Each person also has a detail page (`app/people/[id]/page.jsx`) showing
+their full record plus **Connections** - other people who share an `org` or
+a `stories` slug, computed live from the table (`lib/people.js`), not a
+separate relations table. First slice of the network-visualization goal
+below, not the whole thing.
 
 ## Two different things: the CRM view, and the ledger copy
 
@@ -95,6 +102,24 @@ If unsure which a person is, check `graph/relations.md` and the story files'
   `graph/relations.md`, or elsewhere in `graph/people.md`, say whether it
   confirms or contradicts what is already there. A confirmation is worth
   recording too - it raises confidence in a mailbox-only finding
+
+## Roster completeness
+
+The roster started (2026-08-20) as everyone with a `kind: person` entry
+clearly named in a tracked story, plus the `_index.md` "below threshold"
+list - 52 people. Alex flagged this as incomplete: he has corresponded with
+far more people since ~April 2025 than the 34 tracked stories capture, since
+a story only gets created for an *ongoing* relationship, not a single
+real exchange.
+
+Closing that gap needs a broader mailbox pass - every distinct external
+human correspondent, not just story-worthy ones - which is a different,
+wider bar than `references/discovery.md`'s story-clustering threshold. Same
+hard rule applies at the wider bar: a name goes in only when it is stated
+somewhere (a header display name, prose in a thread) or unambiguously
+readable from a `firstname.lastname@` address - never guessed from a bare
+handle. Report coverage honestly (what date range and thread volume was
+actually checked) rather than implying a complete sweep that didn't happen.
 
 ## Eventual goal: a network visualization
 

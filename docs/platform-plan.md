@@ -93,9 +93,11 @@ real this time:
   checking its RLS policies first (see "Security note" below)
 - **Tables**: `public.ledger_people` (name, identity, org, stories,
   background) and `public.ledger_feedback` (note, status, reply, context).
-  RLS: the anon/publishable key can `select` and `insert` only - no
-  `update`/`delete`, so status changes and replies stay something only
-  Claude's own Supabase session can do
+  RLS: `ledger_people` allows `select`/`insert`/`update` for the
+  anon/publishable key - Alex edits his own CRM entries directly.
+  `ledger_feedback` allows `select`/`insert` only - status changes and
+  replies stay something only Claude's own Supabase session can do. No
+  `delete` anywhere from this key
 - **`platform/lib/supabase.js`**: talks to Supabase's REST API (PostgREST)
   over plain `fetch`, no SDK dependency - keeps the lockfile out of it
   entirely, given the deploy-pipeline history above
@@ -119,6 +121,25 @@ fine - all gated by `is_owner()`. Two real, minor issues were found and
 fixed: `country_aliases` had RLS disabled entirely, and `manual_ledger` had
 an unrestricted public `select`. Both now require `is_member()`, matching
 their sibling tables.
+
+**Person detail pages and a first connections view, added 2026-08-20.**
+Alex: "why doesn't each person have their own page" and "let's build a
+relational tree between these people." Each person now has
+`/people/<id>` - full record, plus **Connections**: other people sharing
+the same `org` or a `stories` slug, computed live from the table
+(`platform/lib/people.js`), no separate relations table yet. This is a
+cheap first slice of the network-visualization goal below, not the full
+thing - no graph layout, no visual edges, just a list. Alex can also edit a
+person's `background` right on their page now (RLS extended to allow
+`update`, not just `insert`).
+
+**Roster completeness, same day.** The initial 52-person roster came from
+tracked stories plus the `_index.md` below-threshold list - Alex flagged it
+as far short of everyone he's actually corresponded with since ~April 2025.
+A broader mailbox mining pass (wider bar than story-worthiness - any real
+distinct correspondent, not just ongoing relationships) was launched to
+close that gap. Same "never guess a name" discipline applies at the wider
+bar. Check the ledger's git log / this doc's next update for what it found.
 
 ## Open
 

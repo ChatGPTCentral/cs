@@ -3,9 +3,11 @@
 // platform/README.md's "Fixed" section for that history).
 //
 // The key below is Supabase's publishable key, meant to be embedded in
-// client code - it is not a secret. Access control is Row Level Security on
-// the ledger_people / ledger_feedback tables (select + insert only, no
-// update or delete), plus the fact that the whole site sits behind Vercel
+// client code - it is not a secret. Access control is Row Level Security:
+// ledger_people allows select/insert/update (Alex edits his own CRM
+// directly); ledger_feedback allows select/insert only (status and reply
+// are Claude's job, via its own Supabase session, not a public edit). No
+// delete anywhere from this key. The whole site also sits behind Vercel
 // Authentication already. See the "AI Central // Admin" Supabase project.
 const SUPABASE_URL = "https://hvzmgpdfznjdxnruiqmy.supabase.co";
 const SUPABASE_KEY = "sb_publishable_2F9MJfYcRGJ8PWNBS2yslQ_ojzCcDvB";
@@ -38,6 +40,19 @@ export async function supabaseInsert(table, row) {
   });
   if (!res.ok) {
     throw new Error(`Supabase insert failed on ${table}: ${res.status} ${await res.text()}`);
+  }
+  return res.json();
+}
+
+export async function supabaseUpdate(table, query, patch) {
+  const res = await fetch(`${REST_URL}/${table}${query}`, {
+    method: "PATCH",
+    headers: { ...HEADERS, Prefer: "return=representation" },
+    body: JSON.stringify(patch),
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error(`Supabase update failed on ${table}: ${res.status} ${await res.text()}`);
   }
   return res.json();
 }

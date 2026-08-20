@@ -34,7 +34,9 @@ export default async function PeoplePage() {
         {people.length === 0 && <p>Nobody added yet.</p>}
         {people.map((p) => (
           <div key={p.id} className="entry">
-            <strong>{p.name}</strong>
+            <a href={`/people/${p.id}`}>
+              <strong>{p.name}</strong>
+            </a>
             {p.org ? ` — ${p.org}` : ""}
             {p.identity && <div className="entry-meta">{p.identity}</div>}
             {p.stories && <div className="entry-meta">{p.stories}</div>}
