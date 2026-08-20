@@ -32,6 +32,10 @@ Empty means every story in the registry.
    Notion Feedback database for `Status = New` or leftover `Seen`, act on
    what's actionable this run, write back Status + Reply. Never guess at an
    ambiguous note
+8. **Pull in Background entries** per `references/background.md` - query
+   the Notion People database for `Synced = "Not synced"`, write each into
+   the right story file or `graph/people.md`, mark `Synced`. Never guess
+   where an entry with an unclear `Stories` value belongs
 
 ## Then, if the run includes commitments
 

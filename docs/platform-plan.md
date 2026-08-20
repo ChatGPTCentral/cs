@@ -82,8 +82,22 @@ Alex's stated reason for this layer: it surfaces connections between
 stories the ledger cannot see on its own, and feeds an eventual **network
 visualization** of his relationships - not built, the graph files
 (`graph/people.md`, `graph/orgs.md`, `graph/relations.md`) are the data
-source once that's scoped. Not on the platform yet - the app doesn't render
-`graph/` files today, only `_index.md` and story pages.
+source once that's scoped.
+
+The graph now renders on the platform - `/people`, linked from the nav.
+
+**Real self-service contribution, added 2026-08-20.** The first version of
+this (chat-only, Claude writes the entry) was dictation, not contribution -
+Alex has to be in a session for anything to get added. Fixed the same way
+as the feedback loop: a Notion database, **👤 People**
+(`collection://ed9cc14c-ac01-481d-b735-43e3d0ba44c1`,
+`https://app.notion.com/p/f0bdabab729344efa13fc0d50098925f`), linked from
+`/people`. Alex adds or edits a row himself, any time, no chat needed.
+Columns: Name, Identity, Org, Stories, Background, Synced (New/Synced).
+Pulled into the ledger markdown every `/ledger` run per
+`references/background.md` - queries `Synced = "Not synced"`, writes each
+into the right story file or `graph/people.md`, marks it synced. Chat
+dictation still works as a fallback, but Notion is the primary path now.
 
 ## Open
 
