@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { supabaseSelect } from "../../../lib/supabase";
 import { findConnections, parseStorySlugs } from "../../../lib/people";
 import { getStory } from "../../../lib/ledger";
-import { updatePerson } from "./actions";
+import { updatePerson, toggleStar, toggleArchive } from "./actions";
 
 export const dynamic = "force-dynamic";
 
@@ -27,9 +27,25 @@ export default async function PersonPage({ params }) {
       </p>
 
       <article className="content" style={{ marginBottom: 20 }}>
-        <h1 style={{ fontWeight: 700, fontSize: 26, margin: "24px 0 4px" }}>
-          {person.name}
-        </h1>
+        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
+          <h1 style={{ fontWeight: 700, fontSize: 26, margin: "24px 0 4px" }}>
+            {person.starred ? "★ " : ""}
+            {person.name}
+            {person.archived ? " (archived)" : ""}
+          </h1>
+          <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
+            <form action={toggleStar}>
+              <input type="hidden" name="id" value={person.id} />
+              <input type="hidden" name="starred" value={String(!!person.starred)} />
+              <button type="submit">{person.starred ? "Unstar" : "★ Star"}</button>
+            </form>
+            <form action={toggleArchive}>
+              <input type="hidden" name="id" value={person.id} />
+              <input type="hidden" name="archived" value={String(!!person.archived)} />
+              <button type="submit">{person.archived ? "Unarchive" : "Archive"}</button>
+            </form>
+          </div>
+        </div>
         {person.org && <p style={{ color: "var(--ink-dim)", margin: "0 0 12px" }}>{person.org}</p>}
         {person.identity && <p className="entry-meta">{person.identity}</p>}
         {person.stories && <p className="entry-meta">Stories: {person.stories}</p>}
@@ -42,6 +58,14 @@ export default async function PersonPage({ params }) {
 
       <form action={updatePerson} className="crm-form content" style={{ marginBottom: 20 }}>
         <input type="hidden" name="id" value={person.id} />
+        <input name="name" placeholder="Name" defaultValue={person.name || ""} required />
+        <input name="identity" placeholder="Email or identity" defaultValue={person.identity || ""} />
+        <input name="org" placeholder="Org" defaultValue={person.org || ""} />
+        <input
+          name="stories"
+          placeholder="Story slugs this relates to, comma separated"
+          defaultValue={person.stories || ""}
+        />
         <textarea
           name="background"
           placeholder="Add or update background - only what you actually know"
