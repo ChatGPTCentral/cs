@@ -6,7 +6,7 @@ export default function StoriesIndex() {
   const stories = listStories();
   return (
     <>
-      <h1 style={{ fontFamily: "'Newsreader', Georgia, serif", fontWeight: 500, fontSize: 22, margin: "0 0 16px" }}>
+      <h1 style={{ fontWeight: 700, fontSize: 22, margin: "0 0 16px" }}>
         All stories ({stories.length})
       </h1>
       <div className="story-list">

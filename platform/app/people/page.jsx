@@ -28,7 +28,7 @@ export default async function PeoplePage() {
       </form>
 
       <div className="content">
-        <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontWeight: 500, fontSize: 19, margin: "16px 0 10px" }}>
+        <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
           {people.length} {people.length === 1 ? "person" : "people"}
         </h2>
         {people.length === 0 && <p>Nobody added yet.</p>}

@@ -1,33 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
+/* Notion's own light palette - white page, near-black warm-gray text,
+   Notion blue for links and actions, near-flat surfaces (border, not
+   shadow, does the separating). */
 :root {
-  --ground: #EEF2EE;
+  --ground: #FFFFFF;
   --surface: #FFFFFF;
-  --surface-2: #E3E9E1;
-  --ink: #1B2422;
-  --ink-dim: #55625C;
-  --ink-faint: #869084;
-  --line: #D2D9CF;
-  --accent: #A9762F;
-  --accent-ink: #6E4E1D;
-  --accent-wash: #F3E9D8;
-  --shadow: 0 1px 2px rgba(27,36,34,0.06), 0 6px 20px -8px rgba(27,36,34,0.12);
-  --radius: 4px;
+  --surface-2: #F7F7F5;
+  --ink: #37352F;
+  --ink-dim: #787774;
+  --ink-faint: #9B9A97;
+  --line: #E9E9E7;
+  --accent: #2383E2;
+  --accent-ink: #0B6FCA;
+  --accent-wash: #E7F3FE;
+  --shadow: 0 1px 2px rgba(15,15,15,0.05);
+  --radius: 3px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --ground: #12181A;
-    --surface: #1A2225;
-    --surface-2: #212B2E;
-    --ink: #E7E9E2;
-    --ink-dim: #9AA6A0;
-    --ink-faint: #6C7873;
-    --line: #2B3538;
-    --accent: #D8A85B;
-    --accent-ink: #E9C588;
-    --accent-wash: #33291A;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -10px rgba(0,0,0,0.5);
+  :root:not([data-theme="light"]) {
+    --ground: #191919;
+    --surface: #191919;
+    --surface-2: #202020;
+    --ink: #D4D4D4;
+    --ink-dim: #9B9B9B;
+    --ink-faint: #6F6F6F;
+    --line: #2F2F2F;
+    --accent: #529CCA;
+    --accent-ink: #6FADD6;
+    --accent-wash: #1F3A4B;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4);
   }
 }
 
@@ -37,7 +40,7 @@ body {
   margin: 0;
   background: var(--ground);
   color: var(--ink);
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -66,15 +69,13 @@ header.top {
 }
 
 .wordmark {
-  font-family: 'Newsreader', Georgia, serif;
-  font-weight: 500;
-  font-style: italic;
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 20px;
   letter-spacing: -0.01em;
   color: var(--ink);
   text-decoration: none;
 }
-.wordmark em { color: var(--accent-ink); }
+.wordmark em { color: var(--accent-ink); font-style: normal; }
 
 .topnav { display: flex; gap: 18px; font-size: 13.5px; }
 .topnav a { color: var(--ink-dim); text-decoration: none; font-weight: 500; }
@@ -85,14 +86,12 @@ header.top {
 .content { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px 32px 32px; }
 
 .content h1 {
-  font-family: 'Newsreader', Georgia, serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 26px;
   margin: 24px 0 8px;
 }
 .content h2 {
-  font-family: 'Newsreader', Georgia, serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 19px;
   margin: 32px 0 10px;
   padding-top: 16px;
@@ -136,8 +135,7 @@ header.top {
   background: var(--surface);
   padding: 14px 20px;
   text-decoration: none;
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--ink);
 }
@@ -148,30 +146,31 @@ header.top {
 .crm-form { display: grid; gap: 10px; }
 .crm-form input,
 .crm-form textarea {
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   padding: 9px 11px;
   border: 1px solid var(--line);
   border-radius: 3px;
-  background: var(--ground);
+  background: var(--surface-2);
   color: var(--ink);
 }
 .crm-form input:focus,
 .crm-form textarea:focus {
   outline: none;
   border-color: var(--accent);
+  background: var(--surface);
 }
 .crm-form textarea { resize: vertical; font-family: inherit; }
 .crm-form button {
   justify-self: start;
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: inherit;
   font-size: 13.5px;
   font-weight: 600;
-  padding: 9px 20px;
+  padding: 8px 16px;
   border: none;
   border-radius: 3px;
   background: var(--accent);
-  color: var(--surface);
+  color: #FFFFFF;
   cursor: pointer;
 }
 .crm-form button:hover { background: var(--accent-ink); }

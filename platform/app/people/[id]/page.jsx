@@ -23,7 +23,7 @@ export default async function PersonPage({ params }) {
       </p>
 
       <article className="content" style={{ marginBottom: 20 }}>
-        <h1 style={{ fontFamily: "'Newsreader', Georgia, serif", fontWeight: 500, fontSize: 26, margin: "24px 0 4px" }}>
+        <h1 style={{ fontWeight: 700, fontSize: 26, margin: "24px 0 4px" }}>
           {person.name}
         </h1>
         {person.org && <p style={{ color: "var(--ink-dim)", margin: "0 0 12px" }}>{person.org}</p>}
@@ -49,7 +49,7 @@ export default async function PersonPage({ params }) {
 
       {stories.length > 0 && (
         <div className="content" style={{ marginBottom: 20 }}>
-          <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontWeight: 500, fontSize: 19, margin: "16px 0 10px" }}>
+          <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
             Story log ({stories.length})
           </h2>
           {stories.map((s) => (
@@ -66,7 +66,7 @@ export default async function PersonPage({ params }) {
       )}
 
       <div className="content">
-        <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontWeight: 500, fontSize: 19, margin: "16px 0 10px" }}>
+        <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
           Connections ({connections.length})
         </h2>
         {connections.length === 0 && (
