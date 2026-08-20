@@ -43,6 +43,50 @@ export function getIndexHtml() {
   return renderMarkdown(raw);
 }
 
+function getIndexRaw() {
+  return fs.readFileSync(path.join(LEDGER_ROOT, "_index.md"), "utf-8");
+}
+
+// Splits _index.md on top-level "## " headings. Returns the intro (the h1 +
+// everything before the first "## ") separately from a list of
+// {title, slug, html} sections, so a page can pick a subset instead of
+// rendering the whole board as one undifferentiated wall of text.
+export function getIndexSections() {
+  const raw = getIndexRaw();
+  const parts = raw.split(/\n(?=## )/);
+  const intro = renderMarkdown(parts[0]);
+  const sections = parts.slice(1).map((block) => {
+    const titleLine = block.split("\n")[0].replace(/^##\s+/, "").trim();
+    return {
+      title: titleLine,
+      slug: slugify_title(titleLine),
+      html: renderMarkdown(block),
+    };
+  });
+  return { intro, sections };
+}
+
+function slugify_title(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
+// The sections that answer "what do I need to do today" - everything else
+// (waiting-on-them, proposed, below-threshold, anomalies, graph, coverage...)
+// is reference material, not a daily action list. Matched by substring so
+// small wording tweaks in the ledger don't silently drop a section.
+const TODAY_SECTION_MATCHERS = ["drafted", "your move", "open commitments"];
+
+export function getTodaySections() {
+  const { sections } = getIndexSections();
+  return sections.filter((s) =>
+    TODAY_SECTION_MATCHERS.some((m) => s.title.toLowerCase().includes(m))
+  );
+}
+
 export function listStorySlugs() {
   return fs
     .readdirSync(STORIES_DIR)

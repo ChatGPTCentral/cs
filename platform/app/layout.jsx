@@ -15,7 +15,8 @@ export default function RootLayout({ children }) {
               Inbox <em>Ledger</em>
             </a>
             <nav className="topnav">
-              <a href="/">Board</a>
+              <a href="/">Today</a>
+              <a href="/board">Full board</a>
               <a href="/stories">All stories</a>
             </nav>
           </header>
