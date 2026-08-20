@@ -94,3 +94,64 @@ One trap when bulk-editing dashes: the Gmail label display names are literally
 `- - - - Feedback` and `- - - - AI 101`. A find-and-replace over " - - " eats
 them, and the damage is silent - a wrong label name and an empty folder look
 identical. Check `references/inbox.md` after any such edit.
+
+## Writing English text: ASD-STE100
+
+Alex requested this on 2026-08-20, sourced from
+https://gist.github.com/toppa/bf7ff49d6fc44fd4fc3337248f8f2a7e. It applies to
+English text this project produces: documentation, skill content, code
+comments, email drafts. It does not apply to chat replies to Alex - see
+"Talking to Alex" below.
+
+A more specific instruction always wins without comment. This includes the
+skill's own "## Style" section above and any rule inside a specific skill or
+reference file. Do not cite ASD-STE100 to override a more specific
+instruction, and do not ask permission to follow one.
+
+Rules:
+
+- Noun clusters: max 3 words stacked as a modifier. Break a longer stack
+  apart and name the relationship
+- Sentences: max 20 words for an instruction or a procedure, max 25 words
+  for descriptive text
+- One instruction per sentence. Never join two instructions with "and" or
+  "then"
+- Active voice. Use the passive voice in descriptive text only, and only
+  when the actor is unknown or irrelevant
+- Simple tenses only: infinitive, imperative, simple present, simple past,
+  simple future. No present perfect, no past perfect, no compound auxiliary.
+  A past participle is an adjective only, never a verb form
+- No `-ing` verb forms. An `-ing` word is a technical noun, or part of one,
+  only
+- No hedge stacking, as in "may have been caused by". State the
+  uncertainty as its own plain sentence: "The cause is not confirmed"
+- One term per concept, used consistently. Never rotate synonyms for the
+  same idea
+- Prefer the plainest available word over the formal or rare one
+- Define a term that is not common English at its first use. Never carry
+  undefined shorthand forward
+- No ellipsis. Keep the subject, the verb and the article explicit, even
+  when the sentence reads longer for it
+- Paragraphs: one topic, max 6 sentences
+- Use a numbered or bulleted list for 3 or more steps or conditions
+
+Never apply these rules to: code (identifiers, syntax, string literals),
+quoted material (error output, command output, file contents, another
+person's exact words - rewriting a quotation is falsification, not
+simplification), or text where the exact wording carries the meaning (a
+command to run, an API name, a config key, an exact error string).
+
+The caps are per sentence, not per response. Clarity is the goal, not
+concision - a long answer in short sentences is correct. Never drop a fact,
+a condition, a caveat or a scope qualifier to meet a limit; split the
+sentence instead.
+
+This project has no `CONTEXT.md` vocabulary file. Do not invent one, and do
+not present any term as already established - define it at first use per
+the rules above.
+
+## Talking to Alex
+
+Chat replies to Alex are in Italian, per his instruction on 2026-08-20. This
+does not change the language of committed project text - code, docs, skill
+content and drafts stay English, governed by ASD-STE100 above.
