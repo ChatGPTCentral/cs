@@ -15,6 +15,10 @@ export default async function PersonPage({ params }) {
   const stories = parseStorySlugs(person.stories)
     .map((slug) => getStory(slug))
     .filter(Boolean);
+  const emails = await supabaseSelect(
+    "ledger_people_emails",
+    `?person_id=eq.${person.id}&order=message_date.desc.nullslast`
+  );
 
   return (
     <>
@@ -64,6 +68,28 @@ export default async function PersonPage({ params }) {
           ))}
         </div>
       )}
+
+      <div className="content" style={{ marginBottom: 20 }}>
+        <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
+          Email log ({emails.length})
+        </h2>
+        {emails.length === 0 && (
+          <p style={{ color: "var(--ink-faint)" }}>
+            No emails found for this identity yet - not pulled from Gmail yet, or
+            this person has no known email address.
+          </p>
+        )}
+        {emails.map((e) => (
+          <div key={e.id} className="entry">
+            <a href={`https://mail.google.com/mail/u/0/#all/${e.thread_id}`} target="_blank" rel="noopener">
+              <strong>{e.subject || "(no subject)"}</strong>
+            </a>
+            <div className="entry-meta">
+              {e.message_date ? new Date(e.message_date).toISOString().slice(0, 10) : "date unknown"}
+            </div>
+          </div>
+        ))}
+      </div>
 
       <div className="content">
         <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
