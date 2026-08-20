@@ -141,11 +141,21 @@ distinct correspondent, not just ongoing relationships) found 73 new people:
 55 with a confirmed name, 18 with no safe name found (the `name` field holds
 the email address itself, not a guess). Two apparent finds were already in
 the roster under those exact identities and were skipped, not duplicated.
-Roster is now **125 people**. Coverage is a sample, not exhaustive - three
-2025-2026 quarters had roughly 4x more mail than the one page per quarter
-that got read; see `references/background.md` for the exact gap. The pass
-also surfaced a real exchange with `hamed@otio.ai` that the ledger's
-"⚠️ Anomalies" table didn't expect - flagged there, not yet resolved.
+Roster reached **125 people**, but coverage was a sample, not exhaustive -
+three 2025-2026 quarters had roughly 4x more mail than the one page per
+quarter that got read. The pass also surfaced a real exchange with
+`hamed@otio.ai` that the ledger's "⚠️ Anomalies" table didn't expect -
+flagged there, not yet resolved.
+
+Alex then asked directly: "are we sure this is everyone." It was not, so a
+second pass read every remaining page of those three quarters (`in:sent`
+and `in:inbox` both - inbox had never been checked and had a real gap too).
+Found 72 more people, resolved names for 4 records already in the roster
+instead of duplicating them, and merged one person's second email address
+into their existing row. **Roster is now 197 people.** Both quarterly
+windows are confirmed fully read for Aug 2025 - Aug 2026; going earlier
+than Jan 2025 is the next real gap, not yet run since nothing has flagged
+it as needed.
 
 **Story log on the person page, same day.** Alex opened Andy's page and
 asked why the story or interaction log with him wasn't on it - the page

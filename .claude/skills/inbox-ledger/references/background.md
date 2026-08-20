@@ -138,16 +138,39 @@ holds the email address itself rather than a guess. Two apparent finds
 to already be in the roster under those exact identities - checked and
 skipped, not duplicated. Roster is now 125 people.
 
-**Coverage was not exhaustive.** Q4 2025, Q1 2026 and Q2 2026 sent mail each
-showed roughly 201 threads total against the ~50 a single page reads - three
-quarters with a real, sizeable gap. Early 2025 quarters had low volume and
-were likely read close to completely. A second, deeper pass over those three
-quarters' remaining pages would surface more people; not yet run.
+**Coverage was not exhaustive on the first pass.** Q4 2025, Q1 2026 and Q2
+2026 sent mail each showed roughly 201 threads total against the ~50 a
+single page reads - three quarters with a real, sizeable gap. Early 2025
+quarters had low volume and were likely read close to completely.
 
 The pass also found a direct correction candidate: `hamed@otio.ai` has a
 real two-way exchange (16 Mar 2026), which the `_index.md` "⚠️ Anomalies"
 table did not expect - see that file for the flagged note, not yet resolved
 against the specific labeled threads.
+
+**Second mining pass, same day - closing the gap.** Alex asked directly
+"are we sure this is everyone." It was not, so a second pass read every
+remaining page of `in:sent` for the three gappy quarters, plus `in:inbox`
+for the same three quarters (never checked before - two of the three had a
+real, previously unflagged gap there too). All six windows are now fully
+paged to exhaustion; none hit the 8-page safety cap. `resultCountEstimate`
+turned out to be a coarse first-page guess, not the true count - actual
+totals were lower than 201 once fully paged.
+
+Found 72 more new people (44 with a confirmed name, 28 with no safe name).
+Five results were not new people at all - they resolved names for four
+records already in the roster from pass one (`luis@uxpilot.ai` -> Luis,
+`ximin.zhou@yingliangads.com` -> Ximin Zhou, `Ericapew@rezolve.com` -> Erica
+Pew, `ryan.walkerz46@gmail.com` -> confirmed as the same Ryan Walker as
+`sendtoryanwalker@gmail.com`, merged into one row) and a second address for
+an existing person (`valeria@psai.consulting`, added as a note on the
+existing Valeria / precisionlabs.ai row, not a new row). Updated in place,
+not duplicated. Roster is now **197 people**.
+
+Both quarterly windows are now confirmed fully read for 2025-08 through
+2026-08. A next pass, if wanted, would need to go earlier than Jan 2025 or
+re-check a narrower slice (e.g. `cc:` fields, which metadata search does
+not filter on directly) - not run, no known gap prompts it yet.
 
 ## Eventual goal: a network visualization
 
