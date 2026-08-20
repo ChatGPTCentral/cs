@@ -22,32 +22,26 @@ The Vercel project links to this repo. A push to the production branch
 should redeploy the site automatically. **Verify this every time** - see
 "Known issue" below. A push does not always produce a working deploy.
 
-## Known issue: git-triggered deploys can fail silently
+## Fixed: git-triggered deploys used to fail
 
-On 2026-08-20, a push produced a build that reported success but served a
-404 at the live URL. The build logs showed no real `npm install` or `next
-build` step - just a near-instant "Build Completed" line. The cause is not
-confirmed.
+Through 2026-08-20, pushes produced deployments that either 404d or failed
+with `STATIC_BUILD_NO_OUT_DIR`, sometimes reporting success while serving
+nothing. Two project settings were wrong:
 
-**The fix that worked**: a direct deploy via the Vercel MCP tool
-`deploy_to_vercel`, with the full file tree and `projectSettings: {framework:
-"nextjs"}` set explicitly. This forces a real build.
+1. **Root Directory** was not set to `platform`. A git-triggered build
+   looked in the repo root, found no `package.json` there (the real one
+   lives in `platform/`), and produced an empty or stale deployment
+2. **Framework Preset** was set to `Other`. Once (1) was fixed, the build
+   ran for real but then failed looking for a generic static `public/`
+   folder instead of a Next.js server output
 
-**Two root causes, found and fixed 2026-08-20**:
-
-1. The project's Root Directory was not set to `platform`. A git-triggered
-   build looked in the repo root, found no `package.json` there (the real
-   one lives in `platform/`), and produced an empty or stale deployment
-   instead of an error. Fixed - Root Directory is now `platform`
-2. Framework Preset was not set to Next.js. Once (1) was fixed, the build
-   ran for real but then failed with `STATIC_BUILD_NO_OUT_DIR` - Vercel
-   looked for a generic static `public/` folder instead of a Next.js
-   server output. Fixed - Framework Preset is now Next.js
-
-Manual deploys never hit either issue, since they pass `projectSettings:
-{framework: "nextjs"}` and scope the file tree to `platform/` explicitly on
-every call. This test push is what checks whether both fixes together make
-a plain `git push` reliable again. Update this section once confirmed.
+Both are now fixed (Root Directory: `platform`, Framework Preset: Next.js).
+This commit's push is the verification - if you're reading this and the
+site is current, it worked. Manual deploys via the Vercel MCP
+`deploy_to_vercel` tool never hit either issue, since they always passed
+`projectSettings: {framework: "nextjs"}` and scoped the file tree to
+`platform/` explicitly - that stays a valid fallback if a push ever
+regresses.
 
 ## Local development
 
