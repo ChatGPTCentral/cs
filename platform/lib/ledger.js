@@ -115,13 +115,3 @@ export function getStory(slug) {
 export function listStories() {
   return listStorySlugs().map((slug) => getStory(slug));
 }
-
-// graph/people.md - identity merges, the advocacy-network table, and the
-// Background (Alex-provided) section: CRM context Alex supplies directly,
-// kept separate from anything found in the mailbox. See references/background.md.
-export function getPeopleHtml() {
-  const file = path.join(LEDGER_ROOT, "graph/people.md");
-  if (!fs.existsSync(file)) return null;
-  const raw = fs.readFileSync(file, "utf-8");
-  return renderMarkdown(raw);
-}

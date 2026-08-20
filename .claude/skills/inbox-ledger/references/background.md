@@ -26,16 +26,30 @@ entry appear.
 key (embedded in `platform/lib/supabase.js`, safe - it is publishable, not
 secret) can `select` and `insert` only.
 
-## Sync procedure, every `/ledger` run
+## Two different things: the CRM view, and the ledger copy
 
-1. Query for rows not yet reflected in the ledger markdown:
-   `select * from ledger_people order by created_at;` - compare against
-   what is already in `graph/people.md` and the story files (there is no
-   `synced` flag; the ledger markdown itself is the record of what has
-   been pulled in, so check before re-adding a duplicate)
-2. For each new row, read `stories` to find where it goes - see "Where an
-   entry goes" below. If `stories` is empty or names a story that does not
-   exist, say so in the run's report rather than guessing where it belongs
+**`/people` on the platform always renders `ledger_people` straight from
+Supabase.** That table is the CRM. It is not a staging area or an inbox to
+empty out - a person stays listed there permanently, synced into the git
+ledger or not. Do not build a "pending" or "not yet synced" view back into
+`/people` - that reads as ledger-engineering internals, not a CRM, and
+confused Alex the first time it shipped (2026-08-20).
+
+**Pulling an entry into the git-tracked ledger markdown is a separate,
+internal step** - it exists so a story file or `graph/people.md` carries
+the context inline for whoever reads *that* file cold (per `SKILL.md`:
+"what a stranger would need to not sound stupid"). It is not rendered back
+on `/people`, and Alex never needs to see it happen. Do this every
+`/ledger` run:
+
+1. `select * from ledger_people order by created_at;` - compare against
+   what is already written into `graph/people.md` and the story files
+   (there is no `synced` flag; the ledger markdown itself is the record of
+   what has already been pulled in, so check before re-adding a duplicate)
+2. For each row not yet reflected in the markdown, read `stories` to find
+   where it goes - see "Where an entry goes" below. If `stories` is empty
+   or names a story that does not exist, say so in the run's report rather
+   than guessing where it belongs
 3. Write the entry using the format below, into the right file
 4. Mention what got pulled in in the run's report, same as commitments and
    feedback - Alex should see "added background: X" without opening the
