@@ -143,6 +143,43 @@ header.top {
 }
 .story-list a:hover { background: var(--surface-2); }
 
+/* ---------- forms: people, feedback ---------- */
+
+.crm-form { display: grid; gap: 10px; }
+.crm-form input,
+.crm-form textarea {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 14px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--ground);
+  color: var(--ink);
+}
+.crm-form input:focus,
+.crm-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.crm-form textarea { resize: vertical; font-family: inherit; }
+.crm-form button {
+  justify-self: start;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 9px 20px;
+  border: none;
+  border-radius: 3px;
+  background: var(--accent);
+  color: var(--surface);
+  cursor: pointer;
+}
+.crm-form button:hover { background: var(--accent-ink); }
+
+.entry { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.entry-meta { font-size: 12.5px; color: var(--ink-faint); margin: 2px 0 6px; }
+
 footer.snapshot-note {
   margin-top: 36px;
   padding-top: 18px;

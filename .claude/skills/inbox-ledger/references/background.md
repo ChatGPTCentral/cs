@@ -10,28 +10,36 @@ goal" below).
 ## Where entries come from
 
 Two paths, same destination. Alex can tell Claude directly in a chat
-session (Claude writes the entry that session), or - the primary path,
-added 2026-08-20 after Alex pointed out that chat-only is dictation, not
-contribution - **write directly into the Notion database 💬 👤 People**
-(`collection://ed9cc14c-ac01-481d-b735-43e3d0ba44c1`,
-`https://app.notion.com/p/f0bdabab729344efa13fc0d50098925f`). Alex adds or
-edits a row himself, any time, from his phone if he wants, with no need to
-be talking to Claude at all. Linked from the platform's `/people` page.
+session (Claude writes the entry that session), or - the primary path -
+**write directly into the platform**, at `/people`, right on the site.
 
-Columns: Name (title), Identity (email/handle), Org, Stories (comma-separated
-slugs), Background (free text - this is the actual content), Synced
-(New / Synced - tracks what still needs pulling into the ledger).
+This ran through Notion first (2026-08-20), then moved the same day to the
+platform itself after Alex pointed out he never asked for Notion and wanted
+everything to run in the platform. Now: a form on `/people` writes straight
+into Supabase, no chat, no third-party tool, no redeploy needed to see the
+entry appear.
+
+**Where it lives**: Supabase project **AI Central // Admin**
+(`hvzmgpdfznjdxnruiqmy`), table `public.ledger_people`. Columns: `name`,
+`identity` (email/handle), `org`, `stories` (comma-separated slugs),
+`background` (free text - the actual content), `created_at`. RLS: the anon
+key (embedded in `platform/lib/supabase.js`, safe - it is publishable, not
+secret) can `select` and `insert` only.
 
 ## Sync procedure, every `/ledger` run
 
-1. Query the People data source for `Synced = "Not synced"`
-2. For each row, read `Stories` to find where it goes - see "Where an entry
-   goes" below. If `Stories` is empty or names a story that does not exist,
-   say so in the run's report rather than guessing where it belongs
+1. Query for rows not yet reflected in the ledger markdown:
+   `select * from ledger_people order by created_at;` - compare against
+   what is already in `graph/people.md` and the story files (there is no
+   `synced` flag; the ledger markdown itself is the record of what has
+   been pulled in, so check before re-adding a duplicate)
+2. For each new row, read `stories` to find where it goes - see "Where an
+   entry goes" below. If `stories` is empty or names a story that does not
+   exist, say so in the run's report rather than guessing where it belongs
 3. Write the entry using the format below, into the right file
-4. Set `Synced` to `"Synced"` once written
-5. Mention what got pulled in in the run's report, same as commitments and
-   feedback - Alex should see "added background: X" without opening Notion
+4. Mention what got pulled in in the run's report, same as commitments and
+   feedback - Alex should see "added background: X" without opening the
+   site
 
 ## Where an entry goes
 

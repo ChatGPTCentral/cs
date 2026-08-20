@@ -130,17 +130,18 @@ the report** so he can switch the sender before sending.
 
 ## The feedback loop
 
-The platform (`platform/`, deployed to Vercel) links to a Notion database,
-**💬 Ledger Feedback**, where Alex writes free-text notes - bugs,
-corrections, things to add. Read it every `/ledger` run, same as
-commitments. Procedure, database ID and the write-back rule are in
-`references/feedback.md`.
+The platform (`platform/`, deployed to Vercel) has a page, `/feedback`,
+where Alex writes free-text notes directly - bugs, corrections, things to
+add - backed by a real Supabase table, not a third-party tool. Read it
+every `/ledger` run, same as commitments. Procedure, table name and the
+write-back rule are in `references/feedback.md`.
 
 ## Background - the CRM layer
 
 Alex can add context the mailbox does not carry: where he met someone, who
-introduced them, what they actually do. Recorded only from what he states,
-never inferred. Goes in the story file for a person tied to one story, or in
+introduced them, what they actually do - directly on the platform's
+`/people` page, no chat needed. Recorded only from what he states, never
+inferred. Goes in the story file for a person tied to one story, or in
 `graph/people.md` for a person who spans several. Full procedure, format,
 and the eventual network-visualization goal are in `references/background.md`.
 
@@ -150,7 +151,7 @@ and the eventual network-visualization goal are in `references/background.md`.
 - `references/discovery.md` - finding stories nobody labelled
 - `references/commitments.md` - the promise scanner, its search, and its false-positive trap
 - `references/stories.md` - the registry, verified queries, whose-move rules
-- `references/feedback.md` - the Notion feedback loop: database, procedure, write-back rule
+- `references/feedback.md` - the in-platform feedback loop: Supabase table, procedure, write-back rule
 - `references/background.md` - the CRM layer: Alex-provided context, format, the network-viz goal
 - `../aic-customer-support/references/inbox.md` - Gmail mechanics, signature,
   threading, the quoting trade-off

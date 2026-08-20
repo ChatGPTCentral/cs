@@ -35,21 +35,16 @@ the exact workflow.
   flagged the original all-13-sections dump as hard to use day to day. The
   full board lives at `/board`, all stories at `/stories`
 
-**(1) Live feedback** - not on the page itself; the platform is static with
-no backend, and there's no way to hold a Vercel env secret with the access
-this session has, so a custom write-capable box was never viable. Built as
-a Notion database instead - **💬 Ledger Feedback**
-(`collection://edbb1fdd-22f8-4e65-a067-d719ee53e0a7`,
-`https://www.notion.so/3fb46159954c470aaa774c3820e64f64`), linked from the
-platform footer ("Drop a note in Ledger Feedback"). Properties: Note
-(title), Status (New / Seen / Actioned), Reply (Claude writes back what it
-did), Context (optional link to a `/story` page). Read every `/ledger` run
-per `references/feedback.md` in the skill - acted on where possible, written
-back with Status + Reply either way, surfaced in the Today view (a
-"Feedback" section now counts toward the homepage same as drafted / your
-move / open commitments). Decided against folding it into the Task Board -
-feedback about the platform isn't a sales task, and mixing the two would
-make both harder to scan.
+**(1) Live feedback** - on the page itself now, at `/feedback`. First built
+against a Notion database (2026-08-20), since the platform was static with
+no backend and no way to hold a Vercel env secret with this session's
+access. Superseded the same day: Alex pointed out he never asked for
+Notion and wanted everything to run in the platform. Rebuilt on Supabase -
+see "Runs in the platform now" below for the shared architecture with (6).
+Surfaced in the Today view too (a "Feedback" section counts toward the
+homepage same as drafted / your move / open commitments). Decided against
+folding it into the Task Board - feedback about the platform isn't a sales
+task, and mixing the two would make both harder to scan.
 
 **(5) Notion Task Board integration** - `⏩ Task Board`
 (`collection://29e656dd-7b67-80ef-b981-000b928858a9`) now receives proposed
@@ -84,20 +79,46 @@ visualization** of his relationships - not built, the graph files
 (`graph/people.md`, `graph/orgs.md`, `graph/relations.md`) are the data
 source once that's scoped.
 
-The graph now renders on the platform - `/people`, linked from the nav.
+The graph renders on the platform at `/people`, linked from the nav.
 
-**Real self-service contribution, added 2026-08-20.** The first version of
-this (chat-only, Claude writes the entry) was dictation, not contribution -
-Alex has to be in a session for anything to get added. Fixed the same way
-as the feedback loop: a Notion database, **👤 People**
-(`collection://ed9cc14c-ac01-481d-b735-43e3d0ba44c1`,
-`https://app.notion.com/p/f0bdabab729344efa13fc0d50098925f`), linked from
-`/people`. Alex adds or edits a row himself, any time, no chat needed.
-Columns: Name, Identity, Org, Stories, Background, Synced (New/Synced).
-Pulled into the ledger markdown every `/ledger` run per
-`references/background.md` - queries `Synced = "Not synced"`, writes each
-into the right story file or `graph/people.md`, marks it synced. Chat
-dictation still works as a fallback, but Notion is the primary path now.
+**Runs in the platform now, added 2026-08-20.** The first version of
+Background collection (chat-only, Claude writes the entry) was dictation,
+not contribution - Alex has to be in a session for anything to get added.
+A same-day Notion version fixed that but Alex flagged it directly: he never
+asked for Notion, he wants everything running in the platform. Rebuilt for
+real this time:
+
+- **Supabase project**: `AI Central // Admin` (`hvzmgpdfznjdxnruiqmy`) -
+  reused an existing project rather than paying for a new one, after
+  checking its RLS policies first (see "Security note" below)
+- **Tables**: `public.ledger_people` (name, identity, org, stories,
+  background) and `public.ledger_feedback` (note, status, reply, context).
+  RLS: the anon/publishable key can `select` and `insert` only - no
+  `update`/`delete`, so status changes and replies stay something only
+  Claude's own Supabase session can do
+- **`platform/lib/supabase.js`**: talks to Supabase's REST API (PostgREST)
+  over plain `fetch`, no SDK dependency - keeps the lockfile out of it
+  entirely, given the deploy-pipeline history above
+- **`/people` and `/feedback`**: real forms, Next.js Server Actions
+  (`app/people/actions.js`, `app/feedback/actions.js`) insert directly.
+  Both pages are `force-dynamic` - Alex adds something, it appears on the
+  same page immediately, no redeploy needed to see it
+- Existing Notion entries (the Richard Lowe row, the empty Feedback db)
+  were migrated into Supabase, not left behind
+- Pulled into the git-tracked ledger markdown every `/ledger` run per
+  `references/background.md` and `references/feedback.md` - the Supabase
+  tables are Alex's live inbox for this; the markdown is still what
+  `/board` and story pages render, refreshed on the normal cadence
+
+**Security note, found while scoping this.** A first pass over the Admin
+project's RLS policies looked alarming - `revenue`, `expenses`,
+`bank_transactions` etc. appeared to allow unrestricted `insert`. A second,
+more careful read (the first query missed the `with_check` column, which is
+where an `INSERT` policy's restriction actually lives) showed those are
+fine - all gated by `is_owner()`. Two real, minor issues were found and
+fixed: `country_aliases` had RLS disabled entirely, and `manual_ledger` had
+an unrestricted public `select`. Both now require `is_member()`, matching
+their sibling tables.
 
 ## Open
 
@@ -114,23 +135,28 @@ above. Not scoped: no decision yet on where it lives (the platform app vs.
 a separate tool) or what it should look like. The data it would draw on
 already exists (`graph/*.md`); do not start building until Alex scopes it.
 
-**Data ownership** - the ledger markdown (git) is the source of truth for
-correspondence stories; the Task Board (Notion) is the source of truth for
-tasks/pipeline state. They're linked one-directionally today (ledger ->
-proposed Task Board rows) with URLs back to the story page. No sync back
-from Notion into the ledger, and none is planned - Notion owns done/not-done
-and ordering, the ledger owns what happened in the correspondence.
+**Data ownership** - three stores now, each with one job:
+- **Git-tracked ledger markdown**: source of truth for correspondence
+  stories - what happened, whose move it is. Rendered by `/`, `/board`,
+  `/story/<slug>`
+- **Supabase (`ledger_people`, `ledger_feedback`)**: Alex's live inbox for
+  CRM context and platform feedback - written on the platform itself,
+  pulled into the ledger markdown on the next `/ledger` run, then it is the
+  markdown that stays canonical for that entry, not the Supabase row
+- **Notion Task Board**: source of truth for tasks/pipeline state - this
+  one stays Notion, deliberately, because it is Alex's own pre-existing
+  tool, not something built for this project. Linked one-directionally
+  (ledger -> proposed Task Board rows) with URLs back to the story page. No
+  sync back from Notion into the ledger, and none is planned
 
 ## Recommended next steps, in order
 
 1. Get Alex to authorize Breakcold and Appeared.in, then inspect
    `capabilities_list` / `crm_objects_list` before designing anything further
-2. Collect more Background entries (6) as Alex supplies them - the
-   convention is proven, this is now a running task, not a one-off build
-3. Decide whether the platform should render `graph/people.md` (a `/people`
-   or `/person/<slug>` page), so Background is visible somewhere other than
-   the raw markdown
-4. Automate the Task Board proposal step so it runs as part of every
+2. Collect more Background and Feedback entries as Alex supplies them
+   through the platform - both loops are proven, this is now a running
+   task, not a one-off build
+3. Automate the Task Board proposal step so it runs as part of every
    `/ledger` refresh instead of being triggered by hand
-5. Scope the network visualization once enough Background entries exist to
+4. Scope the network visualization once enough Background entries exist to
    make one worth building

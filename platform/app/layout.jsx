@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
               <a href="/board">Full board</a>
               <a href="/stories">All stories</a>
               <a href="/people">People</a>
+              <a href="/feedback">Feedback</a>
             </nav>
           </header>
           {children}
@@ -27,13 +28,7 @@ export default function RootLayout({ children }) {
             refresh via <code>/ledger</code> in Claude Code, then redeploy.
             <br />
             Bug, correction, or something to add?{" "}
-            <a
-              href="https://www.notion.so/3fb46159954c470aaa774c3820e64f64"
-              target="_blank"
-              rel="noopener"
-            >
-              Drop a note in Ledger Feedback &rarr;
-            </a>{" "}
+            <a href="/feedback">Drop a note &rarr;</a>{" "}
             it&apos;s read and actioned on the next refresh.
           </footer>
         </div>

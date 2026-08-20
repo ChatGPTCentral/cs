@@ -1,28 +1,58 @@
+import { supabaseSelect } from "../../lib/supabase";
 import { getPeopleHtml } from "../../lib/ledger";
+import { addPerson } from "./actions";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
-export default function PeoplePage() {
-  const html = getPeopleHtml();
+export default async function PeoplePage() {
+  const people = await supabaseSelect("ledger_people", "?order=created_at.desc");
+  const graphHtml = getPeopleHtml();
+
   return (
     <>
       <p style={{ fontSize: 13.5, color: "var(--ink-faint)", margin: "0 0 20px" }}>
-        The graph &mdash; identity merges, the advocacy network, and Background
-        (Alex-provided context on a person, kept separate from anything found
-        in the mailbox).
-        <br />
-        Add or edit a person yourself, any time, no need to be in a chat:{" "}
-        <a
-          href="https://www.notion.so/f0bdabab729344efa13fc0d50098925f"
-          target="_blank"
-          rel="noopener"
-        >
-          Open the People database &rarr;
-        </a>{" "}
-        pulled in on the next <code>/ledger</code> refresh.
+        Add context on a person yourself, right here - no chat needed. Pulled
+        into the git-tracked ledger (a story file, or the graph below) on the
+        next <code>/ledger</code> run.
       </p>
-      {html ? (
-        <article className="content" dangerouslySetInnerHTML={{ __html: html }} />
+
+      <form action={addPerson} className="crm-form content">
+        <input name="name" placeholder="Name" required />
+        <input name="identity" placeholder="Email or identity" />
+        <input name="org" placeholder="Org" />
+        <input name="stories" placeholder="Story slugs this relates to, comma separated" />
+        <textarea
+          name="background"
+          placeholder="Background - what you know, offline context. Only what you actually know, never guessed."
+          rows={4}
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <div className="content" style={{ marginBottom: 20 }}>
+        <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontWeight: 500, fontSize: 19, margin: "16px 0 10px" }}>
+          Not yet pulled into the ledger ({people.length})
+        </h2>
+        {people.length === 0 && <p>Nothing here yet.</p>}
+        {people.map((p) => (
+          <div key={p.id} className="entry">
+            <strong>{p.name}</strong>
+            {p.org ? ` — ${p.org}` : ""}
+            {p.identity && (
+              <div className="entry-meta">{p.identity}</div>
+            )}
+            {p.stories && <div className="entry-meta">{p.stories}</div>}
+            {p.background && <p>{p.background}</p>}
+          </div>
+        ))}
+      </div>
+
+      <p style={{ fontSize: 13.5, color: "var(--ink-faint)", margin: "0 0 12px" }}>
+        Below: the graph as last pulled in - identity merges, the advocacy
+        network, and Background already written into the ledger.
+      </p>
+      {graphHtml ? (
+        <article className="content" dangerouslySetInnerHTML={{ __html: graphHtml }} />
       ) : (
         <div className="content">
           <p>No graph/people.md found.</p>

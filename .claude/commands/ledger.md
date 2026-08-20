@@ -1,7 +1,7 @@
 ---
 description: Refresh the inbox ledger and report what Alex owes, promised, and has let go cold
 argument-hint: "[optional: a story name to refresh just that one, or 'commitments']"
-allowed-tools: Skill, Read, Edit, Write, Bash, mcp__Gmail__search_threads, mcp__Gmail__get_thread, mcp__Gmail__get_message, mcp__Gmail__list_labels, mcp__Gmail__list_drafts, mcp__Notion__notion-query-data-sources, mcp__Notion__notion-update-page
+allowed-tools: Skill, Read, Edit, Write, Bash, mcp__Gmail__search_threads, mcp__Gmail__get_thread, mcp__Gmail__get_message, mcp__Gmail__list_labels, mcp__Gmail__list_drafts, mcp__Supabase__execute_sql
 ---
 
 Refresh the inbox ledger.
@@ -28,14 +28,14 @@ Empty means every story in the registry.
    unlabelled threads and propose any story the registry is missing. Alex names
    them; never auto-name. Record new people, orgs and story edges in
    `ledger/graph/`, and propose identity merges rather than applying them
-7. **Read the feedback loop** per `references/feedback.md` - query the
-   Notion Feedback database for `Status = New` or leftover `Seen`, act on
-   what's actionable this run, write back Status + Reply. Never guess at an
+7. **Read the feedback loop** per `references/feedback.md` - query
+   `ledger_feedback` (Supabase) for `status in ('new','seen')`, act on
+   what's actionable this run, write back status + reply. Never guess at an
    ambiguous note
 8. **Pull in Background entries** per `references/background.md` - query
-   the Notion People database for `Synced = "Not synced"`, write each into
-   the right story file or `graph/people.md`, mark `Synced`. Never guess
-   where an entry with an unclear `Stories` value belongs
+   `ledger_people` (Supabase) for rows not yet reflected in the ledger
+   markdown, write each into the right story file or `graph/people.md`.
+   Never guess where an entry with an unclear `stories` value belongs
 
 ## Then, if the run includes commitments
 
@@ -55,8 +55,8 @@ Short, ranked, and only what needs him:
 - **New since last refresh** - what changed
 - **Overdue promises** - the quote, who, how many days
 - **Gone cold** - past threshold, needing a nudge or a decision to close
-- **Feedback** - what got actioned from the Notion box, and anything left
-  `Seen` that needs Alex before it can move
+- **Feedback** - what got actioned from `/feedback`, and anything left
+  `seen` that needs Alex before it can move
 - **Nothing needed** - one line, names only
 
 Do not narrate stories that did not move.
