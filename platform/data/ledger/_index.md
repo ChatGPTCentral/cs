@@ -177,7 +177,7 @@ subscribes to, and unanswered volume from them is expected, not a signal).
 | Label | Problem |
 | --- | --- |
 | `Gamma AI` | Both threads are Google Docs comment notifications. Zero correspondence with anyone at Gamma |
-| `Hamed // Otio.ai` | Same - both threads are the identical notification type. Zero correspondence with Hamed |
+| `Hamed // Otio.ai` | Same - both threads are the identical notification type. Zero correspondence under this label. **Possibly stale as of 2026-08-20**: a broader mailbox mining pass (metadata-only, not the labeled threads themselves) found a real two-way exchange with `hamed@otio.ai` on 16 Mar 2026, somewhere in the mailbox. Not yet checked against this specific label - a future sweep should confirm whether that thread belongs here or is separate |
 
 A label named after a person, containing no correspondence with that person,
 means either the real thread is unlabelled and still undiscovered, or the

@@ -28,10 +28,16 @@ secret) can `select`, `insert` and `update` - Alex edits a person's own
 `background` directly on their `/people/<id>` page.
 
 Each person also has a detail page (`app/people/[id]/page.jsx`) showing
-their full record plus **Connections** - other people who share an `org` or
-a `stories` slug, computed live from the table (`lib/people.js`), not a
-separate relations table. First slice of the network-visualization goal
-below, not the whole thing.
+their full record, a **Story log** - the actual rendered content of every
+story their `stories` field names, pulled live from `lib/ledger.js`'s
+`getStory()`, so the interaction history is on the page itself, not just a
+name to look up elsewhere - and **Connections** - other people who share an
+`org` or a `stories` slug, computed live from the table (`lib/people.js`),
+not a separate relations table. Connections are the first slice of the
+network-visualization goal below, not the whole thing. Story log only shows
+for a person tied to a tracked story; most of the 73 people added in the
+2026-08-20 mining pass have no `stories` value, since they were never
+story-worthy in the first place - that's expected, not a bug.
 
 ## Two different things: the CRM view, and the ledger copy
 
@@ -120,6 +126,28 @@ somewhere (a header display name, prose in a thread) or unambiguously
 readable from a `firstname.lastname@` address - never guessed from a bare
 handle. Report coverage honestly (what date range and thread volume was
 actually checked) rather than implying a complete sweep that didn't happen.
+
+**First mining pass, 2026-08-20**: a background agent read `in:sent` and
+`in:inbox` in quarterly windows from Jan 2025 to today, metadata-only (no
+message bodies), one page (up to 50 threads) per window - 16 search calls.
+It found 73 new distinct correspondents not already in the roster: 55 with a
+confirmed name (a header display name, or unambiguous from a
+`firstname.lastname@` address), 18 with no safe name, where the `name` field
+holds the email address itself rather than a guess. Two apparent finds
+(`Richard@hewlettrand.com`, `valentina.studiogaldieri@gmail.com`) turned out
+to already be in the roster under those exact identities - checked and
+skipped, not duplicated. Roster is now 125 people.
+
+**Coverage was not exhaustive.** Q4 2025, Q1 2026 and Q2 2026 sent mail each
+showed roughly 201 threads total against the ~50 a single page reads - three
+quarters with a real, sizeable gap. Early 2025 quarters had low volume and
+were likely read close to completely. A second, deeper pass over those three
+quarters' remaining pages would surface more people; not yet run.
+
+The pass also found a direct correction candidate: `hamed@otio.ai` has a
+real two-way exchange (16 Mar 2026), which the `_index.md` "⚠️ Anomalies"
+table did not expect - see that file for the flagged note, not yet resolved
+against the specific labeled threads.
 
 ## Eventual goal: a network visualization
 

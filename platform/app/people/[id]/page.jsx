@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { supabaseSelect } from "../../../lib/supabase";
-import { findConnections } from "../../../lib/people";
+import { findConnections, parseStorySlugs } from "../../../lib/people";
+import { getStory } from "../../../lib/ledger";
 import { updatePerson } from "./actions";
 
 export const dynamic = "force-dynamic";
@@ -11,6 +12,9 @@ export default async function PersonPage({ params }) {
 
   const allPeople = await supabaseSelect("ledger_people", "?order=name.asc");
   const connections = findConnections(person, allPeople);
+  const stories = parseStorySlugs(person.stories)
+    .map((slug) => getStory(slug))
+    .filter(Boolean);
 
   return (
     <>
@@ -42,6 +46,24 @@ export default async function PersonPage({ params }) {
         />
         <button type="submit">Save</button>
       </form>
+
+      {stories.length > 0 && (
+        <div className="content" style={{ marginBottom: 20 }}>
+          <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontWeight: 500, fontSize: 19, margin: "16px 0 10px" }}>
+            Story log ({stories.length})
+          </h2>
+          {stories.map((s) => (
+            <article key={s.slug} style={{ marginBottom: 16 }}>
+              <p style={{ margin: "0 0 6px" }}>
+                <a href={`/story/${s.slug}`}>
+                  <strong>{s.title}</strong>
+                </a>
+              </p>
+              <div dangerouslySetInnerHTML={{ __html: s.html }} />
+            </article>
+          ))}
+        </div>
+      )}
 
       <div className="content">
         <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontWeight: 500, fontSize: 19, margin: "16px 0 10px" }}>

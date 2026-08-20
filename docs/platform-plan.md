@@ -137,9 +137,22 @@ person's `background` right on their page now (RLS extended to allow
 tracked stories plus the `_index.md` below-threshold list - Alex flagged it
 as far short of everyone he's actually corresponded with since ~April 2025.
 A broader mailbox mining pass (wider bar than story-worthiness - any real
-distinct correspondent, not just ongoing relationships) was launched to
-close that gap. Same "never guess a name" discipline applies at the wider
-bar. Check the ledger's git log / this doc's next update for what it found.
+distinct correspondent, not just ongoing relationships) found 73 new people:
+55 with a confirmed name, 18 with no safe name found (the `name` field holds
+the email address itself, not a guess). Two apparent finds were already in
+the roster under those exact identities and were skipped, not duplicated.
+Roster is now **125 people**. Coverage is a sample, not exhaustive - three
+2025-2026 quarters had roughly 4x more mail than the one page per quarter
+that got read; see `references/background.md` for the exact gap. The pass
+also surfaced a real exchange with `hamed@otio.ai` that the ledger's
+"⚠️ Anomalies" table didn't expect - flagged there, not yet resolved.
+
+**Story log on the person page, same day.** Alex opened Andy's page and
+asked why the story or interaction log with him wasn't on it - the page
+only had a "Stories: glide-andy" text line, not the actual content. Fixed:
+`/people/<id>` now renders the full text of every story the person is tied
+to, straight from the same `getStory()` the `/story/<slug>` pages use, not
+just a name to go look up separately.
 
 ## Open
 
