@@ -148,6 +148,36 @@ real two-way exchange (16 Mar 2026), which the `_index.md` "⚠️ Anomalies"
 table did not expect - see that file for the flagged note, not yet resolved
 against the specific labeled threads.
 
+## Email log, star, and archive, added 2026-08-20
+
+Alex asked why a person's page did not show the actual emails tied to
+them - the CRM only ever held a one-line mailbox-mining summary, never
+the real thread history. Added `public.ledger_people_emails` (`person_id`,
+`thread_id`, `message_date`, `subject`) and populated it: 5 background
+agents ran one Gmail search per identity (`{from:X OR to:X}`,
+metadata-only) across all 196 people with a known email, 510 threads
+found. Each person page now has an **Email log** section - every thread,
+dated, linking straight to Gmail. RLS: `select` only for anon, same as
+`ledger_people_emails` being Claude-populated data, not something Alex
+edits by hand.
+
+Also added `starred` and `archived` boolean columns to `ledger_people`.
+`/people` sorts starred people first and hides archived people behind a
+"Show archived (N)" link, default view only shows active people. The
+person detail page got Star/Unstar and Archive/Unarchive buttons, and its
+edit form now covers the whole record (name, identity, org, stories,
+background) instead of only background.
+
+**First archive pass, same session.** Alex asked to archive people who
+"may not be interesting." Rather than guess, used a checkable rule: a
+person whose background note says "sent only" / "no reply" AND whose real
+email log (once pulled) confirms exactly one thread with no `Re:` subject
+- a genuine one-way cold send nobody answered. 21 people archived on that
+basis. The same check caught 10 people where the "no reply" label turned
+out to be wrong - their email log had a `Re:` thread the original mining
+pass missed - so those were corrected in place, not archived. Anyone can
+be unarchived from their own page; nothing is deleted.
+
 **Second mining pass, same day - closing the gap.** Alex asked directly
 "are we sure this is everyone." It was not, so a second pass read every
 remaining page of `in:sent` for the three gappy quarters, plus `in:inbox`

@@ -163,6 +163,25 @@ message. **Both passes above already cover the account's entire real
 history, start to now.** There is no earlier mailbox history left to mine -
 this is done.
 
+**White theme was live but not always on, same day.** Alex reported still
+seeing the old palette after the Notion re-theme. Root cause: a leftover
+`prefers-color-scheme: dark` media query with no toggle - anyone with a
+dark OS/browser setting got the dark variant automatically. Removed it;
+the light palette is now the only one, no condition.
+
+**Real per-person email log, star, and archive, same day.** Alex: why
+doesn't the CRM show the actual emails for each contact? It never did -
+just a one-line mining summary. Added `ledger_people_emails` (thread id,
+date, subject per person) and populated it for all 196 people with a
+known address - 510 real Gmail threads, 5 parallel agents. Each person
+page now has a real Email log section. Also added starring (shows first
+on `/people`) and archiving (hidden by default, `N` count + link to see
+them), and made the whole record editable, not just background. First
+archive pass removed 21 people who were one-way cold sends nobody ever
+replied to - a checkable rule (single thread, no `Re:` subject), not a
+guess - and caught 10 others whose old "no reply" label the real email
+log now contradicts; those got corrected instead of archived.
+
 **Story log on the person page, same day.** Alex opened Andy's page and
 asked why the story or interaction log with him wasn't on it - the page
 only had a "Stories: glide-andy" text line, not the actual content. Fixed:
