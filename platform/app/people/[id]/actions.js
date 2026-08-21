@@ -2,11 +2,6 @@
 
 import { supabaseSelect, supabaseUpdate } from "../../../lib/supabase";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
-
-function withSaved(path) {
-  return `${path}${path.includes("?") ? "&" : "?"}saved=1`;
-}
 
 // Merges comma-or-slash-separated lists (identity, stories) into one
 // deduped list, preserving the survivor's order first.
@@ -18,6 +13,12 @@ function mergeList(a, b, sep) {
   return [...new Set(parts)].join(sep === "/" ? " / " : ", ");
 }
 
+// None of these redirect - a Server Action already refreshes the page's
+// data in place (via revalidatePath) without navigating, so scroll
+// position stays put. Alex flagged the earlier redirect-based version for
+// resetting scroll on every save; the SaveWatcher/SavedToast pair (see
+// SaveWatcher.jsx) gets the "saved" confirmation without needing one.
+
 export async function updatePerson(formData) {
   const id = (formData.get("id") || "").toString();
   if (!id) return;
@@ -27,13 +28,26 @@ export async function updatePerson(formData) {
     identity: (formData.get("identity") || "").toString().trim() || null,
     org: (formData.get("org") || "").toString().trim() || null,
     stories: (formData.get("stories") || "").toString().trim() || null,
+    lists: (formData.get("lists") || "").toString().trim() || null,
     background: (formData.get("background") || "").toString().trim() || null,
     updated_at: new Date().toISOString(),
   });
 
   revalidatePath(`/people/${id}`);
   revalidatePath("/people");
-  redirect(withSaved(`/people/${id}`));
+}
+
+export async function updateLists(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_people", `?id=eq.${id}`, {
+    lists: (formData.get("lists") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath(`/people/${id}`);
+  revalidatePath("/people");
 }
 
 export async function updateBackground(formData) {
@@ -47,9 +61,6 @@ export async function updateBackground(formData) {
 
   revalidatePath(`/people/${id}`);
   revalidatePath("/people");
-
-  const redirectTo = (formData.get("redirectTo") || "/people").toString();
-  redirect(withSaved(redirectTo));
 }
 
 export async function toggleStar(formData) {
@@ -109,6 +120,7 @@ export async function mergePerson(formData) {
     identity: mergeList(survivor.identity, duplicate.identity, "/") || null,
     org: survivor.org || duplicate.org || null,
     stories: mergeList(survivor.stories, duplicate.stories, ",") || null,
+    lists: mergeList(survivor.lists, duplicate.lists, ",") || null,
     background: background || null,
     starred: survivor.starred || duplicate.starred,
     updated_at: new Date().toISOString(),

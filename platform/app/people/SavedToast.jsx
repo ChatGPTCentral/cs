@@ -1,36 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-// Reads ?saved=1 off the URL (set by a server action's redirect after a
-// write), shows a green confirmation, then strips the param so a refresh
-// doesn't bring it back.
+// Shows a green confirmation whenever a "crm:saved" event fires (see
+// SaveWatcher.jsx). Pure client state - no URL/query param involved, so
+// showing it never triggers a navigation or resets scroll.
 export default function SavedToast() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-  const saved = searchParams.get("saved");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!saved) return;
-    setVisible(true);
-    const hide = setTimeout(() => setVisible(false), 2200);
-    const clean = setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.delete("saved");
-      const qs = params.toString();
-      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-    }, 2500);
+    let hideTimer;
+    function onSaved() {
+      setVisible(true);
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => setVisible(false), 2000);
+    }
+    window.addEventListener("crm:saved", onSaved);
     return () => {
-      clearTimeout(hide);
-      clearTimeout(clean);
+      window.removeEventListener("crm:saved", onSaved);
+      clearTimeout(hideTimer);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [saved]);
-
-  if (!saved) return null;
+  }, []);
 
   return (
     <div className={`saved-toast${visible ? " saved-toast-visible" : ""}`} role="status">

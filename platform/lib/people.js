@@ -9,6 +9,16 @@ export function parseStorySlugs(stories) {
     .filter(Boolean);
 }
 
+// Turns the free-text "lists" column (comma-separated tags, e.g.
+// "Service Providers, Sales") into a clean set of tags.
+export function parseLists(lists) {
+  if (!lists) return [];
+  return lists
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
 // Two people are connected if they share a story or the same org. Cheap,
 // derived from data already on each row - not a separate relations table.
 // See docs/platform-plan.md, "Network visualization" for the bigger,

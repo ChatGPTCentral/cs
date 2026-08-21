@@ -12,6 +12,7 @@ export async function addPerson(formData) {
     identity: (formData.get("identity") || "").toString().trim() || null,
     org: (formData.get("org") || "").toString().trim() || null,
     stories: (formData.get("stories") || "").toString().trim() || null,
+    lists: (formData.get("lists") || "").toString().trim() || null,
     background: (formData.get("background") || "").toString().trim() || null,
   });
 

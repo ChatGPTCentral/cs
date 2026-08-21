@@ -1,10 +1,10 @@
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { supabaseSelect } from "../../../lib/supabase";
 import { findConnections, parseStorySlugs } from "../../../lib/people";
 import { getStory } from "../../../lib/ledger";
 import { updatePerson, toggleStar, toggleArchive, mergePerson } from "./actions";
 import SavedToast from "../SavedToast";
+import SaveWatcher from "../SaveWatcher";
 
 export const dynamic = "force-dynamic";
 
@@ -80,6 +80,11 @@ export default async function PersonPage({ params }) {
             <span className="field-label">Stories</span> {person.stories}
           </p>
         )}
+        {person.lists && (
+          <p className="entry-meta">
+            <span className="field-label">Lists</span> {person.lists}
+          </p>
+        )}
         <p className="field-label" style={{ marginTop: 12 }}>Background</p>
         {person.background ? (
           <p>{person.background}</p>
@@ -104,6 +109,13 @@ export default async function PersonPage({ params }) {
           placeholder="Story slugs this relates to, comma separated"
           defaultValue={person.stories || ""}
         />
+        <label className="field-label" htmlFor="f-lists">Lists</label>
+        <input
+          id="f-lists"
+          name="lists"
+          placeholder="Lists, comma separated (e.g. Service Providers)"
+          defaultValue={person.lists || ""}
+        />
         <label className="field-label" htmlFor="f-background">Background</label>
         <textarea
           id="f-background"
@@ -113,6 +125,7 @@ export default async function PersonPage({ params }) {
           rows={4}
         />
         <button type="submit">Save</button>
+        <SaveWatcher />
       </form>
 
       {mergeCandidates.length > 0 && (
@@ -138,6 +151,7 @@ export default async function PersonPage({ params }) {
             ))}
           </select>
           <button type="submit">Merge into {person.name}</button>
+          <SaveWatcher />
         </form>
       )}
 
@@ -205,9 +219,7 @@ export default async function PersonPage({ params }) {
         ))}
       </div>
 
-      <Suspense fallback={null}>
-        <SavedToast />
-      </Suspense>
+      <SavedToast />
     </>
   );
 }
