@@ -1,9 +1,10 @@
 import { supabaseSelect } from "../../lib/supabase";
-import { addPerson } from "./actions";
+import { addPerson, createList } from "./actions";
 import { toggleStar, toggleArchive, updateBackground, updateLists } from "./[id]/actions";
 import { parseLists } from "../../lib/people";
 import SavedToast from "./SavedToast";
 import TableCellInput from "./TableCellInput";
+import NewPersonModal from "./NewPersonModal";
 
 export const dynamic = "force-dynamic";
 
@@ -27,14 +28,16 @@ export default async function PeoplePage({ searchParams }) {
     await supabaseSelect("ledger_people", "?archived=eq.true&select=id")
   ).length;
 
-  const allActive = await supabaseSelect(
-    "ledger_people",
-    `?archived=eq.${showArchived}&order=starred.desc,${sort}.asc`
-  );
+  const [allActive, definedLists] = await Promise.all([
+    supabaseSelect("ledger_people", `?archived=eq.${showArchived}&order=starred.desc,${sort}.asc`),
+    supabaseSelect("ledger_lists", "?order=name.asc"),
+  ]);
 
-  // Lists are free-text tags, not a fixed enum, so the filter tabs are
-  // computed from whatever tags people actually carry right now.
-  const listCounts = new Map();
+  // Lists are free-text tags, not a fixed enum. Tabs are the union of
+  // lists someone deliberately created (ledger_lists, so a brand-new list
+  // shows up even with nobody in it yet) and tags actually found on
+  // people (in case one was typed directly into a row).
+  const listCounts = new Map(definedLists.map((l) => [l.name, 0]));
   let uncategorizedCount = 0;
   for (const p of allActive) {
     const tags = parseLists(p.lists);
@@ -62,19 +65,9 @@ export default async function PeoplePage({ searchParams }) {
       </p>
 
       {!showArchived && (
-        <form action={addPerson} className="crm-form content" style={{ marginBottom: 20 }}>
-          <input name="name" placeholder="Name" required />
-          <input name="identity" placeholder="Email or identity" />
-          <input name="org" placeholder="Org" />
-          <input name="stories" placeholder="Story slugs this relates to, comma separated" />
-          <input name="lists" placeholder="Lists, comma separated (e.g. Service Providers)" />
-          <textarea
-            name="background"
-            placeholder="Background - where you met them, who introduced them, what they actually do"
-            rows={4}
-          />
-          <button type="submit">Add</button>
-        </form>
+        <div style={{ marginBottom: 20 }}>
+          <NewPersonModal action={addPerson} />
+        </div>
       )}
 
       <datalist id="list-tags">
@@ -97,8 +90,8 @@ export default async function PeoplePage({ searchParams }) {
           )}
         </div>
 
-        {!showArchived && (listTabs.length > 0 || uncategorizedCount > 0) && (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, margin: "0 0 14px" }}>
+        {!showArchived && (
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 6, margin: "0 0 14px" }}>
             <a href={buildHref({ list: "" })} className={`list-tab${!activeList ? " list-tab-active" : ""}`}>
               All ({allActive.length})
             </a>
@@ -119,6 +112,17 @@ export default async function PeoplePage({ searchParams }) {
                 Uncategorized ({uncategorizedCount})
               </a>
             )}
+            <form action={createList} style={{ display: "inline-flex", gap: 4, marginLeft: 4 }}>
+              <input
+                name="name"
+                placeholder="New list name..."
+                className="table-cell-input"
+                style={{ width: 130, border: "1px dashed var(--line)" }}
+              />
+              <button type="submit" className="list-tab" style={{ border: "1px dashed var(--line)", background: "none", cursor: "pointer" }}>
+                + New list
+              </button>
+            </form>
           </div>
         )}
 

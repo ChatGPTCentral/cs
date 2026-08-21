@@ -189,6 +189,47 @@ p .field-label { display: inline-block; min-width: 60px; }
 .entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 .entry-meta { font-size: 12.5px; color: var(--ink-faint); margin: 2px 0 6px; }
 
+/* ---------- new-person modal ---------- */
+
+.new-person-trigger {
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.new-person-trigger:hover { background: var(--accent-ink); }
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,15,15,0.45);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8vh 16px;
+  z-index: 200;
+  overflow-y: auto;
+}
+.modal-panel {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+.modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--ink-faint);
+  padding: 4px;
+}
+.modal-close:hover { color: var(--ink); }
+
 /* ---------- list filter tabs ---------- */
 
 .list-tab {
