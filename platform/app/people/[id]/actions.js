@@ -2,6 +2,11 @@
 
 import { supabaseSelect, supabaseUpdate } from "../../../lib/supabase";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
+function withSaved(path) {
+  return `${path}${path.includes("?") ? "&" : "?"}saved=1`;
+}
 
 // Merges comma-or-slash-separated lists (identity, stories) into one
 // deduped list, preserving the survivor's order first.
@@ -28,6 +33,7 @@ export async function updatePerson(formData) {
 
   revalidatePath(`/people/${id}`);
   revalidatePath("/people");
+  redirect(withSaved(`/people/${id}`));
 }
 
 export async function updateBackground(formData) {
@@ -41,6 +47,9 @@ export async function updateBackground(formData) {
 
   revalidatePath(`/people/${id}`);
   revalidatePath("/people");
+
+  const redirectTo = (formData.get("redirectTo") || "/people").toString();
+  redirect(withSaved(redirectTo));
 }
 
 export async function toggleStar(formData) {

@@ -1,8 +1,10 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { supabaseSelect } from "../../../lib/supabase";
 import { findConnections, parseStorySlugs } from "../../../lib/people";
 import { getStory } from "../../../lib/ledger";
 import { updatePerson, toggleStar, toggleArchive, mergePerson } from "./actions";
+import SavedToast from "../SavedToast";
 
 export const dynamic = "force-dynamic";
 
@@ -202,6 +204,10 @@ export default async function PersonPage({ params }) {
           </div>
         ))}
       </div>
+
+      <Suspense fallback={null}>
+        <SavedToast />
+      </Suspense>
     </>
   );
 }

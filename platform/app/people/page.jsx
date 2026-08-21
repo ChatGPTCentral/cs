@@ -1,11 +1,14 @@
+import { Suspense } from "react";
 import { supabaseSelect } from "../../lib/supabase";
 import { addPerson } from "./actions";
 import { toggleStar, toggleArchive, updateBackground } from "./[id]/actions";
+import SavedToast from "./SavedToast";
 
 export const dynamic = "force-dynamic";
 
 export default async function PeoplePage({ searchParams }) {
   const showArchived = searchParams?.archived === "1";
+  const redirectTo = showArchived ? "/people?archived=1" : "/people";
   const archivedCount = (
     await supabaseSelect("ledger_people", "?archived=eq.true&select=id")
   ).length;
@@ -92,6 +95,7 @@ export default async function PeoplePage({ searchParams }) {
               {p.stories && <div className="entry-meta">{p.stories}</div>}
               <form action={updateBackground} className="crm-form" style={{ marginTop: 6 }}>
                 <input type="hidden" name="id" value={p.id} />
+                <input type="hidden" name="redirectTo" value={redirectTo} />
                 <span className="field-label">Background</span>
                 <textarea
                   name="background"
@@ -108,6 +112,10 @@ export default async function PeoplePage({ searchParams }) {
           </div>
         ))}
       </div>
+
+      <Suspense fallback={null}>
+        <SavedToast />
+      </Suspense>
     </>
   );
 }
