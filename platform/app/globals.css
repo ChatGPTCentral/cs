@@ -73,6 +73,16 @@ header.top {
 
 .content { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px 32px 32px; }
 
+/* Breaks a content card out of .page's 860px column, for things (the
+   people spreadsheet) that genuinely need the screen's width. */
+.wide-content {
+  width: 100vw;
+  max-width: 1400px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .content h1 {
   font-weight: 700;
   font-size: 26px;

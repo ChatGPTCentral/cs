@@ -77,7 +77,13 @@ export default async function PeoplePage({ searchParams }) {
         </form>
       )}
 
-      <div className="content">
+      <datalist id="list-tags">
+        {listTabs.map(([tag]) => (
+          <option key={tag} value={tag} />
+        ))}
+      </datalist>
+
+      <div className="content wide-content">
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
           <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
             {showArchived
@@ -173,6 +179,7 @@ export default async function PeoplePage({ searchParams }) {
                         name="lists"
                         defaultValue={p.lists || ""}
                         placeholder="Add a list..."
+                        listId="list-tags"
                       />
                     </td>
                     <td>
