@@ -27,6 +27,18 @@ A thread is one exchange. A story is the relationship: every thread with Mark
 Duke is one story, and the useful question is never "what did this email say" but
 **"where are we with Mark, and whose move is it".**
 
+**A story is a moment** - a stretch of AI Central's life defined by a shared theme
+or an external event ("London Tech Week 2026", "The Newsletter Conference 2025"),
+or a mission or pursuit ("GTA whitepaper", "AI Hackathon Bristol") - not always a
+single person. The sum of stories is the company's history. Most stories so far
+are the single-person case (one relationship, one thread of correspondence); an
+event or mission story is the same unit at a wider angle - several people, several
+threads, one shared occasion. `references/discovery.md`'s participant-clustering
+signal is exactly how the wider-angle kind gets found in the mailbox: people who
+keep appearing on the same threads around the same occasion are living the same
+moment. Alex asked for this framing explicitly (2026-08-20) - see
+`platform-plan.md` for the first moments built from it.
+
 Alex's Gmail labels **seed** his stories but do not define them. He named four
 stories in conversation and three had no label at all - two of those were live
 that week, while most labelled stories were months cold. So stories come from two

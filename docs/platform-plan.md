@@ -203,6 +203,32 @@ right on the board, and a "+ New story" form registers a story's
 metadata before its narrative markdown exists, so it can be tagged and
 plotted immediately - the full write-up in git is still a separate step.
 
+**"Stories are moments," 2026-08-20.** Alex gave an explicit definition:
+a story is a moment in AI Central's life, defined by a shared theme or
+external event ("London Tech Week 2026", "AI Summit London 2026", "The
+Newsletter Conference 2025") or a mission/pursuit ("GTA whitepaper",
+"AI Hackathon Bristol" - both already tracked stories, confirming the
+definition matches what already exists). The sum of moments is the
+company's history. Documented in `SKILL.md`, "The unit is a story, not a
+thread."
+
+Built three real event-moments from evidence already in the email log
+(subject-line search across the 510 pulled emails, not a new mailbox
+sweep): `london-tech-week-2026` (18 people, start 2026-05-18 - excluded
+one 2025-dated registration thread from a different year's edition, not
+folded in), `newsletter-conference-2025` (4 people, start 2025-05-07),
+`ai-summit-london-2026` (1 person so far, Mya Bishop - thin, expected to
+grow). All three now show on `/timeline` and are tagged onto the
+matching people's `stories` field. Full narrative write-up for each is
+still a separate, later `/ledger`-style task - these are metadata only,
+same as any story created through "+ New story."
+
+**Flagged, not built:** Alex also named `omeda-ox-8` as an example
+moment. Zero matches for "omeda" anywhere in the 510-email log - not
+guessing what this refers to or fabricating a container for it. Needs
+Alex to say what it is (a real event/vendor not yet mined, a typo, or
+something outside the current email coverage) before it gets created.
+
 ## Open
 
 **(2) Breakcold + Appeared.in sponsor discovery** - still blocked on
