@@ -61,6 +61,7 @@ export default async function PersonPage({ params }) {
             <form action={toggleArchive}>
               <input type="hidden" name="id" value={person.id} />
               <input type="hidden" name="archived" value={String(!!person.archived)} />
+              <input type="hidden" name="redirectOnArchive" value="/people" />
               <button type="submit">{person.archived ? "Unarchive" : "Archive"}</button>
             </form>
           </div>

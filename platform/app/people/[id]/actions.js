@@ -2,6 +2,7 @@
 
 import { supabaseSelect, supabaseUpdate } from "../../../lib/supabase";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 // Merges comma-or-slash-separated lists (identity, stories) into one
 // deduped list, preserving the survivor's order first.
@@ -93,6 +94,15 @@ export async function toggleArchive(formData) {
 
   revalidatePath(`/people/${id}`);
   revalidatePath("/people");
+
+  // Only the person page passes this - archiving there means "I'm done
+  // with this record," so it sends you back to the list. The /people
+  // table's own row-level Archive button never sets it, since staying on
+  // the table (no navigation, no scroll jump) is what that one is for.
+  const redirectOnArchive = formData.get("redirectOnArchive");
+  if (willArchive && redirectOnArchive) {
+    redirect(redirectOnArchive.toString());
+  }
 }
 
 // Folds `duplicateId` into `id` (the record you're viewing): unions
