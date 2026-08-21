@@ -56,20 +56,6 @@ export default async function PeoplePage({ searchParams }) {
 
   return (
     <>
-      <p style={{ fontSize: 13.5, color: "var(--ink-faint)", margin: "0 0 20px" }}>
-        Your CRM. Add a person and whatever you know about them - offline
-        context the mailbox never carries. Only what you actually know,
-        never guessed on your behalf. Tag people into lists (Service
-        Providers, Multipliers, Sales...) to group them - a list is just a
-        tag, add as many as you want.
-      </p>
-
-      {!showArchived && (
-        <div style={{ marginBottom: 20 }}>
-          <NewPersonModal action={addPerson} />
-        </div>
-      )}
-
       <datalist id="list-tags">
         {listTabs.map(([tag]) => (
           <option key={tag} value={tag} />
@@ -83,11 +69,14 @@ export default async function PeoplePage({ searchParams }) {
               ? `${people.length} archived`
               : `${people.length} ${people.length === 1 ? "person" : "people"}`}
           </h2>
-          {showArchived ? (
-            <a href="/people">&larr; Back to active</a>
-          ) : (
-            archivedCount > 0 && <a href="/people?archived=1">Show archived ({archivedCount})</a>
-          )}
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            {showArchived ? (
+              <a href="/people">&larr; Back to active</a>
+            ) : (
+              archivedCount > 0 && <a href="/people?archived=1">Show archived ({archivedCount})</a>
+            )}
+            {!showArchived && <NewPersonModal action={addPerson} />}
+          </div>
         </div>
 
         {!showArchived && (
