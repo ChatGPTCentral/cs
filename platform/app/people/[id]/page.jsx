@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { supabaseSelect } from "../../../lib/supabase";
 import { findConnections, parseStorySlugs } from "../../../lib/people";
 import { getStory } from "../../../lib/ledger";
-import { updatePerson, toggleStar, toggleArchive } from "./actions";
+import { updatePerson, toggleStar, toggleArchive, mergePerson } from "./actions";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +12,10 @@ export default async function PersonPage({ params }) {
 
   const allPeople = await supabaseSelect("ledger_people", "?order=name.asc");
   const connections = findConnections(person, allPeople);
+  const mergedIntoPerson = person.merged_into
+    ? allPeople.find((p) => p.id === person.merged_into)
+    : null;
+  const mergeCandidates = allPeople.filter((p) => p.id !== person.id && !p.archived);
   const stories = parseStorySlugs(person.stories)
     .map((slug) => getStory(slug))
     .filter(Boolean);
@@ -25,6 +29,19 @@ export default async function PersonPage({ params }) {
       <p style={{ marginBottom: 16 }}>
         <a href="/people">&larr; All people</a>
       </p>
+
+      {mergedIntoPerson && (
+        <p
+          className="content"
+          style={{ marginBottom: 20, color: "var(--accent-ink)", background: "var(--accent-wash)" }}
+        >
+          Merged into{" "}
+          <a href={`/people/${mergedIntoPerson.id}`}>
+            <strong>{mergedIntoPerson.name}</strong>
+          </a>
+          . This record is kept for reference - nothing was deleted. Unarchive to undo the merge.
+        </p>
+      )}
 
       <article className="content" style={{ marginBottom: 20 }}>
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
@@ -95,6 +112,32 @@ export default async function PersonPage({ params }) {
         />
         <button type="submit">Save</button>
       </form>
+
+      {mergeCandidates.length > 0 && (
+        <form action={mergePerson} className="crm-form content" style={{ marginBottom: 20 }}>
+          <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>Merge a duplicate</h2>
+          <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 4px" }}>
+            Pick another person who is really the same as {person.name}. Their identity, org,
+            stories, background, and email log all fold into this record. The duplicate is
+            archived, not deleted - Unarchive on its page undoes the merge.
+          </p>
+          <input type="hidden" name="id" value={person.id} />
+          <label className="field-label" htmlFor="f-duplicate">Duplicate to merge in</label>
+          <select id="f-duplicate" name="duplicateId" defaultValue="">
+            <option value="" disabled>
+              Choose a person...
+            </option>
+            {mergeCandidates.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
+                {c.org ? ` — ${c.org}` : ""}
+                {c.identity ? ` (${c.identity})` : ""}
+              </option>
+            ))}
+          </select>
+          <button type="submit">Merge into {person.name}</button>
+        </form>
+      )}
 
       {stories.length > 0 && (
         <div className="content" style={{ marginBottom: 20 }}>
