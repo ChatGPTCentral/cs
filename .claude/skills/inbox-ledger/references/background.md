@@ -172,6 +172,17 @@ If a possible second address turns up with no such evidence, note it in
 rather than merging on a hunch - a wrong merge silently loses the
 distinction between two different people.
 
+**Merge is now a real feature on the platform, not a one-off SQL fix.**
+Every person page has a "Merge a duplicate" form - pick another CRM entry
+and it folds into the one you're viewing: identity and stories union and
+dedupe, org/background/starred fill in from whichever side has them, and
+every email log row moves over (skipping any `thread_id` the survivor
+already has). The duplicate is archived and marked `merged_into`, never
+deleted - Unarchive on its own page clears the marker and undoes the
+merge, since the anon key has no delete grant on this table by design.
+Andrew Kumiega above was done by hand before this shipped; anything after
+2026-08-20 should use the form instead.
+
 ## Email log, star, and archive, added 2026-08-20
 
 Alex asked why a person's page did not show the actual emails tied to
