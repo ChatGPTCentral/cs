@@ -1,6 +1,6 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { addPerson, createList } from "./actions";
-import { toggleStar, toggleArchive, updateBackground, updateLists } from "./[id]/actions";
+import { toggleStar, toggleArchive, updateBackground, updateLists, updateStories } from "./[id]/actions";
 import { parseLists } from "../../lib/people";
 import SavedToast from "./SavedToast";
 import TableCellInput from "./TableCellInput";
@@ -28,9 +28,10 @@ export default async function PeoplePage({ searchParams }) {
     await supabaseSelect("ledger_people", "?archived=eq.true&select=id")
   ).length;
 
-  const [allActive, definedLists] = await Promise.all([
+  const [allActive, definedLists, storyRows] = await Promise.all([
     supabaseSelect("ledger_people", `?archived=eq.${showArchived}&order=starred.desc,${sort}.asc`),
     supabaseSelect("ledger_lists", "?order=name.asc"),
+    supabaseSelect("ledger_stories", "?order=slug.asc&select=slug"),
   ]);
 
   // Lists are free-text tags, not a fixed enum. Tabs are the union of
@@ -59,6 +60,11 @@ export default async function PeoplePage({ searchParams }) {
       <datalist id="list-tags">
         {listTabs.map(([tag]) => (
           <option key={tag} value={tag} />
+        ))}
+      </datalist>
+      <datalist id="story-slugs">
+        {storyRows.map((s) => (
+          <option key={s.slug} value={s.slug} />
         ))}
       </datalist>
 
@@ -130,6 +136,7 @@ export default async function PeoplePage({ searchParams }) {
                     <a href={buildHref({ sortBy: "org" })}>Org{sort === "org" ? " ▾" : ""}</a>
                   </th>
                   <th>Identity</th>
+                  <th>Stories</th>
                   <th>Lists</th>
                   <th>Background</th>
                   <th></th>
@@ -165,6 +172,16 @@ export default async function PeoplePage({ searchParams }) {
                     </td>
                     <td>{p.org || ""}</td>
                     <td className="people-table-meta">{p.identity || ""}</td>
+                    <td>
+                      <TableCellInput
+                        action={updateStories}
+                        id={p.id}
+                        name="stories"
+                        defaultValue={p.stories || ""}
+                        placeholder="Add a story slug..."
+                        listId="story-slugs"
+                      />
+                    </td>
                     <td>
                       <TableCellInput
                         action={updateLists}

@@ -51,6 +51,19 @@ export async function updateLists(formData) {
   revalidatePath("/people");
 }
 
+export async function updateStories(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_people", `?id=eq.${id}`, {
+    stories: (formData.get("stories") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath(`/people/${id}`);
+  revalidatePath("/people");
+}
+
 export async function updateBackground(formData) {
   const id = (formData.get("id") || "").toString();
   if (!id) return;
