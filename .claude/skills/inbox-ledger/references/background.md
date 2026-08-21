@@ -183,6 +183,37 @@ merge, since the anon key has no delete grant on this table by design.
 Andrew Kumiega above was done by hand before this shipped; anything after
 2026-08-20 should use the form instead.
 
+## Lists and the spreadsheet view, added 2026-08-20
+
+Alex wanted `/people` to feel like a spreadsheet, and a way to group
+people into lists - his own examples were Service Providers (Netline,
+beehiiv, Sparkloop), Multipliers (relationships worth growing - Richard
+Lowe), and Sales-related people. `lists` is a free-text tag column, same
+convention as `stories` (comma-separated, `parseLists()` in
+`lib/people.js`), not a fixed enum - Alex said he "might" manage more
+lists later, so tags stay open-ended rather than a closed set.
+
+`/people` is now a real HTML table (star, name, org, identity, lists,
+background, archive as columns), sortable by name or org via the column
+headers. Filter tabs above the table are computed from whatever tags
+actually exist right now, plus an "Uncategorized" bucket - not
+hand-maintained. List and background cells save on blur or Enter
+(`TableCellInput.jsx`), no visible Save button, closer to how a real
+spreadsheet behaves.
+
+**Seeded only what Alex named directly** - people at Netline, beehiiv, and
+Sparkloop got `Service Providers`; Richard Lowe got `Multipliers`.
+Everyone else is untagged. Same discipline as everywhere else in this
+CRM: naming three examples is not the same as saying "categorize
+everyone" - the rest is Alex's call, made through the table itself.
+
+**Fixed a scroll bug the same session.** The original Save-background
+flow used `redirect()` to add `?saved=1` for the toast, which reset
+scroll to the top on every save - painful in a long table. Replaced with
+`SaveWatcher.jsx` (reads `useFormStatus` inside the form, fires a
+`window` event when the action finishes) and `SavedToast.jsx` (listens
+for that event). No redirect, no URL change, no scroll jump.
+
 ## Email log, star, and archive, added 2026-08-20
 
 Alex asked why a person's page did not show the actual emails tied to
