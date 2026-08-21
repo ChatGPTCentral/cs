@@ -148,6 +148,30 @@ real two-way exchange (16 Mar 2026), which the `_index.md` "⚠️ Anomalies"
 table did not expect - see that file for the flagged note, not yet resolved
 against the specific labeled threads.
 
+## One person, more than one email address
+
+A person can write from more than one address - a work email and a
+personal Gmail, or two work domains. `ledger_people` has one `identity`
+field, not a list, so the convention is: put every confirmed address in
+that one field, separated by ` / ` (e.g. `akumiega@iit.edu /
+andrew@kumiega.ch`). `ledger_people_emails` needs no change for this - it
+keys by `person_id`, so threads found under either address just get
+inserted under the same person and the Email log shows them together.
+
+**Only merge two addresses when there is real evidence they are the same
+person** - a name that matches across both (a header, a subject line
+addressing them by name), Alex stating it directly, or both. A shared
+domain alone is a hint, not proof. Andrew Kumiega (`akumiega@iit.edu` /
+`andrew@kumiega.ch`) is the first case: Alex named him directly, and a
+second Gmail search on the other address turned up a real thread
+addressing him as "Andrew" too - two independent signals, not one guess
+stacked on itself.
+
+If a possible second address turns up with no such evidence, note it in
+`background` as unconfirmed (see the `hamed@otio.ai`-style flags above)
+rather than merging on a hunch - a wrong merge silently loses the
+distinction between two different people.
+
 ## Email log, star, and archive, added 2026-08-20
 
 Alex asked why a person's page did not show the actual emails tied to
