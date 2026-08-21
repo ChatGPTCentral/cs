@@ -1,5 +1,5 @@
 import { supabaseSelect } from "../../lib/supabase";
-import { createStory, updateStoryStart, updateStoryEnd } from "./actions";
+import { createStory, updateStoryStart, updateStoryEnd, updateQuarterSummary } from "./actions";
 import TableCellInput from "../people/TableCellInput";
 import SavedToast from "../people/SavedToast";
 
@@ -10,7 +10,10 @@ function daysBetween(a, b) {
 }
 
 export default async function TimelinePage() {
-  const stories = await supabaseSelect("ledger_stories", "?order=start_date.asc.nullslast,title.asc");
+  const [stories, quarters] = await Promise.all([
+    supabaseSelect("ledger_stories", "?order=start_date.asc.nullslast,title.asc"),
+    supabaseSelect("ledger_quarters", "?order=quarter.asc"),
+  ]);
 
   const dated = stories.filter((s) => s.start_date);
   const undated = stories.filter((s) => !s.start_date);
@@ -33,6 +36,32 @@ export default async function TimelinePage() {
 
   return (
     <>
+      {quarters.length > 0 && (
+        <div className="content wide-content" style={{ marginBottom: 20 }}>
+          <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
+            History, by quarter
+          </h2>
+          <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 16px" }}>
+            Reconstructed from the email log - real thread counts and story activity per quarter,
+            not invented. Click into a summary to edit it.
+          </p>
+          {quarters.map((q) => (
+            <div key={q.id} className="entry">
+              <div className="field-label" style={{ marginBottom: 4 }}>{q.quarter}</div>
+              <TableCellInput
+                action={updateQuarterSummary}
+                id={q.id}
+                name="summary"
+                defaultValue={q.summary || ""}
+                placeholder="What happened this quarter..."
+                multiline
+                rows={2}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="content wide-content" style={{ marginBottom: 20 }}>
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
           <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>

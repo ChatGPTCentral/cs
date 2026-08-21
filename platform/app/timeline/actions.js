@@ -58,3 +58,15 @@ export async function updateStoryEnd(formData) {
 
   revalidatePath("/timeline");
 }
+
+export async function updateQuarterSummary(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_quarters", `?id=eq.${id}`, {
+    summary: (formData.get("summary") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/timeline");
+}

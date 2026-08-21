@@ -6,7 +6,7 @@ import SaveWatcher from "./SaveWatcher";
 // A spreadsheet-style cell: type, then either press Enter or click away
 // (blur) and it saves - no visible Save button needed. Only submits if
 // the value actually changed, so tabbing through untouched cells is free.
-export default function TableCellInput({ action, id, name, defaultValue, placeholder, listId, type = "text" }) {
+export default function TableCellInput({ action, id, name, defaultValue, placeholder, listId, type = "text", multiline = false, rows = 3 }) {
   const formRef = useRef(null);
   const initialValue = defaultValue || "";
 
@@ -19,15 +19,26 @@ export default function TableCellInput({ action, id, name, defaultValue, placeho
   return (
     <form ref={formRef} action={action} className="table-inline-form">
       <input type="hidden" name="id" value={id} />
-      <input
-        type={type}
-        name={name}
-        defaultValue={initialValue}
-        placeholder={placeholder}
-        className="table-cell-input"
-        onBlur={handleBlur}
-        list={listId}
-      />
+      {multiline ? (
+        <textarea
+          name={name}
+          defaultValue={initialValue}
+          placeholder={placeholder}
+          className="table-cell-input"
+          onBlur={handleBlur}
+          rows={rows}
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          defaultValue={initialValue}
+          placeholder={placeholder}
+          className="table-cell-input"
+          onBlur={handleBlur}
+          list={listId}
+        />
+      )}
       <SaveWatcher />
     </form>
   );
