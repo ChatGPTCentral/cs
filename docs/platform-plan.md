@@ -189,6 +189,20 @@ only had a "Stories: glide-andy" text line, not the actual content. Fixed:
 to, straight from the same `getStory()` the `/story/<slug>` pages use, not
 just a name to go look up separately.
 
+**Story timeline, 2026-08-20.** Alex: stories as a column in the CRM
+table, a way to add new ones, and a board showing each story's start
+(and, if it has one, end) period - the sum being AI Central's history.
+New Supabase table `ledger_stories` (slug, title, start_date, end_date),
+seeded with all 34 git-tracked stories. Dates were not guessed - 26 of 34
+got a real `start_date` derived from the earliest email tied to that
+slug in `ledger_people_emails`; the other 8 stayed unset. `/people` has a
+Stories column now (same inline-save pattern as Lists). New `/timeline`
+page renders a horizontal-bar board, positioned by real date math, with
+a dashed bar for stories still open (no end date); dates are editable
+right on the board, and a "+ New story" form registers a story's
+metadata before its narrative markdown exists, so it can be tagged and
+plotted immediately - the full write-up in git is still a separate step.
+
 ## Open
 
 **(2) Breakcold + Appeared.in sponsor discovery** - still blocked on
