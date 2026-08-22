@@ -42,3 +42,9 @@
   A reply is drafted answering everything **except** Richard's own ask: an
   address to send tote bags to. That is a real gap, marked
   `[NEEDS FROM ALEX: shipping address]` in the draft body - not invented
+- **calendar sweep, 2026-08-22.** Alex's Google Calendar gives the hackathon
+  itself real dates: bus to Bristol 2026-08-12, an "AI Hackathon Roundtable"
+  on 2026-08-14, bus back to London (Victoria Coach Station) 2026-08-15.
+  That's the actual event window this story's threads lead up to and follow
+  from
+

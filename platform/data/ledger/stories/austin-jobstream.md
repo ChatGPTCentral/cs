@@ -39,3 +39,9 @@
   earlier. Two more touches followed (Aug 2025) with no reply from Alex. Below
   the bar for its own story file but worth knowing this one had real traction,
   unlike most of growletter.co's other outreach
+- **calendar sweep, 2026-08-22.** Alex's Google Calendar confirms exact dates
+  for the New Media Summit trip referenced above: flight to Austin on
+  2026-02-25, the summit itself on 2026-02-26 ("New Media Summit 2026", plus
+  an "Uscreen in Austin" cocktail party and a "New Media Summit Meetup" the
+  same evening). No return-flight entry found, so the trip's actual end date
+  is not confirmed beyond the 26th
