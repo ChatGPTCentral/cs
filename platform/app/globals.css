@@ -364,6 +364,19 @@ p .field-label { display: inline-block; min-width: 60px; }
 }
 .saved-toast-visible { opacity: 1; transform: translateY(0); }
 
+.review-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+.review-side { min-width: 0; }
+.review-actions { display: flex; flex-direction: column; gap: 6px; }
+.review-discard { background: none; color: var(--ink-dim); border-color: var(--line); }
+@media (max-width: 720px) {
+  .review-row { grid-template-columns: 1fr; }
+}
+
 footer.snapshot-note {
   margin-top: 36px;
   padding-top: 18px;

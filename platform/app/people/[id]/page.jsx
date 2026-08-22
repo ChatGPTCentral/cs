@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { supabaseSelect } from "../../../lib/supabase";
 import { findConnections, parseStorySlugs } from "../../../lib/people";
 import { getStory } from "../../../lib/ledger";
-import { updatePerson, toggleStar, toggleArchive, mergePerson } from "./actions";
+import { updatePerson, toggleStar, toggleArchive, mergePerson, approveEnrichment, discardEnrichment } from "./actions";
 import SavedToast from "../SavedToast";
 import SaveWatcher from "../SaveWatcher";
 import Avatar from "../Avatar";
@@ -44,6 +44,38 @@ export default async function PersonPage({ params }) {
           </a>
           . This record is kept for reference - nothing was deleted. Unarchive to undo the merge.
         </p>
+      )}
+
+      {(person.pending_linkedin_url || person.pending_photo_url) && (
+        <div className="content" style={{ marginBottom: 20 }}>
+          <p className="field-label" style={{ marginTop: 12 }}>Apollo match waiting on review</p>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "6px 0" }}>
+            <Avatar name={person.pending_match_name || person.name} photoUrl={person.pending_photo_url} size={40} />
+            <div>
+              <strong>{person.pending_match_name || "(name not returned)"}</strong>
+              {person.pending_match_title && <div className="entry-meta">{person.pending_match_title}</div>}
+              {person.pending_linkedin_url && (
+                <div className="entry-meta">
+                  <a href={person.pending_linkedin_url} target="_blank" rel="noopener">
+                    {person.pending_linkedin_url}
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: 8 }}>
+            <form action={approveEnrichment}>
+              <input type="hidden" name="id" value={person.id} />
+              <button type="submit">Approve</button>
+              <SaveWatcher />
+            </form>
+            <form action={discardEnrichment}>
+              <input type="hidden" name="id" value={person.id} />
+              <button type="submit" className="review-discard">Discard</button>
+              <SaveWatcher />
+            </form>
+          </div>
+        </div>
       )}
 
       <article className="content" style={{ marginBottom: 20 }}>
@@ -128,6 +160,13 @@ export default async function PersonPage({ params }) {
           name="lists"
           placeholder="Lists, comma separated (e.g. Service Providers)"
           defaultValue={person.lists || ""}
+        />
+        <label className="field-label" htmlFor="f-linkedin">LinkedIn URL</label>
+        <input
+          id="f-linkedin"
+          name="linkedin_url"
+          placeholder="https://www.linkedin.com/in/..."
+          defaultValue={person.linkedin_url || ""}
         />
         <label className="field-label" htmlFor="f-background">Background</label>
         <textarea

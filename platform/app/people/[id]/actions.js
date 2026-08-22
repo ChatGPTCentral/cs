@@ -31,9 +31,73 @@ export async function updatePerson(formData) {
     stories: (formData.get("stories") || "").toString().trim() || null,
     lists: (formData.get("lists") || "").toString().trim() || null,
     background: (formData.get("background") || "").toString().trim() || null,
+    linkedin_url: (formData.get("linkedin_url") || "").toString().trim() || null,
     updated_at: new Date().toISOString(),
   });
 
+  revalidatePath(`/people/${id}`);
+  revalidatePath("/people");
+  revalidatePath("/people/review");
+}
+
+// A LinkedIn URL entered here is a standing fact Alex supplied himself
+// (from Breakcold, Cleanlist, Wiza, or just finding the profile) - not an
+// Apollo guess. It writes straight to the live field, no review step,
+// and is available whether or not an Apollo match ever ran.
+export async function setLinkedIn(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_people", `?id=eq.${id}`, {
+    linkedin_url: (formData.get("linkedin_url") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath(`/people/${id}`);
+  revalidatePath("/people");
+  revalidatePath("/people/review");
+}
+
+// Copies the pending Apollo match onto the live record and clears the
+// pending fields - the review queue only ever holds one candidate per
+// person, so approving replaces whatever was there before.
+export async function approveEnrichment(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  const [person] = await supabaseSelect("ledger_people", `?id=eq.${id}`);
+  if (!person) return;
+
+  await supabaseUpdate("ledger_people", `?id=eq.${id}`, {
+    photo_url: person.pending_photo_url || null,
+    linkedin_url: person.pending_linkedin_url || null,
+    pending_photo_url: null,
+    pending_linkedin_url: null,
+    pending_match_name: null,
+    pending_match_title: null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/people/review");
+  revalidatePath(`/people/${id}`);
+  revalidatePath("/people");
+}
+
+// Clears the pending match without touching the live record - the
+// person stays exactly as they were, the candidate is just gone.
+export async function discardEnrichment(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_people", `?id=eq.${id}`, {
+    pending_photo_url: null,
+    pending_linkedin_url: null,
+    pending_match_name: null,
+    pending_match_title: null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/people/review");
   revalidatePath(`/people/${id}`);
   revalidatePath("/people");
 }
