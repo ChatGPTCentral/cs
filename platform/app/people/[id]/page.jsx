@@ -237,7 +237,11 @@ export default async function PersonPage({ params }) {
         )}
         {emails.map((e) => (
           <div key={e.id} className="entry">
-            <a href={`https://mail.google.com/mail/u/0/#all/${e.thread_id}`} target="_blank" rel="noopener">
+            <a
+              href={`https://mail.google.com/mail/u/${e.gmail_account_index || 0}/#all/${e.thread_id}`}
+              target="_blank"
+              rel="noopener"
+            >
               <strong>{e.subject || "(no subject)"}</strong>
             </a>
             <div className="entry-meta">
