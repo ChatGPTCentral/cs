@@ -5,6 +5,7 @@ import { parseLists } from "../../lib/people";
 import SavedToast from "./SavedToast";
 import TableCellInput from "./TableCellInput";
 import NewPersonModal from "./NewPersonModal";
+import Avatar from "./Avatar";
 
 export const dynamic = "force-dynamic";
 
@@ -166,7 +167,8 @@ export default async function PeoplePage({ searchParams }) {
                       </form>
                     </td>
                     <td>
-                      <a href={`/people/${p.id}`}>
+                      <a href={`/people/${p.id}`} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <Avatar name={p.name} photoUrl={p.photo_url} size={22} />
                         <strong>{p.name}</strong>
                       </a>
                     </td>

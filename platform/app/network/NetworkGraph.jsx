@@ -126,12 +126,26 @@ export default function NetworkGraph({ nodes, edges }) {
               onMouseEnter={() => setHovered(node.id)}
               onMouseLeave={() => setHovered(null)}
             >
+              {node.photoUrl && (
+                <clipPath id={`clip-${node.id}`}>
+                  <circle cx={p.x} cy={p.y} r={r} />
+                </clipPath>
+              )}
               <circle
                 cx={p.x} cy={p.y} r={r}
                 fill={node.starred ? "var(--accent)" : "var(--surface-2)"}
                 stroke={node.starred ? "var(--accent-ink)" : "var(--ink-faint)"}
                 strokeWidth={1.2}
               />
+              {node.photoUrl && (
+                <image
+                  href={node.photoUrl}
+                  x={p.x - r} y={p.y - r}
+                  width={r * 2} height={r * 2}
+                  clipPath={`url(#clip-${node.id})`}
+                  preserveAspectRatio="xMidYMid slice"
+                />
+              )}
               <text
                 x={p.x} y={p.y - r - 4}
                 textAnchor="middle"

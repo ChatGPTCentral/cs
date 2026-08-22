@@ -5,6 +5,7 @@ import { getStory } from "../../../lib/ledger";
 import { updatePerson, toggleStar, toggleArchive, mergePerson } from "./actions";
 import SavedToast from "../SavedToast";
 import SaveWatcher from "../SaveWatcher";
+import Avatar from "../Avatar";
 
 export const dynamic = "force-dynamic";
 
@@ -47,11 +48,14 @@ export default async function PersonPage({ params }) {
 
       <article className="content" style={{ marginBottom: 20 }}>
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
-          <h1 style={{ fontWeight: 700, fontSize: 26, margin: "24px 0 4px" }}>
-            {person.starred ? "★ " : ""}
-            {person.name}
-            {person.archived ? " (archived)" : ""}
-          </h1>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <Avatar name={person.name} photoUrl={person.photo_url} size={52} />
+            <h1 style={{ fontWeight: 700, fontSize: 26, margin: "24px 0 4px" }}>
+              {person.starred ? "★ " : ""}
+              {person.name}
+              {person.archived ? " (archived)" : ""}
+            </h1>
+          </div>
           <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
             <form action={toggleStar}>
               <input type="hidden" name="id" value={person.id} />
@@ -74,6 +78,14 @@ export default async function PersonPage({ params }) {
         {person.identity && (
           <p className="entry-meta">
             <span className="field-label">Identity</span> {person.identity}
+          </p>
+        )}
+        {person.linkedin_url && (
+          <p className="entry-meta">
+            <span className="field-label">LinkedIn</span>{" "}
+            <a href={person.linkedin_url} target="_blank" rel="noopener">
+              {person.linkedin_url}
+            </a>
           </p>
         )}
         {person.stories && (

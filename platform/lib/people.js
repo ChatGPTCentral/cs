@@ -76,6 +76,7 @@ export function buildNetwork(people) {
       name: p.name,
       org: p.org || null,
       starred: !!p.starred,
+      photoUrl: p.photo_url || null,
       degree: degree.get(p.id),
     }));
 
