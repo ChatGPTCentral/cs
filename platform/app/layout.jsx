@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
               <a href="/board">Full board</a>
               <a href="/stories">All stories</a>
               <a href="/timeline">Timeline</a>
+              <a href="/network">Network</a>
               <a href="/people">People</a>
               <a href="/feedback">Feedback</a>
             </nav>
