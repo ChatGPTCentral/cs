@@ -26,3 +26,10 @@
   participants); the local-part-text signal ("studiogaldieri" on two domains)
   is what surfaced it, and eight months of continuous traffic confirms it is
   a real, ongoing operational relationship, not a one-off
+
+  **month-by-month review, 2026-08-23**: mentecuore27@gmail.com
+  (chatgptcentral@gmail.com, `gmail_account_index = 1`), 28 Jul 2024 -
+  `190e983b7e98560c` - is one of the accountant's/Danilo's/Valentina's
+  accounts, confirmed by Alex. Pushes the real start of this relationship
+  back a full year, to July 2024. `ledger_stories.start_date` moved
+  accordingly.

@@ -7,7 +7,10 @@
 - kind: project (sponsorship relationship, one company, several contacts)
 - people: Vikas Kumar, dhrithi jain, Sunny Kumar, Pankhuri Gupta - all
   `@growthschool.io`. Charvi Bothra (also at Meco) and Sunny Singh appear
-  peripherally, per Cowork's read of the wider thread cluster
+  peripherally, per Cowork's read of the wider thread cluster. Charvi is
+  now tracked here for her GrowthSchool-era correspondence only - her
+  later freelance work selling newsletter ads is a separate story, see
+  charvi-bothra-freelance-ads
 - status: historical on this mailbox - see notes below for why this likely
   continues into the still-live GrowthSchool/Outskill relationship
 - start: 2024-02-23
