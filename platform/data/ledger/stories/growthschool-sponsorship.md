@@ -30,7 +30,10 @@
   for the media kit - a second, independent outreach, not a continuation of
   the Feb 2024 opener, and it sits unanswered in the messages pulled.
   `1976aa1fccb408c4` is the real, paying deal: by Jun 2025 ChatGPT Central
-  is "theaicentral.net" with Sam as the point of contact. Sunny Kumar
+  is "theaicentral.net" with Sam as the point of contact - Sam is Sunny
+  Singh, who started out in this same GrowthSchool circle and later
+  crossed over to AI Central's own sales team, see sunny-singh-sam-hire
+  for the full arc. Sunny Kumar
   looped in Pankhuri and Mitali asking about a dedicated issue; Sam quoted
   USD 2,499, discounted to USD 2,299 for existing-relationship pricing,
   and offered a second bundled issue. Mitali confirmed and requested 23-27

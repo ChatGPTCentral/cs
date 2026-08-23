@@ -8,11 +8,11 @@
   TrafficGrid
 - status: closed
 - start: 2024-10-07
-- end: 2024-10-07
+- end: 2024-11-21
 - next-action: none
 - commitments: none
 - threads (chatgptcentral@gmail.com, `gmail_account_index = 1`):
-  `19268cb4ad538b8e` (7 Oct 2024)
+  `19268cb4ad538b8e` (7 Oct 2024), `19345f2004c589c4` (19-21 Nov 2024)
 - notes: TrafficGrid was a subscriber-acquisition service AI Central ran a
-  test with - per Alex's own account, month-by-month review, 2026-08-23.
-  Closed, no ongoing relationship.
+  test with, over several rounds - per Alex's own account, month-by-month
+  review, 2026-08-23. Closed, no ongoing relationship.
