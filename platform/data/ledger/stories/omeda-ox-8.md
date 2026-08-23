@@ -23,3 +23,10 @@
   a business-card stack, or LinkedIn connections from these two days, that
   is the way to fill this story in - nothing here should be guessed from
   the "OX8"/"Omeda" name alone
+
+  **month-by-month review, 2026-08-23**: found real email evidence at
+  last. Andrew Degenholtz emailed from andrew@emags.com (18, 21 May 2025)
+  and gave Alex a demo of his product - nothing came of it, closed. Also
+  met at OX8: wfisher@informationevolution.com (20 May 2025) - AI Central
+  tried to build a project with him that failed, see
+  information-evolution-project for the (still open) follow-up.

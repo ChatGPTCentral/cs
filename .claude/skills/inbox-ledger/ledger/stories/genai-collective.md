@@ -2,10 +2,12 @@
 
 - query: none - no label. Found by discovery, near the floor of the sweep
 - label-id: none
-- kind: org (three-person cluster)
+- kind: org (four-person cluster)
 - people: `chappy@genaicollective.ai`, `aj@genaicollective.ai`,
-  `paula@genaicollective.ai`
-- status: **yours** - a specific ask went unanswered, over a year ago
+  `paula@genaicollective.ai`, `jonathan@genaicollective.ai`
+- status: closed - month-by-month review, 2026-08-23: Alex confirmed this
+  is a started-and-concluded story, an attempt to organize an event that
+  did not come together, not an open ask
 - last-inbound: 2025-04-28 (paula@genaicollective.ai, "finding time")
 - last-outbound: 2025-05-20 (alex@theaicentral.net, "chappy, i have a problem")
 - idle: over a year - historical, not actionable without reviving deliberately
