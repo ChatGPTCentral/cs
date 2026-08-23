@@ -7,7 +7,7 @@
 - people: Andrew Bolis, andrew784@gmail.com
 - status: historical - closed, paid
 - start: 2023-11-23
-- end: 2024-04-25
+- end: 2024-10-15
 - next-action: none
 - commitments: none open, deal paid in full
 - threads (chatgptcentral@gmail.com, `gmail_account_index = 1`):
