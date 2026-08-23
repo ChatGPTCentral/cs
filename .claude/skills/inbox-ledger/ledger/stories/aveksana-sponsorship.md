@@ -33,3 +33,9 @@
   message she sent identifies her as Aveksana's founder pitching a paid
   deal. The underlying relationship is real and well documented, the label
   was wrong.
+
+  A bulk re-engagement email went out 27 Mar 2025 (`195d73bfea7b51f0`,
+  same minute as similar sends to chief-ai-officer-interview and
+  accelario-paved-campaign) - confirmed by Alex as an attempt to reopen
+  several closed stories at once, not a real reopening. Story stays
+  closed.

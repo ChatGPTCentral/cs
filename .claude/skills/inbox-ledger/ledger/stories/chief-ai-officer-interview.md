@@ -19,4 +19,8 @@
 - notes: Chief AI Officer trains clients on AI. AI Central originally
   sold them an interview, then it concluded - per Alex's own account,
   month-by-month review, 2026-08-23. Lee is the same story as doc@, not
-  a separate relationship.
+  a separate relationship. A bulk re-engagement email went out 27 Mar
+  2025 (`195d736d7b7ec416`, same minute as similar sends to
+  aveksana-sponsorship and accelario-paved-campaign) - confirmed by Alex
+  as an attempt to reopen several closed stories at once, not a real
+  reopening. Story stays closed.

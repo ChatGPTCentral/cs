@@ -16,4 +16,8 @@
 - notes: Nicole paid AI Central via Paved (see paved-ads) for an ad
   campaign back in the day - per Alex's own account, month-by-month
   review, 2026-08-23. A potential client for a future campaign. Caroline
-  was Nicole's colleague, same closed campaign.
+  was Nicole's colleague, same closed campaign. A bulk re-engagement
+  email went out 27 Mar 2025 (`195d73f57865b865`, same minute as similar
+  sends to chief-ai-officer-interview and aveksana-sponsorship) -
+  confirmed by Alex as an attempt to reopen several closed stories at
+  once, not a real reopening. Story stays closed.
