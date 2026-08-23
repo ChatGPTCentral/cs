@@ -7,7 +7,9 @@
 - kind: project (vendor support, one company, six contacts)
 - people: Alessandro Toscani, Antonino Caccamo, Antonio La Mura, Lorenzo
   Pellizzardi, Massimo De Pra, Fabio Bedeschi - all `@a-cube.io`
-- status: historical - no open thread, no action, no confirmed resolution
+- status: closed - Alex confirmed, 2026-08-23, month-by-month review: an
+  e-invoicing exploration with A-Cube (an invoicing API provider) that
+  ended without success, not an open thread
 - start: 2024-04-25
 - end: 2024-09-18
 - next-action: none
