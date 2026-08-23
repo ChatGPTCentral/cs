@@ -14,6 +14,12 @@
   --accent: #2383E2;
   --accent-ink: #0B6FCA;
   --accent-wash: #E7F3FE;
+  /* Second axis for the story timeline - moments (bounded events) vs
+     threads (ongoing relationships, which keep --accent). Warm on purpose,
+     so the two read apart at a glance without a third unrelated hue. */
+  --moment: #AD7A1E;
+  --moment-ink: #8A5F13;
+  --moment-wash: #FBF1DF;
   --shadow: 0 1px 2px rgba(15,15,15,0.05);
   --radius: 3px;
 }
@@ -344,6 +350,122 @@ p .field-label { display: inline-block; min-width: 60px; }
   gap: 4px;
 }
 .timeline-dates .table-cell-input { min-width: 110px; font-size: 11.5px; }
+
+/* ---------- quarter cards: moments vs threads ---------- */
+
+.quarter-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.quarter-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.quarter-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.quarter-counts { display: flex; gap: 10px; font-size: 12px; color: var(--ink-faint); }
+.quarter-counts strong { color: var(--ink-dim); font-weight: 700; }
+.quarter-prose { padding: 10px 16px 2px; }
+.quarter-prose .table-cell-input { font-size: 13.5px; color: var(--ink-dim); width: 100%; }
+.quarter-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 640px) { .quarter-groups { grid-template-columns: 1fr; } }
+.quarter-group { padding: 12px 16px 14px; }
+.quarter-group + .quarter-group { border-left: 1px solid var(--line); }
+@media (max-width: 640px) { .quarter-group + .quarter-group { border-left: none; border-top: 1px solid var(--line); } }
+.quarter-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.quarter-group-title .dot { width: 8px; height: 8px; }
+.quarter-group-title.moments { color: var(--moment-ink); }
+.quarter-group-title.moments .dot { background: var(--moment); border-radius: 2px; }
+.quarter-group-title.threads { color: var(--accent-ink); }
+.quarter-group-title.threads .dot { background: var(--accent); border-radius: 50%; }
+
+.axis-chip-list { display: flex; flex-direction: column; gap: 6px; }
+.axis-chip {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  line-height: 1.35;
+}
+.axis-chip.moment { background: var(--moment-wash); }
+.axis-chip.thread { background: var(--accent-wash); }
+.axis-chip a { color: var(--ink); font-weight: 600; }
+.axis-chip .dates {
+  margin-left: auto;
+  font-size: 10.5px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.axis-empty { font-size: 12.5px; color: var(--ink-faint); font-style: italic; margin: 0; }
+
+/* ---------- two-lane story board ---------- */
+
+.board-lane-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 20px 0 6px;
+}
+.board-lane-title:first-of-type { margin-top: 0; }
+.timeline-row.is-thread .timeline-bar {
+  background: transparent;
+}
+.ray-dot {
+  position: absolute;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.ray-line {
+  position: absolute;
+  top: 8px;
+  height: 2px;
+  right: 0;
+  background: repeating-linear-gradient(90deg, var(--accent) 0 4px, transparent 4px 8px);
+  opacity: 0.6;
+}
+.axis-select {
+  font-size: 11px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--ink-dim);
+  padding: 2px 4px;
+}
 
 .saved-toast {
   position: fixed;

@@ -59,6 +59,23 @@ export async function updateStoryEnd(formData) {
   revalidatePath("/timeline");
 }
 
+// Which axis a story reads on: "moment" (a bounded event, can run
+// alongside others in the same window) or "thread" (an ongoing
+// relationship or pursuit with no real end). Not inferred from dates -
+// set here, by hand, story by story.
+export async function updateStoryAxis(formData) {
+  const id = (formData.get("id") || "").toString();
+  const axis = (formData.get("axis") || "").toString().trim();
+  if (!id || (axis !== "moment" && axis !== "thread")) return;
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, {
+    axis,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/timeline");
+}
+
 export async function updateQuarterSummary(formData) {
   const id = (formData.get("id") || "").toString();
   if (!id) return;
