@@ -7,11 +7,13 @@
 - people: Yar, yar@cybercorsairs.com, org Cybercorsairs
 - status: closed - no result
 - start: 2024-08-07
-- end: 2024-08-07
+- end: 2024-10-21
 - next-action: none
 - commitments: none
 - threads (chatgptcentral@gmail.com, `gmail_account_index = 1`):
-  `1912f059fa8213c8` (7 Aug 2024)
+  `1912f059fa8213c8` (7 Aug 2024, inbound), `192b08ad3029b080` (21 Oct
+  2024, outbound)
 - notes: Yar is simultaneously a newsletter and a person Alex explored
   advisory work with - nothing came of it, per Alex's own account,
-  month-by-month review, 2026-08-23.
+  month-by-month review, 2026-08-23. Confirmed still the same closed
+  story on the October touch, not a reopening.
