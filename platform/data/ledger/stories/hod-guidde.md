@@ -23,3 +23,11 @@
   over three months, that appears to have gone entirely unanswered. Worth a
   direct check with Alex on whether Hod replied through a channel outside
   Gmail (call, Slack) before treating this as fully cold
+
+  **month-by-month review, 2026-08-23 - important correction.** Alex
+  confirmed directly: Guidde was AI Central's client for a long time
+  before this thread went cold - not a stalled prospect that never
+  converted, a real paying relationship that was lost. The Feb-May 2026
+  chase in the threads above is trying to win them back, not win them
+  for the first time. Flagged by Alex as a priority to reclaim - do not
+  read this story as "cold proposal, low priority."
