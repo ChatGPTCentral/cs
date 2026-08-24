@@ -28,3 +28,10 @@
   `sunny-deals.md` for another Delve mention); Ian replied same week explaining
   Delve had a temporary hold on ads. No message after 26 March confirms
   whether the agreement was signed
+
+  **month-by-month review, 2026-08-23.** Confirmed by Alex: Ad Astra Media
+  is a sales-as-a-service agency, similar to MadRev - Ian and Nate are
+  co-founders. Met at the New Media Summit in Austin (explains the "NMS
+  Follow Up" thread). The contract was signed months after that meeting,
+  work started, but the two sides never closed a single deal together -
+  an on-and-off relationship, not a clean success or failure.

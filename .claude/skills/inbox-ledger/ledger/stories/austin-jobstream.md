@@ -58,4 +58,6 @@
   above) and another woman, not yet named in this ledger. Alex re-met Katie
   Fortunato later at Cannes 2026 - see cannes-2026.md. They Got Acquired's
   founder (see ma-exploration) was also met at this same New Media Summit -
-  two separate threads from one trip.
+  two separate threads from one trip. Jazmin works under Katie - Jobstream
+  promised Alex swag/merchandising, which is why he reached out again in
+  August 2026.

@@ -14,3 +14,10 @@
 - notes: three outbound messages over two months with no visible reply yet.
   Related to `aievents@informa.com`, also seen in this account - Informa runs
   AI-industry events, likely a sponsorship or speaking-slot conversation
+
+  **month-by-month review, 2026-08-23.** The real ask, per Alex: get AI
+  Central accredited as an official media sponsor of Informa's events - AI
+  Central already works with Informa and with Netline, and has done press
+  at four Informa events already. Mya was the listed contact on Informa's
+  site. Low intensity so far, but potentially a big outcome - do not lose
+  sight of this one.
