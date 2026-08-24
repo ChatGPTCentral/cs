@@ -45,3 +45,17 @@
   an "Uscreen in Austin" cocktail party and a "New Media Summit Meetup" the
   same evening). No return-flight entry found, so the trip's actual end date
   is not confirmed beyond the 26th
+
+- **month-by-month review, 2026-08-23.** The real story, per Alex: Jobstream
+  is where Alex met Katie Fortunato (the founder) and Amanda, in person, at
+  the New Media Summit - and Jobstream became a real paying client.
+  Recruitics (bryan@recruitics.com) is Jobstream's parent company. AI
+  Central and Jobstream worked together on two whitepapers and a dedicated
+  section of the website. They also attended The Newsletter Conference
+  2026 in New York, where Alex met the team again - Amanda told him there
+  she'd soon leave Jobstream for a new company. Two new people joined
+  Jobstream afterward: Jazmin (jazmin@getjobstream.com, already tracked
+  above) and another woman, not yet named in this ledger. Alex re-met Katie
+  Fortunato later at Cannes 2026 - see cannes-2026.md. They Got Acquired's
+  founder (see ma-exploration) was also met at this same New Media Summit -
+  two separate threads from one trip.

@@ -16,3 +16,10 @@
   counterparties under one label. It needs splitting into one story per
   counterparty before the whose-move logic means anything. Right now "139 days
   idle" describes one Perplexity thread, not the deal flow
+
+  **month-by-month review, 2026-08-23.** The Perplexity thread split out into
+  its own story, perplexity-dub-affiliate - real substance, not a cold
+  pitch: Perplexity had just launched a dub.co affiliate campaign, AI
+  Central took part, then tried a follow-up sale that failed. Worth
+  revisiting. The rest of the pipeline still needs the same per-counterparty
+  split this file already called for.

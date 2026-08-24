@@ -28,3 +28,11 @@
   thread stalled after Alex never returned the seller form. Recording facts
   only - the underlying decision is Alex's and not something to editorialize
   on here
+
+  **month-by-month review, 2026-08-23.** The real origin, per Alex: he met
+  They Got Acquired's founder in person at the New Media Summit in Austin
+  (late Feb 2026 - see austin-jobstream), then subscribed to their
+  newsletter. A questionnaire in that newsletter offered broker intros -
+  that's where these three came from. Alex confirmed the Just Website
+  Brokerage thread was left unanswered on purpose - he lost interest in
+  that story.
