@@ -16,3 +16,13 @@
   roughly April-June 2025 - per Alex's own account, month-by-month review,
   2026-08-23. Distinct from jorge-content-operating-system, which comes
   later and is a different, longer-running project with Jorge.
+
+  **The rebrand, 2026-08-24, per Alex.** This is the project that made the
+  rebrand from "ChatGPT Central" to "AI Central" real - the moment the
+  publication grew into an actual media company, not just a newsletter.
+  Alex already believed "AI Central" would be the eventual name even before
+  this project: more useful and less politically narrow than "ChatGPT
+  Central," especially as other AI products entered the market and tying
+  the brand to one product (ChatGPT) became a limitation. Brand guidelines
+  from this project exist as a PDF Alex shared 2026-08-24 - not yet read
+  into the ledger in full.

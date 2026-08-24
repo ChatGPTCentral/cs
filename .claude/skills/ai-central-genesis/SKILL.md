@@ -90,10 +90,29 @@ between September 2025 and February 2026, before Alex caught the mistake and
 gave the full identity. Current team member, never archive. *Per Alex - see
 elizabeth-coo-hire.md*
 
-Also on the team, not yet with a founding story of their own: Mark
-(`mark@theaicentral.net` / `mark@thecentral.ai`) and the Kris support persona
-(`kris@thecentral.ai`, governed separately by `aic-customer-support`) - see
-"What this file does not yet resolve" below for the Kris gap.
+**Mark** is Marwan. First contact in August 2025; when he joined AI Central
+his name became "Mark" - the same pattern as Alex himself (real name Alessio,
+"Alex" at AI Central), Elizabeth (Morgane), and Sam (Sunny): joining AI
+Central means taking on an anglophone identity. *Per Alex - see
+mark-marwan.md*
+
+**Kris** (`kris@thecentral.ai`, the newsletter's support persona, governed
+day to day by `aic-customer-support`) started as an ambiguous alter ego. For
+a brief period "Kris" coincided with an actual person, Cristiana, one of the
+first people to work at AI Central - later let go. Once Cristiana left, Alex
+inherited the Kris persona himself; today Kris is Alex's own female alter
+ego, warm and affectionate with readers, especially male ones, while "Alex
+from AI Central" is Alex's own male voice. *Per Alex*
+
+### The rebrand: "ChatGPT Central" to "AI Central" (from Apr 2025)
+
+Alex hired Jorge for brand identity work starting April 2025 - the moment the
+publication grew into a real media company, not just a newsletter. Even at
+that point Alex already believed "AI Central" would be the eventual name: it
+read as more useful and less politically narrow than "ChatGPT Central,"
+especially as other AI products entered the market and tying the brand to one
+product (ChatGPT) became a limitation rather than an asset. *Per Alex - see
+ai-central-brand-identity.md*
 
 ### ElevenLabs: met in person, became real revenue (Dec 2025 - present)
 
@@ -134,6 +153,15 @@ built. *Per Alex - see ai-central-voices.md*
   least Jan 2026, real recurring operational work (Wise bank reconciliation,
   F24 tax filings, CCIAA startup-innovativa paperwork, invoice corrections).
   *Verified - see studio-galdieri.md*
+- **Italy Business Professionals** - Alex's own mental bucket for routine
+  Italian operational contacts: Virginia (insurance broker), Alessandro
+  Negri (AI Central's lawyer), alongside Danilo at Studio Galdieri.
+  Ongoing since Jul 2025. *Per Alex - see italy-business-professionals.md*
+- **Pixel** - Ricky's agency (meetpixels.com), paid by AI Central to
+  redesign the newsletter and website, starting Aug 2025. *Per Alex - see
+  pixel-website-redesign.md*
+- **Breakcold** - AI Central's current CRM, adopted when the sales pipeline
+  was revived in early 2026. *Per Alex - see breakcold-crm-adoption.md*
 
 ## Bought the tool on AppSumo, then pitched the new owner ads
 
@@ -218,6 +246,14 @@ obvious, damaging mistake in a draft:
   *Per Alex - see wise-account-and-events.md*
 - **Omeda OX8** - Andrew Degenholtz confirmed attended; no other attendee
   list survives in the calendar. *Calendar sweep - see omeda-ox-8.md*
+- **London Tech Week 2026** - Alex and Elizabeth attended as press
+  delegates via the Global Tech Advocates network, 3-11 Jun, with the Tech
+  Mixer on the night of the 11th as the clearest in-person record (Richard
+  Lowe met there). Elizabeth then ran a structured "AI Central Voices"
+  interview-outreach batch to people met that week. This is also where
+  `ai-hackathon-bristol` began, and where a separate press-delegate track
+  for The AI Summit London ran the same week. *Verified - calendar sweep
+  and thread read - see london-tech-week-2026.md*
 
 ## People who worked with AI Central, then left
 
@@ -244,22 +280,26 @@ working with - paul-lemley-consulting-pitch.md), Mats (see "Before AI
 Central had a name" above). Same shape across all three: a real attempt, a
 clean non-outcome, nothing to chase.
 
+## Recent open threads (Jul-Aug 2026)
+
+Not history yet, but real and current as of the last review - included so
+this file doesn't read as though the company's story stops in June:
+
+- **Newsletter Feature Requests** - a recurring pattern of inbound people
+  wanting newsletter visibility (David Homan is the named example); Alex
+  wants a standard process instead of deciding each one ad hoc. *Per Alex -
+  see newsletter-feature-inbound-process.md*
+- **Becca Williams / Hewlett Rand PR** - a real, open PR relationship via
+  Antidote Communications. *Per Alex - see becca-williams-hewlett-rand-pr.md*
+- **Luma AI follow-up** - AI Central has worked with Luma before through
+  Passionfroot and re-met their team at Cannes 2026; Alex wants more work
+  with them. *Per Alex - see luma-ai-followup.md*
+
 ## What this file does not yet resolve
 
 These are real gaps, not guesses filled in to look complete:
 
-- **The rebrand from "ChatGPT Central" to "AI Central."** The corpus shows
-  the name in transition somewhere between 2024 and mid-2025 (GrowthSchool
-  was still being sent mail as "ChatGPT Central" as late as Feb 2024 and
-  operating as theaicentral.net by Jun 2025) but no exact date, reasoning or
-  story file exists for the rebrand itself. Needs Alex directly - do not
-  guess a date
-- **How Kris (kris@thecentral.ai) came to be a named persona, distinct from
-  Alex's own voice.** Confirmed as real and currently in use (see
-  `alex-writing-style/SKILL.md`), but the origin of the persona is not
-  documented anywhere in this corpus
-- **Mark's own story.** He is listed as current team in
-  `graph/people.md`, but has no founding-story detail here yet
 - **The other lost clients flagged for reclaim** (Perplexity/dub.co,
   Anything.com, Otio - listed in `alex-writing-style/SKILL.md`) beyond what
-  is written above
+  is written above, do not yet have the same depth of founding-story detail
+  as Guidde and GrowthSchool
