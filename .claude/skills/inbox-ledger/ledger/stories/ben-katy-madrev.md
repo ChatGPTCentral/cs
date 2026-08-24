@@ -14,3 +14,8 @@
   Alex and Liz on cc - so it may not be addressed to Alex at all. Cc traffic is
   the most over-flagged category in any inbox ledger. Read it before treating it
   as owed
+
+  **month-by-month review, 2026-08-23**: MadRev is an ad-sales-as-a-service
+  agency - they sell ads for newsletters and take a percentage. Alex met
+  Ben in person at The Newsletter Conference 2025 and they started
+  working together shortly after, but nothing was ever actually closed.
