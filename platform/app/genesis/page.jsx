@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { supabaseSelect } from "../../lib/supabase";
 import { updateGenesisEvent, addGenesisEvent } from "./actions";
 import TableCellInput from "../people/TableCellInput";
@@ -11,6 +12,43 @@ const MONTHS_IT = [
   "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre",
 ];
 
+function slugFromRef(ref) {
+  return ref ? ref.replace(/\.md$/, "") : null;
+}
+
+function GenesisEntry({ e }) {
+  const slug = slugFromRef(e.story_ref);
+  return (
+    <div className="genesis-entry">
+      <TableCellInput
+        action={updateGenesisEvent}
+        id={e.id}
+        name="title"
+        defaultValue={e.title}
+        placeholder="Titolo"
+      />
+      <TableCellInput
+        action={updateGenesisEvent}
+        id={e.id}
+        name="description"
+        defaultValue={e.description}
+        placeholder="Descrizione"
+        multiline
+        rows={3}
+      />
+      <div className="entry-meta">
+        {e.source_tag}
+        {slug && (
+          <>
+            {" — "}
+            <a href={`/story/${slug}`}>{e.story_ref}</a>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default async function GenesisPage() {
   const events = await supabaseSelect(
     "ledger_genesis_events",
@@ -20,8 +58,6 @@ export default async function GenesisPage() {
   const dated = events.filter((e) => e.year);
   const undated = events.filter((e) => !e.year);
 
-  // Group into year -> month -> [events], preserving arrival order within
-  // a month (sort_order from the query above already did the real sort).
   const byYear = new Map();
   for (const e of dated) {
     if (!byYear.has(e.year)) byYear.set(e.year, new Map());
@@ -43,7 +79,9 @@ export default async function GenesisPage() {
           solo quando clicchi fuori, niente bottone Salva, niente Feedback. Il file inglese
           canonico (organizzato per temi, non per data) resta in{" "}
           <code>.claude/skills/ai-central-genesis/SKILL.md</code> nel repo - questa pagina è la
-          fonte di lavoro in italiano.
+          fonte di lavoro in italiano. Ogni voce che cita un file storia è collegata alla pagina
+          di quella storia; vedi anche la <a href="/timeline">Timeline</a> per lo stesso arco
+          temporale organizzato per storie/momenti invece che per fatto singolo.
         </p>
 
         <form action={addGenesisEvent} className="crm-form" style={{ marginBottom: 4 }}>
@@ -68,77 +106,39 @@ export default async function GenesisPage() {
           const byMonth = byYear.get(year);
           const monthKeys = [...byMonth.keys()].sort((a, b) => a - b);
           return (
-            <div key={year} style={{ marginBottom: 8 }}>
-              <h2 style={{ fontFamily: "inherit", fontWeight: 700, fontSize: 26, margin: "24px 0 4px" }}>
-                {year}
-              </h2>
-              {monthKeys.map((mk) => (
-                <div key={mk} style={{ marginBottom: 22 }}>
-                  <p style={{ fontSize: 12, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--ink-faint)", fontWeight: 700, margin: "0 0 10px" }}>
-                    {mk ? MONTHS_IT[mk] : "Senza mese"}
-                  </p>
-                  {byMonth.get(mk).map((e) => (
-                    <div key={e.id} className="entry">
-                      <TableCellInput
-                        action={updateGenesisEvent}
-                        id={e.id}
-                        name="title"
-                        defaultValue={e.title}
-                        placeholder="Titolo"
-                      />
-                      <TableCellInput
-                        action={updateGenesisEvent}
-                        id={e.id}
-                        name="description"
-                        defaultValue={e.description}
-                        placeholder="Descrizione"
-                        multiline
-                        rows={3}
-                      />
-                      <div className="entry-meta">
-                        {e.source_tag}
-                        {e.story_ref ? ` — ${e.story_ref}` : ""}
-                      </div>
+            <div key={year}>
+              <h2 className="genesis-year">{year}</h2>
+              <div className="genesis-grid">
+                <div className="genesis-rail-line" />
+                {monthKeys.map((mk) => (
+                  <Fragment key={`${year}-${mk}`}>
+                    <div className="genesis-month-label">
+                      {mk ? MONTHS_IT[mk] : "—"}
                     </div>
-                  ))}
-                </div>
-              ))}
+                    <div className="genesis-dot-col">
+                      <span className="genesis-dot" />
+                    </div>
+                    <div className="genesis-month-entries">
+                      {byMonth.get(mk).map((e) => (
+                        <GenesisEntry key={e.id} e={e} />
+                      ))}
+                    </div>
+                  </Fragment>
+                ))}
+              </div>
             </div>
           );
         })}
 
         {undated.length > 0 && (
-          <div style={{ marginBottom: 8 }}>
-            <h2 style={{ fontWeight: 700, fontSize: 26, margin: "24px 0 4px" }}>
-              Senza data
-            </h2>
-            <p style={{ fontSize: 12, color: "var(--ink-faint)", margin: "0 0 10px" }}>
+          <div>
+            <h2 className="genesis-year">Senza data</h2>
+            <p style={{ fontSize: 12, color: "var(--ink-faint)", margin: "0 0 14px" }}>
               Fatti veri, ma non databili - identità, pattern, contesto che non è legato a un mese
               preciso.
             </p>
             {undated.map((e) => (
-              <div key={e.id} className="entry">
-                <TableCellInput
-                  action={updateGenesisEvent}
-                  id={e.id}
-                  name="title"
-                  defaultValue={e.title}
-                  placeholder="Titolo"
-                />
-                <TableCellInput
-                  action={updateGenesisEvent}
-                  id={e.id}
-                  name="description"
-                  defaultValue={e.description}
-                  placeholder="Descrizione"
-                  multiline
-                  rows={3}
-                />
-                <div className="entry-meta">
-                  {e.source_tag}
-                  {e.story_ref ? ` — ${e.story_ref}` : ""}
-                </div>
-              </div>
+              <GenesisEntry key={e.id} e={e} />
             ))}
           </div>
         )}

@@ -147,7 +147,9 @@ export default async function TimelinePage() {
             Reconstructed from the email log and calendar - real activity per quarter, not
             invented. Each quarter splits into moments (bounded events, can overlap with each
             other) and threads (relationships that start here and keep running). Click a story
-            to open it, or flip momento/filo if a story reads better on the other axis.
+            to open it, or flip momento/filo if a story reads better on the other axis. See also{" "}
+            <a href="/genesis">Genesis</a> for the same span of time in Italian, month by month,
+            one entry per fact instead of grouped into stories.
           </p>
 
           {quarterOrder.map((qk) => {
