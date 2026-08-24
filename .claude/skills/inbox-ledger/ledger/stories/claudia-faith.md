@@ -15,3 +15,9 @@
   Alex to Elizabeth 2 Aug) - may be the same person in a different context,
   not confirmed merged
 - notes: sustained back-and-forth over two weeks that just stopped
+
+  **month-by-month review, 2026-08-23.** Claudia is also a co-founder of
+  Cozora, alongside Joel Salinas and Michael Simmons - see cozora.md. The
+  "cc elizabeth" above is elizabeth@thecentral.ai, AI Central's COO since
+  January 2026 (formerly reached at morganemarlow@gmail.com) - see
+  elizabeth-coo-hire.md.

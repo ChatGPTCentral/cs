@@ -26,3 +26,12 @@
   london"), and into August. This reads as a standing weekly/biweekly
   in-person or working relationship, not an intermittent one - treat any
   future "idle" reading with that base rate in mind
+
+- **month-by-month review, 2026-08-23.** Two named sub-projects sit inside
+  this broader relationship, both confirmed by Alex: ai-central-brand-identity
+  (the visual identity project - logo etc - decided while Alex was in
+  Chicago and San Francisco, roughly April-June 2025) and
+  jorge-content-operating-system (a Notion-based content operating system,
+  built over several months, September 2025 into February 2026). Treat
+  those as the specific projects; this file stays the general relationship
+  thread.

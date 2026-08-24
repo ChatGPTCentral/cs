@@ -12,3 +12,8 @@
 - threads: `19ace55a5c44ee68`
 - notes: a real, recurring relationship across Nov 2025 - Jan 2026, each
   message answered until this last one
+
+  **month-by-month review, 2026-08-23.** The relationship resumed in 2026
+  with two distinct programs, per Alex: Refind Active (AI Central sends its
+  readers to Refind, earns money) and Refind Passive (AI Central pays
+  Refind to send new readers to AI Central).
