@@ -17,6 +17,7 @@ const dest = path.join(platformRoot, "data/skills");
 const SKILLS = [
   { name: "ai-central-genesis", src: ".claude/skills/ai-central-genesis/SKILL.md" },
   { name: "alex-writing-style", src: ".claude/skills/alex-writing-style/SKILL.md" },
+  { name: "alex-thinking-approach", src: ".claude/skills/alex-thinking-approach/SKILL.md" },
 ];
 
 mkdirSync(dest, { recursive: true });

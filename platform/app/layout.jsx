@@ -32,6 +32,7 @@ export default async function RootLayout({ children }) {
               </a>
               <a href="/genesis">AI Central genesis</a>
               <a href="/writing-style">Writing style</a>
+              <a href="/thinking-approach">Thinking &amp; approach</a>
               <a href="/feedback">Feedback</a>
             </nav>
           </header>
