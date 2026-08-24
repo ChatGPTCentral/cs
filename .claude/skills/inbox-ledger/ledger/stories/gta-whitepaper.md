@@ -45,3 +45,17 @@
   the CreaTech Slack group and the two scheduled a first chat within days
   (29 Jul 2025). The 19 June 2026 email that lays out the whitepaper plan is
   eleven months into an already-established relationship, not the start of one
+
+  **month-by-month review, 2026-08-23.** Alex confirmed "GTA" (the broader
+  Global Tech Advocates relationship, born at London Tech Week 2025 through
+  Mark Duke's intros - see mark-duke) and "GTA whitepaper" (this specific
+  project, which starts much later, per the origin story above) are two
+  related but distinct things - overlapping people, different scope. Kept
+  as one story file for now since the DB row and history are already built
+  around it; flagging the distinction rather than splitting it live mid
+  review. Seven Hills (`wearesevenhills.com`) is Russ Shaw's own PR agency -
+  always cc'd on his GTA communications, no active role of its own.
+  London Tech Week 2025 itself - the precursor to london-tech-week-2026 -
+  is not yet built as its own story; real email evidence exists (this
+  thread, plus Valeria's invite under mark-duke) but hasn't been pulled
+  together into a narrative.
