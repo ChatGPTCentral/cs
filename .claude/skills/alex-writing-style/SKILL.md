@@ -7,6 +7,10 @@ description: Emulates Alex Fiore's personal writing style for emails, LinkedIn D
 
 This skill replicates Alex's authentic writing voice as observed across 50+ sent emails and his full sales/DM playbook, spanning cold outreach, partnership proposals, follow-ups, negotiations, LinkedIn DMs, internal team communication, objection handling, and sales pitches
 
+**This skill covers Alex's own voice only, not Kris's.** `kris@thecentral.ai` is a separate support persona, governed by the `aic-customer-support` skill. A real sample of Kris's sent mail (Aug 2026) shows a distinctly warmer, more personal tone than Alex's business voice - - "Hi sweetie, Kris here" as an opener, "Love, Kr" as a sign-off. Never apply this skill's rules (the "Cheers" sign-off, the business-formal signature blocks) to a Kris draft, and never pull Kris's tone into an Alex draft
+
+**Verification note, 2026-08-24:** the core claims in this skill (voice, formatting rules, sign-off pattern) were checked against a real sample of Alex's sent mail (`in:sent -in:chats`, 15 threads, late Jul-Aug 2026). Most of the skill held up. Three corrections came out of that check and are marked inline below: the sign-off rule now has a documented exception for short bumps, the greeting-capitalization rule is now stated as non-fixed, and the signature title is now shown as variable rather than one fixed string. The 7 email templates and the objection-handling section were not individually re-verified against this sample - - treat them as the pre-existing, unverified baseline until checked against more real examples
+
 **Product pricing, package breakdowns, upsell logic, and guaranteed results policy: this reference does not exist yet.** A `references/products-and-pricing.md` file is cited below and was cited in this skill before this edit, but no such file has ever existed in this skill folder - do not claim to have read it, and do not invent numbers. Ask Alex for real pricing before quoting any.
 
 ## CRITICAL FORMATTING RULES
@@ -15,10 +19,10 @@ These rules are non-negotiable and must be applied to every piece of output
 
 1. **Never use em dashes (—)** - - always use `- -` (two hyphens with a space in between) instead
 2. **Never end sentences with periods** - - sentences end without punctuation, letting the line break or comma do the work
-3. **Sign-off is always "Cheers, A" or "Cheers, Alex"** - - never "Best", "Regards", "Thanks", "Warm regards", or any other closing
+3. **Sign-off is "Cheers, A" or "Cheers, Alex" in real emails and proposals** - - never "Best", "Regards", "Thanks", "Warm regards", or any other closing. **Verified exception:** a short bump or follow-up on an already-open thread often has no sign-off at all and no body beyond the ask - - real example, full message: "hi nick - - any update?" Do not force a sign-off onto a one-line nudge
 4. **Use "P.S." sections** when there is a secondary ask, a link to share, or an additional thought worth surfacing
 5. **Short paragraphs** - - most paragraphs are one to three sentences max, often just one sentence standing alone
-6. **Lowercase greetings in casual/repeat contexts** - - "hi Mike", "hi brad" when the relationship is warm; "Hi [Name]" with capitalization for new or formal contacts
+6. **Greeting capitalization does not follow a fixed rule** - - real sent mail has "hi nick", "Hi [Name]", and no greeting at all, on both new and repeat contacts. Match the length and tone of the message: a full email leans toward capitalized "Hi [Name]", a one-line bump leans toward lowercase or no greeting at all
 7. **No Oxford comma obsession** - - Alex uses commas naturally but doesn't overdo them
 
 ## VOICE & TONE
@@ -117,6 +121,8 @@ When a prospect pushes back, respond in Alex's voice using these frameworks:
 → Love that - - we plug in where it's hardest: distribution to senior operators plus editorial creative that performs in feed - - we can also use your assets and just handle placement
 
 ## SIGNATURE PATTERNS
+
+**Verified from real sent mail:** the title in the full signature block is not fixed. Real emails show "CEO & Founder", "Chief Editor & Founder", and "Founder & Chief Editor" - - all AI Central Media, all Alex, no single canonical order. Pick any one of the three rather than treating one as the only correct form
 
 **Short form (most common):**
 ```
@@ -433,7 +439,7 @@ P.S. happy to jump on a call with you here https://cntral.ai/meet or feel free t
 - Never uses "Dear [Name]"
 - Never apologizes excessively - - a single "apologies" if warranted, then moves on
 - Never uses passive voice when active voice works
-- Never signs off without "Cheers"
+- Uses "Cheers" as the default sign-off on real emails, but a short bump on an open thread can skip the sign-off entirely - see rule 3 above
 - Never uses bullet points in casual replies (reserved for proposals and structured content)
 
 ## APPLYING THE STYLE
