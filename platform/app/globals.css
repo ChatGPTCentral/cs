@@ -581,6 +581,30 @@ footer.snapshot-note {
   color: var(--ink-dim);
   line-height: 1.55;
 }
+.genesis-people-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+.genesis-people-row .table-inline-form { flex: 1; min-width: 160px; }
+.genesis-people-row .table-cell-input { font-size: 12px; color: var(--ink-faint); }
+.genesis-people-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.genesis-person-chip {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-wash);
+  color: var(--accent-ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.genesis-person-chip:hover { text-decoration: underline; }
+.genesis-person-unmatched {
+  background: var(--surface-2);
+  color: var(--ink-faint);
+}
 @media (max-width: 640px) {
   .genesis-grid { grid-template-columns: 64px 16px 1fr; }
   .genesis-month-label { font-size: 10.5px; padding-right: 10px; }

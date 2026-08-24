@@ -26,6 +26,17 @@ export default async function PersonPage({ params }) {
     "ledger_people_emails",
     `?person_id=eq.${person.id}&order=message_date.desc.nullslast`
   );
+  const genesisEvents = (
+    await supabaseSelect(
+      "ledger_genesis_events",
+      `?people_names=ilike.*${encodeURIComponent(person.name)}*&order=year.asc.nullslast,month.asc.nullslast`
+    )
+  ).filter((e) =>
+    (e.people_names || "")
+      .split(",")
+      .map((n) => n.trim().toLowerCase())
+      .includes(person.name.toLowerCase())
+  );
 
   return (
     <>
@@ -222,6 +233,26 @@ export default async function PersonPage({ params }) {
               <div dangerouslySetInnerHTML={{ __html: s.html }} />
             </article>
           ))}
+        </div>
+      )}
+
+      {genesisEvents.length > 0 && (
+        <div className="content" style={{ marginBottom: 20 }}>
+          <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
+            Sulla genesi ({genesisEvents.length})
+          </h2>
+          {genesisEvents.map((e) => (
+            <div key={e.id} className="entry">
+              <p style={{ fontWeight: 600, margin: "0 0 2px" }}>
+                {e.year ? `${e.month ? e.month + "/" : ""}${e.year} — ` : ""}
+                {e.title}
+              </p>
+              <p style={{ margin: 0, color: "var(--ink-dim)", fontSize: 13.5 }}>{e.description}</p>
+            </div>
+          ))}
+          <p style={{ margin: "8px 0 0" }}>
+            <a href="/genesis">Vedi e correggi sulla timeline &rarr;</a>
+          </p>
         </div>
       )}
 

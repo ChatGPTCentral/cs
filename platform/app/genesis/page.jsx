@@ -16,8 +16,18 @@ function slugFromRef(ref) {
   return ref ? ref.replace(/\.md$/, "") : null;
 }
 
-function GenesisEntry({ e }) {
+// Comma-separated names, same free-text convention as ledger_people.stories
+// - trimmed, empties dropped. Resolved against real people at render time,
+// not stored as ids, so a typo is visible instead of silently pointing
+// nowhere.
+function parseNames(names) {
+  if (!names) return [];
+  return names.split(",").map((n) => n.trim()).filter(Boolean);
+}
+
+function GenesisEntry({ e, peopleByName }) {
   const slug = slugFromRef(e.story_ref);
+  const names = parseNames(e.people_names);
   return (
     <div className="genesis-entry">
       <TableCellInput
@@ -36,6 +46,32 @@ function GenesisEntry({ e }) {
         multiline
         rows={3}
       />
+      <div className="genesis-people-row">
+        <TableCellInput
+          action={updateGenesisEvent}
+          id={e.id}
+          name="people_names"
+          defaultValue={e.people_names || ""}
+          placeholder="Persone collegate (separate da virgola)"
+          listId="genesis-people-names"
+        />
+        {names.length > 0 && (
+          <div className="genesis-people-links">
+            {names.map((n) => {
+              const p = peopleByName.get(n.toLowerCase());
+              return p ? (
+                <a key={n} href={`/people/${p.id}`} className="genesis-person-chip">
+                  {p.name}
+                </a>
+              ) : (
+                <span key={n} className="genesis-person-chip genesis-person-unmatched" title="Nessuna persona con questo nome in /people">
+                  {n} ?
+                </span>
+              );
+            })}
+          </div>
+        )}
+      </div>
       <div className="entry-meta">
         {e.source_tag}
         {slug && (
@@ -50,10 +86,15 @@ function GenesisEntry({ e }) {
 }
 
 export default async function GenesisPage() {
-  const events = await supabaseSelect(
-    "ledger_genesis_events",
-    "?order=year.asc.nullslast,month.asc.nullslast,sort_order.asc"
-  );
+  const [events, people] = await Promise.all([
+    supabaseSelect(
+      "ledger_genesis_events",
+      "?order=year.asc.nullslast,month.asc.nullslast,sort_order.asc"
+    ),
+    supabaseSelect("ledger_people", "?select=id,name&order=name.asc"),
+  ]);
+
+  const peopleByName = new Map(people.map((p) => [p.name.toLowerCase(), p]));
 
   const dated = events.filter((e) => e.year);
   const undated = events.filter((e) => !e.year);
@@ -70,6 +111,12 @@ export default async function GenesisPage() {
 
   return (
     <>
+      <datalist id="genesis-people-names">
+        {people.map((p) => (
+          <option key={p.id} value={p.name} />
+        ))}
+      </datalist>
+
       <div className="content wide-content" style={{ marginBottom: 20 }}>
         <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 6px" }}>
           La genesi di AI Central, mese per mese
@@ -82,6 +129,12 @@ export default async function GenesisPage() {
           fonte di lavoro in italiano. Ogni voce che cita un file storia è collegata alla pagina
           di quella storia; vedi anche la <a href="/timeline">Timeline</a> per lo stesso arco
           temporale organizzato per storie/momenti invece che per fatto singolo.
+        </p>
+        <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 8px" }}>
+          Il campo &quot;persone collegate&quot; sotto ogni voce è vuoto per default - nessun nome
+          indovinato dal testo. Scrivi il nome esatto come appare in{" "}
+          <a href="/people">/people</a> (autocompletamento incluso); un nome che non trova
+          corrispondenza resta segnato con un punto interrogativo invece di un link.
         </p>
 
         <form action={addGenesisEvent} className="crm-form" style={{ marginBottom: 4 }}>
@@ -120,7 +173,7 @@ export default async function GenesisPage() {
                     </div>
                     <div className="genesis-month-entries">
                       {byMonth.get(mk).map((e) => (
-                        <GenesisEntry key={e.id} e={e} />
+                        <GenesisEntry key={e.id} e={e} peopleByName={peopleByName} />
                       ))}
                     </div>
                   </Fragment>
@@ -138,7 +191,7 @@ export default async function GenesisPage() {
               preciso.
             </p>
             {undated.map((e) => (
-              <GenesisEntry key={e.id} e={e} />
+              <GenesisEntry key={e.id} e={e} peopleByName={peopleByName} />
             ))}
           </div>
         )}

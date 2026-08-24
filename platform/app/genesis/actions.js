@@ -10,6 +10,7 @@ export async function updateGenesisEvent(formData) {
   const patch = { updated_at: new Date().toISOString() };
   if (formData.has("title")) patch.title = (formData.get("title") || "").toString().trim();
   if (formData.has("description")) patch.description = (formData.get("description") || "").toString().trim();
+  if (formData.has("people_names")) patch.people_names = (formData.get("people_names") || "").toString().trim() || null;
 
   await supabaseUpdate("ledger_genesis_events", `?id=eq.${id}`, patch);
   revalidatePath("/genesis");
