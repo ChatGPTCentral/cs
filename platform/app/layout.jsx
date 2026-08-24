@@ -30,6 +30,8 @@ export default async function RootLayout({ children }) {
               <a href="/people/review">
                 Review{pending.length > 0 ? ` (${pending.length})` : ""}
               </a>
+              <a href="/genesis">AI Central genesis</a>
+              <a href="/writing-style">Writing style</a>
               <a href="/feedback">Feedback</a>
             </nav>
           </header>
