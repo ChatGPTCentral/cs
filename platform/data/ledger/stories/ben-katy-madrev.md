@@ -19,3 +19,5 @@
   agency - they sell ads for newsletters and take a percentage. Alex met
   Ben in person at The Newsletter Conference 2025 and they started
   working together shortly after, but nothing was ever actually closed.
+  Per Alex: MadRev doesn't sell for much on their own - the May 2026
+  activity was probably him pushing them, not the reverse.

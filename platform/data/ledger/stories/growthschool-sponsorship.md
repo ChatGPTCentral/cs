@@ -53,3 +53,10 @@
   new name. Worth checking whether Mitali, Vikas, dhrithi, Sunny and
   Pankhuri are the same GrowthSchool team across the rebrand, not a
   coincidence of shared domain history
+
+  **month-by-month review, 2026-08-23.** In confidence, per Alex:
+  GrowthSchool was plausibly AI Central's best client in 2025. Something
+  broke in Q4 2025 and they stopped paying; they came back at some point
+  since AI Central still owed them unrun ads. Difficult to deal with in
+  general, but they pay - worth tolerating. Worth pushing hard on again;
+  Q4 2026 could mean real money again.
