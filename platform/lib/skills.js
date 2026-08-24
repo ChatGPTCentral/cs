@@ -17,3 +17,16 @@ export function getSkillHtml(name) {
   const raw = stripFrontmatter(fs.readFileSync(file, "utf-8"));
   return marked.parse(raw, { gfm: true });
 }
+
+const DATA_DIR = path.join(process.cwd(), "data");
+
+// Hand-maintained pages that live directly under data/, not synced from a
+// .claude/skills/*/SKILL.md source - reorganized differently from their
+// canonical skill (e.g. chronological instead of thematic, Italian instead
+// of English) for Alex's own reading and correction.
+export function getDataPageHtml(name) {
+  const file = path.join(DATA_DIR, `${name}.md`);
+  if (!fs.existsSync(file)) return null;
+  const raw = fs.readFileSync(file, "utf-8");
+  return marked.parse(raw, { gfm: true });
+}
