@@ -13,6 +13,7 @@ export default async function PeoplePage({ searchParams }) {
   const showArchived = searchParams?.archived === "1";
   const activeList = searchParams?.list || "";
   const sort = searchParams?.sort === "org" ? "org" : "name";
+  const q = (searchParams?.q || "").trim();
 
   // Builds a /people URL carrying whichever of these state pieces are
   // active, so every filter/sort link stays in sync.
@@ -21,6 +22,7 @@ export default async function PeoplePage({ searchParams }) {
     if (showArchived) params.set("archived", "1");
     if (list) params.set("list", list);
     if (sortBy === "org") params.set("sort", "org");
+    if (q) params.set("q", q);
     const qs = params.toString();
     return qs ? `/people?${qs}` : "/people";
   }
@@ -29,8 +31,15 @@ export default async function PeoplePage({ searchParams }) {
     await supabaseSelect("ledger_people", "?archived=eq.true&select=id")
   ).length;
 
+  const searchFilter = q
+    ? `&or=(name.ilike.*${encodeURIComponent(q)}*,org.ilike.*${encodeURIComponent(q)}*,identity.ilike.*${encodeURIComponent(q)}*)`
+    : "";
+
   const [allActive, definedLists, storyRows] = await Promise.all([
-    supabaseSelect("ledger_people", `?archived=eq.${showArchived}&order=starred.desc,${sort}.asc`),
+    supabaseSelect(
+      "ledger_people",
+      `?archived=eq.${showArchived}&order=starred.desc,${sort}.asc${searchFilter}`
+    ),
     supabaseSelect("ledger_lists", "?order=name.asc"),
     supabaseSelect("ledger_stories", "?order=slug.asc&select=slug"),
   ]);
@@ -77,10 +86,26 @@ export default async function PeoplePage({ searchParams }) {
               : `${people.length} ${people.length === 1 ? "person" : "people"}`}
           </h2>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <form method="GET" style={{ display: "flex" }}>
+              {showArchived && <input type="hidden" name="archived" value="1" />}
+              {activeList && <input type="hidden" name="list" value={activeList} />}
+              {sort === "org" && <input type="hidden" name="sort" value="org" />}
+              <input
+                type="text"
+                name="q"
+                defaultValue={q}
+                placeholder="Cerca nome, org, email..."
+                style={{ fontSize: 13, padding: "6px 10px", border: "1px solid var(--line)", borderRadius: "var(--radius)", minWidth: 200 }}
+              />
+            </form>
             {showArchived ? (
-              <a href="/people">&larr; Back to active</a>
+              <a href={q ? `/people?q=${encodeURIComponent(q)}` : "/people"}>&larr; Back to active</a>
             ) : (
-              archivedCount > 0 && <a href="/people?archived=1">Show archived ({archivedCount})</a>
+              archivedCount > 0 && (
+                <a href={`/people?archived=1${q ? `&q=${encodeURIComponent(q)}` : ""}`}>
+                  Show archived ({archivedCount})
+                </a>
+              )
             )}
             {!showArchived && <NewPersonModal action={addPerson} />}
           </div>
