@@ -43,12 +43,22 @@ export function findConnections(person, allPeople) {
 // pair (not two, A-B and B-A), and only the nodes that actually have at
 // least one edge. People with no shared org or story are real, they just
 // don't have a place on a relationship graph yet.
-export function buildNetwork(people) {
+// emailRows: [{person_id, thread_id}] from ledger_people_emails - two
+// people actually appearing together on the same real Gmail thread is a
+// stronger, truer signal than a shared org string, and unlike shared
+// stories (hand-tagged) it's derived straight from the mailbox.
+export function buildNetwork(people, emailRows = []) {
   const parsed = people.map((p) => ({
     person: p,
     storySlugs: new Set(parseStorySlugs(p.stories)),
     org: p.org ? p.org.trim().toLowerCase() : null,
   }));
+
+  const threadsByPerson = new Map();
+  for (const row of emailRows) {
+    if (!threadsByPerson.has(row.person_id)) threadsByPerson.set(row.person_id, new Set());
+    threadsByPerson.get(row.person_id).add(row.thread_id);
+  }
 
   const edges = [];
   for (let i = 0; i < parsed.length; i++) {
@@ -57,8 +67,11 @@ export function buildNetwork(people) {
       const b = parsed[j];
       const sharedStories = [...b.storySlugs].filter((s) => a.storySlugs.has(s));
       const sameOrg = a.org && b.org && a.org === b.org;
-      if (sharedStories.length > 0 || sameOrg) {
-        edges.push({ source: a.person.id, target: b.person.id, sharedStories, sameOrg });
+      const aThreads = threadsByPerson.get(a.person.id);
+      const bThreads = threadsByPerson.get(b.person.id);
+      const sharedThreads = aThreads && bThreads ? [...aThreads].filter((t) => bThreads.has(t)) : [];
+      if (sharedStories.length > 0 || sameOrg || sharedThreads.length > 0) {
+        edges.push({ source: a.person.id, target: b.person.id, sharedStories, sameOrg, sharedThreads });
       }
     }
   }

@@ -20,6 +20,11 @@
   --moment: #AD7A1E;
   --moment-ink: #8A5F13;
   --moment-wash: #FBF1DF;
+  /* Network graph's strongest edge - two people on the same real email
+     thread, not hand-tagged. Green (from the AI Central brand palette's
+     asparagus) so it reads apart from --accent (shared story) and the
+     gray dashed shared-org edge at a glance. */
+  --thread-strong: #4A8F3C;
   --shadow: 0 1px 2px rgba(15,15,15,0.05);
   --radius: 3px;
 }

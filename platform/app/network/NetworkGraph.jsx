@@ -88,7 +88,10 @@ export default function NetworkGraph({ nodes: allNodes, edges: allEdges }) {
   const svgRef = useRef(null);
 
   const baseEdges = useMemo(
-    () => allEdges.filter((e) => showOrgEdges || e.sharedStories.length > 0),
+    () =>
+      allEdges.filter(
+        (e) => showOrgEdges || e.sharedStories.length > 0 || (e.sharedThreads || []).length > 0
+      ),
     [allEdges, showOrgEdges]
   );
 
@@ -243,14 +246,17 @@ export default function NetworkGraph({ nodes: allNodes, edges: allEdges }) {
               const b = positions.get(e.target);
               if (!a || !b) return null;
               const dimmed = neighborIds && !(neighborIds.has(e.source) && neighborIds.has(e.target));
+              const hasThread = (e.sharedThreads || []).length > 0;
+              const hasStory = e.sharedStories.length > 0;
+              const stroke = hasThread ? "var(--thread-strong)" : hasStory ? "var(--accent)" : "var(--ink-faint)";
               return (
                 <line
                   key={i}
                   x1={a.x} y1={a.y} x2={b.x} y2={b.y}
-                  stroke={e.sharedStories.length > 0 ? "var(--accent)" : "var(--ink-faint)"}
-                  strokeOpacity={dimmed ? 0.08 : e.sharedStories.length > 0 ? 0.5 : 0.35}
-                  strokeDasharray={e.sharedStories.length > 0 ? undefined : "3,3"}
-                  strokeWidth={1.2}
+                  stroke={stroke}
+                  strokeOpacity={dimmed ? 0.08 : hasThread ? 0.65 : hasStory ? 0.5 : 0.35}
+                  strokeDasharray={hasThread || hasStory ? undefined : "3,3"}
+                  strokeWidth={hasThread ? 1.6 : 1.2}
                 />
               );
             })}
