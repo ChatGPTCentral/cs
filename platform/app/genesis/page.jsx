@@ -33,16 +33,24 @@ function formatShort(dateStr) {
 
 // A story (momento or filo) placed under its start month - the same
 // board /timeline used to show separately, now inline with the facts
-// from the same month instead of on a second page.
+// from the same month instead of on a second page. Color follows `kind`
+// first (evento/vendita/storia - what this actually is), axis (momento/
+// filo) only decides the color within kind "storia", where it always did.
 function StoryChip({ s }) {
+  const colorClass =
+    s.kind === "event" ? "genesis-story-chip-event" :
+    s.kind === "sale" ? "genesis-story-chip-sale" :
+    `genesis-story-chip-${s.axis}`;
   return (
-    <a href={`/story/${s.slug}`} className={`genesis-story-chip genesis-story-chip-${s.axis}`}>
+    <a href={`/story/${s.slug}`} className={`genesis-story-chip ${colorClass}${s.parent_slug ? " genesis-story-chip-sub" : ""}`}>
       <span className="genesis-story-chip-dot" />
+      {s.parent_slug && <span className="genesis-story-chip-sub-arrow">↳</span>}
       {s.title}
+      {s.location && <span className="genesis-story-chip-location">· {s.location}</span>}
       <span className="genesis-story-chip-dates">
         {formatShort(s.start_date)}
-        {s.axis === "moment" && s.end_date ? ` – ${formatShort(s.end_date)}` : ""}
-        {s.axis === "thread" ? " →" : ""}
+        {s.axis === "moment" && s.end_date && s.end_date !== s.start_date ? ` – ${formatShort(s.end_date)}` : ""}
+        {s.kind === "story" && s.axis === "thread" ? " →" : ""}
       </span>
     </a>
   );
@@ -123,7 +131,7 @@ export default async function GenesisPage({ searchParams }) {
     supabaseSelect("ledger_people", "?select=id,name,photo_url&order=name.asc"),
     supabaseSelect(
       "ledger_stories",
-      "?start_date=not.is.null&select=slug,title,start_date,end_date,axis&order=start_date.asc"
+      "?start_date=not.is.null&select=slug,title,start_date,end_date,axis,kind,location,parent_slug&order=start_date.asc"
     ),
   ]);
 
@@ -204,11 +212,15 @@ export default async function GenesisPage({ searchParams }) {
           <summary>Come funziona</summary>
           <p>
             I fatti (in italiano) si editano sul posto: clicca titolo o descrizione, salva da solo
-            quando clicchi fuori, niente pulsante Salva. Le storie (i chip colorati) sono momenti
-            (un evento con inizio e fine, <span style={{ color: "var(--moment-ink)" }}>ambra</span>)
-            o fili (un rapporto che continua,{" "}
-            <span style={{ color: "var(--accent-ink)" }}>blu</span>) - click per aprire la loro
-            pagina, dove si editano data e asse.
+            quando clicchi fuori, niente pulsante Salva. Le storie (i chip colorati) hanno un
+            colore per tipo: <span style={{ color: "var(--event-ink)" }}>teal</span> per un evento
+            reale (un luogo dove sei stato fisicamente, con posizione e date),{" "}
+            <span style={{ color: "var(--sale-ink)" }}>viola</span> per una vendita o sponsorship,{" "}
+            <span style={{ color: "var(--moment-ink)" }}>ambra</span> per un momento (una storia
+            con inizio e fine) e <span style={{ color: "var(--accent-ink)" }}>blu</span> per un
+            filo (un rapporto che continua). Un sotto-evento (una sessione o un locale dentro un
+            evento più grande, tipo una festa a Cannes) è rientrato con una freccia. Click su
+            qualsiasi chip per aprire la sua pagina.
           </p>
           <p>
             Il campo &quot;persone collegate&quot; sotto ogni fatto è vuoto per default - nessun

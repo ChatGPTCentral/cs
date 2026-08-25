@@ -41,16 +41,29 @@ function AxisToggle({ id, axis }) {
 
 export default async function StoryPage({ params }) {
   const story = getStory(params.slug);
-  if (!story) notFound();
 
-  const [genesisEvents, storyRows] = await Promise.all([
+  const [genesisEvents, storyRows, childRows, parentRows] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
       `?story_ref=eq.${params.slug}.md&order=year.asc.nullslast,month.asc.nullslast`
     ),
     supabaseSelect("ledger_stories", `?slug=eq.${params.slug}`),
+    supabaseSelect(
+      "ledger_stories",
+      `?parent_slug=eq.${params.slug}&select=slug,title,start_date,end_date&order=start_date.asc`
+    ),
+    supabaseSelect("ledger_stories", `?select=slug,title`),
   ]);
   const storyRow = storyRows[0] || null;
+
+  // Some stories are pure structured data - an event or sub-event mined
+  // from real records, never written up as narrative markdown. Only 404
+  // when there's neither a story file nor a database row to show.
+  if (!story && !storyRow) notFound();
+
+  const parentStory = storyRow?.parent_slug
+    ? parentRows.find((p) => p.slug === storyRow.parent_slug)
+    : null;
 
   return (
     <>
@@ -60,9 +73,19 @@ export default async function StoryPage({ params }) {
 
       {storyRow && (
         <div className="content" style={{ marginBottom: 16 }}>
-          <p className="field-label" style={{ marginBottom: 8 }}>
-            Momento o filo, sulla timeline
-          </p>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
+            <p className="field-label" style={{ margin: 0 }}>
+              {storyRow.kind === "event" ? "Evento" : storyRow.kind === "sale" ? "Vendita" : "Momento o filo"}, sulla timeline
+            </p>
+            {storyRow.location && (
+              <span style={{ fontSize: 13, color: "var(--ink-faint)" }}>· {storyRow.location}</span>
+            )}
+          </div>
+          {parentStory && (
+            <p style={{ margin: "0 0 8px", fontSize: 13 }}>
+              Parte di <a href={`/story/${parentStory.slug}`}>{parentStory.title}</a>
+            </p>
+          )}
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
               <span className="entry-meta" style={{ margin: 0 }}>Inizio</span>
@@ -74,6 +97,18 @@ export default async function StoryPage({ params }) {
             </div>
             <AxisToggle id={storyRow.id} axis={storyRow.axis} />
           </div>
+          {childRows.length > 0 && (
+            <div style={{ marginTop: 12 }}>
+              <span className="entry-meta" style={{ margin: 0 }}>Sotto-eventi ({childRows.length})</span>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 6 }}>
+                {childRows.map((c) => (
+                  <a key={c.slug} href={`/story/${c.slug}`} className="list-tab">
+                    {c.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
           <p style={{ margin: "8px 0 0" }}>
             <a href="/genesis">Vedi sulla timeline unificata &rarr;</a>
           </p>
@@ -97,7 +132,7 @@ export default async function StoryPage({ params }) {
         </div>
       )}
 
-      <article className="content" dangerouslySetInnerHTML={{ __html: story.html }} />
+      {story && <article className="content" dangerouslySetInnerHTML={{ __html: story.html }} />}
 
       <SavedToast />
     </>

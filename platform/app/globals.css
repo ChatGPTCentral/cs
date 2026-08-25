@@ -25,6 +25,15 @@
      asparagus) so it reads apart from --accent (shared story) and the
      gray dashed shared-org edge at a glance. */
   --thread-strong: #4A8F3C;
+  /* Genesis "kind" - what a story actually is, separate from its
+     momento/filo axis. Event and sale get their own hue so a physical
+     trip and a relationship thread never look the same at a glance. */
+  --event: #1B7F79;
+  --event-ink: #145F5B;
+  --event-wash: #E4F5F3;
+  --sale: #6E3FA3;
+  --sale-ink: #57318A;
+  --sale-wash: #F1EAFB;
   --shadow: 0 1px 2px rgba(15,15,15,0.05);
   --radius: 3px;
 }
@@ -704,11 +713,32 @@ footer.snapshot-note {
 }
 .genesis-story-chip-moment .genesis-story-chip-dot { background: var(--moment); }
 .genesis-story-chip-thread .genesis-story-chip-dot { background: var(--accent); }
+.genesis-story-chip-event { color: var(--event-ink); }
+.genesis-story-chip-event .genesis-story-chip-dot { background: var(--event); }
+.genesis-story-chip-sale { color: var(--sale-ink); }
+.genesis-story-chip-sale .genesis-story-chip-dot { background: var(--sale); }
 .genesis-story-chip-dates {
   font-weight: 400;
   font-size: 11.5px;
   color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
+}
+.genesis-story-chip-location {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+/* Sub-events (a venue/session inside a parent event) sit indented, one
+   step down in weight - real data, but a supporting detail, not a peer
+   of the event itself. */
+.genesis-story-chip-sub {
+  margin-left: 18px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.genesis-story-chip-sub-arrow {
+  color: var(--ink-faint);
+  font-weight: 400;
 }
 
 /* Network graph controls */
