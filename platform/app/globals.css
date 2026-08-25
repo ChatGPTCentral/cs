@@ -518,6 +518,49 @@ footer.snapshot-note {
    the left, a dot per month on the line, entries to the right. The line
    is a single grid item spanning every row so it never breaks or drifts
    out of alignment with the dots sitting on the same column. */
+.genesis-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.genesis-header-count {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+/* Help text and the add-fact form default to closed - both used to sit
+   open above the timeline, pushing the real content down a full screen
+   before anything readable appeared. */
+.genesis-disclosure {
+  margin: 6px 0;
+  font-size: 13px;
+}
+.genesis-disclosure summary {
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-ink);
+  list-style: none;
+  padding: 2px 0;
+}
+.genesis-disclosure summary::-webkit-details-marker { display: none; }
+.genesis-disclosure summary::before {
+  content: "\25B8";
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 10px;
+  color: var(--ink-faint);
+  transition: transform 0.1s ease;
+}
+.genesis-disclosure[open] summary::before { transform: rotate(90deg); }
+.genesis-disclosure p {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin: 8px 0 0;
+  max-width: 76ch;
+}
 .genesis-year {
   font-size: 2rem;
   font-weight: 700;
@@ -571,10 +614,11 @@ footer.snapshot-note {
   gap: 14px;
 }
 .genesis-entry {
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--line);
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
 }
-.genesis-entry:last-child { border-bottom: none; padding-bottom: 0; }
 .genesis-entry .table-cell-input { width: 100%; }
 .genesis-entry > form:first-child .table-cell-input {
   font-size: 15px;

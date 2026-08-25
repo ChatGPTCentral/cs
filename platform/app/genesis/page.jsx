@@ -162,40 +162,50 @@ export default async function GenesisPage() {
       </datalist>
 
       <div className="content wide-content" style={{ marginBottom: 20 }}>
-        <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 6px" }}>
-          La genesi di AI Central, mese per mese
-        </h2>
-        <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 8px" }}>
-          {events.length} fatti, {stories.length} storie datate - tutto sulla stessa timeline. I
-          fatti (in italiano, sotto) si editano sul posto: clicca titolo o descrizione, salva da
-          solo quando clicchi fuori, niente Feedback. Le storie (i chip colorati) sono momenti
-          (un evento con inizio e fine, <span style={{ color: "var(--moment-ink)" }}>ambra</span>)
-          o fili (un rapporto che continua,{" "}
-          <span style={{ color: "var(--accent-ink)" }}>blu</span>) - click per aprire la loro
-          pagina, dove si editano data e asse.
-        </p>
-        <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 8px" }}>
-          Il campo &quot;persone collegate&quot; sotto ogni fatto è vuoto per default - nessun
-          nome indovinato dal testo. Scrivi il nome esatto come appare in{" "}
-          <a href="/people">/people</a> (autocompletamento incluso); un nome che non trova
-          corrispondenza resta segnato con un punto interrogativo invece di un link.
-        </p>
+        <div className="genesis-header-row">
+          <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 2px" }}>
+            La genesi di AI Central, mese per mese
+          </h2>
+          <span className="genesis-header-count">
+            {events.length} fatti, {stories.length} storie datate
+          </span>
+        </div>
 
-        <form action={addGenesisEvent} className="crm-form" style={{ marginBottom: 4 }}>
-          <label className="field-label" htmlFor="f-genesis-title">Nuovo fatto</label>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <input id="f-genesis-title" name="title" placeholder="Titolo" style={{ flex: 1, minWidth: 180 }} required />
-            <input name="year" type="number" placeholder="Anno" style={{ width: 90 }} />
-            <select name="month" style={{ width: 130 }} defaultValue="">
-              <option value="">(nessun mese)</option>
-              {MONTHS_IT.slice(1).map((m, i) => (
-                <option key={m} value={i + 1}>{m}</option>
-              ))}
-            </select>
-            <button type="submit">Aggiungi</button>
-          </div>
-          <textarea name="description" placeholder="Descrizione" rows={2} style={{ marginTop: 8, width: "100%" }} required />
-        </form>
+        <details className="genesis-disclosure">
+          <summary>Come funziona</summary>
+          <p>
+            I fatti (in italiano) si editano sul posto: clicca titolo o descrizione, salva da solo
+            quando clicchi fuori, niente pulsante Salva. Le storie (i chip colorati) sono momenti
+            (un evento con inizio e fine, <span style={{ color: "var(--moment-ink)" }}>ambra</span>)
+            o fili (un rapporto che continua,{" "}
+            <span style={{ color: "var(--accent-ink)" }}>blu</span>) - click per aprire la loro
+            pagina, dove si editano data e asse.
+          </p>
+          <p>
+            Il campo &quot;persone collegate&quot; sotto ogni fatto è vuoto per default - nessun
+            nome indovinato dal testo. Scrivi il nome esatto come appare in{" "}
+            <a href="/people">/people</a> (autocompletamento incluso); un nome che non trova
+            corrispondenza resta segnato con un punto interrogativo invece di un link.
+          </p>
+        </details>
+
+        <details className="genesis-disclosure">
+          <summary>+ Nuovo fatto</summary>
+          <form action={addGenesisEvent} className="crm-form" style={{ marginTop: 10 }}>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <input id="f-genesis-title" name="title" placeholder="Titolo" style={{ flex: 1, minWidth: 180 }} required />
+              <input name="year" type="number" placeholder="Anno" style={{ width: 90 }} />
+              <select name="month" style={{ width: 130 }} defaultValue="">
+                <option value="">(nessun mese)</option>
+                {MONTHS_IT.slice(1).map((m, i) => (
+                  <option key={m} value={i + 1}>{m}</option>
+                ))}
+              </select>
+              <button type="submit">Aggiungi</button>
+            </div>
+            <textarea name="description" placeholder="Descrizione" rows={2} style={{ marginTop: 8, width: "100%" }} required />
+          </form>
+        </details>
       </div>
 
       <div className="content wide-content">
