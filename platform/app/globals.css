@@ -751,6 +751,18 @@ footer.snapshot-note {
   color: var(--ink-dim);
 }
 .genesis-story-card-subs a:hover { text-decoration: underline; }
+.genesis-story-card-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.genesis-story-card-fact { display: flex; flex-direction: column; gap: 2px; }
+.genesis-story-card-fact .table-cell-input { width: 100%; font-size: 13px; }
+.genesis-story-card-fact > form:first-child .table-cell-input { font-weight: 600; }
+.genesis-story-card-fact .genesis-people-links { margin-top: 2px; }
 @media (max-width: 780px) {
   .genesis-explorer { flex-direction: column; }
   .genesis-explorer-nav { position: static; max-height: none; width: 100%; display: flex; flex-wrap: wrap; gap: 4px 0; }

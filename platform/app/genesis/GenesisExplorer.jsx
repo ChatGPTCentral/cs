@@ -31,6 +31,21 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
     }
   }
 
+  // A hand-written fact that already points at a story on this page (via
+  // story_ref) is the same happening, told twice - fold it into that
+  // story's own card instead of also giving it a separate box under
+  // "Altre conversazioni".
+  const storySlugSet = new Set(
+    items.filter((it) => it.type === "story" && !it.isSub).map((it) => it.slug)
+  );
+  const factsByStorySlug = new Map();
+  for (const it of items) {
+    if (it.type === "fact" && it.storySlug && storySlugSet.has(it.storySlug)) {
+      if (!factsByStorySlug.has(it.storySlug)) factsByStorySlug.set(it.storySlug, []);
+      factsByStorySlug.get(it.storySlug).push(it);
+    }
+  }
+
   const byYearMonth = new Map();
   for (const it of items) {
     const gk = `${it.year}-${it.month}`;
@@ -77,6 +92,8 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
             key={m.key}
             month={m}
             subsByParent={subsByParent}
+            factsByStorySlug={factsByStorySlug}
+            storySlugSet={storySlugSet}
             peopleByName={peopleByName}
             updateGenesisEvent={updateGenesisEvent}
           />
@@ -86,11 +103,15 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
   );
 }
 
-function MonthSection({ month, subsByParent, peopleByName, updateGenesisEvent }) {
+function MonthSection({ month, subsByParent, factsByStorySlug, storySlugSet, peopleByName, updateGenesisEvent }) {
   const events = month.items.filter((it) => it.type === "story" && !it.isSub && it.kind === "event");
   const stories = month.items.filter((it) => it.type === "story" && !it.isSub && it.kind === "story");
   const sales = month.items.filter((it) => it.type === "story" && !it.isSub && it.kind === "sale");
-  const facts = month.items.filter((it) => it.type === "fact");
+  const facts = month.items.filter(
+    (it) => it.type === "fact" && !(it.storySlug && storySlugSet.has(it.storySlug))
+  );
+
+  const groupProps = { subsByParent, factsByStorySlug, peopleByName, updateGenesisEvent };
 
   return (
     <section id={`m-${month.key}`} className="genesis-month-section">
@@ -98,9 +119,9 @@ function MonthSection({ month, subsByParent, peopleByName, updateGenesisEvent })
         {month.month ? MONTHS_IT[month.month] : "Senza mese"} {month.year}
       </h2>
 
-      {events.length > 0 && <StoryGroup label="Eventi" items={events} subsByParent={subsByParent} />}
-      {stories.length > 0 && <StoryGroup label="Storie" items={stories} subsByParent={subsByParent} />}
-      {sales.length > 0 && <StoryGroup label="Sales" items={sales} subsByParent={subsByParent} />}
+      {events.length > 0 && <StoryGroup label="Eventi" items={events} {...groupProps} />}
+      {stories.length > 0 && <StoryGroup label="Storie" items={stories} {...groupProps} />}
+      {sales.length > 0 && <StoryGroup label="Sales" items={sales} {...groupProps} />}
 
       {facts.length > 0 && (
         <div className="genesis-group">
@@ -120,20 +141,27 @@ function MonthSection({ month, subsByParent, peopleByName, updateGenesisEvent })
   );
 }
 
-function StoryGroup({ label, items, subsByParent }) {
+function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByName, updateGenesisEvent }) {
   return (
     <div className="genesis-group">
       <h3 className="genesis-group-label">{label}</h3>
       <div className="genesis-chronicle-stories">
         {items.map((s) => (
-          <StoryCard key={s.key} item={s} subs={subsByParent.get(s.slug) || []} />
+          <StoryCard
+            key={s.key}
+            item={s}
+            subs={subsByParent.get(s.slug) || []}
+            attachedFacts={factsByStorySlug.get(s.slug) || []}
+            peopleByName={peopleByName}
+            updateGenesisEvent={updateGenesisEvent}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-function StoryCard({ item, subs }) {
+function StoryCard({ item, subs, attachedFacts, peopleByName, updateGenesisEvent }) {
   const colorClass =
     item.kind === "event" ? "genesis-story-card-event" :
     item.kind === "sale" ? "genesis-story-card-sale" :
@@ -159,6 +187,53 @@ function StoryCard({ item, subs }) {
               {s.title.replace(item.title, "").replace(/^ - /, "") || s.title}
             </a>
           ))}
+        </div>
+      )}
+      {attachedFacts.length > 0 && (
+        <div className="genesis-story-card-facts">
+          {attachedFacts.map((f) => (
+            <AttachedFact key={f.key} item={f} peopleByName={peopleByName} updateGenesisEvent={updateGenesisEvent} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function AttachedFact({ item, peopleByName, updateGenesisEvent }) {
+  return (
+    <div className="genesis-story-card-fact">
+      <TableCellInput
+        action={updateGenesisEvent}
+        id={item.id}
+        name="title"
+        defaultValue={item.title}
+        placeholder="Titolo"
+      />
+      <TableCellInput
+        action={updateGenesisEvent}
+        id={item.id}
+        name="description"
+        defaultValue={item.description}
+        placeholder="Descrizione"
+        multiline
+        rows={2}
+      />
+      {item.peopleNames.length > 0 && (
+        <div className="genesis-people-links">
+          {item.peopleNames.map((n) => {
+            const p = peopleByName.get(n.toLowerCase());
+            return p ? (
+              <a key={n} href={`/people/${p.id}`} className="genesis-person-chip">
+                <Avatar name={p.name} photoUrl={p.photo_url} size={18} />
+                {p.name}
+              </a>
+            ) : (
+              <span key={n} className="genesis-person-chip genesis-person-unmatched" title="Nessuna persona con questo nome in /people">
+                {n} ?
+              </span>
+            );
+          })}
         </div>
       )}
     </div>
