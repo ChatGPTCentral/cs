@@ -110,13 +110,13 @@ Sam (Sunny): joining AI Central means taking on an anglophone identity.
 
 **Kris** (`kris@thecentral.ai`, the newsletter's support persona, governed
 day to day by `aic-customer-support`) started as an ambiguous alter ego. For
-a brief period "Kris" coincided with an actual person, Cristiana, one of the
-first people to work at AI Central - later let go. Once Cristiana left, Alex
-inherited the Kris persona himself; today Kris is Alex's own female alter
-ego, warm and affectionate with readers, especially male ones, while "Alex
-from AI Central" is Alex's own male voice. *Per Alex.* A calendar sweep found
-"Kris from ChatGPT Central and Louis Nicholls," 12 Mar 2025 - Alex confirmed
-2026-08-25 this was already him writing as Kris, not the Cristiana era
+a brief period "Kris" coincided with an early team member, no longer part of
+AI Central. Once that person left, Alex inherited the Kris persona himself;
+today Kris is Alex's own female alter ego, warm and affectionate with
+readers, especially male ones, while "Alex from AI Central" is Alex's own
+male voice. *Per Alex.* A calendar sweep found "Kris from ChatGPT Central and
+Louis Nicholls," 12 Mar 2025 - Alex confirmed 2026-08-25 this was already him
+writing as Kris, not the earlier era
 
 ### The rebrand: "ChatGPT Central" to "AI Central" (name Dec 2024, identity Apr-Jun 2025)
 
