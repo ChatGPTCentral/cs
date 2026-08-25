@@ -639,102 +639,112 @@ footer.snapshot-note {
 .genesis-people-edit .table-inline-form { flex: 1; min-width: 160px; }
 .genesis-people-edit .table-cell-input { font-size: 11.5px; color: var(--ink-faint); }
 
-/* Genesis explorer - Gmail-style master/detail. Left: a compact,
-   chronological list grouped by month (the month itself is the loudest
-   thing in the column, on purpose - Alex asked for it more visible, not
-   competing with a rail-line dot for attention). Right: one item's full
-   content, only ever one at a time, so a busy month reads as a list you
-   scan then open, not everything unfolded at once down a single column. */
+/* Genesis explorer - Gmail-style master/detail, but the click target is
+   the MONTH, not each item. Item-level selection made the whole month
+   readable only one click-read-click at a time; picking a month instead
+   unfolds its full chronicle at once, still a normal top-to-bottom scroll. */
 .genesis-explorer {
   display: flex;
   align-items: flex-start;
   gap: 24px;
 }
 .genesis-explorer-list {
-  flex: 0 0 300px;
+  flex: 0 0 220px;
   max-height: 78vh;
   overflow-y: auto;
   padding-right: 4px;
-}
-.genesis-explorer-group { margin-bottom: 18px; }
-.genesis-explorer-month {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin: 4px 0 6px;
-  position: sticky;
-  top: 0;
-  background: var(--surface);
-  padding: 4px 0;
-}
-.genesis-explorer-month span {
-  font-weight: 500;
-  font-size: 0.7em;
-  color: var(--ink-faint);
-  margin-left: 6px;
-}
-.genesis-explorer-row {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 2px;
+}
+.genesis-explorer-month-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
   width: 100%;
   text-align: left;
   background: none;
   border: none;
   border-radius: var(--radius);
-  padding: 6px 8px;
+  padding: 8px 10px;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 600;
   color: var(--ink-dim);
   cursor: pointer;
 }
-.genesis-explorer-row:hover { background: var(--surface-2); }
-.genesis-explorer-row-active { background: var(--accent-wash); color: var(--ink); }
-.genesis-explorer-row-sub { padding-left: 22px; font-size: 12px; }
-.genesis-explorer-row-title {
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.genesis-explorer-row-date {
-  font-size: 11px;
+.genesis-explorer-month-row:hover { background: var(--surface-2); }
+.genesis-explorer-month-row-active { background: var(--accent-wash); color: var(--ink); }
+.genesis-explorer-month-row-year {
+  font-weight: 400;
+  font-size: 0.78em;
   color: var(--ink-faint);
-  white-space: nowrap;
+}
+.genesis-explorer-month-row-count {
+  margin-left: auto;
+  font-weight: 400;
+  font-size: 0.75em;
+  color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
 }
-.genesis-explorer-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  background: var(--ink-faint);
-}
-.genesis-explorer-dot-moment { background: var(--moment); }
-.genesis-explorer-dot-thread { background: var(--accent); }
-.genesis-explorer-dot-event { background: var(--event); }
-.genesis-explorer-dot-sale { background: var(--sale); }
-.genesis-explorer-dot-fact { background: var(--ink-faint); }
 .genesis-explorer-detail {
   flex: 1;
   min-width: 0;
-  position: sticky;
-  top: 12px;
 }
-.genesis-explorer-parent-link {
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 12.5px;
-  color: var(--accent-ink);
-  cursor: pointer;
-  padding: 0 0 6px;
-  display: block;
+.genesis-month-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 4px 0 16px;
 }
+.genesis-chronicle-stories {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.genesis-chronicle-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.genesis-story-card {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ink-faint);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.genesis-story-card-moment { border-left-color: var(--moment); }
+.genesis-story-card-thread { border-left-color: var(--accent); }
+.genesis-story-card-event { border-left-color: var(--event); }
+.genesis-story-card-sale { border-left-color: var(--sale); }
+.genesis-story-card-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+}
+.genesis-story-card-title:hover { text-decoration: underline; }
+.genesis-story-card-meta {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+.genesis-story-card-subs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-top: 4px;
+}
+.genesis-story-card-subs a {
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+.genesis-story-card-subs a:hover { text-decoration: underline; }
 @media (max-width: 780px) {
   .genesis-explorer { flex-direction: column; }
-  .genesis-explorer-list { flex: 1 1 auto; max-height: none; width: 100%; }
-  .genesis-explorer-detail { position: static; }
+  .genesis-explorer-list { flex: 1 1 auto; max-height: none; width: 100%; flex-direction: row; flex-wrap: wrap; }
 }
 
 /* Network graph controls */
