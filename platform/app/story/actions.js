@@ -13,9 +13,9 @@ function slugify(title) {
 
 // Registers a new story before any narrative markdown exists for it, so
 // it can be tagged onto people (the /people Stories column) and shows up
-// on the timeline right away. This is metadata only - title, start/end
-// date - not a replacement for the full story write-up that eventually
-// lives in the git-tracked ledger markdown.
+// on /genesis right away. This is metadata only - title, start date - not
+// a replacement for the full story write-up that eventually lives in the
+// git-tracked ledger markdown.
 export async function createStory(formData) {
   const title = (formData.get("title") || "").toString().trim();
   if (!title) return;
@@ -31,7 +31,8 @@ export async function createStory(formData) {
     start_date: (formData.get("start_date") || "").toString().trim() || null,
   });
 
-  revalidatePath("/timeline");
+  revalidatePath("/stories");
+  revalidatePath("/genesis");
   revalidatePath("/people");
 }
 
@@ -44,7 +45,8 @@ export async function updateStoryStart(formData) {
     updated_at: new Date().toISOString(),
   });
 
-  revalidatePath("/timeline");
+  revalidatePath("/genesis");
+  revalidatePath("/story");
 }
 
 export async function updateStoryEnd(formData) {
@@ -56,7 +58,8 @@ export async function updateStoryEnd(formData) {
     updated_at: new Date().toISOString(),
   });
 
-  revalidatePath("/timeline");
+  revalidatePath("/genesis");
+  revalidatePath("/story");
 }
 
 // Which axis a story reads on: "moment" (a bounded event, can run
@@ -73,17 +76,6 @@ export async function updateStoryAxis(formData) {
     updated_at: new Date().toISOString(),
   });
 
-  revalidatePath("/timeline");
-}
-
-export async function updateQuarterSummary(formData) {
-  const id = (formData.get("id") || "").toString();
-  if (!id) return;
-
-  await supabaseUpdate("ledger_quarters", `?id=eq.${id}`, {
-    summary: (formData.get("summary") || "").toString().trim() || null,
-    updated_at: new Date().toISOString(),
-  });
-
-  revalidatePath("/timeline");
+  revalidatePath("/genesis");
+  revalidatePath("/story");
 }

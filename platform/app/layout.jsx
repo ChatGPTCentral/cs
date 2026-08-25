@@ -23,14 +23,13 @@ export default async function RootLayout({ children }) {
             <nav className="topnav">
               <a href="/">Today</a>
               <a href="/board">Full board</a>
+              <a href="/genesis">Genesis</a>
               <a href="/stories">All stories</a>
-              <a href="/timeline">Timeline</a>
               <a href="/network">Network</a>
               <a href="/people">People</a>
               <a href="/people/review">
                 Review{pending.length > 0 ? ` (${pending.length})` : ""}
               </a>
-              <a href="/genesis">AI Central genesis</a>
               <a href="/writing-style">Writing style</a>
               <a href="/thinking-approach">Thinking &amp; approach</a>
               <a href="/feedback">Feedback</a>

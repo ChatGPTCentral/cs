@@ -25,6 +25,28 @@ function parseNames(names) {
   return names.split(",").map((n) => n.trim()).filter(Boolean);
 }
 
+function formatShort(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("it-IT", { day: "numeric", month: "short" });
+}
+
+// A story (momento or filo) placed under its start month - the same
+// board /timeline used to show separately, now inline with the facts
+// from the same month instead of on a second page.
+function StoryChip({ s }) {
+  return (
+    <a href={`/story/${s.slug}`} className={`genesis-story-chip genesis-story-chip-${s.axis}`}>
+      <span className="genesis-story-chip-dot" />
+      {s.title}
+      <span className="genesis-story-chip-dates">
+        {formatShort(s.start_date)}
+        {s.axis === "moment" && s.end_date ? ` – ${formatShort(s.end_date)}` : ""}
+        {s.axis === "thread" ? " →" : ""}
+      </span>
+    </a>
+  );
+}
+
 function GenesisEntry({ e, peopleByName }) {
   const slug = slugFromRef(e.story_ref);
   const names = parseNames(e.people_names);
@@ -86,12 +108,16 @@ function GenesisEntry({ e, peopleByName }) {
 }
 
 export default async function GenesisPage() {
-  const [events, people] = await Promise.all([
+  const [events, people, stories] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
       "?order=year.asc.nullslast,month.asc.nullslast,sort_order.asc"
     ),
     supabaseSelect("ledger_people", "?select=id,name&order=name.asc"),
+    supabaseSelect(
+      "ledger_stories",
+      "?start_date=not.is.null&select=slug,title,start_date,end_date,axis&order=start_date.asc"
+    ),
   ]);
 
   const peopleByName = new Map(people.map((p) => [p.name.toLowerCase(), p]));
@@ -104,9 +130,23 @@ export default async function GenesisPage() {
     if (!byYear.has(e.year)) byYear.set(e.year, new Map());
     const byMonth = byYear.get(e.year);
     const mk = e.month || 0;
-    if (!byMonth.has(mk)) byMonth.set(mk, []);
-    byMonth.get(mk).push(e);
+    if (!byMonth.has(mk)) byMonth.set(mk, { facts: [], stories: [] });
+    byMonth.get(mk).facts.push(e);
   }
+
+  // Stories join the same year/month grid, keyed off their real
+  // start_date - the "momenti e storie" view that used to live on its own
+  // page, now inline with the atomic facts from the same month.
+  for (const s of stories) {
+    const d = new Date(s.start_date);
+    const year = d.getFullYear();
+    const month = d.getMonth() + 1;
+    if (!byYear.has(year)) byYear.set(year, new Map());
+    const byMonth = byYear.get(year);
+    if (!byMonth.has(month)) byMonth.set(month, { facts: [], stories: [] });
+    byMonth.get(month).stories.push(s);
+  }
+
   const years = [...byYear.keys()].sort((a, b) => a - b);
 
   return (
@@ -122,23 +162,23 @@ export default async function GenesisPage() {
           La genesi di AI Central, mese per mese
         </h2>
         <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 8px" }}>
-          {events.length} voci. Clicca su un titolo o una descrizione per modificarla - salva da
-          solo quando clicchi fuori, niente bottone Salva, niente Feedback. Il file inglese
-          canonico (organizzato per temi, non per data) resta in{" "}
-          <code>.claude/skills/ai-central-genesis/SKILL.md</code> nel repo - questa pagina è la
-          fonte di lavoro in italiano. Ogni voce che cita un file storia è collegata alla pagina
-          di quella storia; vedi anche la <a href="/timeline">Timeline</a> per lo stesso arco
-          temporale organizzato per storie/momenti invece che per fatto singolo.
+          {events.length} fatti, {stories.length} storie datate - tutto sulla stessa timeline. I
+          fatti (in italiano, sotto) si editano sul posto: clicca titolo o descrizione, salva da
+          solo quando clicchi fuori, niente Feedback. Le storie (i chip colorati) sono momenti
+          (un evento con inizio e fine, <span style={{ color: "var(--moment-ink)" }}>ambra</span>)
+          o fili (un rapporto che continua,{" "}
+          <span style={{ color: "var(--accent-ink)" }}>blu</span>) - click per aprire la loro
+          pagina, dove si editano data e asse.
         </p>
         <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 8px" }}>
-          Il campo &quot;persone collegate&quot; sotto ogni voce è vuoto per default - nessun nome
-          indovinato dal testo. Scrivi il nome esatto come appare in{" "}
+          Il campo &quot;persone collegate&quot; sotto ogni fatto è vuoto per default - nessun
+          nome indovinato dal testo. Scrivi il nome esatto come appare in{" "}
           <a href="/people">/people</a> (autocompletamento incluso); un nome che non trova
           corrispondenza resta segnato con un punto interrogativo invece di un link.
         </p>
 
         <form action={addGenesisEvent} className="crm-form" style={{ marginBottom: 4 }}>
-          <label className="field-label" htmlFor="f-genesis-title">Nuova voce</label>
+          <label className="field-label" htmlFor="f-genesis-title">Nuovo fatto</label>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <input id="f-genesis-title" name="title" placeholder="Titolo" style={{ flex: 1, minWidth: 180 }} required />
             <input name="year" type="number" placeholder="Anno" style={{ width: 90 }} />
@@ -163,21 +203,31 @@ export default async function GenesisPage() {
               <h2 className="genesis-year">{year}</h2>
               <div className="genesis-grid">
                 <div className="genesis-rail-line" />
-                {monthKeys.map((mk) => (
-                  <Fragment key={`${year}-${mk}`}>
-                    <div className="genesis-month-label">
-                      {mk ? MONTHS_IT[mk] : "—"}
-                    </div>
-                    <div className="genesis-dot-col">
-                      <span className="genesis-dot" />
-                    </div>
-                    <div className="genesis-month-entries">
-                      {byMonth.get(mk).map((e) => (
-                        <GenesisEntry key={e.id} e={e} peopleByName={peopleByName} />
-                      ))}
-                    </div>
-                  </Fragment>
-                ))}
+                {monthKeys.map((mk) => {
+                  const bucket = byMonth.get(mk);
+                  return (
+                    <Fragment key={`${year}-${mk}`}>
+                      <div className="genesis-month-label">
+                        {mk ? MONTHS_IT[mk] : "—"}
+                      </div>
+                      <div className="genesis-dot-col">
+                        <span className="genesis-dot" />
+                      </div>
+                      <div className="genesis-month-entries">
+                        {bucket.stories.length > 0 && (
+                          <div className="genesis-story-chips">
+                            {bucket.stories.map((s) => (
+                              <StoryChip key={s.slug} s={s} />
+                            ))}
+                          </div>
+                        )}
+                        {bucket.facts.map((e) => (
+                          <GenesisEntry key={e.id} e={e} peopleByName={peopleByName} />
+                        ))}
+                      </div>
+                    </Fragment>
+                  );
+                })}
               </div>
             </div>
           );
