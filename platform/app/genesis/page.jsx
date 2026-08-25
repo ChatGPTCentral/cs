@@ -135,14 +135,12 @@ export default async function GenesisPage({ searchParams }) {
         <details className="genesis-disclosure">
           <summary>Come funziona</summary>
           <p>
-            A sinistra la cronologia del mese, compatta - click su una voce per aprirla a destra.
-            Il colore del pallino dice il tipo:{" "}
-            <span style={{ color: "var(--event-ink)" }}>teal</span> evento reale (un luogo dove sei
-            stato, con posizione e date), <span style={{ color: "var(--sale-ink)" }}>viola</span>{" "}
-            vendita o sponsorship, <span style={{ color: "var(--moment-ink)" }}>ambra</span> momento
-            (inizio e fine), <span style={{ color: "var(--accent-ink)" }}>blu</span> filo (un
-            rapporto che continua), grigio un fatto scritto a mano. Un sotto-evento (una sessione
-            dentro un evento più grande) è rientrato.
+            A sinistra l&apos;indice per anno e mese - click su una voce per saltare a quel punto
+            della cronologia a destra, che scorre tutta di seguito, in verticale. Ogni mese è
+            diviso per tipo: Eventi (un luogo reale, con posizione e date), Storie (un rapporto
+            momento o filo), Sales (vendita o sponsorship), Altre conversazioni (un fatto scritto
+            a mano). Un sotto-evento (una sessione dentro un evento più grande) compare dentro la
+            card del suo evento.
           </p>
           <p>
             Nel pannello di un fatto, il campo &quot;persone collegate&quot; è vuoto per default -

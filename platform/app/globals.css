@@ -639,69 +639,78 @@ footer.snapshot-note {
 .genesis-people-edit .table-inline-form { flex: 1; min-width: 160px; }
 .genesis-people-edit .table-cell-input { font-size: 11.5px; color: var(--ink-faint); }
 
-/* Genesis explorer - Gmail-style master/detail, but the click target is
-   the MONTH, not each item. Item-level selection made the whole month
-   readable only one click-read-click at a time; picking a month instead
-   unfolds its full chronicle at once, still a normal top-to-bottom scroll. */
+/* Genesis explorer - a real continuous scroll, not a click-to-open pane.
+   Alex asked directly to scroll through time with the trackpad. The left
+   column is pure jump navigation (year, then month, plain #anchors), never
+   a selection state - the right column holds every month's content, one
+   after another, grouped inside each month by what it actually is. */
 .genesis-explorer {
   display: flex;
   align-items: flex-start;
   gap: 24px;
 }
-.genesis-explorer-list {
-  flex: 0 0 220px;
-  max-height: 78vh;
+.genesis-explorer-nav {
+  flex: 0 0 200px;
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 24px);
   overflow-y: auto;
   padding-right: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
 }
-.genesis-explorer-month-row {
+.genesis-nav-year-group { margin-bottom: 14px; }
+.genesis-nav-year {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 4px 10px;
+}
+.genesis-nav-month {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 6px;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
+  padding: 5px 10px 5px 18px;
   border-radius: var(--radius);
-  padding: 8px 10px;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
   color: var(--ink-dim);
-  cursor: pointer;
 }
-.genesis-explorer-month-row:hover { background: var(--surface-2); }
-.genesis-explorer-month-row-active { background: var(--accent-wash); color: var(--ink); }
-.genesis-explorer-month-row-year {
-  font-weight: 400;
-  font-size: 0.78em;
-  color: var(--ink-faint);
-}
-.genesis-explorer-month-row-count {
+.genesis-nav-month:hover { background: var(--surface-2); color: var(--ink); }
+.genesis-nav-month-count {
   margin-left: auto;
-  font-weight: 400;
-  font-size: 0.75em;
+  font-size: 0.8em;
   color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
 }
-.genesis-explorer-detail {
+.genesis-explorer-scroll {
   flex: 1;
   min-width: 0;
 }
+.genesis-month-section {
+  scroll-margin-top: 16px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.genesis-month-section:last-child { border-bottom: none; }
 .genesis-month-title {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--ink);
   margin: 4px 0 16px;
 }
+.genesis-group { margin-bottom: 18px; }
+.genesis-group:last-child { margin-bottom: 0; }
+.genesis-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  margin: 0 0 8px;
+}
 .genesis-chronicle-stories {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 20px;
 }
 .genesis-chronicle-facts {
   display: flex;
@@ -744,7 +753,8 @@ footer.snapshot-note {
 .genesis-story-card-subs a:hover { text-decoration: underline; }
 @media (max-width: 780px) {
   .genesis-explorer { flex-direction: column; }
-  .genesis-explorer-list { flex: 1 1 auto; max-height: none; width: 100%; flex-direction: row; flex-wrap: wrap; }
+  .genesis-explorer-nav { position: static; max-height: none; width: 100%; display: flex; flex-wrap: wrap; gap: 4px 0; }
+  .genesis-nav-year-group { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; margin-bottom: 6px; }
 }
 
 /* Network graph controls */
