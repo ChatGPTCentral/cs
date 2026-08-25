@@ -152,7 +152,11 @@ export default async function GenesisPage({ searchParams }) {
   // Stories join the same year/month grid, keyed off their real
   // start_date - the "momenti e storie" view that used to live on its own
   // page, now inline with the atomic facts from the same month.
+  // Sub-events (parent_slug set) sat inline too at first and it was too
+  // much - 20 extra chips flooding June 2026. They stay real, still
+  // linked from their parent event's own page, just off this main view.
   for (const s of stories) {
+    if (s.parent_slug) continue;
     const d = new Date(s.start_date);
     const year = d.getFullYear();
     const month = d.getMonth() + 1;
