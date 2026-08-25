@@ -111,7 +111,9 @@ function GenesisEntry({ e, peopleByName }) {
   );
 }
 
-export default async function GenesisPage() {
+export default async function GenesisPage({ searchParams }) {
+  const activeYear = searchParams?.year ? Number(searchParams.year) : null;
+
   const [events, people, stories] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
@@ -151,7 +153,13 @@ export default async function GenesisPage() {
     byMonth.get(month).stories.push(s);
   }
 
-  const years = [...byYear.keys()].sort((a, b) => a - b);
+  // Filter pills always list every year that actually has content, newest
+  // first - independent of activeYear, so the current filter never hides
+  // its own siblings.
+  const allYears = [...byYear.keys()].sort((a, b) => b - a);
+  const years = activeYear
+    ? allYears.filter((y) => y === activeYear)
+    : [...byYear.keys()].sort((a, b) => a - b);
 
   return (
     <>
@@ -170,6 +178,23 @@ export default async function GenesisPage() {
             {events.length} fatti, {stories.length} storie datate
           </span>
         </div>
+
+        {allYears.length > 0 && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, margin: "6px 0 4px" }}>
+            <a href="/genesis" className={`list-tab${!activeYear ? " list-tab-active" : ""}`}>
+              Tutti
+            </a>
+            {allYears.map((y) => (
+              <a
+                key={y}
+                href={`/genesis?year=${y}`}
+                className={`list-tab${activeYear === y ? " list-tab-active" : ""}`}
+              >
+                {y}
+              </a>
+            ))}
+          </div>
+        )}
 
         <details className="genesis-disclosure">
           <summary>Come funziona</summary>
@@ -247,7 +272,7 @@ export default async function GenesisPage() {
           );
         })}
 
-        {undated.length > 0 && (
+        {!activeYear && undated.length > 0 && (
           <div>
             <h2 className="genesis-year">Senza data</h2>
             <p style={{ fontSize: 12, color: "var(--ink-faint)", margin: "0 0 14px" }}>
