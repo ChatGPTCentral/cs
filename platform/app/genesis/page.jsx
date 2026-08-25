@@ -112,7 +112,8 @@ function GenesisEntry({ e, peopleByName }) {
 }
 
 export default async function GenesisPage({ searchParams }) {
-  const activeYear = searchParams?.year ? Number(searchParams.year) : null;
+  const yearParam = searchParams?.year;
+  const showAllYears = yearParam === "all";
 
   const [events, people, stories] = await Promise.all([
     supabaseSelect(
@@ -155,11 +156,14 @@ export default async function GenesisPage({ searchParams }) {
 
   // Filter pills always list every year that actually has content, newest
   // first - independent of activeYear, so the current filter never hides
-  // its own siblings.
+  // its own siblings. No ?year at all defaults to the most recent year
+  // (2026, today) rather than the full timeline - explicit "Tutti" is one
+  // click away, at /genesis?year=all.
   const allYears = [...byYear.keys()].sort((a, b) => b - a);
-  const years = activeYear
-    ? allYears.filter((y) => y === activeYear)
-    : [...byYear.keys()].sort((a, b) => a - b);
+  const activeYear = showAllYears ? null : yearParam ? Number(yearParam) : allYears[0] ?? null;
+  const years = showAllYears
+    ? [...byYear.keys()].sort((a, b) => a - b)
+    : allYears.filter((y) => y === activeYear);
 
   return (
     <>
@@ -181,14 +185,14 @@ export default async function GenesisPage({ searchParams }) {
 
         {allYears.length > 0 && (
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6, margin: "6px 0 4px" }}>
-            <a href="/genesis" className={`list-tab${!activeYear ? " list-tab-active" : ""}`}>
+            <a href="/genesis?year=all" className={`list-tab${showAllYears ? " list-tab-active" : ""}`}>
               Tutti
             </a>
             {allYears.map((y) => (
               <a
                 key={y}
                 href={`/genesis?year=${y}`}
-                className={`list-tab${activeYear === y ? " list-tab-active" : ""}`}
+                className={`list-tab${!showAllYears && activeYear === y ? " list-tab-active" : ""}`}
               >
                 {y}
               </a>
@@ -272,7 +276,7 @@ export default async function GenesisPage({ searchParams }) {
           );
         })}
 
-        {!activeYear && undated.length > 0 && (
+        {showAllYears && undated.length > 0 && (
           <div>
             <h2 className="genesis-year">Senza data</h2>
             <p style={{ fontSize: 12, color: "var(--ink-faint)", margin: "0 0 14px" }}>
