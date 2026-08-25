@@ -578,50 +578,6 @@ footer.snapshot-note {
   color: var(--ink);
 }
 .genesis-year:first-child { margin-top: 4px; }
-.genesis-grid {
-  display: grid;
-  grid-template-columns: 92px 20px 1fr;
-  position: relative;
-}
-.genesis-rail-line {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  width: 2px;
-  background: var(--line);
-  justify-self: center;
-}
-.genesis-month-label {
-  grid-column: 1;
-  text-align: right;
-  padding-right: 16px;
-  padding-top: 4px;
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-weight: 700;
-  white-space: nowrap;
-}
-.genesis-dot-col {
-  grid-column: 2;
-  display: flex;
-  justify-content: center;
-  padding-top: 7px;
-}
-.genesis-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px var(--surface);
-}
-.genesis-month-entries {
-  grid-column: 3;
-  padding: 0 0 26px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
 .genesis-entry {
   padding: 14px 16px;
   border: 1px solid var(--line);
@@ -683,62 +639,102 @@ footer.snapshot-note {
 .genesis-people-edit .table-inline-form { flex: 1; min-width: 160px; }
 .genesis-people-edit .table-cell-input { font-size: 11.5px; color: var(--ink-faint); }
 
-/* Story chips - momenti/fili from ledger_stories, inline in the same
-   month block as the genesis facts, instead of on a separate /timeline
-   page. Amber for momento, blue (the site accent) for filo - same colors
-   /timeline used, so the concept carries over exactly. */
-.genesis-story-chips {
+/* Genesis explorer - Gmail-style master/detail. Left: a compact,
+   chronological list grouped by month (the month itself is the loudest
+   thing in the column, on purpose - Alex asked for it more visible, not
+   competing with a rail-line dot for attention). Right: one item's full
+   content, only ever one at a time, so a busy month reads as a list you
+   scan then open, not everything unfolded at once down a single column. */
+.genesis-explorer {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 14px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed var(--line);
+  align-items: flex-start;
+  gap: 24px;
 }
-.genesis-story-chip {
+.genesis-explorer-list {
+  flex: 0 0 300px;
+  max-height: 78vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.genesis-explorer-group { margin-bottom: 18px; }
+.genesis-explorer-month {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 4px 0 6px;
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  padding: 4px 0;
+}
+.genesis-explorer-month span {
+  font-weight: 500;
+  font-size: 0.7em;
+  color: var(--ink-faint);
+  margin-left: 6px;
+}
+.genesis-explorer-row {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: var(--radius);
+  padding: 6px 8px;
+  font-family: inherit;
   font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--ink);
+  color: var(--ink-dim);
+  cursor: pointer;
 }
-.genesis-story-chip:hover { text-decoration: underline; }
-.genesis-story-chip-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
+.genesis-explorer-row:hover { background: var(--surface-2); }
+.genesis-explorer-row-active { background: var(--accent-wash); color: var(--ink); }
+.genesis-explorer-row-sub { padding-left: 22px; font-size: 12px; }
+.genesis-explorer-row-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.genesis-story-chip-moment .genesis-story-chip-dot { background: var(--moment); }
-.genesis-story-chip-thread .genesis-story-chip-dot { background: var(--accent); }
-.genesis-story-chip-event { color: var(--event-ink); }
-.genesis-story-chip-event .genesis-story-chip-dot { background: var(--event); }
-.genesis-story-chip-sale { color: var(--sale-ink); }
-.genesis-story-chip-sale .genesis-story-chip-dot { background: var(--sale); }
-.genesis-story-chip-dates {
-  font-weight: 400;
-  font-size: 11.5px;
+.genesis-explorer-row-date {
+  font-size: 11px;
   color: var(--ink-faint);
+  white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
-.genesis-story-chip-location {
-  font-weight: 400;
-  font-size: 12px;
-  color: var(--ink-faint);
+.genesis-explorer-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--ink-faint);
 }
-/* Sub-events (a venue/session inside a parent event) sit indented, one
-   step down in weight - real data, but a supporting detail, not a peer
-   of the event itself. */
-.genesis-story-chip-sub {
-  margin-left: 18px;
-  font-size: 12px;
-  font-weight: 500;
+.genesis-explorer-dot-moment { background: var(--moment); }
+.genesis-explorer-dot-thread { background: var(--accent); }
+.genesis-explorer-dot-event { background: var(--event); }
+.genesis-explorer-dot-sale { background: var(--sale); }
+.genesis-explorer-dot-fact { background: var(--ink-faint); }
+.genesis-explorer-detail {
+  flex: 1;
+  min-width: 0;
+  position: sticky;
+  top: 12px;
 }
-.genesis-story-chip-sub-arrow {
-  color: var(--ink-faint);
-  font-weight: 400;
+.genesis-explorer-parent-link {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 12.5px;
+  color: var(--accent-ink);
+  cursor: pointer;
+  padding: 0 0 6px;
+  display: block;
+}
+@media (max-width: 780px) {
+  .genesis-explorer { flex-direction: column; }
+  .genesis-explorer-list { flex: 1 1 auto; max-height: none; width: 100%; }
+  .genesis-explorer-detail { position: static; }
 }
 
 /* Network graph controls */
@@ -775,9 +771,4 @@ footer.snapshot-note {
   font-size: 12.5px;
   color: var(--ink-faint);
   white-space: nowrap;
-}
-@media (max-width: 640px) {
-  .genesis-grid { grid-template-columns: 64px 16px 1fr; }
-  .genesis-month-label { font-size: 10.5px; padding-right: 10px; }
-  .genesis-month-entries { padding-left: 16px; }
 }
