@@ -15,13 +15,15 @@ export default async function NetworkPage() {
           Network - {nodes.length} connected, {isolatedCount} not yet
         </h2>
         <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 16px" }}>
-          An edge means two people share an org (dashed, gray) or a story/moment
-          (solid, colored) - computed live from the CRM, nothing hand-drawn. Circle
-          size is how many connections a person has; a filled circle is starred.
-          Hover a person to see just their connections. Click one to open their
-          page. {isolatedCount} people have no shared org or story with anyone
-          else yet, so they're not on the graph - tag them into a story or set
-          their org to place them.
+          A solid, colored edge means two people share a story/moment; a dashed
+          gray edge means they share an org - hidden by default, since a
+          generic org string was making the graph unreadable, turn it on
+          below if you want it. Circle size is how many connections a person
+          has; a filled circle is starred. Scroll to zoom, drag to pan, search
+          a name to isolate one person's neighborhood. Click a person to open
+          their page. {isolatedCount} people have no shared org or story with
+          anyone else yet, so they&apos;re not on the graph - tag them into a
+          story or set their org to place them.
         </p>
         {nodes.length === 0 ? (
           <p style={{ color: "var(--ink-faint)" }}>
