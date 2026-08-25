@@ -1,5 +1,5 @@
 import { supabaseSelect } from "../../lib/supabase";
-import { createStory, updateStoryStart, updateStoryEnd, updateStoryAxis, updateQuarterSummary } from "./actions";
+import { createStory, updateStoryStart, updateStoryEnd, updateStoryAxis } from "./actions";
 import TableCellInput from "../people/TableCellInput";
 import SaveWatcher from "../people/SaveWatcher";
 import SavedToast from "../people/SavedToast";
@@ -153,7 +153,6 @@ export default async function TimelinePage() {
           </p>
 
           {quarterOrder.map((qk) => {
-            const q = quarters.find((row) => row.quarter === qk);
             const bucket = byQuarter.get(qk) || { moments: [], threads: [] };
             return (
               <div key={qk} className="quarter-card">
@@ -165,19 +164,10 @@ export default async function TimelinePage() {
                   </span>
                 </div>
 
-                {q && (
-                  <div className="quarter-prose">
-                    <TableCellInput
-                      action={updateQuarterSummary}
-                      id={q.id}
-                      name="summary"
-                      defaultValue={q.summary || ""}
-                      placeholder="What happened this quarter..."
-                      multiline
-                      rows={2}
-                    />
-                  </div>
-                )}
+                <div className="quarter-prose quarter-prose-link">
+                  Il racconto di questo trimestre vive ora in italiano, un fatto per riga, su{" "}
+                  <a href="/genesis">/genesis</a> - non più qui come paragrafo separato.
+                </div>
 
                 <div className="quarter-groups">
                   <div className="quarter-group">

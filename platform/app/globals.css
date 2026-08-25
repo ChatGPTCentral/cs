@@ -381,6 +381,7 @@ p .field-label { display: inline-block; min-width: 60px; }
 .quarter-counts strong { color: var(--ink-dim); font-weight: 700; }
 .quarter-prose { padding: 10px 16px 2px; }
 .quarter-prose .table-cell-input { font-size: 13.5px; color: var(--ink-dim); width: 100%; }
+.quarter-prose-link { font-size: 13px; color: var(--ink-faint); padding-bottom: 8px; }
 .quarter-groups {
   display: grid;
   grid-template-columns: 1fr 1fr;

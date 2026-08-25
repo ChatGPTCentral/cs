@@ -52,6 +52,16 @@ worth revisiting (*per Alex* - fahed-bizzari-chatgpt-accelerator.md); Peter
 Bittner pitched himself as a consultant, Dec 2023, nothing came of it
 (*per Alex* - peter-bittner-consulting-pitch.md)
 
+Two real sponsors also open this era, found by a calendar sweep - not team,
+not prospects, actual paying relationships: **Aveksana** (Surya Yadav) runs
+carousel work Oct-Nov 2023 into a real CPM-pricing negotiation Jan-Mar 2024,
+which Surya stalls 25 Mar 2024; **Andrew Bolis** closes a Passionfroot deal
+that pays out 15 Jan 2024 - real revenue this early. The same sweep also
+confirms ChatGPT Central attended, but did not run, the AI Business
+Bootcamp / AI Networking Party (19-29 Sep 2023), organized by Isabella
+Bedoya of MarketingPros.ai. *Verified - see aveksana-sponsorship.md,
+andrew-bolis-sponsorship.md*
+
 ### Building the first product (Oct 2023 - Feb 2024)
 
 Alex, Alessandra Serinelli and Matteo Brunati built an early version of what
@@ -90,11 +100,14 @@ between September 2025 and February 2026, before Alex caught the mistake and
 gave the full identity. Current team member, never archive. *Per Alex - see
 elizabeth-coo-hire.md*
 
-**Mark** is Marwan. First contact in August 2025; when he joined AI Central
-his name became "Mark" - the same pattern as Alex himself (real name Alessio,
-"Alex" at AI Central), Elizabeth (Morgane), and Sam (Sunny): joining AI
-Central means taking on an anglophone identity. *Per Alex - see
-mark-marwan.md*
+**Mark** is Marwan. When he joined AI Central his name became "Mark" - the
+same pattern as Alex himself (real name Alessio, "Alex" at AI Central),
+Elizabeth (Morgane), and Sam (Sunny): joining AI Central means taking on an
+anglophone identity. *Per Alex - see mark-marwan.md.* **Date discrepancy,
+unresolved:** Alex stated first contact was August 2025, but a calendar
+sweep found "Marwan" on the calendar already 20 Feb 2025 - months earlier.
+Could be an earlier meeting before he actually joined, or the August date
+needs revisiting. Not resolved either way - flagged, not guessed at
 
 **Kris** (`kris@thecentral.ai`, the newsletter's support persona, governed
 day to day by `aic-customer-support`) started as an ambiguous alter ego. For
@@ -102,16 +115,25 @@ a brief period "Kris" coincided with an actual person, Cristiana, one of the
 first people to work at AI Central - later let go. Once Cristiana left, Alex
 inherited the Kris persona himself; today Kris is Alex's own female alter
 ego, warm and affectionate with readers, especially male ones, while "Alex
-from AI Central" is Alex's own male voice. *Per Alex*
+from AI Central" is Alex's own male voice. *Per Alex.* A calendar sweep found
+a real, not-yet-reconciled lead: "Kris from ChatGPT Central and Louis
+Nicholls," 12 Mar 2025 - not yet confirmed whether this is the Cristiana era
+or Alex already in the Kris persona
 
-### The rebrand: "ChatGPT Central" to "AI Central" (from Apr 2025)
+### The rebrand: "ChatGPT Central" to "AI Central" (name Dec 2024, identity Apr-Jun 2025)
 
-Alex hired Jorge for brand identity work starting April 2025 - the moment the
-publication grew into a real media company, not just a newsletter. Even at
-that point Alex already believed "AI Central" would be the eventual name: it
-read as more useful and less politically narrow than "ChatGPT Central,"
-especially as other AI products entered the market and tying the brand to one
-product (ChatGPT) became a limitation rather than an asset. *Per Alex - see
+Two separate events, easy to conflate. **The name itself** first appears on
+the calendar 18 Dec 2024, with "MEET AI CENTRAL" on 6 Jan 2025 as the first
+clean use with no "ChatGPT" trace. **The formal visual identity** - logo,
+colors, the brand guidelines document - came later: Jorge first made contact
+21 Feb 2025 (via Alessio, "Alessio x Jorge"), the relationship shifted to
+Alex directly in April, and the actual brand identity project ran Apr-Jun
+2025. Jorge's project gave the already-adopted name a formal identity: it
+didn't create the name. Alex already believed "AI Central" would be the
+eventual name even before this project - more useful and less politically
+narrow than "ChatGPT Central," especially as other AI products entered the
+market and tying the brand to one product (ChatGPT) became a limitation
+rather than an asset. *Verified (calendar sweep) + per Alex - see
 ai-central-brand-identity.md*
 
 ### ElevenLabs: met in person, became real revenue (Dec 2025 - present)
@@ -149,10 +171,23 @@ built. *Per Alex - see ai-central-voices.md*
   when CollabWork pivoted. *Per Alex - see collabwork-hr-project.md*
 - **Shots.so** - a content-design platform. Ran an ads campaign together
   "back in the day," closed. *Per Alex - see shots-so-ads-campaign.md*
-- **Studio Galdieri** - not a client, the other direction: ongoing since at
-  least Jan 2026, real recurring operational work (Wise bank reconciliation,
-  F24 tax filings, CCIAA startup-innovativa paperwork, invoice corrections).
-  *Verified - see studio-galdieri.md*
+- **Studio Galdieri** - not a client, the other direction: real recurring
+  operational work (Wise bank reconciliation, F24 tax filings, CCIAA
+  startup-innovativa paperwork, invoice corrections). Originates Q3 2025 per
+  a calendar sweep, not Jan 2026 as first written here - January 2026 is when
+  the relationship peaks (annual accounts), not when it starts. *Verified -
+  see studio-galdieri.md*
+- **beehiiv** - the platform the newsletter runs on. Vendor relationship
+  starts 12 Jun 2024, still active. *Verified - calendar sweep*
+- **A-Cube** - Stripe integration work starting 29 Apr 2024, still
+  referenced by 2026-era threads (ai-hackathon-bristol and others).
+  *Verified - see a-cube-stripe.md*
+- **Sparkloop** - relationship with Mitch Larson starts 1 Jul 2024, years
+  before the 2026 Sparkloop threads already in the ledger. Still active.
+  *Verified - see mitch-sparkloop.md*
+- **NetLine** - vendor relationship starts 3 Oct 2024 - the same vendor
+  behind the Daniel Frignito contact found later in the ledger. *Verified -
+  see netline.md*
 - **Italy Business Professionals** - Alex's own mental bucket for routine
   Italian operational contacts: Virginia (insurance broker), Alessandro
   Negri (AI Central's lawyer), alongside Danilo at Studio Galdieri.
@@ -303,3 +338,9 @@ These are real gaps, not guesses filled in to look complete:
   Anything.com, Otio - listed in `alex-writing-style/SKILL.md`) beyond what
   is written above, do not yet have the same depth of founding-story detail
   as Guidde and GrowthSchool
+- **Mark/Marwan's real first-contact date** - Alex says August 2025, a
+  calendar sweep shows "Marwan" already in Feb 2025. Not reconciled either
+  way - see the team section above
+- **The Kris/Cristiana timeline against the calendar** - a 12 Mar 2025
+  calendar entry names Kris alongside Louis Nicholls; not yet confirmed
+  whether that is the Cristiana era or Alex already writing as Kris
