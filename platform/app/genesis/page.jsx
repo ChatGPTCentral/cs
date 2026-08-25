@@ -4,6 +4,7 @@ import { updateGenesisEvent, addGenesisEvent } from "./actions";
 import TableCellInput from "../people/TableCellInput";
 import SaveWatcher from "../people/SaveWatcher";
 import SavedToast from "../people/SavedToast";
+import Avatar from "../people/Avatar";
 
 export const dynamic = "force-dynamic";
 
@@ -69,20 +70,13 @@ function GenesisEntry({ e, peopleByName }) {
         rows={3}
       />
       <div className="genesis-people-row">
-        <TableCellInput
-          action={updateGenesisEvent}
-          id={e.id}
-          name="people_names"
-          defaultValue={e.people_names || ""}
-          placeholder="Persone collegate (separate da virgola)"
-          listId="genesis-people-names"
-        />
         {names.length > 0 && (
           <div className="genesis-people-links">
             {names.map((n) => {
               const p = peopleByName.get(n.toLowerCase());
               return p ? (
                 <a key={n} href={`/people/${p.id}`} className="genesis-person-chip">
+                  <Avatar name={p.name} photoUrl={p.photo_url} size={20} />
                   {p.name}
                 </a>
               ) : (
@@ -93,6 +87,16 @@ function GenesisEntry({ e, peopleByName }) {
             })}
           </div>
         )}
+        <div className="genesis-people-edit">
+          <TableCellInput
+            action={updateGenesisEvent}
+            id={e.id}
+            name="people_names"
+            defaultValue={e.people_names || ""}
+            placeholder="Persone collegate (separate da virgola)"
+            listId="genesis-people-names"
+          />
+        </div>
       </div>
       <div className="entry-meta">
         {e.source_tag}
@@ -113,7 +117,7 @@ export default async function GenesisPage() {
       "ledger_genesis_events",
       "?order=year.asc.nullslast,month.asc.nullslast,sort_order.asc"
     ),
-    supabaseSelect("ledger_people", "?select=id,name&order=name.asc"),
+    supabaseSelect("ledger_people", "?select=id,name,photo_url&order=name.asc"),
     supabaseSelect(
       "ledger_stories",
       "?start_date=not.is.null&select=slug,title,start_date,end_date,axis&order=start_date.asc"
