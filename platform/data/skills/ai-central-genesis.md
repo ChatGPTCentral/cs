@@ -100,14 +100,13 @@ between September 2025 and February 2026, before Alex caught the mistake and
 gave the full identity. Current team member, never archive. *Per Alex - see
 elizabeth-coo-hire.md*
 
-**Mark** is Marwan. When he joined AI Central his name became "Mark" - the
-same pattern as Alex himself (real name Alessio, "Alex" at AI Central),
-Elizabeth (Morgane), and Sam (Sunny): joining AI Central means taking on an
-anglophone identity. *Per Alex - see mark-marwan.md.* **Date discrepancy,
-unresolved:** Alex stated first contact was August 2025, but a calendar
-sweep found "Marwan" on the calendar already 20 Feb 2025 - months earlier.
-Could be an earlier meeting before he actually joined, or the August date
-needs revisiting. Not resolved either way - flagged, not guessed at
+**Mark** is Marwan. First contact 20 Feb 2025 - a calendar sweep found the
+name on that date, initially conflicting with Alex's own first estimate of
+August 2025; Alex confirmed 2026-08-25 that Feb 2025 is the real date. When
+he joined AI Central his name became "Mark" - the same pattern as Alex
+himself (real name Alessio, "Alex" at AI Central), Elizabeth (Morgane), and
+Sam (Sunny): joining AI Central means taking on an anglophone identity.
+*Per Alex, date confirmed against calendar - see mark-marwan.md*
 
 **Kris** (`kris@thecentral.ai`, the newsletter's support persona, governed
 day to day by `aic-customer-support`) started as an ambiguous alter ego. For
@@ -116,9 +115,8 @@ first people to work at AI Central - later let go. Once Cristiana left, Alex
 inherited the Kris persona himself; today Kris is Alex's own female alter
 ego, warm and affectionate with readers, especially male ones, while "Alex
 from AI Central" is Alex's own male voice. *Per Alex.* A calendar sweep found
-a real, not-yet-reconciled lead: "Kris from ChatGPT Central and Louis
-Nicholls," 12 Mar 2025 - not yet confirmed whether this is the Cristiana era
-or Alex already in the Kris persona
+"Kris from ChatGPT Central and Louis Nicholls," 12 Mar 2025 - Alex confirmed
+2026-08-25 this was already him writing as Kris, not the Cristiana era
 
 ### The rebrand: "ChatGPT Central" to "AI Central" (name Dec 2024, identity Apr-Jun 2025)
 
@@ -338,9 +336,3 @@ These are real gaps, not guesses filled in to look complete:
   Anything.com, Otio - listed in `alex-writing-style/SKILL.md`) beyond what
   is written above, do not yet have the same depth of founding-story detail
   as Guidde and GrowthSchool
-- **Mark/Marwan's real first-contact date** - Alex says August 2025, a
-  calendar sweep shows "Marwan" already in Feb 2025. Not reconciled either
-  way - see the team section above
-- **The Kris/Cristiana timeline against the calendar** - a 12 Mar 2025
-  calendar entry names Kris alongside Louis Nicholls; not yet confirmed
-  whether that is the Cristiana era or Alex already writing as Kris

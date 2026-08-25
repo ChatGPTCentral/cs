@@ -16,8 +16,12 @@
   unanswered chases in two days is the clearest escalation signal in the whole
   ledger. 185 messages across 22 threads, the heaviest story here
 
-  **Identity, 2026-08-24, per Alex.** Mark is Marwan - first contact August
-  2025. When he joined AI Central his name became "Mark," the same pattern
-  as Alex himself (real name Alessio), Elizabeth (Morgane) and Sam (Sunny):
-  joining AI Central means taking on an anglophone identity. See
-  `ai-central-genesis/SKILL.md` for the full pattern across the team.
+  **Identity, 2026-08-24, per Alex.** Mark is Marwan. When he joined AI
+  Central his name became "Mark," the same pattern as Alex himself (real
+  name Alessio), Elizabeth (Morgane) and Sam (Sunny): joining AI Central
+  means taking on an anglophone identity. See `ai-central-genesis/SKILL.md`
+  for the full pattern across the team.
+
+  **Date correction, 2026-08-25, confirmed by Alex.** First contact was 20
+  Feb 2025, not August 2025 as first stated - a calendar sweep found
+  "Marwan" on that date and Alex confirmed it as the real one.
