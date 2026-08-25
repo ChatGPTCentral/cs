@@ -206,13 +206,6 @@ function AttachedFact({ item, peopleByName, updateGenesisEvent }) {
       <TableCellInput
         action={updateGenesisEvent}
         id={item.id}
-        name="title"
-        defaultValue={item.title}
-        placeholder="Titolo"
-      />
-      <TableCellInput
-        action={updateGenesisEvent}
-        id={item.id}
         name="description"
         defaultValue={item.description}
         placeholder="Descrizione"

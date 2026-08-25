@@ -761,7 +761,6 @@ footer.snapshot-note {
 }
 .genesis-story-card-fact { display: flex; flex-direction: column; gap: 2px; }
 .genesis-story-card-fact .table-cell-input { width: 100%; font-size: 13px; }
-.genesis-story-card-fact > form:first-child .table-cell-input { font-weight: 600; }
 .genesis-story-card-fact .genesis-people-links { margin-top: 2px; }
 @media (max-width: 780px) {
   .genesis-explorer { flex-direction: column; }
