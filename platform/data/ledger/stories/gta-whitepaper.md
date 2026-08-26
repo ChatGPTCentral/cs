@@ -59,3 +59,14 @@
   is not yet built as its own story; real email evidence exists (this
   thread, plus Valeria's invite under mark-duke) but hasn't been pulled
   together into a narrative.
+
+  **Notion call sweep, 2026-08-26.** Found the "GTA AI Quarterly" panel,
+  15 Jul 2026 - a recurring online session, born as a fallback after the
+  in-person London Tech Week event fell through. Zoltan, Tsvetelin and
+  Ganapathy each walked through a real AI agent they built (document
+  matching, news ranking, immigration lead-gen). Zoltan announced his new
+  OpenAI partner status on the call. Alex's contribution: unifying reader
+  data across AI Central's own properties to raise conversion, framed as
+  the top practical AI use case for SMEs under $5M revenue. Action item:
+  Zoltan, Marc Duke and Alex to align on turning the session into a shared
+  document - the group has already produced three such write-ups before.

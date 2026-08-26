@@ -33,3 +33,12 @@
   accounts, confirmed by Alex. Pushes the real start of this relationship
   back a full year, to July 2024. `ledger_stories.start_date` moved
   accordingly.
+
+  **Notion call sweep, 2026-08-26.** Found a full call transcript, 19 Mar
+  2026 - "Riunione Amministrazione e Sistema IVA." Danilo proposes moving
+  to the OSS (One Stop Shop) regime for VAT on international B2C sales.
+  Action items: Danilo to send the 2025 expense file missing from the tax
+  system and a cost breakdown; Alessio to send a separate file of
+  no-invoice expenses (restaurants, taxis); Danilo to estimate 2025 tax at
+  30-45% of profit; team to meet the Buffetti/Ebridge consultant about
+  linking the Excel files to the accounting software.
