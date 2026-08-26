@@ -86,3 +86,18 @@
   promotion. Floated expansion to other verticals later (e.g. AI in
   healthcare) pulling participants from AI Collective (SF) and All AI Is
   Human (NY).
+
+  **Notion call sweep, 2026-08-26 - the planning call after the roundtable.**
+  20 Jul 2026, Alex with Mark and (almost certainly) Svelin/Tsvetelin
+  Anastasov, after a well-received roundtable. They lock in: a drafted
+  foreword, the first edition limited to the original call's participants,
+  branded under Global Tech Advocates (not Tech London Advocates, though
+  TLA Creative Tech is credited), distributed via Seven Hills (Russ's PR
+  agency) across LinkedIn/Slack/WhatsApp/email/the GTA-TLA sites. Typical
+  production cost for this kind of piece runs £15-20K - AI Central
+  contributes it for free, and the group explicitly declines sponsorship
+  to protect editorial independence. Target launch ~6 Sep 2026, timed
+  around Zoltan's absence (29 Jul-7 Aug) and the start of Q4. Alex
+  proposes turning future editions into a recurring member survey ("AI
+  barometer") instead of a live call each quarter - who owns the survey
+  data is left unresolved, pending a separate conversation with Russ.

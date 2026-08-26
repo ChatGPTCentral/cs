@@ -23,3 +23,17 @@
   cc'ing Michael and Claudia) is one of the founding emails. Most Cozora
   communication now happens over Substack or WhatsApp, not email - so this
   ledger will always undercount its real activity level.
+
+  **Notion call sweep, 2026-08-26.** Found real activity this ledger's
+  email-only view would have missed. 26 Mar 2026: Alex ran a training
+  session for the Cozora community (attendee Wyndo among others) on
+  Claude Code's six components (CLAUDE.md, Skills, Commands, Memory,
+  Sub-Agents, Tools) and the shift from chat-based to agent-based AI
+  workflows - a genuine teaching role inside the community, not just a
+  member. Separately, a 6 Mar 2026 call between a beehiiv contact ("Luke")
+  and someone identified only as "Alessandro" - a different newsletter
+  operator (on beehiiv since Oct 2024, 130-week streak, ~50K subscribers,
+  Dulwich-based) who also references Cozora and a beehiiv-monetization
+  playbook - does NOT match Alex's own profile or history on any point
+  checked. Flagging as a likely misfiled/different-person page rather than
+  treating it as AI Central history.
