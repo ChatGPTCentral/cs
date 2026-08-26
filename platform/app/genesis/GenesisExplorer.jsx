@@ -258,7 +258,9 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
 function AttachedFact({ item, peopleByName, updateGenesisEvent, shownPersonIds }) {
   const names = item.peopleNames.filter((n) => {
     const p = peopleByName.get(n.toLowerCase());
-    return !p || !shownPersonIds.has(p.id);
+    if (p && shownPersonIds.has(p.id)) return false;
+    if (p) shownPersonIds.add(p.id);
+    return true;
   });
   return (
     <div className="genesis-story-card-fact">
