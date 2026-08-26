@@ -114,9 +114,12 @@ a brief period "Kris" coincided with an early team member, no longer part of
 AI Central. Once that person left, Alex inherited the Kris persona himself;
 today Kris is Alex's own female alter ego, warm and affectionate with
 readers, especially male ones, while "Alex from AI Central" is Alex's own
-male voice. *Per Alex.* A calendar sweep found "Kris from ChatGPT Central and
-Louis Nicholls," 12 Mar 2025 - Alex confirmed 2026-08-25 this was already him
-writing as Kris, not the earlier era
+male voice. *Per Alex.* Two dates are now confirmed as already Alex writing
+as Kris, not the earlier era: a calendar entry "Kris from ChatGPT Central and
+Louis Nicholls," 12 Mar 2025 (*confirmed 2026-08-25*), and a beehiiv case
+study interview of "Kris," published 11 Dec 2024 (*confirmed 2026-08-26,
+see references/press-case-studies.md*) - so the handover to Alex happened
+before Dec 2024, earlier than this file previously had evidence for
 
 ### The rebrand: "ChatGPT Central" to "AI Central" (name Dec 2024, identity Apr-Jun 2025)
 
@@ -288,6 +291,49 @@ obvious, damaging mistake in a draft:
   for The AI Summit London ran the same week. *Verified - calendar sweep
   and thread read - see london-tech-week-2026.md*
 
+## Press: beehiiv case studies
+
+Two beehiiv case studies are the richest outside account of the company's
+own numbers and Alex's background - full text in
+`references/press-case-studies.md`. Quote or cite from there, not from
+memory of this summary
+
+- **"How ChatGPT Central Hit 60K Subscribers With beehiiv,"** published
+  11 Dec 2024. An interview with "Kris" - confirmed 2026-08-26 as Alex's
+  own alter ego by that date, not the earlier team member (see "Kris"
+  above). Real numbers as of that date: Substack launch March 2023, ~10K
+  subscribers there in 6 months, migration to beehiiv (parallel publication
+  for 3 months, then full move), 60,000 subscribers and 150,000 total
+  audience by publish date, ~$40,000 revenue since Nov 2023, then-pace
+  toward 200,000 LinkedIn followers and 80,000 beehiiv subscribers by end
+  of 2024. Describes the "give back" model (free subscriptions, office
+  hours, an engagement-scoring spreadsheet) that is still how AI Central
+  operates
+- **"How AI Central Built a 300,000-Reader Media Brand on beehiiv,"**
+  published 26 Jun 2026, under Alex's own name and byline. Confirms real
+  professional background not written elsewhere in this file: eight years
+  on AI for investment managers at a UK B2B fintech, an MSc in banking and
+  finance, taught applied AI in Finance academically, a founding member of
+  the San Francisco-based **AI Collective** (distinct from the Chicago
+  **GenAI Collective** chapter dialogue above - two different
+  organizations, not confirmed related), and part of the Data and AI Group
+  at Global Tech Advocates London. Numbers as of publish date: 300,000+
+  total readers, 60,000 subscribers reached "by mid-2025," a 146+ week /
+  449+ issue publishing streak, $150,000+ from the beehiiv Ad Network
+  alone, 37-42% average open rates, a 7:1 target LTV:CAC that moved AI
+  Central onto beehiiv's enterprise plan, and a revenue-mix shift from 80%
+  passive monetization a year prior to majority active content-led
+  brand/affiliate deals. Names ElevenLabs, Luma AI, Gamma and Replit as
+  partners, and states a funding round in progress plus plans for an
+  academy/training product and a portfolio of properties under the AI
+  Central brand
+
+**Open discrepancy, not resolved:** the Dec 2024 article already reports
+60,000 subscribers; the Jun 2026 article says AI Central "grew from nearly
+zero to 60,000 subscribers by mid-2025" - six months later than the first
+article's own number. Both are AI Central's own published claims. Not
+picking one silently - ask Alex if it matters for a specific claim
+
 ## People who worked with AI Central, then left
 
 - **Giulia Bianco** - helped AI Central for a while (Jul-Dec 2024), then
@@ -336,3 +382,7 @@ These are real gaps, not guesses filled in to look complete:
   Anything.com, Otio - listed in `alex-writing-style/SKILL.md`) beyond what
   is written above, do not yet have the same depth of founding-story detail
   as Guidde and GrowthSchool
+- **The 60,000-subscriber date** - AI Central's own two beehiiv case
+  studies disagree: 60K already by 11 Dec 2024 per the first, 60K only "by
+  mid-2025" per the second. See "Press: beehiiv case studies" above - not
+  resolved, don't silently pick one
