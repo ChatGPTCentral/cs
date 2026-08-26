@@ -1,4 +1,12 @@
-# Pillsbury Law (PROPOSED - name and status unconfirmed by Alex)
+# Pillsbury Law
+
+**confirmed, 2026-08-26, per Alex.** Not a standalone story - Pillsbury Law
+hosted an event during London Tech Week 2026 that Elizabeth and Alex
+attended in person, collecting contacts there. The 4 June correspondence
+below falls inside the LTW window (3-11 June), which lines up. On
+`/genesis` this is now a sub-event of `london-tech-week-2026`, not its own
+top-level story.
+
 - query: none - no label. Found in the January-to-August widening pass
 - label-id: none
 - kind: org

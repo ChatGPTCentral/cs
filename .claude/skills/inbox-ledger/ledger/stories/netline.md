@@ -25,3 +25,12 @@
   work at NetLine handed between two people, not two separate relationships.
   This closes the open item in `graph/people.md` - no invented address, found
   in an actual thread
+- **month-by-month review, 2026-08-26, per Alex.** The real start is November
+  2024 - close to the calendar-verified 3 October 2024 vendor date already on
+  the genesis timeline, now corrected there too (was wrongly showing 10
+  December 2025). Daniel stayed the main contact from the start; Aneeka joined
+  later. Alex met Daniel in person four times as the relationship grew: The
+  Newsletter Conference 2025, OX8 (Omeda), the New Media Summit 2026 in
+  Austin, and The Newsletter Conference 2026. `/genesis` now carries each of
+  these as its own dated sub-story under Netline, so the relationship reads
+  as it actually unfolded - across many months, not one

@@ -20,31 +20,50 @@ function formatShort(dateStr) {
 export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
   const peopleByName = new Map(people.map((p) => [p.name.toLowerCase(), p]));
 
-  // Sub-events keyed by parent slug across the WHOLE dataset, not per month -
-  // a sub-event dated in a different month than its parent still needs to
-  // show up nested under it, not silently vanish.
+  const monthKeyOf = (it) => `${it.year}-${it.month}`;
+
+  // A parent story's own month - used below to decide whether a sub-event or
+  // an attached fact folds silently into the parent's card (same month, same
+  // happening) or stands on its own, in its own month, with a backlink. A
+  // long-running relationship - Netline, met at four different conferences
+  // over a year and a half - needs to unfold across the timeline, not get
+  // buried entirely inside the month its story began.
+  const storyMonthKey = new Map(
+    items.filter((it) => it.type === "story" && !it.isSub).map((it) => [it.slug, monthKeyOf(it)])
+  );
+
+  // Sub-events/sub-stories keyed by parent slug, only for the ones sharing
+  // their parent's month - a sub dated elsewhere renders standalone instead.
   const subsByParent = new Map();
   for (const it of items) {
-    if (it.type === "story" && it.isSub) {
+    if (it.type === "story" && it.isSub && monthKeyOf(it) === storyMonthKey.get(it.parentSlug)) {
       if (!subsByParent.has(it.parentSlug)) subsByParent.set(it.parentSlug, []);
       subsByParent.get(it.parentSlug).push(it);
     }
   }
 
   // A hand-written fact that already points at a story on this page (via
-  // story_ref) is the same happening, told twice - fold it into that
-  // story's own card instead of also giving it a separate box under
-  // "Altre conversazioni".
-  const storySlugSet = new Set(
-    items.filter((it) => it.type === "story" && !it.isSub).map((it) => it.slug)
-  );
+  // story_ref) and shares its month is the same happening, told twice - fold
+  // it into that story's own card instead of also giving it a separate box
+  // under "Altre conversazioni". A fact about the same story but a different
+  // month is a distinct beat in a longer relationship, not a duplicate - it
+  // stays in its own month, still linked back to the story by name.
+  const storySlugSet = new Set(storyMonthKey.keys());
   const factsByStorySlug = new Map();
+  const attachedFactKeys = new Set();
   for (const it of items) {
-    if (it.type === "fact" && it.storySlug && storySlugSet.has(it.storySlug)) {
+    if (
+      it.type === "fact" &&
+      it.storySlug &&
+      storySlugSet.has(it.storySlug) &&
+      monthKeyOf(it) === storyMonthKey.get(it.storySlug)
+    ) {
       if (!factsByStorySlug.has(it.storySlug)) factsByStorySlug.set(it.storySlug, []);
       factsByStorySlug.get(it.storySlug).push(it);
+      attachedFactKeys.add(it.key);
     }
   }
+  const nestedSubKeys = new Set([...subsByParent.values()].flat().map((it) => it.key));
 
   const byYearMonth = new Map();
   for (const it of items) {
@@ -93,7 +112,8 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
             month={m}
             subsByParent={subsByParent}
             factsByStorySlug={factsByStorySlug}
-            storySlugSet={storySlugSet}
+            nestedSubKeys={nestedSubKeys}
+            attachedFactKeys={attachedFactKeys}
             peopleByName={peopleByName}
             updateGenesisEvent={updateGenesisEvent}
           />
@@ -103,13 +123,12 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
   );
 }
 
-function MonthSection({ month, subsByParent, factsByStorySlug, storySlugSet, peopleByName, updateGenesisEvent }) {
-  const events = month.items.filter((it) => it.type === "story" && !it.isSub && it.kind === "event");
-  const stories = month.items.filter((it) => it.type === "story" && !it.isSub && it.kind === "story");
-  const sales = month.items.filter((it) => it.type === "story" && !it.isSub && it.kind === "sale");
-  const facts = month.items.filter(
-    (it) => it.type === "fact" && !(it.storySlug && storySlugSet.has(it.storySlug))
-  );
+function MonthSection({ month, subsByParent, factsByStorySlug, nestedSubKeys, attachedFactKeys, peopleByName, updateGenesisEvent }) {
+  const isTopLevel = (it) => it.type === "story" && !nestedSubKeys.has(it.key);
+  const events = month.items.filter((it) => isTopLevel(it) && it.kind === "event");
+  const stories = month.items.filter((it) => isTopLevel(it) && it.kind === "story");
+  const sales = month.items.filter((it) => isTopLevel(it) && it.kind === "sale");
+  const facts = month.items.filter((it) => it.type === "fact" && !attachedFactKeys.has(it.key));
 
   const groupProps = { subsByParent, factsByStorySlug, peopleByName, updateGenesisEvent };
 
@@ -180,6 +199,11 @@ function StoryCard({ item, subs, attachedFacts, peopleByName, updateGenesisEvent
         {range}
         {item.kind === "story" && item.axis === "thread" ? " →" : ""}
       </span>
+      {item.isSub && item.parentSlug && (
+        <a href={`/story/${item.parentSlug}`} className="genesis-story-card-parent">
+          parte di {item.parentTitle || item.parentSlug}
+        </a>
+      )}
       {subs.length > 0 && (
         <div className="genesis-story-card-subs">
           {subs.map((s) => (

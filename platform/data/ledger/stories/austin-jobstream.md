@@ -1,4 +1,12 @@
-# Austin Conference / Jobstream
+# Jobstream
+
+**title correction, 2026-08-26, per Alex.** This story is Jobstream, the
+client relationship - not the conference. The New Media Summit itself is its
+own event on the genesis timeline (`new-media-summit-austin-2026`), organized
+by Matt McGarry. Jobstream started with the pitch Alex sent Katie Fortunato
+and Amanda straight after the summit, confirmed by email on 2026-03-03 - that
+is now this story's start date on `/genesis`, not the earlier placeholder.
+
 - query: `label:--🌮🌮-Austin-Conference` and `label:👤-Amanda-//-Jobstream`
   **plus an unlabelled thread from a third Jobstream contact**
 - label-id: `Label_7346437085472136537` + `Label_1704262537422697338`
