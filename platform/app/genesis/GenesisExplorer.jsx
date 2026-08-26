@@ -26,7 +26,8 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
   const peopleByStorySlug = new Map();
   for (const p of people) {
     if (!p.stories) continue;
-    for (const slug of p.stories.split(",").map((s) => s.trim()).filter(Boolean)) {
+    const slugs = new Set(p.stories.split(",").map((s) => s.trim()).filter(Boolean));
+    for (const slug of slugs) {
       if (!peopleByStorySlug.has(slug)) peopleByStorySlug.set(slug, []);
       peopleByStorySlug.get(slug).push(p);
     }
