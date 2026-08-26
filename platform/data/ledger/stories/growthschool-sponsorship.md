@@ -25,7 +25,7 @@
   asked about "the campaign for the interview format Ad" and available
   dates, Alex agreed to talk the following week same day - short, and no
   interview/ad terms are actually discussed in these two messages.
-  `19445b6226a8a603`, ~10.5 months later, is a fresh cold pitch from dhrithi
+  `19445b6226a8a603`, about 10.5 months later, is a fresh cold pitch from dhrithi
   jain comparing ChatGPT Central to Rundown AI and Superhuman AI and asking
   for the media kit - a second, independent outreach, not a continuation of
   the Feb 2024 opener, and it sits unanswered in the messages pulled.

@@ -12,9 +12,9 @@
 - commitments: none
 - threads: none - found via Notion call transcript, not Gmail
 - notes: Met briefly at the New Media Summit in Austin. Alex walked through
-  AI Central's model: LinkedIn organic drives ~90% of audience (1-1.2M
+  AI Central's model: LinkedIn organic drives about 90% of audience (1-1.2M
   impressions on the LinkedIn page), plus a boutique AI consultancy for
-  mid-market family businesses under $5M revenue/~20 employees. Described
+  mid-market family businesses under $5M revenue/about 20 employees. Described
   his "physical-first" philosophy (printed PDFs, binders as internal
   knowledge bases) and named Chanel, Luis (Sparkloop), Matt McGarry and
   Tyler (beehiiv) as the people he studied to learn the newsletter

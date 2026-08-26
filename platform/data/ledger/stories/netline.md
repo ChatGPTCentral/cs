@@ -40,7 +40,7 @@
   and Replit, existing Gamma AI partnership, cash positive and growing,
   exploring a small Series A round to scale and to support potential M&A
   (the same period as the ma-exploration broker calls - same underlying
-  fundraise/exit exploration, not a separate thread). ~100 pieces of
+  fundraise/exit exploration, not a separate thread). about 100 pieces of
   content created since August, only proven performers go on NetLine. A
   real magazine launch (podcast + text + video) is planned for September.
   Action items: refresh conference materials to drop old "ChatGPT

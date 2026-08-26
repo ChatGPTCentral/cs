@@ -14,7 +14,7 @@
 - notes: Guideless launched late September, free tier (3 guides) plus $30/
   month paid plans, reached #7 on Product Hunt, and had just created an
   affiliate program (30% commission, one year) the day before this call.
-  Alex pitched a $3K package (five PDF carousels plus one book, ~80-85K
-  impressions, ~800 downloads, $24 CPM claimed vs. industry $45), but
+  Alex pitched a $3K package (five PDF carousels plus one book, about 80-85K
+  impressions, about 800 downloads, $24 CPM claimed vs. industry $45), but
   Evaldas wasn't ready to spend $3K and asked about lead-based rewards on
   top of the affiliate commission instead.

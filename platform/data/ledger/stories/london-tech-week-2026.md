@@ -29,7 +29,7 @@
   participant
 - notes: **calendar sweep + thread read, 2026-08-22.** Alex and Elizabeth
   attended London Tech Week 2026 as press delegates via the Global Tech
-  Advocates network (GTA is a ~50-network alliance; Russ Shaw runs it,
+  Advocates network (GTA is a about 50-network alliance; Russ Shaw runs it,
   Richard Lowe runs the Tech West England Advocates chapter). The calendar
   shows a real event cluster 3-11 June (Singular x SXSW London Collision,
   OneToWin 2026 Finalist Reception, a Newsletter Traffic Network meeting,

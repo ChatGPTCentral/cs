@@ -22,9 +22,9 @@
   **Notion call sweep, 2026-08-26.** Full call transcript, 12 Mar 2026.
   Phil is a first-time software founder - ran a leather company before,
   now also a full-time software engineer at a large tech company.
-  SheetMagic had just been rebranded (new site/logo, ~100 LinkedIn
+  SheetMagic had just been rebranded (new site/logo, about 100 LinkedIn
   followers) off the back of a fast AppSumo relaunch. Alex advised
   against newsletter ads (SheetMagic needs desktop conversions;
-  newsletters are opened ~90% on mobile) and pitched a $3K package of
+  newsletters are opened about 90% on mobile) and pitched a $3K package of
   five PDF carousels plus one book, citing a same-day Eleven Labs renewal
   as proof of his retention model.

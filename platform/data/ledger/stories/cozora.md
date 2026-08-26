@@ -32,7 +32,7 @@
   workflows - a genuine teaching role inside the community, not just a
   member. Separately, a 6 Mar 2026 call between a beehiiv contact ("Luke")
   and someone identified only as "Alessandro" - a different newsletter
-  operator (on beehiiv since Oct 2024, 130-week streak, ~50K subscribers,
+  operator (on beehiiv since Oct 2024, 130-week streak, about 50K subscribers,
   Dulwich-based) who also references Cozora and a beehiiv-monetization
   playbook - does NOT match Alex's own profile or history on any point
   checked. Flagging as a likely misfiled/different-person page rather than

@@ -15,7 +15,7 @@
 - next-action: none
 - commitments: none recorded
 - threads (chatgptcentral@gmail.com, `gmail_account_index = 1`):
-  `18f123020a6ff264` ("Supporto Integrazione Stripe", ~30 messages, 25 Apr -
+  `18f123020a6ff264` ("Supporto Integrazione Stripe", about 30 messages, 25 Apr -
   18 Sep 2024), `19030e6943bd59f9` ("Aggiunta al team su Stripe", 11
   messages, 19 Jun - 8 Jul 2024)
 - notes: **body-verified by Cowork, 2026-08-23 - real message content read,

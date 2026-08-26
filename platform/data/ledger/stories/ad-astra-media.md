@@ -42,6 +42,6 @@
   builds co-branded tutorial content (PDFs, LinkedIn carousels) tied to a
   client's campaign before ads run, rather than selling raw placements -
   citing Perplexity and Replit as examples. He says LinkedIn-newsletter
-  placements run roughly a fifth of direct LinkedIn ad CPM (~$90 CPM for
+  placements run roughly a fifth of direct LinkedIn ad CPM (about $90 CPM for
   Eleven Labs on LinkedIn itself vs. much less through him), and that
   beehiiv inventory is mostly already sold to existing clients.

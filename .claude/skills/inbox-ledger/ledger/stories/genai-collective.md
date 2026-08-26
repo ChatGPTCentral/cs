@@ -22,6 +22,6 @@
   "You connected me to Jon and Mary, and I was supposed to organize [the
   Chicago chapter]..." - no reply found after. This sits right at the
   beginning of the account's real correspondence history (the sweep's floor
-  is ~April 2025); not distinct from `hugo-passionfroot.md`'s Milan-based
+  is about April 2025); not distinct from `hugo-passionfroot.md`'s Milan-based
   contact Wiktor (`1000i.pl`, "AI Collective Milan") - different org, different
   people, kept separate

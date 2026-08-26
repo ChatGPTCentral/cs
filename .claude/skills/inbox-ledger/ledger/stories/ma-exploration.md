@@ -40,17 +40,17 @@
   **Notion call sweep, 2026-08-26.** Full transcripts found for the two
   broker calls, six days apart, with real numbers that do not reconcile -
   flagging both rather than picking one. 18 Mar: Nick Santillo (10
-  companies sold, 11th in progress) hears AI Central pitched as ~300K
+  companies sold, 11th in progress) hears AI Central pitched as about 300K
   readers, $350K revenue last 12 months ($500K projected 2026), $70K
   profit last year. He assesses a straight acquisition at "low seven
-  figures" (~$1M) against Alex's own $1.5-2M cash floor and a separate
+  figures" (about $1M) against Alex's own $1.5-2M cash floor and a separate
   $2-3M figure Alex was discussing with investors; proposes a $2K retainer
   for a valuation report and a 15-20+ name buyer list (HubSpot, Informa -
   Netline's parent - among them). 24 Mar: Brad Wayland (QuietLight, 25
   years in M&A) hears the same business pitched with different numbers -
   over $500K total revenue, 3x YoY growth, $30K profit Year 1, $100K in
-  2024, $100-150K targeted for 2026 - and flatly rejects the 2.5-3M/~25x
+  2024, $100-150K targeted for 2026 - and flatly rejects the 2.5-3M/about 25x
   figure Alex was floating to investors, pricing the real M&A market at
-  3-5x EBITDA (~$600K list price) and telling Alex to pursue the
+  3-5x EBITDA (about $600K list price) and telling Alex to pursue the
   investor raise instead of a sale at that price. He also flags that US
   buyers want asset sales, awkward given AI Central's Italian entity.

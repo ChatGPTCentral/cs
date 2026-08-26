@@ -5,7 +5,7 @@
 - label-id: none
 - kind: project - a live sales/editorial pipeline, not a single
   relationship
-- people: ~150 leads, see ledger_people (`stories` includes
+- people: about 150 leads, see ledger_people (`stories` includes
   `ai-central-voices`) for the full roster
 - status: open - active pipeline, needs a real review pass
 - start: 2026-06-01

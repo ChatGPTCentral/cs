@@ -25,8 +25,8 @@
   **Notion call sweep, 2026-08-26.** Full "Calls w/ Morgane" meeting notes
   found under Elizabeth's birth name, 11 Mar 2026 - "AI Central Strategy
   and Roadmap Discussion." Real substance: standardizing the business
-  model (Bending Spoon-style unit economics), ~$300K revenue target for
-  the year (from ~$30K), shifting from selling ads to selling content
+  model (Bending Spoon-style unit economics), about $300K revenue target for
+  the year (from about $30K), shifting from selling ads to selling content
   (downloadable PDF assets - carousels, ebooks, cheat sheets) for compound
   monetization, a homepage redesign into a curated "bookshelf," a rebuilt
   5-7 email welcome sequence focused on Excel/PowerPoint/Word/Gmail, and a

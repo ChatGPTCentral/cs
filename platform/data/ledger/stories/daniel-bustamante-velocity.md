@@ -13,7 +13,7 @@
   transcript
 - threads: none - found via Notion call transcript, not Gmail
 - notes: Alex described AI Central/Essential Media's revenue as
-  $10-20K/month, mostly ads (~half programmatic beehiiv, half direct brand
+  $10-20K/month, mostly ads (about half programmatic beehiiv, half direct brand
   deals), a $4-trial-then-$40/year digital product, affiliates,
   co-registrations and consulting - targeting $50-80K/month by year end
   and a SaaS platform launch mid-June. Called his welcome sequence

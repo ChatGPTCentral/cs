@@ -77,11 +77,11 @@
   only Alex and Svelin (Tsvetelin's name spelled out in full here, same
   person) showed up. They lock in the community-sourced survey format ("How
   AI Leaders Use AI for GTM," GTA leads survey design, AI Central brings a
-  4-person editorial team plus pagination/dataviz/distribution to ~500K
+  4-person editorial team plus pagination/dataviz/distribution to about 500K
   people) instead of Svelin's earlier, stalled "State of AI" report attempt.
   They also plan a roundtable: strong preference for an in-person London
   studio recording (1 moderator - Russ proposed - plus 2 speakers) over a
-  Zoom webinar, since a typical webinar gets ~60 registrations/~30 attendees
+  Zoom webinar, since a typical webinar gets about 60 registrations/about 30 attendees
   versus an estimated 300-400 for an in-person recording with 3 weeks of
   promotion. Floated expansion to other verticals later (e.g. AI in
   healthcare) pulling participants from AI Collective (SF) and All AI Is
@@ -96,7 +96,7 @@
   agency) across LinkedIn/Slack/WhatsApp/email/the GTA-TLA sites. Typical
   production cost for this kind of piece runs £15-20K - AI Central
   contributes it for free, and the group explicitly declines sponsorship
-  to protect editorial independence. Target launch ~6 Sep 2026, timed
+  to protect editorial independence. Target launch about 6 Sep 2026, timed
   around Zoltan's absence (29 Jul-7 Aug) and the start of Q4. Alex
   proposes turning future editions into a recurring member survey ("AI
   barometer") instead of a live call each quarter - who owns the survey

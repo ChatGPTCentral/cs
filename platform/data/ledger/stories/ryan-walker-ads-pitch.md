@@ -25,4 +25,4 @@
   confirmed multi-source page building and account/portal login were both
   on the near-term roadmap. Alex upgraded his own AppSumo tier 1 to tier 4
   on the call and pitched a "Collections" deal - 5 PDFs over 5 weeks, each
-  newsletter reaching ~180K people on LinkedIn, minimum $2K.
+  newsletter reaching about 180K people on LinkedIn, minimum $2K.
