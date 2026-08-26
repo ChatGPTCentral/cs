@@ -32,7 +32,7 @@ export default async function GenesisPage({ searchParams }) {
       "ledger_genesis_events",
       "?order=year.asc.nullslast,month.asc.nullslast,sort_order.asc"
     ),
-    supabaseSelect("ledger_people", "?select=id,name,photo_url&order=name.asc"),
+    supabaseSelect("ledger_people", "?select=id,name,photo_url,stories&order=name.asc"),
     supabaseSelect(
       "ledger_stories",
       "?start_date=not.is.null&select=slug,title,start_date,end_date,axis,kind,location,parent_slug&order=start_date.asc"

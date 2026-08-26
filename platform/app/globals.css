@@ -725,11 +725,25 @@ footer.snapshot-note {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  background: var(--surface);
 }
-.genesis-story-card-moment { border-left-color: var(--moment); }
-.genesis-story-card-thread { border-left-color: var(--accent); }
-.genesis-story-card-event { border-left-color: var(--event); }
-.genesis-story-card-sale { border-left-color: var(--sale); }
+.genesis-story-card-moment { border-left-color: var(--moment); background: var(--moment-wash); }
+.genesis-story-card-thread { border-left-color: var(--accent); background: var(--accent-wash); }
+.genesis-story-card-event { border-left-color: var(--event); background: var(--event-wash); }
+.genesis-story-card-sale { border-left-color: var(--sale); background: var(--sale-wash); }
+.genesis-story-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.genesis-story-card-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
 .genesis-story-card-title {
   font-weight: 600;
   font-size: 14px;
@@ -747,6 +761,7 @@ footer.snapshot-note {
   margin-top: 2px;
 }
 .genesis-story-card-parent:hover { text-decoration: underline; }
+.genesis-story-card > .genesis-people-links { margin-top: 4px; }
 .genesis-story-card-subs {
   display: flex;
   flex-wrap: wrap;

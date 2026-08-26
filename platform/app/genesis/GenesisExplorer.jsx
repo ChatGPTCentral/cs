@@ -20,6 +20,18 @@ function formatShort(dateStr) {
 export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
   const peopleByName = new Map(people.map((p) => [p.name.toLowerCase(), p]));
 
+  // Same free-text convention as a fact's people_names, but on the person's
+  // own record - who was actually at this event/story, by its slug, so a
+  // card doesn't have to wait for a same-month fact to show a face.
+  const peopleByStorySlug = new Map();
+  for (const p of people) {
+    if (!p.stories) continue;
+    for (const slug of p.stories.split(",").map((s) => s.trim()).filter(Boolean)) {
+      if (!peopleByStorySlug.has(slug)) peopleByStorySlug.set(slug, []);
+      peopleByStorySlug.get(slug).push(p);
+    }
+  }
+
   const monthKeyOf = (it) => `${it.year}-${it.month}`;
 
   // A parent story's own month - used below to decide whether a sub-event or
@@ -112,6 +124,7 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
             month={m}
             subsByParent={subsByParent}
             factsByStorySlug={factsByStorySlug}
+            peopleByStorySlug={peopleByStorySlug}
             nestedSubKeys={nestedSubKeys}
             attachedFactKeys={attachedFactKeys}
             peopleByName={peopleByName}
@@ -123,14 +136,14 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
   );
 }
 
-function MonthSection({ month, subsByParent, factsByStorySlug, nestedSubKeys, attachedFactKeys, peopleByName, updateGenesisEvent }) {
+function MonthSection({ month, subsByParent, factsByStorySlug, peopleByStorySlug, nestedSubKeys, attachedFactKeys, peopleByName, updateGenesisEvent }) {
   const isTopLevel = (it) => it.type === "story" && !nestedSubKeys.has(it.key);
   const events = month.items.filter((it) => isTopLevel(it) && it.kind === "event");
   const stories = month.items.filter((it) => isTopLevel(it) && it.kind === "story");
   const sales = month.items.filter((it) => isTopLevel(it) && it.kind === "sale");
   const facts = month.items.filter((it) => it.type === "fact" && !attachedFactKeys.has(it.key));
 
-  const groupProps = { subsByParent, factsByStorySlug, peopleByName, updateGenesisEvent };
+  const groupProps = { subsByParent, factsByStorySlug, peopleByStorySlug, peopleByName, updateGenesisEvent };
 
   return (
     <section id={`m-${month.key}`} className="genesis-month-section">
@@ -160,7 +173,7 @@ function MonthSection({ month, subsByParent, factsByStorySlug, nestedSubKeys, at
   );
 }
 
-function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByName, updateGenesisEvent }) {
+function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByStorySlug, peopleByName, updateGenesisEvent }) {
   return (
     <div className="genesis-group">
       <h3 className="genesis-group-label">{label}</h3>
@@ -171,6 +184,7 @@ function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByName
             item={s}
             subs={subsByParent.get(s.slug) || []}
             attachedFacts={factsByStorySlug.get(s.slug) || []}
+            relatedPeople={peopleByStorySlug.get(s.slug) || []}
             peopleByName={peopleByName}
             updateGenesisEvent={updateGenesisEvent}
           />
@@ -180,7 +194,7 @@ function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByName
   );
 }
 
-function StoryCard({ item, subs, attachedFacts, peopleByName, updateGenesisEvent }) {
+function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, updateGenesisEvent }) {
   const colorClass =
     item.kind === "event" ? "genesis-story-card-event" :
     item.kind === "sale" ? "genesis-story-card-sale" :
@@ -191,18 +205,28 @@ function StoryCard({ item, subs, attachedFacts, peopleByName, updateGenesisEvent
       : formatShort(item.startDate);
   return (
     <div className={`genesis-story-card ${colorClass}`}>
-      <a href={`/story/${item.slug}`} className="genesis-story-card-title">
-        {item.title}
-      </a>
-      <span className="genesis-story-card-meta">
-        {item.location ? `${item.location} · ` : ""}
-        {range}
-        {item.kind === "story" && item.axis === "thread" ? " →" : ""}
-      </span>
+      <div className="genesis-story-card-head">
+        <span className="genesis-story-card-date">{range}</span>
+        <a href={`/story/${item.slug}`} className="genesis-story-card-title">
+          {item.title}
+        </a>
+        {item.kind === "story" && item.axis === "thread" ? <span> →</span> : ""}
+      </div>
+      {item.location && <span className="genesis-story-card-meta">{item.location}</span>}
       {item.isSub && item.parentSlug && (
         <a href={`/story/${item.parentSlug}`} className="genesis-story-card-parent">
           parte di {item.parentTitle || item.parentSlug}
         </a>
+      )}
+      {relatedPeople.length > 0 && (
+        <div className="genesis-people-links">
+          {relatedPeople.map((p) => (
+            <a key={p.id} href={`/people/${p.id}`} className="genesis-person-chip">
+              <Avatar name={p.name} photoUrl={p.photo_url} size={18} />
+              {p.name}
+            </a>
+          ))}
+        </div>
       )}
       {subs.length > 0 && (
         <div className="genesis-story-card-subs">
