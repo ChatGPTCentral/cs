@@ -70,3 +70,19 @@
   the top practical AI use case for SMEs under $5M revenue. Action item:
   Zoltan, Marc Duke and Alex to align on turning the session into a shared
   document - the group has already produced three such write-ups before.
+
+  **Notion call sweep, 2026-08-26 - the real launch call for the whitepaper.**
+  Found the actual 19 Jun 2026 call behind the "19 June email to Tsvetelin"
+  already noted above - a scheduling call meant for Mark and Ganapati where
+  only Alex and Svelin (Tsvetelin's name spelled out in full here, same
+  person) showed up. They lock in the community-sourced survey format ("How
+  AI Leaders Use AI for GTM," GTA leads survey design, AI Central brings a
+  4-person editorial team plus pagination/dataviz/distribution to ~500K
+  people) instead of Svelin's earlier, stalled "State of AI" report attempt.
+  They also plan a roundtable: strong preference for an in-person London
+  studio recording (1 moderator - Russ proposed - plus 2 speakers) over a
+  Zoom webinar, since a typical webinar gets ~60 registrations/~30 attendees
+  versus an estimated 300-400 for an in-person recording with 3 weeks of
+  promotion. Floated expansion to other verticals later (e.g. AI in
+  healthcare) pulling participants from AI Collective (SF) and All AI Is
+  Human (NY).

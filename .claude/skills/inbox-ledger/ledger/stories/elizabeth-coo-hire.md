@@ -21,3 +21,14 @@
   gave the full identity. A clean example of why the person doing the
   classifying has to actually know the people - no amount of email-only
   pattern matching would have caught this on its own.
+
+  **Notion call sweep, 2026-08-26.** Full "Calls w/ Morgane" meeting notes
+  found under Elizabeth's birth name, 11 Mar 2026 - "AI Central Strategy
+  and Roadmap Discussion." Real substance: standardizing the business
+  model (Bending Spoon-style unit economics), ~$300K revenue target for
+  the year (from ~$30K), shifting from selling ads to selling content
+  (downloadable PDF assets - carousels, ebooks, cheat sheets) for compound
+  monetization, a homepage redesign into a curated "bookshelf," a rebuilt
+  5-7 email welcome sequence focused on Excel/PowerPoint/Word/Gmail, and a
+  long-term vision of paid cohort workshops (Isabella Bedoya's 3-day
+  model) with a $5-6K upsell accelerator.

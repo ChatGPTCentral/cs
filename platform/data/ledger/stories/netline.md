@@ -34,3 +34,16 @@
   Austin, and The Newsletter Conference 2026. `/genesis` now carries each of
   these as its own dated sub-story under Netline, so the relationship reads
   as it actually unfolded - across many months, not one
+
+  **Notion call sweep, 2026-08-26.** Full call transcript, 17 Mar 2026.
+  Daniel gets a real business update: contracts signed with Eleven Labs
+  and Replit, existing Gamma AI partnership, cash positive and growing,
+  exploring a small Series A round to scale and to support potential M&A
+  (the same period as the ma-exploration broker calls - same underlying
+  fundraise/exit exploration, not a separate thread). ~100 pieces of
+  content created since August, only proven performers go on NetLine. A
+  real magazine launch (podcast + text + video) is planned for September.
+  Action items: refresh conference materials to drop old "ChatGPT
+  Central" references, test an RSS feed for the site library, improve the
+  signup form to capture email before showing other offers, and
+  collaborate on content around The Newsletter Conference in May.
