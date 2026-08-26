@@ -298,6 +298,16 @@ own numbers and Alex's background - full text in
 `references/press-case-studies.md`. Quote or cite from there, not from
 memory of this summary
 
+## Substack Live interviews
+
+Two more Substack Live interviews, cleaned to readable transcripts in
+`references/substack-live-interviews.md` - Alex live and unscripted,
+answering someone else's questions, a different register from written
+correspondence. Business-thinking patterns pulled from these into
+`alex-thinking-approach/SKILL.md`. A third recorded interview exists but
+isn't usable - the transcription failed to capture Alex's actual answers,
+only the host's side came through as real words
+
 - **"How ChatGPT Central Hit 60K Subscribers With beehiiv,"** published
   11 Dec 2024. An interview with "Kris" - confirmed 2026-08-26 as Alex's
   own alter ego by that date, not the earlier team member (see "Kris"

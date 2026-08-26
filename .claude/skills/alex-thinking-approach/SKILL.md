@@ -63,13 +63,57 @@ confirms it directly, and correct this file the moment he does
   gap existed. He reacts worse to a confident claim that turns out false than
   to an honest "I don't know yet, here's how I'll find out"
 
+## Business mental models (from two live, unscripted interviews)
+
+Added 2026-08-26 from two Substack Live interviews Alex gave - full clean
+transcripts in `ai-central-genesis/references/substack-live-interviews.md`.
+This is the first independent evidence source the section above was
+missing: spoken, live, answering someone else's questions, not chat with
+this session. Read that file before quoting a line, this is a distillation
+
+- **Sequencing over searching for a trick.** "Monetization strategy is the
+  result of who you're talking to, how you're growing, how you deliver
+  content... you don't start with the monetization strategy." Business
+  model questions get answered by first fixing editorial/growth/audience
+  model, never treated as a separate lever to optimize in isolation
+- **A category label is a trap; the real question is narrower.** "There are
+  no AI media companies. There are media companies with AI." Same move on
+  monetization: "the real question is not what monetization strategies are
+  overlooked, but what are your clients not getting enough of." He
+  routinely rejects the framing of a question before answering the
+  substance underneath it
+- **Map the process before you automate it.** "If you are automating
+  something crap, it is going to automate and scale that crap." Applies to
+  both AI and non-AI automation - foundations first, always
+- **Deterministic before probabilistic.** Favors regex/rules/traditional
+  tools over AI wherever a deterministic solution exists - cheaper, and the
+  result is controllable. AI gets reached for only past that point
+- **Teach concepts, not tools - "hedge the tool risk."** Tools go stale in
+  months (his own example: a Nano Banana course obsolete within a
+  quarter); the underlying logic (how to prompt an image model at all,
+  what an HTTP call is) doesn't. This is also why he bets on the newsletter
+  format over the course format for anything AI-related - a newsletter can
+  keep being edited, a course is timestamped
+- **Decide once, then stop shopping.** "Make a decision, especially on your
+  stack, and stick with it" - explicitly names FOMO-driven tool-switching
+  as the failure mode, not indecision
+- **ROI framing for himself as an operator, the same lens he tells
+  executives to use**: cost of switching Substack to beehiiv was decided by
+  running the actual balance sheet ("I was paying Substack $500 a month"),
+  not by platform preference. Owning the audience ("the real real estate")
+  is the one thing he calls out as non-negotiable across every other
+  tradeoff
+- **Numbered, then closed.** Answers on this call reliably land as an
+  explicit list ("first... second... third," "these are my three cents")
+  even unscripted - a structuring habit, not just a writing-style trait
+
 ## What this file does not yet resolve
 
-- **No independent evidence source yet**, unlike writing-style's real sent-mail
-  sample. The natural equivalent here would be a larger set of his actual
-  business decisions and how he framed them at the time - worth building from
-  the ledger corpus as more stories get read in depth, not just from this
-  session's chat history
+- **The interviews above are a start, not the full picture** - two data
+  points, both AI-business-strategy questions from friendly hosts, not
+  pressure-tested or adversarial. Still missing: a larger set of his actual
+  business decisions and how he framed them at the time - worth building
+  from the ledger corpus as more stories get read in depth
 - **Whether this should stay one file or split** "how he thinks" (decisions,
   priorities) from "how he approaches a conversation" (tone, pacing) has not
   been decided with Alex - kept together for now since the evidence for both
