@@ -343,15 +343,11 @@ function FactCard({ item, peopleByName, updateGenesisEvent }) {
           />
         </div>
       </div>
-      <div className="entry-meta">
-        {item.sourceTag}
-        {item.storySlug && (
-          <>
-            {" — "}
-            <a href={`/story/${item.storySlug}`}>{item.storyRef}</a>
-          </>
-        )}
-      </div>
+      {item.storySlug && (
+        <div className="entry-meta">
+          <a href={`/story/${item.storySlug}`}>{item.storyRef}</a>
+        </div>
+      )}
     </div>
   );
 }

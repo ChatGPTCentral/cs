@@ -64,7 +64,6 @@ export default async function GenesisPage({ searchParams }) {
       title: e.title,
       description: e.description,
       peopleNames: names,
-      sourceTag: e.source_tag,
       storySlug: slugFromRef(e.story_ref),
       storyRef: e.story_ref,
       id: e.id,
