@@ -28,3 +28,31 @@
   that negotiation, not GrowthSchool's. Do not read the personal-gmail
   thread and the growthschool-sponsorship "Sam" mentions as two different
   people.
+
+  **Correction, 2026-08-26.** The Notion call sweep initially found two
+  sales-strategy calls (15 and 19 Mar 2026) with a sales contractor
+  referred to only as "Sunny," India-based (Noida/Bangalore), and filed
+  them under a new person and a new story ("sunny-sales") without
+  checking whether that "Sunny" already existed under a different name in
+  this ledger. He does - this is Sunny Singh/Sam, the same person this
+  file already tracks. Alex caught the duplicate; the separate person
+  record and story have been merged into this one, real content below.
+
+  **15 Mar 2026, sales strategy review.** Sunny had closed zero deals in
+  six months - named deals gone cold (Tableau, Coffee, Guide, Rob,
+  Perplexity) plus a deliverability problem (Perplexity emails landing in
+  spam). Alex overhauled the method: LinkedIn-first outreach, then a
+  personalized email with 5 named creator examples; research treated as
+  "90% of the sales process" using funding announcements, Product Hunt
+  launches and creator-sponsorship monitoring to find leads. Current
+  clients cited: Eleven Labs, Gamma, Replit.
+
+  **19 Mar 2026, "challenger" targeting strategy.** Pursue companies
+  ranked 4-6 in their category (e.g. Anything.com vs. Lovable, Framer vs.
+  Wix, Perplexity vs. OpenAI) rather than category leaders, who don't need
+  partnerships. Alex reported a call with an Anything.com rep in San
+  Francisco who showed strong interest in the carousel-style content
+  built for Gamma and Eleven Labs and is allocating budget for similar
+  work (see anything-com-ads-pitch for the direct thread this connects
+  to). Alex personally contacts a max of 2 people per company at a time
+  to avoid overlap with Sunny's own outreach.

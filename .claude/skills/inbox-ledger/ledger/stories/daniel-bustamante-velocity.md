@@ -24,7 +24,13 @@
 
   **Correction, 2026-08-26.** This note previously said Alex had just
   returned from paternity leave for a first child named Luca. Alex
-  confirmed directly this never happened. That detail came from a
-  research agent's summary of this call, unverified against the raw
-  Notion page before being written here - removed rather than kept as a
-  hedge, since the claim itself is false, not just under-sourced.
+  confirmed directly that Luca is Daniel Bustamante's newborn, not his -
+  the call opens with Daniel apologizing for running late because he was
+  putting the baby to sleep, and Alex asking about the name. Notion's own
+  AI-generated call summary attributed Daniel's news to Alex; a research
+  agent repeated that misattribution without checking speaker identity
+  against the raw transcript, and it went into this file unverified.
+  Real lesson: a synthesized call summary can swap who-said-what between
+  participants, especially for a personal aside early in a call - verify
+  the speaker, not just the fact, before writing anything personal about
+  Alex into this ledger.
