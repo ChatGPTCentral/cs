@@ -35,3 +35,13 @@
   Follow Up" thread). The contract was signed months after that meeting,
   work started, but the two sides never closed a single deal together -
   an on-and-off relationship, not a clean success or failure.
+
+  **Notion call sweep, 2026-08-26.** Full onboarding call transcript found,
+  dated around 5 Mar 2026 (after AI Central submitted a media kit + sales
+  playbook intake form). Alex's pitch to Ian: an in-house editorial team
+  builds co-branded tutorial content (PDFs, LinkedIn carousels) tied to a
+  client's campaign before ads run, rather than selling raw placements -
+  citing Perplexity and Replit as examples. He says LinkedIn-newsletter
+  placements run roughly a fifth of direct LinkedIn ad CPM (~$90 CPM for
+  Eleven Labs on LinkedIn itself vs. much less through him), and that
+  beehiiv inventory is mostly already sold to existing clients.

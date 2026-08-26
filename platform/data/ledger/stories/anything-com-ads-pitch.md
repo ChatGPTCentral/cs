@@ -16,3 +16,14 @@
   rather than giving a clean no. anything.com is based in San Francisco
   and could have real budget - Alex wants to return to this one at all
   costs, per his own account, month-by-month review, 2026-08-23.
+
+  **Notion call sweep, 2026-08-26.** Full call transcript, 19 Mar 2026.
+  Aleena (called "Alina" throughout the transcript - same person, spelling
+  inconsistent in the source) had just joined anything.com. They postponed
+  a planned workshop until there's measurable traction, agreeing to build
+  a smaller test first. Terms discussed: first month, 100% of revenue to
+  Alex up to $20K (vs. the usual 30% split), covering the carousel cost,
+  then a second-phase paid partnership. Alex also mentions teaching
+  newsletter monetization at "Cozora Academy" (founder Michael Simmons,
+  150K+ readers) and floats an in-person SF event for late April/early
+  May.

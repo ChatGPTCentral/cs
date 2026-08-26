@@ -48,3 +48,17 @@
   That's the actual event window this story's threads lead up to and follow
   from
 
+  **Notion call sweep, 2026-08-26.** Two more real calls found. 24 Jul 2026:
+  Richard Lowe describes the hackathon itself as a two-day event, 13-14 Aug
+  (roundtable the 14th morning, judging that afternoon) - consistent with
+  the calendar's 12/14/15 travel dates above, not a contradiction, just a
+  narrower window for the event proper. The healthcare challenge (detecting
+  heart disease/respiratory conditions from CT scans) is personal for
+  Richard - his father died in February from an operable heart condition
+  caught too late. Isambard AI (Bristol's supercomputer) sends a rep to the
+  roundtable. Alex is invited as a healthcare-category judge, undecided over
+  travel cost from France. 11 Aug 2026: a pre-event logistics call with
+  Lewis (UWE) - a last-minute request for insurance/risk-assessment
+  documents AI Central doesn't hold, resolved as unnecessary since Alex
+  brings no equipment.
+

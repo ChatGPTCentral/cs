@@ -16,3 +16,13 @@
 - notes: Same AppSumo-tool-then-ads-pitch pattern as sheetmagic-ads-pitch
   and getlate-ads-pitch - failed, per Alex's own account, month-by-month
   review, 2026-08-23.
+
+  **Notion call sweep, 2026-08-26.** Full call transcript, 17 Mar 2026.
+  Ryan's real full name is Ryan Walker (Shareables, based in New
+  Zealand). Alex was using Google Sheets + Spreadsimple + Memberstack for
+  library.thecentral.ai and wanted to switch since Spreadsimple is
+  unmaintained and can't connect multiple databases to one site. Ryan
+  confirmed multi-source page building and account/portal login were both
+  on the near-term roadmap. Alex upgraded his own AppSumo tier 1 to tier 4
+  on the call and pitched a "Collections" deal - 5 PDFs over 5 weeks, each
+  newsletter reaching ~180K people on LinkedIn, minimum $2K.

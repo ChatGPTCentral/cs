@@ -31,3 +31,14 @@
   chase in the threads above is trying to win them back, not win them
   for the first time. Flagged by Alex as a priority to reclaim - do not
   read this story as "cold proposal, low priority."
+
+  **Notion call sweep, 2026-08-26.** Full call transcript, 22 Mar 2026 -
+  explains part of why the relationship went quiet. Hod, based in Tel
+  Aviv, had made no progress on already-paid ad slots because of "a
+  stressful situation" - he confirms being in Tel Aviv with shelter
+  access in his building, alerts but otherwise fairly normal daily life.
+  Alex offers to run the campaign himself as an agency partner (creative,
+  scheduling, approvals) instead of requiring Hod to drive it, and
+  states Guidde has historically been AI Central's number one or two
+  best client - naming Gamma, Eleven Labs, Replit and Lovable as newer
+  clients proving the business keeps growing.
