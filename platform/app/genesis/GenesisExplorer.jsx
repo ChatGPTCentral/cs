@@ -203,6 +203,7 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
     item.axis === "moment" && item.endDate && item.endDate !== item.startDate
       ? `${formatShort(item.startDate)} – ${formatShort(item.endDate)}`
       : formatShort(item.startDate);
+  const shownPersonIds = new Set(relatedPeople.map((p) => p.id));
   return (
     <div className={`genesis-story-card ${colorClass}`}>
       <div className="genesis-story-card-head">
@@ -240,7 +241,13 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
       {attachedFacts.length > 0 && (
         <div className="genesis-story-card-facts">
           {attachedFacts.map((f) => (
-            <AttachedFact key={f.key} item={f} peopleByName={peopleByName} updateGenesisEvent={updateGenesisEvent} />
+            <AttachedFact
+              key={f.key}
+              item={f}
+              peopleByName={peopleByName}
+              updateGenesisEvent={updateGenesisEvent}
+              shownPersonIds={shownPersonIds}
+            />
           ))}
         </div>
       )}
@@ -248,7 +255,11 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
   );
 }
 
-function AttachedFact({ item, peopleByName, updateGenesisEvent }) {
+function AttachedFact({ item, peopleByName, updateGenesisEvent, shownPersonIds }) {
+  const names = item.peopleNames.filter((n) => {
+    const p = peopleByName.get(n.toLowerCase());
+    return !p || !shownPersonIds.has(p.id);
+  });
   return (
     <div className="genesis-story-card-fact">
       <TableCellInput
@@ -260,9 +271,9 @@ function AttachedFact({ item, peopleByName, updateGenesisEvent }) {
         multiline
         rows={2}
       />
-      {item.peopleNames.length > 0 && (
+      {names.length > 0 && (
         <div className="genesis-people-links">
-          {item.peopleNames.map((n) => {
+          {names.map((n) => {
             const p = peopleByName.get(n.toLowerCase());
             return p ? (
               <a key={n} href={`/people/${p.id}`} className="genesis-person-chip">
