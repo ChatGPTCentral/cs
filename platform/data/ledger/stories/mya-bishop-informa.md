@@ -4,6 +4,7 @@
 - kind: person
 - people: Mya.Bishop@informa.com
 - status: **theirs**
+- start: 2026-06-11
 - last-inbound: none seen yet in this window
 - last-outbound: 2026-08-17 (alex@thecentral.ai, cc liz) - third message in a
   series, 11 Jun / 22 Jun / 17 Aug
@@ -21,3 +22,9 @@
   at four Informa events already. Mya was the listed contact on Informa's
   site. Low intensity so far, but potentially a big outcome - do not lose
   sight of this one.
+
+  **date correction, 2026-08-27, per Alex.** This story's timeline
+  placement had used the 17 Aug message - the third outreach, a follow-up
+  - as the start date. The real first contact was 11 Jun. Fixed on
+  `/genesis`; all three messages (11 Jun, 22 Jun, 17 Aug) now have their
+  own dated fact.

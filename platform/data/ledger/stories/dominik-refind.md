@@ -17,3 +17,8 @@
   with two distinct programs, per Alex: Refind Active (AI Central sends its
   readers to Refind, earns money) and Refind Passive (AI Central pays
   Refind to send new readers to AI Central).
+
+  **known gap, 2026-08-27.** This story's timeline placement on `/genesis`
+  is Jan 2026 (from last-outbound/last-inbound), but the note above already
+  says the real relationship goes back to Nov 2025 - no exact November date
+  has been found yet. Not fixed pending a look at the original thread.
