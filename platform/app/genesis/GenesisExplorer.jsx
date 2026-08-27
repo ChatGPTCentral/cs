@@ -213,6 +213,11 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
           {item.title}
         </a>
         {item.kind === "story" && item.axis === "thread" ? <span> →</span> : ""}
+        {item.factCount > 1 && (
+          <a href={`/story/${item.slug}`} className="genesis-story-card-evolution">
+            vedi evoluzione ({item.factCount}) &rarr;
+          </a>
+        )}
       </div>
       {item.location && <span className="genesis-story-card-meta">{item.location}</span>}
       {item.isSub && item.parentSlug && (

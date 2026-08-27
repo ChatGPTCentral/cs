@@ -44,6 +44,17 @@ export default async function GenesisPage({ searchParams }) {
 
   const storiesBySlug = new Map(stories.map((s) => [s.slug, s]));
 
+  // Total dated facts per story across the whole timeline, not just the ones
+  // folding into this month's card - what /story/[slug] itself counts as
+  // "Sulla genesi (N)". Used to hint that a title leads to more than what's
+  // visible in this one card.
+  const factCountBySlug = new Map();
+  for (const e of dated) {
+    const slug = slugFromRef(e.story_ref);
+    if (!slug) continue;
+    factCountBySlug.set(slug, (factCountBySlug.get(slug) || 0) + 1);
+  }
+
   // One flat, chronological list - facts and stories (events, sales, and
   // now sub-events again) merged into single items an explorer can select
   // between, instead of two parallel piles the reader has to cross-reference
@@ -93,6 +104,7 @@ export default async function GenesisPage({ searchParams }) {
       parentTitle: parent?.title || null,
       parentSlug: s.parent_slug || null,
       childTitles: children.map((c) => ({ slug: c.slug, title: c.title })),
+      factCount: factCountBySlug.get(s.slug) || 0,
     });
   }
 
