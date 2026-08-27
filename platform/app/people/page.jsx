@@ -97,7 +97,13 @@ export default async function PeoplePage({ searchParams }) {
               : `${people.length} ${people.length === 1 ? "person" : "people"}`}
           </h2>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <StoryFilter stories={storyRows} value={activeStory} buildHref={(slug) => buildHref({ story: slug })} />
+            <StoryFilter
+              stories={storyRows}
+              value={activeStory}
+              hrefsBySlug={Object.fromEntries(
+                [["", buildHref({ story: "" })], ...storyRows.map((s) => [s.slug, buildHref({ story: s.slug })])]
+              )}
+            />
             <form method="GET" style={{ display: "flex" }}>
               {showArchived && <input type="hidden" name="archived" value="1" />}
               {activeList && <input type="hidden" name="list" value={activeList} />}
