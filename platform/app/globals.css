@@ -870,3 +870,34 @@ footer.snapshot-note {
   color: var(--ink-faint);
   white-space: nowrap;
 }
+.network-story-panel {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  background: var(--surface-2);
+}
+.network-story-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.network-story-panel-head strong { font-size: 14px; }
+.network-story-panel-head span { font-size: 12px; color: var(--ink-faint); }
+.network-story-panel-head a { font-size: 12.5px; }
+.network-story-panel-head button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink-faint);
+}
+.network-story-panel-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}

@@ -39,6 +39,58 @@ export function findConnections(person, allPeople) {
     .filter((c) => c.sharedStories.length > 0 || c.sameOrg);
 }
 
+// Stories that exist to funnel many people through one pipeline, not to
+// describe a real shared moment between them - see genesis's own
+// NO_PEOPLE_STORIES for the sibling fix. Every person in this kind of
+// story is *also* tagged to their real event/story, so treating a shared
+// tag on the hub itself as a connection would just recreate the
+// person-level hairball one level up, with the hub as the new super-node.
+export const HUB_STORY_SLUGS = new Set(["ai-central-voices"]);
+
+// The graph this app should lead with: nodes are stories (not people),
+// sized by how many people are tagged to them, edges are two stories that
+// share a real person - a much sparser, truer signal than person-level
+// org/story edges, since most people belong to exactly one story. Hub
+// stories (see above) are still shown as their own node - sized by their
+// real headcount - but never generate a cross-story edge, since "everyone
+// in the pipeline shares the pipeline tag" isn't a real overlap.
+export function buildStoryGraph(stories, people) {
+  const peopleBySlug = new Map();
+  for (const p of people) {
+    for (const slug of parseStorySlugs(p.stories)) {
+      if (!peopleBySlug.has(slug)) peopleBySlug.set(slug, new Set());
+      peopleBySlug.get(slug).add(p.id);
+    }
+  }
+
+  const nodes = stories
+    .map((s) => ({
+      slug: s.slug,
+      title: s.title,
+      kind: s.kind,
+      axis: s.axis,
+      isHub: HUB_STORY_SLUGS.has(s.slug),
+      peopleIds: [...(peopleBySlug.get(s.slug) || [])],
+    }))
+    .filter((n) => n.peopleIds.length > 0);
+
+  const edges = [];
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const a = nodes[i];
+      const b = nodes[j];
+      if (a.isHub || b.isHub) continue;
+      const bIds = new Set(b.peopleIds);
+      const shared = a.peopleIds.filter((id) => bIds.has(id));
+      if (shared.length > 0) {
+        edges.push({ source: a.slug, target: b.slug, sharedIds: shared });
+      }
+    }
+  }
+
+  return { nodes, edges };
+}
+
 // The whole-graph version of findConnections - one edge per connected
 // pair (not two, A-B and B-A), and only the nodes that actually have at
 // least one edge. People with no shared org or story are real, they just

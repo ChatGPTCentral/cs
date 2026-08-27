@@ -6,7 +6,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 // library, same "plain fetch, no SDK" spirit as the rest of this app.
 // Runs once per filtered node/edge set (not a continuous simulation loop):
 // for the graph sizes this CRM produces, a few hundred iterations settle
-// in well under the time it takes the page to paint.
+// in well under the time it takes the page to paint. Nodes need only an
+// `id` field - callers normalize story slugs and person ids to that.
 function layout(nodes, edges, width, height, iterations = 400) {
   const pos = new Map();
   const n = nodes.length;
@@ -72,98 +73,97 @@ function layout(nodes, edges, width, height, iterations = 400) {
   return pos;
 }
 
-export default function NetworkGraph({ nodes: allNodes, edges: allEdges }) {
+function storyColor(node) {
+  if (node.isHub) return "var(--ink-faint)";
+  if (node.kind === "event") return "var(--event)";
+  if (node.kind === "sale") return "var(--sale)";
+  if (node.axis === "moment") return "var(--moment)";
+  return "var(--accent)";
+}
+
+export default function NetworkGraph({ storyNodes, storyEdges, personNodes, personEdges, peopleById }) {
   const width = 1300;
   const height = 720;
 
-  // Story edges only by default - shared-org edges are the main source of
-  // noise (dozens of leads sharing a generic org string) and were what
-  // made the graph unreadable. Turn them on deliberately, not by default.
-  const [showOrgEdges, setShowOrgEdges] = useState(false);
-  const [onlyStarred, setOnlyStarred] = useState(false);
   const [search, setSearch] = useState("");
+  const [showOrgEdges, setShowOrgEdges] = useState(false);
+  const [selectedStory, setSelectedStory] = useState(null);
   const [hovered, setHovered] = useState(null);
   const [zoom, setZoom] = useState({ scale: 1, x: 0, y: 0 });
   const dragRef = useRef(null);
   const svgRef = useRef(null);
 
-  const baseEdges = useMemo(
-    () =>
-      allEdges.filter(
-        (e) => showOrgEdges || e.sharedStories.length > 0 || (e.sharedThreads || []).length > 0
-      ),
-    [allEdges, showOrgEdges]
+  const searching = search.trim().length > 0;
+
+  // ---------------------------------------------------------------------
+  // Person ego mode - only computed once you search a name. Never render
+  // the full 300-person graph unscoped; a search always narrows to one
+  // person's direct neighborhood, same pattern Obsidian/Kumu use for
+  // "focus" instead of dumping the whole graph on load.
+  // ---------------------------------------------------------------------
+  const basePersonEdges = useMemo(
+    () => personEdges.filter((e) => showOrgEdges || e.sharedStories.length > 0 || (e.sharedThreads || []).length > 0),
+    [personEdges, showOrgEdges]
   );
 
   const matchedId = useMemo(() => {
-    if (!search.trim()) return null;
+    if (!searching) return null;
     const q = search.trim().toLowerCase();
-    const hit = allNodes.find((n) => n.name.toLowerCase().includes(q));
+    const hit = personNodes.find((n) => n.name.toLowerCase().includes(q));
     return hit ? hit.id : "__none__";
-  }, [search, allNodes]);
+  }, [search, searching, personNodes]);
 
-  // Search narrows to one person's direct neighborhood; starred narrows to
-  // starred people plus anyone directly connected to one. Both stack with
-  // the edge-type filter above.
-  const { nodes, edges } = useMemo(() => {
-    let edgeSet = baseEdges;
-    let allowedIds = null;
-
-    if (matchedId) {
-      if (matchedId === "__none__") return { nodes: [], edges: [] };
-      allowedIds = new Set([matchedId]);
-      for (const e of baseEdges) {
-        if (e.source === matchedId) allowedIds.add(e.target);
-        if (e.target === matchedId) allowedIds.add(e.source);
-      }
-      edgeSet = baseEdges.filter((e) => allowedIds.has(e.source) && allowedIds.has(e.target));
-    } else if (onlyStarred) {
-      const starredIds = new Set(allNodes.filter((n) => n.starred).map((n) => n.id));
-      allowedIds = new Set(starredIds);
-      for (const e of baseEdges) {
-        if (starredIds.has(e.source)) allowedIds.add(e.target);
-        if (starredIds.has(e.target)) allowedIds.add(e.source);
-      }
-      edgeSet = baseEdges.filter((e) => allowedIds.has(e.source) && allowedIds.has(e.target));
+  const ego = useMemo(() => {
+    if (!searching || matchedId === "__none__") return null;
+    const allowedIds = new Set([matchedId]);
+    for (const e of basePersonEdges) {
+      if (e.source === matchedId) allowedIds.add(e.target);
+      if (e.target === matchedId) allowedIds.add(e.source);
     }
-
+    const edgeSet = basePersonEdges.filter((e) => allowedIds.has(e.source) && allowedIds.has(e.target));
     const degree = new Map();
     for (const e of edgeSet) {
       degree.set(e.source, (degree.get(e.source) || 0) + 1);
       degree.set(e.target, (degree.get(e.target) || 0) + 1);
     }
-    const nodeSet = allowedIds
-      ? allNodes.filter((n) => allowedIds.has(n.id))
-      : allNodes.filter((n) => degree.has(n.id));
+    const nodes = personNodes
+      .filter((n) => allowedIds.has(n.id))
+      .map((n) => ({ ...n, id: n.id, weight: degree.get(n.id) || 1 }));
+    return { nodes, edges: edgeSet };
+  }, [searching, matchedId, basePersonEdges, personNodes]);
 
-    return {
-      nodes: nodeSet.map((n) => ({ ...n, degree: degree.get(n.id) || 0 })),
-      edges: edgeSet,
-    };
-  }, [baseEdges, matchedId, onlyStarred, allNodes]);
+  // ---------------------------------------------------------------------
+  // Story mode (default) - nodes are stories, sized by headcount.
+  // ---------------------------------------------------------------------
+  const storyGraphNodes = useMemo(
+    () => storyNodes.map((s) => ({ ...s, id: s.slug, weight: s.peopleIds.length })),
+    [storyNodes]
+  );
+
+  const activeNodes = searching ? (ego ? ego.nodes : []) : storyGraphNodes;
+  const activeEdges = searching ? (ego ? ego.edges : []) : storyEdges;
+  const maxWeight = useMemo(() => Math.max(1, ...activeNodes.map((n) => n.weight || 1)), [activeNodes]);
 
   const [positions, setPositions] = useState(null);
 
   useEffect(() => {
-    setPositions(layout(nodes, edges, width, height));
+    setPositions(layout(activeNodes, activeEdges, width, height));
     setZoom({ scale: 1, x: 0, y: 0 });
+    setSelectedStory(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nodes, edges]);
+  }, [activeNodes, activeEdges]);
 
-  const maxDegree = useMemo(() => Math.max(1, ...nodes.map((n) => n.degree)), [nodes]);
   const neighborIds = useMemo(() => {
     if (!hovered) return null;
     const set = new Set([hovered]);
-    for (const e of edges) {
+    for (const e of activeEdges) {
       if (e.source === hovered) set.add(e.target);
       if (e.target === hovered) set.add(e.source);
     }
     return set;
-  }, [hovered, edges]);
+  }, [hovered, activeEdges]);
 
-  // Above ~60 nodes, permanent labels overlap into noise - show a name
-  // only on hover/neighbor-highlight instead of on every node at once.
-  const alwaysShowLabels = nodes.length <= 60;
+  const alwaysShowLabels = activeNodes.length <= 60;
 
   function handleWheel(e) {
     e.preventDefault();
@@ -186,6 +186,8 @@ export default function NetworkGraph({ nodes: allNodes, edges: allEdges }) {
     setZoom({ scale: 1, x: 0, y: 0 });
   }
 
+  const selectedStoryNode = selectedStory ? storyGraphNodes.find((n) => n.slug === selectedStory) : null;
+
   return (
     <div>
       <div className="network-controls">
@@ -196,24 +198,24 @@ export default function NetworkGraph({ nodes: allNodes, edges: allEdges }) {
           onChange={(e) => setSearch(e.target.value)}
           className="network-search"
         />
-        <label className="network-toggle">
-          <input type="checkbox" checked={showOrgEdges} onChange={(e) => setShowOrgEdges(e.target.checked)} />
-          Mostra anche stessa org
-        </label>
-        <label className="network-toggle">
-          <input
-            type="checkbox"
-            checked={onlyStarred}
-            onChange={(e) => setOnlyStarred(e.target.checked)}
-            disabled={!!search.trim()}
-          />
-          Solo starred + collegati
-        </label>
+        {searching && (
+          <button type="button" onClick={() => setSearch("")} className="network-reset">
+            &larr; Torna alle storie
+          </button>
+        )}
+        {searching && (
+          <label className="network-toggle">
+            <input type="checkbox" checked={showOrgEdges} onChange={(e) => setShowOrgEdges(e.target.checked)} />
+            Mostra anche stessa org
+          </label>
+        )}
         <button type="button" onClick={resetView} className="network-reset">
           Reset vista
         </button>
         <span className="network-count">
-          {nodes.length} persone, {edges.length} collegamenti
+          {searching
+            ? `${activeNodes.length} persone, ${activeEdges.length} collegamenti`
+            : `${activeNodes.length} storie, ${activeEdges.length} sovrapposizioni`}
         </span>
       </div>
 
@@ -224,11 +226,7 @@ export default function NetworkGraph({ nodes: allNodes, edges: allEdges }) {
       )}
 
       {!positions ? (
-        <p style={{ color: "var(--ink-faint)" }}>Laying out the graph...</p>
-      ) : nodes.length === 0 ? (
-        matchedId !== "__none__" && (
-          <p style={{ color: "var(--ink-faint)" }}>Nessuno da mostrare con questi filtri.</p>
-        )
+        <p style={{ color: "var(--ink-faint)" }}>Sto disegnando il grafo...</p>
       ) : (
         <svg
           ref={svgRef}
@@ -241,13 +239,13 @@ export default function NetworkGraph({ nodes: allNodes, edges: allEdges }) {
           onPointerLeave={handlePointerUp}
         >
           <g transform={`translate(${zoom.x} ${zoom.y}) scale(${zoom.scale})`} style={{ transformOrigin: "center" }}>
-            {edges.map((e, i) => {
+            {activeEdges.map((e, i) => {
               const a = positions.get(e.source);
               const b = positions.get(e.target);
               if (!a || !b) return null;
               const dimmed = neighborIds && !(neighborIds.has(e.source) && neighborIds.has(e.target));
-              const hasThread = (e.sharedThreads || []).length > 0;
-              const hasStory = e.sharedStories.length > 0;
+              const hasThread = !searching ? false : (e.sharedThreads || []).length > 0;
+              const hasStory = !searching ? true : e.sharedStories?.length > 0;
               const stroke = hasThread ? "var(--thread-strong)" : hasStory ? "var(--accent)" : "var(--ink-faint)";
               return (
                 <line
@@ -260,55 +258,86 @@ export default function NetworkGraph({ nodes: allNodes, edges: allEdges }) {
                 />
               );
             })}
-            {nodes.map((node) => {
+            {activeNodes.map((node) => {
               const p = positions.get(node.id);
               if (!p) return null;
-              const r = 5 + (node.degree / maxDegree) * 13;
+              const r = 5 + (node.weight / maxWeight) * 13;
               const dimmed = neighborIds && !neighborIds.has(node.id);
               const showLabel = alwaysShowLabels || hovered === node.id || (neighborIds && neighborIds.has(node.id));
-              return (
-                <a key={node.id} href={`/people/${node.id}`}>
-                  <g
-                    opacity={dimmed ? 0.25 : 1}
-                    onMouseEnter={() => setHovered(node.id)}
-                    onMouseLeave={() => setHovered(null)}
-                  >
-                    {node.photoUrl && (
-                      <clipPath id={`clip-${node.id}`}>
-                        <circle cx={p.x} cy={p.y} r={r} />
-                      </clipPath>
-                    )}
-                    <circle
-                      cx={p.x} cy={p.y} r={r}
-                      fill={node.starred ? "var(--accent)" : "var(--surface-2)"}
-                      stroke={node.starred ? "var(--accent-ink)" : "var(--ink-faint)"}
-                      strokeWidth={1.2}
+              const isPerson = searching;
+              const fill = isPerson
+                ? node.starred ? "var(--accent)" : "var(--surface-2)"
+                : storyColor(node);
+              const stroke = isPerson
+                ? node.starred ? "var(--accent-ink)" : "var(--ink-faint)"
+                : node.isHub ? "var(--ink-faint)" : "var(--surface)";
+              const label = isPerson ? node.name : node.title;
+              const content = (
+                <g
+                  opacity={dimmed ? 0.25 : 1}
+                  onMouseEnter={() => setHovered(node.id)}
+                  onMouseLeave={() => setHovered(null)}
+                  onClick={!isPerson ? () => setSelectedStory(node.slug) : undefined}
+                  style={{ cursor: "pointer" }}
+                >
+                  {isPerson && node.photoUrl && (
+                    <clipPath id={`clip-${node.id}`}>
+                      <circle cx={p.x} cy={p.y} r={r} />
+                    </clipPath>
+                  )}
+                  <circle
+                    cx={p.x} cy={p.y} r={r}
+                    fill={fill}
+                    stroke={stroke}
+                    strokeWidth={1.2}
+                    strokeDasharray={!isPerson && node.isHub ? "3,3" : undefined}
+                  />
+                  {isPerson && node.photoUrl && (
+                    <image
+                      href={node.photoUrl}
+                      x={p.x - r} y={p.y - r}
+                      width={r * 2} height={r * 2}
+                      clipPath={`url(#clip-${node.id})`}
+                      preserveAspectRatio="xMidYMid slice"
                     />
-                    {node.photoUrl && (
-                      <image
-                        href={node.photoUrl}
-                        x={p.x - r} y={p.y - r}
-                        width={r * 2} height={r * 2}
-                        clipPath={`url(#clip-${node.id})`}
-                        preserveAspectRatio="xMidYMid slice"
-                      />
-                    )}
-                    {showLabel && (
-                      <text
-                        x={p.x} y={p.y - r - 4}
-                        textAnchor="middle"
-                        fontSize={11}
-                        fill="var(--ink-dim)"
-                      >
-                        {node.name}
-                      </text>
-                    )}
-                  </g>
-                </a>
+                  )}
+                  {showLabel && (
+                    <text x={p.x} y={p.y - r - 4} textAnchor="middle" fontSize={11} fill="var(--ink-dim)">
+                      {label}
+                    </text>
+                  )}
+                </g>
+              );
+              return isPerson ? (
+                <a key={node.id} href={`/people/${node.id}`}>{content}</a>
+              ) : (
+                <g key={node.id}>{content}</g>
               );
             })}
           </g>
         </svg>
+      )}
+
+      {selectedStoryNode && (
+        <div className="network-story-panel">
+          <div className="network-story-panel-head">
+            <strong>{selectedStoryNode.title}</strong>
+            <span>{selectedStoryNode.peopleIds.length} persone</span>
+            <a href={`/story/${selectedStoryNode.slug}`}>Vedi la storia &rarr;</a>
+            <button type="button" onClick={() => setSelectedStory(null)}>&times;</button>
+          </div>
+          <div className="network-story-panel-people">
+            {selectedStoryNode.peopleIds.map((id) => {
+              const p = peopleById[id];
+              if (!p) return null;
+              return (
+                <a key={id} href={`/people/${id}`} className="genesis-person-chip">
+                  {p.name}
+                </a>
+              );
+            })}
+          </div>
+        </div>
       )}
     </div>
   );
