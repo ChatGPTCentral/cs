@@ -195,6 +195,12 @@ function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByStor
   );
 }
 
+// Stories that are a pipeline/hub rather than a real event or relationship -
+// every one of the dozens of leads funneled through them was actually met
+// somewhere else (a conference, a call), so their own person badges are
+// noise: the same faces already show up on their real event's card.
+const NO_PEOPLE_STORIES = new Set(["ai-central-voices"]);
+
 function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, updateGenesisEvent }) {
   const colorClass =
     item.kind === "event" ? "genesis-story-card-event" :
@@ -204,7 +210,8 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
     item.axis === "moment" && item.endDate && item.endDate !== item.startDate
       ? `${formatShort(item.startDate)} – ${formatShort(item.endDate)}`
       : formatShort(item.startDate);
-  const shownPersonIds = new Set(relatedPeople.map((p) => p.id));
+  const hidePeople = NO_PEOPLE_STORIES.has(item.slug);
+  const shownPersonIds = new Set(hidePeople ? [] : relatedPeople.map((p) => p.id));
   return (
     <div className={`genesis-story-card ${colorClass}`}>
       <div className="genesis-story-card-head">
@@ -225,7 +232,7 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
           parte di {item.parentTitle || item.parentSlug}
         </a>
       )}
-      {relatedPeople.length > 0 && (
+      {!hidePeople && relatedPeople.length > 0 && (
         <div className="genesis-people-links">
           {relatedPeople.map((p) => (
             <a key={p.id} href={`/people/${p.id}`} className="genesis-person-chip">
@@ -253,6 +260,7 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
               peopleByName={peopleByName}
               updateGenesisEvent={updateGenesisEvent}
               shownPersonIds={shownPersonIds}
+              hidePeople={hidePeople}
             />
           ))}
         </div>
@@ -261,13 +269,15 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
   );
 }
 
-function AttachedFact({ item, peopleByName, updateGenesisEvent, shownPersonIds }) {
-  const names = item.peopleNames.filter((n) => {
-    const p = peopleByName.get(n.toLowerCase());
-    if (p && shownPersonIds.has(p.id)) return false;
-    if (p) shownPersonIds.add(p.id);
-    return true;
-  });
+function AttachedFact({ item, peopleByName, updateGenesisEvent, shownPersonIds, hidePeople }) {
+  const names = hidePeople
+    ? []
+    : item.peopleNames.filter((n) => {
+        const p = peopleByName.get(n.toLowerCase());
+        if (p && shownPersonIds.has(p.id)) return false;
+        if (p) shownPersonIds.add(p.id);
+        return true;
+      });
   return (
     <div className="genesis-story-card-fact">
       <TableCellInput
