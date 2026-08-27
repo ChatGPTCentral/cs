@@ -1,10 +1,11 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { addPerson, createList } from "./actions";
 import { toggleStar, toggleArchive, updateBackground, updateLists, updateStories } from "./[id]/actions";
-import { parseLists } from "../../lib/people";
+import { parseLists, parseStorySlugs } from "../../lib/people";
 import SavedToast from "./SavedToast";
 import TableCellInput from "./TableCellInput";
 import NewPersonModal from "./NewPersonModal";
+import StoryFilter from "./StoryFilter";
 import Avatar from "./Avatar";
 
 export const dynamic = "force-dynamic";
@@ -12,15 +13,17 @@ export const dynamic = "force-dynamic";
 export default async function PeoplePage({ searchParams }) {
   const showArchived = searchParams?.archived === "1";
   const activeList = searchParams?.list || "";
+  const activeStory = searchParams?.story || "";
   const sort = searchParams?.sort === "org" ? "org" : "name";
   const q = (searchParams?.q || "").trim();
 
   // Builds a /people URL carrying whichever of these state pieces are
   // active, so every filter/sort link stays in sync.
-  function buildHref({ list = activeList, sortBy = sort } = {}) {
+  function buildHref({ list = activeList, story = activeStory, sortBy = sort } = {}) {
     const params = new URLSearchParams();
     if (showArchived) params.set("archived", "1");
     if (list) params.set("list", list);
+    if (story) params.set("story", story);
     if (sortBy === "org") params.set("sort", "org");
     if (q) params.set("q", q);
     const qs = params.toString();
@@ -41,8 +44,10 @@ export default async function PeoplePage({ searchParams }) {
       `?archived=eq.${showArchived}&order=starred.desc,${sort}.asc${searchFilter}`
     ),
     supabaseSelect("ledger_lists", "?order=name.asc"),
-    supabaseSelect("ledger_stories", "?order=slug.asc&select=slug"),
+    supabaseSelect("ledger_stories", "?order=title.asc&select=slug,title"),
   ]);
+
+  const storyTitleBySlug = new Map(storyRows.map((s) => [s.slug, s.title]));
 
   // Lists are free-text tags, not a fixed enum. Tabs are the union of
   // lists someone deliberately created (ledger_lists, so a brand-new list
@@ -57,13 +62,17 @@ export default async function PeoplePage({ searchParams }) {
   }
   const listTabs = [...listCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 
-  const people = activeList
+  const byList = activeList
     ? allActive.filter((p) =>
         activeList === "__uncategorized__"
           ? parseLists(p.lists).length === 0
           : parseLists(p.lists).includes(activeList)
       )
     : allActive;
+
+  const people = activeStory
+    ? byList.filter((p) => parseStorySlugs(p.stories).includes(activeStory))
+    : byList;
 
   return (
     <>
@@ -83,12 +92,16 @@ export default async function PeoplePage({ searchParams }) {
           <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
             {showArchived
               ? `${people.length} archived`
+              : activeStory
+              ? <>{people.length} in <a href={`/story/${activeStory}`}>{storyTitleBySlug.get(activeStory) || activeStory}</a></>
               : `${people.length} ${people.length === 1 ? "person" : "people"}`}
           </h2>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <StoryFilter stories={storyRows} value={activeStory} buildHref={(slug) => buildHref({ story: slug })} />
             <form method="GET" style={{ display: "flex" }}>
               {showArchived && <input type="hidden" name="archived" value="1" />}
               {activeList && <input type="hidden" name="list" value={activeList} />}
+              {activeStory && <input type="hidden" name="story" value={activeStory} />}
               {sort === "org" && <input type="hidden" name="sort" value="org" />}
               <input
                 type="text"
@@ -200,6 +213,15 @@ export default async function PeoplePage({ searchParams }) {
                     <td>{p.org || ""}</td>
                     <td className="people-table-meta">{p.identity || ""}</td>
                     <td>
+                      {parseStorySlugs(p.stories).length > 0 && (
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 4 }}>
+                          {parseStorySlugs(p.stories).map((slug) => (
+                            <a key={slug} href={`/story/${slug}`} className="list-tab" style={{ fontSize: 11 }}>
+                              {storyTitleBySlug.get(slug) || slug}
+                            </a>
+                          ))}
+                        </div>
+                      )}
                       <TableCellInput
                         action={updateStories}
                         id={p.id}
