@@ -7,11 +7,12 @@
   relationship
 - people: about 150 leads, see ledger_people (`stories` includes
   `ai-central-voices`) for the full roster
-- status: open - active pipeline, needs a real review pass
+- status: open - active pipeline, real statuses now imported (see below)
 - start: 2026-06-01
 - end: (ongoing)
-- next-action: de-duplicate against people already tracked elsewhere in
-  this ledger, then fold into a real follow-up list for the new season
+- next-action: chase the "Accepted"/"Sent" leads gone cold longest -
+  Tim Peters (Guideline AI) has had no touch since 2026-07-07, over
+  seven weeks - see his own record
 - commitments: none recorded on this story specifically
 - threads: none - this pipeline lives in email plus a personal
   spreadsheet and Notion, not a single Gmail thread
@@ -48,7 +49,26 @@
   this same review) may already exist as `ledger_people` rows from
   earlier passes. `ledger_people.identity` has no unique constraint, so
   this import could not safely check-and-skip at scale - duplicates are
-  likely and expected. Alex's own words: this needs a proper review pass
-  once the exercise is done, merging this CSV, the Notion interview
-  tracker, and the rest of the corpus into one real follow-up list for
-  the new season.
+  likely and expected. **Resolved, 2026-08-27** - a full identity-based
+  audit found 30 duplicate pairs across the whole ledger (not just this
+  story), all merged.
+
+  **Interview database sweep, 2026-08-27.** Found the real source of
+  truth this story had been missing: a structured Notion database
+  ("Interview database", under AI Central Voices Interviews) with an
+  actual status per lead - To Email, Sent, Accepted, Received,
+  Paginating, Ready, Notified, Published, Pass, Expired - plus sent/last-
+  touched dates and doc/Beehiiv links. The FUTURE/SENT/SHORTLIST/SKIP
+  labels this ledger had been carrying came from call-note guesses, not
+  this tracker. Every matched person's `background` now carries the real
+  status as of this sweep; 13 people with a real, progressed status (not
+  bare "To Email" prospects) but no existing record were added. Pure
+  "To Email" prospects (Recraft AI, Andy/Glide Apps, Dom/Luma AI,
+  Relay.app, Arnauld Belinga/Breakcold, Hamed/Otio.ai, Taplio,
+  Zaria/Anything, Canva, Summer Delaney/CollabWorks, Fiona Turko/Gamma,
+  Replit) were left out - nothing has actually happened on them yet.
+
+  The single most overdue item: **Tim Peters (Guideline AI)** - Alex
+  originally pitched Vince Mifsud, who handed it to CMO Tim Peters;
+  accepted 2 Jul, last touched 7 Jul, silent since. See his own person
+  record.
