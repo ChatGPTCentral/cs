@@ -62,6 +62,32 @@ export async function updateStoryEnd(formData) {
   revalidatePath("/story");
 }
 
+export async function updateStoryNextAction(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, {
+    next_action: (formData.get("next_action") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/genesis");
+  revalidatePath("/story");
+}
+
+export async function updateStoryNextActionDate(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, {
+    next_action_date: (formData.get("next_action_date") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/genesis");
+  revalidatePath("/story");
+}
+
 // Which axis a story reads on: "moment" (a bounded event, can run
 // alongside others in the same window) or "thread" (an ongoing
 // relationship or pursuit with no real end). Not inferred from dates -

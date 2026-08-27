@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getStory } from "../../../lib/ledger";
 import { supabaseSelect } from "../../../lib/supabase";
-import { updateStoryStart, updateStoryEnd, updateStoryAxis } from "../actions";
+import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate } from "../actions";
 import TableCellInput from "../../people/TableCellInput";
 import SaveWatcher from "../../people/SaveWatcher";
 import SavedToast from "../../people/SavedToast";
@@ -96,6 +96,12 @@ export default async function StoryPage({ params }) {
               <TableCellInput action={updateStoryEnd} id={storyRow.id} name="end_date" defaultValue={storyRow.end_date || ""} type="date" placeholder="ongoing" />
             </div>
             <AxisToggle id={storyRow.id} axis={storyRow.axis} />
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 8 }}>
+            <span className="entry-meta" style={{ margin: 0 }}>Prossima azione</span>
+            <TableCellInput action={updateStoryNextAction} id={storyRow.id} name="next_action" defaultValue={storyRow.next_action || ""} placeholder="cosa manca fare..." />
+            <span className="entry-meta" style={{ margin: 0 }}>entro</span>
+            <TableCellInput action={updateStoryNextActionDate} id={storyRow.id} name="next_action_date" defaultValue={storyRow.next_action_date || ""} type="date" placeholder="data" />
           </div>
           {childRows.length > 0 && (
             <div style={{ marginTop: 12 }}>

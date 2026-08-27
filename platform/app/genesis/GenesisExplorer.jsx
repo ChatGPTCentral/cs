@@ -17,7 +17,7 @@ function formatShort(dateStr) {
 // month's content is grouped by what it actually is - eventi, storie, sales,
 // altre conversazioni (hand-written facts) - instead of one undifferentiated
 // pile, so a busy month still reads at a glance before you read it in full.
-export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
+export default function GenesisExplorer({ items, people, updateGenesisEvent, updateStoryNextAction, updateStoryNextActionDate }) {
   const peopleByName = new Map(people.map((p) => [p.name.toLowerCase(), p]));
 
   // Same free-text convention as a fact's people_names, but on the person's
@@ -130,6 +130,8 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
             attachedFactKeys={attachedFactKeys}
             peopleByName={peopleByName}
             updateGenesisEvent={updateGenesisEvent}
+            updateStoryNextAction={updateStoryNextAction}
+            updateStoryNextActionDate={updateStoryNextActionDate}
           />
         ))}
       </div>
@@ -137,14 +139,14 @@ export default function GenesisExplorer({ items, people, updateGenesisEvent }) {
   );
 }
 
-function MonthSection({ month, subsByParent, factsByStorySlug, peopleByStorySlug, nestedSubKeys, attachedFactKeys, peopleByName, updateGenesisEvent }) {
+function MonthSection({ month, subsByParent, factsByStorySlug, peopleByStorySlug, nestedSubKeys, attachedFactKeys, peopleByName, updateGenesisEvent, updateStoryNextAction, updateStoryNextActionDate }) {
   const isTopLevel = (it) => it.type === "story" && !nestedSubKeys.has(it.key);
   const events = month.items.filter((it) => isTopLevel(it) && it.kind === "event");
   const stories = month.items.filter((it) => isTopLevel(it) && it.kind === "story");
   const sales = month.items.filter((it) => isTopLevel(it) && it.kind === "sale");
   const facts = month.items.filter((it) => it.type === "fact" && !attachedFactKeys.has(it.key));
 
-  const groupProps = { subsByParent, factsByStorySlug, peopleByStorySlug, peopleByName, updateGenesisEvent };
+  const groupProps = { subsByParent, factsByStorySlug, peopleByStorySlug, peopleByName, updateGenesisEvent, updateStoryNextAction, updateStoryNextActionDate };
 
   return (
     <section id={`m-${month.key}`} className="genesis-month-section">
@@ -174,7 +176,7 @@ function MonthSection({ month, subsByParent, factsByStorySlug, peopleByStorySlug
   );
 }
 
-function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByStorySlug, peopleByName, updateGenesisEvent }) {
+function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByStorySlug, peopleByName, updateGenesisEvent, updateStoryNextAction, updateStoryNextActionDate }) {
   return (
     <div className="genesis-group">
       <h3 className="genesis-group-label">{label}</h3>
@@ -188,6 +190,8 @@ function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByStor
             relatedPeople={peopleByStorySlug.get(s.slug) || []}
             peopleByName={peopleByName}
             updateGenesisEvent={updateGenesisEvent}
+            updateStoryNextAction={updateStoryNextAction}
+            updateStoryNextActionDate={updateStoryNextActionDate}
           />
         ))}
       </div>
@@ -201,7 +205,12 @@ function StoryGroup({ label, items, subsByParent, factsByStorySlug, peopleByStor
 // noise: the same faces already show up on their real event's card.
 const NO_PEOPLE_STORIES = new Set(["ai-central-voices"]);
 
-function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, updateGenesisEvent }) {
+// Today as an ISO date string, computed once at module load (server-render
+// time) - cheap enough that every card comparing its own next_action_date
+// against it doesn't need the value threaded down separately.
+const TODAY = new Date().toISOString().slice(0, 10);
+
+function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, updateGenesisEvent, updateStoryNextAction, updateStoryNextActionDate }) {
   const colorClass =
     item.kind === "event" ? "genesis-story-card-event" :
     item.kind === "sale" ? "genesis-story-card-sale" :
@@ -212,6 +221,7 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
       : formatShort(item.startDate);
   const hidePeople = NO_PEOPLE_STORIES.has(item.slug);
   const shownPersonIds = new Set(hidePeople ? [] : relatedPeople.map((p) => p.id));
+  const isOverdue = !!item.nextActionDate && item.nextActionDate < TODAY;
   return (
     <div className={`genesis-story-card ${colorClass}`}>
       <div className="genesis-story-card-head">
@@ -232,6 +242,24 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
           parte di {item.parentTitle || item.parentSlug}
         </a>
       )}
+      <div className={`genesis-next-action${isOverdue ? " genesis-next-action-overdue" : ""}`}>
+        {isOverdue && <span className="genesis-next-action-flag">in ritardo</span>}
+        <TableCellInput
+          action={updateStoryNextAction}
+          id={item.id}
+          name="next_action"
+          defaultValue={item.nextAction}
+          placeholder="Prossima azione..."
+        />
+        <TableCellInput
+          action={updateStoryNextActionDate}
+          id={item.id}
+          name="next_action_date"
+          defaultValue={item.nextActionDate}
+          type="date"
+          placeholder="entro"
+        />
+      </div>
       {!hidePeople && relatedPeople.length > 0 && (
         <div className="genesis-people-links">
           {relatedPeople.map((p) => (

@@ -1,5 +1,6 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { updateGenesisEvent, addGenesisEvent } from "./actions";
+import { updateStoryNextAction, updateStoryNextActionDate } from "../story/actions";
 import SavedToast from "../people/SavedToast";
 import GenesisExplorer from "./GenesisExplorer";
 
@@ -35,7 +36,7 @@ export default async function GenesisPage({ searchParams }) {
     supabaseSelect("ledger_people", "?select=id,name,photo_url,stories&archived=eq.false&order=name.asc"),
     supabaseSelect(
       "ledger_stories",
-      "?start_date=not.is.null&select=slug,title,start_date,end_date,axis,kind,location,parent_slug&order=start_date.asc"
+      "?start_date=not.is.null&select=id,slug,title,start_date,end_date,axis,kind,location,parent_slug,next_action,next_action_date&order=start_date.asc"
     ),
   ]);
 
@@ -93,6 +94,7 @@ export default async function GenesisPage({ searchParams }) {
       month: d.getMonth() + 1,
       day: d.getDate(),
       dot: s.kind === "event" ? "event" : s.kind === "sale" ? "sale" : s.axis,
+      id: s.id,
       title: s.title,
       slug: s.slug,
       kind: s.kind,
@@ -105,6 +107,8 @@ export default async function GenesisPage({ searchParams }) {
       parentSlug: s.parent_slug || null,
       childTitles: children.map((c) => ({ slug: c.slug, title: c.title })),
       factCount: factCountBySlug.get(s.slug) || 0,
+      nextAction: s.next_action || "",
+      nextActionDate: s.next_action_date || "",
     });
   }
 
@@ -185,6 +189,8 @@ export default async function GenesisPage({ searchParams }) {
         people={people}
         monthsIt={MONTHS_IT}
         updateGenesisEvent={updateGenesisEvent}
+        updateStoryNextAction={updateStoryNextAction}
+        updateStoryNextActionDate={updateStoryNextActionDate}
       />
 
       {showAllYears && undated.length > 0 && (

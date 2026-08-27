@@ -34,6 +34,10 @@
   --sale: #6E3FA3;
   --sale-ink: #57318A;
   --sale-wash: #F1EAFB;
+  /* Semantic only - a story's next-action date gone past, nothing to do
+     with a story's kind or axis, so it needs its own hue. */
+  --danger: #C4402A;
+  --danger-wash: #FBE9E6;
   --shadow: 0 1px 2px rgba(15,15,15,0.05);
   --radius: 3px;
 }
@@ -768,6 +772,29 @@ footer.snapshot-note {
   margin-top: 2px;
 }
 .genesis-story-card-parent:hover { text-decoration: underline; }
+.genesis-next-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+.genesis-next-action .table-inline-form:first-of-type { flex: 1 1 auto; }
+.genesis-next-action .table-cell-input {
+  font-size: 12.5px;
+  padding: 2px 4px;
+}
+.genesis-next-action-overdue .table-cell-input { color: var(--danger); }
+.genesis-next-action-flag {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--danger);
+  background: var(--danger-wash);
+  border-radius: var(--radius);
+  padding: 1px 5px;
+  white-space: nowrap;
+}
 .genesis-story-card > .genesis-people-links { margin-top: 4px; }
 .genesis-story-card-subs {
   display: flex;
