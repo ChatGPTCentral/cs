@@ -260,6 +260,15 @@ function StoryCard({ item, subs, attachedFacts, relatedPeople, peopleByName, upd
           placeholder="entro"
         />
       </div>
+      {item.notionTasks?.length > 0 && (
+        <div className="genesis-notion-tasks">
+          {item.notionTasks.map((t) => (
+            <a key={t.notion_url} href={t.notion_url} target="_blank" rel="noreferrer" className="genesis-notion-task">
+              Notion: {t.task}
+            </a>
+          ))}
+        </div>
+      )}
       {!hidePeople && relatedPeople.length > 0 && (
         <div className="genesis-people-links">
           {relatedPeople.map((p) => (

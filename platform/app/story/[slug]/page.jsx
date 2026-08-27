@@ -42,7 +42,7 @@ function AxisToggle({ id, axis }) {
 export default async function StoryPage({ params }) {
   const story = getStory(params.slug);
 
-  const [genesisEvents, storyRows, childRows, parentRows] = await Promise.all([
+  const [genesisEvents, storyRows, childRows, parentRows, notionTasks] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
       `?story_ref=eq.${params.slug}.md&order=year.asc.nullslast,month.asc.nullslast`
@@ -53,6 +53,10 @@ export default async function StoryPage({ params }) {
       `?parent_slug=eq.${params.slug}&select=slug,title,start_date,end_date&order=start_date.asc`
     ),
     supabaseSelect("ledger_stories", `?select=slug,title`),
+    supabaseSelect(
+      "ledger_notion_tasks",
+      `?story_slug=eq.${params.slug}&status=neq.Done&select=notion_url,task,status,priority`
+    ),
   ]);
   const storyRow = storyRows[0] || null;
 
@@ -103,6 +107,15 @@ export default async function StoryPage({ params }) {
             <span className="entry-meta" style={{ margin: 0 }}>entro</span>
             <TableCellInput action={updateStoryNextActionDate} id={storyRow.id} name="next_action_date" defaultValue={storyRow.next_action_date || ""} type="date" placeholder="data" />
           </div>
+          {notionTasks.length > 0 && (
+            <div style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 2 }}>
+              {notionTasks.map((t) => (
+                <a key={t.notion_url} href={t.notion_url} target="_blank" rel="noreferrer" style={{ fontSize: 12.5, color: "var(--ink-dim)" }}>
+                  Notion ({t.status}): {t.task}
+                </a>
+              ))}
+            </div>
+          )}
           {childRows.length > 0 && (
             <div style={{ marginTop: 12 }}>
               <span className="entry-meta" style={{ margin: 0 }}>Sotto-eventi ({childRows.length})</span>

@@ -28,7 +28,7 @@ export default async function GenesisPage({ searchParams }) {
   const yearParam = searchParams?.year;
   const showAllYears = yearParam === "all";
 
-  const [events, people, stories] = await Promise.all([
+  const [events, people, stories, notionTasks] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
       "?order=year.asc.nullslast,month.asc.nullslast,sort_order.asc"
@@ -38,7 +38,19 @@ export default async function GenesisPage({ searchParams }) {
       "ledger_stories",
       "?start_date=not.is.null&select=id,slug,title,start_date,end_date,axis,kind,location,parent_slug,next_action,next_action_date&order=start_date.asc"
     ),
+    // Mirrored from the Notion Task Board by the daily sweep - not fetched
+    // live from Notion on every page load. See references/notion-sync.md.
+    supabaseSelect(
+      "ledger_notion_tasks",
+      "?story_slug=not.is.null&status=neq.Done&select=notion_url,task,status,priority,story_slug"
+    ),
   ]);
+
+  const notionTasksBySlug = new Map();
+  for (const t of notionTasks) {
+    if (!notionTasksBySlug.has(t.story_slug)) notionTasksBySlug.set(t.story_slug, []);
+    notionTasksBySlug.get(t.story_slug).push(t);
+  }
 
   const dated = events.filter((e) => e.year);
   const undated = events.filter((e) => !e.year);
@@ -109,6 +121,7 @@ export default async function GenesisPage({ searchParams }) {
       factCount: factCountBySlug.get(s.slug) || 0,
       nextAction: s.next_action || "",
       nextActionDate: s.next_action_date || "",
+      notionTasks: notionTasksBySlug.get(s.slug) || [],
     });
   }
 

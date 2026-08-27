@@ -795,6 +795,17 @@ footer.snapshot-note {
   padding: 1px 5px;
   white-space: nowrap;
 }
+.genesis-notion-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+.genesis-notion-task {
+  font-size: 11.5px;
+  color: var(--ink-dim);
+}
+.genesis-notion-task:hover { color: var(--accent-ink); text-decoration: underline; }
 .genesis-story-card > .genesis-people-links { margin-top: 4px; }
 .genesis-story-card-subs {
   display: flex;
