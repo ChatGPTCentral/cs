@@ -135,6 +135,14 @@ supplies the history - what was promised, what they last asked, how long they
 have waited - and the thread supplies the words. A reply that ignores the story
 is how someone gets asked a question they already answered in June.
 
+**The strategy field comes before everything.** `ledger_stories.strategy`
+(Supabase) holds Alex's own play for a deal, in his words - he edits it on
+/nba and /story. Before any draft or follow-up on a story, read the field.
+When it is set, it overrides the default selling angle and every template
+instinct. When it conflicts with what a template suggests, the strategy
+wins without discussion. Never write or edit this field - it is Alex's
+voice only, and no automated run (auto-genesis included) touches it.
+
 Identity: Kris for support, Alex for partners, deals and press. `create_draft`
 has no `from` parameter and inherits the account default, currently
 `kris@thecentral.ai` - so **any draft that should come from Alex must say so in

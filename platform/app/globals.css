@@ -1031,3 +1031,19 @@ footer.snapshot-note {
   text-decoration: none;
 }
 .graph-card-open:hover { text-decoration: underline; }
+
+/* Per-deal strategy on NBA rows */
+.nba-strategy {
+  margin-top: 4px;
+}
+.nba-strategy summary {
+  font-size: 11.5px;
+  color: #6C4CF1;
+  cursor: pointer;
+  user-select: none;
+}
+.nba-strategy .table-cell-input {
+  font-size: 13px;
+  width: 100%;
+  margin-top: 2px;
+}

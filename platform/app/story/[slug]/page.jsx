@@ -8,7 +8,7 @@ import {
   findUnlinkedPeopleMentions,
   findUnlinkedStoryMentions,
 } from "../../../lib/links";
-import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate, tagPersonToStory, proposeLink } from "../actions";
+import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate, updateStoryStrategy, tagPersonToStory, proposeLink } from "../actions";
 import TableCellInput from "../../people/TableCellInput";
 import SaveWatcher from "../../people/SaveWatcher";
 import SavedToast from "../../people/SavedToast";
@@ -153,6 +153,24 @@ export default async function StoryPage({ params }) {
             <TableCellInput action={updateStoryNextAction} id={storyRow.id} name="next_action" defaultValue={storyRow.next_action || ""} placeholder="cosa manca fare..." />
             <span className="entry-meta" style={{ margin: 0 }}>entro</span>
             <TableCellInput action={updateStoryNextActionDate} id={storyRow.id} name="next_action_date" defaultValue={storyRow.next_action_date || ""} type="date" placeholder="data" />
+          </div>
+          <div style={{ marginTop: 10 }}>
+            <span className="entry-meta" style={{ margin: 0 }}>
+              La tua strategia su questo deal
+            </span>
+            <p style={{ fontSize: 12, color: "var(--ink-faint)", margin: "2px 0 4px" }}>
+              Parole tue: come vuoi giocarla. Ogni bozza e follow-up che
+              preparo parte da qui - nessun automatismo la tocca mai.
+            </p>
+            <TableCellInput
+              action={updateStoryStrategy}
+              id={storyRow.id}
+              name="strategy"
+              defaultValue={storyRow.strategy || ""}
+              placeholder="es. non rilanciare sul prezzo, accetta il suo numero e poi upsell dopo il primo risultato..."
+              multiline
+              rows={3}
+            />
           </div>
           {notionTasks.length > 0 && (
             <div style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 2 }}>

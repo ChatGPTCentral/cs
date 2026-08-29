@@ -177,3 +177,21 @@ export async function dismissLinkSuggestion(formData) {
   revalidatePath("/links/review");
   revalidatePath("/story");
 }
+
+// The per-deal strategy field: Alex's own play for this story, in his
+// words. Drafting flows read it and it overrides any default angle;
+// nothing automated ever writes it.
+export async function updateStoryStrategy(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, {
+    strategy: (formData.get("strategy") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/genesis");
+  revalidatePath("/story");
+  revalidatePath("/nba");
+  revalidatePath("/");
+}

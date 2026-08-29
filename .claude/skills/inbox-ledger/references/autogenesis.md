@@ -68,6 +68,8 @@ Hard rules:
 - Never invent a commitment, a date or an amount. Quote or omit
 - Never mark a story done, and never change `next_action` to something
   the source does not literally support
+- Never write `ledger_stories.strategy`. That field is Alex's voice
+  only
 - Update `last-inbound`, `last-outbound` and `status` (whose move)
   freely - they are mechanical facts, not judgment
 

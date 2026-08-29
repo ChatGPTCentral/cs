@@ -1,5 +1,5 @@
 import { supabaseSelect } from "../../lib/supabase";
-import { updateStoryNextAction, updateStoryNextActionDate } from "../story/actions";
+import { updateStoryNextAction, updateStoryNextActionDate, updateStoryStrategy } from "../story/actions";
 import TableCellInput from "../people/TableCellInput";
 import SavedToast from "../people/SavedToast";
 
@@ -47,23 +47,39 @@ function StoryRow({ item, today }) {
         )}
       </div>
       {item.id ? (
-        <div className="genesis-next-action" style={{ marginTop: 4 }}>
-          <TableCellInput
-            action={updateStoryNextAction}
-            id={item.id}
-            name="next_action"
-            defaultValue={item.action || ""}
-            placeholder="prossima azione..."
-          />
-          <TableCellInput
-            action={updateStoryNextActionDate}
-            id={item.id}
-            name="next_action_date"
-            defaultValue={item.date || ""}
-            type="date"
-            placeholder="data"
-          />
-        </div>
+        <>
+          <div className="genesis-next-action" style={{ marginTop: 4 }}>
+            <TableCellInput
+              action={updateStoryNextAction}
+              id={item.id}
+              name="next_action"
+              defaultValue={item.action || ""}
+              placeholder="prossima azione..."
+            />
+            <TableCellInput
+              action={updateStoryNextActionDate}
+              id={item.id}
+              name="next_action_date"
+              defaultValue={item.date || ""}
+              type="date"
+              placeholder="data"
+            />
+          </div>
+          <details className="nba-strategy" open={!!item.strategy}>
+            <summary>
+              {item.strategy ? "strategia" : "aggiungi la tua strategia"}
+            </summary>
+            <TableCellInput
+              action={updateStoryStrategy}
+              id={item.id}
+              name="strategy"
+              defaultValue={item.strategy || ""}
+              placeholder="come vuoi giocarla, parole tue - le bozze partono da qui"
+              multiline
+              rows={2}
+            />
+          </details>
+        </>
       ) : (
         item.action && <p className="nba-action">{item.action}</p>
       )}
@@ -95,7 +111,7 @@ export default async function NbaPage() {
   const [stories, tasks] = await Promise.all([
     supabaseSelect(
       "ledger_stories",
-      "?select=id,slug,title,kind,next_action,next_action_date&or=(next_action.not.is.null,next_action_date.not.is.null)"
+      "?select=id,slug,title,kind,next_action,next_action_date,strategy&or=(next_action.not.is.null,next_action_date.not.is.null)"
     ),
     supabaseSelect("ledger_notion_tasks", "?select=notion_url,task,status,priority,bucket,channel,story_slug"),
   ]);
@@ -130,6 +146,7 @@ export default async function NbaPage() {
       kind: s.kind,
       action: s.next_action,
       date: s.next_action_date,
+      strategy: s.strategy,
       tasks: tasksBySlug.get(s.slug) || [],
     };
   });
@@ -152,7 +169,7 @@ export default async function NbaPage() {
   if (taskOnlySlugs.length > 0) {
     const rows = await supabaseSelect(
       "ledger_stories",
-      `?select=id,slug,title,kind&slug=in.(${taskOnlySlugs.map(encodeURIComponent).join(",")})`
+      `?select=id,slug,title,kind,strategy&slug=in.(${taskOnlySlugs.map(encodeURIComponent).join(",")})`
     );
     taskOnlyStories = rows
       .map((s) => ({
@@ -162,6 +179,7 @@ export default async function NbaPage() {
         kind: s.kind,
         action: null,
         date: null,
+        strategy: s.strategy,
         tasks: tasksBySlug.get(s.slug) || [],
       }))
       .sort(
