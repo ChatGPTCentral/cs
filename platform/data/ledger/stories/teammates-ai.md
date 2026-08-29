@@ -7,7 +7,7 @@
 - status: dormant - one clean paid round, no second ask since
 - start: 2025-06-23
 - end: (ongoing, but quiet)
-- next-action: none currently tracked
+- next-action: write Kareem - hook the pitch to Teammates.ai's next launch
 - commitments: none
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Kareem Ayyad

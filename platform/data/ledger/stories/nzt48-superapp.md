@@ -8,7 +8,8 @@
 - start: 2026-02-10
 - last-inbound: 2026-02-10 (Vitalik's own inbound proposal, $499)
 - idle: 198 days as of 2026-08-27
-- next-action: none currently tracked
+- next-action: counter Vitalik at his own $499 level, not the $1,199
+  package
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Vitalik Kotyk

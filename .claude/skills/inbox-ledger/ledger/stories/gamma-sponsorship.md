@@ -9,7 +9,8 @@
   new proposals
 - start: 2025-11-03
 - end: (ongoing, but quiet)
-- next-action: none currently tracked
+- next-action: decide a genuinely new angle for Meri - carousel re-pitches
+  are burned
 - commitments: none
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27 - AI Central's

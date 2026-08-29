@@ -9,7 +9,8 @@
 - status: dormant - one paid round, three later proposals declined
 - start: 2025-05-08
 - end: (ongoing, but quiet)
-- next-action: none currently tracked
+- next-action: email creators@replit.com - the channel Replit itself
+  pointed to
 - commitments: none
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Alex Lin sent

@@ -8,7 +8,8 @@
 - start: 2025-06-27
 - last-inbound: 2025-07-28 (AiBrew's own decline)
 - idle: 395 days as of 2026-08-27
-- next-action: none currently tracked
+- next-action: reopen with a small first-step offer sized to their stated
+  budget
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. A real,

@@ -9,7 +9,8 @@
 - last-inbound: 2024-07-30 (Felicia, "focusing on YouTube and TikTok at
   the moment")
 - idle: since Oct 2024 - two later generic re-pitches unanswered
-- next-action: none currently tracked
+- next-action: ask Felicia whether newsletter now fits ChatHub's channel
+  mix
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Felicia

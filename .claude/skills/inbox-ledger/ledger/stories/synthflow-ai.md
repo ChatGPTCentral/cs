@@ -8,7 +8,8 @@
 - status: dormant - real paying history, no live deal since Jun 2025
 - start: 2024-10-26
 - end: (ongoing, but quiet)
-- next-action: none currently tracked
+- next-action: re-pitch Melissa Siow with a real proposal - she asked for
+  alignment before any invoice
 - commitments: none
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27 - a real, repeat

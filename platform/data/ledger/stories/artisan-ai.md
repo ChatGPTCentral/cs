@@ -9,7 +9,7 @@
 - start: 2024-01-14
 - last-inbound: 2024-01-17 (Jaspar's own counter-offer, ~$400)
 - idle: since Feb 2024 - the oldest live-negotiation lead in this batch
-- next-action: none currently tracked
+- next-action: reopen with Jaspar at his own $400 figure
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. The earliest

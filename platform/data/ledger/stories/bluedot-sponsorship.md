@@ -7,7 +7,8 @@
 - status: dormant - paused by Russ on good terms, 2024-07-09
 - start: 2024-03-03
 - end: (ongoing, but quiet)
-- next-action: none currently tracked
+- next-action: write Russ - he paused on good terms and asked to keep in
+  touch
 - commitments: none
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. One of AI

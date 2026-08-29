@@ -9,7 +9,7 @@
 - last-inbound: 2024-05-08 (Jeff sending the Zoom link for their call)
 - idle: since May 2024 - two later generic re-pitches (Jan, Mar 2025) also
   unanswered
-- next-action: none currently tracked
+- next-action: write Jeff and name the 8 May 2024 call - no cold re-pitch
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Cristiana (a

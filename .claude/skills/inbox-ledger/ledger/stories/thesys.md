@@ -8,7 +8,7 @@
 - start: 2025-12-22
 - last-inbound: 2025-12-23 (Abhi asking for the CPC on the proposal)
 - idle: 218 days as of 2026-08-27
-- next-action: none currently tracked
+- next-action: answer Abhi's CPC question with a concrete small first test
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Abhi reached

@@ -9,7 +9,8 @@
 - start: 2026-01-12
 - last-inbound: 2026-01-12 (liki's own inbound inquiry)
 - idle: 227 days as of 2026-08-27
-- next-action: none currently tracked
+- next-action: offer liki a budget-sized option - the $2,499 package
+  overshot a stated small budget
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. liki reached

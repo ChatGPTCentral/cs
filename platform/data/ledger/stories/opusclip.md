@@ -8,8 +8,8 @@
 - start: 2024-05-21
 - last-outbound: 2026-05-06
 - idle: since first pitch, 2024-05-21 - zero replies on file
-- next-action: none - not worth another generic re-pitch; needs a
-  genuinely different angle or contact before trying again
+- next-action: find a named contact before any outreach - the generic
+  channel never answered in two years
 - commitments: none
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Six separate

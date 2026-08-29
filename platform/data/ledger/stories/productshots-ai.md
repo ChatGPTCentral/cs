@@ -11,7 +11,8 @@
 - last-inbound: 2024-01-24 (Bijan, sharing the 20%-for-3-years affiliate
   program terms)
 - idle: since Jan 2024 - three later re-pitches all unanswered
-- next-action: none currently tracked
+- next-action: sign up to Bijan's 20% affiliate program - the no-cost
+  option still on the table
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Bijan

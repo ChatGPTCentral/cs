@@ -13,7 +13,8 @@
   newsletter + LinkedIn package)
 - idle: since Nov 2024 - three later re-pitches (Jan 2025, Mar 2025, Feb
   2026, Mar 2026) all unanswered
-- next-action: none currently tracked
+- next-action: confirm the contact's real name (Christine, not Elana),
+  then reopen the combined package she scoped
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Nearly three
