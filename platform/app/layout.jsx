@@ -22,6 +22,7 @@ export default async function RootLayout({ children }) {
             </a>
             <nav className="topnav">
               <a href="/">Today</a>
+              <a href="/nba">NBA</a>
               <a href="/board">Full board</a>
               <a href="/genesis">Genesis</a>
               <a href="/stories">All stories</a>
