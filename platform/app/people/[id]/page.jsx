@@ -193,6 +193,13 @@ export default async function PersonPage({ params }) {
           placeholder="Lists, comma separated (e.g. Service Providers)"
           defaultValue={person.lists || ""}
         />
+        <label className="field-label" htmlFor="f-aliases">Aliases</label>
+        <input
+          id="f-aliases"
+          name="aliases"
+          placeholder="Altri modi in cui compare nei testi, separati da virgola (es. Marc Duke, M. Duke)"
+          defaultValue={person.aliases || ""}
+        />
         <label className="field-label" htmlFor="f-linkedin">LinkedIn URL</label>
         <input
           id="f-linkedin"

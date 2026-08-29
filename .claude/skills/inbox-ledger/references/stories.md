@@ -37,6 +37,22 @@ Write a cross-reference when a story mentions another story or a tracked
 person at a decision point. The backlink panel and the local graph build
 themselves from these references.
 
+**The link suggestion queue.** Alex can propose a story-to-story link
+from a story page on the platform. The proposal lands in the Supabase
+table `ledger_link_suggestions` with status `pending`. On each ledger
+refresh: query the pending rows, write the `[[target_ref]]` link into
+the source story's markdown at the natural spot in the notes, run the
+sync scripts, then set the row's status to `applied`. Skip a suggestion
+that makes no sense and set its status to `dismissed` with a short
+note to Alex in the run summary. The app never edits markdown - this
+queue is how a proposal becomes a real link.
+
+**Aliases.** `ledger_people.aliases` holds alternative spellings and
+nicknames, comma separated (example: "Marc Duke, M. Duke"). Wiki-link
+resolution and the mention scanner read them. When a person appears in
+the mail under a variant spelling, record the variant there instead of
+a second person record.
+
 ## The label query rule
 
 Verified 2026-08-19 against the live account, after four failed attempts.

@@ -32,6 +32,7 @@ export async function updatePerson(formData) {
     lists: (formData.get("lists") || "").toString().trim() || null,
     background: (formData.get("background") || "").toString().trim() || null,
     linkedin_url: (formData.get("linkedin_url") || "").toString().trim() || null,
+    aliases: (formData.get("aliases") || "").toString().trim() || null,
     updated_at: new Date().toISOString(),
   });
 

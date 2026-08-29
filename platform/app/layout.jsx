@@ -7,10 +7,13 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const pending = await supabaseSelect(
-    "ledger_people",
-    "?or=(pending_linkedin_url.not.is.null,pending_photo_url.not.is.null)&select=id"
-  );
+  const [pending, pendingLinks] = await Promise.all([
+    supabaseSelect(
+      "ledger_people",
+      "?or=(pending_linkedin_url.not.is.null,pending_photo_url.not.is.null)&select=id"
+    ),
+    supabaseSelect("ledger_link_suggestions", "?status=eq.pending&select=id").catch(() => []),
+  ]);
 
   return (
     <html lang="en">
@@ -29,6 +32,9 @@ export default async function RootLayout({ children }) {
               <a href="/people/review">
                 Review{pending.length > 0 ? ` (${pending.length})` : ""}
               </a>
+              {pendingLinks.length > 0 && (
+                <a href="/links/review">Link ({pendingLinks.length})</a>
+              )}
               <a href="/settings">Settings</a>
               <form method="GET" action="/search" style={{ display: "inline-flex", marginLeft: 4 }}>
                 <input

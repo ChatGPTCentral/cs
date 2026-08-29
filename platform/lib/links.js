@@ -94,11 +94,24 @@ function nameRegex(name) {
   return new RegExp(`(^|[^\\p{L}])${escapeRegex(name)}([^\\p{L}]|$)`, "iu");
 }
 
-// Case-insensitive exact full-name resolution against live people.
+function personNames(p) {
+  const names = [p.name];
+  if (p.aliases) {
+    for (const a of p.aliases.split(",")) {
+      const t = a.trim();
+      if (t) names.push(t);
+    }
+  }
+  return names;
+}
+
+// Case-insensitive exact resolution against live people, name or alias.
 // More than one live match is ambiguous - never guess.
 export function resolvePersonTarget(name, people) {
   const q = name.trim().toLowerCase();
-  const hits = people.filter((p) => !p.archived && p.name && p.name.trim().toLowerCase() === q);
+  const hits = people.filter(
+    (p) => !p.archived && personNames(p).some((n) => n.trim().toLowerCase() === q)
+  );
   if (hits.length === 1) return { id: hits[0].id, name: hits[0].name };
   if (hits.length > 1) return { ambiguous: true };
   return null;
@@ -110,9 +123,9 @@ export function findUnlinkedPeopleMentions(raw, people, storySlug) {
   const out = [];
   for (const p of people) {
     if (p.archived || p.merged_into) continue;
-    if (!isMatchableName(p.name)) continue;
     if (parseStorySlugs(p.stories).includes(storySlug)) continue;
-    if (nameRegex(p.name).test(raw)) out.push(p);
+    const matchNames = personNames(p).filter(isMatchableName);
+    if (matchNames.some((n) => nameRegex(n).test(raw))) out.push(p);
   }
   return out;
 }
@@ -137,14 +150,15 @@ export function findUnlinkedStoryMentions(raw, storyRows, ownSlug, outboundSet, 
 // stories mention this person's name in their raw text, beyond the ones
 // already tagged in the person's stories column.
 export function findStoriesMentioningPerson(person, taggedSlugs) {
-  if (!isMatchableName(person.name)) return { skipped: true, stories: [] };
+  const names = personNames(person).filter(isMatchableName);
+  if (names.length === 0) return { skipped: true, stories: [] };
   const { rawBySlug, titleBySlug } = buildBacklinkIndex();
   const tagged = new Set(taggedSlugs);
-  const re = nameRegex(person.name);
+  const regexes = names.map(nameRegex);
   const stories = [];
   for (const [slug, raw] of rawBySlug) {
     if (tagged.has(slug)) continue;
-    if (re.test(raw)) stories.push({ slug, title: titleBySlug.get(slug) });
+    if (regexes.some((re) => re.test(raw))) stories.push({ slug, title: titleBySlug.get(slug) });
   }
   return { skipped: false, stories };
 }

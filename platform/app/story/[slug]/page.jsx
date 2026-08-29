@@ -8,7 +8,7 @@ import {
   findUnlinkedPeopleMentions,
   findUnlinkedStoryMentions,
 } from "../../../lib/links";
-import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate, tagPersonToStory } from "../actions";
+import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate, tagPersonToStory, proposeLink } from "../actions";
 import TableCellInput from "../../people/TableCellInput";
 import SaveWatcher from "../../people/SaveWatcher";
 import SavedToast from "../../people/SavedToast";
@@ -49,7 +49,7 @@ function AxisToggle({ id, axis }) {
 }
 
 export default async function StoryPage({ params }) {
-  const [genesisEvents, storyRows, childRows, parentRows, notionTasks, people] = await Promise.all([
+  const [genesisEvents, storyRows, childRows, parentRows, notionTasks, people, existingSuggestions] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
       `?story_ref=eq.${params.slug}.md&order=year.asc.nullslast,month.asc.nullslast`
@@ -66,7 +66,11 @@ export default async function StoryPage({ params }) {
     ),
     supabaseSelect(
       "ledger_people",
-      "?archived=eq.false&select=id,name,org,stories,starred,photo_url,merged_into&order=name.asc"
+      "?archived=eq.false&select=id,name,org,stories,starred,photo_url,merged_into,aliases&order=name.asc"
+    ),
+    supabaseSelect(
+      "ledger_link_suggestions",
+      `?story_slug=eq.${params.slug}&select=target_kind,target_ref,status`
     ),
   ]);
   const storyRow = storyRows[0] || null;
@@ -255,11 +259,31 @@ export default async function StoryPage({ params }) {
                     </form>
                   </span>
                 ))}
-                {unlinkedStories.map((s) => (
-                  <a key={s.slug} href={`/story/${s.slug}`} className="list-tab">
-                    {s.title}
-                  </a>
-                ))}
+                {unlinkedStories.map((s) => {
+                  const proposed = existingSuggestions.some(
+                    (e) => e.target_kind === "story" && e.target_ref === s.slug
+                  );
+                  return (
+                    <span key={s.slug} style={{ display: "inline-flex", alignItems: "center", gap: 2 }}>
+                      <a href={`/story/${s.slug}`} className="list-tab">
+                        {s.title}
+                      </a>
+                      {proposed ? (
+                        <span className="entry-meta" title="Proposta in coda per il prossimo /ledger">in coda</span>
+                      ) : (
+                        <form action={proposeLink} style={{ display: "inline" }}>
+                          <input type="hidden" name="storySlug" value={params.slug} />
+                          <input type="hidden" name="targetRef" value={s.slug} />
+                          <input type="hidden" name="targetLabel" value={s.title} />
+                          <button type="submit" className="mention-accept" title={`Proponi il link [[${s.slug}]] - lo applico al prossimo giro di ledger`}>
+                            +
+                          </button>
+                          <SaveWatcher />
+                        </form>
+                      )}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           )}

@@ -187,6 +187,7 @@ export function buildKnowledgeGraph(stories, people) {
       label: p.name,
       type: "person",
       starred: !!p.starred,
+      photo: p.photo_url || null,
       url: `/people/${p.id}`,
       count: slugs.length,
     });

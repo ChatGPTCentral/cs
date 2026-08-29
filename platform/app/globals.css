@@ -1001,3 +1001,33 @@ footer.snapshot-note {
 .mention-accept:hover {
   border-color: #6C4CF1;
 }
+
+/* Selection card on the graph - the Obsidian-style focus tooltip */
+.graph-card {
+  position: absolute;
+  z-index: 5;
+  background: #232329;
+  border: 1px solid #43434a;
+  border-radius: 6px;
+  padding: 8px 10px;
+  max-width: 220px;
+  pointer-events: auto;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+.graph-card-name {
+  color: #dcddde;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.3;
+}
+.graph-card-meta {
+  color: #9b9ba3;
+  font-size: 11.5px;
+  margin: 2px 0 4px;
+}
+.graph-card-open {
+  color: #a88bfa;
+  font-size: 12px;
+  text-decoration: none;
+}
+.graph-card-open:hover { text-decoration: underline; }

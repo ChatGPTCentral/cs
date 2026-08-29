@@ -10,6 +10,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 // and no dependency can break the build.
 export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: fixedHeight, compact = false }) {
   const canvasRef = useRef(null);
+  const cardRef = useRef(null);
   const [query, setQuery] = useState("");
   const queryRef = useRef("");
   queryRef.current = query.trim().toLowerCase();
@@ -45,12 +46,17 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       radius[i] =
         nodes[i].type === "story"
           ? Math.min(16, 4.5 + Math.sqrt(nodes[i].count || 1) * 1.6)
+          : nodes[i].photo
+          ? 8
           : 3 + (nodes[i].starred ? 1.5 : 0);
     }
 
     let alpha = 1;
     const transform = { x: 0, y: 0, k: 1 };
     let hovered = -1;
+    let selected = -1;
+    let lastClick = { i: -1, t: 0 };
+    let anim = null; // {x0,y0,k0,x1,y1,k1,t0,dur}
     let dragging = -1;
     let panning = false;
     let downAt = null;
@@ -58,6 +64,17 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
     let raf = 0;
     let width = 0;
     let height = 0;
+
+    // Lazy avatar cache - person nodes with a photo render as clipped
+    // face circles once the image is in.
+    const images = new Map();
+    for (const n of nodes) {
+      if (n.type === "person" && n.photo && !images.has(n.photo)) {
+        const img = new Image();
+        img.src = n.photo;
+        images.set(n.photo, img);
+      }
+    }
 
     // Obsidian graph-view palette, by Alex's request - the canvas is a
     // dark viewport regardless of the app theme, exactly like opening
@@ -144,9 +161,10 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
 
     function activeSet() {
       const q = queryRef.current;
-      if (hovered >= 0) {
-        const s = new Set(neighbors[hovered]);
-        s.add(hovered);
+      const focus = hovered >= 0 ? hovered : selected;
+      if (focus >= 0) {
+        const s = new Set(neighbors[focus]);
+        s.add(focus);
         return s;
       }
       if (q) {
@@ -192,21 +210,44 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       for (let i = 0; i < N; i++) {
         const n = nodes[i];
         const on = !act || act.has(i);
+        const r = radius[i] * (n.center ? 1.4 : 1);
         ctx.globalAlpha = on ? 1 : 0.1;
-        ctx.fillStyle = n.type === "story" ? (n.kind === "sale" ? C.sale : C.story) : C.person;
+        const img = n.photo ? images.get(n.photo) : null;
+        const hasFace = img && img.complete && img.naturalWidth > 0;
         if (act && on) {
           // Obsidian-style halo on the active neighborhood.
           ctx.shadowColor = C.glow;
           ctx.shadowBlur = 14;
         }
-        ctx.beginPath();
-        ctx.arc(px[i], py[i], radius[i] * (n.center ? 1.4 : 1), 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-        if (i === hovered || n.center) {
-          ctx.strokeStyle = C.ink;
-          ctx.lineWidth = 1.5 / transform.k;
+        if (hasFace) {
+          // Face node: glow via a backing disc, then the clipped avatar.
+          ctx.fillStyle = C.person;
+          ctx.beginPath();
+          ctx.arc(px[i], py[i], r, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(px[i], py[i], r, 0, Math.PI * 2);
+          ctx.clip();
+          ctx.drawImage(img, px[i] - r, py[i] - r, r * 2, r * 2);
+          ctx.restore();
+          ctx.strokeStyle = i === hovered || i === selected || n.center ? C.ink : C.line;
+          ctx.lineWidth = (i === hovered || i === selected || n.center ? 1.5 : 1) / transform.k;
+          ctx.beginPath();
+          ctx.arc(px[i], py[i], r, 0, Math.PI * 2);
           ctx.stroke();
+        } else {
+          ctx.fillStyle = n.type === "story" ? (n.kind === "sale" ? C.sale : C.story) : C.person;
+          ctx.beginPath();
+          ctx.arc(px[i], py[i], r, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+          if (i === hovered || i === selected || n.center) {
+            ctx.strokeStyle = C.ink;
+            ctx.lineWidth = 1.5 / transform.k;
+            ctx.stroke();
+          }
         }
       }
 
@@ -228,9 +269,71 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       ctx.restore();
     }
 
+    // Smooth camera flight toward a node - Obsidian's click-to-focus.
+    function zoomTo(i, targetK) {
+      const k = targetK || Math.max(transform.k, compact ? transform.k : 2.4);
+      anim = {
+        x0: transform.x,
+        y0: transform.y,
+        k0: transform.k,
+        node: i,
+        k1: k,
+        t0: performance.now(),
+        dur: 450,
+      };
+    }
+
+    function stepAnim() {
+      if (!anim) return;
+      const t = Math.min(1, (performance.now() - anim.t0) / anim.dur);
+      const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
+      const k = anim.k0 + (anim.k1 - anim.k0) * e;
+      // Target keeps tracking the (possibly still moving) node.
+      const tx = width / 2 - px[anim.node] * anim.k1;
+      const ty = height / 2 - py[anim.node] * anim.k1;
+      transform.k = k;
+      transform.x = anim.x0 + (tx - anim.x0) * e;
+      transform.y = anim.y0 + (ty - anim.y0) * e;
+      if (t >= 1) anim = null;
+    }
+
+    function updateCard() {
+      const card = cardRef.current;
+      if (!card) return;
+      if (selected < 0) {
+        card.style.display = "none";
+        return;
+      }
+      const sx = px[selected] * transform.k + transform.x;
+      const sy = py[selected] * transform.k + transform.y;
+      if (sx < -40 || sy < -40 || sx > width + 40 || sy > height + 40) {
+        card.style.display = "none";
+        return;
+      }
+      card.style.display = "block";
+      card.style.left = `${sx + radius[selected] * transform.k + 10}px`;
+      card.style.top = `${sy - 14}px`;
+    }
+
+    function setSelected(i) {
+      selected = i;
+      const card = cardRef.current;
+      if (!card) return;
+      if (i >= 0) {
+        const n = nodes[i];
+        card.innerHTML =
+          `<div class="graph-card-name">${n.label}</div>` +
+          `<div class="graph-card-meta">${n.type === "story" ? (n.kind === "sale" ? "cliente" : "storia") : "persona"}${n.count ? ` · ${n.count} collegament${n.count === 1 ? "o" : "i"}` : ""}</div>` +
+          `<a class="graph-card-open" href="${n.url}">Apri &rarr;</a>`;
+      }
+      updateCard();
+    }
+
     function loop() {
       tick();
+      stepAnim();
       draw();
+      updateCard();
       raf = requestAnimationFrame(loop);
     }
     loop();
@@ -259,6 +362,7 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
     };
 
     function onDown(e) {
+      anim = null;
       const [cx, cy] = pos(e);
       downAt = [cx, cy];
       moved = 0;
@@ -293,13 +397,29 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       const wasNode = dragging;
       dragging = -1;
       panning = false;
-      if (downAt && moved < 5 && wasNode >= 0) {
-        window.location.href = nodes[wasNode].url;
+      if (downAt && moved < 5) {
+        const now = performance.now();
+        if (wasNode >= 0) {
+          if (lastClick.i === wasNode && now - lastClick.t < 350) {
+            // Double click on a node: open its page.
+            window.location.href = nodes[wasNode].url;
+          } else {
+            // Single click: fly to the node and light its neighborhood.
+            setSelected(wasNode);
+            zoomTo(wasNode);
+          }
+          lastClick = { i: wasNode, t: now };
+        } else {
+          // Click on empty space: release the selection.
+          setSelected(-1);
+          lastClick = { i: -1, t: now };
+        }
       }
       downAt = null;
     }
     function onWheel(e) {
       e.preventDefault();
+      anim = null;
       const [cx, cy] = pos(e);
       const factor = Math.exp(-e.deltaY * 0.0015);
       const k = Math.min(6, Math.max(0.25, transform.k * factor));
@@ -334,8 +454,9 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
 
   if (compact) {
     return (
-      <div style={{ border: "1px solid var(--line)", borderRadius: "var(--radius)", overflow: "hidden" }}>
+      <div style={{ position: "relative", border: "1px solid var(--line)", borderRadius: "var(--radius)", overflow: "hidden" }}>
         <canvas ref={canvasRef} style={{ display: "block", width: "100%" }} />
+        <div ref={cardRef} className="graph-card" style={{ display: "none" }} />
       </div>
     );
   }
@@ -364,8 +485,9 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
           {orphanCount > 0 ? ` · ${orphanCount} persone senza storia non mostrate` : ""}
         </span>
       </div>
-      <div style={{ border: "1px solid var(--line)", borderRadius: "var(--radius)", overflow: "hidden" }}>
+      <div style={{ position: "relative", border: "1px solid var(--line)", borderRadius: "var(--radius)", overflow: "hidden" }}>
         <canvas ref={canvasRef} style={{ display: "block", width: "100%" }} />
+        <div ref={cardRef} className="graph-card" style={{ display: "none" }} />
       </div>
     </div>
   );

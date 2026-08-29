@@ -140,3 +140,40 @@ export async function tagPersonToStory(formData) {
   revalidatePath("/genesis");
   revalidatePath("/network");
 }
+
+// Proposes a story-to-story link for the Claude ledger session to apply
+// to the markdown. The app never edits md - it queues the suggestion;
+// /links/review lists the queue; the /ledger session writes the actual
+// [[slug]] into the file and marks the row applied.
+export async function proposeLink(formData) {
+  const storySlug = (formData.get("storySlug") || "").toString().trim();
+  const targetRef = (formData.get("targetRef") || "").toString().trim();
+  const targetLabel = (formData.get("targetLabel") || "").toString().trim();
+  if (!/^[a-z0-9-]+$/.test(storySlug) || !/^[a-z0-9-]+$/.test(targetRef)) return;
+
+  const existing = await supabaseSelect(
+    "ledger_link_suggestions",
+    `?story_slug=eq.${storySlug}&target_kind=eq.story&target_ref=eq.${targetRef}`
+  );
+  if (existing.length > 0) return;
+
+  await supabaseInsert("ledger_link_suggestions", {
+    story_slug: storySlug,
+    target_kind: "story",
+    target_ref: targetRef,
+    target_label: targetLabel || null,
+  });
+
+  revalidatePath("/story");
+  revalidatePath("/links/review");
+}
+
+export async function dismissLinkSuggestion(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+  await supabaseUpdate("ledger_link_suggestions", `?id=eq.${id}`, {
+    status: "dismissed",
+  });
+  revalidatePath("/links/review");
+  revalidatePath("/story");
+}

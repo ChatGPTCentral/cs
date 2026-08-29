@@ -14,6 +14,11 @@ export default function SettingsPage() {
         <a href="/thinking-approach">Thinking &amp; approach</a>
       </div>
 
+      <p className="field-label" style={{ marginBottom: 6 }}>Second brain</p>
+      <div className="story-list" style={{ marginBottom: 20 }}>
+        <a href="/links/review">Link proposti (coda per il prossimo /ledger)</a>
+      </div>
+
       <p className="field-label" style={{ marginBottom: 6 }}>Archivio</p>
       <div className="story-list" style={{ marginBottom: 8 }}>
         <a href="/board">Full board (vista storica del ledger)</a>
