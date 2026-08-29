@@ -948,3 +948,22 @@ footer.snapshot-note {
 }
 .nba-task:hover { text-decoration: underline; }
 .nba-task-urgent { color: var(--danger); }
+
+/* Second-brain link layer */
+.wiki-missing {
+  border-bottom: 1px dashed var(--ink-faint);
+  color: var(--ink-faint);
+  cursor: help;
+}
+.backlink-suggest {
+  border-top: 1px dashed var(--line);
+  padding-top: 8px;
+  margin-top: 4px;
+  opacity: 0.85;
+}
+.content mark {
+  background: var(--accent-wash, #e8f1ec);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 2px;
+}

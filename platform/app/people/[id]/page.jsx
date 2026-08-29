@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { supabaseSelect } from "../../../lib/supabase";
-import { findConnections, parseStorySlugs } from "../../../lib/people";
+import { findConnections, parseStorySlugs, buildLocalGraph } from "../../../lib/people";
+import { findStoriesMentioningPerson, buildBacklinkIndex } from "../../../lib/links";
 import { getStory } from "../../../lib/ledger";
+import ObsidianGraph from "../../network/ObsidianGraph";
 import { updatePerson, toggleStar, toggleArchive, mergePerson, approveEnrichment, discardEnrichment } from "./actions";
 import SavedToast from "../SavedToast";
 import SaveWatcher from "../SaveWatcher";
@@ -19,9 +21,27 @@ export default async function PersonPage({ params }) {
     ? allPeople.find((p) => p.id === person.merged_into)
     : null;
   const mergeCandidates = allPeople.filter((p) => p.id !== person.id && !p.archived);
-  const stories = parseStorySlugs(person.stories)
-    .map((slug) => getStory(slug))
-    .filter(Boolean);
+  const taggedSlugs = parseStorySlugs(person.stories);
+  const stories = taggedSlugs.map((slug) => getStory(slug)).filter(Boolean);
+  const mentions = findStoriesMentioningPerson(person, taggedSlugs);
+
+  const storyRows = await supabaseSelect(
+    "ledger_stories",
+    "?select=slug,title,kind,parent_slug"
+  );
+  const backIndex = buildBacklinkIndex();
+  const mdPairs = [];
+  for (const [src, targets] of backIndex.outbound) {
+    for (const t of targets) mdPairs.push([src, t]);
+  }
+  const localGraph = person.archived
+    ? null
+    : buildLocalGraph(
+        "p:" + person.id,
+        storyRows,
+        allPeople.filter((p) => !p.archived),
+        mdPairs
+      );
   const emails = await supabaseSelect(
     "ledger_people_emails",
     `?person_id=eq.${person.id}&order=message_date.desc.nullslast`
@@ -281,6 +301,43 @@ export default async function PersonPage({ params }) {
           </div>
         ))}
       </div>
+
+      {(mentions.stories.length > 0 || mentions.skipped) && (
+        <div className="content" style={{ marginBottom: 20 }}>
+          <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
+            Menzionato in ({mentions.skipped ? "-" : mentions.stories.length})
+          </h2>
+          {mentions.skipped ? (
+            <p style={{ color: "var(--ink-faint)", fontSize: 13 }}>
+              Nome troppo corto per la ricerca automatica delle menzioni - un
+              nome e cognome completi la sbloccano.
+            </p>
+          ) : (
+            <>
+              <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 8px" }}>
+                Storie che citano {person.name} nel testo senza averla tra le
+                storie taggate - candidate a un collegamento vero.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {mentions.stories.map((s) => (
+                  <a key={s.slug} href={`/story/${s.slug}`} className="list-tab">
+                    {s.title}
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {localGraph && localGraph.nodes.length > 1 && (
+        <div className="content" style={{ marginBottom: 20 }}>
+          <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>
+            Vicinato ({localGraph.nodes.length} nodi)
+          </h2>
+          <ObsidianGraph nodes={localGraph.nodes} links={localGraph.links} height={300} compact />
+        </div>
+      )}
 
       <div className="content">
         <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 10px" }}>

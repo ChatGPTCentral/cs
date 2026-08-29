@@ -1,10 +1,19 @@
 import { notFound } from "next/navigation";
-import { getStory } from "../../../lib/ledger";
+import { getStory, getStoryRaw } from "../../../lib/ledger";
 import { supabaseSelect } from "../../../lib/supabase";
+import { parseStorySlugs, buildLocalGraph, HUB_STORY_SLUGS } from "../../../lib/people";
+import {
+  buildBacklinkIndex,
+  resolvePersonTarget,
+  findUnlinkedPeopleMentions,
+  findUnlinkedStoryMentions,
+} from "../../../lib/links";
 import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate } from "../actions";
 import TableCellInput from "../../people/TableCellInput";
 import SaveWatcher from "../../people/SaveWatcher";
 import SavedToast from "../../people/SavedToast";
+import Avatar from "../../people/Avatar";
+import ObsidianGraph from "../../network/ObsidianGraph";
 
 export const dynamic = "force-dynamic";
 
@@ -40,9 +49,7 @@ function AxisToggle({ id, axis }) {
 }
 
 export default async function StoryPage({ params }) {
-  const story = getStory(params.slug);
-
-  const [genesisEvents, storyRows, childRows, parentRows, notionTasks] = await Promise.all([
+  const [genesisEvents, storyRows, childRows, parentRows, notionTasks, people] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
       `?story_ref=eq.${params.slug}.md&order=year.asc.nullslast,month.asc.nullslast`
@@ -52,13 +59,49 @@ export default async function StoryPage({ params }) {
       "ledger_stories",
       `?parent_slug=eq.${params.slug}&select=slug,title,start_date,end_date&order=start_date.asc`
     ),
-    supabaseSelect("ledger_stories", `?select=slug,title`),
+    supabaseSelect("ledger_stories", `?select=slug,title,kind,parent_slug`),
     supabaseSelect(
       "ledger_notion_tasks",
       `?story_slug=eq.${params.slug}&status=neq.Done&select=notion_url,task,status,priority`
     ),
+    supabaseSelect(
+      "ledger_people",
+      "?archived=eq.false&select=id,name,org,stories,starred,photo_url,merged_into&order=name.asc"
+    ),
   ]);
   const storyRow = storyRows[0] || null;
+
+  // Wiki-link context: slugs and titles from the DB rows (covers row-only
+  // stories) plus the md index; person resolution against live people.
+  const backIndex = buildBacklinkIndex();
+  const titleBySlug = new Map(backIndex.titleBySlug);
+  for (const r of parentRows) if (!titleBySlug.has(r.slug)) titleBySlug.set(r.slug, r.title);
+  const slugSet = new Set([...backIndex.slugSet, ...parentRows.map((r) => r.slug)]);
+  const story = getStory(params.slug, {
+    slugSet,
+    titleBySlug,
+    resolvePerson: (name) => resolvePersonTarget(name, people),
+  });
+
+  const isHub = HUB_STORY_SLUGS.has(params.slug);
+  const peopleInStory = people.filter((p) => parseStorySlugs(p.stories).includes(params.slug));
+  const shownPeople = isHub ? peopleInStory.slice(0, 30) : peopleInStory;
+  const linkedFrom = (backIndex.inbound.get(params.slug) || []).filter(
+    (b) => b.slug !== params.slug
+  );
+
+  const raw = getStoryRaw(params.slug);
+  const outboundSet = new Set(backIndex.outbound.get(params.slug) || []);
+  const unlinkedPeople = raw ? findUnlinkedPeopleMentions(raw, people, params.slug) : [];
+  const unlinkedStories = raw
+    ? findUnlinkedStoryMentions(raw, parentRows, params.slug, outboundSet, HUB_STORY_SLUGS)
+    : [];
+
+  const mdPairs = [];
+  for (const [src, targets] of backIndex.outbound) {
+    for (const t of targets) mdPairs.push([src, t]);
+  }
+  const localGraph = buildLocalGraph("s:" + params.slug, parentRows, people, mdPairs);
 
   // Some stories are pure structured data - an event or sub-event mined
   // from real records, never written up as narrative markdown. Only 404
@@ -152,6 +195,76 @@ export default async function StoryPage({ params }) {
       )}
 
       {story && <article className="content" dangerouslySetInnerHTML={{ __html: story.html }} />}
+
+      {(peopleInStory.length > 0 || linkedFrom.length > 0 || unlinkedPeople.length > 0 || unlinkedStories.length > 0) && (
+        <div className="content" style={{ marginTop: 16 }}>
+          <p className="field-label" style={{ marginBottom: 8 }}>Collegamenti</p>
+
+          {peopleInStory.length > 0 && (
+            <>
+              <p className="entry-meta" style={{ margin: "0 0 6px" }}>
+                Persone in questa storia ({peopleInStory.length})
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
+                {shownPeople.map((p) => (
+                  <a key={p.id} href={`/people/${p.id}`} className="list-tab" style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                    <Avatar name={p.name} photoUrl={p.photo_url} size={16} />
+                    {p.name}
+                  </a>
+                ))}
+                {isHub && peopleInStory.length > shownPeople.length && (
+                  <span className="entry-meta">e altre {peopleInStory.length - shownPeople.length} persone</span>
+                )}
+              </div>
+            </>
+          )}
+
+          {linkedFrom.length > 0 && (
+            <>
+              <p className="entry-meta" style={{ margin: "0 0 6px" }}>
+                Storie che puntano qui ({linkedFrom.length})
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
+                {linkedFrom.map((b) => (
+                  <a key={b.slug} href={`/story/${b.slug}`} className="list-tab">
+                    {b.title}
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+
+          {(unlinkedPeople.length > 0 || unlinkedStories.length > 0) && (
+            <div className="backlink-suggest">
+              <p className="entry-meta" style={{ margin: "0 0 6px" }}>
+                Menzionati nel testo ma non collegati - suggerimenti
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {unlinkedPeople.map((p) => (
+                  <a key={p.id} href={`/people/${p.id}`} className="list-tab">
+                    👤 {p.name}
+                  </a>
+                ))}
+                {unlinkedStories.map((s) => (
+                  <a key={s.slug} href={`/story/${s.slug}`} className="list-tab">
+                    {s.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {localGraph && localGraph.nodes.length > 1 && (
+        <div className="content" style={{ marginTop: 16 }}>
+          <p className="field-label" style={{ marginBottom: 8 }}>
+            Vicinato ({localGraph.nodes.length} nodi) -{" "}
+            <a href="/network">grafo completo &rarr;</a>
+          </p>
+          <ObsidianGraph nodes={localGraph.nodes} links={localGraph.links} height={300} compact />
+        </div>
+      )}
 
       <SavedToast />
     </>

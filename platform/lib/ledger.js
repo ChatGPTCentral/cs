@@ -29,9 +29,45 @@ function linkifyStoryRefs(html) {
   );
 }
 
-function renderMarkdown(raw) {
+// [[target]] / [[target|label]] -> a real link. A known story slug wins;
+// otherwise an exact full-name match on a live person; otherwise a
+// visibly-unresolved span, never a broken href. Runs on rendered HTML
+// like the other two passes - a literal [[x]] inside a code span would
+// also linkify, a caveat accepted because the corpus has none.
+function linkifyWikiLinks(html, ctx) {
+  return html.replace(
+    /\[\[([^\[\]|]+?)(?:\|([^\[\]]*))?\]\]/g,
+    (_m, target, label) => {
+      const t = target.trim();
+      if (ctx.slugSet && ctx.slugSet.has(t)) {
+        const text = label || (ctx.titleBySlug && ctx.titleBySlug.get(t)) || t;
+        return `<a href="/story/${t}">${text}</a>`;
+      }
+      if (ctx.resolvePerson) {
+        const hit = ctx.resolvePerson(t);
+        if (hit && hit.id) return `<a href="/people/${hit.id}">${label || hit.name}</a>`;
+      }
+      return `<span class="wiki-missing">${label || t}</span>`;
+    }
+  );
+}
+
+// `known-slug` in backticks -> a story link, mirroring linkifyThreadIds.
+// This is the corpus's existing cross-reference convention, so old files
+// light up without a single edit.
+function linkifySlugRefs(html, ctx) {
+  return html.replace(/<code>([a-z0-9-]+)<\/code>/g, (m, slug) => {
+    if (!ctx.slugSet || !ctx.slugSet.has(slug)) return m;
+    const title = (ctx.titleBySlug && ctx.titleBySlug.get(slug)) || slug;
+    return `<a href="/story/${slug}" title="${title}"><code>${slug}</code></a>`;
+  });
+}
+
+function renderMarkdown(raw, ctx) {
   const html = marked.parse(raw, { gfm: true });
-  return linkifyStoryRefs(linkifyThreadIds(html));
+  let out = linkifyStoryRefs(linkifyThreadIds(html));
+  if (ctx) out = linkifySlugRefs(linkifyWikiLinks(out, ctx), ctx);
+  return out;
 }
 
 export function slugify(filename) {
@@ -100,7 +136,7 @@ export function listStorySlugs() {
     .sort();
 }
 
-export function getStory(slug) {
+export function getStory(slug, ctx) {
   const file = path.join(STORIES_DIR, `${slug}.md`);
   if (!fs.existsSync(file)) return null;
   const raw = fs.readFileSync(file, "utf-8");
@@ -108,8 +144,14 @@ export function getStory(slug) {
   return {
     slug,
     title: titleMatch ? titleMatch[1].trim() : slug,
-    html: renderMarkdown(raw),
+    html: renderMarkdown(raw, ctx),
   };
+}
+
+export function getStoryRaw(slug) {
+  const file = path.join(STORIES_DIR, `${slug}.md`);
+  if (!fs.existsSync(file)) return null;
+  return fs.readFileSync(file, "utf-8");
 }
 
 export function listStories() {

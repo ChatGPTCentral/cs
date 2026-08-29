@@ -8,7 +8,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 // Hand-rolled physics (velocity integration, pairwise repulsion, spring
 // links) - ~400 nodes keeps O(n^2) repulsion comfortably under budget,
 // and no dependency can break the build.
-export default function ObsidianGraph({ nodes, links, orphanCount }) {
+export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: fixedHeight, compact = false }) {
   const canvasRef = useRef(null);
   const [query, setQuery] = useState("");
   const queryRef = useRef("");
@@ -74,7 +74,7 @@ export default function ObsidianGraph({ nodes, links, orphanCount }) {
     function resize() {
       const rect = canvas.parentElement.getBoundingClientRect();
       width = rect.width;
-      height = Math.max(480, Math.round(window.innerHeight * 0.68));
+      height = fixedHeight || Math.max(480, Math.round(window.innerHeight * 0.68));
       const dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
@@ -167,15 +167,22 @@ export default function ObsidianGraph({ nodes, links, orphanCount }) {
       const act = activeSet();
 
       ctx.lineWidth = 1 / transform.k;
-      for (const l of links) {
-        const on = !act || (act.has(l.s) && act.has(l.t));
-        ctx.strokeStyle = C.line;
-        ctx.globalAlpha = on ? (act ? 0.9 : 0.5) : 0.06;
-        ctx.beginPath();
-        ctx.moveTo(px[l.s], py[l.s]);
-        ctx.lineTo(px[l.t], py[l.t]);
-        ctx.stroke();
+      // Two passes so md-derived story-story links render dashed in the
+      // accent color, distinct from tag-derived membership links.
+      for (const mdPass of [false, true]) {
+        ctx.setLineDash(mdPass ? [4 / transform.k, 3 / transform.k] : []);
+        for (const l of links) {
+          if (!!l.md !== mdPass) continue;
+          const on = !act || (act.has(l.s) && act.has(l.t));
+          ctx.strokeStyle = mdPass ? C.story : C.line;
+          ctx.globalAlpha = on ? (act ? 0.9 : mdPass ? 0.4 : 0.5) : 0.06;
+          ctx.beginPath();
+          ctx.moveTo(px[l.s], py[l.s]);
+          ctx.lineTo(px[l.t], py[l.t]);
+          ctx.stroke();
+        }
       }
+      ctx.setLineDash([]);
 
       for (let i = 0; i < N; i++) {
         const n = nodes[i];
@@ -313,6 +320,14 @@ export default function ObsidianGraph({ nodes, links, orphanCount }) {
       canvas.removeEventListener("wheel", onWheel);
     };
   }, [nodes, links, neighbors]);
+
+  if (compact) {
+    return (
+      <div style={{ border: "1px solid var(--line)", borderRadius: "var(--radius)", overflow: "hidden" }}>
+        <canvas ref={canvasRef} style={{ display: "block", width: "100%" }} />
+      </div>
+    );
+  }
 
   return (
     <div>

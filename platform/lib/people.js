@@ -205,3 +205,67 @@ export function buildKnowledgeGraph(stories, people) {
 
   return { nodes, links, orphanCount };
 }
+
+// The per-entity neighborhood: BFS from a center node over the same
+// knowledge graph /network uses, plus story-to-story edges from the
+// markdown backlink index (mdPairs: [[slugA, slugB], ...]). Depth 2
+// normally; depth 1 when the center is a hub story, and hub stories
+// never pull their whole membership into someone else's neighborhood.
+// Links are re-indexed positionally - ObsidianGraph requires it.
+export function buildLocalGraph(centerId, stories, people, mdPairs = []) {
+  const { nodes, links } = buildKnowledgeGraph(stories, people);
+  const idxById = new Map(nodes.map((n, i) => [n.id, i]));
+  const center = idxById.get(centerId);
+  if (center === undefined) return null;
+
+  const slugIdx = new Map();
+  for (let i = 0; i < nodes.length; i++) {
+    if (nodes[i].type === "story") slugIdx.set(nodes[i].id.slice(2), i);
+  }
+  const allLinks = links.slice();
+  for (const [a, b] of mdPairs) {
+    const ia = slugIdx.get(a);
+    const ib = slugIdx.get(b);
+    if (ia !== undefined && ib !== undefined) allLinks.push({ s: ia, t: ib, md: true });
+  }
+
+  const adj = nodes.map(() => []);
+  for (const l of allLinks) {
+    adj[l.s].push(l.t);
+    adj[l.t].push(l.s);
+  }
+
+  const isHub = (i) => nodes[i].type === "story" && HUB_STORY_SLUGS.has(nodes[i].id.slice(2));
+  const maxDepth = isHub(center) ? 1 : 2;
+  const keep = new Map([[center, 0]]);
+  let frontier = [center];
+  for (let d = 1; d <= maxDepth && keep.size < 120; d++) {
+    const next = [];
+    for (const i of frontier) {
+      // A hub neighbor stays in the picture but doesn't expand - its
+      // ~150 members aren't this entity's neighborhood.
+      if (i !== center && isHub(i)) continue;
+      for (const j of adj[i]) {
+        if (!keep.has(j) && keep.size < 120) {
+          keep.set(j, d);
+          next.push(j);
+        }
+      }
+    }
+    frontier = next;
+  }
+
+  const order = [...keep.keys()];
+  const newIdx = new Map(order.map((oldI, i) => [oldI, i]));
+  const outNodes = order.map((oldI) => ({ ...nodes[oldI], center: oldI === center }));
+  const outLinks = [];
+  const seen = new Set();
+  for (const l of allLinks) {
+    if (!newIdx.has(l.s) || !newIdx.has(l.t)) continue;
+    const key = Math.min(l.s, l.t) + ":" + Math.max(l.s, l.t) + (l.md ? ":md" : "");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    outLinks.push({ s: newIdx.get(l.s), t: newIdx.get(l.t), md: l.md, parent: l.parent });
+  }
+  return { nodes: outNodes, links: outLinks };
+}

@@ -21,6 +21,22 @@ story, wrap the thread ID in this pattern rather than leaving it bare - the
 whole point of tracking thread IDs is that Alex works in Gmail, and a bare ID
 he has to paste in himself defeats that.
 
+## Cross-references between stories and people
+
+The platform renders these forms as real links on /story pages:
+
+- `[[slug]]` - link to another story. Use this form for a new
+  cross-reference
+- `[[slug|label]]` - the same link with custom text
+- `[[Full Name]]` - link to a tracked person. Use the full name. A bare
+  first name does not resolve
+- A slug in backticks also renders as a story link. Old files keep this
+  form; do not rewrite them
+
+Write a cross-reference when a story mentions another story or a tracked
+person at a decision point. The backlink panel and the local graph build
+themselves from these references.
+
 ## The label query rule
 
 Verified 2026-08-19 against the live account, after four failed attempts.

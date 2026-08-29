@@ -30,6 +30,14 @@ export default async function RootLayout({ children }) {
                 Review{pending.length > 0 ? ` (${pending.length})` : ""}
               </a>
               <a href="/settings">Settings</a>
+              <form method="GET" action="/search" style={{ display: "inline-flex", marginLeft: 4 }}>
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Cerca..."
+                  style={{ fontSize: 12.5, padding: "3px 8px", border: "1px solid var(--line)", borderRadius: "var(--radius)", width: 110 }}
+                />
+              </form>
             </nav>
           </header>
           {children}
