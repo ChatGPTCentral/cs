@@ -8,7 +8,7 @@ import {
   findUnlinkedPeopleMentions,
   findUnlinkedStoryMentions,
 } from "../../../lib/links";
-import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate } from "../actions";
+import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate, tagPersonToStory } from "../actions";
 import TableCellInput from "../../people/TableCellInput";
 import SaveWatcher from "../../people/SaveWatcher";
 import SavedToast from "../../people/SavedToast";
@@ -239,11 +239,21 @@ export default async function StoryPage({ params }) {
               <p className="entry-meta" style={{ margin: "0 0 6px" }}>
                 Menzionati nel testo ma non collegati - suggerimenti
               </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
                 {unlinkedPeople.map((p) => (
-                  <a key={p.id} href={`/people/${p.id}`} className="list-tab">
-                    👤 {p.name}
-                  </a>
+                  <span key={p.id} style={{ display: "inline-flex", alignItems: "center", gap: 2 }}>
+                    <a href={`/people/${p.id}`} className="list-tab">
+                      👤 {p.name}
+                    </a>
+                    <form action={tagPersonToStory} style={{ display: "inline" }}>
+                      <input type="hidden" name="personId" value={p.id} />
+                      <input type="hidden" name="slug" value={params.slug} />
+                      <button type="submit" className="mention-accept" title={`Tagga ${p.name} in questa storia`}>
+                        +
+                      </button>
+                      <SaveWatcher />
+                    </form>
+                  </span>
                 ))}
                 {unlinkedStories.map((s) => (
                   <a key={s.slug} href={`/story/${s.slug}`} className="list-tab">

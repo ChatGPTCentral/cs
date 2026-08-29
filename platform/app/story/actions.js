@@ -105,3 +105,38 @@ export async function updateStoryAxis(formData) {
   revalidatePath("/genesis");
   revalidatePath("/story");
 }
+
+// Accepts an unlinked mention: tags a person into a story by appending
+// the slug to the person's comma-separated stories column. Conservative
+// append - existing free text and "(notes)" suffixes stay untouched,
+// duplicates are checked against the parsed slug set. This is the only
+// side of link-acceptance the app can own: markdown stays Claude's to
+// write, ledger_people is editable by design (see lib/supabase.js RLS
+// notes).
+export async function tagPersonToStory(formData) {
+  const personId = (formData.get("personId") || "").toString();
+  const slug = (formData.get("slug") || "").toString().trim();
+  if (!personId || !/^[a-z0-9-]+$/.test(slug)) return;
+
+  const [person] = await supabaseSelect(
+    "ledger_people",
+    `?id=eq.${personId}&select=id,stories`
+  );
+  if (!person) return;
+
+  const existing = (person.stories || "").trim();
+  const tagged = existing
+    .split(",")
+    .map((s) => s.trim().replace(/\s*\(.*\)\s*$/, ""))
+    .filter(Boolean);
+  if (tagged.includes(slug)) return;
+
+  await supabaseUpdate("ledger_people", `?id=eq.${personId}`, {
+    stories: existing ? `${existing}, ${slug}` : slug,
+  });
+
+  revalidatePath("/story");
+  revalidatePath("/people");
+  revalidatePath("/genesis");
+  revalidatePath("/network");
+}

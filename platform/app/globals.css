@@ -967,3 +967,37 @@ footer.snapshot-note {
   border-radius: 2px;
   padding: 0 2px;
 }
+
+/* Obsidian-style wiki links - the violet Obsidian uses for internal
+   links, distinct from the app's own accent so a cross-reference reads
+   as "part of the brain" at a glance */
+.wiki-link {
+  color: #6C4CF1;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(108, 76, 241, 0.35);
+}
+.wiki-link:hover {
+  color: #5537d8;
+  border-bottom-color: currentColor;
+}
+.wiki-link code {
+  color: inherit;
+  background: rgba(108, 76, 241, 0.08);
+}
+.wiki-missing {
+  border-bottom: 1px dashed rgba(108, 76, 241, 0.5);
+  color: #9c8df0;
+}
+.mention-accept {
+  border: 1px dashed var(--line);
+  background: none;
+  color: #6C4CF1;
+  border-radius: var(--radius);
+  font-size: 12px;
+  line-height: 1;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.mention-accept:hover {
+  border-color: #6C4CF1;
+}

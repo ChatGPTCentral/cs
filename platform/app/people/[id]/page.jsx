@@ -5,6 +5,7 @@ import { findStoriesMentioningPerson, buildBacklinkIndex } from "../../../lib/li
 import { getStory } from "../../../lib/ledger";
 import ObsidianGraph from "../../network/ObsidianGraph";
 import { updatePerson, toggleStar, toggleArchive, mergePerson, approveEnrichment, discardEnrichment } from "./actions";
+import { tagPersonToStory } from "../../story/actions";
 import SavedToast from "../SavedToast";
 import SaveWatcher from "../SaveWatcher";
 import Avatar from "../Avatar";
@@ -318,11 +319,21 @@ export default async function PersonPage({ params }) {
                 Storie che citano {person.name} nel testo senza averla tra le
                 storie taggate - candidate a un collegamento vero.
               </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
                 {mentions.stories.map((s) => (
-                  <a key={s.slug} href={`/story/${s.slug}`} className="list-tab">
-                    {s.title}
-                  </a>
+                  <span key={s.slug} style={{ display: "inline-flex", alignItems: "center", gap: 2 }}>
+                    <a href={`/story/${s.slug}`} className="list-tab">
+                      {s.title}
+                    </a>
+                    <form action={tagPersonToStory} style={{ display: "inline" }}>
+                      <input type="hidden" name="personId" value={person.id} />
+                      <input type="hidden" name="slug" value={s.slug} />
+                      <button type="submit" className="mention-accept" title={`Tagga ${person.name} in ${s.title}`}>
+                        +
+                      </button>
+                      <SaveWatcher />
+                    </form>
+                  </span>
                 ))}
               </div>
             </>

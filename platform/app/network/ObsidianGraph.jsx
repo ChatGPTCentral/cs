@@ -59,16 +59,19 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
     let width = 0;
     let height = 0;
 
-    const css = getComputedStyle(document.documentElement);
-    const color = (name, fallback) => (css.getPropertyValue(name) || fallback).trim() || fallback;
+    // Obsidian graph-view palette, by Alex's request - the canvas is a
+    // dark viewport regardless of the app theme, exactly like opening
+    // the graph in Obsidian: violet accent nodes, gray satellites,
+    // faint gray edges, glow on the active neighborhood.
     const C = {
-      bg: color("--surface", "#ffffff"),
-      line: color("--line", "#e3e3de"),
-      ink: color("--ink", "#1c1c1a"),
-      dim: color("--ink-faint", "#8a8a82"),
-      story: color("--accent", "#3d6b4f"),
-      sale: color("--danger", "#C4402A"),
-      person: color("--ink-dim", "#55554e"),
+      bg: "#1b1b1e",
+      line: "#43434a",
+      ink: "#dcddde",
+      dim: "#9b9ba3",
+      story: "#a88bfa",
+      sale: "#e5b567",
+      person: "#8f8f96",
+      glow: "#7f6df2",
     };
 
     function resize() {
@@ -160,7 +163,9 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
     }
 
     function draw() {
-      ctx.clearRect(0, 0, width, height);
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = C.bg;
+      ctx.fillRect(0, 0, width, height);
       ctx.save();
       ctx.translate(transform.x, transform.y);
       ctx.scale(transform.k, transform.k);
@@ -187,12 +192,18 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       for (let i = 0; i < N; i++) {
         const n = nodes[i];
         const on = !act || act.has(i);
-        ctx.globalAlpha = on ? 1 : 0.12;
+        ctx.globalAlpha = on ? 1 : 0.1;
         ctx.fillStyle = n.type === "story" ? (n.kind === "sale" ? C.sale : C.story) : C.person;
+        if (act && on) {
+          // Obsidian-style halo on the active neighborhood.
+          ctx.shadowColor = C.glow;
+          ctx.shadowBlur = 14;
+        }
         ctx.beginPath();
-        ctx.arc(px[i], py[i], radius[i], 0, Math.PI * 2);
+        ctx.arc(px[i], py[i], radius[i] * (n.center ? 1.4 : 1), 0, Math.PI * 2);
         ctx.fill();
-        if (i === hovered) {
+        ctx.shadowBlur = 0;
+        if (i === hovered || n.center) {
           ctx.strokeStyle = C.ink;
           ctx.lineWidth = 1.5 / transform.k;
           ctx.stroke();
@@ -346,9 +357,9 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
           }}
         />
         <span style={{ fontSize: 12, color: "var(--ink-faint)" }}>
-          <span style={{ color: "var(--accent)" }}>●</span> storie{" "}
-          <span style={{ color: "var(--danger)" }}>●</span> clienti{" "}
-          <span style={{ color: "var(--ink-dim)" }}>●</span> persone · rotella
+          <span style={{ color: "#a88bfa" }}>●</span> storie{" "}
+          <span style={{ color: "#e5b567" }}>●</span> clienti{" "}
+          <span style={{ color: "#8f8f96" }}>●</span> persone · rotella
           = zoom, trascina = sposta, click = apri
           {orphanCount > 0 ? ` · ${orphanCount} persone senza storia non mostrate` : ""}
         </span>

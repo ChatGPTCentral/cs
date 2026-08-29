@@ -41,11 +41,11 @@ function linkifyWikiLinks(html, ctx) {
       const t = target.trim();
       if (ctx.slugSet && ctx.slugSet.has(t)) {
         const text = label || (ctx.titleBySlug && ctx.titleBySlug.get(t)) || t;
-        return `<a href="/story/${t}">${text}</a>`;
+        return `<a class="wiki-link" href="/story/${t}">${text}</a>`;
       }
       if (ctx.resolvePerson) {
         const hit = ctx.resolvePerson(t);
-        if (hit && hit.id) return `<a href="/people/${hit.id}">${label || hit.name}</a>`;
+        if (hit && hit.id) return `<a class="wiki-link" href="/people/${hit.id}">${label || hit.name}</a>`;
       }
       return `<span class="wiki-missing">${label || t}</span>`;
     }
@@ -59,7 +59,7 @@ function linkifySlugRefs(html, ctx) {
   return html.replace(/<code>([a-z0-9-]+)<\/code>/g, (m, slug) => {
     if (!ctx.slugSet || !ctx.slugSet.has(slug)) return m;
     const title = (ctx.titleBySlug && ctx.titleBySlug.get(slug)) || slug;
-    return `<a href="/story/${slug}" title="${title}"><code>${slug}</code></a>`;
+    return `<a class="wiki-link" href="/story/${slug}" title="${title}"><code>${slug}</code></a>`;
   });
 }
 
