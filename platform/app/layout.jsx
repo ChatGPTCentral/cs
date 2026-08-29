@@ -21,9 +21,7 @@ export default async function RootLayout({ children }) {
               Inbox <em>Ledger</em>
             </a>
             <nav className="topnav">
-              <a href="/">Today</a>
-              <a href="/nba">NBA</a>
-              <a href="/board">Full board</a>
+              <a href="/">NBA</a>
               <a href="/genesis">Genesis</a>
               <a href="/stories">All stories</a>
               <a href="/network">Network</a>
@@ -31,19 +29,14 @@ export default async function RootLayout({ children }) {
               <a href="/people/review">
                 Review{pending.length > 0 ? ` (${pending.length})` : ""}
               </a>
-              <a href="/writing-style">Writing style</a>
-              <a href="/thinking-approach">Thinking &amp; approach</a>
-              <a href="/feedback">Feedback</a>
+              <a href="/settings">Settings</a>
             </nav>
           </header>
           {children}
           <footer className="snapshot-note">
-            Generated from the ledger&apos;s git-tracked markdown. Does not read Gmail live -
-            refresh via <code>/ledger</code> in Claude Code, then redeploy.
-            <br />
-            Bug, correction, or something to add?{" "}
-            <a href="/feedback">Drop a note &rarr;</a>{" "}
-            it&apos;s read and actioned on the next refresh.
+            Generated from the ledger&apos;s git-tracked markdown plus the live
+            Supabase registers. Does not read Gmail live - refresh via{" "}
+            <code>/ledger</code> in Claude Code, then redeploy.
           </footer>
         </div>
       </body>

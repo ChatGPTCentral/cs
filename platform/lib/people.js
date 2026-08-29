@@ -147,3 +147,61 @@ export function buildNetwork(people, emailRows = []) {
 
   return { nodes, edges, isolatedCount: people.length - nodes.length };
 }
+
+// The Obsidian-style knowledge graph: every story and every person is a
+// node, an edge means "this person is tagged into this story" (plus
+// story->parent edges). Bipartite, so it stays sparse and readable even
+// with everything on screen at once - the readability comes from live
+// physics, zoom and hover-highlight in the client component, not from
+// pre-filtering. People tagged to no story are left out (they'd float
+// unconnected); their count is reported instead.
+export function buildKnowledgeGraph(stories, people) {
+  const storyBySlug = new Map(stories.map((s) => [s.slug, s]));
+  const nodes = [];
+  const links = [];
+  const idx = new Map();
+
+  for (const s of stories) {
+    idx.set("s:" + s.slug, nodes.length);
+    nodes.push({
+      id: "s:" + s.slug,
+      label: s.title,
+      type: "story",
+      kind: s.kind,
+      url: `/story/${s.slug}`,
+      count: 0,
+    });
+  }
+
+  let orphanCount = 0;
+  for (const p of people) {
+    const slugs = parseStorySlugs(p.stories).filter((sl) => storyBySlug.has(sl));
+    if (slugs.length === 0) {
+      orphanCount++;
+      continue;
+    }
+    const key = "p:" + p.id;
+    idx.set(key, nodes.length);
+    nodes.push({
+      id: key,
+      label: p.name,
+      type: "person",
+      starred: !!p.starred,
+      url: `/people/${p.id}`,
+      count: slugs.length,
+    });
+    for (const sl of slugs) {
+      const si = idx.get("s:" + sl);
+      links.push({ s: idx.get(key), t: si });
+      nodes[si].count++;
+    }
+  }
+
+  for (const s of stories) {
+    if (s.parent_slug && storyBySlug.has(s.parent_slug)) {
+      links.push({ s: idx.get("s:" + s.slug), t: idx.get("s:" + s.parent_slug), parent: true });
+    }
+  }
+
+  return { nodes, links, orphanCount };
+}
