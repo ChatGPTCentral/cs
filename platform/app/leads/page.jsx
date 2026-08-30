@@ -16,6 +16,11 @@ function matches(c, q) {
   return hay.includes(q);
 }
 
+function normalizeUrl(u) {
+  if (!u) return "";
+  return u.toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+}
+
 // Exploration layer over Alex's full LinkedIn export (10k+ connections,
 // git-tracked as a static file - see platform/data/linkedin-connections.json
 // - re-generate it from a fresh LinkedIn data export when it goes stale).
@@ -27,12 +32,14 @@ export default async function LeadsPage({ searchParams }) {
   const q = (searchParams?.q || "").trim().toLowerCase();
   const icpOnly = searchParams?.icp === "1";
 
-  const [people, companies] = await Promise.all([
+  const [people, companies, photos] = await Promise.all([
     supabaseSelect("ledger_people", "?select=id,name"),
     supabaseSelect("ledger_companies", "?select=id,name"),
+    supabaseSelect("ledger_linkedin_connections", "?photo_url=not.is.null&select=linkedin_url,photo_url"),
   ]);
   const peopleByName = new Map(people.map((p) => [p.name.toLowerCase(), p]));
   const companyNames = new Set(companies.map((c) => c.name.toLowerCase()));
+  const photoByUrl = new Map(photos.map((p) => [normalizeUrl(p.linkedin_url), p.photo_url]));
 
   const filtered = connections.filter((c) => {
     if (q && !matches(c, q)) return false;
@@ -105,8 +112,29 @@ export default async function LeadsPage({ searchParams }) {
             const existingPerson = peopleByName.get(name.toLowerCase());
             const companyTracked = c.company && companyNames.has(c.company.toLowerCase());
             const icpFit = icpRoleFit(c.position);
+            const photoUrl = photoByUrl.get(normalizeUrl(c.url));
             return (
               <div key={c.url || name} className="entry" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+                {photoUrl ? (
+                  <img
+                    src={photoUrl}
+                    alt=""
+                    width={36}
+                    height={36}
+                    style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      width: 36,
+                      height: 36,
+                      borderRadius: "50%",
+                      background: "var(--line)",
+                      flexShrink: 0,
+                    }}
+                  />
+                )}
                 <div style={{ flex: 1, minWidth: 220 }}>
                   <strong>
                     {c.url ? (
