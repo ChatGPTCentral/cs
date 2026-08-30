@@ -1,7 +1,7 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { addPerson, createList } from "./actions";
-import { toggleStar, toggleArchive, updateBackground, updateLists, updateStories } from "./[id]/actions";
-import { parseLists, parseStorySlugs } from "../../lib/people";
+import { toggleStar, toggleArchive, updateBackground, updateLists, updateStories, updateCadence } from "./[id]/actions";
+import { parseLists, parseStorySlugs, lastTouchedAt, cadenceStatus } from "../../lib/people";
 import SavedToast from "./SavedToast";
 import TableCellInput from "./TableCellInput";
 import NewPersonModal from "./NewPersonModal";
@@ -16,16 +16,18 @@ export default async function PeoplePage({ searchParams }) {
   const activeStory = searchParams?.story || "";
   const sort = searchParams?.sort === "org" ? "org" : "name";
   const q = (searchParams?.q || "").trim();
+  const overdueOnly = searchParams?.overdue === "1";
 
   // Builds a /people URL carrying whichever of these state pieces are
   // active, so every filter/sort link stays in sync.
-  function buildHref({ list = activeList, story = activeStory, sortBy = sort } = {}) {
+  function buildHref({ list = activeList, story = activeStory, sortBy = sort, overdue = overdueOnly } = {}) {
     const params = new URLSearchParams();
     if (showArchived) params.set("archived", "1");
     if (list) params.set("list", list);
     if (story) params.set("story", story);
     if (sortBy === "org") params.set("sort", "org");
     if (q) params.set("q", q);
+    if (overdue) params.set("overdue", "1");
     const qs = params.toString();
     return qs ? `/people?${qs}` : "/people";
   }
@@ -44,10 +46,11 @@ export default async function PeoplePage({ searchParams }) {
       `?archived=eq.${showArchived}&order=starred.desc,${sort}.asc${searchFilter}`
     ),
     supabaseSelect("ledger_lists", "?order=name.asc"),
-    supabaseSelect("ledger_stories", "?order=title.asc&select=slug,title"),
+    supabaseSelect("ledger_stories", "?order=title.asc&select=slug,title,updated_at"),
   ]);
 
   const storyTitleBySlug = new Map(storyRows.map((s) => [s.slug, s.title]));
+  const storiesByUpdatedAt = new Map(storyRows.map((s) => [s.slug, s.updated_at]));
 
   // Lists are free-text tags, not a fixed enum. Tabs are the union of
   // lists someone deliberately created (ledger_lists, so a brand-new list
@@ -70,9 +73,17 @@ export default async function PeoplePage({ searchParams }) {
       )
     : allActive;
 
-  const people = activeStory
+  const byStory = activeStory
     ? byList.filter((p) => parseStorySlugs(p.stories).includes(activeStory))
     : byList;
+
+  const overdueCount = allActive.filter(
+    (p) => cadenceStatus(p.cadence, lastTouchedAt(p, storiesByUpdatedAt))?.overdue
+  ).length;
+
+  const people = overdueOnly
+    ? byStory.filter((p) => cadenceStatus(p.cadence, lastTouchedAt(p, storiesByUpdatedAt))?.overdue)
+    : byStory;
 
   return (
     <>
@@ -85,6 +96,12 @@ export default async function PeoplePage({ searchParams }) {
         {storyRows.map((s) => (
           <option key={s.slug} value={s.slug} />
         ))}
+      </datalist>
+      <datalist id="cadence-options">
+        <option value="monthly" />
+        <option value="quarterly" />
+        <option value="biannual" />
+        <option value="as-needed" />
       </datalist>
 
       <div className="content wide-content">
@@ -104,6 +121,15 @@ export default async function PeoplePage({ searchParams }) {
                 [["", buildHref({ story: "" })], ...storyRows.map((s) => [s.slug, buildHref({ story: s.slug })])]
               )}
             />
+            {!showArchived && overdueCount > 0 && (
+              <a
+                href={buildHref({ overdue: !overdueOnly })}
+                className={`list-tab${overdueOnly ? " list-tab-active" : ""}`}
+                title="Cadenza impostata e superata - da ricontattare"
+              >
+                {overdueOnly ? "✓ " : ""}Da riattivare ({overdueCount})
+              </a>
+            )}
             <form method="GET" style={{ display: "flex" }}>
               {showArchived && <input type="hidden" name="archived" value="1" />}
               {activeList && <input type="hidden" name="list" value={activeList} />}
@@ -183,12 +209,17 @@ export default async function PeoplePage({ searchParams }) {
                   <th>Identity</th>
                   <th>Stories</th>
                   <th>Lists</th>
+                  <th>Cadenza</th>
+                  <th>Ultimo contatto</th>
                   <th>Background</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                {people.map((p) => (
+                {people.map((p) => {
+                  const touched = lastTouchedAt(p, storiesByUpdatedAt);
+                  const status = cadenceStatus(p.cadence, touched);
+                  return (
                   <tr key={p.id}>
                     <td>
                       <form action={toggleStar}>
@@ -249,6 +280,23 @@ export default async function PeoplePage({ searchParams }) {
                     </td>
                     <td>
                       <TableCellInput
+                        action={updateCadence}
+                        id={p.id}
+                        name="cadence"
+                        defaultValue={p.cadence || ""}
+                        placeholder="monthly / quarterly..."
+                        listId="cadence-options"
+                      />
+                    </td>
+                    <td className="people-table-meta" style={status?.overdue ? { color: "var(--accent)" } : undefined}>
+                      {touched
+                        ? `${status?.daysSince ?? "?"}g fa`
+                        : p.cadence
+                        ? "mai"
+                        : ""}
+                    </td>
+                    <td>
+                      <TableCellInput
                         action={updateBackground}
                         id={p.id}
                         name="background"
@@ -266,7 +314,8 @@ export default async function PeoplePage({ searchParams }) {
                       </form>
                     </td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
           </div>

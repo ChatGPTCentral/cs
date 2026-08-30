@@ -50,7 +50,7 @@ function AxisToggle({ id, axis }) {
 }
 
 export default async function StoryPage({ params }) {
-  const [genesisEvents, storyRows, childRows, parentRows, notionTasks, people, existingSuggestions] = await Promise.all([
+  const [genesisEvents, storyRows, childRows, parentRows, notionTasks, people, existingSuggestions, companies] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
       `?story_ref=eq.${params.slug}.md&order=year.asc.nullslast,month.asc.nullslast`
@@ -60,7 +60,7 @@ export default async function StoryPage({ params }) {
       "ledger_stories",
       `?parent_slug=eq.${params.slug}&select=slug,title,start_date,end_date&order=start_date.asc`
     ),
-    supabaseSelect("ledger_stories", `?select=slug,title,kind,parent_slug`),
+    supabaseSelect("ledger_stories", `?select=slug,title,kind,parent_slug,company_id`),
     supabaseSelect(
       "ledger_notion_tasks",
       `?story_slug=eq.${params.slug}&status=neq.Done&select=notion_url,task,status,priority`
@@ -73,6 +73,7 @@ export default async function StoryPage({ params }) {
       "ledger_link_suggestions",
       `?story_slug=eq.${params.slug}&select=target_kind,target_ref,status`
     ),
+    supabaseSelect("ledger_companies", "?select=id,name"),
   ]);
   const storyRow = storyRows[0] || null;
   const [company] = storyRow?.company_id
@@ -109,7 +110,7 @@ export default async function StoryPage({ params }) {
   for (const [src, targets] of backIndex.outbound) {
     for (const t of targets) mdPairs.push([src, t]);
   }
-  const localGraph = buildLocalGraph("s:" + params.slug, parentRows, people, mdPairs);
+  const localGraph = buildLocalGraph("s:" + params.slug, parentRows, people, mdPairs, companies);
 
   // Some stories are pure structured data - an event or sub-event mined
   // from real records, never written up as narrative markdown. Only 404

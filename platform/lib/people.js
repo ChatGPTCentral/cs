@@ -19,6 +19,34 @@ export function parseLists(lists) {
     .filter(Boolean);
 }
 
+// Relationship decay (second-brain roadmap Phase 3): how many days a
+// cadence tolerates before a relationship counts as overdue. "as-needed"
+// and no cadence at all are deliberately absent - nothing to flag.
+const CADENCE_DAYS = { monthly: 30, quarterly: 90, biannual: 182 };
+
+// Last touch is derived, never stored: the most recent updated_at among
+// the person's tagged stories. storiesByUpdatedAt: Map<slug, isoString>.
+export function lastTouchedAt(person, storiesByUpdatedAt) {
+  let latest = null;
+  for (const slug of parseStorySlugs(person.stories)) {
+    const u = storiesByUpdatedAt.get(slug);
+    if (u && (!latest || u > latest)) latest = u;
+  }
+  return latest;
+}
+
+// null when there is nothing to flag (no cadence, or "as-needed").
+// Otherwise { overdue, daysSince } - daysSince is null when the person
+// has never been touched at all (no linked story has a date to derive
+// from), which counts as overdue by definition.
+export function cadenceStatus(cadence, lastTouched) {
+  const limit = CADENCE_DAYS[cadence];
+  if (!limit) return null;
+  if (!lastTouched) return { overdue: true, daysSince: null };
+  const daysSince = Math.floor((Date.now() - new Date(lastTouched).getTime()) / 86400000);
+  return { overdue: daysSince > limit, daysSince };
+}
+
 // Two people are connected if they share a story or the same org. Cheap,
 // derived from data already on each row - not a separate relations table.
 // See docs/platform-plan.md, "Network visualization" for the bigger,
@@ -155,7 +183,13 @@ export function buildNetwork(people, emailRows = []) {
 // physics, zoom and hover-highlight in the client component, not from
 // pre-filtering. People tagged to no story are left out (they'd float
 // unconnected); their count is reported instead.
-export function buildKnowledgeGraph(stories, people) {
+//
+// Companies (optional third argument) join as a third node type, linked
+// to their people and stories via company_id - the same FK /clienti
+// already uses. A company with no linked person or story is left out for
+// the same reason orphan people are: a floating node with no edge adds
+// noise, not signal.
+export function buildKnowledgeGraph(stories, people, companies = []) {
   const storyBySlug = new Map(stories.map((s) => [s.slug, s]));
   const nodes = [];
   const links = [];
@@ -173,10 +207,33 @@ export function buildKnowledgeGraph(stories, people) {
     });
   }
 
+  const companyIdx = new Map();
+  for (const c of companies) {
+    companyIdx.set(c.id, {
+      id: "c:" + c.id,
+      label: c.name,
+      type: "company",
+      url: `/clienti#company-${c.id}`,
+      count: 0,
+    });
+  }
+
+  function linkCompany(companyId, otherKey) {
+    if (!companyId || !companyIdx.has(companyId)) return;
+    const key = "c:" + companyId;
+    if (!idx.has(key)) {
+      idx.set(key, nodes.length);
+      nodes.push(companyIdx.get(companyId));
+    }
+    const ci = idx.get(key);
+    links.push({ s: idx.get(otherKey), t: ci });
+    nodes[ci].count++;
+  }
+
   let orphanCount = 0;
   for (const p of people) {
     const slugs = parseStorySlugs(p.stories).filter((sl) => storyBySlug.has(sl));
-    if (slugs.length === 0) {
+    if (slugs.length === 0 && !p.company_id) {
       orphanCount++;
       continue;
     }
@@ -196,12 +253,14 @@ export function buildKnowledgeGraph(stories, people) {
       links.push({ s: idx.get(key), t: si });
       nodes[si].count++;
     }
+    linkCompany(p.company_id, key);
   }
 
   for (const s of stories) {
     if (s.parent_slug && storyBySlug.has(s.parent_slug)) {
       links.push({ s: idx.get("s:" + s.slug), t: idx.get("s:" + s.parent_slug), parent: true });
     }
+    if (s.company_id) linkCompany(s.company_id, "s:" + s.slug);
   }
 
   return { nodes, links, orphanCount };
@@ -213,8 +272,8 @@ export function buildKnowledgeGraph(stories, people) {
 // normally; depth 1 when the center is a hub story, and hub stories
 // never pull their whole membership into someone else's neighborhood.
 // Links are re-indexed positionally - ObsidianGraph requires it.
-export function buildLocalGraph(centerId, stories, people, mdPairs = []) {
-  const { nodes, links } = buildKnowledgeGraph(stories, people);
+export function buildLocalGraph(centerId, stories, people, mdPairs = [], companies = []) {
+  const { nodes, links } = buildKnowledgeGraph(stories, people, companies);
   const idxById = new Map(nodes.map((n, i) => [n.id, i]));
   const center = idxById.get(centerId);
   if (center === undefined) return null;

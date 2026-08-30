@@ -44,7 +44,7 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       px[i] = Math.cos(a) * r;
       py[i] = Math.sin(a) * r;
       radius[i] =
-        nodes[i].type === "story"
+        nodes[i].type === "story" || nodes[i].type === "company"
           ? Math.min(16, 4.5 + Math.sqrt(nodes[i].count || 1) * 1.6)
           : nodes[i].photo
           ? 8
@@ -87,6 +87,7 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       dim: "#9b9ba3",
       story: "#a88bfa",
       sale: "#e5b567",
+      company: "#5ec8d8",
       person: "#8f8f96",
       glow: "#7f6df2",
     };
@@ -238,7 +239,8 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
           ctx.arc(px[i], py[i], r, 0, Math.PI * 2);
           ctx.stroke();
         } else {
-          ctx.fillStyle = n.type === "story" ? (n.kind === "sale" ? C.sale : C.story) : C.person;
+          ctx.fillStyle =
+            n.type === "story" ? (n.kind === "sale" ? C.sale : C.story) : n.type === "company" ? C.company : C.person;
           ctx.beginPath();
           ctx.arc(px[i], py[i], r, 0, Math.PI * 2);
           ctx.fill();
@@ -257,13 +259,13 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       for (let i = 0; i < N; i++) {
         const n = nodes[i];
         const inAct = act && act.has(i);
-        const zoomed =
-          !act && (n.type === "story" ? transform.k > 0.85 || radius[i] > 9 : transform.k > 2.1);
+        const isHubLike = n.type === "story" || n.type === "company";
+        const zoomed = !act && (isHubLike ? transform.k > 0.85 || radius[i] > 9 : transform.k > 2.1);
         if (!inAct && !zoomed) continue;
-        const size = Math.max(9 / transform.k, n.type === "story" ? 11 / transform.k : 9.5 / transform.k);
-        ctx.font = `${n.type === "story" ? "600 " : ""}${size}px system-ui, sans-serif`;
+        const size = Math.max(9 / transform.k, isHubLike ? 11 / transform.k : 9.5 / transform.k);
+        ctx.font = `${isHubLike ? "600 " : ""}${size}px system-ui, sans-serif`;
         ctx.globalAlpha = inAct ? 1 : 0.75;
-        ctx.fillStyle = n.type === "story" ? C.ink : C.dim;
+        ctx.fillStyle = isHubLike ? C.ink : C.dim;
         ctx.fillText(n.label, px[i], py[i] + radius[i] + 11 / transform.k);
       }
       ctx.restore();
@@ -321,9 +323,11 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
       if (!card) return;
       if (i >= 0) {
         const n = nodes[i];
+        const typeLabel =
+          n.type === "story" ? (n.kind === "sale" ? "cliente" : "storia") : n.type === "company" ? "azienda" : "persona";
         card.innerHTML =
           `<div class="graph-card-name">${n.label}</div>` +
-          `<div class="graph-card-meta">${n.type === "story" ? (n.kind === "sale" ? "cliente" : "storia") : "persona"}${n.count ? ` · ${n.count} collegament${n.count === 1 ? "o" : "i"}` : ""}</div>` +
+          `<div class="graph-card-meta">${typeLabel}${n.count ? ` · ${n.count} collegament${n.count === 1 ? "o" : "i"}` : ""}</div>` +
           `<a class="graph-card-open" href="${n.url}">Apri &rarr;</a>`;
       }
       updateCard();
@@ -480,9 +484,10 @@ export default function ObsidianGraph({ nodes, links, orphanCount = 0, height: f
         <span style={{ fontSize: 12, color: "var(--ink-faint)" }}>
           <span style={{ color: "#a88bfa" }}>●</span> storie{" "}
           <span style={{ color: "#e5b567" }}>●</span> clienti{" "}
+          <span style={{ color: "#5ec8d8" }}>●</span> aziende{" "}
           <span style={{ color: "#8f8f96" }}>●</span> persone · rotella
           = zoom, trascina = sposta, click = apri
-          {orphanCount > 0 ? ` · ${orphanCount} persone senza storia non mostrate` : ""}
+          {orphanCount > 0 ? ` · ${orphanCount} persone senza storia o azienda non mostrate` : ""}
         </span>
       </div>
       <div style={{ position: "relative", border: "1px solid var(--line)", borderRadius: "var(--radius)", overflow: "hidden" }}>

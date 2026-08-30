@@ -34,7 +34,7 @@ export default async function PersonPage({ params }) {
 
   const storyRows = await supabaseSelect(
     "ledger_stories",
-    "?select=slug,title,kind,parent_slug"
+    "?select=slug,title,kind,parent_slug,company_id"
   );
   const backIndex = buildBacklinkIndex();
   const mdPairs = [];
@@ -47,7 +47,8 @@ export default async function PersonPage({ params }) {
         "p:" + person.id,
         storyRows,
         allPeople.filter((p) => !p.archived),
-        mdPairs
+        mdPairs,
+        companies
       );
   const emails = await supabaseSelect(
     "ledger_people_emails",

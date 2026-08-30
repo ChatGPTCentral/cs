@@ -33,13 +33,24 @@ export default async function LeadsPage({ searchParams }) {
   const icpOnly = searchParams?.icp === "1";
 
   const [people, companies, photos] = await Promise.all([
-    supabaseSelect("ledger_people", "?select=id,name"),
+    supabaseSelect("ledger_people", "?select=id,name,company_id"),
     supabaseSelect("ledger_companies", "?select=id,name"),
     supabaseSelect("ledger_linkedin_connections", "?photo_url=not.is.null&select=linkedin_url,photo_url"),
   ]);
   const peopleByName = new Map(people.map((p) => [p.name.toLowerCase(), p]));
-  const companyNames = new Set(companies.map((c) => c.name.toLowerCase()));
+  const companyByName = new Map(companies.map((c) => [c.name.toLowerCase(), c]));
   const photoByUrl = new Map(photos.map((p) => [normalizeUrl(p.linkedin_url), p.photo_url]));
+
+  // Warm-intro signal (second-brain roadmap Phase 4): while browsing a
+  // cold lead, show how many CRM contacts already sit at the same
+  // company - the same "already tracked" fact /clienti shows, surfaced
+  // earlier, at prospecting time, instead of only after a company is
+  // registered.
+  const contactCountByCompanyId = new Map();
+  for (const p of people) {
+    if (!p.company_id) continue;
+    contactCountByCompanyId.set(p.company_id, (contactCountByCompanyId.get(p.company_id) || 0) + 1);
+  }
 
   const filtered = connections.filter((c) => {
     if (q && !matches(c, q)) return false;
@@ -110,7 +121,8 @@ export default async function LeadsPage({ searchParams }) {
           {results.map((c) => {
             const name = `${c.fn} ${c.ln}`.trim();
             const existingPerson = peopleByName.get(name.toLowerCase());
-            const companyTracked = c.company && companyNames.has(c.company.toLowerCase());
+            const matchedCompany = c.company ? companyByName.get(c.company.toLowerCase()) : null;
+            const warmContacts = matchedCompany ? contactCountByCompanyId.get(matchedCompany.id) || 0 : 0;
             const icpFit = icpRoleFit(c.position);
             const photoUrl = photoByUrl.get(normalizeUrl(c.url));
             return (
@@ -157,7 +169,16 @@ export default async function LeadsPage({ searchParams }) {
                     {c.position}
                     {c.position && c.company ? " · " : ""}
                     {c.company}
-                    {companyTracked && <span style={{ color: "var(--accent)" }}> · azienda già tracciata</span>}
+                    {matchedCompany && (
+                      <span style={{ color: "var(--accent)" }}>
+                        {" · "}
+                        <a href={`/clienti#company-${matchedCompany.id}`} style={{ color: "inherit" }}>
+                          {warmContacts > 0
+                            ? `già caldo - ${warmContacts} contatt${warmContacts === 1 ? "o" : "i"} in CRM`
+                            : "azienda già tracciata"}
+                        </a>
+                      </span>
+                    )}
                   </div>
                 </div>
                 {existingPerson ? (

@@ -134,6 +134,23 @@ export async function updateStories(formData) {
   revalidatePath("/people");
 }
 
+// Cadence is Alex's own call on how often a relationship deserves a
+// touch (monthly/quarterly/biannual/as-needed) - never inferred, since
+// guessing how important someone is to him is exactly the kind of fact
+// this project refuses to invent. "Last touched" stays derived, not
+// stored here - see lib/people.js lastTouchedFor.
+export async function updateCadence(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_people", `?id=eq.${id}`, {
+    cadence: (formData.get("cadence") || "").toString().trim() || null,
+  });
+
+  revalidatePath(`/people/${id}`);
+  revalidatePath("/people");
+}
+
 export async function updateBackground(formData) {
   const id = (formData.get("id") || "").toString();
   if (!id) return;
