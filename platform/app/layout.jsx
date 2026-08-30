@@ -28,6 +28,7 @@ export default async function RootLayout({ children }) {
               <a href="/genesis">Genesis</a>
               <a href="/stories">All stories</a>
               <a href="/network">Network</a>
+              <a href="/places">Luoghi</a>
               <a href="/people">People</a>
               <a href="/people/review">
                 Review{pending.length > 0 ? ` (${pending.length})` : ""}

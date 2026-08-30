@@ -195,3 +195,17 @@ export async function updateStoryStrategy(formData) {
   revalidatePath("/nba");
   revalidatePath("/");
 }
+
+export async function updateStoryLocation(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, {
+    location: (formData.get("location") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/genesis");
+  revalidatePath("/story");
+  revalidatePath("/places");
+}

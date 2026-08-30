@@ -8,7 +8,7 @@ import {
   findUnlinkedPeopleMentions,
   findUnlinkedStoryMentions,
 } from "../../../lib/links";
-import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate, updateStoryStrategy, tagPersonToStory, proposeLink } from "../actions";
+import { updateStoryStart, updateStoryEnd, updateStoryAxis, updateStoryNextAction, updateStoryNextActionDate, updateStoryStrategy, updateStoryLocation, tagPersonToStory, proposeLink } from "../actions";
 import TableCellInput from "../../people/TableCellInput";
 import SaveWatcher from "../../people/SaveWatcher";
 import SavedToast from "../../people/SavedToast";
@@ -128,9 +128,16 @@ export default async function StoryPage({ params }) {
             <p className="field-label" style={{ margin: 0 }}>
               {storyRow.kind === "event" ? "Evento" : storyRow.kind === "sale" ? "Vendita" : "Momento o filo"}, sulla timeline
             </p>
-            {storyRow.location && (
-              <span style={{ fontSize: 13, color: "var(--ink-faint)" }}>· {storyRow.location}</span>
-            )}
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 13, color: "var(--ink-faint)" }}>
+              ·
+              <TableCellInput
+                action={updateStoryLocation}
+                id={storyRow.id}
+                name="location"
+                defaultValue={storyRow.location || ""}
+                placeholder="luogo..."
+              />
+            </span>
           </div>
           {parentStory && (
             <p style={{ margin: "0 0 8px", fontSize: 13 }}>
