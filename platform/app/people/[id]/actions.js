@@ -1,6 +1,7 @@
 "use server";
 
 import { supabaseSelect, supabaseUpdate } from "../../../lib/supabase";
+import { findOrCreateCompany } from "../../../lib/companies";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -24,10 +25,14 @@ export async function updatePerson(formData) {
   const id = (formData.get("id") || "").toString();
   if (!id) return;
 
+  const companyName = (formData.get("company") || "").toString().trim();
+  const companyId = companyName ? await findOrCreateCompany(companyName) : null;
+
   await supabaseUpdate("ledger_people", `?id=eq.${id}`, {
     name: (formData.get("name") || "").toString().trim() || null,
     identity: (formData.get("identity") || "").toString().trim() || null,
     org: (formData.get("org") || "").toString().trim() || null,
+    company_id: companyId,
     stories: (formData.get("stories") || "").toString().trim() || null,
     lists: (formData.get("lists") || "").toString().trim() || null,
     background: (formData.get("background") || "").toString().trim() || null,

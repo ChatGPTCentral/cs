@@ -210,42 +210,6 @@ export async function updateStoryLocation(formData) {
   revalidatePath("/places");
 }
 
-// Company branding: domain drives the auto logo (Google's public favicon
-// service - keyless, no account, been stable for years; it's a favicon,
-// not a full transparent logo, so it's a starting point). logo_url is
-// the manual override for a real press-kit logo or when the favicon
-// guess is wrong. Setting domain alone auto-fills logo_url unless one
-// is already set.
-//
-// Clearbit's logo.clearbit.com (the original choice here) is dead as of
-// 2026 - the domain no longer resolves at all, discovered when Alex
-// reported every logo broken. Not a proxy or config issue, the service
-// itself is gone.
-export async function updateStoryDomain(formData) {
-  const id = (formData.get("id") || "").toString();
-  if (!id) return;
-  const domain = (formData.get("domain") || "").toString().trim().toLowerCase() || null;
-
-  const patch = { domain, updated_at: new Date().toISOString() };
-  if (domain) {
-    const [row] = await supabaseSelect("ledger_stories", `?id=eq.${id}&select=logo_url`);
-    if (!row?.logo_url) patch.logo_url = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
-  }
-
-  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, patch);
-  revalidatePath("/clienti");
-  revalidatePath("/story");
-}
-
-export async function updateStoryLogoUrl(formData) {
-  const id = (formData.get("id") || "").toString();
-  if (!id) return;
-
-  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, {
-    logo_url: (formData.get("logo_url") || "").toString().trim() || null,
-    updated_at: new Date().toISOString(),
-  });
-
-  revalidatePath("/clienti");
-  revalidatePath("/story");
-}
+// Company branding (domain, logo) now lives on ledger_companies, not on the
+// story - see platform/app/clienti/actions.js. A story can point at a
+// company via company_id, but never carries its own domain/logo again.

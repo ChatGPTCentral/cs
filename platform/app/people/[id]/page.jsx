@@ -16,7 +16,13 @@ export default async function PersonPage({ params }) {
   const [person] = await supabaseSelect("ledger_people", `?id=eq.${params.id}`);
   if (!person) notFound();
 
-  const allPeople = await supabaseSelect("ledger_people", "?order=name.asc");
+  const [allPeople, companies, [company]] = await Promise.all([
+    supabaseSelect("ledger_people", "?order=name.asc"),
+    supabaseSelect("ledger_companies", "?select=id,name&order=name.asc"),
+    person.company_id
+      ? supabaseSelect("ledger_companies", `?id=eq.${person.company_id}&select=id,name,relationship,icp_fit`)
+      : Promise.resolve([]),
+  ]);
   const connections = findConnections(person, allPeople);
   const mergedIntoPerson = person.merged_into
     ? allPeople.find((p) => p.id === person.merged_into)
@@ -139,6 +145,14 @@ export default async function PersonPage({ params }) {
             <span className="field-label">Org</span> {person.org}
           </p>
         )}
+        {company && (
+          <p style={{ color: "var(--ink-dim)", margin: "0 0 12px" }}>
+            <span className="field-label">Azienda</span>{" "}
+            <a href={`/clienti#company-${company.id}`}>{company.name}</a>
+            {company.relationship ? ` · ${company.relationship}` : ""}
+            {company.icp_fit ? ` · fit ${company.icp_fit}` : ""}
+          </p>
+        )}
         {person.identity && (
           <p className="entry-meta">
             <span className="field-label">Identity</span> {person.identity}
@@ -179,6 +193,19 @@ export default async function PersonPage({ params }) {
         <input id="f-identity" name="identity" placeholder="Email or identity" defaultValue={person.identity || ""} />
         <label className="field-label" htmlFor="f-org">Org</label>
         <input id="f-org" name="org" placeholder="Org" defaultValue={person.org || ""} />
+        <label className="field-label" htmlFor="f-company">Azienda (CRM)</label>
+        <input
+          id="f-company"
+          name="company"
+          list="company-names-people"
+          placeholder="Collega a un'azienda del CRM (opzionale, diverso da Org)"
+          defaultValue={company?.name || ""}
+        />
+        <datalist id="company-names-people">
+          {companies.map((c) => (
+            <option key={c.id} value={c.name} />
+          ))}
+        </datalist>
         <label className="field-label" htmlFor="f-stories">Story slugs</label>
         <input
           id="f-stories"

@@ -75,6 +75,9 @@ export default async function StoryPage({ params }) {
     ),
   ]);
   const storyRow = storyRows[0] || null;
+  const [company] = storyRow?.company_id
+    ? await supabaseSelect("ledger_companies", `?id=eq.${storyRow.company_id}&select=id,name,logo_url,relationship,icp_fit`)
+    : [];
 
   // Wiki-link context: slugs and titles from the DB rows (covers row-only
   // stories) plus the md index; person resolution against live people.
@@ -126,7 +129,7 @@ export default async function StoryPage({ params }) {
       {storyRow && (
         <div className="content" style={{ marginBottom: 16 }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
-            <CompanyLogo src={storyRow.logo_url} name={storyRow.title} size={22} />
+            <CompanyLogo src={company?.logo_url} name={storyRow.title} size={22} />
             <p className="field-label" style={{ margin: 0 }}>
               {storyRow.kind === "event" ? "Evento" : storyRow.kind === "sale" ? "Vendita" : "Momento o filo"}, sulla timeline
             </p>
