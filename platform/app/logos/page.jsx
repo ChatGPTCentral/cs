@@ -8,9 +8,10 @@ import SavedToast from "../people/SavedToast";
 export const dynamic = "force-dynamic";
 
 // The logo table: one row per company-story. Fill "dominio" and the app
-// derives a logo automatically via Clearbit's public keyless CDN
-// (https://logo.clearbit.com/{domain}) - no API key, no account. If a
-// company isn't on it, or the guess is wrong, override "logo url"
+// derives a logo automatically via Google's public favicon service
+// (https://www.google.com/s2/favicons?domain={domain}) - no API key, no
+// account. It is favicon quality, not a full transparent press-kit logo.
+// If a company isn't on it, or the guess is wrong, override "logo url"
 // directly. Both fields save on blur, live preview updates immediately.
 export default async function LogosPage() {
   const [dealCompanies, stories] = await Promise.all([

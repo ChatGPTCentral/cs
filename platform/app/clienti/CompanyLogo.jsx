@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-// A public, keyless logo CDN (Clearbit) can 404 for a wrong or unlisted
-// domain - this hides itself on error instead of showing a broken-image
-// icon, same spirit as Avatar's initial-letter fallback.
+// A public, keyless favicon service (Google) can fail for a wrong or
+// unlisted domain - this hides itself on error instead of showing a
+// broken-image icon, same spirit as Avatar's initial-letter fallback.
 export default function CompanyLogo({ src, name, size = 20 }) {
   const [failed, setFailed] = useState(false);
   if (!src || failed) return null;
