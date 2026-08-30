@@ -1,5 +1,6 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { addLeadFromLinkedin } from "./actions";
+import { icpRoleFit } from "../../lib/icp";
 import SaveWatcher from "../people/SaveWatcher";
 import SavedToast from "../people/SavedToast";
 import connections from "../../data/linkedin-connections.json";
@@ -8,6 +9,7 @@ export const dynamic = "force-dynamic";
 
 const QUICK_FILTERS = ["Founder", "CEO", "CMO", "Marketing", "Growth", "Partnership"];
 const MAX_RESULTS = 150;
+const ICP_LABEL = { good: "fit ICP buono", medium: "fit ICP medio" };
 
 function matches(c, q) {
   const hay = `${c.fn} ${c.ln} ${c.company || ""} ${c.position || ""}`.toLowerCase();
@@ -23,6 +25,7 @@ function matches(c, q) {
 // CRM person with one click - the "find new leads" half of the CRM.
 export default async function LeadsPage({ searchParams }) {
   const q = (searchParams?.q || "").trim().toLowerCase();
+  const icpOnly = searchParams?.icp === "1";
 
   const [people, companies] = await Promise.all([
     supabaseSelect("ledger_people", "?select=id,name"),
@@ -31,10 +34,13 @@ export default async function LeadsPage({ searchParams }) {
   const peopleByName = new Map(people.map((p) => [p.name.toLowerCase(), p]));
   const companyNames = new Set(companies.map((c) => c.name.toLowerCase()));
 
-  const results = q
-    ? connections.filter((c) => matches(c, q)).slice(0, MAX_RESULTS)
-    : [];
-  const totalMatches = q ? connections.filter((c) => matches(c, q)).length : 0;
+  const filtered = connections.filter((c) => {
+    if (q && !matches(c, q)) return false;
+    if (icpOnly && !icpRoleFit(c.position)) return false;
+    return true;
+  });
+  const results = q || icpOnly ? filtered.slice(0, MAX_RESULTS) : [];
+  const totalMatches = filtered.length;
 
   return (
     <>
@@ -54,26 +60,41 @@ export default async function LeadsPage({ searchParams }) {
             style={{ fontSize: 14, padding: "8px 12px", border: "1px solid var(--line)", borderRadius: "var(--radius)", width: "100%", maxWidth: 420 }}
           />
         </form>
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
           {QUICK_FILTERS.map((f) => (
-            <a key={f} href={`/leads?q=${encodeURIComponent(f.toLowerCase())}`} className="list-tab">
+            <a
+              key={f}
+              href={`/leads?q=${encodeURIComponent(f.toLowerCase())}${icpOnly ? "&icp=1" : ""}`}
+              className="list-tab"
+            >
               {f}
             </a>
           ))}
+          <a
+            href={`/leads?${q ? `q=${encodeURIComponent(q)}&` : ""}icp=${icpOnly ? "0" : "1"}`}
+            className="list-tab"
+            style={icpOnly ? { color: "var(--accent)", borderColor: "var(--accent)" } : undefined}
+          >
+            {icpOnly ? "✓ " : ""}Solo fit ICP (ruolo)
+          </a>
         </div>
+        <p style={{ fontSize: 12, color: "var(--ink-faint)", margin: "8px 0 0" }}>
+          Il fit ICP qui guarda solo il titolo (founder, CEO, CMO, growth, partnership...) - prezzo e
+          free tier dell&apos;azienda non si leggono da LinkedIn, servirebbe un arricchimento in più.
+        </p>
       </div>
 
-      {!q && (
+      {!q && !icpOnly && (
         <p style={{ color: "var(--ink-faint)" }}>
-          Scrivi qualcosa per iniziare - un ruolo, un&apos;azienda, un nome.
+          Scrivi qualcosa per iniziare - un ruolo, un&apos;azienda, un nome - o prova &ldquo;Solo fit ICP&rdquo;.
         </p>
       )}
 
-      {q && results.length === 0 && (
+      {(q || icpOnly) && results.length === 0 && (
         <p style={{ color: "var(--ink-faint)" }}>Niente per &ldquo;{q}&rdquo;.</p>
       )}
 
-      {q && results.length > 0 && (
+      {(q || icpOnly) && results.length > 0 && (
         <div className="content">
           <p className="field-label" style={{ margin: "0 0 10px" }}>
             {totalMatches.toLocaleString("it-IT")} risultati
@@ -83,6 +104,7 @@ export default async function LeadsPage({ searchParams }) {
             const name = `${c.fn} ${c.ln}`.trim();
             const existingPerson = peopleByName.get(name.toLowerCase());
             const companyTracked = c.company && companyNames.has(c.company.toLowerCase());
+            const icpFit = icpRoleFit(c.position);
             return (
               <div key={c.url || name} className="entry" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
                 <div style={{ flex: 1, minWidth: 220 }}>
@@ -95,6 +117,14 @@ export default async function LeadsPage({ searchParams }) {
                       name
                     )}
                   </strong>
+                  {icpFit && (
+                    <span
+                      className="nba-chip"
+                      style={{ marginLeft: 8, color: icpFit === "good" ? "var(--accent)" : "var(--ink-dim)", borderColor: icpFit === "good" ? "var(--accent)" : "var(--line)" }}
+                    >
+                      {ICP_LABEL[icpFit]}
+                    </span>
+                  )}
                   <div className="entry-meta">
                     {c.position}
                     {c.position && c.company ? " · " : ""}
