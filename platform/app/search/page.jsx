@@ -1,5 +1,6 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { buildBacklinkIndex, escapeRegex } from "../../lib/links";
+import Avatar from "../people/Avatar";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +29,7 @@ function snippet(text, q) {
 function Snippet({ parts, q }) {
   if (!parts) return null;
   return (
-    <p style={{ margin: "2px 0 0", fontSize: 13, color: "var(--ink-dim)" }}>
+    <p style={{ margin: "2px 0 0", fontSize: 13, color: "var(--ink-dim)", flexBasis: "100%" }}>
       {parts.map((p, i) =>
         p.toLowerCase() === q ? <mark key={i}>{p}</mark> : <span key={i}>{p}</span>
       )}
@@ -58,7 +59,7 @@ export default async function SearchPage({ searchParams }) {
 
   const [storyRows, people, events] = await Promise.all([
     supabaseSelect("ledger_stories", "?select=slug,title,kind,start_date"),
-    supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,org,identity,background,lists"),
+    supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,org,identity,background,lists,photo_url"),
     supabaseSelect("ledger_genesis_events", "?select=id,title,description,story_ref,year,month"),
   ]);
   const { rawBySlug } = buildBacklinkIndex();
@@ -128,7 +129,8 @@ export default async function SearchPage({ searchParams }) {
         <>
           <p className="field-label" style={{ margin: "16px 0 6px" }}>Persone ({persons.length})</p>
           {persons.map((p) => (
-            <div key={p.id} className="entry">
+            <div key={p.id} className="entry" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+              <Avatar name={p.name} photoUrl={p.photo_url} size={22} />
               <a href={`/people/${p.id}`}><strong>{p.name}</strong></a>
               {p.org && <span className="entry-meta"> · {p.org}</span>}
               <Snippet parts={p.parts} q={q} />

@@ -277,8 +277,9 @@ export default async function StoryPage({ params }) {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
                 {unlinkedPeople.map((p) => (
                   <span key={p.id} style={{ display: "inline-flex", alignItems: "center", gap: 2 }}>
-                    <a href={`/people/${p.id}`} className="list-tab">
-                      👤 {p.name}
+                    <a href={`/people/${p.id}`} className="list-tab" style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                      <Avatar name={p.name} photoUrl={p.photo_url} size={16} />
+                      {p.name}
                     </a>
                     <form action={tagPersonToStory} style={{ display: "inline" }}>
                       <input type="hidden" name="personId" value={p.id} />

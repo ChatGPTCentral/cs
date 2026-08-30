@@ -78,7 +78,8 @@ export default async function PersonPage({ params }) {
           style={{ marginBottom: 20, color: "var(--accent-ink)", background: "var(--accent-wash)" }}
         >
           Merged into{" "}
-          <a href={`/people/${mergedIntoPerson.id}`}>
+          <a href={`/people/${mergedIntoPerson.id}`} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+            <Avatar name={mergedIntoPerson.name} photoUrl={mergedIntoPerson.photo_url} size={20} />
             <strong>{mergedIntoPerson.name}</strong>
           </a>
           . This record is kept for reference - nothing was deleted. Unarchive to undo the merge.
@@ -400,12 +401,13 @@ export default async function PersonPage({ params }) {
           </p>
         )}
         {connections.map((c) => (
-          <div key={c.person.id} className="entry">
+          <div key={c.person.id} className="entry" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <Avatar name={c.person.name} photoUrl={c.person.photo_url} size={22} />
             <a href={`/people/${c.person.id}`}>
               <strong>{c.person.name}</strong>
             </a>
             {c.person.org ? ` — ${c.person.org}` : ""}
-            <div className="entry-meta">
+            <div className="entry-meta" style={{ flexBasis: "100%" }}>
               {c.sameOrg ? "same org" : ""}
               {c.sameOrg && c.sharedStories.length > 0 ? " · " : ""}
               {c.sharedStories.length > 0 ? `shared: ${c.sharedStories.join(", ")}` : ""}

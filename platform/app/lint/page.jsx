@@ -1,5 +1,6 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { parseStorySlugs } from "../../lib/people";
+import Avatar from "../people/Avatar";
 
 export const dynamic = "force-dynamic";
 
@@ -25,7 +26,7 @@ export default async function LintPage() {
     ),
     supabaseSelect(
       "ledger_people",
-      "?archived=eq.false&select=id,name,org,stories,company_id&order=name.asc"
+      "?archived=eq.false&select=id,name,org,stories,company_id,photo_url&order=name.asc"
     ),
   ]);
 
@@ -103,7 +104,8 @@ export default async function LintPage() {
         </p>
         {orphanPeople.length === 0 && <p style={{ color: "var(--ink-faint)" }}>Nessuna.</p>}
         {orphanPeople.map((p) => (
-          <div key={p.id} className="entry">
+          <div key={p.id} className="entry" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <Avatar name={p.name} photoUrl={p.photo_url} size={22} />
             <a href={`/people/${p.id}`}>
               <strong>{p.name}</strong>
             </a>

@@ -11,6 +11,7 @@ import {
 import TableCellInput from "../people/TableCellInput";
 import SaveWatcher from "../people/SaveWatcher";
 import SavedToast from "../people/SavedToast";
+import Avatar from "../people/Avatar";
 import CompanyLogo from "./CompanyLogo";
 
 export const dynamic = "force-dynamic";
@@ -34,7 +35,7 @@ export default async function ClientiPage() {
   const [companies, deals, people, storyRows, linkedinContacts] = await Promise.all([
     supabaseSelect("ledger_companies", "?order=name.asc"),
     supabaseSelect("ledger_deals", "?order=paid_date.desc.nullslast"),
-    supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,company_id&order=name.asc"),
+    supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,company_id,photo_url&order=name.asc"),
     supabaseSelect("ledger_stories", "?select=slug,title,company_id&company_id=not.is.null"),
     supabaseSelect("ledger_linkedin_connections", "?company_id=not.is.null&select=company_id,first_name,last_name,linkedin_url,position"),
   ]);
@@ -168,15 +169,17 @@ export default async function ClientiPage() {
           </div>
 
           {contacts.length > 0 && (
-            <p style={{ fontSize: 12.5, margin: "0 0 8px", color: "var(--ink-dim)" }}>
-              <span className="field-label">Contatti</span>{" "}
-              {contacts.map((p, i) => (
-                <span key={p.id}>
-                  {i > 0 && ", "}
-                  <a href={`/people/${p.id}`}>{p.name}</a>
-                </span>
-              ))}
-            </p>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", margin: "0 0 8px" }}>
+              <span className="field-label">Contatti</span>
+              <div className="genesis-people-links">
+                {contacts.map((p) => (
+                  <a key={p.id} href={`/people/${p.id}`} className="genesis-person-chip">
+                    <Avatar name={p.name} photoUrl={p.photo_url} size={18} />
+                    {p.name}
+                  </a>
+                ))}
+              </div>
+            </div>
           )}
 
           {linkedinContacts.length > 0 && (
