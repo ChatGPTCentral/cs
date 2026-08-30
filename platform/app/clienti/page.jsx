@@ -8,7 +8,7 @@ import CompanyLogo from "./CompanyLogo";
 
 export const dynamic = "force-dynamic";
 
-const CHANNELS = ["Gmail", "Stripe", "Passionfroot", "LinkedIn", "Calendly", "Referral", "Altro"];
+const CHANNELS = ["Gmail", "Stripe", "Passionfroot (Alex)", "Alex", "Sunny", "LinkedIn", "Calendly", "Referral", "Altro"];
 
 function fmt(amount, currency) {
   if (amount == null) return null;
