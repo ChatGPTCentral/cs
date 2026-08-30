@@ -14,6 +14,7 @@ import SaveWatcher from "../../people/SaveWatcher";
 import SavedToast from "../../people/SavedToast";
 import Avatar from "../../people/Avatar";
 import ObsidianGraph from "../../network/ObsidianGraph";
+import CompanyLogo from "../../clienti/CompanyLogo";
 
 export const dynamic = "force-dynamic";
 
@@ -125,6 +126,7 @@ export default async function StoryPage({ params }) {
       {storyRow && (
         <div className="content" style={{ marginBottom: 16 }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
+            <CompanyLogo src={storyRow.logo_url} name={storyRow.title} size={22} />
             <p className="field-label" style={{ margin: 0 }}>
               {storyRow.kind === "event" ? "Evento" : storyRow.kind === "sale" ? "Vendita" : "Momento o filo"}, sulla timeline
             </p>

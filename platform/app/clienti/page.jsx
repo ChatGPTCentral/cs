@@ -3,6 +3,7 @@ import { addDeal, updateDealField, confirmDeal } from "./actions";
 import TableCellInput from "../people/TableCellInput";
 import SaveWatcher from "../people/SaveWatcher";
 import SavedToast from "../people/SavedToast";
+import CompanyLogo from "./CompanyLogo";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +17,11 @@ function fmt(amount, currency) {
 // paid, with provenance. Confirmed = payment evidence on file (invoice
 // paid, Stripe receipt, payout notification) or Alex's explicit word.
 export default async function ClientiPage() {
-  const deals = await supabaseSelect("ledger_deals", "?order=paid_date.desc.nullslast");
+  const [deals, storyRows] = await Promise.all([
+    supabaseSelect("ledger_deals", "?order=paid_date.desc.nullslast"),
+    supabaseSelect("ledger_stories", "?select=slug,logo_url"),
+  ]);
+  const logoBySlug = new Map(storyRows.map((s) => [s.slug, s.logo_url]));
 
   const byCompany = new Map();
   for (const d of deals) {
@@ -30,7 +35,8 @@ export default async function ClientiPage() {
         .reduce((s, d) => s + Number(d.amount), 0);
       const hasUnknown = list.some((d) => d.amount == null);
       const slug = list.find((d) => d.story_slug)?.story_slug || null;
-      return { company, list, confirmedUsd, hasUnknown, slug };
+      const logoUrl = slug ? logoBySlug.get(slug) : null;
+      return { company, list, confirmedUsd, hasUnknown, slug, logoUrl };
     })
     .sort((a, b) => b.confirmedUsd - a.confirmedUsd || a.company.localeCompare(b.company));
 
@@ -52,11 +58,15 @@ export default async function ClientiPage() {
           ${totalConfirmed.toLocaleString("en-US", { maximumFractionDigits: 2 })}
           <span style={{ fontSize: 13, fontWeight: 400, color: "var(--ink-faint)" }}> confermati (USD)</span>
         </p>
+        <p style={{ fontSize: 12.5, margin: 0 }}>
+          <a href="/logos">Gestisci i loghi &rarr;</a>
+        </p>
       </div>
 
-      {companies.map(({ company, list, confirmedUsd, slug }) => (
+      {companies.map(({ company, list, confirmedUsd, slug, logoUrl }) => (
         <div key={company} className="content" style={{ marginBottom: 14 }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+            <CompanyLogo src={logoUrl} name={company} size={24} />
             <h3 style={{ fontWeight: 600, fontSize: 16, margin: "4px 0" }}>
               {slug ? <a href={`/story/${slug}`}>{company}</a> : company}
             </h3>

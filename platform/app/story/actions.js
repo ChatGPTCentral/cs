@@ -209,3 +209,38 @@ export async function updateStoryLocation(formData) {
   revalidatePath("/story");
   revalidatePath("/places");
 }
+
+// Company branding: domain drives the auto logo (a public, keyless CDN -
+// see /logos), logo_url is the manual override for when the CDN guess
+// is wrong or the company isn't on it. Setting domain alone auto-fills
+// logo_url unless one is already set.
+export async function updateStoryDomain(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+  const domain = (formData.get("domain") || "").toString().trim().toLowerCase() || null;
+
+  const patch = { domain, updated_at: new Date().toISOString() };
+  if (domain) {
+    const [row] = await supabaseSelect("ledger_stories", `?id=eq.${id}&select=logo_url`);
+    if (!row?.logo_url) patch.logo_url = `https://logo.clearbit.com/${domain}`;
+  }
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, patch);
+  revalidatePath("/clienti");
+  revalidatePath("/logos");
+  revalidatePath("/story");
+}
+
+export async function updateStoryLogoUrl(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, {
+    logo_url: (formData.get("logo_url") || "").toString().trim() || null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/clienti");
+  revalidatePath("/logos");
+  revalidatePath("/story");
+}
