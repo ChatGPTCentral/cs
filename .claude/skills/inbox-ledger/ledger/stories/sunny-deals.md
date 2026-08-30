@@ -64,8 +64,19 @@ Roster - company, contact(s) pitched, last activity, status:
 | Iru | daniel.scott@iru.com | 2026-02-18 | no reply |
 | Framer | zhanna@framer.com | 2026-04-02 | no reply |
 
-**Open question for Alex, 2026-08-30.** 29 cold companies, zero replies. Real
-reactivation now has proof points the January pitch did not (ElevenLabs,
-Gamma, Luma AI, Replit all closed and paid since). Alex needs to decide
-scope and angle before any drafts go out - see the ledger session note for
-the specific questions asked.
+**Reactivation drafted, 2026-08-30.** Alex chose: all 29 companies, fresh
+start (no reference to the old thread), naming ElevenLabs, Gamma, Luma AI
+and Replit as proof. 27 Gmail drafts created, one per company, signed as
+Alex (not Sam - his current status on the outbound pipeline is unknown, so
+this defaults to Alex's own voice rather than assume). Two exceptions, not
+drafted:
+- **IBM** (jprota@gmail.com) - a personal Gmail address with no verified
+  IBM affiliation, likely a bad lead. Flagged, not drafted
+- **Synthflow AI GmbH** (tom.baker@synthflow.ai) - already a paying client
+  through a different contact (jian@synthflow.ai, see synthflow-ai). A cold
+  re-pitch to a second contact is the wrong move here - this needs a warm
+  reactivation through the existing relationship instead, not a fresh draft
+  under this pipeline
+
+All 27 drafts sit in Gmail, unsent, awaiting Alex's review per the standing
+draft-only rule.
