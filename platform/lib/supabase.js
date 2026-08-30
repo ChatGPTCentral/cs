@@ -45,9 +45,9 @@ export async function supabaseInsert(table, row) {
 }
 
 // Insert-or-update on a unique column (e.g. a URL) in one round trip,
-// via PostgREST's upsert support. `conflictColumn` must have a unique
-// index - see ledger_linkedin_connections_url_uq for the one existing
-// use of this.
+// via PostgREST's upsert support. `conflictColumn` needs a real unique
+// constraint, not just a partial unique index - PostgREST's ON CONFLICT
+// can't target a partial index. See ledger_linkedin_connections_linkedin_url_key.
 export async function supabaseUpsert(table, rows, conflictColumn) {
   const res = await fetch(`${REST_URL}/${table}?on_conflict=${conflictColumn}`, {
     method: "POST",
