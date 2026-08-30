@@ -119,16 +119,16 @@ export default async function LeadsPage({ searchParams }) {
                   <img
                     src={photoUrl}
                     alt=""
-                    width={36}
-                    height={36}
+                    width={56}
+                    height={56}
                     style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
                   />
                 ) : (
                   <div
                     aria-hidden="true"
                     style={{
-                      width: 36,
-                      height: 36,
+                      width: 56,
+                      height: 56,
                       borderRadius: "50%",
                       background: "var(--line)",
                       flexShrink: 0,
