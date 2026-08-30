@@ -27,3 +27,9 @@
   newsletter monetization at "Cozora Academy" (founder Michael Simmons,
   150K+ readers) and floats an in-person SF event for late April/early
   May.
+
+  **auto-genesis sweep, 2026-08-30.** The dub.co affiliate side of this
+  relationship is live and paying: Anything sent a $71.70 payout for
+  commissions made on 26 Jul 2026 (dub.co notification, 28 Aug, thread
+  `1a0486cd9f4e8340`). Small money, but proof the affiliate structure
+  converts - a concrete number for the revival pitch to Aleena.

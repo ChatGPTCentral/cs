@@ -8,13 +8,17 @@
   Hiscox - see `graph/orgs.md`. Sven Thate (`sventhate@yahoo.de`) introduced in
   person, kept for future contact
 - ours on the thread: Alex (both addresses), Elizabeth
-- status: **draft ready, blocked on Alex**
-- last-inbound: 2026-08-18 02:35 (Richard@hewlettrand.com, to Alex and Elizabeth)
+- status: **yours** - Richard wrote again on 28 Aug (new thread), on top
+  of the still-unsent draft
+- last-inbound: 2026-08-28 09:47 (Richard@hewlettrand.com, thread
+  `1a047c4e361b5de3`, to Alex and Elizabeth)
 - last-outbound: 2026-08-17 18:36 (alex@thecentral.ai)
-- idle: n/a - a reply is drafted, not yet sent
-- next-action: **send the draft on `1a00a41717b4a24b`, once Alex supplies his
-  shipping address for the tote bags Richard offered.** Everything else in
-  Richard's message is answered
+- idle: n/a - a reply is drafted, not yet sent, and a second inbound
+  now waits too
+- next-action: reply to Richard's 28 Aug message (partner feedback for
+  their 2027 planning + whether AI Central needs anything for the
+  follow-on stories), and send the older draft on `1a00a41717b4a24b`
+  once Alex supplies his shipping address
 - commitments:
   - "we wanted to send you some nice AI Central swag" - made 2026-08-17 by Alex
     - Richard replied with size (Medium) and address (Wells, not Bristol) -
@@ -47,6 +51,18 @@
   on 2026-08-14, bus back to London (Victoria Coach Station) 2026-08-15.
   That's the actual event window this story's threads lead up to and follow
   from
+
+  **auto-genesis sweep, 2026-08-30.** New inbound from Richard, 28 Aug
+  (thread `1a047c4e361b5de3`, to Alex + Elizabeth): the hackathon is
+  done and the tracked feedback from students and both universities is
+  "extremely positive." Richard is back from the TWEA recce trip to
+  China (attached a "UK Tech Mission to GBA China" PDF). Three asks in
+  his message: (1) partner feedback - positive and improvements - for
+  their project review as they plan 2027; (2) whether AI Central needs
+  anything more from him for follow-on stories (TWEA, Industry Partner,
+  Winning Teams); (3) as a TWEA member, Alex can propose tech contacts
+  for the upcoming UK Tech Mission to the Great Bay Area, China. Ball
+  is Alex's on two threads now.
 
   **Notion call sweep, 2026-08-26.** Two more real calls found. 24 Jul 2026:
   Richard Lowe describes the hackathon itself as a two-day event, 13-14 Aug
