@@ -68,9 +68,24 @@ export async function GET() {
   const peopleByUrl = new Map(people.map((p) => [normalizeUrl(p.linkedin_url), p]));
 
   const results = [];
-  for (const item of items) {
+  for (const [index, item] of items.entries()) {
     const sourceUrl = item.linkedinUrl || item.linkedinPublicUrl || item.inputUrl || null;
-    const photo = item.profilePicture || item.profilePictureUrl || item.photo || item.avatarUrl || null;
+    const photo =
+      item.profilePicture ||
+      item.profilePictureUrl ||
+      item.profileImage ||
+      item.profileImageUrl ||
+      item.profilePic ||
+      item.profilePicHighQuality ||
+      item.picture ||
+      item.pictureUrl ||
+      item.photo ||
+      item.photoUrl ||
+      item.avatarUrl ||
+      item.avatar ||
+      item.img ||
+      item.imageUrl ||
+      null;
     const isPlaceholder = !!(photo && photo.includes("static.licdn.com"));
     const person = sourceUrl ? peopleByUrl.get(normalizeUrl(sourceUrl)) : null;
 
@@ -94,6 +109,10 @@ export async function GET() {
       hasPhoto: !!photo,
       isPlaceholder,
       writtenToPendingReview,
+      // Debug only, first item - none of the guessed field names above
+      // matched on the first pilot run, so dump the real keys once to
+      // find the actual photo field name instead of guessing again.
+      ...(index === 0 ? { debugAllKeys: Object.keys(item) } : {}),
     });
   }
 
