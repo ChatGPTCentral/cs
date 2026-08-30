@@ -234,7 +234,6 @@ export async function updateStoryDomain(formData) {
 
   await supabaseUpdate("ledger_stories", `?id=eq.${id}`, patch);
   revalidatePath("/clienti");
-  revalidatePath("/logos");
   revalidatePath("/story");
 }
 
@@ -248,6 +247,5 @@ export async function updateStoryLogoUrl(formData) {
   });
 
   revalidatePath("/clienti");
-  revalidatePath("/logos");
   revalidatePath("/story");
 }

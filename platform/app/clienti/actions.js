@@ -14,6 +14,7 @@ export async function addDeal(formData) {
     amount: amountRaw ? Number(amountRaw) : null,
     currency: (formData.get("currency") || "USD").toString().trim() || "USD",
     paid_date: (formData.get("paid_date") || "").toString().trim() || null,
+    channel: (formData.get("channel") || "").toString().trim() || null,
     note: (formData.get("note") || "").toString().trim() || null,
     source: "alex",
     confirmed: formData.get("confirmed") === "on",
@@ -30,7 +31,7 @@ export async function updateDealField(formData) {
     const raw = (formData.get("amount") || "").toString().trim();
     patch.amount = raw ? Number(raw) : null;
   }
-  for (const f of ["paid_date", "note"]) {
+  for (const f of ["paid_date", "channel", "note"]) {
     if (formData.has(f)) patch[f] = (formData.get(f) || "").toString().trim() || null;
   }
   if (Object.keys(patch).length === 0) return;

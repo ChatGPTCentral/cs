@@ -1,11 +1,14 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { addDeal, updateDealField, confirmDeal } from "./actions";
+import { updateStoryDomain, updateStoryLogoUrl } from "../story/actions";
 import TableCellInput from "../people/TableCellInput";
 import SaveWatcher from "../people/SaveWatcher";
 import SavedToast from "../people/SavedToast";
 import CompanyLogo from "./CompanyLogo";
 
 export const dynamic = "force-dynamic";
+
+const CHANNELS = ["Gmail", "Passionfroot", "LinkedIn", "Calendly", "Referral", "Altro"];
 
 function fmt(amount, currency) {
   if (amount == null) return null;
@@ -14,14 +17,17 @@ function fmt(amount, currency) {
 }
 
 // The revenue ledger: every client and deal, what each one actually
-// paid, with provenance. Confirmed = payment evidence on file (invoice
-// paid, Stripe receipt, payout notification) or Alex's explicit word.
+// paid, with provenance, plus the channel each deal is currently being
+// worked on (Gmail, Passionfroot, LinkedIn...) and the company's logo -
+// no separate "logos" page, it lives here with the deal it belongs to.
+// Confirmed = payment evidence on file (invoice paid, Stripe receipt,
+// payout notification) or Alex's explicit word.
 export default async function ClientiPage() {
   const [deals, storyRows] = await Promise.all([
     supabaseSelect("ledger_deals", "?order=paid_date.desc.nullslast"),
-    supabaseSelect("ledger_stories", "?select=slug,logo_url"),
+    supabaseSelect("ledger_stories", "?select=id,slug,domain,logo_url"),
   ]);
-  const logoBySlug = new Map(storyRows.map((s) => [s.slug, s.logo_url]));
+  const storyBySlug = new Map(storyRows.map((s) => [s.slug, s]));
 
   const byCompany = new Map();
   for (const d of deals) {
@@ -35,8 +41,8 @@ export default async function ClientiPage() {
         .reduce((s, d) => s + Number(d.amount), 0);
       const hasUnknown = list.some((d) => d.amount == null);
       const slug = list.find((d) => d.story_slug)?.story_slug || null;
-      const logoUrl = slug ? logoBySlug.get(slug) : null;
-      return { company, list, confirmedUsd, hasUnknown, slug, logoUrl };
+      const story = slug ? storyBySlug.get(slug) : null;
+      return { company, list, confirmedUsd, hasUnknown, slug, story };
     })
     .sort((a, b) => b.confirmedUsd - a.confirmedUsd || a.company.localeCompare(b.company));
 
@@ -58,15 +64,21 @@ export default async function ClientiPage() {
           ${totalConfirmed.toLocaleString("en-US", { maximumFractionDigits: 2 })}
           <span style={{ fontSize: 13, fontWeight: 400, color: "var(--ink-faint)" }}> confermati (USD)</span>
         </p>
-        <p style={{ fontSize: 12.5, margin: 0 }}>
-          <a href="/logos">Gestisci i loghi &rarr;</a>
+        <p style={{ fontSize: 12.5, margin: 0, color: "var(--ink-faint)" }}>
+          Logo e canale si modificano qui sotto, per azienda e per deal.
         </p>
       </div>
 
-      {companies.map(({ company, list, confirmedUsd, slug, logoUrl }) => (
+      <datalist id="channels-clienti">
+        {CHANNELS.map((c) => (
+          <option key={c} value={c} />
+        ))}
+      </datalist>
+
+      {companies.map(({ company, list, confirmedUsd, slug, story }) => (
         <div key={company} className="content" style={{ marginBottom: 14 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-            <CompanyLogo src={logoUrl} name={company} size={24} />
+            <CompanyLogo src={story?.logo_url} name={company} size={24} />
             <h3 style={{ fontWeight: 600, fontSize: 16, margin: "4px 0" }}>
               {slug ? <a href={`/story/${slug}`}>{company}</a> : company}
             </h3>
@@ -76,6 +88,26 @@ export default async function ClientiPage() {
               </span>
             )}
           </div>
+          {story && (
+            <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", margin: "4px 0 8px" }}>
+              <span style={{ fontSize: 12, color: "var(--ink-faint)" }}>dominio</span>
+              <TableCellInput
+                action={updateStoryDomain}
+                id={story.id}
+                name="domain"
+                defaultValue={story.domain || ""}
+                placeholder="es. gamma.app"
+              />
+              <span style={{ fontSize: 12, color: "var(--ink-faint)" }}>logo url</span>
+              <TableCellInput
+                action={updateStoryLogoUrl}
+                id={story.id}
+                name="logo_url"
+                defaultValue={story.logo_url || ""}
+                placeholder="https://... (override)"
+              />
+            </div>
+          )}
           {list.map((d) => (
             <div key={d.id} className="entry" style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
               <span style={{ fontFamily: "monospace", minWidth: 90 }}>
@@ -86,6 +118,14 @@ export default async function ClientiPage() {
                 )}
               </span>
               <span className="entry-meta" style={{ margin: 0 }}>{d.paid_date || "data?"}</span>
+              <TableCellInput
+                action={updateDealField}
+                id={d.id}
+                name="channel"
+                defaultValue={d.channel || ""}
+                placeholder="canale?"
+                listId="channels-clienti"
+              />
               {d.confirmed ? (
                 <span className="nba-chip" style={{ color: "var(--accent)", borderColor: "var(--accent)" }}>confermato</span>
               ) : (
@@ -117,6 +157,7 @@ export default async function ClientiPage() {
               <option>GBP</option>
             </select>
             <input name="paid_date" type="date" />
+            <input name="channel" placeholder="canale" list="channels-clienti" style={{ width: 130 }} />
             <input name="story_slug" placeholder="slug storia (opzionale)" list="story-slugs-clienti" style={{ minWidth: 160 }} />
             <input name="note" placeholder="nota / cosa era" style={{ flex: 1, minWidth: 160 }} />
             <label style={{ fontSize: 13, display: "inline-flex", alignItems: "center", gap: 4 }}>
