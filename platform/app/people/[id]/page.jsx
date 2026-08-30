@@ -164,6 +164,11 @@ export default async function PersonPage({ params }) {
             <a href={person.linkedin_url} target="_blank" rel="noopener">
               {person.linkedin_url}
             </a>
+            {person.linkedin_connected && (
+              <span className="nba-chip" style={{ marginLeft: 8, color: "var(--accent)", borderColor: "var(--accent)" }}>
+                connesso
+              </span>
+            )}
           </p>
         )}
         {person.stories && (

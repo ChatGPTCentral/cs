@@ -31,11 +31,12 @@ function fmt(amount, currency) {
 // "BDR mode" side of the CRM - the person-first side lives on /people,
 // and a person can optionally point back at a company here.
 export default async function ClientiPage() {
-  const [companies, deals, people, storyRows] = await Promise.all([
+  const [companies, deals, people, storyRows, linkedinContacts] = await Promise.all([
     supabaseSelect("ledger_companies", "?order=name.asc"),
     supabaseSelect("ledger_deals", "?order=paid_date.desc.nullslast"),
     supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,company_id&order=name.asc"),
     supabaseSelect("ledger_stories", "?select=slug,title,company_id&company_id=not.is.null"),
+    supabaseSelect("ledger_linkedin_connections", "?company_id=not.is.null&select=company_id,first_name,last_name,linkedin_url,position"),
   ]);
 
   const dealsByCompany = new Map();
@@ -51,6 +52,11 @@ export default async function ClientiPage() {
     peopleByCompany.get(p.company_id).push(p);
   }
   const storyByCompany = new Map(storyRows.map((s) => [s.company_id, s]));
+  const linkedinByCompany = new Map();
+  for (const l of linkedinContacts) {
+    if (!linkedinByCompany.has(l.company_id)) linkedinByCompany.set(l.company_id, []);
+    linkedinByCompany.get(l.company_id).push(l);
+  }
 
   const rows = companies
     .map((c) => {
@@ -63,6 +69,7 @@ export default async function ClientiPage() {
         deals: list,
         contacts: peopleByCompany.get(c.id) || [],
         story: storyByCompany.get(c.id) || null,
+        linkedinContacts: linkedinByCompany.get(c.id) || [],
         confirmedUsd,
       };
     })
@@ -109,7 +116,7 @@ export default async function ClientiPage() {
         ))}
       </datalist>
 
-      {rows.map(({ company, deals, contacts, story, confirmedUsd }) => (
+      {rows.map(({ company, deals, contacts, story, linkedinContacts, confirmedUsd }) => (
         <div key={company.id} id={`company-${company.id}`} className="content" style={{ marginBottom: 14 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
             <CompanyLogo src={company.logo_url} name={company.name} size={24} />
@@ -167,6 +174,21 @@ export default async function ClientiPage() {
                 <span key={p.id}>
                   {i > 0 && ", "}
                   <a href={`/people/${p.id}`}>{p.name}</a>
+                </span>
+              ))}
+            </p>
+          )}
+
+          {linkedinContacts.length > 0 && (
+            <p style={{ fontSize: 12.5, margin: "0 0 8px", color: "var(--ink-dim)" }}>
+              <span className="field-label">Conoscenze LinkedIn</span>{" "}
+              {linkedinContacts.map((l, i) => (
+                <span key={l.linkedin_url}>
+                  {i > 0 && ", "}
+                  <a href={l.linkedin_url} target="_blank" rel="noopener">
+                    {l.first_name} {l.last_name}
+                  </a>
+                  {l.position ? ` (${l.position})` : ""}
                 </span>
               ))}
             </p>
