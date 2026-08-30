@@ -128,6 +128,14 @@ drafted.
 - Support mail belongs to `aic-customer-support`. This skill records the three
   support folders as one domain entry and routes drafting there
 
+## Operational facts
+
+- **Shipping address for AI Central** (standing, per Alex 2026-08-30):
+  Alex Fiore (c/o AI Central Media), 9 Hayes Grove, SE22 8DF, London,
+  United Kingdom. Use this whenever a counterpart asks where to ship
+  anything. Source: Alex's own message to Jazmin, thread
+  `19e4b71f458018eb`, 21 May 2026
+
 ## Drafting from a story
 
 When a reply is needed, read the story file first, then the thread. The story

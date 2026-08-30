@@ -45,7 +45,11 @@
     Wells, Somerset, BA5 2JA), not Bristol - he is away from Bristol currently
   A reply is drafted answering everything **except** Richard's own ask: an
   address to send tote bags to. That is a real gap, marked
-  `[NEEDS FROM ALEX: shipping address]` in the draft body - not invented
+  `[NEEDS FROM ALEX: shipping address]` in the draft body - not invented.
+  **Resolved 2026-08-30:** the standing AI Central shipping address is
+  now on file (Alex Fiore c/o AI Central Media, 9 Hayes Grove, SE22 8DF,
+  London, UK - see the skill's Operational facts). The draft stays on
+  hold per Alex, but the gap can be filled whenever he says go
 - **calendar sweep, 2026-08-22.** Alex's Google Calendar gives the hackathon
   itself real dates: bus to Bristol 2026-08-12, an "AI Hackathon Roundtable"
   on 2026-08-14, bus back to London (Victoria Coach Station) 2026-08-15.

@@ -29,10 +29,7 @@
   /discover on every attempt during this import), Pesto Tech (Jun 2024),
   Affogato AI / RenderNet (Apr 2024).
 
-  One open flag, not resolved: a Discover application from brand
-  "Stunning" (Accepted, sent 26 Apr 2024, "Marketing Campaign") sits
-  alongside an existing, unrelated ledger story, `stunning-so-interview.md`
-  - Alex selling Mohamed of Stunning.so a paid interview, 13 May 2024,
-  two weeks later. Close enough in time and name to plausibly be the same
-  company, but nothing in either dataset actually confirms it - do not
-  merge these without checking with Alex first.
+  The "Stunning" flag is resolved: Alex confirmed on 2026-08-30 that the
+  Discover application (Accepted, 26 Apr 2024) and the Mohamed /
+  Stunning.so interview sale of 13 May 2024 are the same company - see
+  [[stunning-so-interview]] for the merged picture.

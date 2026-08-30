@@ -15,3 +15,10 @@
 - notes: Mohamed is Stunning.so's CEO. AI Central sold him an interview -
   per Alex's own account, month-by-month review, 2026-08-23 - and it
   could be interesting to reconnect with him in the future.
+
+  **Passionfroot cross-reference resolved, 2026-08-30, per Alex.** The
+  Discover application to brand "Stunning" (Accepted, sent 26 Apr 2024,
+  "Marketing Campaign" - see [[passionfroot-discover-sweep]]) is the
+  SAME company. So the shape of this relationship is: Passionfroot
+  campaign application accepted in late April 2024, interview sold to
+  Mohamed two weeks later. One relationship, two channels.

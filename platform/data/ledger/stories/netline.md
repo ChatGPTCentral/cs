@@ -10,8 +10,11 @@
 - last-inbound: 2026-06-29 (apatel@netline.com, per the commitment scanner)
 - last-outbound: 2026-06-29 (alex@thecentral.ai, same thread)
 - idle: 51 days
-- next-action: none confirmed - the promised follow-up ("XML integration")
-  has no visible resolution in the window read
+- next-action: book a call with Daniel next week - reply draft left in
+  Gmail on thread `19e3a03bb6eb942c`, 2026-08-30, per Alex's direct ask
+  (XML feed, TradePub performance, Q4 content wave; opens with the
+  Indiana Edwards / Cannes Lions update, which closes the loop Dan
+  himself pushed in May)
 - commitments: "i'll follow-up in the other thread regarding the progress on
   the XML integration" - alex@thecentral.ai to Aneeka, 2026-06-29, **unverified**
 - threads: case-study and TradePub-listing threads Nov 2025 - Dec 2025 (Daniel,
