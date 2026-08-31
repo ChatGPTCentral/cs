@@ -15,8 +15,9 @@
   bundle discussion) then Alex's own unanswered 19 Aug chase - so the old
   "may not be addressed to Alex" caveat no longer applies; the most recent
   message is his, sent directly to Ben
-- next-action: draft a quick follow-up bump, per Alex 2026-08-31 - queued,
-  not yet drafted (Gmail auth expired mid-session)
+- next-action: none - draft left in Gmail, thread `19d2b84483f6e46b`,
+  2026-08-31, per Alex's ask ("hope you're both well - - did the framer
+  deal (or anything else) end up moving forward?")
 - commitments: none recorded
 - threads: `19d2b84483f6e46b` (live), 1 more unread
 - notes: MadRev never closed the Framer deal (5x LinkedIn Carousels,

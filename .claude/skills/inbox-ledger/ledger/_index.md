@@ -71,13 +71,14 @@ The last word was theirs and nobody replied. Live or recent enough to prompt on.
 
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
-| [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-07-02 | 48d | jazmin@getjobstream.com |
 | [Cannes 2026 Follow-up](stories/cannes-2026.md) | 2026-06-29 | 51d | sarah@wavelength.now |
-| [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-05-06 | 105d | ben@madrev.co - *caveat: last message may be addressed to Katy, not Alex* |
 | [Pillsbury Law](stories/pillsbury-law.md) | 2026-06-04 | 76d | steven.james@pillsburylaw.com - possibly two contacts sharing a domain |
 | [Tim Bourquin](stories/tim-bourquin.md) | 2026-06-22 | 58d | tim.bourquin@gmail.com |
-| [Claudia Faith](stories/claudia-faith.md) | 2026-07-02 | 48d | claudiafaith.cf@gmail.com |
 | [King Capital Advisors](stories/king-capital-advisors.md) | 2026-07-14 | 36d | info@king-capital-advisors.com |
+
+Dropped this pass: **Austin Conference / Jobstream** and **Ben + Katy
+(MadRev)** - Alex chased both 2026-08-31, now waiting on them (see below).
+**Claudia Faith** - per Alex, does not need to be addressed
 
 ## ⏳ Waiting on them
 
@@ -86,6 +87,9 @@ Ball is legitimately in their court. Ranges from days to dormant.
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
 | [GTA whitepaper](stories/gta-whitepaper.md) | 2026-08-31 | 0d | tsvetelin@thinkrevops.com - promised his part 25 Aug, still not sent |
+| [Netline (Daniel)](stories/netline.md) | 2026-08-31 | 0d | daniel@netline.com - asked if Wed 2pm London works for a call |
+| [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-08-31 | 0d | jazmin@getjobstream.com - re-nudged on the merch thread |
+| [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-08-31 | 0d | ben@madrev.co / katy@madrev.co - quick bump re: the framer deal |
 | [Mya Bishop (Informa)](stories/mya-bishop-informa.md) | 2026-08-17 | 2d | Mya.Bishop@informa.com - third outbound in a series, no reply yet |
 | [interviews](stories/interviews.md) | 2026-08-14 | 5d | elettra.fiumi@gmail.com |
 | [Jorge](stories/jorge.md) | 2026-08-05 | 14d | jorge@groou.xyz |

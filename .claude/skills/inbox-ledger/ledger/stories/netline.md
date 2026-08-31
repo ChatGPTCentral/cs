@@ -6,15 +6,20 @@
 - people: Aneeka Velummylum (`apatel@netline.com`), **Daniel Frignito**
   (`daniel@netline.com`, Director of Partner Development) - the address Alex
   named but that had not turned up in any thread read until this pass
-- status: **yours** - open commitment, unverified
-- last-inbound: 2026-06-29 (apatel@netline.com, per the commitment scanner)
-- last-outbound: 2026-06-29 (alex@thecentral.ai, same thread)
-- idle: 51 days
-- next-action: book a call with Daniel next week - reply draft left in
-  Gmail on thread `19e3a03bb6eb942c`, 2026-08-30, per Alex's direct ask
-  (XML feed, TradePub performance, Q4 content wave; opens with the
-  Indiana Edwards / Cannes Lions update, which closes the loop Dan
-  himself pushed in May)
+- status: **theirs** - Alex sent, waiting on Daniel
+- last-inbound: 2026-05-29 (daniel@netline.com, thread `19e3a03bb6eb942c`)
+- last-outbound: 2026-08-31 10:03 (alex@thecentral.ai, to Daniel - Cannes
+  Lions/Indiana update, proposes catching up on the XML feed, TradePub
+  and Q4 content wave, asks if Wednesday 2pm London works for a call)
+- idle: 0 days
+- next-action: none - wait for Daniel's reply on Wednesday
+- notes-threading: **sent from a detached draft, 2026-08-31.** The 30 Aug
+  draft lived on thread `19e3a03bb6eb942c`; editing it to add the
+  Wednesday ask (via update_draft with a plain-text body) broke the
+  threading and it went out as a new, unthreaded message/thread
+  (`1a057423f43dc9b2`) instead of a reply on the original conversation.
+  Alex sent it as-is. Track `1a057423f43dc9b2` as the live thread going
+  forward; `19e3a03bb6eb942c` is now historical
 - commitments: "i'll follow-up in the other thread regarding the progress on
   the XML integration" - alex@thecentral.ai to Aneeka, 2026-06-29, **unverified**
 - threads: case-study and TradePub-listing threads Nov 2025 - Dec 2025 (Daniel,

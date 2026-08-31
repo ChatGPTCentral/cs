@@ -13,18 +13,17 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
 - kind: project + person (now: several people at one company)
 - people: Amanda, Katie, and **Jazmin** (jazmin@getjobstream.com) - all
   @getjobstream.com
-- status: **theirs** - Alex chased on the merch thread, no reply since
+- status: **theirs** - Alex sent the nudge himself, waiting on Jazmin
 - last-inbound: 2026-07-02 (jazmin@getjobstream.com, on the Cannes-debrief
   thread `19f22034be72195f`) - the merchandise thread itself has no inbound
   since Jazmin's original 21 May offer
-- last-outbound: 2026-08-17 (alex@thecentral.ai, to Jazmin, cc Katie, on
-  thread `19e4b71f458018eb` "Jobstream Merch" - "wondered whether you
-  shipped the merch as nothing has arrived at my office since May")
-- idle: 14 days
-- next-action: draft a quick nudge on the merch thread, per Alex 2026-08-31
-  - queued, not yet drafted (Gmail auth expired mid-session). **Correction:**
-  Alex recalled this as "last week, July 17" - the real thread and date are
-  17 Aug 2026, per Gmail
+- last-outbound: 2026-08-31 10:04 (alex@thecentral.ai, to Jazmin, cc Katie
+  and Liz, thread `19e4b71f458018eb` "Jobstream Merch" - "just back from
+  being OOO, did it end up going out?")
+- idle: 0 days
+- next-action: none - wait for Jazmin's reply
+- notes-correction: Alex recalled this as "last week, July 17" when asking
+  for the nudge; the real prior touch was 17 Aug 2026, per Gmail
 - commitments: none recorded
 - threads: `19cb44719437ae8e` (Amanda, Mar, labelled), `19f22034be72195f`
   (Jazmin, Jul, Cannes debrief, unlabelled), `19e4b71f458018eb` (Jazmin +
