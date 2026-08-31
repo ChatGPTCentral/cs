@@ -10,7 +10,9 @@
 - last-inbound: 2026-08-12 (marcduke@dukeconnect.co.uk)
 - last-outbound: 2026-08-17 (alex@thecentral.ai)
 - idle: 2 days
-- next-action: none yet. Alex replied on Sunday and it is their move
+- next-action: review and send the drafted status-check to Tsvetelin
+  (thread `19ff67b1360150c6`) - asks when his part will be ready, proposes
+  a group call next week to assess the whitepaper
 - commitments: **unknown - bodies not read.** Alex's 17 Aug reply may contain one
 - threads: `19ff67b1360150c6` (live), `19f60e9ebd451424`, `19f21eef04aa4e4e`,
   `19edf85ff0a1f34e`
@@ -101,3 +103,10 @@
   proposes turning future editions into a recurring member survey ("AI
   barometer") instead of a live call each quarter - who owns the survey
   data is left unresolved, pending a separate conversation with Russ.
+
+  **Draft prepared, 2026-08-31, per Alex.** Target launch (~6 Sep) is
+  close and the last real status update was the 20 Jul planning call -
+  drafted a status-check to Tsvetelin, cc the full group, asking when
+  his part will be ready and proposing a call next week (Alex is back
+  in the office then) to assess where the whitepaper actually stands.
+  Not yet sent.
