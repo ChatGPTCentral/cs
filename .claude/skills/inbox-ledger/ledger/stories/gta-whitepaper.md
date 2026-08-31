@@ -7,7 +7,7 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- status: **ours** - Alex sent the status-check, waiting on Tsvetelin's part
+- status: **theirs** - Alex sent the status-check, waiting on Tsvetelin's part
 - last-inbound: 2026-08-25 (tsvetelin@thinkrevops.com, promised his piece
   "in the next 24hrs" - did not follow through by 31 Aug)
 - last-outbound: 2026-08-31 09:30 (alex@thecentral.ai, to
