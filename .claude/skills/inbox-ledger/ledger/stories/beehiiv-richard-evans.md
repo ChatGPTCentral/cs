@@ -1,32 +1,47 @@
 # beehiiv // Richard Evans
-- query: `label:👤-beehiiv-//-Richard-Evans`
+
+- query: `label:👤-beehiiv-//-Richard-Evans` (covers only the Nov 2025
+  thread below - the Aug 2026 check-in thread carries no label)
 - label-id: `Label_2976738811253175690`
 - kind: person
 - people: richard.evans@beehiiv.com, cc juliet@beehiiv.com
-- status: **yours** - unanswered, very old
-- last-inbound: 2025-11-19 (richard.evans@beehiiv.com)
-- last-outbound: 2025-11-19 (alex@thecentral.ai, earlier the same day)
-- idle: 274 days
-- next-action: none unless reviving. Nine months unanswered on a beehiiv
-  platform contact - likely superseded by the working relationship with
-  beehiiv elsewhere in the account (Manuel Bleve, Brett Perry both appear as
-  active beehiiv contacts more recently)
-- commitments: none recorded
-- threads: `19a4ca55bf9bf588`
-- notes: a real back-and-forth across November 2025, then Richard's last reply
-  went unanswered. Given how active the beehiiv relationship is through other
-  contacts, this reads like the account rep changed rather than a dropped ball
-- **other beehiiv contacts, January sweep - not merged into this file, listed
-  for context.** Two more real beehiiv relationships turned up in the same
-  window, both separate people:
-  - **Tyler Denk** (`tyler@beehiiv.com`, beehiiv's CEO) - Alex pitched a
-    Claude x beehiiv integration directly to him, 2026-02-03. Tyler replied
-    positively 2026-02-15 ("on the roadmap"); Alex confirmed it shipped on
-    2026-03-24 ("saw you announced it today!"). Resolved, positive, no action
-    needed
-  - **Preeya Goenka + Luke McCgwire** (`preeya@beehiiv.com`,
-    `luke.mccgwire@beehiiv.com`) - "Local beehiiv community london", Alex met
-    Preeya at a Google/beehiiv event, she introduced Luke (London-based, then
-    moving to Madrid). Luke proposed a call twice (17 Feb, 24 Feb) with no
-    reply from Alex since - **your move** if reviving, 176 days idle as of
-    2026-08-19
+- status: **yours** - reply drafted, awaiting Alex's review and send
+- last-inbound: 2026-08-26 (richard.evans@beehiiv.com, "beehiiv check-in")
+- last-outbound: 2026-08-31 (draft only, not yet sent)
+- idle: 5 days since Richard's last message, but Richard has checked in
+  nine times unanswered since 25 Mar 2026 - the real idle span is Alex's
+  side, about 5 months
+- next-action: send the drafted reply (or edit first) - apologizes for
+  the silence, confirms AI Central is ready to move into Enterprise
+  starting 1 October
+- commitments: none recorded from Alex; the draft states an intent to
+  move into Enterprise on 1 Oct, not yet sent
+- threads: `19a4ca55bf9bf588` (Nov 2025 - Aug 2026, the substantive
+  history, labeled), `1a0406cba2e234d0` (Aug 2026 "beehiiv check-in",
+  unlabeled, live - draft is in this thread)
+- notes: **Real history, corrected 2026-08-31 - the previous version of
+  this file only captured the labeled thread and wrongly read as "idle
+  274 days, likely superseded." It was not superseded - it kept running
+  in an unlabeled continuation.**
+
+  Nov 2025: Richard pitched the Enterprise plan (up to 200k subscribers,
+  $8,550/year) off AI Central's growth toward 100k subscribers. Alex
+  agreed; both the existing Max plan ($2,908.20) and the new Enterprise
+  plan were confirmed and paid in full by 25 Nov 2025 (one payment
+  initially failed and was retried). Richard also worked with Alex on a
+  separate ask - free/bulk digital-product uploads for lead magnets -
+  through Dec 2025 and into 2026, eventually shipping (free digital
+  products, 12 Mar 2026) though bulk upload never did.
+
+  Alex's last reply in the thread is 24-25 Mar 2026, booking a call for
+  3 April to "kick off" Enterprise. No record of that call happening.
+  From 27 Apr 2026 onward Richard sent nine unanswered check-ins (27
+  Apr, 26 May, 3 Jun, 17 Jun, 29 Jun, 13 Jul, 11 Aug, then a fresh
+  unlabeled thread "beehiiv check-in" on 26 Aug) asking when AI Central
+  would move into Enterprise. None got a reply until this correction.
+
+  **Per Alex, 2026-08-31.** The real reason for the long silence was
+  waiting on AI Central's cap raise to close - that reason does not go
+  in the reply to Richard. The draft uses a plain "busy summer" excuse
+  instead, tells Richard AI Central is ready to move into Enterprise on
+  1 October, and thanks him for his patience.
