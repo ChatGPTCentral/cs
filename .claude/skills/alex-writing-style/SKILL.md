@@ -24,6 +24,7 @@ These rules are non-negotiable and must be applied to every piece of output
 5. **Short paragraphs** - - most paragraphs are one to three sentences max, often just one sentence standing alone
 6. **Greeting capitalization does not follow a fixed rule** - - real sent mail mixes "hi Trevor" and "Hi Trevor" in the same week, on both new and repeat, formal and casual contacts. It is a personal habit, not a signal to reproduce deliberately - default to whichever case reads more natural for the line, and do not treat a capitalization mismatch as an error
 7. **No Oxford comma obsession** - - Alex uses commas naturally but doesn't overdo them
+8. **Links must show as clean, readable URLs - never a Google redirect.** **Added 2026-08-31, per Alex, after he found this across a whole batch of drafts.** When a draft is built with `htmlBody` and Gmail auto-links a bare URL, it can rewrite the visible anchor text itself to `https://www.google.com/url?q=...&source=gmail&ust=...` instead of the real link - the reader sees a tracking redirect as the clickable text, not the destination. Before finishing any draft with a link: read back the `htmlBody`/`plaintextBody` you are about to save and confirm every visible link is the plain destination URL (`https://cntral.ai/media-kit`, not a `google.com/url?q=` wrapper). If a redirect-wrapped link shows up, rewrite that line rather than shipping it - this is the single most-flagged defect in Alex's own review of a large batch of cold-outreach drafts
 
 ## VOICE & TONE
 
@@ -106,6 +107,37 @@ stalled, not a cold pitch), Anything.com (SF-based, real budget
 suspected, they strung Alex along once already - don't read that as a
 no), Otio (no budget yet, but the contact is London-based - worth an
 in-person follow-up)
+
+## COLD OUTREACH RESEARCH STANDARD
+
+**Added 2026-08-31, per Alex - rejected a batch of ~26 near-identical cold
+drafts on this basis.** Every drafted cold outreach failed the same way:
+one template, name and one-line product description swapped in, no
+research, no signature, and the broken redirect-link defect above. Alex's
+standing instruction now: never mass-produce cold drafts from a contact
+list without this per-company pass first -
+
+1. **Verify it's a real target, not just a name on a list.** Alex flagged
+   that some names on a recent list "feel like maybe the company's own
+   [team] was reaching out to us" - i.e. inbound interest, not a vetted
+   outbound target. Check the ledger and Gmail for prior contact before
+   treating a name as cold
+2. **Research before writing a word:** has this company sponsored other
+   newsletters or creators. Have they launched a new feature or product
+   recently. What does their own site say about their positioning. From
+   that, work out the actual angle - see SELLING ANGLES above
+3. **Pick the offer per company, not one offer for all:** some are a
+   better fit for a free interview (early-stage, needs credibility -
+   see the "Potential clients" archetype), others for a content package
+   (a concrete 5x-carousel-style result, citing a real case study from
+   `references/07_case_studies_and_pipeline.md`)
+4. **Every draft carries Alex's real signature** - - see SIGNATURE
+   PATTERNS below. A draft with no signature block at all is a defect,
+   not a style choice
+5. **Small batches, not a wall of drafts.** Landing 20-30 templated drafts
+   in Alex's inbox in one pass is itself the complaint, independent of
+   their individual quality - work through a prospect list a few at a
+   time with the research above done for each, not all at once
 
 ## OBJECTION HANDLING
 

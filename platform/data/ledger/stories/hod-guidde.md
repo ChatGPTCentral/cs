@@ -6,18 +6,15 @@
 - people: Hod (`hod@guidde.co`), Yoav (`yoav@guidde.co`, cc on later
   messages), Cielo Gil (`cielo.gil@guidde.co`, a separate SparkLoop-intro
   touch)
-- status: **yours** - Hod REPLIED and Alex never answered (see the
-  2026-08-29 correction below)
+- status: **theirs** - Alex sent a fresh re-engagement, waiting on Hod
 - last-inbound: 2026-05-12 (hod@guidde.co - "I would prefer to use our
   existing credits first. This will allow me to evaluate the results
   before we decide on the continuity of our partnership and future
   packages")
-- last-outbound: 2026-05-11 (alex@thecentral.ai, "just bumping this up in
-  case it got lost")
-- idle: 109 days, and the ball is Alex's
-- next-action: reply to Hod's 12 May message - accept his terms, run the
-  existing credits with concrete dates, no package pitch (draft left in
-  Gmail, 2026-08-29)
+- last-outbound: 2026-08-31 (alex@thecentral.ai, new thread
+  `1a059d053fc34f9a`, subject "AI Central x Guidde - - Q4 2026")
+- idle: 0 days
+- next-action: none - wait for Hod's reply
 - commitments: none recorded
 - threads: `19cb418bb36ad04b` (personal check-in, 3 Mar), `19c66d786416af66`
   ("AI Central x Guidde (Proposal Q1)", Sam-run, Feb-Mar), `19d20bfc6c1467fa`
@@ -55,3 +52,21 @@
   ready-to-spend client. A reply draft accepting his terms (run the
   credits, concrete September dates, team does the creative work) was
   left in Gmail on 2026-08-29 for Alex to review and send.
+
+  **Redrafted, 2026-08-31, per Alex - deliberate change of approach.**
+  Alex rejected the 29 Aug logistics draft above (and the whole batch of
+  drafts he reviewed today - see the account-wide note in
+  `alex-writing-style` skill). For Guidde specifically he asked for a
+  brand-new thread that skips the remaining-credits/logistics debate
+  entirely and just reopens the relationship: recharge-over-summer
+  opener, Q4 26 framing, name AI Central's newer client wins (his own
+  words: ElevenLabs, Replit, Gamma, Framer), ask what Guidde is working
+  on and where AI Central's content + 300k readers could help. Sent as a
+  fresh thread (`1a059d053fc34f9a`, no reply-to), not attached to any of
+  the three threads above. **Flag for Alex:** Framer is not a signed
+  client anywhere in this ledger - it's still a cold-outreach prospect
+  (see the batch of AppSumo-style drafts). Double check that line before
+  it goes out. **Cleanup needed:** the old 29 Aug "accept his terms"
+  draft is still sitting in Gmail (messageId `1a059c5eef76a2c5`) -
+  trashing it hit an expired Gmail token. Delete by hand, or ask again
+  once Gmail is reauthorized.
