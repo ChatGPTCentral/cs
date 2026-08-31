@@ -13,15 +13,22 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
 - kind: project + person (now: several people at one company)
 - people: Amanda, Katie, and **Jazmin** (jazmin@getjobstream.com) - all
   @getjobstream.com
-- status: **yours** - and fresher than previously recorded
-- last-inbound: 2026-07-02 (jazmin@getjobstream.com) - **not March**
-- last-outbound: 2026-07-02 (alex@thecentral.ai, to Jazmin directly)
-- idle: 48 days
-- next-action: read `19f22034be72195f` - Jazmin replied same-day to Alex's
-  outreach and nothing has gone back since
+- status: **theirs** - Alex chased on the merch thread, no reply since
+- last-inbound: 2026-07-02 (jazmin@getjobstream.com, on the Cannes-debrief
+  thread `19f22034be72195f`) - the merchandise thread itself has no inbound
+  since Jazmin's original 21 May offer
+- last-outbound: 2026-08-17 (alex@thecentral.ai, to Jazmin, cc Katie, on
+  thread `19e4b71f458018eb` "Jobstream Merch" - "wondered whether you
+  shipped the merch as nothing has arrived at my office since May")
+- idle: 14 days
+- next-action: draft a quick nudge on the merch thread, per Alex 2026-08-31
+  - queued, not yet drafted (Gmail auth expired mid-session). **Correction:**
+  Alex recalled this as "last week, July 17" - the real thread and date are
+  17 Aug 2026, per Gmail
 - commitments: none recorded
 - threads: `19cb44719437ae8e` (Amanda, Mar, labelled), `19f22034be72195f`
-  (Jazmin, Jul, **unlabelled**), 5 more unread
+  (Jazmin, Jul, Cannes debrief, unlabelled), `19e4b71f458018eb` (Jazmin +
+  Katie, "Jobstream Merch", May-Aug, unlabelled), 4 more unread
 - notes: **correction, 2026-08-19, full sweep.** Previously logged as 160 days
   idle from Amanda's March message alone. A more recent, unlabelled exchange
   with a different person at the same company - Jazmin - pushes the real idle

@@ -3,17 +3,26 @@
 - label-id: `Label_5586594889512562982`
 - kind: person
 - people: Ben (ben@madrev.co), Katy (katy@madrev.co), Liz (liz@thecentral.ai) cc
-- status: **yours**, with a caveat
-- last-inbound: 2026-05-06 (ben@madrev.co)
-- last-outbound: 2026-03-26 (alex@thecentral.ai)
-- idle: 105 days
-- next-action: **unknown - bodies not read.** Read thread `19d2b84483f6e46b`
+- status: **theirs** - Alex chased, no reply since
+- last-inbound: 2026-06-22 (ben@madrev.co)
+- last-outbound: 2026-08-19 (alex@thecentral.ai, to Ben, cc Katy - "closing
+  some sponsors for early sept, are you guys working on any placements in
+  the same period?")
+- idle: 12 days, not 105 - **correction, 2026-08-31, per Alex.** The old
+  105-day/caveat read came from an incomplete thread fetch that stopped at
+  the 6 May message. The full thread (`19d2b84483f6e46b`) runs a real
+  back-and-forth through 22 Jun (a Framer carousel + main-ad deal, 5x
+  bundle discussion) then Alex's own unanswered 19 Aug chase - so the old
+  "may not be addressed to Alex" caveat no longer applies; the most recent
+  message is his, sent directly to Ben
+- next-action: draft a quick follow-up bump, per Alex 2026-08-31 - queued,
+  not yet drafted (Gmail auth expired mid-session)
 - commitments: none recorded
 - threads: `19d2b84483f6e46b` (live), 1 more unread
-- notes: the caveat matters. The last message is Ben writing **to Katy**, with
-  Alex and Liz on cc - so it may not be addressed to Alex at all. Cc traffic is
-  the most over-flagged category in any inbox ledger. Read it before treating it
-  as owed
+- notes: MadRev never closed the Framer deal (5x LinkedIn Carousels,
+  discussed at length 11 Jun, Ben asking about metrics/ROI) despite Alex
+  answering every question. Good candidate for a short, low-pressure bump
+  rather than a re-pitch
 
   **month-by-month review, 2026-08-23**: MadRev is an ad-sales-as-a-service
   agency - they sell ads for newsletters and take a percentage. Alex met
