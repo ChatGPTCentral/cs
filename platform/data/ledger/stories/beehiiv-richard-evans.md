@@ -5,17 +5,15 @@
 - label-id: `Label_2976738811253175690`
 - kind: person
 - people: richard.evans@beehiiv.com, cc juliet@beehiiv.com
-- status: **yours** - reply drafted, awaiting Alex's review and send
+- status: **theirs** - Alex sent the reply, waiting on Richard
 - last-inbound: 2026-08-26 (richard.evans@beehiiv.com, "beehiiv check-in")
-- last-outbound: 2026-08-31 (draft only, not yet sent)
-- idle: 5 days since Richard's last message, but Richard has checked in
-  nine times unanswered since 25 Mar 2026 - the real idle span is Alex's
-  side, about 5 months
-- next-action: send the drafted reply (or edit first) - apologizes for
-  the silence, confirms AI Central is ready to move into Enterprise
-  starting 1 October
-- commitments: none recorded from Alex; the draft states an intent to
-  move into Enterprise on 1 Oct, not yet sent
+- last-outbound: 2026-08-31 08:28 (alex@thecentral.ai, sent - thread
+  `1a0406cba2e234d0`)
+- idle: 0 - just sent
+- next-action: none - wait for Richard to confirm the 1 Oct Enterprise
+  move
+- commitments: told Richard AI Central moves into Enterprise on 1
+  October 2026 - **open**, needs Richard's confirmation and follow-through
 - threads: `19a4ca55bf9bf588` (Nov 2025 - Aug 2026, the substantive
   history, labeled), `1a0406cba2e234d0` (Aug 2026 "beehiiv check-in",
   unlabeled, live - draft is in this thread)
