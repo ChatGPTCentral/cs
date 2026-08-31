@@ -14,9 +14,13 @@
   waiting on the answer
 - commitments: none
 - threads: `1a04df42ea54423a` (live)
-- notes: cold outbound, 29 Aug - Ryan pitched Sponsor Radar, a service
-  that finds brands already sponsoring comparable newsletters, emails
-  them on AI Central's behalf, and hands over the ones that respond
+- notes: **Per Alex, 2026-08-31.** Ryan is an agent who sells advertising
+  for newsletters. This is cold outreach - Alex is still deciding
+  whether it is useful, not evaluating a specific deal yet.
+
+  Cold outbound, 29 Aug - Ryan pitched Sponsor Radar, a service that
+  finds brands already sponsoring comparable newsletters, emails them
+  on AI Central's behalf, and hands over the ones that respond
   positively. Offered "$30 in free sending credits." A "one last try"
   follow-up on 30 Aug got a real reply from Alex the same day: AI
   Central already works with two sales-as-a-service agencies and is a

@@ -26,11 +26,35 @@ Write cursors with the service session (Supabase MCP), not the app key.
    `references/stories.md` under *Out of scope*: beehiiv, GrowthLetter,
    Newsletter da Leggere, receipts, Sparkloop reports, Senja, TRAVEL
    bookings. Exclude the three support folders - they belong to
-   `aic-customer-support`
+   `aic-customer-support`.
+
+   The label filter alone is not enough - a `label:` exclusion only
+   catches a thread if it actually carries that label, and mail sent
+   straight to an address (not through the labelled routing) slips
+   through. Confirmed 2026-08-31: a beehiiv campaign and an AI 101
+   reply both landed in the candidate set this way. Apply a second,
+   content-based filter after the label exclusion:
+   - **Sender-based, always skip:** any `@*.beehiiv.com` campaign
+     sender (e.g. `gptcentral@mail.beehiiv.com`), and
+     `hey@posthog.com` (PostHog's own product newsletter - per Alex,
+     2026-08-31, always ignore)
+   - **Topic-based, always skip:** a reply that is substantively about
+     the AI 101 course or reader feedback, even when sent directly to
+     an address like `editor@thecentral.ai` instead of through the
+     labelled folder. Per Alex, 2026-08-31: AI 101 and Feedback belong
+     to the real customer-support side of the platform
+     (`aic-customer-support`), never to genesis
 2. **Google Calendar** - `list_events` from the cursor to 3 days ahead.
    Past events with tracked attendees become candidate facts. Future
-   events with tracked attendees go in the digest as reminders, never
-   into a story
+   events with tracked attendees go in the digest as reminders AND get
+   upserted into Supabase `ledger_upcoming_meetings` (`event_id` unique,
+   `title`, `start_time`, `attendees` as "Name (email), ..." text,
+   `story_slug` if any attendee is tagged to one, `notes` - a one-line
+   prep summary of what the meeting is about and why). This feeds the
+   "Prossimi meeting" section at the top of `/nba` - added per Alex,
+   2026-08-31, so upcoming meetings surface with prep instead of only
+   living in the digest text. Never write a future event into a story
+   file itself
 3. **Notion transcripts** - search for call/meeting pages created since
    the cursor. A transcript is a strong source for facts, with one
    standing rule: Alex's word about his own life outranks a transcript
@@ -82,6 +106,11 @@ Hard rules:
 - `ledger_genesis_events` - one dated fact row for a genuinely
   significant event (a deal confirmed, a first meeting, a launch), not
   for every email
+- `ledger_upcoming_meetings` - upsert on `event_id` for every future
+  Calendar event with a tracked attendee, cursor to 3 days ahead (see
+  Sources above). Write with the Supabase MCP service session, same as
+  `ledger_ingest_state` - the app key has no insert policy on this
+  table by design, since only the sweep should populate it
 - After markdown edits: run `scripts/sync-skill.sh` and
   `platform/scripts/sync-ledger.mjs`, commit, push. The platform
   deploys from git

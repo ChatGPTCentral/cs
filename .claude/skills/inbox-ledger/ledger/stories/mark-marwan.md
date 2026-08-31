@@ -6,10 +6,9 @@
   (elizabeth@theaicentral.net), Alex on cc
 - status: **theirs** (Mark)
 - last-inbound: 2026-07-14 (mark@theaicentral.net)
-- last-outbound: 2026-08-30 (elizabeth@theaicentral.net, August payout -
-  INV-014, $530 - thread `1a05382e2fe260ce`)
-- idle: 21 days (from last-inbound; the 30 Aug message is a payout
-  notice, not a chase)
+- last-outbound: 2026-08-30 (elizabeth@theaicentral.net, monthly
+  invoice - INV-014, $530 - thread `1a05382e2fe260ce`)
+- idle: 21 days (from last-inbound; the 30 Aug message is not a chase)
 - next-action: **unknown - bodies not read.** Elizabeth is chasing and not getting
   answers
 - commitments: none recorded
@@ -27,3 +26,8 @@
   **Date correction, 2026-08-25, confirmed by Alex.** First contact was 20
   Feb 2025, not August 2025 as first stated - a calendar sweep found
   "Marwan" on that date and Alex confirmed it as the real one.
+
+  **Recurring invoice, per Alex, 2026-08-31.** The monthly email
+  Elizabeth sends Mark (e.g. INV-014, 30 Aug) is the invoice for what
+  AI Central owes him for his work - money Alex needs to pay, not a
+  payout Mark received passively.

@@ -1,7 +1,9 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { updateStoryNextAction, updateStoryNextActionDate, updateStoryStrategy } from "../story/actions";
+import { parseAttendees } from "../../lib/people";
 import TableCellInput from "../people/TableCellInput";
 import SavedToast from "../people/SavedToast";
+import Avatar from "../people/Avatar";
 
 export const dynamic = "force-dynamic";
 
@@ -94,6 +96,52 @@ function StoryRow({ item, today }) {
   );
 }
 
+function MeetingRow({ m, peopleByEmail }) {
+  const when = new Date(m.start_time);
+  const attendees = parseAttendees(m.attendees);
+  return (
+    <div className="nba-row">
+      <div className="nba-row-head">
+        <span className="nba-title">{m.title}</span>
+        <span className="nba-chip">
+          {when.toLocaleDateString("it-IT", { weekday: "short", day: "numeric", month: "short" })}
+          {" · "}
+          {when.toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit" })}
+        </span>
+      </div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, margin: "6px 0" }}>
+        {attendees.map((a) => {
+          const p = a.email ? peopleByEmail.get(a.email) : null;
+          return (
+            <span key={a.email || a.name} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+              <Avatar name={p?.name || a.name} photoUrl={p?.photo_url} size={20} />
+              {p ? (
+                <a href={`/people/${p.id}`}>{p.name}</a>
+              ) : (
+                a.name
+              )}
+            </span>
+          );
+        })}
+      </div>
+      {m.notes && <p className="nba-action" style={{ margin: "0 0 4px" }}>{m.notes}</p>}
+      {attendees
+        .map((a) => (a.email ? peopleByEmail.get(a.email) : null))
+        .filter((p) => p?.background)
+        .map((p) => (
+          <p key={p.id} style={{ fontSize: 12.5, color: "var(--ink-dim)", margin: "2px 0" }}>
+            <strong>{p.name}</strong> - {p.background}
+          </p>
+        ))}
+      {m.story_slug && (
+        <p style={{ margin: "4px 0 0" }}>
+          <a href={`/story/${m.story_slug}`}>Vedi la storia collegata &rarr;</a>
+        </p>
+      )}
+    </div>
+  );
+}
+
 function Section({ title, note, children, count }) {
   return (
     <section className="content" style={{ marginBottom: 20 }}>
@@ -108,13 +156,22 @@ function Section({ title, note, children, count }) {
 }
 
 export default async function NbaPage() {
-  const [stories, tasks] = await Promise.all([
+  const nowIso = new Date().toISOString();
+  const [stories, tasks, meetings, meetingPeople] = await Promise.all([
     supabaseSelect(
       "ledger_stories",
       "?select=id,slug,title,kind,next_action,next_action_date,strategy&or=(next_action.not.is.null,next_action_date.not.is.null)"
     ),
     supabaseSelect("ledger_notion_tasks", "?select=notion_url,task,status,priority,bucket,channel,story_slug"),
+    supabaseSelect(
+      "ledger_upcoming_meetings",
+      `?start_time=gte.${nowIso}&order=start_time.asc&select=event_id,title,start_time,attendees,story_slug,notes`
+    ).catch(() => []),
+    supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,identity,photo_url,background"),
   ]);
+  const peopleByEmail = new Map(
+    meetingPeople.filter((p) => p.identity).map((p) => [p.identity.toLowerCase(), p])
+  );
 
   const today = new Date().toISOString().slice(0, 10);
   const weekOut = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
@@ -196,6 +253,18 @@ export default async function NbaPage() {
         prossima azione, i task Notion collegati, e il resto del board. Ordinato per
         urgenza. I campi si modificano qui e valgono ovunque.
       </p>
+
+      {meetings.length > 0 && (
+        <Section
+          title="Prossimi meeting"
+          count={meetings.length}
+          note="Dal calendario, con chi ci sarà e cosa sai già su di loro."
+        >
+          {meetings.map((m) => (
+            <MeetingRow key={m.event_id} m={m} peopleByEmail={peopleByEmail} />
+          ))}
+        </Section>
+      )}
 
       {overdue.length > 0 && (
         <Section title="In ritardo" count={overdue.length} note="La scadenza è passata. Prima i più vecchi.">

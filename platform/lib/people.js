@@ -9,6 +9,22 @@ export function parseStorySlugs(stories) {
     .filter(Boolean);
 }
 
+// Turns the free-text "attendees" column on a meeting row
+// ("Name (email), Name (email)") into [{name, email}]. Written by the
+// auto-genesis sweep from real Calendar attendee data - see
+// ledger_upcoming_meetings and references/autogenesis.md.
+export function parseAttendees(attendees) {
+  if (!attendees) return [];
+  return attendees
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((s) => {
+      const m = s.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+      return m ? { name: m[1].trim(), email: m[2].trim().toLowerCase() } : { name: s, email: null };
+    });
+}
+
 // Turns the free-text "lists" column (comma-separated tags, e.g.
 // "Service Providers, Sales") into a clean set of tags.
 export function parseLists(lists) {
