@@ -36,12 +36,25 @@ Neither ever sends. The Gmail connector gained `send_message`, `reply` and
     candidates.md       unmatched topics awaiting promotion
     sweeps.md           one entry per sweep run
     learn-runs.md       one entry per calibration run
+.claude/skills/bdr-research/
+  SKILL.md              qualify -> research -> pick angle -> draft -> log
+  log/
+    research-runs.md    one line per prospect researched
 .claude/commands/
   ledger.md             /ledger
   support-sweep.md      /support-sweep
   support-learn.md      /support-learn
+  bdr-research.md       /bdr-research
 scripts/sync-skill.sh   repo <-> ~/.claude/skills
 ```
+
+`bdr-research` is the third skill, added 2026-08-31 after Alex rejected a
+batch of 27 templated cold-outreach drafts. It runs before
+`alex-writing-style` on any cold prospect: qualifies whether the target is
+actually cold (not an existing contact), researches the company for real,
+picks a selling angle, then hands off to `alex-writing-style` for the
+draft itself. It depends on the Appeared.in MCP for sponsorship-history
+research, which is not connected yet - see the skill's "Open item".
 
 ## Non-obvious things that will bite you
 
