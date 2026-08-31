@@ -25,9 +25,15 @@
   forward; `19e3a03bb6eb942c` is now historical
 - commitments: "i'll follow-up in the other thread regarding the progress on
   the XML integration" - alex@thecentral.ai to Aneeka, 2026-06-29 - **draft
-  left in Gmail, 2026-08-31**, on the case-study thread `19cf6dc21ce7fabd`
-  ("sorry for the radio silence - - wanted to follow up like I promised on
-  where the XML integration stands"), not yet sent
+  rewritten in Gmail, 2026-08-31, per Alex's own dictation**, on the
+  case-study thread `19cf6dc21ce7fabd`: asks whether AI Central earns from
+  and gets leads from both `gptcentral.tradepub.com` and
+  `aicentral.tradepub.com`, where new uploads go, whether gptcentral.tradepub
+  will be sunset, and flags four broken links (`w_chau222/211/209/192`).
+  Not yet sent. **Cleanup needed:** the shorter first-draft version
+  ("sorry for the radio silence...") is still sitting in Gmail too
+  (messageId `1a058fe6baf2e1bb`) - Gmail auth expired before it could be
+  trashed. Delete it by hand, or ask again once Gmail is reauthorized
 - threads: case-study and TradePub-listing threads Nov 2025 - Dec 2025 (Daniel,
   then Aneeka), plus the unread commitment-scanner thread carrying the June
   promise
