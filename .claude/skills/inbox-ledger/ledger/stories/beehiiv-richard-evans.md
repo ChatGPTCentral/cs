@@ -5,13 +5,16 @@
 - label-id: `Label_2976738811253175690`
 - kind: person
 - people: richard.evans@beehiiv.com, cc juliet@beehiiv.com
-- status: **theirs** - Alex sent the reply, waiting on Richard
-- last-inbound: 2026-08-26 (richard.evans@beehiiv.com, "beehiiv check-in")
+- status: **yours**
+- last-inbound: 2026-08-31 14:40 (richard.evans@beehiiv.com, thread
+  `1a0406cba2e234d0`)
 - last-outbound: 2026-08-31 08:28 (alex@thecentral.ai, sent - thread
   `1a0406cba2e234d0`)
-- idle: 0 - just sent
+- idle: 0 - just replied
 - next-action: none - wait for Richard to confirm the 1 Oct Enterprise
   move
+- **Pulse check, 2026-08-31.** Richard replied via `1a0406cba2e234d0` -
+  read and respond
 - commitments: told Richard AI Central moves into Enterprise on 1
   October 2026 - **open**, needs Richard's confirmation and follow-through
 - threads: `19a4ca55bf9bf588` (Nov 2025 - Aug 2026, the substantive

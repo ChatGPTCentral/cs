@@ -6,13 +6,16 @@
 - people: Aneeka Velummylum (`apatel@netline.com`), **Daniel Frignito**
   (`daniel@netline.com`, Director of Partner Development) - the address Alex
   named but that had not turned up in any thread read until this pass
-- status: **theirs** - Alex sent, waiting on Daniel
-- last-inbound: 2026-05-29 (daniel@netline.com, thread `19e3a03bb6eb942c`)
+- status: **yours**
+- last-inbound: 2026-08-31 14:42 (daniel@netline.com, thread
+  `1a057423f43dc9b2`)
 - last-outbound: 2026-08-31 10:03 (alex@thecentral.ai, to Daniel - Cannes
   Lions/Indiana update, proposes catching up on the XML feed, TradePub
   and Q4 content wave, asks if Wednesday 2pm London works for a call)
 - idle: 0 days
 - next-action: none - wait for Daniel's reply on Wednesday
+- **Pulse check, 2026-08-31.** Daniel replied via `1a057423f43dc9b2` -
+  read and respond
 - notes-threading: **sent from a detached draft, 2026-08-31.** The 30 Aug
   draft lived on thread `19e3a03bb6eb942c`; editing it to add the
   Wednesday ask (via update_draft with a plain-text body) broke the
