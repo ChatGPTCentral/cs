@@ -3,19 +3,22 @@
 - label-id: none
 - kind: project
 - people: Russ Shaw (Global Tech Advocates), Marc Duke (Duke Connect), Tsvetelin
-  (ThinkRevOps), Ganapathy (Vajra Global), Zoltan (Future of Work). Cc: Alejandro
-  Martinez and Jose Carlos Sanchez (Propelling Tech), `gta@wearesevenhills.com`
+  (ThinkRevOps), Ganapathy (Vajra Global), Zoltan (Future of Work), Swetha
+  Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
+  Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- status: **theirs**
-- last-inbound: 2026-08-12 (marcduke@dukeconnect.co.uk)
-- last-outbound: 2026-08-17 (alex@thecentral.ai)
-- idle: 2 days
-- next-action: review and send the drafted status-check to Tsvetelin
-  (thread `19ff67b1360150c6`) - asks when his part will be ready, proposes
-  a group call next week to assess the whitepaper
-- commitments: **unknown - bodies not read.** Alex's 17 Aug reply may contain one
-- threads: `19ff67b1360150c6` (live), `19f60e9ebd451424`, `19f21eef04aa4e4e`,
-  `19edf85ff0a1f34e`
+- status: **ours** - Alex sent the status-check, waiting on Tsvetelin's part
+- last-inbound: 2026-08-25 (tsvetelin@thinkrevops.com, promised his piece
+  "in the next 24hrs" - did not follow through by 31 Aug)
+- last-outbound: 2026-08-31 09:30 (alex@thecentral.ai, to
+  tsvetelin@thinkrevops.com, cc Ganapathy, Marc, Zoltan, Swetha)
+- idle: 0 days
+- next-action: none - wait for Tsvetelin's part or his reply on the call proposal
+- commitments: Alex asked when Tsvetelin's part will be ready and proposed a
+  group call next week (Alex is back in the office) to assess where the
+  whitepaper stands
+- threads: `19f60e9ebd451424` (live - the real status-check thread),
+  `19ff67b1360150c6`, `19f21eef04aa4e4e`, `19edf85ff0a1f34e`
 - notes: GTA is **Global Tech Advocates**, Russ Shaw's network - not a
   three-letter unknown. Six external participants across four threads, none of
   them labelled, which is why the label-based ledger never saw this story despite
@@ -104,9 +107,18 @@
   barometer") instead of a live call each quarter - who owns the survey
   data is left unresolved, pending a separate conversation with Russ.
 
-  **Draft prepared, 2026-08-31, per Alex.** Target launch (~6 Sep) is
-  close and the last real status update was the 20 Jul planning call -
-  drafted a status-check to Tsvetelin, cc the full group, asking when
-  his part will be ready and proposing a call next week (Alex is back
-  in the office then) to assess where the whitepaper actually stands.
-  Not yet sent.
+  **Status-check sent, 2026-08-31, per Alex.** Target launch (~6 Sep) is
+  close and the last real status update was the 20 Jul planning call.
+  Alex sent the check-in himself, not through a fresh draft but as a
+  reply inside `19f60e9ebd451424` - the existing "GTA Quarterly AI
+  Pulse" thread, not the `19ff67b1360150c6` thread this story first
+  guessed at. That thread turns out to be far more active than this
+  file had recorded: an Aug 3-4 exchange, then an Aug 25 round where
+  Ganapathy chased for progress and Tsvetelin admitted he was the only
+  one who had not shared his piece, promising it "in the next 24hrs."
+  He did not deliver, which is what prompted Alex's 31 Aug check-in -
+  same ask (when will his part be ready), same proposal (a call next
+  week, Alex is back in the office then) as this story already logged,
+  now actually sent to Tsvetelin, cc Ganapathy, Marc, Zoltan and Swetha
+  Sitaraman (a Vajra Global colleague of Ganapathy's, new to this
+  story). No reply yet as of this update.

@@ -85,7 +85,7 @@ Ball is legitimately in their court. Ranges from days to dormant.
 
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
-| [GTA whitepaper](stories/gta-whitepaper.md) | 2026-08-17 | 2d | marcduke@dukeconnect.co.uk |
+| [GTA whitepaper](stories/gta-whitepaper.md) | 2026-08-31 | 0d | tsvetelin@thinkrevops.com - promised his part 25 Aug, still not sent |
 | [Mya Bishop (Informa)](stories/mya-bishop-informa.md) | 2026-08-17 | 2d | Mya.Bishop@informa.com - third outbound in a series, no reply yet |
 | [interviews](stories/interviews.md) | 2026-08-14 | 5d | elettra.fiumi@gmail.com |
 | [Jorge](stories/jorge.md) | 2026-08-05 | 14d | jorge@groou.xyz |
