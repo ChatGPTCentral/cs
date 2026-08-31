@@ -24,7 +24,10 @@
   Alex sent it as-is. Track `1a057423f43dc9b2` as the live thread going
   forward; `19e3a03bb6eb942c` is now historical
 - commitments: "i'll follow-up in the other thread regarding the progress on
-  the XML integration" - alex@thecentral.ai to Aneeka, 2026-06-29, **unverified**
+  the XML integration" - alex@thecentral.ai to Aneeka, 2026-06-29 - **draft
+  left in Gmail, 2026-08-31**, on the case-study thread `19cf6dc21ce7fabd`
+  ("sorry for the radio silence - - wanted to follow up like I promised on
+  where the XML integration stands"), not yet sent
 - threads: case-study and TradePub-listing threads Nov 2025 - Dec 2025 (Daniel,
   then Aneeka), plus the unread commitment-scanner thread carrying the June
   promise
