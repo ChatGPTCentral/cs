@@ -1,0 +1,604 @@
+{
+  "meta": {
+    "pack_name": "AI Central Media - Sales Agent Training Knowledge Pack",
+    "exported": "2026-08-30",
+    "owner": "Alex Fiore, CEO & Founder, AI Central Media",
+    "source": "AI Central Sales HQ (Claude Project)"
+  },
+  "company": {
+    "name": "AI Central Media",
+    "legal_entity": "AI Central S.R.L. (Italian-registered)",
+    "founder": "Alex Fiore",
+    "founder_bio": "MSc in Quantitative Finance, previously led go-to-market at a UK AI fintech, teaches AI & Monetization at Cozora Academy, founding member of the SF-based AI Collective",
+    "positioning_statement": "AI Central is a media group and flagship publication focused on practical AI for senior professionals. We turn attention into pipeline for AI and SaaS brands by pairing premium placements with editorial-grade creative that speaks to senior operators",
+    "what_we_are_not": [
+      "Not a marketing agency - we don't manage campaigns or run paid media for clients",
+      "Not a freelance writing service - placements are tied to our distribution",
+      "Not a tech blog - we curate for our specific senior audience",
+      "Not a B2B lead gen firm - we drive awareness/education/intent, direct response is a bonus",
+      "Not focused on beginners - our readers know what ChatGPT is"
+    ]
+  },
+  "audience": {
+    "job_titles": [
+      "Founders",
+      "C-Suite",
+      "VPs",
+      "Directors",
+      "Senior Managers",
+      "consultants",
+      "knowledge workers who manage teams or budgets"
+    ],
+    "age_range": "35-55",
+    "geography": [
+      "North America (primary)",
+      "Europe (secondary)"
+    ],
+    "seniority_pct_founders_clevel_exec": 40,
+    "top_industries": [
+      "Consulting",
+      "SaaS",
+      "Education",
+      "Finance",
+      "Marketing"
+    ],
+    "wants": [
+      "practical, actionable AI guidance to apply this week",
+      "to look smart and ahead of the curve in front of their teams",
+      "tool recommendations from a trusted editorial voice, not disguised ads",
+      "concise formats readable in under 5 minutes"
+    ],
+    "dislikes": [
+      "hype without substance",
+      "AI will take your job takes",
+      "listicles with no depth",
+      "being talked down to"
+    ]
+  },
+  "reach": {
+    "combined_monthly_reach": "300,000+",
+    "linkedin_newsletter_subscribers": "178,000+",
+    "linkedin_newsletter_open_rate": "25%",
+    "linkedin_newsletter_ctr": "2.7%",
+    "beehiiv_subscribers": "75,000+",
+    "beehiiv_open_rate": "36%",
+    "beehiiv_ctr": "2.5%",
+    "current_partners": [
+      "ElevenLabs",
+      "Gamma",
+      "Guidde",
+      "HubSpot",
+      "Wispr Flow",
+      "Notion",
+      "Attio",
+      "Typeless",
+      "Delve",
+      "Taplio",
+      "Udacity by Accenture",
+      "Replit"
+    ],
+    "shortlist_to_cite": [
+      "ElevenLabs",
+      "Replit",
+      "Gamma",
+      "HubSpot",
+      "Notion"
+    ]
+  },
+  "icp": {
+    "good_fit": {
+      "company_types": [
+        "B2C Productivity SaaS",
+        "AI Agents/Assistants",
+        "CRMs"
+      ],
+      "job_titles": [
+        "Founder/CEO/CMO",
+        "Head/VP/Director of Marketing",
+        "Partnership Manager",
+        "Head of Growth"
+      ],
+      "price_range": "Free tier available or under $39/mo",
+      "goal": [
+        "Brand awareness",
+        "Product/feature launch"
+      ]
+    },
+    "medium_fit": {
+      "job_titles": [
+        "Affiliate Marketing Manager",
+        "Digital Marketing",
+        "Head of Demand Gen"
+      ],
+      "price_range": "$39-$99/mo",
+      "goal": [
+        "Lead gen only"
+      ]
+    },
+    "bad_fit": {
+      "company_types": [
+        "Large B2B corporations (e.g. Microsoft, Oracle)",
+        "Financial Institutions",
+        "IT & Cybersecurity"
+      ],
+      "price_range": "Over $99/mo, no free tier",
+      "goal": [
+        "Lead gen only with cost cap"
+      ]
+    }
+  },
+  "selling_angles": [
+    {
+      "scenario": "They run sponsored newsletters already",
+      "angle": "Better rates + better creative + bigger bundle"
+    },
+    {
+      "scenario": "They are launching a feature or product",
+      "angle": "Launch wave with multi-touch across LinkedIn + Beehiiv"
+    },
+    {
+      "scenario": "They have a lead magnet or report",
+      "angle": "High-intent traffic and email capture"
+    },
+    {
+      "scenario": "They sell a course or cohort",
+      "angle": "Deadline-driven pushes with proof and urgency"
+    },
+    {
+      "scenario": "They are early-stage and need credibility",
+      "angle": "Borrowed trust with senior operators"
+    }
+  ],
+  "products": [
+    {
+      "name": "LinkedIn Carousel",
+      "description": "Co-branded PDF, up to 15 slides, designed in-house, optimized for feed visibility and conversions",
+      "benefits": [
+        "Organic distribution",
+        "Lifetime content investment",
+        "15-20 CTAs (link on every page)",
+        "Lifetime spot in AI Library (2000+ views/mo)",
+        "Full republishing rights + 10% off future main ad orders"
+      ],
+      "best_for": [
+        "Brands with lots of existing blog content",
+        "Brands with few LinkedIn followers",
+        "Brands with a solution needing explanation/positioning"
+      ],
+      "packages": [
+        {
+          "package": "1 Carousel",
+          "price": 699
+        },
+        {
+          "package": "3 Carousels",
+          "price": 1999,
+          "discount": "5%"
+        },
+        {
+          "package": "5 Carousels",
+          "price": 2999,
+          "discount": "15%"
+        },
+        {
+          "package": "1 Carousel + 1 LinkedIn Newsletter Main Ad",
+          "price": 999,
+          "min_impressions": 20000,
+          "min_downloads": 200,
+          "max_cpm": 49.5,
+          "max_cpc": 4.9
+        },
+        {
+          "package": "3 Carousels + 3 LinkedIn Main Ads",
+          "price": 2799,
+          "min_impressions": 60000,
+          "min_downloads": 600,
+          "max_cpm": 46.65,
+          "max_cpc": 4.6
+        },
+        {
+          "package": "5 Carousels + 5 LinkedIn Main Ads",
+          "price": 4499,
+          "min_impressions": 100000,
+          "min_downloads": 1000,
+          "max_cpm": 44.99,
+          "max_cpc": 4.4
+        }
+      ]
+    },
+    {
+      "name": "LinkedIn Main Ad",
+      "description": "Premium top-of-newsletter placement, custom headline/copy/HD creative/CTA, one partner per issue",
+      "benefits": [
+        "Sent as email + feed post",
+        "Custom tracking link with pixel ID",
+        "LinkedIn follower growth",
+        "Lifetime SEO boost"
+      ],
+      "best_for": [
+        "Desktop-first offers",
+        "Brands running LinkedIn Ads/GTM",
+        "Product announcements or short-deadline offers"
+      ],
+      "packages": [
+        {
+          "package": "1 ad",
+          "price": 899,
+          "per_unit": 899,
+          "min_impressions": 20000,
+          "min_clicks": 100,
+          "max_cpm": 44.95,
+          "max_cpc": 8.9
+        },
+        {
+          "package": "2 ads",
+          "price": 1750,
+          "per_unit": 875,
+          "discount": "2.5%",
+          "min_impressions": 40000,
+          "min_clicks": 200,
+          "max_cpm": 43.75,
+          "max_cpc": 8.7
+        },
+        {
+          "package": "3 ads",
+          "price": 2499,
+          "per_unit": 833,
+          "discount": "5.0%",
+          "min_impressions": 60000,
+          "min_clicks": 300,
+          "max_cpm": 41.65,
+          "max_cpc": 8.3
+        },
+        {
+          "package": "4 ads",
+          "price": 3200,
+          "per_unit": 800,
+          "discount": "12%",
+          "min_impressions": 80000,
+          "min_clicks": 400,
+          "max_cpm": 40.0,
+          "max_cpc": 8.0
+        },
+        {
+          "package": "5 ads",
+          "price": 3799,
+          "per_unit": 759,
+          "discount": "15%",
+          "min_impressions": 100000,
+          "min_clicks": 500,
+          "max_cpm": 37.99,
+          "max_cpc": 7.5
+        }
+      ],
+      "upsell_paths": [
+        {
+          "from": "1 Main Ad ($899)",
+          "to": "1 Carousel + 1 Main Ad ($999)",
+          "upsell_value": 100
+        },
+        {
+          "from": "3 Main Ads ($2499)",
+          "to": "3 Carousels + 3 Main Ads ($2799)",
+          "upsell_value": 300
+        },
+        {
+          "from": "5 Main Ads ($3799)",
+          "to": "5 Carousels + 5 Main Ads ($4499)",
+          "upsell_value": 700
+        }
+      ]
+    },
+    {
+      "name": "Beehiiv Main Ad",
+      "description": "Premium top-of-newsletter placement, custom headline/copy/HD creative/CTA, one partner per issue",
+      "benefits": [
+        "Sent as email + posted on AI Central website (20k visits/mo)",
+        "Full look-through analytics",
+        "Lifetime SEO boost with custom keywords"
+      ],
+      "best_for": [
+        "Mobile-first offers",
+        "Product announcements",
+        "Short-deadline offers"
+      ],
+      "packages": [
+        {
+          "package": "1 ad",
+          "price": 1299,
+          "per_unit": 1299,
+          "min_impressions": 30000,
+          "min_clicks": 200,
+          "max_cpm": 43.3,
+          "max_cpc": 6.4
+        },
+        {
+          "package": "2 ads",
+          "price": 2499,
+          "per_unit": 1249,
+          "discount": "2.5%",
+          "min_impressions": 60000,
+          "min_clicks": 400,
+          "max_cpm": 41.65,
+          "max_cpc": 6.2
+        },
+        {
+          "package": "3 ads",
+          "price": 3699,
+          "per_unit": 1233,
+          "discount": "5.0%",
+          "min_impressions": 90000,
+          "min_clicks": 600,
+          "max_cpm": 41.1,
+          "max_cpc": 6.1
+        },
+        {
+          "package": "4 ads",
+          "price": 4599,
+          "per_unit": 1149,
+          "discount": "12%",
+          "min_impressions": 120000,
+          "min_clicks": 800,
+          "max_cpm": 38.3,
+          "max_cpc": 5.7
+        },
+        {
+          "package": "5 ads",
+          "price": 5499,
+          "per_unit": 1099,
+          "discount": "15%",
+          "min_impressions": 150000,
+          "min_clicks": 1000,
+          "max_cpm": 36.6,
+          "max_cpc": 5.4
+        }
+      ]
+    },
+    {
+      "name": "Dedicated Issue",
+      "description": "Full newsletter issue built around one sponsor"
+    },
+    {
+      "name": "Bundle",
+      "description": "Multi-format package combining carousel + newsletter + interview"
+    },
+    {
+      "name": "Ebook / Lead Magnet",
+      "description": "Co-branded or sponsored downloadable asset, PDF, branded, scannable"
+    },
+    {
+      "name": "CEO/Founder Interview",
+      "description": "Editorial Q&A interview featuring sponsor's exec, published in newsletter + LinkedIn Newsletter"
+    },
+    {
+      "name": "Recurring Wave",
+      "description": "Repeated placements aligned to a campaign or launch calendar"
+    }
+  ],
+  "discount_policy": {
+    "new_clients": "10% off",
+    "discretionary": "5% off"
+  },
+  "objections": [
+    {
+      "objection": "We are not ready",
+      "reply": "Totally fair - - want a quick 15 min to map your next product moment and I'll suggest 2 package options that fit the timeline?",
+      "why_it_works": "Doesn't push for a close now, reframes as free strategic value, offers optionality instead of one hard pitch"
+    },
+    {
+      "objection": "Send pricing",
+      "reply": "Yep - - quick context first: are you optimizing for signups, demos, or awareness? I'll send the right option so we don't spam you with irrelevant packages",
+      "why_it_works": "Qualifies the goal before quoting price so it feels tailored, signals competence"
+    },
+    {
+      "objection": "Too expensive",
+      "reply": "Got it - - if budget is tight, we can start with 1 placement, measure, then roll winners into a bundle - - what KPI matters most for you this month?",
+      "why_it_works": "De-risks by shrinking commitment, implies natural upsell path, redirects to KPI conversation"
+    },
+    {
+      "objection": "We do this in-house",
+      "reply": "Love that - - we plug in where it's hardest: distribution to senior operators plus editorial creative that performs in feed - - we can also use your assets and just handle placement",
+      "why_it_works": "Validates their capability, isolates the real value-add, offers a lighter-touch option"
+    },
+    {
+      "objection": "Too expensive / poor CPC from a past placement (real example: Luis Girao, UX Pilot)",
+      "reply": "Reframed the package into 1 LinkedIn carousel + 1 CEO interview at the same price point, backed by explicit CPM/CPC math (~$16 CPM / ~$1.60 CPC) vs LinkedIn Ads benchmarks ($30-80+ CPM / $5-12+ CPC), plus a native content investment and brand-asset framing",
+      "why_it_works": "Reframes the format instead of arguing the number, then out-maths the objection with real benchmarks"
+    }
+  ],
+  "voice_style": {
+    "hard_rules": [
+      "Never use em dashes (—) - always use '- -' (two hyphens with a space)",
+      "Never end sentences with periods",
+      "Sign-off is always 'Cheers, A' or 'Cheers, Alex' - never Best/Regards/Thanks/Sincerely",
+      "Use P.S. sections for secondary asks or links",
+      "Short paragraphs - one to three sentences max",
+      "Lowercase greetings in casual/repeat contexts, capitalized for new/formal contacts",
+      "Never use 'Dear [Name]'",
+      "No bullet points in casual replies - reserved for proposals"
+    ],
+    "tone_pillars": [
+      "Conversational but purposeful",
+      "Warm opener, direct body, clear CTA",
+      "Confident positioning (my team, our 300,000+ readers)",
+      "Empathy-first in negotiations",
+      "Exclamation marks earned sparingly",
+      "Parenthetical asides for personality"
+    ],
+    "signature_short": "Cheers,\nA",
+    "signature_medium": "Cheers,\nAlex",
+    "signature_full": "Cheers,\nAlex\n\n- -\n\nAlex\nCEO & Founder - AI Central Media\nemail: alex@thecentral.ai\nphone: +1 (773) 901 9008",
+    "never_does": [
+      "Best regards / Warm regards / Sincerely / Kind regards / Dear [Name]",
+      "Em dashes",
+      "Terminal periods on sentences",
+      "Corporate jargon (per our previous conversation, as per, kindly)",
+      "Long paragraphs (more than 3 sentences)",
+      "Excessive apologizing",
+      "Passive voice when active works",
+      "Signing off without Cheers"
+    ]
+  },
+  "templates": {
+    "email": {
+      "cold_outreach": "hi [Name], Alex here, founder of AI Central Media following-up from LinkedIn\n\nI assume you're busy (and LinkedIn inbox isn't the best place maybe)\n\n[Reference to their recent work/launch/product]\n\nMy team would be thrilled to develop some amazing content for [Company], as we do for ElevenLabs, Replit, Gamma, and more - - excited to connect with you and help [Company] close a strong [quarter]\n\nCheers,\n\nAlex\n\nP.S. [Reference to proposal/media kit link]",
+      "post_call_follow_up": "Hi [Name] - - [lovely/great] talking with you [earlier/today]\n\nBelow are [some thoughts / my team's research results / a roadmap]\n\n[Body content - proposal, strategy, materials]\n\nHappy to chat [later in the week / anytime] once you've had a chance to review\n\nCheers,\n\nA",
+      "follow_up_bump": "Hi [Name] - - [hope you're doing well / how are you?]\n\n[Context: I saw you were OOO last week / a quick follow-up on this thread]\n\nI [bet/assume] you're busy; however, [we'd appreciate feedback / it would be great to hear your thoughts]\n\nCheers,\nA",
+      "negotiation": "Hi [Name], thanks for getting back to me\n\nUnfortunately, I still see [specific concern with numbered points (1) and (2)]\n\n[Evidence/data supporting the position]\n\nIn the spirit of a win-win collaboration, [proposed alternative]\n\n[Clear ask or next step]\n\nCheers,\n\nA\n\nP.S. [Additional point if needed]",
+      "quick_reply_scheduling": "April 3rd would be best -- feel free to share with me your hubspot cal and i'll book\n\nCheers,\nA"
+    },
+    "linkedin_dm": {
+      "company_page_msg1": "Hi guys – {first_name} here from AI Central Media. I received a collaboration request from {pf_account} on your team via Passionfroot. We would love to feature {company_name} in AI Central and put it in front of 300k+ monthly readers of senior operators and decision makers. Open to a quick call this week to align on your goal and suggest the best package? Feel free to book some time at https://calendly.com/aicentral. Cheers, {first_name}",
+      "company_page_msg2_followup": "Hi guys – {first_name} here from AI Central Media. If you share your objective (e.g. signups, demos, launch, awareness) and budget, I'd be happy to share the nearest 2 options and rough ranges to go live! Cheers, {first_name}",
+      "company_page_msg3_final_bump": "Hi guys - hope you're doing well! If it is easier, drop the best email to send the media kit and a couple package ideas. Cheers, {first_name}",
+      "person_standard": "Hi {name} 👋! I'm {first_name}, Chief Editor at AI Central - We just applied to your launch campaign on Passionfroot. Happy to chat and give you the best coverage for your launch - cheers, A - My cal is calendly.com/aicentral",
+      "person_event_based": "Hi {name}, Alex here from AI Central Media – I just RSVP'd for your event on [date]. I run a 300,000-strong AI community across LinkedIn and a newsletter and would love to feature [Company] in the next issues. Happy to swing by your offices in [City] and meet you and your marketing team. Cheers, Alex",
+      "person_to_ceo_interview_pitch": "Hi {name} 👋 I'm the Chief Editor at AI Central Media. [Product] is mind-blowing and I'd like to interview you and bring it to my 300,000+ readers. Happy to chat with you or someone from your Marketing / GTM team, cheers - Alex. P.S. My cal is calendly.com/aicentral",
+      "person_to_cmo_partnership_pitch": "Hi {name} 👋 I'm the Chief Editor at AI Central Media. We love [Product] and we'd like to bring it to our 300,000+ readers. Happy to chat with you or someone from your Marketing / GTM team, cheers - Alex. P.S. My cal is calendly.com/aicentral",
+      "person_dm_followup_unanswered": "Hi {name} - hopefully you received my last message. Quick follow-up: How about we schedule a short time to chat early next week to discuss how to best position [Product] to accelerate your GTM over the next month? My private calendar is https://calendly.com/aicentral Cheers, Alex",
+      "person_reengagement_old_client": "Hi {name}, Alex from AI Central here. Last month, we ran a very successful campaign for [Product]. I was wondering whether you are planning any follow-up investments to accelerate now that [seasonal moment] is approaching. Happy to chat and explore how we can help you accelerate and close a strong [quarter]. Cheers, A",
+      "passionfroot_discover_reply": "Hi {company_name} team,\n\nAlex here, founder of AI Central Media. Just read your Discover brief and it is a great fit for our audience of AI early adopters and senior professionals\n\nIf you are aiming for performance, we can combine a premium Beehiiv placement with a LinkedIn Newsletter placement so you get both mobile conversions and desktop click intent. If you are aiming for education-led demand, we can add a short LinkedIn carousel that makes the offer feel native\n\nWant me to send the media kit and a recommended package for your campaign window?\n\nCheers,\n\nAlex\nChief Editor and Co-founder, AI Central Media\n\nDownload media kit >>> https://cntral.ai/media-kit\nBook a call >>> https://calendly.com/aicentral",
+      "dubco_affiliate_application": "Hi there - this is Alex, Founder & Chief Editor of AI Central Media\n\nWe work with companies like Replit, Gamma, ElevenLabs, and more to support them across their GTM, lead generation, and brand awareness campaigns\n\nMy team is planning to include [Product] in our top 10 recommended AI Tools for [category] that we share with our 300,000+ readers across Beehiiv, LinkedIn, and Substack - - we'd love to work with you guys, as you're building an outstanding product\n\nCheers,\nAlex\n\nP.S. happy to jump on a call with you here https://cntral.ai/meet or feel free to check out our media kit here: https://cntral.ai/media-kit"
+    }
+  },
+  "case_studies": [
+    {
+      "client": "Gamma.app",
+      "goal": "Launch + signups",
+      "result": "1,000+ downloads via multi-angle carousel strategy"
+    },
+    {
+      "client": "ElevenLabs",
+      "goal": "Launch + signups",
+      "result": "Explainer carousels driving hundreds of signups"
+    },
+    {
+      "client": "Guidde",
+      "goal": "Awareness + full-funnel growth",
+      "result": "500k+ views, recurring waves"
+    },
+    {
+      "client": "Outskill",
+      "goal": "Awareness + webinar/course promotion",
+      "result": "Recurring pushes aligned to calendar"
+    }
+  ],
+  "pipeline_q2_2026": {
+    "note": "No deals marked closed/won as of this export. These are live negotiations demonstrating the playbook in action",
+    "active_deals": [
+      {
+        "prospect": "Aleena Vigoda - Anything.com",
+        "role": "Cultural Economist",
+        "stage": "Proposal sent, awaiting confirmation",
+        "how_it_opened": "Inbound after seeing the Replit case study",
+        "negotiation": "She proposed 100% first-month/50% recurring affiliate rev share; Alex countered with 30% lifetime rev share + 20% discount code (AICENTRAL20)"
+      },
+      {
+        "prospect": "Luis Girao - UX Pilot",
+        "role": "Reports to CEO Adam Fard",
+        "stage": "Negotiating - budget/CPC objection",
+        "objection": "Full package too expensive; poor CPC from a previous $325/newsletter placement",
+        "reframe": "1 LinkedIn carousel + 1 CEO interview with Adam Fard at same $325 price, justified with ~$16 CPM/~$1.60 CPC vs LinkedIn Ads benchmarks of $30-80+ CPM/$5-12+ CPC"
+      },
+      {
+        "prospect": "Claire Chen - Dokie AI",
+        "role": "Marketing and PR Manager",
+        "stage": "Proposal sent, awaiting review",
+        "how_it_opened": "Referenced their existing sponsored post with Sabahudin Murtic",
+        "buying_signal": "Asked about rates immediately",
+        "positioning": "Dokie framed as PPT-native AI tool complementary to Gamma, not competing"
+      }
+    ],
+    "prospects_in_development": [
+      {
+        "name": "OpusClip",
+        "stage": "5 carousel concepts developed",
+        "angles": [
+          "CEO/founder ops",
+          "CMO video ROI",
+          "RevOps sales enablement",
+          "Creator workflow",
+          "Podcast repurposing"
+        ]
+      },
+      {
+        "name": "VEED.IO",
+        "stage": "Research in progress"
+      },
+      {
+        "name": "Late (getlate.dev)",
+        "stage": "Proposal doc created",
+        "angles": [
+          "SaaS founder build-vs-buy",
+          "Growth team automation",
+          "AI developer social API",
+          "Agency white-label",
+          "Enterprise content ops"
+        ]
+      },
+      {
+        "name": "SheetMagic",
+        "stage": "5 carousel concepts developed",
+        "angles": [
+          "Solo operators",
+          "Marketing teams",
+          "AI builders",
+          "Executives",
+          "Agency owners"
+        ]
+      }
+    ]
+  },
+  "vocabulary": {
+    "greetings": [
+      "Hi [Name]",
+      "hi [name]",
+      "Alex here",
+      "Hi [Name] - - hope you're doing well",
+      "Hi guys"
+    ],
+    "credibility": [
+      "our 300,000+ readers",
+      "as we do for ElevenLabs, Replit, Gamma, and more",
+      "my team prepared a custom package"
+    ],
+    "ctas": [
+      "Happy to chat anytime: https://cntral.ai/meet",
+      "Feel free to book some time at https://calendly.com/aicentral",
+      "Let me know your thoughts"
+    ],
+    "urgency": [
+      "I assume you're busy",
+      "a quick follow-up on this thread"
+    ],
+    "positive": [
+      "AMAZING",
+      "That's exciting!",
+      "Very great!",
+      "legend",
+      "stunning!"
+    ],
+    "negotiation": [
+      "In the spirit of a win-win collaboration",
+      "I really appreciate your transparency"
+    ]
+  },
+  "subject_line_patterns": {
+    "partnership_proposals": "[Company] ++ AI Central  or  AI Central x [Company]",
+    "urgent": "Urgent - - AI Central x [Company]",
+    "followups": "Re: [topic] ++ [new context]",
+    "forward_next_steps": "Next steps >> AI Central + [Company]",
+    "short_asks": "Code for my followers / Quick question {first_name}"
+  },
+  "links": {
+    "book_a_call": "https://cntral.ai/meet",
+    "calendly": "https://calendly.com/aicentral",
+    "media_kit": "https://cntral.ai/media-kit",
+    "storefront": "https://cntral.ai/storefront",
+    "beehiiv_newsletter": "https://gptcentral.beehiiv.com",
+    "linkedin_page": "https://linkedin.com/company/chat-gpt-central",
+    "email_collabs": "collabs@thecentral.ai",
+    "email_personal": "alex@thecentral.ai",
+    "phone": "+1 (773) 901 9008"
+  }
+}

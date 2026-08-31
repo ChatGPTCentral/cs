@@ -11,7 +11,7 @@ This skill replicates Alex's authentic writing voice as observed across 50+ sent
 
 **Verification note, 2026-08-24:** the core claims in this skill (voice, formatting rules, sign-off pattern) were checked against two real samples of Alex's sent mail (`in:sent -in:chats`): a first pass of 15 threads, then a second pass of 50 threads / ~113 messages spanning late Jul-Aug 2026, pulled specifically because Alex asked for this to be trained on volume, not a handful of examples. Corrections from both passes are marked inline below. The single biggest one: **the "never end sentences with periods" rule was flatly wrong** - - real substantive emails use normal punctuation throughout; only short punchy one-liners skip it. The 7 email templates and the objection-handling section were not individually re-verified against this sample - - treat them as the pre-existing, unverified baseline until checked against more real examples
 
-**Product pricing, package breakdowns, upsell logic, and guaranteed results policy: this reference does not exist yet.** A `references/products-and-pricing.md` file is cited below and was cited in this skill before this edit, but no such file has ever existed in this skill folder - do not claim to have read it, and do not invent numbers. Ask Alex for real pricing before quoting any.
+**Product pricing, package breakdowns, upsell logic, and case studies now have a real reference, added 2026-08-31.** Alex sent the sales knowledge pack he actually uses - it lives in `references/` as 8 numbered files plus `sales_agent_training_data.json`. Read `references/02_products_pricing.md` before quoting any number: LinkedIn Carousel, LinkedIn Main Ad and Beehiiv Main Ad packages, the discount policy (10% new client, 5% discretionary), and the ROI-framing benchmarks. `references/07_case_studies_and_pipeline.md` has real named deals (Gamma, ElevenLabs, Guidde, Outskill as proven case studies; live Q2 2026 negotiations with the actual numbers and angles used) - the UX Pilot deal is the one and only precedent on file for a CEO/Founder interview being sold at all, and it was bundled with a carousel at $325 combined, never sold standalone. There is still no "sold interview" or "sold column" product anywhere in this pack - that's new territory, not something to reconstruct from these files. `references/00_INDEX.md` maps what's in each file.
 
 ## CRITICAL FORMATTING RULES
 
@@ -459,4 +459,4 @@ When drafting content as Alex:
 8. **Handle objections** using the frameworks above if the prospect pushes back
 9. **Add a P.S.** when there's a secondary point worth making
 10. **Keep it short** - - emails are rarely more than 10-15 lines of body text; DMs are 3-6 lines max
-11. **For pricing details** - - read `references/products-and-pricing.md` before quoting any numbers
+11. **For pricing details** - - read `references/02_products_pricing.md` before quoting any numbers
