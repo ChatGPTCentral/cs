@@ -32,3 +32,9 @@
   Zoom clips. Wavelength slotted into a post-Cannes batch targeted for
   publication before 10 Jul. Wavelength has Madfest and Creatorfest trade
   shows coming up.
+
+  **Correction, per Alex, 2026-08-31.** Alistair never replied to the
+  interview offer and never sent an interview back - the Task Board had
+  wrongly stated "publish the interview" as if it had already arrived.
+  Corrected to a follow-up/nudge task. The real next step is chasing
+  Alistair, not publishing anything.

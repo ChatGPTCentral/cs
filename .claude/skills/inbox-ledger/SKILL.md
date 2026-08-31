@@ -127,6 +127,10 @@ drafted.
   stop
 - Support mail belongs to `aic-customer-support`. This skill records the three
   support folders as one domain entry and routes drafting there
+- **Never write a Task Board task whose wording assumes a deliverable
+  arrived** ("publish", "send", "upload") without confirming, in the
+  actual thread, that it did. An offer is not a delivery. See
+  `references/task-board.md` - it exists because of a real mistake
 
 ## Operational facts
 
@@ -181,5 +185,6 @@ and the eventual network-visualization goal are in `references/background.md`.
 - `references/stories.md` - the registry, verified queries, whose-move rules
 - `references/feedback.md` - the in-platform feedback loop: Supabase table, procedure, write-back rule
 - `references/background.md` - the CRM layer: Alex-provided context, format, the network-viz goal
+- `references/task-board.md` - the Notion Task Board: verifying a task before writing it, the notion_url format
 - `../aic-customer-support/references/inbox.md` - Gmail mechanics, signature,
   threading, the quoting trade-off
