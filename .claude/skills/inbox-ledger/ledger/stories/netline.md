@@ -6,14 +6,15 @@
 - people: Aneeka Velummylum (`apatel@netline.com`), **Daniel Frignito**
   (`daniel@netline.com`, Director of Partner Development) - the address Alex
   named but that had not turned up in any thread read until this pass
-- status: **yours**
+- status: **yours** - on the Daniel side (his reply is unanswered); the
+  Aneeka side is now theirs (Alex just sent, see commitments below)
 - last-inbound: 2026-08-31 14:42 (daniel@netline.com, thread
-  `1a057423f43dc9b2`)
-- last-outbound: 2026-08-31 10:03 (alex@thecentral.ai, to Daniel - Cannes
-  Lions/Indiana update, proposes catching up on the XML feed, TradePub
-  and Q4 content wave, asks if Wednesday 2pm London works for a call)
+  `1a057423f43dc9b2` - gave a Calendly link, `calendly.com/daniel-netline`)
+- last-outbound: 2026-08-31 18:12 (alex@thecentral.ai, to Aneeka - see
+  commitments below)
 - idle: 0 days
-- next-action: none - wait for Daniel's reply on Wednesday
+- next-action: book time on Daniel's Calendly (`calendly.com/daniel-netline`)
+  or reply directly - his 14:42 reply is still unanswered
 - **Pulse check, 2026-08-31.** Daniel replied via `1a057423f43dc9b2` -
   read and respond
 - notes-threading: **sent from a detached draft, 2026-08-31.** The 30 Aug
@@ -24,16 +25,20 @@
   Alex sent it as-is. Track `1a057423f43dc9b2` as the live thread going
   forward; `19e3a03bb6eb942c` is now historical
 - commitments: "i'll follow-up in the other thread regarding the progress on
-  the XML integration" - alex@thecentral.ai to Aneeka, 2026-06-29 - **draft
-  rewritten in Gmail, 2026-08-31, per Alex's own dictation**, on the
-  case-study thread `19cf6dc21ce7fabd`: asks whether AI Central earns from
-  and gets leads from both `gptcentral.tradepub.com` and
+  the XML integration" - alex@thecentral.ai to Aneeka, 2026-06-29 -
+  **fulfilled, 2026-08-31 18:12** (message `1a05905922789024`, thread
+  `19cf6dc21ce7fabd`, cc elizabeth@theaicentral.net). Alex sent his own
+  edit of the drafted monetization/broken-links email: does AI Central earn
+  from and get leads from both `gptcentral.tradepub.com` and
   `aicentral.tradepub.com`, where new uploads go, whether gptcentral.tradepub
-  will be sunset, and flags four broken links (`w_chau222/211/209/192`).
-  Not yet sent. **Cleanup needed:** the shorter first-draft version
-  ("sorry for the radio silence...") is still sitting in Gmail too
-  (messageId `1a058fe6baf2e1bb`) - Gmail auth expired before it could be
-  trashed. Delete it by hand, or ask again once Gmail is reauthorized
+  will be sunset, and flags four broken links (`w_chau222/211/209/192`) as
+  actively disrupting operations, asking Aneeka to restore them. **Cleanup
+  needed:** two now-superseded drafts are still sitting on this thread -
+  messageId `1a058fe6baf2e1bb` (my "sorry for the radio silence" draft from
+  earlier today) and `1a04f511d3139175` (an older, pre-existing draft from
+  2026-08-29, "Closing the loop I promised on the payment-terms thread").
+  Both attempts to trash them hit an expired Gmail token - delete by hand,
+  or ask again once Gmail is reauthorized
 - threads: case-study and TradePub-listing threads Nov 2025 - Dec 2025 (Daniel,
   then Aneeka), plus the unread commitment-scanner thread carrying the June
   promise
