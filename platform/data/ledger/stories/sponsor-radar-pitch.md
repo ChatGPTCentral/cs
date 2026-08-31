@@ -6,12 +6,15 @@
 - kind: project (inbound pitch, one contact)
 - people: Ryan Doyle, doyle_r@doyleprojects.co, org Doyle Projects /
   Sponsor Radar
-- status: **theirs** (Ryan)
+- status: **yours**
 - start: 2026-08-29
-- last-inbound: 2026-08-30 (doyle_r@doyleprojects.co)
+- last-inbound: 2026-08-31 18:37 (doyle_r@doyleprojects.co, thread
+  `1a04df42ea54423a`)
 - last-outbound: 2026-08-30 (alex@thecentral.ai)
 - next-action: none from Alex - he asked Ryan two direct questions and is
   waiting on the answer
+- **Pulse check, 2026-08-31.** Ryan replied via `1a04df42ea54423a` - read
+  and respond
 - commitments: none
 - threads: `1a04df42ea54423a` (live)
 - notes: **Per Alex, 2026-08-31.** Ryan is an agent who sells advertising
