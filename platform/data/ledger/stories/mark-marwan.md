@@ -6,8 +6,10 @@
   (elizabeth@theaicentral.net), Alex on cc
 - status: **theirs** (Mark)
 - last-inbound: 2026-07-14 (mark@theaicentral.net)
-- last-outbound: 2026-07-29 (elizabeth@theaicentral.net)
-- idle: 21 days
+- last-outbound: 2026-08-30 (elizabeth@theaicentral.net, August payout -
+  INV-014, $530 - thread `1a05382e2fe260ce`)
+- idle: 21 days (from last-inbound; the 30 Aug message is a payout
+  notice, not a chase)
 - next-action: **unknown - bodies not read.** Elizabeth is chasing and not getting
   answers
 - commitments: none recorded
