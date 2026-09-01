@@ -6,7 +6,8 @@
   `arajput@wellput.io`, plus a third address that varies -
   `avelhankar@wellput.io` on some threads, `awadghule@wellput.io` on others
 - ours: Elizabeth runs it, Alex is bcc'd on their inbound and cc'd on replies
-- last-touch: Elizabeth (last message inbound)
+- last-touch: Elizabeth (her 2026-08-05 message landed in this mailbox as an
+  inbound copy, but it was hers - the last external reply was 2026-07-29)
 - last-inbound: 2026-08-05 (elizabeth@theaicentral.net -> adops, so technically
   ours - the last **external** message was 2026-07-29)
 - last-outbound: 2026-08-05
