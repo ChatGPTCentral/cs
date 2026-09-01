@@ -11,10 +11,8 @@
 - last-inbound: 2026-08-31 18:37 (doyle_r@doyleprojects.co, thread
   `1a04df42ea54423a`)
 - last-outbound: 2026-08-30 (alex@thecentral.ai)
-- next-action: none from Alex - he asked Ryan two direct questions and is
-  waiting on the answer
-- **Pulse check, 2026-08-31.** Ryan replied via `1a04df42ea54423a` - read
-  and respond
+- next-action: Ryan answered Alex's questions (see notes) - read and decide
+  whether to try the $30 free-credit run
 - commitments: none
 - threads: `1a04df42ea54423a` (live)
 - notes: **Per Alex, 2026-08-31.** Ryan is an agent who sells advertising
@@ -30,4 +28,12 @@
   client of appeared.in, but he is open to a partnership if Ryan can
   help close new deals - and asked Ryan to clarify what the "free
   sending credits" line means and to share case studies of recent work.
-  Awaiting Ryan's reply.
+
+  **Auto-genesis, 2026-09-01.** Ryan answered, 31 Aug 18:37 (thread
+  `1a04df42ea54423a`): Sponsor Radar does top-of-funnel only - maps
+  brands already sponsoring comparable newsletters, emails them from
+  Sponsor Radar's own mailboxes under AI Central's name, and routes
+  positive replies to Alex to close. No cut of any closed deal. Pricing:
+  $30 free credit covers 600 pitches, then $0.05/pitch after. Gave a run
+  link: sponsorradar.co/run/thecentral.ai. Did not share case studies as
+  asked - that part of Alex's question is still unanswered

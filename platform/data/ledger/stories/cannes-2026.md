@@ -38,3 +38,19 @@
   wrongly stated "publish the interview" as if it had already arrived.
   Corrected to a follow-up/nudge task. The real next step is chasing
   Alistair, not publishing anything.
+
+  **Auto-genesis, 2026-09-01 - a third sub-thread, Guideline.ai.** Thread
+  `19ef907493db26ba` ("Cannes - Podcast 4pm Tomorrow with Alex"), under
+  the same Cannes 2026 label, one of the "9 other threads not yet read"
+  above. Elizabeth arranged a podcast recording at Cannes with Vince
+  Mifsud (Guideline.ai's founder) on a yacht with the AdTonos crew,
+  hosted by Vince since Guideline's Kelly and Sean weren't at Cannes that
+  year - Jessica Doss (Guideline's Director of Internal Communication)
+  coordinated. Idle since 24 Jun until Alex sent a check-in on 31 Aug
+  21:40 to jessica.doss@guideline.ai (cc Vince, cc elizabeth@theaicentral.net):
+  asked whether the podcast is still in post-production, offered to
+  amplify it to AI Central's 300,000+ readers the week it goes live paired
+  with a written interview, and separately flagged a second, still-open
+  item - a written interview with someone named only "Tim," whose
+  questions have been with him since early July. "Tim" is not otherwise
+  identified in this ledger - unresolved, candidate
