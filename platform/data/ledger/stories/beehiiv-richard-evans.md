@@ -46,3 +46,7 @@
   in the reply to Richard. The draft uses a plain "busy summer" excuse
   instead, tells Richard AI Central is ready to move into Enterprise on
   1 October, and thanks him for his patience.
+
+  **Per Alex, 2026-09-01.** Since Richard already knows AI Central moves
+  to Enterprise on 1 Oct, a few weeks of silence from here is expected,
+  not a dropped ball - nothing to chase until closer to that date.

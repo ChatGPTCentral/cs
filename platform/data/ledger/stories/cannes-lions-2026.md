@@ -53,3 +53,6 @@
   mya-bishop-informa story chases (official media accreditation at
   Informa events) - Indiana answered in two weeks what three messages
   to Mya did not.
+
+  **Per Alex, 2026-09-01.** No rush - the proposal can go out in 1-2
+  weeks, not urgent right now.

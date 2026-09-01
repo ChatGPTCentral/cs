@@ -13,6 +13,13 @@
 - notes: a real, recurring relationship across Nov 2025 - Jan 2026, each
   message answered until this last one
 
+  **what's actually open, per the thread (Alex asked, 2026-09-01, didn't
+  remember).** Dominik: no slots on the Earn side, but a Grow-side promo
+  at $0.5/sub, "if you're quick, you can still profit from it" - Alex
+  never answered. That promo is 7+ months old by now and near-certainly
+  expired - reviving this means asking Dominik what the Grow side looks
+  like today, not following up on the old offer
+
   **month-by-month review, 2026-08-23.** The relationship resumed in 2026
   with two distinct programs, per Alex: Refind Active (AI Central sends its
   readers to Refind, earns money) and Refind Passive (AI Central pays
