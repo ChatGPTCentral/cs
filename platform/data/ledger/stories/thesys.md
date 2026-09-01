@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (inbound lead, real back-and-forth, went cold)
 - people: Abhishek Mishra ("Abhi")
-- status: **theirs** - no reply since 6 Jan 2026
+- last-touch: Alex - no reply since 6 Jan 2026
 - start: 2025-12-22
 - last-inbound: 2025-12-23 (Abhi asking for the CPC on the proposal)
 - idle: 218 days as of 2026-08-27

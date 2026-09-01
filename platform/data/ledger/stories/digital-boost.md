@@ -3,7 +3,7 @@
 - label-id: `Label_1373649917815035617`
 - kind: project
 - people: digitalboost@digitalboost.org.uk
-- status: **theirs** - not dormant
+- last-touch: Alex - not dormant
 - last-inbound: 2026-07-02 (digitalboost@digitalboost.org.uk) - **not August 2025**
 - last-outbound: unknown - not yet checked whether Alex replied to the July message
 - idle: 48 days since their July message, pending a reply check

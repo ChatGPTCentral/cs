@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (real negotiation, Alex cancelled his own proposal)
 - people: Jaspar Carmichael-Jack
-- status: **theirs** - no reply since Feb 2024, though Alex is the one who
+- last-touch: Alex - no reply since Feb 2024, though Alex is the one who
   let the live proposal lapse
 - start: 2024-01-14
 - last-inbound: 2024-01-17 (Jaspar's own counter-offer, ~$400)

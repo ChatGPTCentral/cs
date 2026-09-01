@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (inbound lead, stalled after Alex's own upsell)
 - people: Manas Ojha (Head of Growth, incredible.one)
-- status: **theirs** - no reply since 12 Mar 2026
+- last-touch: Alex - no reply since 12 Mar 2026
 - start: 2026-03-02
 - last-inbound: 2026-03-02 (Manas's own inbound proposal, $449)
 - idle: 168 days as of 2026-08-27

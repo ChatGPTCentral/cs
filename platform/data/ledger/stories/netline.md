@@ -6,8 +6,8 @@
 - people: Aneeka Velummylum (`apatel@netline.com`), **Daniel Frignito**
   (`daniel@netline.com`, Director of Partner Development) - the address Alex
   named but that had not turned up in any thread read until this pass
-- status: **yours** - on the Daniel side (his reply is unanswered); the
-  Aneeka side is now theirs (Alex just sent, see commitments below)
+- last-touch: Daniel on the Daniel side (his reply is unanswered); Alex
+  on the Aneeka side (just sent, see commitments below)
 - last-inbound: 2026-08-31 14:42 (daniel@netline.com, thread
   `1a057423f43dc9b2` - gave a Calendly link, `calendly.com/daniel-netline`)
 - last-outbound: 2026-08-31 18:12 (alex@thecentral.ai, to Aneeka - see

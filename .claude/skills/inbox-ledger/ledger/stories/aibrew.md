@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (real negotiation, lost on budget)
 - people: AiBrew Team (writing on behalf of "Jessica")
-- status: **theirs** - AiBrew declined on price, 28 Jul 2025
+- last-touch: Alex - AiBrew declined on price, 28 Jul 2025
 - start: 2025-06-27
 - last-inbound: 2025-07-28 (AiBrew's own decline)
 - idle: 395 days as of 2026-08-27

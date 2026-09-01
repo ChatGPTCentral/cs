@@ -4,7 +4,7 @@
 - kind: person/org, likely PR or partnerships
 - people: `silvia@diogoandco.com`, replies from `diogoandco@gmail.com` - same
   org, two addresses
-- status: **theirs**
+- last-touch: Alex
 - last-inbound: 2026-07-07 (diogoandco@gmail.com)
 - last-outbound: 2026-08-17 (alex@thecentral.ai, cc liz)
 - idle: 2 days

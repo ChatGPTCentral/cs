@@ -5,7 +5,7 @@
 - people: Joel Salinas (jajasalinas@gmail.com), Michael Simmons
   (michael@iempact.com), Claudia Faith (claudiafaith.cf@gmail.com, see
   claudia-faith.md) - the three founders
-- status: **theirs**, effectively dormant
+- last-touch: Alex, effectively dormant
 - last-inbound: 2025-12-10 (jajasalinas@gmail.com, same-day reply to Alex)
 - last-outbound: 2025-12-17 (alex@thecentral.ai)
 - idle: 253 days

@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (real budget in hand, timing kept slipping)
 - people: Kat McMahon, Sheridan (added later, Feb 2026)
-- status: **theirs** - Kat put everything on hold before BoxWorks, Aug 2025
+- last-touch: Alex - Kat put everything on hold before BoxWorks, Aug 2025
 - start: 2025-07-29
 - last-inbound: 2025-08-21 (Kat, "most of our campaigns are on hold")
 - idle: since Aug 2025 - a Feb 2026 re-pitch to both Sheridan and Kat also

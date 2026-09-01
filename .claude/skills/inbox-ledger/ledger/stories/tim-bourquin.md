@@ -3,7 +3,7 @@
 - label-id: none
 - kind: person
 - people: tim.bourquin@gmail.com, cc liz
-- status: **theirs**
+- last-touch: Alex
 - last-inbound: 2026-06-22 (tim.bourquin@gmail.com)
 - last-outbound: 2026-06-22 (alex@thecentral.ai, earlier the same day)
 - idle: 58 days

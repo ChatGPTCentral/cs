@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (live pitch, not yet closed)
 - people: Sonia, Yev also named at the start
-- status: **theirs** - Alex is holding a slot, waiting on Uare's decision
+- last-touch: Alex - is holding a slot, waiting on Uare's decision
 - start: 2026-05-09
 - last-outbound: 2026-08-03 (Alex, holding an Aug-Sept slot with Uare's
   name on it)

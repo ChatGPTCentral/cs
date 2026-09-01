@@ -3,7 +3,7 @@
 - label-id: `Label_5586594889512562982`
 - kind: person
 - people: Ben (ben@madrev.co), Katy (katy@madrev.co), Liz (liz@thecentral.ai) cc
-- status: **theirs** - Alex chased, no reply since
+- last-touch: Alex - chased, no reply since
 - last-inbound: 2026-06-22 (ben@madrev.co)
 - last-outbound: 2026-08-19 (alex@thecentral.ai, to Ben, cc Katy - "closing
   some sponsors for early sept, are you guys working on any placements in

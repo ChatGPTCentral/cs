@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (real inbound lead, went quiet after a low offer)
 - people: Jessica
-- status: **theirs** - no reply since Jessica's own last message
+- last-touch: Alex - no reply since Jessica's own last message
 - start: 2025-05-12
 - last-inbound: 2025-06-02 (Jessica, "Hey Alex kindly update")
 - idle: since Jun 2025 - Alex's Feb 2026 re-pitch also went unanswered

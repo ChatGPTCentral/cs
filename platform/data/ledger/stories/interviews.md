@@ -3,7 +3,7 @@
 - label-id: `Label_5304794021306184656`
 - kind: project
 - people: Elizabeth runs it; guests vary - latest elettra.fiumi@gmail.com
-- status: **theirs**
+- last-touch: Elizabeth
 - last-inbound: not in the live thread
 - last-outbound: 2026-08-14 (elizabeth@theaicentral.net)
 - idle: 5 days

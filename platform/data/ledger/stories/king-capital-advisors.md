@@ -3,7 +3,7 @@
 - label-id: none
 - kind: org
 - people: info@king-capital-advisors.com
-- status: **theirs**
+- last-touch: Alex
 - last-inbound: 2026-07-14 (info@king-capital-advisors.com)
 - last-outbound: 2026-06-16 (alex@thecentral.ai)
 - idle: 36 days

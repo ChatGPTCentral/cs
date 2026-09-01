@@ -6,7 +6,7 @@
 - people: Jonathan (original 2023 contact), Christine Colling ("Elana" in
   Alex's own messages - likely a nickname or mistaken first name; check
   before re-approaching)
-- status: **theirs** - no reply since Nov 2024
+- last-touch: Alex - no reply since Nov 2024
 - start: 2023-11-01 - the oldest Passionfroot pitch found in this entire
   dataset
 - last-inbound: 2024-10-30 (Christine, actively scoping a combined

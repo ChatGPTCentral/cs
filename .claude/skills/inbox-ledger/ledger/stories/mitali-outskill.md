@@ -4,7 +4,7 @@
 - kind: person
 - people: mitali@growthschool.io, cc pankhuri@growthschool.io,
   aamir.akhtar@growthschool.io, elizabeth
-- status: **theirs** - Alex sent the win-back, waiting on Mitali
+- last-touch: Alex - sent the win-back, waiting on Mitali
 - start: 2025-12-11 or earlier - Sam flagged an "ongoing partnership" issue
   to aamir on this date; not a cold start
 - last-inbound: 2026-07-02 (implicitly - see notes; no reply after Alex's

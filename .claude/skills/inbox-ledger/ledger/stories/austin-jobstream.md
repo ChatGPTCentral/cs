@@ -13,7 +13,7 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
 - kind: project + person (now: several people at one company)
 - people: Amanda, Katie, and **Jazmin** (jazmin@getjobstream.com) - all
   @getjobstream.com
-- status: **theirs** - Alex sent the nudge himself, waiting on Jazmin
+- last-touch: Alex - sent the nudge himself, waiting on Jazmin
 - last-inbound: 2026-07-02 (jazmin@getjobstream.com, on the Cannes-debrief
   thread `19f22034be72195f`) - the merchandise thread itself has no inbound
   since Jazmin's original 21 May offer

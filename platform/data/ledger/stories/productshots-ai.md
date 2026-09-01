@@ -5,7 +5,7 @@
 - kind: project (affiliate option offered, never finalized)
 - people: Bijan Vaez (brand contact; Alex's outreach addressed "Mustafa,"
   a name that never replies - same naming mismatch pattern as Durable)
-- status: **theirs** - no reply since the affiliate terms were shared,
+- last-touch: Alex - no reply since the affiliate terms were shared,
   Jan 2024
 - start: 2024-01-21
 - last-inbound: 2024-01-24 (Bijan, sharing the 20%-for-3-years affiliate

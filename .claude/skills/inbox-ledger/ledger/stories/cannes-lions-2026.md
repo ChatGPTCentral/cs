@@ -8,7 +8,7 @@
   Informa - not yet a person record, see candidates), Steve Latham
   (Cannes Lions, learning programs), plus the many Cannes contacts
   tracked on the cannes-2026 sub-stories
-- status: **yours** - Alex owes Indiana the media partnership proposal
+- last-touch: Indiana - Alex owes Indiana the media partnership proposal
 - last-inbound: 2026-08-28 (IndianaE@canneslions.com, "Yes, of course!
   Talk soon")
 - last-outbound: 2026-08-28 (alex@thecentral.ai, "Thanks!")

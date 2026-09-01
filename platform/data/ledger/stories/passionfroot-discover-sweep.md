@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (bulk record, not a single relationship)
 - people: none - kept as one entry on purpose
-- status: **theirs** - reference list, no live thread
+- last-touch: Alex - reference list, no live thread
 - start: 2024-04-21 (earliest application on file)
 - next-action: none
 - commitments: none

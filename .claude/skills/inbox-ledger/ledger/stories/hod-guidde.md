@@ -6,7 +6,7 @@
 - people: Hod (`hod@guidde.co`), Yoav (`yoav@guidde.co`, cc on later
   messages), Cielo Gil (`cielo.gil@guidde.co`, a separate SparkLoop-intro
   touch)
-- status: **theirs** - Alex sent a fresh re-engagement, waiting on Hod
+- last-touch: Alex - sent a fresh re-engagement, waiting on Hod
 - last-inbound: 2026-05-12 (hod@guidde.co - "I would prefer to use our
   existing credits first. This will allow me to evaluate the results
   before we decide on the continuity of our partnership and future

@@ -4,7 +4,7 @@
 - kind: person, internal
 - people: Mark (mark@theaicentral.net / mark@thecentral.ai), Elizabeth
   (elizabeth@theaicentral.net), Alex on cc
-- status: **theirs** (Mark)
+- last-touch: Mark
 - last-inbound: 2026-07-14 (mark@theaicentral.net)
 - last-outbound: 2026-08-30 (elizabeth@theaicentral.net, monthly
   invoice - INV-014, $530 - thread `1a05382e2fe260ce`)

@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (bulk record, not a single relationship)
 - people: none - kept as one entry on purpose, not fragmented per brand
-- status: **theirs** - no live thread needs Alex's reply
+- last-touch: Alex - no live thread needs Alex's reply
 - start: 2023-11-01 (earliest message across this whole batch)
 - next-action: none - this is a reference list, not a thread to work
 - commitments: none

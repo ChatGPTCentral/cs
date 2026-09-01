@@ -3,7 +3,7 @@
 - label-id: `Label_3561665707077814621`
 - kind: project
 - people: Sarah (sarah@wavelength.now), and 9 other threads not yet read
-- status: **yours**
+- last-touch: Sarah
 - last-inbound: 2026-06-29 (sarah@wavelength.now)
 - last-outbound: 2026-06-29 (alex@thecentral.ai)
 - idle: 51 days

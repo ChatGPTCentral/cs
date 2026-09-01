@@ -6,7 +6,7 @@
 - people: `casucci.studiogaldieri@sirev.it` ("Danilo") and
   `valentina.studiogaldieri@gmail.com` - two people, one shared surname/firm
   fragment in both local-parts
-- status: **theirs**
+- last-touch: Alex
 - last-inbound: 2026-08-06 (casucci.studiogaldieri@sirev.it)
 - last-outbound: 2026-08-06 (alex@thecentral.ai)
 - idle: 13 days

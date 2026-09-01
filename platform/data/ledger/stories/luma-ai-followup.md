@@ -6,7 +6,7 @@
 - kind: project - real task to follow up on
 - people: Trevor, trevor@lumalabs.ai, org Luma AI. On the Passionfroot side:
   Serena Baleja (campaign contact, Mar-May 2026)
-- status: **theirs** - Alex followed up, waiting on Eugenio
+- last-touch: Alex - followed up, waiting on Eugenio
 - start: 2026-08-20
 - end: (ongoing)
 - last-inbound: 2026-08-20 (trevor@lumalabs.ai, handing off to Eugenio

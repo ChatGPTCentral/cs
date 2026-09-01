@@ -7,7 +7,7 @@
   replies are all addressed to "Turner," a name that never otherwise
   appears in this thread - worth checking whether that is the right
   contact
-- status: **theirs** - no reply since the initial inbound booking
+- last-touch: Alex - no reply since the initial inbound booking
 - start: 2025-09-23
 - last-inbound: 2025-09-23 (Ethan Clouser's own inbound booking request)
 - idle: 338 days as of 2026-08-27

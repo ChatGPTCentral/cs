@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (inbound lead, went cold)
 - people: Vitalik Kotyk
-- status: **theirs** - no reply since the initial inbound message
+- last-touch: Alex - no reply since the initial inbound message
 - start: 2026-02-10
 - last-inbound: 2026-02-10 (Vitalik's own inbound proposal, $499)
 - idle: 198 days as of 2026-08-27

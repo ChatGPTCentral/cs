@@ -5,7 +5,7 @@
 - label-id: `Label_2976738811253175690`
 - kind: person
 - people: richard.evans@beehiiv.com, cc juliet@beehiiv.com
-- status: **yours**
+- last-touch: Richard Evans
 - last-inbound: 2026-08-31 14:40 (richard.evans@beehiiv.com, thread
   `1a0406cba2e234d0`)
 - last-outbound: 2026-08-31 08:28 (alex@thecentral.ai, sent - thread

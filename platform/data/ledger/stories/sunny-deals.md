@@ -4,7 +4,7 @@
 - kind: project
 - people: Sam (sam@theaicentral.net) running cold outbound, one thread per
   counterparty
-- status: **theirs** - on every thread but one, nobody ever replied
+- last-touch: Sam - on every thread but one, nobody ever replied
 - last-inbound: none, except the Perplexity thread (now its own story)
 - last-outbound: 2026-04-02 (sam@theaicentral.net, Framer and a Lovable
   contact)

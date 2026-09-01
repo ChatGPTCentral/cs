@@ -5,7 +5,7 @@
 - kind: person
 - people: Andy (`andy@heyglide.com`), Sepy mentioned but not addressed
   directly
-- status: **theirs** - Alex re-opened, no reply yet
+- last-touch: Alex - re-opened, no reply yet
 - start: 2024-05-04 - corrected 2026-08-27 from the Passionfroot data (see
   below); this is Alex's first documented pitch to Andy, almost two years
   before the Gmail thread this story was originally built from

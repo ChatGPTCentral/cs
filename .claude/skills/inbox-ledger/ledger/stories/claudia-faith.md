@@ -3,7 +3,7 @@
 - label-id: none
 - kind: person
 - people: claudiafaith.cf@gmail.com, cc elizabeth
-- status: **theirs**
+- last-touch: Alex
 - last-inbound: 2026-07-02 (claudiafaith.cf@gmail.com)
 - last-outbound: 2026-06-29 (alex@thecentral.ai)
 - idle: 48 days

@@ -3,7 +3,7 @@
 - label-id: none
 - kind: person
 - people: Mya.Bishop@informa.com
-- status: **theirs**
+- last-touch: Alex
 - start: 2026-06-11
 - last-inbound: none seen yet in this window
 - last-outbound: 2026-08-17 (alex@thecentral.ai, cc liz) - third message in a

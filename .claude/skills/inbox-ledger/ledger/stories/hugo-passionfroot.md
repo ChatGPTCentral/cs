@@ -3,7 +3,7 @@
 - label-id: `Label_322524788560555789`
 - kind: person/org
 - people: hugo@passionfroot.me, and separately `support@passionfroot.me`
-- status: **theirs**, dormant on the labelled thread
+- last-touch: Alex, dormant on the labelled thread
 - last-inbound: 2026-04-03 (hugo@passionfroot.me, in reply to Alex's chase)
 - last-outbound: 2026-04-07 (alex@thecentral.ai, unanswered since)
 - idle: 134 days on the labelled thread

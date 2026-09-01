@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (real engagement, timing never aligned)
 - people: Felicia Ye
-- status: **theirs** - no reply since Oct 2024
+- last-touch: Alex - no reply since Oct 2024
 - start: 2024-05-04
 - last-inbound: 2024-07-30 (Felicia, "focusing on YouTube and TikTok at
   the moment")

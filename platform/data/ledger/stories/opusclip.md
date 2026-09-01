@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (cold pitch, never answered)
 - people: none named - every message on file is Alex's own outbound
-- status: **theirs** - never replied once, across two years
+- last-touch: Alex - never replied once, across two years
 - start: 2024-05-21
 - last-outbound: 2026-05-06
 - idle: since first pitch, 2024-05-21 - zero replies on file

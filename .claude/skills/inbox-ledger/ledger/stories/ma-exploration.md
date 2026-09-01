@@ -9,7 +9,7 @@
   - Brad Wayland, `brad@quietlight.com`, introduced via Lauren Winigrad
     `lauren@quietlight.com` (Quiet Light)
   - Joe Burrill, `support@justwebsitebrokerage.com` (Just Website Brokerage)
-- status: **yours** on the Just Website Brokerage thread - no reply from Alex
+- last-touch: Joe Burrill on the Just Website Brokerage thread - no reply from Alex
   found in any message read; resolved/closed on the other two
 - last-inbound: 2026-04-13 (support@justwebsitebrokerage.com, still chasing)
 - last-outbound: none found - every message in this sub-thread is from

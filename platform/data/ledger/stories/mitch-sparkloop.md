@@ -3,7 +3,7 @@
 - label-id: `Label_4563251958284752503`
 - kind: person
 - people: mitch@sparkloop.app
-- status: **yours** - unanswered
+- last-touch: Mitch - unanswered
 - last-inbound: 2026-03-12 (mitch@sparkloop.app)
 - last-outbound: 2026-03-12 (alex@thecentral.ai, earlier the same day)
 - idle: 160 days

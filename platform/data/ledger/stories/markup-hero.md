@@ -4,7 +4,7 @@
 - label-id: none
 - kind: project (real scheduled call, then silence)
 - people: Jeff Solomon
-- status: **theirs** - no reply since the scheduled call, May 2024
+- last-touch: Alex - no reply since the scheduled call, May 2024
 - start: 2024-04-21
 - last-inbound: 2024-05-08 (Jeff sending the Zoom link for their call)
 - idle: since May 2024 - two later generic re-pitches (Jan, Mar 2025) also

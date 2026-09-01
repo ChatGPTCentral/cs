@@ -12,7 +12,7 @@ top-level story.
 - kind: org
 - people: ed.cavazos@pillsburylaw.com, steven.james@pillsburylaw.com,
   hattie.winfield@pillsburylaw.com - all @pillsburylaw.com
-- status: **theirs**
+- last-touch: Alex
 - last-inbound: 2026-06-04 (Steven.James@pillsburylaw.com, cc Hattie Winfield)
 - last-outbound: 2026-06-04 (alex@thecentral.ai)
 - idle: 76 days

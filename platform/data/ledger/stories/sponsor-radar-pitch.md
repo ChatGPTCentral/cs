@@ -6,7 +6,7 @@
 - kind: project (inbound pitch, one contact)
 - people: Ryan Doyle, doyle_r@doyleprojects.co, org Doyle Projects /
   Sponsor Radar
-- status: **yours**
+- last-touch: Ryan Doyle
 - start: 2026-08-29
 - last-inbound: 2026-08-31 18:37 (doyle_r@doyleprojects.co, thread
   `1a04df42ea54423a`)

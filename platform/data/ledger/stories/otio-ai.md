@@ -5,7 +5,7 @@
 - kind: project (real recurring contact, never closed)
 - people: Yasaman Rajaee (Otio team), Hamed (mentioned as a second contact,
   May 2026 - see the note below on the ai-central-voices "Hamed" gap)
-- status: **theirs** - Yasaman asked for rates on 24 Feb 2026, no reply from
+- last-touch: Alex - Yasaman asked for rates on 24 Feb 2026, no reply from
   Otio since
 - start: 2024-07-30
 - last-inbound: 2026-02-24 (Yasaman, asking for LinkedIn/newsletter rates)

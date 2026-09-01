@@ -8,7 +8,7 @@
   Hiscox - see `graph/orgs.md`. Sven Thate (`sventhate@yahoo.de`) introduced in
   person, kept for future contact
 - ours on the thread: Alex (both addresses), Elizabeth
-- status: **yours** - Richard wrote again on 28 Aug (new thread), on top
+- last-touch: Richard - wrote again on 28 Aug (new thread), on top
   of the still-unsent draft
 - last-inbound: 2026-08-28 09:47 (Richard@hewlettrand.com, thread
   `1a047c4e361b5de3`, to Alex and Elizabeth)

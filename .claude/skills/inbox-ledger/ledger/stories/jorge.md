@@ -3,7 +3,7 @@
 - label-id: `Label_7247179519478710266`
 - kind: person
 - people: Jorge (jorge@groou.xyz), Elizabeth on cc in the recent thread
-- status: **yours**
+- last-touch: Jorge
 - last-inbound: 2026-09-01 10:22 (jorge@groou.xyz, thread `19ed0311ba3d51a0`, to elizabeth@theaicentral.net cc alex@thecentral.ai)
 - last-outbound: 2026-08-05 (alex@thecentral.ai)
 - idle: 0 days
