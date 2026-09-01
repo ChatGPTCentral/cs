@@ -3,10 +3,10 @@
 - label-id: `Label_7247179519478710266`
 - kind: person
 - people: Jorge (jorge@groou.xyz), Elizabeth on cc in the recent thread
-- status: **theirs**
-- last-inbound: 2026-08-05 (jorge@groou.xyz) - **not March**
+- status: **yours**
+- last-inbound: 2026-09-01 10:22 (jorge@groou.xyz, thread `19ed0311ba3d51a0`, to elizabeth@theaicentral.net cc alex@thecentral.ai)
 - last-outbound: 2026-08-05 (alex@thecentral.ai)
-- idle: 14 days
+- idle: 0 days
 - next-action: none - ball is with Jorge, and recently
 - commitments: none recorded
 - threads: `19fccf36f95ad9c0` (live, **unlabelled**), `19d2ab514c83a274` (labelled, 21 more unread)
