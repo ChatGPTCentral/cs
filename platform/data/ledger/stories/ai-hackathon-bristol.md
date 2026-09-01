@@ -8,18 +8,14 @@
   Hiscox - see `graph/orgs.md`. Sven Thate (`sventhate@yahoo.de`) introduced in
   person, kept for future contact
 - ours on the thread: Alex (both addresses), Elizabeth
-- last-touch: Alex - replied on `1a00a41717b4a24b` with the shipping
-  address for the tote bags, 2026-09-01
+- last-touch: Alex - replied on both open threads, 2026-09-01
+  (`1a00a41717b4a24b` with the shipping address, `1a047c4e361b5de3`
+  with the partner feedback Richard asked for)
 - last-inbound: 2026-08-28 09:47 (Richard@hewlettrand.com, thread
   `1a047c4e361b5de3`, to Alex and Elizabeth)
-- last-outbound: 2026-09-01 (alex@thecentral.ai, thread `1a00a41717b4a24b`)
-- idle: 0 days on the address thread. The separate 28 Aug thread
-  (`1a047c4e361b5de3`, partner feedback + follow-on-story ask) is still
-  unanswered
-- next-action: reply to Richard's 28 Aug message on `1a047c4e361b5de3`
-  (partner feedback for their 2027 planning + whether AI Central needs
-  anything for the follow-on stories) - needs Alex's actual input, not
-  a template
+- last-outbound: 2026-09-01 (alex@thecentral.ai, both threads)
+- idle: 0 days - both threads answered
+- next-action: none - wait for Richard to reply on either thread
 - commitments:
   - "we wanted to send you some nice AI Central swag" - made 2026-08-17 by Alex
     - Richard replied with size (Medium) and address (Wells, not Bristol) -
