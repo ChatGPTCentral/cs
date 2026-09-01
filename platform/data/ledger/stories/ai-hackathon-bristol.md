@@ -8,23 +8,25 @@
   Hiscox - see `graph/orgs.md`. Sven Thate (`sventhate@yahoo.de`) introduced in
   person, kept for future contact
 - ours on the thread: Alex (both addresses), Elizabeth
-- last-touch: Richard - wrote again on 28 Aug (new thread), on top
-  of the still-unsent draft
+- last-touch: Alex - replied on `1a00a41717b4a24b` with the shipping
+  address for the tote bags, 2026-09-01
 - last-inbound: 2026-08-28 09:47 (Richard@hewlettrand.com, thread
   `1a047c4e361b5de3`, to Alex and Elizabeth)
-- last-outbound: 2026-08-17 18:36 (alex@thecentral.ai)
-- idle: n/a - a reply is drafted, not yet sent, and a second inbound
-  now waits too
-- next-action: reply to Richard's 28 Aug message (partner feedback for
-  their 2027 planning + whether AI Central needs anything for the
-  follow-on stories), and send the older draft on `1a00a41717b4a24b`
-  once Alex supplies his shipping address
+- last-outbound: 2026-09-01 (alex@thecentral.ai, thread `1a00a41717b4a24b`)
+- idle: 0 days on the address thread. The separate 28 Aug thread
+  (`1a047c4e361b5de3`, partner feedback + follow-on-story ask) is still
+  unanswered
+- next-action: reply to Richard's 28 Aug message on `1a047c4e361b5de3`
+  (partner feedback for their 2027 planning + whether AI Central needs
+  anything for the follow-on stories) - needs Alex's actual input, not
+  a template
 - commitments:
   - "we wanted to send you some nice AI Central swag" - made 2026-08-17 by Alex
     - Richard replied with size (Medium) and address (Wells, not Bristol) -
     **open**, swag not yet confirmed sent
   - "I'll send you a couple of our Hewlett Rand tote bags too when I'm back" -
-    made 2026-08-18 by Richard - **open**, waiting on Alex's address
+    made 2026-08-18 by Richard - **kept, 2026-09-01** - Alex sent the AI
+    Central shipping address
 - threads: `1a00a41717b4a24b` (live, draft attached), `19ffcb0ec53d66f5`,
   `19ffd18007a902dd`, `19ffc98792683e77`, `1a00001814a32694`, `19fb8b5bc3941a1f`,
   `19fa846f29f497b1`, `19fa59796820678c`, `19fa4659d2bae1f5`, `19f948353d774397`,
