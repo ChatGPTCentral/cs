@@ -31,3 +31,14 @@
   placements," then "we will pass on this opportunity." Treat this as a
   cooled relationship, not an open one - any revival needs a genuinely new
   angle, not a re-pitch of the same carousel format.
+
+  **Per Alex, 2026-09-01.** Fiona (the London-event stand-in, above) is
+  the real person to open on if this gets revived - a named, in-person
+  connection, not a cold reintroduction to Meri after three declines.
+
+  **Research, 2026-09-01.** Gamma shipped a real product update since the
+  last pitch: Gamma Imagine (AI image generation inside Gamma) and a
+  native mobile app, both launched March 2026. A genuinely new angle
+  exists if Alex wants to use it - a tutorial/content piece on the new
+  features fits AI Central's actual format better than another carousel
+  ad. Not drafted without Alex's go-ahead, given the decline pattern.

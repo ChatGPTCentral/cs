@@ -30,3 +30,7 @@
   One real paid win, but the account has shown no appetite for repeat or
   larger work since February. Low-priority revival unless a fresh angle
   comes up.
+
+  **Per Alex, 2026-09-01.** The redirect to `creators@replit.com` (Jul
+  2026) came after Alex told the Replit contact he was heading to Cannes
+  - real context to open on, not a cold "checking in."
