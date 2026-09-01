@@ -94,7 +94,7 @@ Hard rules:
   the source does not literally support
 - Never write `ledger_stories.strategy`. That field is Alex's voice
   only
-- Update `last-inbound`, `last-outbound` and `status` (whose move)
+- Update `last-inbound`, `last-outbound` and `last-touch` (whose move)
   freely - they are mechanical facts, not judgment
 
 ## What to write where

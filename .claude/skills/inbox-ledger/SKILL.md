@@ -99,7 +99,9 @@ drafted.
 - label-id: <Label_...>
 - kind: person | project | domain
 - people: who is on the other side
-- status: yours | theirs | dormant | done
+- status: open | closed | dormant | done
+- last-touch: <name of whoever sent the last message> - team name means Alex
+  owes the reply, counterpart name means it is waiting on them
 - last-inbound: YYYY-MM-DD (from whom)
 - last-outbound: YYYY-MM-DD (from whom)
 - idle: N days
@@ -109,6 +111,12 @@ drafted.
 - threads: <ids of the live ones, not all of them>
 - notes: what a stranger would need to not sound stupid
 ```
+
+**`last-touch` replaced the old `yours`/`theirs` vocabulary, per Alex, 2026-09-01** -
+he flagged it as confusing. Name the actual person who sent the last message
+(`Alex`, `Elizabeth`, `Mark`, `Sam`, or the counterpart's name) instead of an
+abstract label. See `references/stories.md`'s "Whose move" section for the
+full rule, including which addresses count as the team.
 
 `next-action` is the field that earns its keep. "Reply to Mark" is not an action.
 "Send Mark the Q3 numbers he asked for on 12 July" is.

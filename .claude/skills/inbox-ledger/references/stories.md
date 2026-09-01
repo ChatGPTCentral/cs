@@ -88,10 +88,14 @@ gives every message's `sender`, `date` and `labelIds` without fetching bodies.
 That is enough to compute the whole ledger cheaply. Never pull bodies for
 triage - only for drafting.
 
-Take the newest thread, then its last message:
+Take the newest thread, then its last message, and write `last-touch: <name>` -
+the actual name of whoever sent it, not an abstract label (replaced the old
+`yours`/`theirs` vocabulary per Alex, 2026-09-01 - he flagged it as confusing):
 
-- sender is **one of ours** -> `theirs`. They owe the reply
-- sender is **anyone else** -> `yours`. You owe the reply
+- sender is **one of ours** -> `last-touch: <team member's name>`. They owe
+  the reply
+- sender is **anyone else** -> `last-touch: <counterpart's name>`. You owe
+  the reply
 
 Ours: `alex@thecentral.ai`, `alex@theaicentral.net`, `kris@thecentral.ai`,
 `editor@thecentral.ai`, `admin@thecentral.ai`, `admin@theaicentral.net`,
@@ -100,9 +104,10 @@ Ours: `alex@thecentral.ai`, `alex@theaicentral.net`, `kris@thecentral.ai`,
 
 **The team counts as ours.** `elizabeth@theaicentral.net`, `mark@theaicentral.net`,
 `mark@thecentral.ai`, `sam@theaicentral.net` are colleagues, not counterparties.
-A thread whose last message is Elizabeth chasing someone is `theirs`, not
-`yours` - and it is still Alex's problem when it goes quiet, which is why the
-ledger tracks idle days regardless of who sent last.
+A thread whose last message is Elizabeth chasing someone gets `last-touch:
+Elizabeth`, not the counterpart's name - and it is still Alex's problem when
+it goes quiet, which is why the ledger tracks idle days regardless of who
+sent last.
 
 ## The live stories
 
