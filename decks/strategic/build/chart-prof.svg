@@ -1,0 +1,26 @@
+<svg viewBox="0 0 560 234" width="100%" role="img" aria-label="Who they are: Manager 20.8 percent, Contributor 18.1 percent, VP / Director 15.9 percent, Founder, C-suite 13.9 percent, Student 1.4 percent, Other 30.2 percent">
+<text x="0" y="23.8" font-size="18" fill="#141414">Manager</text>
+<rect x="172" y="8.0" width="330" height="22" rx="4" fill="#F3F1EC"/>
+<rect x="172" y="8.0" width="227.3" height="22" rx="4" fill="#C8102E"/>
+<text x="512" y="23.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">21%</text>
+<text x="0" y="61.8" font-size="18" fill="#141414">Contributor</text>
+<rect x="172" y="46.0" width="330" height="22" rx="4" fill="#F3F1EC"/>
+<rect x="172" y="46.0" width="197.8" height="22" rx="4" fill="#C8102E"/>
+<text x="512" y="61.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">18%</text>
+<text x="0" y="99.8" font-size="18" fill="#141414">VP / Director</text>
+<rect x="172" y="84.0" width="330" height="22" rx="4" fill="#F3F1EC"/>
+<rect x="172" y="84.0" width="173.7" height="22" rx="4" fill="#C8102E"/>
+<text x="512" y="99.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">16%</text>
+<text x="0" y="137.8" font-size="18" fill="#141414">Founder, C-suite</text>
+<rect x="172" y="122.0" width="330" height="22" rx="4" fill="#F3F1EC"/>
+<rect x="172" y="122.0" width="151.9" height="22" rx="4" fill="#C8102E"/>
+<text x="512" y="137.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">14%</text>
+<text x="0" y="175.8" font-size="18" fill="#141414">Student</text>
+<rect x="172" y="160.0" width="330" height="22" rx="4" fill="#F3F1EC"/>
+<rect x="172" y="160.0" width="15.3" height="22" rx="4" fill="#C8102E"/>
+<text x="512" y="175.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">1%</text>
+<text x="0" y="213.8" font-size="18" fill="#141414">Other</text>
+<rect x="172" y="198.0" width="330" height="22" rx="4" fill="#F3F1EC"/>
+<rect x="172" y="198.0" width="330.0" height="22" rx="4" fill="#C8102E"/>
+<text x="512" y="213.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">30%</text>
+</svg>

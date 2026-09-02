@@ -1,0 +1,22 @@
+<svg viewBox="0 0 774 236" width="100%" role="img" aria-label="AI Central email subscribers by month, November 2023 to August 2026, ending at 97,070 active subscribers">
+<line x1="66" y1="204.0" x2="666" y2="204.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="52" y="209.0" text-anchor="end" font-size="17" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">0</text>
+<line x1="66" y1="162.5" x2="666" y2="162.5" stroke="#E3DFD7" stroke-width="1"/>
+<text x="52" y="167.5" text-anchor="end" font-size="17" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">25K</text>
+<line x1="66" y1="121.0" x2="666" y2="121.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="52" y="126.0" text-anchor="end" font-size="17" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">50K</text>
+<line x1="66" y1="79.5" x2="666" y2="79.5" stroke="#E3DFD7" stroke-width="1"/>
+<text x="52" y="84.5" text-anchor="end" font-size="17" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">75K</text>
+<line x1="66" y1="38.0" x2="666" y2="38.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="52" y="43.0" text-anchor="end" font-size="17" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">100K</text>
+<text x="102.4" y="226" text-anchor="middle" font-size="17" fill="#6E6E6E">2024</text>
+<text x="320.5" y="226" text-anchor="middle" font-size="17" fill="#6E6E6E">2025</text>
+<text x="538.7" y="226" text-anchor="middle" font-size="17" fill="#6E6E6E">2026</text>
+<polyline points="66.0,204.0 84.2,203.4 102.4,201.7 120.5,191.9 138.7,185.2 156.9,183.3 175.1,171.5 193.3,152.0 211.5,129.5 229.6,116.8 247.8,109.8 266.0,101.3 284.2,91.3 302.4,87.4 320.5,115.5 338.7,103.0 356.9,93.4 375.1,80.0 393.3,72.4 411.5,66.6 429.6,63.8 447.8,59.8 466.0,54.4 484.2,50.2 502.4,45.6 520.5,43.5 538.7,41.3 556.9,40.9 575.1,40.5 593.3,40.2 611.5,42.6 629.6,39.2 647.8,39.1 666.0,42.9" fill="none" stroke="#C8102E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="320.5" y1="123.5" x2="320.5" y2="153.5" stroke="#B8B2A7" stroke-width="1"/>
+<circle cx="320.5" cy="115.5" r="4" fill="#F3F1EC" stroke="#C8102E" stroke-width="2"/>
+<text x="327.5" y="163.5" font-size="16" fill="#6E6E6E">List clean, Jan 2025</text>
+<circle cx="666.0" cy="42.9" r="5" fill="#C8102E" stroke="#F3F1EC" stroke-width="2"/>
+<text x="678.0" y="36.9" font-size="25" font-weight="700" fill="#141414">97,070</text>
+<text x="678.0" y="57.9" font-size="16" fill="#6E6E6E">active</text>
+</svg>

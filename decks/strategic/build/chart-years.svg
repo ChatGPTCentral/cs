@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1600 430" width="100%" role="img" aria-label="AI Central revenue by year in euro: 2023 3,091; 2024 55,248; 2025 228,049, all actual; 2026 forecast 304,445 with 97,810 invoiced to July; 2027 conservative forecast 456,668.">
+<line x1="96" y1="390.0" x2="1570" y2="390.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="82" y="396.0" text-anchor="end" font-size="20" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">0</text>
+<line x1="96" y1="328.2" x2="1570" y2="328.2" stroke="#E3DFD7" stroke-width="1"/>
+<text x="82" y="334.2" text-anchor="end" font-size="20" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$100K</text>
+<line x1="96" y1="266.4" x2="1570" y2="266.4" stroke="#E3DFD7" stroke-width="1"/>
+<text x="82" y="272.4" text-anchor="end" font-size="20" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$200K</text>
+<line x1="96" y1="204.6" x2="1570" y2="204.6" stroke="#E3DFD7" stroke-width="1"/>
+<text x="82" y="210.6" text-anchor="end" font-size="20" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$300K</text>
+<line x1="96" y1="142.9" x2="1570" y2="142.9" stroke="#E3DFD7" stroke-width="1"/>
+<text x="82" y="148.9" text-anchor="end" font-size="20" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$400K</text>
+<line x1="96" y1="81.1" x2="1570" y2="81.1" stroke="#E3DFD7" stroke-width="1"/>
+<text x="82" y="87.1" text-anchor="end" font-size="20" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$500K</text>
+<text x="243.4" y="420" text-anchor="middle" font-size="23" font-weight="700" fill="#141414">2023</text>
+<rect x="178.4" y="387.8" width="130" height="2.2" fill="#C8102E"/>
+<text x="243.4" y="373.8" text-anchor="middle" font-size="28" font-weight="700" fill="#141414">$3.6K</text>
+<text x="538.2" y="420" text-anchor="middle" font-size="23" font-weight="700" fill="#141414">2024</text>
+<rect x="473.2" y="349.8" width="130" height="40.2" fill="#C8102E"/>
+<text x="538.2" y="335.8" text-anchor="middle" font-size="28" font-weight="700" fill="#141414">$65K</text>
+<text x="833.0" y="420" text-anchor="middle" font-size="23" font-weight="700" fill="#141414">2025</text>
+<rect x="768.0" y="224.2" width="130" height="165.8" fill="#C8102E"/>
+<text x="833.0" y="210.2" text-anchor="middle" font-size="28" font-weight="700" fill="#141414">$268K</text>
+<text x="1127.8" y="420" text-anchor="middle" font-size="23" font-weight="700" fill="#141414">2026 F</text>
+<rect x="1062.8" y="141.4" width="130" height="248.6" fill="none" stroke="#C8102E" stroke-width="2.5" stroke-dasharray="7 6"/>
+<text x="1127.8" y="127.4" text-anchor="middle" font-size="28" font-weight="700" fill="#141414">$402K</text>
+<text x="1422.6" y="420" text-anchor="middle" font-size="23" font-weight="700" fill="#141414">2027 F</text>
+<rect x="1357.6" y="66.8" width="130" height="323.2" fill="none" stroke="#C8102E" stroke-width="2.5" stroke-dasharray="7 6"/>
+<text x="1422.6" y="52.8" text-anchor="middle" font-size="28" font-weight="700" fill="#141414">$523K</text>
+<line x1="609.2" y1="349.8" x2="762.0" y2="224.2" stroke="#B8B2A7" stroke-width="1.5" stroke-dasharray="2 4"/>
+<text x="685.6" y="273.0" text-anchor="middle" font-size="25" font-weight="700" fill="#C8102E">+313%</text>
+<line x1="904.0" y1="224.2" x2="1056.8" y2="141.4" stroke="#B8B2A7" stroke-width="1.5" stroke-dasharray="2 4"/>
+<text x="980.4" y="168.8" text-anchor="middle" font-size="25" font-weight="700" fill="#C8102E">+50% F</text>
+<line x1="1198.8" y1="141.4" x2="1351.6" y2="66.8" stroke="#B8B2A7" stroke-width="1.5" stroke-dasharray="2 4"/>
+<text x="1275.2" y="90.1" text-anchor="middle" font-size="25" font-weight="700" fill="#C8102E">+30% F</text>
+</svg>

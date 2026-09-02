@@ -1,0 +1,60 @@
+<svg viewBox="0 0 1760 240" width="100%" role="img" aria-label="Library revenue by month in dollars, November 2023 to August 2026 actual, totalling 87,719 dollars gross, plus a six month forecast at 15 percent month over month growth.">
+<line x1="20" y1="206.0" x2="1676" y2="206.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="1688" y="212.0" text-anchor="start" font-size="18" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">0</text>
+<line x1="20" y1="162.0" x2="1676" y2="162.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="1688" y="168.0" text-anchor="start" font-size="18" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$2K</text>
+<line x1="20" y1="118.0" x2="1676" y2="118.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="1688" y="124.0" text-anchor="start" font-size="18" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$5K</text>
+<line x1="20" y1="74.0" x2="1676" y2="74.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="1688" y="80.0" text-anchor="start" font-size="18" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$7K</text>
+<line x1="20" y1="30.0" x2="1676" y2="30.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="1688" y="36.0" text-anchor="start" font-size="18" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">$10K</text>
+<rect x="28.7" y="199.4" width="24" height="6.6" fill="#C8102E" opacity="0.32"/>
+<rect x="70.1" y="193.7" width="24" height="12.3" fill="#C8102E" opacity="0.32"/>
+<rect x="111.5" y="186.7" width="24" height="19.3" fill="#C8102E" opacity="0.32"/>
+<text x="123.5" y="230" text-anchor="middle" font-size="17" fill="#6E6E6E">2024</text>
+<rect x="152.9" y="197.0" width="24" height="9.0" fill="#C8102E" opacity="0.32"/>
+<rect x="194.3" y="193.5" width="24" height="12.5" fill="#C8102E" opacity="0.32"/>
+<rect x="235.7" y="191.9" width="24" height="14.1" fill="#C8102E" opacity="0.32"/>
+<rect x="277.1" y="182.8" width="24" height="23.2" fill="#C8102E" opacity="0.32"/>
+<rect x="318.5" y="183.2" width="24" height="22.8" fill="#C8102E" opacity="0.32"/>
+<rect x="359.9" y="187.9" width="24" height="18.1" fill="#C8102E" opacity="0.32"/>
+<rect x="401.3" y="188.8" width="24" height="17.2" fill="#C8102E" opacity="0.32"/>
+<rect x="442.7" y="189.8" width="24" height="16.2" fill="#C8102E" opacity="0.32"/>
+<rect x="484.1" y="174.2" width="24" height="31.8" fill="#C8102E" opacity="0.32"/>
+<rect x="525.5" y="163.9" width="24" height="42.1" fill="#C8102E" opacity="0.32"/>
+<rect x="566.9" y="141.5" width="24" height="64.5" fill="#C8102E" opacity="0.32"/>
+<rect x="608.3" y="146.6" width="24" height="59.4" fill="#C8102E" opacity="0.32"/>
+<text x="620.3" y="230" text-anchor="middle" font-size="17" fill="#6E6E6E">2025</text>
+<rect x="649.7" y="167.5" width="24" height="38.5" fill="#C8102E" opacity="0.32"/>
+<rect x="691.1" y="160.3" width="24" height="45.7" fill="#C8102E" opacity="0.32"/>
+<rect x="732.5" y="134.5" width="24" height="71.5" fill="#C8102E" opacity="0.32"/>
+<rect x="773.9" y="122.3" width="24" height="83.7" fill="#C8102E" opacity="1"/>
+<rect x="815.3" y="163.3" width="24" height="42.7" fill="#C8102E" opacity="1"/>
+<rect x="856.7" y="170.5" width="24" height="35.5" fill="#C8102E" opacity="1"/>
+<rect x="898.1" y="120.2" width="24" height="85.8" fill="#C8102E" opacity="1"/>
+<rect x="939.5" y="110.0" width="24" height="96.0" fill="#C8102E" opacity="1"/>
+<rect x="980.9" y="118.7" width="24" height="87.3" fill="#C8102E" opacity="1"/>
+<rect x="1022.3" y="123.0" width="24" height="83.0" fill="#C8102E" opacity="1"/>
+<rect x="1063.7" y="131.6" width="24" height="74.4" fill="#C8102E" opacity="1"/>
+<rect x="1105.1" y="130.1" width="24" height="75.9" fill="#C8102E" opacity="1"/>
+<text x="1117.1" y="230" text-anchor="middle" font-size="17" fill="#6E6E6E">2026</text>
+<rect x="1146.5" y="158.9" width="24" height="47.1" fill="#C8102E" opacity="1"/>
+<rect x="1187.9" y="176.1" width="24" height="29.9" fill="#C8102E" opacity="1"/>
+<rect x="1229.3" y="157.5" width="24" height="48.5" fill="#C8102E" opacity="1"/>
+<rect x="1270.7" y="162.4" width="24" height="43.6" fill="#C8102E" opacity="1"/>
+<rect x="1312.1" y="152.1" width="24" height="53.9" fill="#C8102E" opacity="1"/>
+<rect x="1353.5" y="146.7" width="24" height="59.3" fill="#C8102E" opacity="1"/>
+<rect x="1394.9" y="133.7" width="24" height="72.3" fill="#C8102E" opacity="1"/>
+<rect x="1436.3" y="122.9" width="24" height="83.1" fill="none" stroke="#C8102E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="1477.7" y="110.4" width="24" height="95.6" fill="none" stroke="#C8102E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="1519.1" y="96.0" width="24" height="110.0" fill="none" stroke="#C8102E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="1560.5" y="79.5" width="24" height="126.5" fill="none" stroke="#C8102E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="1601.9" y="60.6" width="24" height="145.4" fill="none" stroke="#C8102E" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="1643.3" y="38.8" width="24" height="167.2" fill="none" stroke="#C8102E" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="1551.8" y="46" text-anchor="middle" font-size="15" fill="#6E6E6E">6mo forecast, +15%/mo</text>
+<line x1="765.2" y1="24" x2="765.2" y2="206.0" stroke="#141414" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="771.2" y="38" font-size="16" font-weight="700" fill="#141414">Launch, May 2025</text>
+<line x1="1303.4" y1="24" x2="1303.4" y2="206.0" stroke="#141414" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="1309.4" y="56" font-size="16" font-weight="700" fill="#141414">New funnel, Jun 2026</text>
+</svg>

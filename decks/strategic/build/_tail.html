@@ -1,0 +1,108 @@
+</div></div>
+
+<div id="hud"><b id="hud-n">1</b><span>/</span><b id="hud-t">12</b>
+  <span>&nbsp;←→ move · S notes · F full screen · P print</span></div>
+<div id="notes"><i id="notes-l"></i><span id="notes-b"></span></div>
+
+<script>
+(function(){
+  var slides = [].slice.call(document.querySelectorAll('.slide'));
+  var canvas = document.getElementById('canvas');
+  var hud = document.getElementById('hud'), hudN = document.getElementById('hud-n');
+  var notes = document.getElementById('notes');
+  var notesL = document.getElementById('notes-l'), notesB = document.getElementById('notes-b');
+  var i = 0, hudTimer, typed = '';
+
+  document.getElementById('hud-t').textContent = slides.length;
+
+  function fit(){
+    var s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    canvas.style.setProperty('--s', s);
+  }
+
+  // build steps: elements tagged data-step reveal group by group on advance
+  function groups(s){
+    var els = [].slice.call(s.querySelectorAll('[data-step]'));
+    var by = {};
+    els.forEach(function(el){ (by[el.dataset.step] = by[el.dataset.step] || []).push(el); });
+    return Object.keys(by).sort(function(a, b){ return a - b; }).map(function(k){ return by[k]; });
+  }
+  function setSteps(s, count){          // reveal the first `count` groups
+    groups(s).forEach(function(g, k){
+      g.forEach(function(el){ el.classList.toggle('rev', k < count); });
+    });
+  }
+  function revealed(s){
+    return groups(s).filter(function(g){ return g[0].classList.contains('rev'); }).length;
+  }
+
+  function show(n, flash){
+    var forward = n > i;
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+    setSteps(slides[i], forward ? 0 : groups(slides[i]).length);
+    hudN.textContent = i + 1;
+    notesL.textContent = slides[i].dataset.label || '';
+    notesB.textContent = slides[i].dataset.notes || 'No notes for this slide.';
+    if (flash !== false) peek();
+    if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
+  }
+
+  function next(){
+    var g = groups(slides[i]), r = revealed(slides[i]);
+    if (r < g.length) setSteps(slides[i], r + 1);
+    else show(i + 1);
+  }
+  function prev(){
+    var r = revealed(slides[i]);
+    if (r > 0) setSteps(slides[i], r - 1);
+    else show(i - 1);
+  }
+
+  function peek(){
+    hud.classList.add('show');
+    clearTimeout(hudTimer);
+    hudTimer = setTimeout(function(){ hud.classList.remove('show'); }, 2200);
+  }
+
+  addEventListener('resize', fit);
+  addEventListener('mousemove', peek);
+
+  addEventListener('keydown', function(e){
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ') { next(); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') { prev(); e.preventDefault(); }
+    else if (k === 'Home') { show(0); e.preventDefault(); }
+    else if (k === 'End') { show(slides.length - 1); e.preventDefault(); }
+    else if (k === 'r' || k === 'R') { show(0); }
+    else if (k === 's' || k === 'S') { notes.classList.toggle('on'); }
+    else if (k === 'f' || k === 'F') {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+    }
+    else if (k === 'p' || k === 'P') { print(); }
+    else if (k >= '0' && k <= '9') {           // type 1-2 digits to jump
+      typed += k;
+      clearTimeout(show._t);
+      show._t = setTimeout(function(){
+        var n = parseInt(typed, 10); typed = '';
+        if (n >= 1 && n <= slides.length) show(n - 1);
+      }, 350);
+    }
+    else if (k === 'Escape') { notes.classList.remove('on'); }
+  });
+
+  // tap left / right half on touch, leaving links and buttons alone
+  addEventListener('click', function(e){
+    if (e.target.closest('a,button')) return;
+    if (e.clientX < innerWidth / 2) prev(); else next();
+  });
+
+  fit();
+  var start = parseInt((location.hash || '').slice(1), 10);
+  show(start >= 1 && start <= slides.length ? start - 1 : 0, false);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Central - Strategic Overview</title>
+<style>
+/* ── Inter, subset to the glyphs this deck uses, embedded as WOFF2 ────────── */
+@font-face{font-family:Inter;font-style:normal;font-weight:300;font-display:block;
+  src:url(data:font/woff2;base64,__FONT_300__) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:block;
+  src:url(data:font/woff2;base64,__FONT_400__) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:block;
+  src:url(data:font/woff2;base64,__FONT_500__) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:block;
+  src:url(data:font/woff2;base64,__FONT_700__) format("woff2")}
+
+:root{
+  --accent:#C8102E;          /* Signal Red */
+  --ink:#141414;             /* deck black */
+  --paper:#FFFDFA;           /* baby powder */
+  --tint:#F3F1EC;
+  --muted:#6E6E6E;
+  --muted-dark:#9E9B96;
+  --faint-dark:#7E7B77;
+  --hair:#E9E6E0;
+  --hair-dark:#2E2E2E;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%;background:#0B0B0B;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+#stage{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden}
+#canvas{width:1920px;height:1080px;position:relative;
+  transform:scale(var(--s,1));transform-origin:center center}
+
+.slide{position:absolute;inset:0;display:none;flex-direction:column;overflow:hidden;
+  padding:96px 106px 140px;font-size:16px;line-height:1.3}
+.slide.on{display:flex}
+.light{background:var(--paper);color:var(--ink)}
+.dark{background:var(--ink);color:var(--paper)}
+
+/* ── shared slide furniture ───────────────────────────────────────────────── */
+.kicker{font-size:24px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:var(--accent)}
+h1,h2{margin:0;text-wrap:pretty}
+h2{margin-top:22px;font-size:76px;font-weight:700;line-height:.98;letter-spacing:-.03em;max-width:1560px}
+h2.wide{max-width:1620px}
+.subline{margin:26px 0 0;font-size:32px;font-weight:300;line-height:1.35;color:var(--muted);max-width:1500px}
+
+.foot{position:absolute;left:106px;bottom:46px;font-size:16px;font-weight:500;
+  letter-spacing:.2em;color:var(--muted)}
+.dark .foot{color:var(--faint-dark)}
+.badge{position:absolute;right:106px;bottom:44px;width:58px;height:58px;border-radius:50%;
+  font-size:24px;font-weight:700;text-align:center;line-height:58px;
+  background:var(--ink);color:var(--paper)}
+.dark .badge{background:var(--paper);color:var(--ink)}
+
+/* ── click-to-reveal build steps ──────────────────────────────────────────── */
+.slide.on [data-step]{opacity:0;transform:translateY(16px);
+  transition:opacity .45s ease,transform .45s ease}
+.slide.on [data-step].rev{opacity:1;transform:none}
+@media print{[data-step]{opacity:1!important;transform:none!important}}
+
+/* ── blocks ───────────────────────────────────────────────────────────────── */
+.cards{display:flex;gap:32px;margin-top:64px}
+.card{flex:1;background:var(--tint);padding:48px 44px;display:flex;flex-direction:column;gap:30px}
+.ico{width:88px;height:88px;border-radius:50%;background-color:#E9E6E0;
+  background-repeat:no-repeat;background-position:center;background-size:38px 38px}
+.card-t{font-size:32px;font-weight:700}
+.card-b{font-size:27px;font-weight:300;line-height:1.45}
+
+.stat{font-size:82px;font-weight:700;line-height:.9;letter-spacing:-.04em}
+.stat.red{color:var(--accent)}
+.stat-l{margin-top:16px;font-size:26px;font-weight:400;line-height:1.3;color:var(--muted)}
+
+.rows{margin-top:48px}
+.row{display:flex;gap:40px;align-items:center;padding:30px 0;border-top:1px solid var(--hair)}
+.row:last-child{border-bottom:1px solid var(--hair)}
+.row-ico{width:76px;height:76px;flex:none;border-radius:50%;background-color:var(--tint);
+  background-repeat:no-repeat;background-position:center;background-size:34px 34px}
+.row-t{width:330px;flex:none;font-size:31px;font-weight:700}
+.row-b{flex:1;font-size:27px;font-weight:300;line-height:1.4}
+
+.nrow{display:grid;grid-template-columns:96px 340px 1fr;gap:36px;align-items:baseline;
+  padding:28px 0;border-top:1px solid var(--hair)}
+.nrow:last-child{border-bottom:1px solid var(--hair)}
+.nrow-n{font-size:48px;font-weight:700;line-height:1;color:var(--accent)}
+.nrow-t{font-size:31px;font-weight:700}
+.nrow-b{font-size:27px;font-weight:300;line-height:1.4}
+
+.ph{background:var(--tint);border:2px dashed #C9C4BA;display:flex;align-items:center;
+  justify-content:center;text-align:center;font-style:italic;color:var(--muted);
+  font-size:25px;line-height:1.4;padding:28px}
+
+/* ── slide 05 chart cards ─────────────────────────────────────────────────── */
+.charts{display:flex;gap:32px;margin-top:52px}
+.chart{flex:1;height:452px;background:var(--tint);padding:32px;display:flex;flex-direction:column}
+.chart-h{font-size:28px;font-weight:700;letter-spacing:-.01em}
+.chart-s{margin-top:6px;font-size:20px;font-weight:400;color:var(--muted)}
+.chart svg{display:block;margin-top:14px}
+.chart-n{margin-top:auto;padding-top:12px;font-size:18px;font-weight:300;line-height:1.35;color:var(--muted)}
+.chart-n b{font-weight:700;color:var(--ink)}
+.legend{display:flex;gap:22px;margin-top:12px;font-size:18px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend i{width:13px;height:13px;flex:none;border-radius:2px}
+.chart text{font-family:Inter,system-ui,sans-serif}
+
+/* ── tables & tiles ───────────────────────────────────────────────────────── */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.tile{height:92px;background:#fff;border:1px solid var(--hair);display:flex;
+  align-items:center;justify-content:center;text-align:center;line-height:1.2;
+  font-size:29px;font-weight:700}
+
+table{width:100%;border-collapse:collapse;margin-top:44px;table-layout:fixed}
+th{padding:13px 16px;background:var(--tint);font-size:21px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-align:left}
+td{padding:13px 16px;border-top:1px solid var(--hair);font-size:24px;font-weight:300;line-height:1.3}
+tbody tr:last-child td{border-bottom:1px solid var(--hair)}
+td.name{font-weight:500}
+td.per{text-align:right;font-weight:700;color:var(--accent)}
+th.per{text-align:right}
+.src{margin-top:26px;font-size:22px;font-style:italic;line-height:1.4;color:var(--muted)}
+
+/* ── chrome / overlay ─────────────────────────────────────────────────────── */
+#hud{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:20;
+  display:flex;align-items:center;gap:16px;padding:9px 18px;border-radius:999px;
+  background:rgba(20,20,20,.82);color:#FFFDFA;font-size:13px;letter-spacing:.06em;
+  opacity:0;transition:opacity .28s;pointer-events:none;backdrop-filter:blur(6px)}
+#hud.show{opacity:1}
+#hud b{font-weight:700;font-variant-numeric:tabular-nums}
+#hud span{color:#9E9B96}
+
+#notes{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;
+  padding:20px 28px;background:rgba(20,20,20,.95);color:#FFFDFA;
+  font-size:15px;line-height:1.5;border-top:2px solid var(--accent)}
+#notes.on{display:block}
+#notes i{display:block;margin-bottom:5px;font-style:normal;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--faint-dark)}
+
+/* ── print: one slide per page, unscaled ──────────────────────────────────── */
+@page{size:1920px 1080px;margin:0}
+@media print{
+  html,body{height:auto;background:#fff}
+  #stage{position:static;display:block;overflow:visible}
+  #canvas{width:1920px;height:auto;transform:none!important}
+  .slide{position:relative;display:flex!important;width:1920px;height:1080px;
+    break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+  #hud,#notes{display:none!important}
+  .tile{background:#fff}
+}
+</style>
+</head>
+<body>
+<div id="stage"><div id="canvas">
+

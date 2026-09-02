@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1760 140" width="100%" role="img" aria-label="Library trials started by month, May 2025 to August 2026, from 4 to 106 a month, on the same timeline as the revenue chart above.">
+<line x1="20" y1="112.0" x2="1676" y2="112.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="1688" y="118.0" text-anchor="start" font-size="18" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">0</text>
+<line x1="20" y1="66.0" x2="1676" y2="66.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="1688" y="72.0" text-anchor="start" font-size="18" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">70</text>
+<line x1="20" y1="20.0" x2="1676" y2="20.0" stroke="#E3DFD7" stroke-width="1"/>
+<text x="1688" y="26.0" text-anchor="start" font-size="18" fill="#6E6E6E" style="font-variant-numeric:tabular-nums">140</text>
+<text x="123.5" y="134" text-anchor="middle" font-size="17" fill="#6E6E6E">2024</text>
+<text x="620.3" y="134" text-anchor="middle" font-size="17" fill="#6E6E6E">2025</text>
+<rect x="773.9" y="109.4" width="24" height="2.6" fill="#141414"/>
+<rect x="815.3" y="94.9" width="24" height="17.1" fill="#141414"/>
+<rect x="856.7" y="100.8" width="24" height="11.2" fill="#141414"/>
+<rect x="898.1" y="98.2" width="24" height="13.8" fill="#141414"/>
+<rect x="939.5" y="94.3" width="24" height="17.7" fill="#141414"/>
+<rect x="980.9" y="97.5" width="24" height="14.5" fill="#141414"/>
+<rect x="1022.3" y="53.5" width="24" height="58.5" fill="#141414"/>
+<rect x="1063.7" y="36.4" width="24" height="75.6" fill="#141414"/>
+<text x="1117.1" y="134" text-anchor="middle" font-size="17" fill="#6E6E6E">2026</text>
+<rect x="1105.1" y="65.3" width="24" height="46.7" fill="#141414"/>
+<rect x="1146.5" y="89.0" width="24" height="23.0" fill="#141414"/>
+<rect x="1187.9" y="66.7" width="24" height="45.3" fill="#141414"/>
+<rect x="1229.3" y="71.3" width="24" height="40.7" fill="#141414"/>
+<rect x="1270.7" y="71.3" width="24" height="40.7" fill="#141414"/>
+<rect x="1312.1" y="70.6" width="24" height="41.4" fill="#141414"/>
+<rect x="1353.5" y="50.2" width="24" height="61.8" fill="#141414"/>
+<rect x="1394.9" y="42.3" width="24" height="69.7" fill="#141414"/>
+<text x="1613.9" y="134" text-anchor="middle" font-size="17" fill="#6E6E6E">2027</text>
+<text x="1424.9" y="47.3" font-size="17" font-weight="700" fill="#141414">106</text>
+</svg>
