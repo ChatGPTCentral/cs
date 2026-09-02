@@ -8,11 +8,11 @@
   Sponsor Radar
 - last-touch: Ryan Doyle
 - start: 2026-08-29
-- last-inbound: 2026-08-31 18:37 (doyle_r@doyleprojects.co, thread
+- last-inbound: 2026-09-01 19:35 (doyle_r@doyleprojects.co, thread
   `1a04df42ea54423a`)
 - last-outbound: 2026-08-30 (alex@thecentral.ai)
-- next-action: Ryan answered Alex's questions (see notes) - read and decide
-  whether to try the $30 free-credit run
+- next-action: decide whether to try the $30 free-credit run before it
+  expires Monday, 7 Sep 2026 - still no case studies from Ryan
 - commitments: none
 - threads: `1a04df42ea54423a` (live)
 - notes: **Per Alex, 2026-08-31.** Ryan is an agent who sells advertising
@@ -37,3 +37,11 @@
   $30 free credit covers 600 pitches, then $0.05/pitch after. Gave a run
   link: sponsorradar.co/run/thecentral.ai. Did not share case studies as
   asked - that part of Alex's question is still unanswered
+
+  **Auto-genesis, 2026-09-02.** Ryan followed up, 1 Sep 19:35 (same
+  thread): the list is live at sponsorradar.co/run/thecentral.ai. Top
+  three named brands - Wispr Flow (9 comparable-newsletter sponsorships,
+  incl. Behind the Craft, AI+ Community), Riverside (2, incl. Behind the
+  Craft, The AI Marketer), WorkOS (2, incl. The Pragmatic Engineer,
+  Simon Willison's Newsletter). The $30/600-pitch free-credit run is
+  good through Monday, 7 Sep 2026. Still no case studies

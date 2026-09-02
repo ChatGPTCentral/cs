@@ -13,8 +13,8 @@
 - last-outbound: 2026-08-31 18:12 (alex@thecentral.ai, to Aneeka - see
   commitments below)
 - idle: 0 days
-- next-action: book time on Daniel's Calendly (`calendly.com/daniel-netline`)
-  or reply directly - his 14:42 reply is still unanswered
+- next-action: none - call booked for 3 Sep 2026, 15:30 CEST (see
+  Calendar)
 - **Pulse check, 2026-08-31.** Daniel replied via `1a057423f43dc9b2` -
   read and respond
 - notes-threading: **sent from a detached draft, 2026-08-31.** The 30 Aug
