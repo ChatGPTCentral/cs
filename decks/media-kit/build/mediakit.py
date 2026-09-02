@@ -72,14 +72,18 @@ S[2] = f'''<!-- 02 {'─'*73} -->
   <div class="kicker">ABOUT AI CENTRAL MEDIA</div>
   <h2>We turn attention into pipeline for AI and SaaS brands</h2>
   <p class="subline">AI Central is a media group. Our flagship publication, AI Central, covers practical AI for senior professionals. We pair premium placements with editorial-grade creative that speaks to senior operators</p>
-  <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px">
-    <div style="background:var(--tint);padding:22px 26px"><div class="stat" style="font-size:52px">100+</div><div class="stat-l" style="font-size:20px;margin-top:8px">AI companies, SaaS platforms, education brands and growth teams have advertised with us since 2023</div></div>
-    <div style="background:var(--tint);padding:22px 26px"><div class="stat" style="font-size:52px">613K</div><div class="stat-l" style="font-size:20px;margin-top:8px">Accounts reached every month, across the 7 channels we operate</div></div>
-    <div style="background:var(--tint);padding:22px 26px"><div class="stat" style="font-size:52px">London</div><div class="stat-l" style="font-size:20px;margin-top:8px">Editorial team, led by the founder. Readers in 151 countries and all 50 US states</div></div>
+  <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px">
+    <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">100+</div><div class="stat-l" style="font-size:19px;margin-top:6px">AI companies, SaaS platforms, education brands and growth teams have advertised with us since 2023</div></div>
+    <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">613K</div><div class="stat-l" style="font-size:19px;margin-top:6px">Accounts reached every month, across the 7 channels we operate</div></div>
+    <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">London</div><div class="stat-l" style="font-size:19px;margin-top:6px">Editorial team, led by the founder. Readers in 151 countries and all 50 US states</div></div>
   </div>
-  <div data-step="2" style="margin-top:26px">
-    {label("We have partnered with", "var(--muted)", 18)}
-    <img src="{A['partners']}" alt="ElevenLabs, Guidde, Gamma, Notion, Delve, Attio, HubSpot, Udacity, UX Pilot, Taplio, Fellow, Outskill, Synthflow, Typeless, Fyxer, Flow" style="max-height:240px;width:auto;max-width:100%;display:block;margin-top:6px">
+  <div data-step="2" style="margin-top:18px">
+    {label("We have partnered with", "var(--muted)", 17)}
+    <img src="{A['partners']}" alt="ElevenLabs, Guidde, Gamma, Notion, Delve, Attio, HubSpot, Udacity, UX Pilot, Taplio, Fellow, Outskill, Synthflow, Typeless, Fyxer, Flow" style="max-height:158px;width:auto;max-width:100%;display:block;margin-top:6px">
+  </div>
+  <div data-step="3" style="margin-top:14px;padding-top:12px;border-top:1px solid var(--hair)">
+    {label("Brand safety and editorial standards", "var(--muted)", 15)}
+    <div style="margin-top:5px;font-size:17px;font-weight:300;line-height:1.35;max-width:1400px">Sponsored content is written and designed in-house, reviewed before publication, and always labeled as a partnership. It runs in the same editorial voice as our own reporting, never mixed into it</div>
   </div>
   {FOOT}
 </section>'''
@@ -119,13 +123,26 @@ S[4] = f'''<!-- 04 {'─'*73} -->
   data-notes="Reach: 300K+ is subscribers across the three publications (181K LinkedIn newsletter + 97.7K beehiiv + 44K Substack); 613K is accounts reached a month (Buffer + beehiiv + LinkedIn impressions, Aug 2026). Both true, different definitions - say which one you mean. Seniority, industries and geography are measured on the quiz database sample (1,985 / 2,278 / 4,714 respondents) and applied to the full audience, per Alex. The old '40% Founders, C-level and Execs' line is NOT supported by the data (13.9% founder + C-suite; 29.6% VP and above; 50.5% manager and above) - do not use it. 'LinkedIn is the main source of decision-makers' is the kit's claim; in the last 4 weeks beehiiv's top acquisition sources were Netline and Refind, so we say organic on LinkedIn, not 'majority organic' overall.">
   <div class="kicker">THE AUDIENCE</div>
   <h2 style="font-size:62px">Senior professionals with budget, in 151 countries</h2>
-  <div data-step="1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:22px;border-bottom:1px solid var(--hair);padding-bottom:20px">
-    <div><div class="stat red" style="font-size:44px">300K+</div><div class="stat-l" style="font-size:19px;margin-top:6px">Subscribers across our three publications</div></div>
-    <div><div class="stat" style="font-size:44px">613K</div><div class="stat-l" style="font-size:19px;margin-top:6px">Accounts reached every month</div></div>
-    <div><div class="stat" style="font-size:44px">35-55</div><div class="stat-l" style="font-size:19px;margin-top:6px">Key age cohort, in the peak earning years</div></div>
-    <div><div class="stat" style="font-size:44px">50%</div><div class="stat-l" style="font-size:19px;margin-top:6px">Manager and above · 30% VP, director, founder or C-suite</div></div>
+  <div data-step="1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:18px;border-bottom:1px solid var(--hair);padding-bottom:14px">
+    <div><div class="stat red" style="font-size:40px">300K+</div><div class="stat-l" style="font-size:18px;margin-top:5px">Subscribers across our three publications</div></div>
+    <div><div class="stat" style="font-size:40px">613K</div><div class="stat-l" style="font-size:18px;margin-top:5px">Accounts reached every month</div></div>
+    <div><div class="stat" style="font-size:40px">35-55</div><div class="stat-l" style="font-size:18px;margin-top:5px">Key age cohort, in the peak earning years</div></div>
+    <div><div class="stat" style="font-size:40px">50%</div><div class="stat-l" style="font-size:18px;margin-top:5px">Manager and above · 30% VP, director, founder or C-suite</div></div>
   </div>
-  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:20px;align-items:start">
+  <div data-step="1" style="margin-top:8px">
+    <div style="display:flex;height:10px;border-radius:3px;overflow:hidden">
+      <div style="width:56%;background:#C8102E"></div>
+      <div style="width:30%;background:#B8730F"></div>
+      <div style="width:14%;background:#6E6E6E"></div>
+    </div>
+    <div style="display:flex;gap:22px;margin-top:5px;font-size:15px;color:var(--muted)">
+      <span><i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:#C8102E;vertical-align:-1px"></i> LinkedIn newsletter 181K</span>
+      <span><i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:#B8730F;vertical-align:-1px"></i> Email 97K</span>
+      <span><i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:#6E6E6E;vertical-align:-1px"></i> Substack 44K</span>
+      <span>322K combined, three owned channels, each independently reachable</span>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:14px;align-items:start">
     <div data-step="2">
       {label("Who they are")}
       <div style="margin-top:10px">__CHART_PROF__</div>
@@ -182,6 +199,7 @@ S[5] = f'''<!-- 05 {'─'*73} -->
       "Source: beehiiv, last 4 weeks to 2 Sep 2026")}
   </div>
   <div data-step="4" style="margin-top:22px;font-size:20px;font-weight:300;color:var(--muted)">Plus 44K on Substack, and a growing presence on Threads, Instagram and X. Every campaign can run across all of them</div>
+  <div data-step="4" style="margin-top:10px;font-size:16px;font-weight:300;color:var(--muted)">How we measure: figures above come directly from each platform's own analytics (beehiiv, LinkedIn). Email open rate is shown for reference only - Apple Mail Privacy Protection pre-fetches images on a large share of all opens industry-wide, so click rate is the more reliable signal</div>
   {FOOT}
 </section>'''
 
@@ -244,6 +262,7 @@ S[7] = f'''<!-- 07 {'─'*73} -->
         ("5 carousels + 5 LinkedIn Main Ads", "$4,499", "100,000 impressions, 1,000 PDF downloads"),
       ], ["Package", "Price", "Minimum results"], ["44%", "16%", "40%"])}</div>
       <div style="margin-top:12px;font-size:17px;font-weight:300;color:var(--muted)">Bundles are guaranteed: max CPM $49.50, max CPC $4.90 on the smallest, falling to $44.99 and $4.40 on the largest. LinkedIn Ads benchmarks run $30 to 80 CPM and $5 to 12 CPC</div>
+      <div style="margin-top:10px;font-size:16px;font-weight:300;color:var(--muted)">We recommend 3 carousels as a minimum test: one carousel is a single data point, three let you compare angles and formats with enough volume to judge what is actually working</div>
     </div>
   </div>
   {FOOT}
@@ -410,20 +429,20 @@ def case(n_, logo, client, objective, package, result, body):
 
 S[12] = f'''<!-- 12 {'─'*73} -->
 <section class="slide light" data-label="Case studies"
-  data-notes="Four case studies. Gamma is now measured from its two campaign reports (11 carousels, Jan+Feb 2026): 289,927 views, 3,823 downloads - see CASE-STUDIES-SOURCES.md. The other three remain as reported: ElevenLabs 'hundreds of signups', Guidde '500K+ views', Outskill has no headline number in any source, so the card states the format of the work instead of inventing one. Replit's 200+ signups is from the playbook's outreach email, not a campaign report.">
+  data-notes="All figures rebuilt Sep 2026 from real beehiiv post analytics (Advertiser Source = Direct only) and LinkedIn campaign reports - see CASE-STUDIES-SOURCES.md and the full case-studies deck. Every client here rebooked at least once; that is now the headline claim, not any single number.">
   <div class="kicker">CASE STUDIES</div>
-  <h2>What we did for four of them</h2>
+  <h2>Measured results, not estimates</h2>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px">
-    {case(1, A['logo_gamma'], "Gamma", "Launch of Gamma AI Agent and increase signups", "11 bespoke LinkedIn Carousels",
-      "3,823 downloads", "Eleven bespoke carousels across two campaigns, each targeting one presentation use case for Gamma's ideal customer, with a lead-capture download")}
-    {case(2, A['logo_elevenlabs'], "ElevenLabs", "Launch of Creative Studio and increase product signups", "LinkedIn Carousels + LinkedIn Main Ads",
-      "100s of signups", "We identified the highest-intent segments with the ElevenLabs team, then produced explainer carousels, distributed through our placements and the AI Library")}
-    {case(3, A['logo_guidde'], "Guidde", "Brand awareness and full-funnel growth", "LinkedIn Main Ads + Email Primary Ads + Dedicated Issues",
-      "500K+ views", "Recurring waves aligned to Guidde's product moments. Awareness messaging plus conversion-led calls to action, over several campaigns")}
-    {case(4, A['logo_outskill'], "Outskill", "Brand awareness, webinar and course promotion", "LinkedIn Main Ads + Email Primary Ads + Dedicated Issues",
-      "Recurring waves", "Webinar pushes, course promotions and launch windows aligned to Outskill's calendar. Short-term registrations and long-term brand equity")}
+    {case(1, A['logo_gamma'], "Gamma", "Launch of Gamma AI Agent and increase signups", "11 bespoke LinkedIn Carousels, 2 campaigns",
+      "3,823 downloads", "Eleven bespoke carousels across two campaigns, each targeting one presentation use case for Gamma's ideal customer, with a lead-capture download. Bought twice")}
+    {case(2, A['logo_elevenlabs'], "ElevenLabs", "Launch of Creative Studio and increase product signups", "10 bespoke LinkedIn Carousels, 2 campaigns",
+      "2,640 downloads", "Explainer carousels for the highest-intent segments, distributed through our placements and the AI Library, across two campaigns. Bought twice")}
+    {case(3, A['logo_guidde'], "Guidde", "Brand awareness and full-funnel growth", "21 Email Primary Ad placements",
+      "5,131 unique ad clicks", "Recurring monthly placements aligned to Guidde's product moments, December 2024 to October 2025. Bought 21 times")}
+    {case(4, A['logo_outskill'], "Outskill", "Brand awareness, webinar and course promotion", "25 Email Primary Ad placements",
+      "7,318 unique ad clicks", "Webinar pushes, course promotions and launch windows aligned to Outskill's calendar, July 2024 to November 2025. Bought 25 times")}
   </div>
-  <div data-step="4" style="margin-top:20px;font-size:19px;font-weight:300;color:var(--muted)">Also: a Replit tutorial carousel that drove 200+ signups, at docs.thecentral.ai/build-ios-apps-replit. Detailed case studies on request</div>
+  <div data-step="4" style="margin-top:20px;font-size:19px;font-weight:300;color:var(--muted)">Also: 2 campaigns of bespoke LinkedIn carousels for Luma AI, 2,944 downloads across 242K views. Every client above rebooked at least once - full numbers and methodology in the case-studies deck, on request</div>
   {FOOT}
 </section>'''
 

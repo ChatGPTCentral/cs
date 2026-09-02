@@ -69,3 +69,59 @@ effective CPM and CPD, not what another client paid.
 It drops into the same template the moment a report exists. For the record:
 the Q3 kit's Gamma line, "1,000+ downloads", is now measured at 3,823 across
 the two batches - the kit undersold it.
+
+## Revision, 2 Sep 2026 - rebuilt against the advertiser trust research
+
+Three research passes on newsletter ad sales, media kit examples, and
+creator reporting (audience: CMOs and paid-media buyers) found that
+performance buyers distrust unaudited reporting more than the newsletter
+channel itself, because Apple Mail Privacy Protection and unfiltered bot
+clicks have made "open rate" close to meaningless industry-wide. Findings
+are stored as durable knowledge in the `cs` repo, at
+`.claude/skills/alex-writing-style/references/09_advertiser_trust_research.md`.
+This deck was rebuilt in that light. Now 8 slides.
+
+- **New slide 2, "Every client rebooked".** All five clients on file bought
+  more than once. Pulled from the purchase counts already in this file
+  (25 rows for Outskill, 21 for Guidde) and the two-campaign structure of
+  the three carousel clients. No new data needed - it was already logged
+  above, just never stated as the headline.
+- **Guarantee boxes rebuilt with the real hit-rate distribution.** The old
+  box compared each client's *median* clicks per placement against the
+  200-click Primary Ad minimum, which reads as comfortably clearing the
+  bar. Computed the real per-placement distribution from `Newsletter
+  Stats`, Direct only:
+  - Outskill: 18 of 25 placements (72%) hit >= 200 clicks. The 7 misses:
+    76, 76, 108, 108, 175, 189, and one more, averaging 122 clicks.
+  - Guidde: 11 of 21 placements (52%) hit >= 200 clicks. The 10 misses
+    average 169 clicks (range 117-196).
+
+  Box relabelled from "Against the guarantee" to "Against our 200-click
+  benchmark" - the historical placements predate a verifiable formal SLA
+  for these specific deals, so the box states a benchmark comparison, not
+  a contract-compliance claim.
+- **LinkedIn CPM benchmark standardized to $75 across all three carousel
+  cases.** The ElevenLabs and Luma reports independently cite $75 CPM /
+  $8 CPD as their own "industry average" footnote; the Gamma report cited
+  $45 CPM. Research flagged this exact inconsistency as a P0 credibility
+  risk - a buyer who runs LinkedIn Ads notices two different benchmarks
+  from the same seller. Standardized on $75 (the figure two of the three
+  reports already used independently), labelled on-slide as
+  self-reported in AI Central's own campaign reports, not independently
+  audited industry data. The CPD benchmark ($8) was already consistent
+  across all three and is unchanged.
+- **Stat rows reordered, CTR-forward.** Outskill and Guidde now lead with
+  placements, unique ad clicks and CTR; unique opens moved to the last
+  tile with an asterisk pointing to a footnote on Apple Mail Privacy
+  Protection inflating opens industry-wide. No number changed, only the
+  order and the added caveat.
+- **Closing slide gained a one-line reporting statement**: every campaign
+  closes with a written report in the same format as the five case-study
+  pages before it. Deliberately did not attach a specific turnaround time
+  (e.g. "5 business days") - no such SLA is on file anywhere, and inventing
+  one would be exactly the kind of unverifiable claim this rebuild was
+  meant to remove.
+- **Not changed:** no client quotes were added anywhere (none exist on
+  file for any of the five clients - see `09_advertiser_trust_research.md`
+  for why one must not be invented). Investment figures remain off every
+  slide, per the original rule at the top of this file.

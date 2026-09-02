@@ -81,14 +81,56 @@ the reference has them and need his confirmation before the kit goes out.
 
 ## Case studies
 
-Narratives and headline results are from the docx and are stated by AI
-Central, not audited: Gamma 1,000+ downloads; ElevenLabs "100s of signups";
-Guidde 500K+ views; Outskill has no headline number in any source, so the card
-describes the work. Replit "200+ signups" and the docs.thecentral.ai link are
-from the playbook's outreach email. Ledger context, notes only: Gamma ran 22
-paid slots over five months, $11,292 confirmed.
+Superseded 2 Sep 2026 - see the revision section below and
+`CASE-STUDIES-SOURCES.md` for the full per-client data. The docx's original
+figures (Gamma 1,000+ downloads, ElevenLabs "100s of signups", Guidde 500K+
+views, Outskill no headline number, Replit "200+ signups" from the
+playbook's outreach email, not a campaign report) undersold every one of
+them and are no longer used anywhere in this deck.
 
 ## Not in the kit, on purpose
 
 Financials, valuation, revenue figures, margins, the investor scenarios, the
 team size, and anything from the strategic deck's SWOT.
+
+## Revision, 2 Sep 2026 - rebuilt against the advertiser trust research
+
+Same research pass documented in `CASE-STUDIES-SOURCES.md`: three research
+passes on newsletter ad sales, media kit examples, and creator reporting
+(audience: CMOs and paid-media buyers), synthesized into
+`.claude/skills/alex-writing-style/references/09_advertiser_trust_research.md`
+in the `cs` repo. Still 13 slides; content changed, not slide count.
+
+- **Slide 2 (About) gained a Brand Safety and Editorial Standards line.**
+  States what is already true of the existing production process (sponsored
+  content written and designed in-house, reviewed before publication,
+  labelled as a partnership) - no new process invented, no audit or
+  verification claim added.
+- **Slide 4 (Audience) gained a reach-composition bar.** 181K LinkedIn
+  newsletter + 97K email + 44K Substack = 322K, using the same three
+  numbers already stated elsewhere in this file (see "Reach" above) as a
+  proportional bar instead of only as separate stat tiles.
+- **Slide 5 (Publications) gained a one-line methodology note**, stating
+  that figures come directly from beehiiv and LinkedIn's own analytics and
+  that email open rate is shown for reference only, since Apple Mail
+  Privacy Protection pre-fetches images on a large share of opens
+  industry-wide. No figure changed.
+- **Slide 7 (LinkedIn Carousel) gained a "minimum valid sample" line**
+  recommending the 3-carousel package as the smallest test that lets a
+  buyer compare angles and formats, alongside the existing discount-framed
+  package table. The prices and discount percentages are unchanged - this
+  is copy, not a pricing decision, and none of the pricing findings from
+  the research (rate-card spread, LinkedIn placement pricing) were
+  actioned; see `09_advertiser_trust_research.md`.
+- **Slide 12 (Case studies) rebuilt with the measured figures** from
+  `CASE-STUDIES-SOURCES.md`: Gamma 3,823 downloads, ElevenLabs 2,640
+  downloads, Guidde 5,131 unique ad clicks, Outskill 7,318 unique ad
+  clicks, plus a footer line on Luma AI (2,944 downloads) and the fact
+  that every client listed rebooked at least once. Replaces the docx's
+  original unaudited figures entirely; the Replit reference was dropped
+  since no campaign report exists for it.
+- **Not changed:** no client quotes were added (none exist for any client
+  on file). No persona-style claim (e.g. "33 CEOs from the top 1,000 US
+  companies") was added - the audience slide still uses only the measured
+  quiz-sample aggregates already in this file. The rate card is untouched
+  pending Alex's decision on the pricing findings above.
