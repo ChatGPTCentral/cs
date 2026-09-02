@@ -26,6 +26,29 @@ Every documented objection and Alex's exact reply framework. Always reply in Ale
 
 **Why it works:** validates their existing capability instead of competing with it, isolates the actual value-add (distribution + editorial performance), and offers a lighter-touch "just placement" option to lower the barrier to yes
 
+## "We tried newsletter ads and they didn't work"
+
+> Totally get it - - one thing worth knowing: a single send to a 50K list
+> typically produces 1 to 4 conversions, which isn't enough to judge a
+> channel on. Most brands who make newsletters work run 3 to 5 placements
+> before drawing a conclusion. Want to start with the 3-pack as a proper
+> test rather than one more single send?
+
+**Why it works:** reframes a single bad experience as a sample-size problem,
+not a channel problem, backed by real math. Turns the multi-unit bundle into
+a methodology recommendation instead of an upsell - - see
+`09_advertiser_trust_research.md` for the source
+
+## "Prove the audience is real"
+
+> Fair ask - - happy to share the live beehiiv dashboard so you can see the
+> verified subscriber count yourself, not just a number on a slide
+
+**Why it works:** answers with something real (a live dashboard screenshot on
+request) instead of a vague reassurance. Never promise a bot-audit or
+verification process we do not actually run - - see
+`09_advertiser_trust_research.md`
+
 ## Real-world negotiation example: budget/CPC objection (Luís Girão, UX Pilot - - live pipeline deal)
 
 **Objection:** the full package felt too expensive, and a previous $325/newsletter placement elsewhere delivered poor CPC

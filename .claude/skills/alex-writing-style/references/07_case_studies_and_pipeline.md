@@ -1,15 +1,32 @@
 # AI Central - - Case Studies & Live Pipeline Examples
 
-## Proven historical case studies (from the Sales Playbook - - safe to cite as social proof)
+## Proven historical case studies (measured, Sep 2026 - - source of truth is `decks/case-studies/`)
 
-| Client | Goal | Result |
-| --- | --- | --- |
-| **Gamma.app** | Launch + signups | 1,000+ downloads via a multi-angle carousel strategy |
-| **ElevenLabs** | Launch + signups | Explainer carousels driving hundreds of signups |
-| **Guidde** | Awareness + full-funnel growth | 500k+ views, sustained via recurring waves |
-| **Outskill** | Awareness + webinar/course promotion | Recurring pushes aligned to their calendar |
+Superseded the Sales Playbook v3 numbers below on 2 Sep 2026, once real
+campaign reports and beehiiv direct-placement data existed for all five. The
+old figures ("1,000+ downloads" for Gamma, "hundreds of signups" for
+ElevenLabs) undersold every one of them. Use the numbers below, not the old
+ones
 
-Use these by name in cold outreach and proposals as credibility anchors ("as we do for ElevenLabs, Gamma, and more")
+| Client | Format | Measured result | Repeat buyer |
+| --- | --- | --- | --- |
+| **Outskill** | 25 email Primary Ad placements, Jul 2024 - Nov 2025 | 7,318 unique ad clicks, 2.08% avg CTR, 402K unique opens | Yes - - 25 placements over 16 months |
+| **Guidde** | 21 email Primary Ad placements, Dec 2024 - Oct 2025 | 5,131 unique ad clicks, 1.17% avg CTR, 467K unique opens | Yes - - 21 placements over 10 months |
+| **ElevenLabs** | 10 bespoke LinkedIn carousels, 2 batches (Jan + Mar 2026) | 259K views, 2,640 downloads, 7.7% avg engagement | Yes - - bought twice |
+| **Luma AI** | 10 bespoke LinkedIn carousels, 2 batches (Jan + May 2026) | 242K views, 2,944 downloads, 6.6% avg engagement | Yes - - bought twice |
+| **Gamma** | 11 bespoke LinkedIn carousels, 2 batches (Jan + Feb 2026) | 290K views, 3,823 downloads, 6.9% avg engagement | Yes - - bought twice |
+
+**Every client on file as of Sep 2026 is a repeat buyer.** That is now the
+headline claim in the case-studies deck, not any single result number - - see
+`09_advertiser_trust_research.md`
+
+Investment figures exist in `CASE-STUDIES-SOURCES.md` in the deck folder but
+are deliberately never shown to a prospect - - a buyer sees CPM and cost per
+download, not what another client paid
+
+Use these by name in cold outreach and proposals as credibility anchors ("as
+we do for ElevenLabs, Gamma, and more"). Do not attribute a quote to any of
+these five - - none has given one. See `09_advertiser_trust_research.md`
 
 ## Note on "winning pitches"
 

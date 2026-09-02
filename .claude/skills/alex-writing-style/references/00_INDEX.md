@@ -21,6 +21,7 @@ This is a full export of the sales knowledge base built inside the "AI Central S
 | `06_email_dm_templates.md` | Every email, LinkedIn DM, Passionfroot, and affiliate template on file, by scenario |
 | `07_case_studies_and_pipeline.md` | Proven case studies + live pipeline deals showing the playbook applied in real negotiations |
 | `08_vocabulary_and_links.md` | Phrase bank, subject line patterns, and every key link/contact |
+| `09_advertiser_trust_research.md` | Sep 2026 research on newsletter ad sales, media kits, and reporting - - what changed in the decks, what's flagged as open |
 | `sales_agent_training_data.json` | Everything above, structured as JSON for RAG/vector ingestion or fine-tuning |
 
 ## How to use this to train an agent
