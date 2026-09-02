@@ -1,0 +1,178 @@
+"""AI Central - Case Studies 2026. One measured one-pager per client.
+
+Data rules (Alex, 2 Sep 2026): email placements come from the 'Newsletter
+Stats' sheet filtered to Advertiser Source = Direct only - beehiiv-sourced
+rows are network ads that were auto-detected, not business we won. Carousel
+figures come from the client campaign reports (LinkedIn analytics). Client
+investment figures are kept OUT of the slides - prospects see CPM and cost
+per download, not what another client paid. Sources: CASE-STUDIES-SOURCES.md.
+"""
+import json, pathlib, re
+
+B = pathlib.Path("/home/claude/build")
+head = (B / "_head.html").read_text()
+tail = (B / "_tail.html").read_text()
+A = json.load(open(B / "mk3-assets.json"))
+assets = json.load(open(B / "assets.json"))
+
+ACCENT, SURFACE, GRID, INK, MUTED = "#C8102E", "#F3F1EC", "#E3DFD7", "#141414", "#6E6E6E"
+FOOT = '<div class="foot">AI CENTRAL</div>'
+
+def renumber(sec, n):
+    sec = re.sub(r'<!-- \d\d ─+', f'<!-- {n:02d} ' + '─' * 73, sec, count=1)
+    return sec.replace('<div class="foot">AI CENTRAL</div>',
+                       f'<div class="foot">AI CENTRAL &nbsp;·&nbsp; CASE STUDIES 2026 &nbsp;·&nbsp; {n:02d}</div>').rstrip()
+
+def label(t, col="var(--accent)", size=18):
+    return f'<div style="font-size:{size}px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:{col}">{t}</div>'
+
+# ── generic vertical bar chart (inline SVG) ─────────────────────────────────
+def bars_svg(items, ymax, fmt=lambda v: f"{v:,}", W=1040, H=250, color=ACCENT, ticks=4, aria=""):
+    L, R, T, Bm = 64, 16, 22, 44
+    pw, ph = W - L - R, H - T - Bm
+    n = len(items); slot = pw / n; bw = min(48, slot - 14)
+    y = lambda v: T + ph * (1 - v / ymax)
+    out = [f'<svg viewBox="0 0 {W} {H}" width="100%" role="img" aria-label="{aria}">']
+    for k in range(ticks + 1):
+        v = ymax * k / ticks; gy = round(y(v), 1)
+        out.append(f'<line x1="{L}" y1="{gy}" x2="{L+pw}" y2="{gy}" stroke="{GRID}" stroke-width="1"/>')
+        out.append(f'<text x="{L-10}" y="{gy+6}" text-anchor="end" font-size="16" fill="{MUTED}" style="font-variant-numeric:tabular-nums">{fmt(round(v))}</text>')
+    base = round(y(0), 1)
+    for i, (lab, v) in enumerate(items):
+        cx = L + slot * i + slot / 2; yv = round(y(v), 1)
+        out.append(f'<rect x="{round(cx-bw/2,1)}" y="{yv}" width="{round(bw,1)}" height="{round(base-yv,1)}" rx="3" fill="{color}"/>')
+        out.append(f'<text x="{round(cx,1)}" y="{yv-7}" text-anchor="middle" font-size="15" font-weight="700" fill="{INK}" style="font-variant-numeric:tabular-nums">{fmt(v)}</text>')
+        out.append(f'<text x="{round(cx,1)}" y="{H-14}" text-anchor="middle" font-size="15" fill="{MUTED}">{lab}</text>')
+    out.append('</svg>'); return "\n".join(out)
+
+# ── data ────────────────────────────────────────────────────────────────────
+# Email clients: Newsletter Stats, Advertiser Source = Direct, unique ad clicks by month
+OUTSKILL_M = [("Jul 24",273),("Aug 24",1222),("Sep 24",184),("Oct 24",189),("Jan 25",1002),("Mar 25",566),
+              ("Apr 25",538),("Jun 25",884),("Jul 25",747),("Aug 25",340),("Sep 25",635),("Oct 25",738)]
+GUIDDE_M   = [("Dec 24",137),("Feb 25",1246),("Mar 25",408),("Apr 25",206),("May 25",769),("Jun 25",1051),
+              ("Jul 25",167),("Aug 25",265),("Sep 25",582),("Oct 25",300)]
+# Carousel clients: campaign reports, downloads per carousel (two batches each)
+ELEVEN = [("Jan 1",189),("Jan 2",285),("Jan 3",285),("Jan 4",319),("Jan 5",455),("Mar 1",266),("Mar 2",261),("Mar 3",225),("Mar 4",203),("Mar 5",152)]
+LUMA   = [("Jan 1",449),("Jan 2",389),("Jan 3",403),("Jan 4",281),("Jan 5",234),("May 1",345),("May 2",260),("May 3",214),("May 4",228),("May 5",141)]
+
+def stat(v, l, red=False):
+    return f'<div><div class="stat{" red" if red else ""}" style="font-size:46px">{v}</div><div class="stat-l" style="font-size:18px;margin-top:6px">{l}</div></div>'
+
+def case(n_, logo_html, client, headline, objective, ran, stats, chart_title, chart, bench_title, bench_rows, source, notes):
+    brows = "".join(
+        f'<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-top:1px solid var(--hair-dark)">'
+        f'<div style="font-size:18px;font-weight:300;color:#D9D6D1">{k}</div><div style="font-size:22px;font-weight:700;font-variant-numeric:tabular-nums">{v}</div></div>'
+        for k, v in bench_rows)
+    return f'''<!-- {n_:02d} {'─'*73} -->
+<section class="slide light" data-label="{client}" data-notes="{notes}">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div class="kicker">CASE STUDY · {client.upper()}</div>
+    <div style="height:44px;display:flex;align-items:center">{logo_html}</div>
+  </div>
+  <h2 style="font-size:58px">{headline}</h2>
+  <div style="display:grid;grid-template-columns:440px 1fr;gap:44px;margin-top:22px;align-items:start">
+    <div>
+      <div data-step="1">
+        {label("Objective")}
+        <div style="margin-top:6px;font-size:20px;font-weight:300;line-height:1.4">{objective}</div>
+        <div style="margin-top:14px">{label("What we ran")}</div>
+        <div style="margin-top:6px;font-size:20px;font-weight:300;line-height:1.4">{ran}</div>
+      </div>
+      <div data-step="3" style="margin-top:18px;background:var(--ink);color:var(--paper);padding:18px 22px">
+        {label(bench_title, "var(--accent)", 15)}
+        <div style="margin-top:6px">{brows}</div>
+      </div>
+    </div>
+    <div>
+      <div data-step="2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border-bottom:1px solid var(--hair);padding-bottom:16px">{"".join(stats)}</div>
+      <div data-step="2" style="margin-top:14px;background:var(--tint);padding:12px 20px 6px">
+        <div style="font-size:18px;font-weight:700">{chart_title}</div>
+        <div style="margin-top:4px">{chart}</div>
+      </div>
+      <div style="margin-top:8px;font-size:15px;font-weight:300;color:var(--muted)">{source}</div>
+    </div>
+  </div>
+  {FOOT}
+</section>'''
+
+S = {}
+
+S[1] = f'''<!-- 01 {'─'*73} -->
+<section class="slide dark" data-label="Cover" data-notes="Every number in this deck is measured: beehiiv post analytics for direct email placements, LinkedIn campaign reports for carousels. Nothing is stated or estimated.">
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:64px">
+    <img src="{A['logo_aicentral']}" alt="AI Central" style="width:760px;max-width:70%;height:auto">
+    <div>
+      <div class="kicker" style="font-size:30px;letter-spacing:.34em;text-align:center">CASE STUDIES</div>
+      <div style="margin-top:22px;font-size:25px;font-weight:400;color:var(--muted-dark);text-align:center;letter-spacing:.03em">Measured results for four partners · 2024 to 2026</div>
+    </div>
+  </div>
+  {FOOT}
+</section>'''
+
+S[2] = case(2, f'<img src="{A["logo_outskill"]}" alt="Outskill" style="height:44px;border-radius:5px">', "Outskill",
+  "7,318 senior professionals clicked through, over 25 email placements",
+  "Grow enrolments for Outskill's AI courses and fill recurring webinars, with pushes timed to their launch calendar",
+  "25 Primary Ad placements in the email newsletter, July 2024 to November 2025. Each placement carried one offer, one creative and one call to action",
+  [stat("25","Email placements"), stat("402K","Unique opens"), stat("7,318","Unique ad clicks", True), stat("2.1%","Average ad CTR")],
+  "Unique ad clicks by month", bars_svg(OUTSKILL_M, 1400, aria="Outskill unique ad clicks by month, July 2024 to October 2025"),
+  "Against the guarantee", [("Primary Ad minimum","200 clicks"),("Outskill median","298 clicks"),("Best placement","754 clicks"),("Emails delivered","1.40M")],
+  "Measured in beehiiv post analytics. Direct placements only; ad-network placements excluded",
+  "Source: Newsletter Stats sheet, Advertiser Source = Direct, advertiser 'Growthschool / Outskill', 25 rows. 1,395,554 delivered, 401,895 unique opens, 29.5% average open rate, 7,318 unique ad clicks (26,813 total), 2.08% average ad CTR, median 298 unique clicks per placement, best 754 on 30 Jan 2025 (DeepSeek cheatsheets issue). Nov 2025 placement recorded 0 clicks and is not charted.")
+
+S[3] = case(3, f'<img src="{A["logo_guidde"]}" alt="Guidde" style="height:44px;border-radius:5px">', "Guidde",
+  "467K unique opens and 5,131 clicks across ten months of recurring waves",
+  "Full-funnel growth: awareness of Guidde's AI video documentation, then signups, in waves aligned to product moments",
+  "21 Primary Ad placements in the email newsletter, December 2024 to October 2025, plus three LinkedIn newsletter issues in autumn 2025",
+  [stat("21","Email placements"), stat("467K","Unique opens"), stat("5,131","Unique ad clicks", True), stat("68K","LinkedIn issue views")],
+  "Unique ad clicks by month", bars_svg(GUIDDE_M, 1400, aria="Guidde unique ad clicks by month, December 2024 to October 2025"),
+  "Against the guarantee", [("Primary Ad minimum","200 clicks"),("Guidde median","202 clicks"),("Best placement","532 clicks"),("Emails delivered","1.50M")],
+  "Measured in beehiiv post analytics and LinkedIn newsletter analytics. Direct placements only",
+  "Source: Newsletter Stats sheet, Advertiser Source = Direct, advertiser 'Guidde', 21 rows: 1,500,314 delivered, 466,951 unique opens, 31.2% average open rate, 5,131 unique ad clicks (19,716 total), 1.17% average ad CTR, median 202, best 532 on 2 Feb 2025. LinkedIn Newsletters sheet, Direct, Guidde: 3 issues 28 Sep to 16 Oct 2025, 68,194 article views, 317,899 sends - no ad click tracking on those, so no click figure is claimed for LinkedIn. Per Alex, Guidde's work was mostly email.")
+
+S[4] = case(4, f'<img src="{A["logo_elevenlabs"]}" alt="ElevenLabs" style="height:44px;border-radius:5px">', "ElevenLabs",
+  "259K views and 2,640 downloads from ten bespoke carousels",
+  "Launch Creative Studio and drive product signups among creators, marketing and enterprise teams",
+  "Two campaigns of five bespoke LinkedIn carousels each, January and March 2026. Each carousel was a free ebook on one use case, with a lead-capture download",
+  [stat("10","Carousels"), stat("259K","Views"), stat("2,640","Downloads", True), stat("7.7%","Average engagement")],
+  "Downloads per carousel: five in January, five in March 2026", bars_svg(ELEVEN, 500, aria="ElevenLabs downloads per carousel, ten carousels across January and March 2026"),
+  "Against LinkedIn Ads benchmarks", [("Cost per 1,000 views","$43 to $45"),("Industry average CPM","$75"),("Cost per download","$3.91 to $4.88"),("Industry average","$8")],
+  "Measured in LinkedIn analytics, reported to the client. Benchmarks as cited in the campaign reports",
+  "Source: AI Central x ElevenLabs campaign reports, batch 1 (January 2026) and batch 2 (March 2026). Batch 1: 132,958 views, 1,533 downloads, investment $5,999, CPM $45.12, CPD $3.91. Batch 2: 125,986 views, 1,107 downloads, investment $5,399, CPM $42.85, CPD $4.88. Engagement 4.9% to 10.2%, mean 7.7%. Carousels, in chart order: Voice as a product feature 189; Stories with AI voice 285; 10 enterprise uses 285; Creative teams stay consistent 319; Ads that convert 455; Creators expand reach 266; AI voice into cash 261; Global content 225; Best way to dub 203; AI video dubbing 152. Investment figures are deliberately not on the slide. Benchmarks ($75 CPM, $8 CPD) are the reports' own industry-average footnote.")
+
+S[5] = case(5, '<div style="font-size:30px;font-weight:700;letter-spacing:-.02em">Luma AI</div>', "Luma AI",
+  "242K views and 2,944 downloads, at a third of the benchmark cost per lead",
+  "Drive trial signups for Luma's AI image and video tools among marketing, brand and creative teams",
+  "Two campaigns of five bespoke LinkedIn carousels each, January and May 2026. Each carousel was a free ebook on one creative workflow, with a lead-capture download",
+  [stat("10","Carousels"), stat("242K","Views"), stat("2,944","Downloads", True), stat("6.6%","Average engagement")],
+  "Downloads per carousel: five in January, five in May 2026", bars_svg(LUMA, 500, aria="Luma AI downloads per carousel, ten carousels across January and May 2026"),
+  "Against LinkedIn Ads benchmarks", [("Cost per 1,000 views","$43 to $48"),("Industry average CPM","$75"),("Cost per download","$2.85 to $5.05"),("Industry average","$8")],
+  "Measured in LinkedIn analytics, reported to the client. Benchmarks as cited in the campaign reports",
+  "Source: AI Central x Luma AI campaign reports, January 2026 and May 2026. Jan: 115,836 views, 1,756 downloads, investment $4,999, CPM $43.16, CPD $2.85. May: 125,815 views, 1,188 downloads, investment $5,999, CPM $47.68, CPD $5.05. Engagement 4.8% to 8.2%, mean 6.6%. Carousels, in chart order: Realistic images 449; Ideas into images 389; Create AI images 403; Campaign visuals 281; Visual workspace 234; Own AI creative tool 345; Weekly content pipeline 260; Visual campaign 214; Brand identity system 228; Scale visual content 141. No Luma logo asset in any source - wordmark set in type. Investment figures are deliberately not on the slide.")
+
+S[6] = f'''<!-- 06 {'─'*73} -->
+<section class="slide light" data-label="Run yours" data-notes="Gamma and Replit case studies are pending their campaign reports - same template, drop-in once Alex shares them. Gamma's ledger history: 22 paid slots over five months, $11,292 confirmed.">
+  <div class="kicker">RUN YOURS</div>
+  <h2>Same format. Your product, your numbers</h2>
+  <p class="subline">Every campaign ends with a report like the ones behind these four pages: views, clicks, downloads, and cost against the benchmarks</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:34px">
+    <div data-step="1" style="background:var(--tint);padding:24px 28px"><div style="font-size:24px;font-weight:700">Email placements</div><div style="margin-top:8px;font-size:19px;font-weight:300;line-height:1.4">Primary Ad in the email newsletter. 97K+ subscribers, 30% open rate, guaranteed 200 clicks a placement. From $1,299</div></div>
+    <div data-step="1" style="background:var(--tint);padding:24px 28px"><div style="font-size:24px;font-weight:700">Bespoke carousels</div><div style="margin-top:8px;font-size:19px;font-weight:300;line-height:1.4">Five carousels on five use cases, each a lead-capture ebook. 240K+ views and 2,600+ downloads per ten, measured. From $699 a carousel</div></div>
+    <div data-step="1" style="background:var(--tint);padding:24px 28px"><div style="font-size:24px;font-weight:700">Recurring waves</div><div style="margin-top:8px;font-size:19px;font-weight:300;line-height:1.4">Placements timed to your launches, webinars and product moments, across email and LinkedIn. Quoted per campaign</div></div>
+  </div>
+  <div data-step="2" style="margin-top:30px;background:var(--ink);color:var(--paper);padding:28px 36px;display:flex;gap:60px;align-items:center">
+    <div style="font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);flex:none">Let's talk</div>
+    <div style="font-size:23px;line-height:1.5"><b>cntral.ai/meet</b> &nbsp;·&nbsp; <b>collabs@thecentral.ai</b> &nbsp;·&nbsp; media kit at <b>cntral.ai/media-kit</b></div>
+  </div>
+  {FOOT}
+</section>'''
+
+html = head + "\n\n".join(renumber(S[i], i) for i in sorted(S)) + "\n\n" + tail
+for w in (300, 400, 500, 700):
+    html = html.replace(f"__FONT_{w}__", assets["fonts"][str(w)])
+for name, uri in assets["icons"].items():
+    html = html.replace("__ICON_" + name.upper().replace("-", "_") + "__", uri)
+left = re.findall(r"__[A-Z0-9_]+__", html)
+if left: raise SystemExit("unsubstituted: " + ", ".join(sorted(set(left))))
+out = pathlib.Path("/home/claude/repo/AI-Central-Case-Studies-2026.html")
+out.write_text(html)
+print(f"case studies: {len(S)} slides -> {out.name} ({out.stat().st_size/1024:.0f} KB)")
