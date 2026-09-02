@@ -53,6 +53,7 @@ GUIDDE_M   = [("Dec 24",137),("Feb 25",1246),("Mar 25",408),("Apr 25",206),("May
               ("Jul 25",167),("Aug 25",265),("Sep 25",582),("Oct 25",300)]
 # Carousel clients: campaign reports, downloads per carousel (two batches each)
 ELEVEN = [("Jan 1",189),("Jan 2",285),("Jan 3",285),("Jan 4",319),("Jan 5",455),("Mar 1",266),("Mar 2",261),("Mar 3",225),("Mar 4",203),("Mar 5",152)]
+GAMMA  = [("Jan 1",491),("Jan 2",703),("Jan 3",401),("Jan 4",311),("Jan 5",186),("Feb 1",354),("Feb 2",340),("Feb 3",224),("Feb 4",240),("Feb 5",307),("Feb 6",266)]
 LUMA   = [("Jan 1",449),("Jan 2",389),("Jan 3",403),("Jan 4",281),("Jan 5",234),("May 1",345),("May 2",260),("May 3",214),("May 4",228),("May 5",141)]
 
 def stat(v, l, red=False):
@@ -98,12 +99,12 @@ def case(n_, logo_html, client, headline, objective, ran, stats, chart_title, ch
 S = {}
 
 S[1] = f'''<!-- 01 {'─'*73} -->
-<section class="slide dark" data-label="Cover" data-notes="Every number in this deck is measured: beehiiv post analytics for direct email placements, LinkedIn campaign reports for carousels. Nothing is stated or estimated.">
+<section class="slide dark" data-label="Cover" data-notes="Every number in this deck is measured: beehiiv post analytics for direct email placements, LinkedIn campaign reports for carousels (ElevenLabs, Luma, Gamma). Nothing is stated or estimated.">
   <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:64px">
     <img src="{A['logo_aicentral']}" alt="AI Central" style="width:760px;max-width:70%;height:auto">
     <div>
       <div class="kicker" style="font-size:30px;letter-spacing:.34em;text-align:center">CASE STUDIES</div>
-      <div style="margin-top:22px;font-size:25px;font-weight:400;color:var(--muted-dark);text-align:center;letter-spacing:.03em">Measured results for four partners · 2024 to 2026</div>
+      <div style="margin-top:22px;font-size:25px;font-weight:400;color:var(--muted-dark);text-align:center;letter-spacing:.03em">Measured results for five partners · 2024 to 2026</div>
     </div>
   </div>
   {FOOT}
@@ -149,14 +150,24 @@ S[5] = case(5, '<div style="font-size:30px;font-weight:700;letter-spacing:-.02em
   "Measured in LinkedIn analytics, reported to the client. Benchmarks as cited in the campaign reports",
   "Source: AI Central x Luma AI campaign reports, January 2026 and May 2026. Jan: 115,836 views, 1,756 downloads, investment $4,999, CPM $43.16, CPD $2.85. May: 125,815 views, 1,188 downloads, investment $5,999, CPM $47.68, CPD $5.05. Engagement 4.8% to 8.2%, mean 6.6%. Carousels, in chart order: Realistic images 449; Ideas into images 389; Create AI images 403; Campaign visuals 281; Visual workspace 234; Own AI creative tool 345; Weekly content pipeline 260; Visual campaign 214; Brand identity system 228; Scale visual content 141. No Luma logo asset in any source - wordmark set in type. Investment figures are deliberately not on the slide.")
 
-S[6] = f'''<!-- 06 {'─'*73} -->
-<section class="slide light" data-label="Run yours" data-notes="Gamma and Replit case studies are pending their campaign reports - same template, drop-in once Alex shares them. Gamma's ledger history: 22 paid slots over five months, $11,292 confirmed.">
+S[6] = case(6, f'<img src="{A["logo_gamma"]}" alt="Gamma" style="height:44px;border-radius:5px">', "Gamma",
+  "290K views and 3,823 downloads from eleven carousels, at a quarter of the benchmark cost per lead",
+  "Launch Gamma's AI agent for presentations and drive signups among professionals who build decks",
+  "Two campaigns of bespoke LinkedIn carousels, five in January and six in February 2026. Each carousel was a free ebook on one presentation workflow, with a lead-capture download",
+  [stat("11","Carousels"), stat("290K","Views"), stat("3,823","Downloads", True), stat("6.9%","Average engagement")],
+  "Downloads per carousel: five in January, six in February 2026", bars_svg(GAMMA, 800, aria="Gamma downloads per carousel, eleven carousels across January and February 2026"),
+  "Against LinkedIn Ads benchmarks", [("Cost per 1,000 views","$20 to $24"),("Industry average CPM","$45"),("Cost per download","$1.19 to $2.31"),("Industry average","$8")],
+  "Measured in LinkedIn analytics, reported to the client. Benchmarks as cited in the campaign reports",
+  "Source: AI Central x Gamma campaign reports, batch 1 (January 2026, 5 carousels) and batch 2 (February 2026, 6 carousels). Batch 1: 124,366 views, 2,092 downloads, investment $2,499, CPM $20.09, CPD $1.19. Batch 2: 165,561 views, 1,731 unique downloads, investment $3,999, CPM $24.15, CPD $2.31. Engagement 5.8% to 8.2%, mean 6.9%. Carousels in chart order: 10 Design Prompts 491; Idea to Visual in 3 Steps 703; Tips for Non-Designers 401; Personal Design Workflow 311; Top 5 Gamma Hacks 186; AI Slides in 2026 354; Board-ready Presentations 340; Emails into Slide Decks 224; CheatSheet into a Deck 240; Presentation from Claude 307; Ultimate Presentation Guide 266. The Gamma reports cite a $45 CPM benchmark where the ElevenLabs and Luma reports cite $75; each slide uses its own report's figure. Investment figures are deliberately not on the slide. Ledger context: 22 paid slots over five months, $11,292 confirmed via Passionfroot; the Q3 kit's '1,000+ downloads' undersold this by nearly 4x.")
+
+S[7] = f'''<!-- 07 {'─'*73} -->
+<section class="slide light" data-label="Run yours" data-notes="Replit is the one remaining candidate without a campaign report; the playbook states 200+ signups for the iOS-apps carousel. Same template, drop-in once a report exists.">
   <div class="kicker">RUN YOURS</div>
   <h2>Same format. Your product, your numbers</h2>
   <p class="subline">Every campaign ends with a report like the ones behind these four pages: views, clicks, downloads, and cost against the benchmarks</p>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:34px">
     <div data-step="1" style="background:var(--tint);padding:24px 28px"><div style="font-size:24px;font-weight:700">Email placements</div><div style="margin-top:8px;font-size:19px;font-weight:300;line-height:1.4">Primary Ad in the email newsletter. 97K+ subscribers, 30% open rate, guaranteed 200 clicks a placement. From $1,299</div></div>
-    <div data-step="1" style="background:var(--tint);padding:24px 28px"><div style="font-size:24px;font-weight:700">Bespoke carousels</div><div style="margin-top:8px;font-size:19px;font-weight:300;line-height:1.4">Five carousels on five use cases, each a lead-capture ebook. 240K+ views and 2,600+ downloads per ten, measured. From $699 a carousel</div></div>
+    <div data-step="1" style="background:var(--tint);padding:24px 28px"><div style="font-size:24px;font-weight:700">Bespoke carousels</div><div style="margin-top:8px;font-size:19px;font-weight:300;line-height:1.4">Five carousels on five use cases, each a lead-capture ebook. 240K to 290K views and 2,600 to 3,800 downloads per campaign pair, measured. From $699 a carousel</div></div>
     <div data-step="1" style="background:var(--tint);padding:24px 28px"><div style="font-size:24px;font-weight:700">Recurring waves</div><div style="margin-top:8px;font-size:19px;font-weight:300;line-height:1.4">Placements timed to your launches, webinars and product moments, across email and LinkedIn. Quoted per campaign</div></div>
   </div>
   <div data-step="2" style="margin-top:30px;background:var(--ink);color:var(--paper);padding:28px 36px;display:flex;gap:60px;align-items:center">

@@ -1,7 +1,8 @@
 # Case studies - data provenance
 
-`AI-Central-Case-Studies-2026.html` / `.pdf`, 6 slides: cover, four
-one-pagers (Outskill, Guidde, ElevenLabs, Luma AI), closing. Built 2 Sep 2026.
+`AI-Central-Case-Studies-2026.html` / `.pdf`, 7 slides: cover, five
+one-pagers (Outskill, Guidde, ElevenLabs, Luma AI, Gamma), closing. Built
+2 Sep 2026, Gamma added the same day when its reports arrived.
 Every figure is measured. Nothing in this deck is stated, estimated or
 client-reported.
 
@@ -43,9 +44,15 @@ from the rate card.
 | ElevenLabs | Mar 2026 | 5 | 125,986 | 1,107 | 7.3% | $5,399 | $42.85 | $4.88 |
 | Luma AI | Jan 2026 | 5 | 115,836 | 1,756 | 7.5% | $4,999 | $43.16 | $2.85 |
 | Luma AI | May 2026 | 5 | 125,815 | 1,188 | 5.7% | $5,999 | $47.68 | $5.05 |
+| Gamma | Jan 2026 | 5 | 124,366 | 2,092 | 6.9% | $2,499 | $20.09 | $1.19 |
+| Gamma | Feb 2026 | 6 | 165,561 | 1,731 | 6.9% | $3,999 | $24.15 | $2.31 |
 
 Slide totals: ElevenLabs 258,944 views, 2,640 downloads, 7.7% mean
-engagement; Luma 241,651 views, 2,944 downloads, 6.6%. CPM and CPD are the
+engagement; Luma 241,651 views, 2,944 downloads, 6.6%; Gamma 289,927 views,
+3,823 downloads, 6.9%. Gamma's batch 2 column is labelled 'Total Unique
+Downloads' where the others say 'Total Downloads'; both are treated as
+downloads. The Gamma reports cite a $45 CPM benchmark where ElevenLabs and
+Luma cite $75 - each slide shows the benchmark from its own client's report. CPM and CPD are the
 reports' own computed values; the "industry average" benchmarks ($75 CPM, $8
 CPD) are the reports' own footnote, which describes them as modelled on a
 LinkedIn Ads lookalike audience of mid-to-senior professionals in North
@@ -56,10 +63,9 @@ effective CPM and CPD, not what another client paid.
 
 ## Not built yet
 
-- **Gamma** - no campaign report supplied. The ledger records 22 paid slots
-  over five months (Nov 2025 - Apr 2026), $11,292 confirmed; the Q3 kit states
-  "1,000+ downloads". Neither is a measured campaign figure, so no slide.
 - **Replit** - no report supplied. The playbook states "200+ signups" for the
   iOS-apps carousel. No slide.
 
-Both drop into the same template the moment a report exists.
+It drops into the same template the moment a report exists. For the record:
+the Q3 kit's Gamma line, "1,000+ downloads", is now measured at 3,823 across
+the two batches - the kit undersold it.
