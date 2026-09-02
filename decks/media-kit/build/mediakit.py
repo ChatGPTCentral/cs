@@ -410,12 +410,12 @@ def case(n_, logo, client, objective, package, result, body):
 
 S[12] = f'''<!-- 12 {'─'*73} -->
 <section class="slide light" data-label="Case studies"
-  data-notes="Four case studies from the Q3 kit, plus Replit from the playbook's outreach email (200+ signups, docs.thecentral.ai/build-ios-apps-replit). Result figures are as reported in those documents - 1,000+ downloads, hundreds of signups, 500K+ views - and are stated by AI Central, not audited. Gamma's paid history in the ledger: 22 paid slots over five months, $11,292 confirmed. Outskill has no headline number in any source, so the card states the format of the work instead of inventing one.">
+  data-notes="Four case studies. Gamma is now measured from its two campaign reports (11 carousels, Jan+Feb 2026): 289,927 views, 3,823 downloads - see CASE-STUDIES-SOURCES.md. The other three remain as reported: ElevenLabs 'hundreds of signups', Guidde '500K+ views', Outskill has no headline number in any source, so the card states the format of the work instead of inventing one. Replit's 200+ signups is from the playbook's outreach email, not a campaign report.">
   <div class="kicker">CASE STUDIES</div>
   <h2>What we did for four of them</h2>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px">
-    {case(1, A['logo_gamma'], "Gamma", "Launch of Gamma AI Agent and increase signups", "LinkedIn Carousels + LinkedIn Main Ads",
-      "1,000+ downloads", "A multi-angle content strategy. Each carousel targeted one segment of Gamma's ideal customer, with one use case and one benefit")}
+    {case(1, A['logo_gamma'], "Gamma", "Launch of Gamma AI Agent and increase signups", "11 bespoke LinkedIn Carousels",
+      "3,823 downloads", "Eleven bespoke carousels across two campaigns, each targeting one presentation use case for Gamma's ideal customer, with a lead-capture download")}
     {case(2, A['logo_elevenlabs'], "ElevenLabs", "Launch of Creative Studio and increase product signups", "LinkedIn Carousels + LinkedIn Main Ads",
       "100s of signups", "We identified the highest-intent segments with the ElevenLabs team, then produced explainer carousels, distributed through our placements and the AI Library")}
     {case(3, A['logo_guidde'], "Guidde", "Brand awareness and full-funnel growth", "LinkedIn Main Ads + Email Primary Ads + Dedicated Issues",
