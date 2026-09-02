@@ -7,8 +7,8 @@
 - last-inbound: 2026-06-29 (sarah@wavelength.now)
 - last-outbound: 2026-06-29 (alex@thecentral.ai)
 - idle: 51 days
-- next-action: **unknown - bodies not read.** Read thread `19f0fb77d4b5bf87` before
-  drafting
+- next-action: draft ready for Alistair Gosling (see notes) - review and
+  send
 - commitments: none recorded
 - threads: `19f0fb77d4b5bf87` (live), 9 more unread
 - notes: a fast back-and-forth on 29 June - Sarah wrote, Alex replied within the
@@ -54,3 +54,14 @@
   item - a written interview with someone named only "Tim," whose
   questions have been with him since early July. "Tim" is not otherwise
   identified in this ledger - unresolved, candidate
+
+  **Draft prepared, 2026-09-02.** Alistair's real address is
+  `al@wavelength.now`, found on the actual interview-offer thread
+  (`19f298cc647fb0dd`, "Interview Opportunity After Cannes Lions") - a
+  different thread from the `19f0fb77d4b5bf87` scheduling thread this
+  file previously pointed to. Elizabeth sent the offer 3 Jul, Alex
+  followed up once 14 Jul, no reply either time. Draft created as a
+  reply on `19f298cc647fb0dd` (messageId `1a061d1cc2949e7c`), cc Sarah
+  Turner and voices@thecentral.ai: a short, low-pressure nudge pointing
+  back at the still-open questions doc, explicitly giving him an out if
+  the timing's wrong. Not sent - draft-only
