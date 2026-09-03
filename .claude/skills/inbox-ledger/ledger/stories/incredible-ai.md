@@ -8,8 +8,11 @@
 - start: 2026-03-02
 - last-inbound: 2026-03-02 (Manas's own inbound proposal, $449)
 - idle: 168 days as of 2026-08-27
-- next-action: re-approach with Manas's own original $449 newsletter
-  format instead of the $3,499 carousel upsell that stalled the deal
+- next-action: **blocked, per Alex 2026-09-03.** Manas left Incredible in
+  March 2026 (Apollo employment history - now an independent consultant).
+  Decide whether to find Incredible's current Head of Growth, or reach
+  Manas separately as a personal contact - do not re-pitch the $449 offer
+  to him at Incredible
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Rare case
