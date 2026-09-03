@@ -2,6 +2,33 @@
 
 Ranked by what needs Alex first. Refreshed by `/ledger`.
 
+**Delta refresh, 2026-09-03.** This is a targeted refresh on top of the
+2026-08-19 full sweep below, not a re-run of full discovery - it folds in
+everything the hourly pulse checks, the daily auto-genesis sweep, and
+Alex's own direct edits produced today. The full sweep's coverage claims
+below (26/26 labels, ~500 unlabelled threads back to April 2025) still
+hold; today's work sits on top of that base, not a replacement for it.
+
+What moved today:
+- **Cannes 2026** - out of "Your move." Alex sent the Alistair Gosling
+  follow-up himself, 3 Sep. Ball is Alistair's now
+- **Netline** - real new development. The 3 Sep call happened, Daniel
+  referred Alex to Awais Shahid (Informa) for the AI Summit New York
+  media-partner slot, Alex sent the intro, Awais replied same day asking
+  what AI Central's deliverables look like. This needs a real answer, not
+  a mechanical one - see "Your move" below
+- **Mark (Marwan)** - replied after two unanswered July chases from
+  Elizabeth. Reply not read yet
+- **anything.com, Box, Markup Hero** - three drafts created/updated today,
+  sitting in Gmail waiting for Alex to review and send
+- **Four new stories from today's auto-genesis sweep**: Spacebar Studios
+  (cross-promo, needs Alex to pick a newsletter), Mindbreeze/Prime Tech PR
+  (article delivered late July, Alex silent 7 weeks despite 4 follow-ups),
+  Screenpipe (cold pitch, undecided), Prophet/Toni Lee PR (a discovery
+  call happened, no notes captured yet)
+- **Incredible** - blocked. Apollo shows Manas Ojha left the company in
+  March 2026, the old $449 re-pitch plan no longer applies
+
 **Last refresh: 2026-08-19, the sweep is now genuinely complete end to end.**
 All 26 originally-registered labels read in full. Discovery covers unlabelled
 threads from **today back to the actual floor of the account's correspondence
@@ -64,6 +91,9 @@ Reply is written and waiting in Gmail. One thing only Alex can supply.
 | Story | What's missing | Draft |
 | --- | --- | --- |
 | [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) | shipping address for tote bags | `1a00a41717b4a24b` |
+| [anything.com](stories/anything-com-ads-pitch.md) | review and send - updated 3 Sep with dub.co proof + Skydive mention | `1a067f08380931ff` |
+| [Box](stories/box.md) | review and send - Kat McMahon re-approach, 3 Sep | drafted, thread not yet linked |
+| [Markup Hero](stories/markup-hero.md) | review and send - Jeff Solomon check-in, 3 Sep | drafted, thread not yet linked |
 
 ## 🔴 Your move
 
@@ -71,10 +101,14 @@ The last word was theirs and nobody replied. Live or recent enough to prompt on.
 
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
-| [Cannes 2026 Follow-up](stories/cannes-2026.md) | 2026-06-29 | 51d | sarah@wavelength.now |
+| [Mark (Marwan)](stories/mark-marwan.md) | 2026-09-03 | 0d | mark@theaicentral.net - replied after 2 unanswered July chases, not read yet |
+| [Netline](stories/netline.md) | 2026-09-03 | 0d | Awais.Shahid@informa.com - asked what AI Central's media-partner deliverables look like, needs a real answer |
 | [Pillsbury Law](stories/pillsbury-law.md) | 2026-06-04 | 76d | steven.james@pillsburylaw.com - possibly two contacts sharing a domain |
 | [Tim Bourquin](stories/tim-bourquin.md) | 2026-06-22 | 58d | tim.bourquin@gmail.com |
 | [King Capital Advisors](stories/king-capital-advisors.md) | 2026-07-14 | 36d | info@king-capital-advisors.com |
+| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-07-14 | 51d | nwiles@prime-techpr.com - article delivered, 4 follow-ups unanswered |
+| [Spacebar Studios](stories/spacebarstudios-crosspromo.md) | 2026-09-02 | 1d | ivana@spacebarstudios.co - needs Alex to pick a newsletter for the swap |
+| [Screenpipe](stories/screenpipe-pitch.md) | 2026-09-03 | 0d | louis@screenpi.pe - cold pitch, decide whether to test it |
 
 Dropped this pass: **Austin Conference / Jobstream** and **Ben + Katy
 (MadRev)** - Alex chased both 2026-08-31, now waiting on them (see below).
@@ -87,7 +121,6 @@ Ball is legitimately in their court. Ranges from days to dormant.
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
 | [GTA whitepaper](stories/gta-whitepaper.md) | 2026-08-31 | 0d | tsvetelin@thinkrevops.com - promised his part 25 Aug, still not sent |
-| [Netline (Daniel)](stories/netline.md) | 2026-08-31 | 0d | daniel@netline.com - asked if Wed 2pm London works for a call |
 | [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-08-31 | 0d | jazmin@getjobstream.com - re-nudged on the merch thread |
 | [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-08-31 | 0d | ben@madrev.co / katy@madrev.co - quick bump re: the framer deal |
 | [Mya Bishop (Informa)](stories/mya-bishop-informa.md) | 2026-08-17 | 2d | Mya.Bishop@informa.com - third outbound in a series, no reply yet |
