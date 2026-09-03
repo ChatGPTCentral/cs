@@ -5,7 +5,7 @@ Two voices exist in AI Central content: **Alex's personal voice** (emails, DMs, 
 ## Critical formatting rules (non-negotiable)
 
 1. **Never use em dashes (—)** - - always use `- -` (two hyphens with a space in between)
-2. **Never end sentences with periods** - - let the line break or a comma do the work
+2. **Never end sentences with periods** - - let the line break or a comma do the work. **Exception, confirmed 2026-09-03:** a formal first-contact message (full signature block, new external contact) uses normal terminal periods throughout. The no-period rule is for short, casual messages only
 3. **Sign-off is always "Cheers, A" or "Cheers, Alex"** - - never "Best," "Regards," "Thanks," "Warm regards," "Sincerely," or "Kind regards"
 4. **Use "P.S." sections** when there's a secondary ask or link
 5. **Short paragraphs** - - one to three sentences max, often just one
@@ -88,6 +88,28 @@ AI Central is a proud advertising partner of [list relevant partners]
 **Positive:** "AMAZING" / "That's exciting!" / "Very great!" / "legend" / "stunning!"
 
 **Negotiation:** "In the spirit of a win-win collaboration" / "I really appreciate your transparency"
+
+## Warm-referral first contact (confirmed pattern, 2026-09-03)
+
+When someone (Person A) hands Alex a new contact (Person B) to reach out to
+cold, the opening moves in this order:
+
+1. **Self-intro first, referral second** - - "Alex here, founder of AI
+   Central Media. [Person A] (cc'd) suggested I reach out" - - do not open
+   with the referral alone
+2. **Name the referrer as "(cc'd)"** when they are on the cc line, so
+   Person B knows who is already in the loop
+3. **Ask as its own short paragraph**, separate from the self-intro
+4. **Name the standing relationship that makes the ask credible right
+   now**, with a real duration if there is one - - "we've been a NetLine
+   partner for the last 2 years," not just "we've been a partner before"
+5. **Geographic reach detail when it exists** - - "300,000 readers in the
+   US and UK," not a bare number
+6. Use the **public-facing name** of the thing being discussed, not an
+   internal shorthand from a call transcript or meeting note (the event
+   was "AI Summit New York" in the actual send, not the "DAI Summit" label
+   a Notion transcript had used)
+7. Full signature block, real periods (see the exception above)
 
 ## Internal communication (to Elizabeth, COO, or team)
 

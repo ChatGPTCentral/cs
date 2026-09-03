@@ -6,15 +6,23 @@
 - people: Aneeka Velummylum (`apatel@netline.com`), **Daniel Frignito**
   (`daniel@netline.com`, Director of Partner Development) - the address Alex
   named but that had not turned up in any thread read until this pass
-- last-touch: Daniel on the Daniel side (his reply is unanswered); Alex
-  on the Aneeka side (just sent, see commitments below)
-- last-inbound: 2026-08-31 14:42 (daniel@netline.com, thread
-  `1a057423f43dc9b2` - gave a Calendly link, `calendly.com/daniel-netline`)
-- last-outbound: 2026-08-31 18:12 (alex@thecentral.ai, to Aneeka - see
-  commitments below)
+- last-touch: Alex - replied to Awais Shahid (Informa), 2026-09-03
+- last-inbound: 2026-09-03 14:43 (daniel@netline.com, thread
+  `1a067b9a68290465`)
+- last-outbound: 2026-09-03 14:54 (alex@thecentral.ai, thread
+  `1a067b9a68290465`, to Awais.Shahid@informa.com, cc daniel@netline.com,
+  elizabeth@thecentral.ai)
 - idle: 0 days
-- next-action: none - call booked for 3 Sep 2026, 15:30 CEST (see
-  Calendar)
+- next-action: none - wait for Awais Shahid's reply on the AI Summit New
+  York media-partner ask
+- **Call held, 2026-09-03, 15:30 CEST.** "AI Central & NetLine: Business
+  Catch-Up and Collaboration Planning," full call. Same-day follow-up:
+  Daniel referred Alex to Awais Shahid at Informa for the AI Summit New
+  York (8-10 Dec) media-partner application - Alex sent a cold intro on
+  thread `1a067b9a68290465`, cc Daniel and Liz, naming the 2-year NetLine
+  partnership and past Informa press-partner work (AI Summit London,
+  Cannes Lions, London Tech Week) as credibility. See notes below for the
+  full call recap
 - **Pulse check, 2026-08-31.** Daniel replied via `1a057423f43dc9b2` -
   read and respond
 - notes-threading: **sent from a detached draft, 2026-08-31.** The 30 Aug
@@ -72,3 +80,42 @@
   Central" references, test an RSS feed for the site library, improve the
   signup form to capture email before showing other offers, and
   collaborate on content around The Newsletter Conference in May.
+
+  **Notion call transcript, 2026-09-03, 15:30 CEST.** "AI Central &
+  NetLine: Business Catch-Up and Collaboration Planning." Real topics
+  covered, not next-action invention:
+  - **Cannes Lions recap** - "amazing and overwhelming," key clients
+    attended in person (Loom, ElevenLabs, Gamma, LinkedIn). Liz helped
+    prep ("pregame"). Feedback given to Informa's Indiana Gibbons:
+    juggling three separate app profiles across AI Summit London, London
+    Tech Week and Cannes is frustrating - suggested a unified attendee
+    profile with press badge as a premium feature
+  - **Upcoming events** - approved to attend the AI Summit New York
+    (Daniel's transcript calls it "DAI Summit," 8-10 Dec); tickets
+    already booked for next year's New Media Summit; a possible Informa
+    Cannes event in February; two London events in the works; exploring
+    NYC/SF dinners next year via dinner.io. Decided NOT to attend the
+    Media Operator Conference NY (~Oct, $2,000 ticket, "financial vibe,"
+    not a brand fit)
+  - **AI Summit media-partner listing** - AI Central already does the
+    work of a press partner but isn't on the official list. Mia Bishop
+    (Community Partnership Manager) went unanswered after several tries.
+    Daniel named a working contact instead - Jamie Stamor (Associate
+    Marketing Manager) - and offered to reach out directly on Alex's
+    behalf, on top of the Awais Shahid intro above
+  - **NetLine migration issue** - the GPT Central to AI Central workspace
+    migration broke many TradePub/NetLine links; users hit broken pages.
+    Anika is helping investigate, "manageable" but unresolved. Risk of
+    lost leads/revenue; re-uploading ~200 pieces of content would be
+    heavy. NetLine payouts have also slightly decreased or stalled during
+    this period
+  - **Co-branded content proposal (recurring ask, year three)** - AI
+    Central wants co-branded content with NetLine given the overlapping
+    demand-gen/lead-gen/AI audience: mini e-books, webinars, a podcast, or
+    a column by Daniel (or a NetLine colleague) on AI Central. NetLine/
+    TradePub content could also feed into AI Central's new library
+    platform for embedded long-term exposure
+  - **AI Central initiatives mentioned** - own events (2 in London first),
+    a new library platform with MCP access (curated tutorials/prompts/
+    skills, sponsorable), and cohorts/classes starting January (demand
+    gen, lead gen, newsletter monetization, content creation)
