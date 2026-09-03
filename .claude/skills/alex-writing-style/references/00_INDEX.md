@@ -22,6 +22,7 @@ This is a full export of the sales knowledge base built inside the "AI Central S
 | `07_case_studies_and_pipeline.md` | Proven case studies + live pipeline deals showing the playbook applied in real negotiations |
 | `08_vocabulary_and_links.md` | Phrase bank, subject line patterns, and every key link/contact |
 | `09_advertiser_trust_research.md` | Sep 2026 research on newsletter ad sales, media kits, and reporting - - what changed in the decks, what's flagged as open |
+| `10_legacy_materials_audit.md` | Audit of two older materials (a Google Doc media kit, a Q2 2026 Figma pitch PDF) against the current decks - - what was already superseded correctly, what differentiator content and design ideas are still not folded in, flagged for Alex to confirm |
 | `sales_agent_training_data.json` | Everything above, structured as JSON for RAG/vector ingestion or fine-tuning |
 
 ## How to use this to train an agent
