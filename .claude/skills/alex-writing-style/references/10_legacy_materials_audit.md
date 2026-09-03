@@ -3,8 +3,16 @@
 Alex asked to integrate two older materials into the sales knowledge pack
 and confirm the Sep 2026 media kit rebuild did not lose anything from them:
 a Google Doc media kit source and a Q2 2026 Figma pitch deck PDF. Audited
-2 Sep 2026. Nothing below is added to the live decks yet - it is flagged
-for Alex to confirm first
+2 Sep 2026.
+
+**Update, same day:** Alex confirmed the three content items below (the
+"Peace of mind" comparison, the six-step timeline, the $0-to-$16M ARR bio
+stat) as correct and valid. They are now built into `mediakit.py` on the
+`decks` branch - see the "Content found here that is not in the current
+decks" section for exactly what was added, and `MEDIA-KIT-SOURCES.md` in
+`decks/media-kit/` for the slide-by-slide log. Everything else in this
+file (the LinkedIn link, the teaching affiliation, the design notes) is
+still only a flagged suggestion, not yet added anywhere
 
 ## Google Doc, "Media Kit" (docs.google.com/document/d/194ixUTliijpSDwNishPRhpNqiyoM7-qQKPnp2OCnMGo)
 
