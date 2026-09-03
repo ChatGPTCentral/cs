@@ -4,13 +4,17 @@
 - kind: person, internal
 - people: Mark (mark@theaicentral.net / mark@thecentral.ai), Elizabeth
   (elizabeth@theaicentral.net), Alex on cc
-- last-touch: Mark
-- last-inbound: 2026-07-14 (mark@theaicentral.net)
+- last-touch: Mark - replied 2026-09-03
+- last-inbound: 2026-09-03 16:11 (mark@theaicentral.net, thread
+  `1a05382e2fe260ce`, to elizabeth@theaicentral.net, cc mark@thecentral.ai,
+  alex@thecentral.ai)
 - last-outbound: 2026-08-30 (elizabeth@theaicentral.net, monthly
   invoice - INV-014, $530 - thread `1a05382e2fe260ce`)
-- idle: 21 days (from last-inbound; the 30 Aug message is not a chase)
+- idle: 0 days
 - next-action: **unknown - bodies not read.** Elizabeth is chasing and not getting
   answers
+- **Pulse check, 2026-09-03.** Mark replied via `1a0680aa8c1ac14d` - in
+  attesa di lettura, next-action sopra è superato (aveva risposto)
 - commitments: none recorded
 - threads: `19f5b6f7c1a9dc30` (live), 21 more unread
 - notes: **Elizabeth wrote twice - 28 and 29 July - with no reply from Mark.** Two
