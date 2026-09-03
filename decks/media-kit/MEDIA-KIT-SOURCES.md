@@ -93,6 +93,37 @@ them and are no longer used anywhere in this deck.
 Financials, valuation, revenue figures, margins, the investor scenarios, the
 team size, and anything from the strategic deck's SWOT.
 
+## Revision, 2 Sep 2026 (later same day) - restored from the Q2 2026 Figma pitch deck
+
+Alex shared an older Google Doc media kit and an 11-page Q2 2026 Figma
+pitch deck (`9de27a99-Pitch.pdf`), asking to confirm the rebuild above did
+not lose anything. Full audit in
+`.claude/skills/alex-writing-style/references/10_legacy_materials_audit.md`
+in the `cs` repo. The Google Doc was the same source already behind this
+kit - nothing lost. The Figma PDF surfaced three items with no equivalent
+in any current deck; Alex confirmed all three as correct and valid on 2 Sep
+2026, so they are now slide content, not just a flagged note:
+
+- **New slide 4, "Peace of mind, every campaign".** A solo-creator-vs-AI-
+  Central comparison, restored close to verbatim from the Figma deck's
+  page 3. Now 14 slides, was 13.
+- **Slide 12 ("How it works") expanded from 4 steps to 6.** Added "Check
+  in" (a mid-campaign call to review performance) and "Plan the next one"
+  (follow-up campaign ideas), both from the Figma deck's page 5 timeline.
+  Renamed from "Four steps, and a guarantee" to "Six steps, and a
+  guarantee".
+- **Slide 14 (team bio) gained the ARR stat.** Alex's pre-AI Central
+  fintech work is now stated as taking the company "from $0 to $16M ARR",
+  restored from the Figma deck's page 11 bio. The current bio previously
+  only said he "built the go-to-market strategy and led the platform
+  launch".
+
+Not restored, since Alex did not confirm them: the personal LinkedIn link
+(`linkedin.com/in/alex-ai`) from the Google Doc's team section, and the
+Figma deck's naming of "Cozora AI Academy" as the teaching affiliation (the
+current bio says "university level" without naming an institution). Ask
+before adding either.
+
 ## Revision, 2 Sep 2026 - rebuilt against the advertiser trust research
 
 Same research pass documented in `CASE-STUDIES-SOURCES.md`: three research

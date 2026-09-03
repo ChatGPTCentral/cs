@@ -99,7 +99,7 @@ def usecase(n_, title, intro, items):
 
 S[3] = f'''<!-- 03 {'─'*73} -->
 <section class="slide light" data-label="Why companies choose us"
-  data-notes="Three campaign types, straight from the Q3 kit. Map a prospect to one of these on the first call, then pick the format on slides 7-10.">
+  data-notes="Three campaign types, straight from the Q3 kit. Map a prospect to one of these on the first call, then pick the format on slides 8-11.">
   <div class="kicker">WHY COMPANIES CHOOSE AI CENTRAL</div>
   <h2>Three kinds of campaign we run</h2>
   <p class="subline">Senior operators and decision makers, actively building with AI. Tell us the goal and we pick the mix</p>
@@ -117,8 +117,43 @@ S[3] = f'''<!-- 03 {'─'*73} -->
   {FOOT}
 </section>'''
 
-# ── 04 The audience ─────────────────────────────────────────────────────────
+# ── 04 Peace of mind ────────────────────────────────────────────────────────
 S[4] = f'''<!-- 04 {'─'*73} -->
+<section class="slide light" data-label="Peace of mind, every campaign"
+  data-notes="Restored from the Q2 2026 Figma pitch deck at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. The direct comparison to a solo creator is the clearest 'why us' angle across every source in the pack.">
+  <div class="kicker">WHY AI CENTRAL</div>
+  <h2>Peace of mind, every campaign</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px">
+    <div style="background:var(--tint);padding:28px 32px">
+      <div style="font-size:26px;font-weight:700;color:var(--muted)">Working with a solo creator</div>
+      <div style="margin-top:14px">{bullets([
+        "You are constantly chasing to deliver on time",
+        "Content is not on-brand: wrong logos, wrong fonts",
+        "There is no ICP research",
+        "There is low personalization",
+        "Reporting standards are low",
+        "There is little GTM or paid-ads understanding"], 19, 7)}</div>
+    </div>
+    <div style="background:var(--ink);color:var(--paper);padding:28px 32px">
+      <div style="font-size:26px;font-weight:700;color:var(--accent)">Working with AI Central</div>
+      <div style="margin-top:14px">{"".join(
+        f'<div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair-dark)">'
+        f'<div style="width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none;margin-top:11px"></div>'
+        f'<div style="font-size:19px;font-weight:300;line-height:1.35;color:#EDEAE3">{i}</div></div>' for i in [
+        "You get on-time delivery, every time",
+        "You get pixel-perfect, on-brand content from day one",
+        "You get deep ICP research before a single piece is created",
+        "You get content highly personalized to your audience and goals",
+        "You get detailed performance reporting on every campaign",
+        "You get GTM-native thinking and paid-ads understanding in every deliverable"])}</div>
+    </div>
+  </div>
+  <div style="margin-top:22px;background:var(--tint);padding:20px 28px;font-size:19px;font-weight:300;line-height:1.4">Our clients renew because our team's white-glove service - - meticulous attention to detail, deep personalization, and exceptional care - - lets them run campaigns without the stress</div>
+  {FOOT}
+</section>'''
+
+# ── 05 The audience ─────────────────────────────────────────────────────────
+S[5] = f'''<!-- 05 {'─'*73} -->
 <section class="slide light" data-label="The audience"
   data-notes="Reach: 300K+ is subscribers across the three publications (181K LinkedIn newsletter + 97.7K beehiiv + 44K Substack); 613K is accounts reached a month (Buffer + beehiiv + LinkedIn impressions, Aug 2026). Both true, different definitions - say which one you mean. Seniority, industries and geography are measured on the quiz database sample (1,985 / 2,278 / 4,714 respondents) and applied to the full audience, per Alex. The old '40% Founders, C-level and Execs' line is NOT supported by the data (13.9% founder + C-suite; 29.6% VP and above; 50.5% manager and above) - do not use it. 'LinkedIn is the main source of decision-makers' is the kit's claim; in the last 4 weeks beehiiv's top acquisition sources were Netline and Refind, so we say organic on LinkedIn, not 'majority organic' overall.">
   <div class="kicker">THE AUDIENCE</div>
@@ -179,7 +214,7 @@ def pub(n_, logo, name, sub, stats, foot):
       <div style="margin-top:auto;padding-top:10px;font-size:16px;font-weight:300;color:var(--muted)">{foot}</div>
     </div>'''
 
-S[5] = f'''<!-- 05 {'─'*73} -->
+S[6] = f'''<!-- 06 {'─'*73} -->
 <section class="slide light" data-label="The publications"
   data-notes="LinkedIn newsletter and company page figures are from the Q3 kit, sourced from Favikon on 18 Aug 2026 - not independently verifiable here. beehiiv figures are LIVE from the beehiiv API on 2 Sep 2026: 97,681 active subscribers, 29.7% open rate and 2.34% click rate over the last 4 weeks, +4,906 new subscribers in the same window. The docx said 86K subscribers / 30.25% / 2.48% - the 86K was average sends, not active subscribers. 'Average unique ad clicks' (300 LinkedIn, 312 beehiiv) are the kit's figures.">
   <div class="kicker">THE PUBLICATIONS</div>
@@ -213,9 +248,9 @@ def fmt(n_, name, what, ideal, price):
       <div style="margin-top:auto;padding-top:10px;font-size:19px;font-weight:700;color:var(--accent)">{price}</div>
     </div>'''
 
-S[6] = f'''<!-- 06 {'─'*73} -->
+S[7] = f'''<!-- 07 {'─'*73} -->
 <section class="slide light" data-label="Advertising options"
-  data-notes="Eight formats. The first three carry a public rate card (slides 7-9). The other five are quoted per campaign - the kit lists them without prices and the pricing reference has none, so 'on request' is the honest label until Alex sets list prices.">
+  data-notes="Eight formats. The first three carry a public rate card (slides 8-10). The other five are quoted per campaign - the kit lists them without prices and the pricing reference has none, so 'on request' is the honest label until Alex sets list prices.">
   <div class="kicker">ADVERTISING OPTIONS</div>
   <h2>Eight ways to reach them</h2>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px">
@@ -234,7 +269,7 @@ S[6] = f'''<!-- 06 {'─'*73} -->
 </section>'''
 
 # ── 07 LinkedIn Carousel ────────────────────────────────────────────────────
-S[7] = f'''<!-- 07 {'─'*73} -->
+S[8] = f'''<!-- 08 {'─'*73} -->
 <section class="slide light" data-label="LinkedIn Carousel"
   data-notes="Rate card from 02_products_pricing.md (matches the Q2 playbook). Minimum results apply to the bundles only. Every bundle's max CPM/CPC sits under LinkedIn Ads benchmarks ($30-80 CPM, $5-12 CPC) - that is the ROI argument. The carousel also earns a lifetime spot in the AI Library (2,000+ views a month) and full republishing rights.">
   <div class="kicker">ADVERTISING OPTIONS · 1/3</div>
@@ -269,7 +304,7 @@ S[7] = f'''<!-- 07 {'─'*73} -->
 </section>'''
 
 # ── 08 LinkedIn Main Ad ─────────────────────────────────────────────────────
-S[8] = f'''<!-- 08 {'─'*73} -->
+S[9] = f'''<!-- 09 {'─'*73} -->
 <section class="slide light" data-label="LinkedIn Main Ad"
   data-notes="Rate card from 02_products_pricing.md. Every Main Ad price is built to upsell into the carousel bundle for a small step: 1 ad $899 -> 1 carousel + 1 ad $999; 3 ads $2,499 -> $2,799; 5 ads $3,799 -> $4,499. The example creative is the UX Pilot DALL-E 3 Playbook placement from the kit.">
   <div class="kicker">ADVERTISING OPTIONS · 2/3</div>
@@ -308,7 +343,7 @@ S[8] = f'''<!-- 08 {'─'*73} -->
 </section>'''
 
 # ── 09 Email ads (beehiiv) ──────────────────────────────────────────────────
-S[9] = f'''<!-- 09 {'─'*73} -->
+S[10] = f'''<!-- 10 {'─'*73} -->
 <section class="slide light" data-label="Email newsletter ads"
   data-notes="Primary Ad rate card from 02_products_pricing.md. Secondary and Tools ads have no list price in any source - the clicks-per-issue ranges (200-500 / 30-80 / 20-50) come from the kit's own tier graphic. Ask Alex before quoting those two. Example creative is the HubSpot co-branded issue.">
   <div class="kicker">ADVERTISING OPTIONS · 3/3</div>
@@ -353,7 +388,7 @@ def premium(n_, img, name, what, ideal):
       </div>
     </div>'''
 
-S[10] = f'''<!-- 10 {'─'*73} -->
+S[11] = f'''<!-- 11 {'─'*73} -->
 <section class="slide light" data-label="Premium formats"
   data-notes="The three formats without a list price. Diagrams are the kit's own. Quote per campaign; the pricing reference frames dedicated issues and multi-touch bundles at $5K to $10K+.">
   <div class="kicker">PREMIUM FORMATS · QUOTED PER CAMPAIGN</div>
@@ -392,16 +427,18 @@ def step(n_, title, body):
       <div style="margin-top:6px;font-size:18px;font-weight:300;line-height:1.35;color:#3A3A3A">{body}</div>
     </div>'''
 
-S[11] = f'''<!-- 11 {'─'*73} -->
+S[12] = f'''<!-- 12 {'─'*73} -->
 <section class="slide light" data-label="How it works"
-  data-notes="Guaranteed results policy wording is from the playbook, lightly simplified. It applies to the packages with minimum results on slides 7-9. Discount policy: 10% new clients, 5% discretionary - the 5% is Alex's call and is not on the slide.">
+  data-notes="Six steps restored from the Q2 2026 Figma pitch deck at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. Adds the mid-campaign call and follow-up ideation the old 4-step version dropped. Guaranteed results policy wording is from the playbook, lightly simplified. It applies to the packages with minimum results on slides 8-10. Discount policy: 10% new clients, 5% discretionary - the 5% is Alex's call and is not on the slide.">
   <div class="kicker">HOW IT WORKS</div>
-  <h2>Four steps, and a guarantee</h2>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px">
+  <h2>Six steps, and a guarantee</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px">
     {step("1", "Brief", "We agree the goal, the content angle, the target reader, and the date")}
     {step("2", "Create", "Our team writes and designs the placement. You approve it before it goes out")}
     {step("3", "Publish", "We publish across the agreed channels: email, LinkedIn newsletter, feed, website")}
-    {step("4", "Report", "You get a performance report: impressions, clicks, downloads, signups")}
+    {step("4", "Check in", "A mid-campaign call to review performance so far and adjust if needed")}
+    {step("5", "Report", "You get a performance report: impressions, clicks, downloads, signups")}
+    {step("6", "Plan the next one", "We bring follow-up campaign ideas based on what worked")}
   </div>
   <div data-step="2" style="margin-top:26px;background:var(--ink);color:var(--paper);padding:28px 36px;display:flex;gap:40px;align-items:center">
     <div style="font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);flex:none;width:300px;line-height:1.3">Guaranteed results policy</div>
@@ -427,7 +464,7 @@ def case(n_, logo, client, objective, package, result, body):
       <div style="margin-top:8px;font-size:17px;font-weight:300;line-height:1.35;color:#3A3A3A">{body}</div>
     </div>'''
 
-S[12] = f'''<!-- 12 {'─'*73} -->
+S[13] = f'''<!-- 13 {'─'*73} -->
 <section class="slide light" data-label="Case studies"
   data-notes="All figures rebuilt Sep 2026 from real beehiiv post analytics (Advertiser Source = Direct only) and LinkedIn campaign reports - see CASE-STUDIES-SOURCES.md and the full case-studies deck. Every client here rebooked at least once; that is now the headline claim, not any single number.">
   <div class="kicker">CASE STUDIES</div>
@@ -447,9 +484,9 @@ S[12] = f'''<!-- 12 {'─'*73} -->
 </section>'''
 
 # ── 13 Team + contact ───────────────────────────────────────────────────────
-S[13] = f'''<!-- 13 {'─'*73} -->
+S[14] = f'''<!-- 14 {'─'*73} -->
 <section class="slide light" data-label="Meet the team"
-  data-notes="Bio is the kit's, in shorter sentences. Contact links from the brand skill's key-links table. Media kit URL cntral.ai/media-kit; storefront cntral.ai/storefront.">
+  data-notes="Bio is the kit's, in shorter sentences. The $0 to $16M ARR fintech stat was restored from the Q2 2026 Figma pitch deck at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. Contact links from the brand skill's key-links table. Media kit URL cntral.ai/media-kit; storefront cntral.ai/storefront.">
   <div class="kicker">MEET THE TEAM</div>
   <h2>Based in London, led by the founder</h2>
   <div style="display:grid;grid-template-columns:300px 1fr 420px;gap:48px;margin-top:34px;align-items:start">
@@ -457,7 +494,7 @@ S[13] = f'''<!-- 13 {'─'*73} -->
     <div data-step="1">
       <div style="font-size:32px;font-weight:700;letter-spacing:-.01em">Alex Fiore</div>
       <div style="font-size:20px;color:var(--muted)">Founder and Chief Editor, AI Central Media</div>
-      <div style="margin-top:16px;font-size:20px;font-weight:300;line-height:1.45">Alex leads the editorial team. He is a founding member of the San Francisco AI Collective, and part of the Data and AI Group at Global Tech Advocates in London. He taught applied AI in finance at university level, writes for several industry magazines, and holds an MSc in quantitative finance. Before AI Central, he was on the founding team of a UK AI fintech, where he built the go-to-market strategy and led the platform launch</div>
+      <div style="margin-top:16px;font-size:20px;font-weight:300;line-height:1.45">Alex leads the editorial team. He is a founding member of the San Francisco AI Collective, and part of the Data and AI Group at Global Tech Advocates in London. He taught applied AI in finance at university level, writes for several industry magazines, and holds an MSc in quantitative finance. Before AI Central, he was on the founding team of a UK AI fintech, where he built the go-to-market strategy and led the platform launch, taking the company from $0 to $16M ARR</div>
     </div>
     <div data-step="2" style="background:var(--ink);color:var(--paper);padding:30px 34px">
       <div style="font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--accent)">Let's talk</div>
