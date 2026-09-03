@@ -5,14 +5,15 @@ and confirm the Sep 2026 media kit rebuild did not lose anything from them:
 a Google Doc media kit source and a Q2 2026 Figma pitch deck PDF. Audited
 2 Sep 2026.
 
-**Update, same day:** Alex confirmed the three content items below (the
+**Update, same day:** Alex confirmed all five content items below - the
 "Peace of mind" comparison, the six-step timeline, the $0-to-$16M ARR bio
-stat) as correct and valid. They are now built into `mediakit.py` on the
-`decks` branch - see the "Content found here that is not in the current
-decks" section for exactly what was added, and `MEDIA-KIT-SOURCES.md` in
-`decks/media-kit/` for the slide-by-slide log. Everything else in this
-file (the LinkedIn link, the teaching affiliation, the design notes) is
-still only a flagged suggestion, not yet added anywhere
+stat, the Cozora Academy teaching affiliation, and the personal LinkedIn
+link - as correct and valid. They are all now built into `mediakit.py` on
+the `decks` branch - see the sections below for exactly what was added,
+and `MEDIA-KIT-SOURCES.md` in `decks/media-kit/` for the slide-by-slide
+log. Only the design notes at the bottom of this file remain unactioned -
+they were flagged as inspiration, not a specific claim needing
+confirmation, so there is nothing to action
 
 ## Google Doc, "Media Kit" (docs.google.com/document/d/194ixUTliijpSDwNishPRhpNqiyoM7-qQKPnp2OCnMGo)
 
@@ -23,9 +24,8 @@ subscribers, the old case-study numbers) is already logged there and
 already reconciled against better sources. Nothing lost
 
 One real gap: the doc's "Meet the Team" section links Alex's personal
-LinkedIn profile, `linkedin.com/in/alex-ai`. The current media kit's team
-slide links `cntral.ai/meet` and email only, not a direct LinkedIn profile.
-Not added to the deck - confirm the link is still current first
+LinkedIn profile, `linkedin.com/in/alex-ai`. Confirmed and added - the
+media kit's "Let's talk" box now has a "Connect with Alex" line linking it
 
 ## Figma PDF, "AI Central - Media Kit Q226" (11 pages, Q2 2026)
 
@@ -68,9 +68,11 @@ since it is not committed into this repo
   is still accurate and attributable before restoring it - do not restore
   it on this session's say-so alone
 - **Teaching affiliation named.** The old bio names "Cozora AI Academy" as
-  where Alex teaches; the current bio says "taught applied AI in finance at
-  university level" without naming the institution. Confirm which is
-  current
+  where Alex teaches; the current bio said "taught applied AI in finance at
+  university level" without naming the institution. Confirmed - the media
+  kit now says "teaches AI and monetization at Cozora Academy," matching
+  the canonical bio already in `01_brand_positioning.md` and
+  `sales_agent_training_data.json`
 - **LinkedIn Carousel activation window.** "3-5 weeks" of momentum stated
   for the bespoke carousel format - not currently stated as a duration
   anywhere in the media kit
