@@ -1,7 +1,13 @@
 # AI Central - Partnership & Media Kit, Q3 2026
 
-Advertiser-facing deck, 13 slides. Standalone HTML with click-to-reveal steps,
+Advertiser-facing deck, 14 slides. Standalone HTML with click-to-reveal steps,
 plus a PDF export. Every figure traces to `MEDIA-KIT-SOURCES.md`.
+
+This folder auto-syncs to the standalone `ChatGPTCentral/media-kit` repo on
+every push to this branch that touches `decks/media-kit/**` - see
+`.github/workflows/sync-media-kit.yml` at the repo root. That repo is a
+one-way mirror for other projects to pull from; this folder stays the
+source of truth. Edit here, not there.
 
 Shares its CSS, navigation, fonts, charts and world map with the strategic
 deck in `../strategic/build/` - build that first, then:

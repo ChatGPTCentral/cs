@@ -1,0 +1,71 @@
+name: Sync media kit to ChatGPTCentral/media-kit
+
+# Source of truth for the media kit deck is decks/media-kit/ on this branch.
+# This mirrors the built deck, its sources log and its build script into the
+# standalone ChatGPTCentral/media-kit repo, so other projects can pull the
+# deck without needing access to this (cs) repo.
+#
+# README.md is intentionally NOT synced - the two repos have different
+# rebuild instructions (this repo has the shared build assets as a sibling
+# folder, decks/strategic/build/; the mirror repo does not), so each keeps
+# its own hand-written README.
+#
+# Requires a repo secret here, MEDIA_KIT_DEPLOY_TOKEN: a GitHub token
+# (classic PAT with `repo` scope, or a fine-grained PAT scoped to
+# ChatGPTCentral/media-kit with Contents: Read and write) with push access
+# to ChatGPTCentral/media-kit. Add it under this repo's Settings ->
+# Secrets and variables -> Actions -> New repository secret.
+
+on:
+  push:
+    branches: [decks]
+    paths:
+      - "decks/media-kit/**"
+  workflow_dispatch: {}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout cs (decks branch)
+        uses: actions/checkout@v4
+        with:
+          ref: decks
+          path: cs
+
+      - name: Checkout media-kit
+        uses: actions/checkout@v4
+        with:
+          repository: ChatGPTCentral/media-kit
+          ref: main
+          token: ${{ secrets.MEDIA_KIT_DEPLOY_TOKEN }}
+          path: media-kit
+
+      - name: Copy deck files (README.md excluded on purpose)
+        run: |
+          set -euo pipefail
+          src=cs/decks/media-kit
+          dst=media-kit
+          mkdir -p "$dst/build"
+          cp "$src/AI-Central-Media-Kit-Q3-2026.html" "$dst/"
+          cp "$src/AI-Central-Media-Kit-Q3-2026.pdf" "$dst/"
+          cp "$src/MEDIA-KIT-SOURCES.md" "$dst/"
+          cp "$src/build/build_mk.py" "$dst/build/"
+          cp "$src/build/mediakit.py" "$dst/build/"
+          cp "$src/build/mk.template.html" "$dst/build/"
+          cp "$src/build/mk3-assets.json" "$dst/build/"
+          cp "$src/build/qa.js" "$dst/build/"
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+          cd media-kit
+          git config user.name "cs-sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+            exit 0
+          fi
+          git commit -m "Sync from ChatGPTCentral/cs decks/media-kit @ ${GITHUB_SHA}"
+          git push origin main
