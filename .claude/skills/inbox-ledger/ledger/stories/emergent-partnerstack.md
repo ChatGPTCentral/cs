@@ -9,14 +9,16 @@
   being promoted) via the PartnerStack affiliate network. On AI Central's
   side: Alex (handed off), Elizabeth (owns affiliate strategy, now the
   contact)
-- last-touch: Randy Harinandan
+- last-touch: Elizabeth - replied to Randy, 2026-09-03
 - start: 2026-09-01
 - last-inbound: 2026-09-01 14:05 (randy.harinandan@partnerstack.com,
   thread `1a05d4a6d24bca49`, to elizabeth@thecentral.ai, bcc alex)
-- last-outbound: 2026-09-01 14:05 (chatgptcentral@gmail.com, Alex handing
-  off to Elizabeth)
-- next-action: Elizabeth to review the Emergent affiliate program and
-  decide whether to proceed
+- last-outbound: 2026-09-03 13:01 (elizabeth@theaicentral.net, thread
+  `1a05d4a6d24bca49`, to randy.harinandan@partnerstack.com, cc
+  ashley@partnerstack.com, bcc alex)
+- next-action: none - wait for Randy's reply
+- **Pulse check, 2026-09-03.** Elizabeth ha risposto a Randy via
+  `1a0675c747b0523a` - in attesa di risposta
 - commitments: none
 - threads: `1a05d4a6d24bca49` (live)
 - notes: **Auto-genesis, 2026-09-02.** Randy Harinandan (PartnerStack)
