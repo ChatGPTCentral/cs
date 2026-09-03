@@ -112,17 +112,19 @@ in any current deck; Alex confirmed all three as correct and valid on 2 Sep
   (follow-up campaign ideas), both from the Figma deck's page 5 timeline.
   Renamed from "Four steps, and a guarantee" to "Six steps, and a
   guarantee".
-- **Slide 14 (team bio) gained the ARR stat.** Alex's pre-AI Central
-  fintech work is now stated as taking the company "from $0 to $16M ARR",
-  restored from the Figma deck's page 11 bio. The current bio previously
-  only said he "built the go-to-market strategy and led the platform
-  launch".
+- **Slide 14 (team bio) gained the ARR stat, the teaching affiliation, and
+  a LinkedIn link.** Alex's pre-AI Central fintech work is now stated as
+  taking the company "from $0 to $16M ARR", restored from the Figma deck's
+  page 11 bio. "Taught applied AI in finance at university level" is
+  replaced with "teaches AI and monetization at Cozora Academy" -
+  confirmed by Alex, and matching the canonical bio already in
+  `01_brand_positioning.md` and `sales_agent_training_data.json` in the
+  sales knowledge pack, not just the Figma deck. The "Let's talk" box
+  gained a fifth line, "Connect with Alex", linking
+  `linkedin.com/in/alex-ai` from the Google Doc's team section.
 
-Not restored, since Alex did not confirm them: the personal LinkedIn link
-(`linkedin.com/in/alex-ai`) from the Google Doc's team section, and the
-Figma deck's naming of "Cozora AI Academy" as the teaching affiliation (the
-current bio says "university level" without naming an institution). Ask
-before adding either.
+All four items Alex confirmed on 2 Sep 2026. Nothing from either legacy
+source remains unaddressed.
 
 ## Revision, 2 Sep 2026 - rebuilt against the advertiser trust research
 
