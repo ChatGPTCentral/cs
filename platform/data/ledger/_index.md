@@ -28,6 +28,19 @@ What moved today:
   call happened, no notes captured yet)
 - **Incredible** - blocked. Apollo shows Manas Ojha left the company in
   March 2026, the old $449 re-pitch plan no longer applies
+- **Netline** - Alex answered Awais Shahid himself. Ball is with Awais
+- **Deep inbox scan, per Alex's request** - four real, unaddressed pitches
+  found sitting in the inbox with no story on file: [InVideo](stories/invideo-pitch.md)
+  (14d idle, Alex's last message unanswered), [Newsletter Traffic
+  Network](stories/newsletter-traffic-network.md) (30d, never answered),
+  [PickAndPartner](stories/pickandpartner-pitch.md) (16d, never answered),
+  [SayPeter](stories/saypeter-pitch.md) (17d, waiting on them). Plus one
+  real deadline: [Breakcold](stories/breakcold-crm-adoption.md)'s Only
+  Plan jumps from $59 to $99/mo on 9 Sep unless Alex locks in the old
+  price or buys annual first. One billing question (Rick Renfroe,
+  Proportion Air, wants a receipt for a $4.99 charge) landed at editor@
+  outside the support folders - belongs to `aic-customer-support`, not
+  this ledger, flagged so it doesn't get lost
 
 **Last refresh: 2026-08-19, the sweep is now genuinely complete end to end.**
 All 26 originally-registered labels read in full. Discovery covers unlabelled
@@ -102,7 +115,6 @@ The last word was theirs and nobody replied. Live or recent enough to prompt on.
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
 | [Mark (Marwan)](stories/mark-marwan.md) | 2026-09-03 | 0d | mark@theaicentral.net - replied after 2 unanswered July chases, not read yet |
-| [Netline](stories/netline.md) | 2026-09-03 | 0d | Awais.Shahid@informa.com - asked what AI Central's media-partner deliverables look like, needs a real answer |
 | [Pillsbury Law](stories/pillsbury-law.md) | 2026-06-04 | 76d | steven.james@pillsburylaw.com - possibly two contacts sharing a domain |
 | [Tim Bourquin](stories/tim-bourquin.md) | 2026-06-22 | 58d | tim.bourquin@gmail.com |
 | [King Capital Advisors](stories/king-capital-advisors.md) | 2026-07-14 | 36d | info@king-capital-advisors.com |

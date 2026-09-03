@@ -6,19 +6,18 @@
 - people: Aneeka Velummylum (`apatel@netline.com`), **Daniel Frignito**
   (`daniel@netline.com`, Director of Partner Development) - the address Alex
   named but that had not turned up in any thread read until this pass
-- last-touch: Awais Shahid (Informa) - replied 2026-09-03, 15:26
+- last-touch: Alex - replied to Awais Shahid, 2026-09-03
 - last-inbound: 2026-09-03 15:26 (Awais.Shahid@informa.com, thread
   `1a067b9a68290465`, cc daniel@netline.com, elizabeth@thecentral.ai)
-- last-outbound: 2026-09-03 14:54 (alex@thecentral.ai, thread
-  `1a067b9a68290465`, to Awais.Shahid@informa.com, cc daniel@netline.com,
-  elizabeth@thecentral.ai)
+- last-outbound: 2026-09-03 16:19 (alex@thecentral.ai, thread
+  `1a067b9a68290465`, to Awais.Shahid@informa.com, cc
+  elizabeth@thecentral.ai, bcc daniel@netline.com)
 - idle: 0 days
-- next-action: none - wait for Awais Shahid's reply on the AI Summit New
-  York media-partner ask
+- next-action: none - wait for Awais Shahid's reply
 - **Pulse check, 2026-09-03.** Awais replied via `1a067e16bcf0ce48` - what
   Informa offers (logo on partners page, onsite signage, a social post,
-  2x press passes) and asked what AI Central's deliverables look like -
-  needs a real reply, not mechanical, read before drafting
+  2x press passes) and asked what AI Central's deliverables look like.
+  Alex answered directly himself, per Alex - ball is back with Awais
 - **Call held, 2026-09-03, 15:30 CEST.** "AI Central & NetLine: Business
   Catch-Up and Collaboration Planning," full call. Same-day follow-up:
   Daniel referred Alex to Awais Shahid at Informa for the AI Summit New
