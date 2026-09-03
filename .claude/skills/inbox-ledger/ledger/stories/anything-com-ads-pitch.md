@@ -4,11 +4,12 @@
   confirmed by Alex, 2026-08-23
 - label-id: none
 - kind: project (outbound pitch, one contact)
-- people: Aleena, aleena@anything.com, org anything.com
+- people: Aleena, aleena@anything.com, Zaria, zaria@anything.com, org
+  anything.com
 - status: open - stalled, high priority to revive
 - start: 2026-03-24
 - end: (open)
-- next-action: none currently tracked
+- next-action: review and send the draft, thread `1a067f08380931ff`
 - commitments: none
 - threads: `19d07f989b801e8d` (24 Mar 2026), plus a long LinkedIn DM thread
   not captured here
@@ -33,3 +34,16 @@
   commissions made on 26 Jul 2026 (dub.co notification, 28 Aug, thread
   `1a0486cd9f4e8340`). Small money, but proof the affiliate structure
   converts - a concrete number for the revival pitch to Aleena.
+
+  **Draft updated, per Alex, 2026-09-03.** Full dub.co dashboard numbers
+  added as social proof: 4,102 clicks, 226 leads, 14 sales, $494.89 in
+  commissions since launch ($351.49 paid Jul, $71.70 paid Aug). Also
+  added a mention of Skydive, a recent anything.com launch Alex wants
+  referenced - no further detail on Skydive given, none invented. Fixed
+  the two Google-redirect-wrapped links in the draft's top paragraph to
+  plain real URLs, per Alex's new standing rule (no hyperlinks, no
+  Google redirect wrappers, ever). **Threading note:** editing the draft
+  via `update_draft` with a plain-text body detached it from the
+  original thread again (same failure mode already seen on `netline.md`)
+  - the draft is now its own thread, `1a067f08380931ff`, not a reply on
+  `19d07f989b801e8d` anymore
