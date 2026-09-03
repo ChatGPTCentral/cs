@@ -3,12 +3,12 @@
 - label-id: `Label_3561665707077814621`
 - kind: project
 - people: Sarah (sarah@wavelength.now), and 9 other threads not yet read
-- last-touch: Sarah
+- last-touch: Alex - sent the Alistair Gosling follow-up, 2026-09-03
 - last-inbound: 2026-06-29 (sarah@wavelength.now)
-- last-outbound: 2026-06-29 (alex@thecentral.ai)
-- idle: 51 days
-- next-action: draft ready for Alistair Gosling (see notes) - review and
-  send
+- last-outbound: 2026-09-03 (alex@thecentral.ai, thread `19f298cc647fb0dd`,
+  to Alistair Gosling)
+- idle: 0 days on the Alistair thread
+- next-action: none - wait for Alistair's reply
 - commitments: none recorded
 - threads: `19f0fb77d4b5bf87` (live), 9 more unread
 - notes: a fast back-and-forth on 29 June - Sarah wrote, Alex replied within the
@@ -64,4 +64,7 @@
   reply on `19f298cc647fb0dd` (messageId `1a061d1cc2949e7c`), cc Sarah
   Turner and voices@thecentral.ai: a short, low-pressure nudge pointing
   back at the still-open questions doc, explicitly giving him an out if
-  the timing's wrong. Not sent - draft-only
+  the timing's wrong.
+
+  **Sent, per Alex, 2026-09-03.** Alex sent the follow-up himself - ball
+  is now with Alistair

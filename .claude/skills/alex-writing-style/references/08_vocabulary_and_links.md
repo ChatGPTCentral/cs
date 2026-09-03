@@ -1,5 +1,11 @@
 # AI Central - - Phrase Bank, Subject Lines & Key Links
 
+**Link rule, confirmed 2026-09-03 - every link in this file and in every
+draft is plain text, never a hyperlink.** Write the real destination URL
+only (`https://docs.google.com/...`), never a Google redirect wrapper
+(`https://www.google.com/url?q=...`). See `05_voice_tone_style_guide.md`,
+critical formatting rules 9-10
+
 ## Subject line patterns
 
 - **Partnership proposals:** `[Company] ++ AI Central` or `AI Central x [Company]`

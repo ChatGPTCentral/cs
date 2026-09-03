@@ -12,6 +12,13 @@ Two voices exist in AI Central content: **Alex's personal voice** (emails, DMs, 
 6. **Lowercase greetings in casual/repeat contexts** - - "hi Mike," "hi brad" when warm; "Hi [Name]" (capitalized) for new or formal contacts
 7. **No Oxford comma obsession** - - commas used naturally, not overdone
 8. **Never use "Dear [Name]"**
+9. **Links: plain text only, never a hyperlink.** Never wrap a URL in
+   markdown/HTML hyperlink markup - write the raw URL as visible text, so
+   Alex can see and handle it himself. Confirmed 2026-09-03
+10. **Never write a Google redirect URL** (`https://www.google.com/url?
+    q=...`) - resolve it and write the real destination URL as plain text
+    instead (`https://docs.google.com/...`). This applies to every link in
+    every draft, no exceptions
 
 ## Voice & tone
 
