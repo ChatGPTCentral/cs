@@ -132,6 +132,7 @@ that are not "reply to a thread": actions, decisions, waits.
 | Weekend support sweep: AI 101, Feedback, Issues to inbox-zero | action | - | 2026-09-06 | per Alex |
 | Finalize the media kit and case studies | action | - | 2026-09-06 | per Alex |
 | Connect Appeared.in MCP for newsletter-sponsor intelligence | wait | - | - | per Alex |
+| Revive the TechEx / Samuel Paternoster media partnership lead | decision | [TechEx / Paternoster](stories/techex-paternoster.md) | - | per Alex |
 
 ## 📅 Reminders set
 
@@ -209,7 +210,10 @@ items aren't buried under nine-month-old single-touch contacts.
 | [Reader's feedback](stories/readers-feedback.md) | 9-11 months | 3 individual readers, grouped |
 | [M&A exploration](stories/ma-exploration.md) | 128d | support@justwebsitebrokerage.com (Joe Burrill) - chased Alex 4 times, no reply found. Two other advisor threads from the same intro (Quiet Light, Anny.biz) resolved separately, see the story file |
 | Luke McCgwire (beehiiv) | 176d | luke.mccgwire@beehiiv.com - proposed a call twice, see `beehiiv-richard-evans.md` |
-| Javeriya Ahsan | 140d | javeriya.ahsan123@gmail.com - sent a proposal 2026-04-01, never acknowledged |
+
+**Closed, 2026-09-04, per Alex:** [Javeriya Ahsan](stories/javeriya-social-media-candidate.md) -
+confirmed not worth reviving, zero signal across two attempts. Removed
+from this list
 
 ## 🏠 Internal
 
