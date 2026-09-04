@@ -121,6 +121,66 @@ full rule, including which addresses count as the team.
 `next-action` is the field that earns its keep. "Reply to Mark" is not an action.
 "Send Mark the Q3 numbers he asked for on 12 July" is.
 
+## Tasks - the non-email layer (added 2026-09-04, per Alex)
+
+Alex asked for this skill to work as more than an email concierge - also
+as a project manager: who he's dealing with now, who he dealt with in
+past weeks, which stories are hot, what's left to do, and **tasks that
+are not "write an email"** - cancel a subscription, delete a draft by
+hand, make a decision, show up to a call.
+
+`next-action` on a story is always shaped like a reply. A lot of real
+open loops are not - `ledger_tasks` (Supabase) is the separate table for
+those:
+
+- `title` - the task in plain words
+- `kind` - `action` (something to do), `decision` (only Alex can choose),
+  `wait` (tracked but blocked on someone else), or `reminder` (a plain
+  date nudge)
+- `story_slug` - the story it belongs to, or null for something
+  cross-cutting (e.g. "bulk-delete the blanked cold drafts")
+- `due_date`, `status` (`open` | `done` | `dropped`)
+- `source` - always cite where it came from ("per Alex, YYYY-MM-DD", or a
+  mechanical source like "snoozed-email" or "calendar")
+
+Same hard rule as everywhere else in this skill: **never invent a task.**
+Only two ways a row gets created - Alex says so directly, or a mechanical
+signal below produces one with a real source_ref backing it.
+
+**Two new mechanical signals feed this, both checked in the daily
+06:30 sweep:**
+
+1. **Snoozed email as a reminder.** Alex snoozes threads in Gmail as his
+   own reminder system - confirmed 2026-09-04, `is:snoozed` is a real,
+   working search operator (verified: 11 real snoozed threads existed on
+   first try). Each sweep, search `is:snoozed`. For a snoozed thread that
+   matches an open story, treat it as that story's own reminder signal -
+   update `next_action_date` if the story doesn't already have a better
+   one. For a snoozed thread that matches no story, log a `reminder`-kind
+   task instead of a new story (a snooze alone is not enough signal to
+   justify a full story - see the "0. Unlabelled stories" detector for
+   the bar a real story needs to clear)
+2. **Calendar booking as ground truth, not email.** A booking-link reply
+   ("I'll grab a time on your calendar") is not the actual commitment -
+   the Calendar event is. Real miss, 2026-09-04: a pulse check read
+   Nicolia's email reply and logged "waiting on her," missing that she
+   had already booked a call, confirmed on Google Calendar, that never
+   showed up in the Gmail thread at all. Whenever a story is waiting on
+   someone who mentioned scheduling, check `search_events` on the
+   Calendar too, not just Gmail
+
+**Report views** ("who am I dealing with now", "which stories are hot",
+"who did I deal with in past weeks") are computed from data the ledger
+already holds - `last-touch`, `last-outbound`, `last-inbound` across all
+stories - not a new data model. Build these as an on-demand read, the
+same way `/ledger` already reads the board, rather than a new file that
+goes stale between sweeps.
+
+**Roadmap** ("where are we going") needs Alex's own input on real
+priorities - never write this section from inference. Ask him for it
+directly when he wants it built; until then, leave it out rather than
+fill it with a guess.
+
 ## Hard rules
 
 - **Draft only.** The Gmail connector now exposes `send_message`, `reply` and

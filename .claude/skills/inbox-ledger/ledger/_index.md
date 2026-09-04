@@ -111,6 +111,17 @@ re-approach) and **Markup Hero** (Jeff Solomon check-in). Both drafts
 blanked, both still wanted reach-outs - see the story files for the
 next-action to pick back up later.
 
+## 📋 Tasks (not email)
+
+New this pass, per Alex - `ledger_tasks` in Supabase. Things Alex owes
+that are not "reply to a thread": actions, decisions, waits.
+
+| Task | Kind | Story | Due | Source |
+| --- | --- | --- | --- | --- |
+| Cancel Breakcold (or lock the annual rate, code GOTLUCKY) | action | [Breakcold](stories/breakcold-crm-adoption.md) | 2026-09-08 | per Alex |
+| Bulk-delete the ~26 blanked cold "++ AI Central" drafts | action | - | - | per Alex |
+| Delete the old Guidde "accept his terms" draft by hand | action | [Hod // Guidde](stories/hod-guidde.md) | - | per Alex |
+
 ## 📅 Reminders set
 
 Not urgent yet - `next_action_date` in Supabase, will surface when due.
