@@ -1,0 +1,93 @@
+{
+  "exportedAt": "2026-09-04T00:00:00Z",
+  "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+  "meetingCount": 3,
+  "meetingsWithTranscript": 0,
+  "meetings": [
+    {
+      "attendeeEmails": ["alex@theaicentral.net", "aleena@anything.com"],
+      "botPlannedAction": "do_not_record",
+      "botPlannedReason": "v1_archive",
+      "callRecordingId": "gx7ns8gydwb1jwqgh5wmrv6hzh872eg5",
+      "callStatus": "done",
+      "createdAt": 1773858434882,
+      "description": "The meeting on March 18, 2026, lacked clear discussion points, decisions, and action items due to insufficient transcript details. Follow-up is needed to clarify objectives and outcomes.",
+      "durationSec": 0,
+      "endTimeMs": 1773858680857,
+      "endedAtMs": 1773858680857,
+      "eventState": "active",
+      "hasTranscript": false,
+      "id": "j57q9p8yrepv6nf2d4143jmgds873pkd",
+      "meetingUrl": "https://meet.google.com/eqq-yvfv-jrz",
+      "organizerEmail": "aleena@anything.com",
+      "participants": [
+        {"callRecordingId": "gx7ns8gydwb1jwqgh5wmrv6hzh872eg5", "fromCalendarInvitee": true, "id": "gd7mdt9063m6d1tk3amatvn39s872222", "name": "Alex from AI Central"},
+        {"callRecordingId": "gx7ns8gydwb1jwqgh5wmrv6hzh872eg5", "email": "alex@theaicentral.net", "fromCalendarInvitee": true, "id": "gd7zh737z8eshvfq96r9dk3vq9873c85", "name": "alex@theaicentral.net"},
+        {"callRecordingId": "gx7ns8gydwb1jwqgh5wmrv6hzh872eg5", "email": "aleena@anything.com", "fromCalendarInvitee": true, "id": "gd7vj2ph3tqja3tmhjsgc2xq8h873hsx", "name": "aleena@anything.com"}
+      ],
+      "recordingStatus": "done",
+      "startTimeMs": 1773858680857,
+      "startedAtMs": 1773858680857,
+      "title": "Recorded Meeting",
+      "updatedAt": 1773860861475,
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45"
+    },
+    {
+      "attendeeEmails": ["alex@theaicentral.net", "nick@anny.biz"],
+      "botPlannedAction": "do_not_record",
+      "botPlannedReason": "v1_archive",
+      "callRecordingId": "gx7n5jcvg02q8w3wxfwe44p22h873qxd",
+      "callStatus": "done",
+      "createdAt": 1773851240277,
+      "description": "The meeting focused on addressing a specific unresolved issue, with Nick Santillo leading the discussion. Key decisions included outlining next steps and assigning action items to team members for follow-up.",
+      "durationSec": 0,
+      "endTimeMs": 1773851572630,
+      "endedAtMs": 1773851572630,
+      "eventState": "active",
+      "hasTranscript": false,
+      "id": "j57v7g72td0mka00btnw1rtsv5873p9z",
+      "meetingUrl": "https://meet.google.com/jpu-eiio-mkc",
+      "organizerEmail": "nick@anny.biz",
+      "participants": [
+        {"callRecordingId": "gx7n5jcvg02q8w3wxfwe44p22h873qxd", "fromCalendarInvitee": true, "id": "gd7kt1y3p3c9kxs8fhkqa4yg3h872cbw", "name": "Nick Santillo"},
+        {"callRecordingId": "gx7n5jcvg02q8w3wxfwe44p22h873qxd", "email": "alex@theaicentral.net", "fromCalendarInvitee": true, "id": "gd7x3ntr602twfb7brf362ae49872gq5", "name": "alex@theaicentral.net"},
+        {"callRecordingId": "gx7n5jcvg02q8w3wxfwe44p22h873qxd", "email": "nick@anny.biz", "fromCalendarInvitee": true, "id": "gd7pqy3eadjkk0zh8sbvqz2fps8728qw", "name": "nick@anny.biz"}
+      ],
+      "recordingStatus": "done",
+      "startTimeMs": 1773851572630,
+      "startedAtMs": 1773851572630,
+      "title": "Recorded Meeting",
+      "updatedAt": 1773860876689,
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45"
+    },
+    {
+      "attendeeEmails": ["alex@theaicentral.net", "jorge@groou.xyz"],
+      "botPlannedAction": "do_not_record",
+      "botPlannedReason": "v1_archive",
+      "callRecordingId": "gx7rxtqz3f7dk0eq9shtzpm7v5873gkh",
+      "callStatus": "done",
+      "createdAt": 1773759434850,
+      "durationSec": 0,
+      "endTimeMs": 1773760197438,
+      "endedAtMs": 1773760197438,
+      "eventState": "active",
+      "hasTranscript": false,
+      "id": "j57t3apqchdkppvc1nwkwecshx873aey",
+      "meetingUrl": "https://meet.google.com/pqj-vwhn-ocf",
+      "organizerEmail": "jorge@groou.xyz",
+      "participants": [
+        {"callRecordingId": "gx7rxtqz3f7dk0eq9shtzpm7v5873gkh", "fromCalendarInvitee": true, "id": "gd7g864m8wr1yg6r49mbexvxzn8728zy", "name": "Alex from AI Central"},
+        {"callRecordingId": "gx7rxtqz3f7dk0eq9shtzpm7v5873gkh", "fromCalendarInvitee": true, "id": "gd7zcgk3rwnd9jqn3wwgchy5qd873nsh", "name": "Jorge Medina"},
+        {"callRecordingId": "gx7rxtqz3f7dk0eq9shtzpm7v5873gkh", "email": "alex@theaicentral.net", "fromCalendarInvitee": true, "id": "gd7rwfg1wyf2x0xakv4v6nhxhx872z1v", "name": "alex@theaicentral.net"},
+        {"callRecordingId": "gx7rxtqz3f7dk0eq9shtzpm7v5873gkh", "email": "jorge@groou.xyz", "fromCalendarInvitee": true, "id": "gd7j5qdj2xndaa49dvxtzbr9h98739cm", "name": "jorge@groou.xyz"}
+      ],
+      "recordingStatus": "done",
+      "startTimeMs": 1773760197438,
+      "startedAtMs": 1773760197438,
+      "title": "Recorded Meeting",
+      "updatedAt": 1773760210214,
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45"
+    }
+  ],
+  "note": "meetings_list (workspace-wide) returned exactly these 3 meetings, hasMore: false, so this is the complete list. All 3 have hasTranscript: false. Called meetings_transcript_list would return nothing for these; not called per-meeting since hasTranscript already confirms no transcript exists. All 3 are Google Meet calls where the recording bot's plan was 'do_not_record' (reason: v1_archive), which is why no transcript was ever generated. Nothing to lose here beyond this metadata, which is fully captured above."
+}

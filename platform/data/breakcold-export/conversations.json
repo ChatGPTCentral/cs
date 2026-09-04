@@ -1,0 +1,900 @@
+{
+  "exportedAt": "2026-09-04T00:00:00Z",
+  "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+  "scope": "hasLinkedRecords=true only - see README for full reasoning",
+  "linkedConversationCount": 9,
+  "conversations": [
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "Marc Duke",
+          "id": "s9720c3v0wb5jkwxsjp7cr471987hv67",
+          "isSender": true
+        },
+        {
+          "displayName": "Russ Shaw",
+          "id": "s975ea8rw7v8ekavtsehjqtv5987hbhe"
+        },
+        {
+          "displayName": "ZOLTAN Vass",
+          "id": "s9763eax6ssg2mm2199ppabw7s87h07r"
+        },
+        {
+          "displayName": "Tsvetelin Anastasov",
+          "id": "s977yxg59n253twdq6vrp84zhs88921e"
+        },
+        {
+          "displayName": "Ganapathy Sankarabaaham",
+          "id": "s979a6d3q4gwmb1y9zsbzpv1bd87hngw"
+        },
+        {
+          "displayName": "Alex from AI Central",
+          "id": "s9701cjg4vpw95k23xh7vbf92987gnyv"
+        },
+        {
+          "displayName": "Elizabeth from AI Central",
+          "id": "s97ffcgkcgnmcxm2x1shswnmys87gz13"
+        },
+        {
+          "displayName": "Alejandro Martinez",
+          "id": "s97bamxpg088g569drayvc3xfx8cbz2b"
+        },
+        {
+          "displayName": "Jose Carlos Sanchez",
+          "id": "s973rfdg8447tdr76p2epxhwxs8cb7qs"
+        },
+        {
+          "displayName": "GTA SH",
+          "id": "s97ap14kft4d2w57fqesqym9mh89rm0v"
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": true,
+      "hasLinkedRecords": true,
+      "id": "t97ax19jpb4mvgxd75r6aca9q58ca4xg",
+      "isClosed": false,
+      "lastMessageAtMs": 1788453816000,
+      "lastMessageSnippet": "Hi Alejandro and JC - - just floating this back up, know things get busy. Still keen to grab 15-20 min on your AI event at IE Business School and how the GTA Quarterly AI Pulse report could plug in.",
+      "lifecycle": "sent",
+      "mailbox": "sent",
+      "subject": "Re: GTA Quarterly AI Pulse => Intro to Alejandro and JC from Tech NY Advocates",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 3,
+          "bodyPreview": "Hi Alejandro and JC - just floating this back up, know things get busy. Still keen to grab 15-20 min on your AI event at IE Business School and how the GTA Quarterly AI Pulse report could plug in. Here's my calendar if easier: https://cntral.ai/meet",
+          "channel": "email",
+          "conversationId": "t97ax19jpb4mvgxd75r6aca9q58ca4xg",
+          "direction": "inbound",
+          "id": "td73ad61bckgccfce1tbd2anfd8dp3np",
+          "sentAtMs": 1788453816000,
+          "subject": "Re: GTA Quarterly AI Pulse => Intro to Alejandro and JC from Tech NY Advocates",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/01be1442-9597-4f3e-a503-075177c7e70b",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/d3ca3f2d-9493-42fc-85af-78b054c4fc12"
+        },
+        {
+          "attachmentCount": 3,
+          "bodyPreview": "hi Russ - thanks for the intro. Hi Alejandro and JC, Great to connect. I'd love to chat next week about your upcoming AI event at IE Business School and see how we can share learnings from the GTA Quarterly AI Pulse report. Feel free to grab a time that works for you here: https://cntral.ai/meet",
+          "channel": "email",
+          "conversationId": "t97ax19jpb4mvgxd75r6aca9q58ca4xg",
+          "direction": "inbound",
+          "id": "td7dsx81swrknba6s1jenjvrjn8cma1a",
+          "sentAtMs": 1786983781000,
+          "subject": "Re: GTA Quarterly AI Pulse => Intro to Alejandro and JC from Tech NY Advocates",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/304e52a4-6b37-4dd5-b702-44b1ee3b440b",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/44694a19-cd4f-415a-a3f0-7fc87755e5e4"
+        },
+        {
+          "attachmentCount": 3,
+          "channel": "email",
+          "conversationId": "t97ax19jpb4mvgxd75r6aca9q58ca4xg",
+          "direction": "inbound",
+          "id": "td70gbpbbc918e0hxzyj8qpma58cb515",
+          "sentAtMs": 1786547349000,
+          "subject": "RE: GTA Quarterly AI Pulse => Intro to Alejandro and JC from Tech NY Advocates",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/b303b20a-6111-42e7-9584-6963a5071045",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/6c45dd8b-0ee9-49cd-9d9a-6a26f9ea9588"
+        },
+        {
+          "attachmentCount": 3,
+          "bodyPreview": "Hi everyone, I hope you are well. I wanted to connect you to Alejandro and JC who are co-leading Tech New York Advocates. I just had a very good call with the two of them, and they are planning an AI-focused event at IE Business School...",
+          "channel": "email",
+          "conversationId": "t97ax19jpb4mvgxd75r6aca9q58ca4xg",
+          "direction": "inbound",
+          "id": "td7110zc3avhfbj2a1ye7q3y7d8cbm9a",
+          "sentAtMs": 1786546689000,
+          "subject": "Re: GTA Quarterly AI Pulse => Intro to Alejandro and JC from Tech NY Advocates",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/27db8423-b0d7-43a1-aa6b-ff2614b5999e",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/46e2a55f-ec72-4257-8fb3-58b825b4d725"
+        }
+      ],
+      "messageCount": 4
+    },
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "Elizabeth from AI Central",
+          "id": "s97avr6w5e2qe31nkw8n71rvy587ghwj",
+          "isSender": true
+        },
+        {
+          "displayName": "Alistair Gosling",
+          "id": "s979mf7agzsgnb603b9kqbkecs89jpzq"
+        },
+        {
+          "id": "s97atpr97wsxfq8eypwg7gthbn89tv19"
+        },
+        {
+          "displayName": "Alex from AI Central",
+          "id": "s9701cjg4vpw95k23xh7vbf92987gnyv"
+        },
+        {
+          "displayName": "Alex from AI Central",
+          "id": "s972dsf12vzc2anb8mm8q39cpd89kyxr"
+        },
+        {
+          "displayName": "Sarah Turner",
+          "id": "s97amchsxrbknwn9fg6026wagh89h8e8"
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": false,
+      "hasLinkedRecords": true,
+      "id": "t97epbqfepec9a9v655dm32zfx89t3ew",
+      "isClosed": false,
+      "lastMessageAtMs": 1788448929000,
+      "lastMessageSnippet": "Hi Alistair, how are you? Circling back on this after the summer - would still love to feature your story with AI Central's readers, the questions doc is still open whenever you get a moment https:",
+      "lifecycle": "sent",
+      "mailbox": "sent",
+      "subject": "Interview Opportunity After Cannes Lions",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 0,
+          "bodyPreview": "Hi Alistair, how are you? Circling back on this after the summer - would still love to feature your story with AI Central's readers, the questions doc is still open whenever you get a moment: https://docs.google.com/document/d/1vLC3XzA3UvExzKbkkymDO951I6EuA9sNMpNvhSpKUgA/edit",
+          "channel": "email",
+          "conversationId": "t97epbqfepec9a9v655dm32zfx89t3ew",
+          "direction": "inbound",
+          "id": "td74qgfvhve8kffhf7tew878nd8dp0p5",
+          "sentAtMs": 1788448929000,
+          "subject": "Re: Interview Opportunity After Cannes Lions",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/35c1faa5-2fec-48bd-aef9-f6aa3c1c4c6e",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/96b95be6-0113-4116-b59d-437b55e6fd72"
+        },
+        {
+          "attachmentCount": 0,
+          "bodyPreview": "hi Alistair - alex here, nice speaking with you the other day. i'm following up on the exclusive interview we discussed after Cannes Lions - we're closing the next batch shortly and we'd love to feature your story. let me know if you're in",
+          "channel": "email",
+          "conversationId": "t97epbqfepec9a9v655dm32zfx89t3ew",
+          "direction": "inbound",
+          "id": "td7f49tqb61mz0fdk6ph0e0ktn8ah65a",
+          "sentAtMs": 1784041538000,
+          "subject": "Re: Interview Opportunity After Cannes Lions",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/7d1af919-e096-4fbb-ba32-e51ee17e8c68",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/32d9f623-b478-405c-8a10-4533ee64f531"
+        },
+        {
+          "attachmentCount": 0,
+          "bodyPreview": "Hi Alistair, I'm following up on behalf of Alex - he said you guys had a great chat earlier today! As part of our coverage as Press delegates at Cannes Lions, we'd love to feature a thought leadership article about your journey. Below is a document with some questions...",
+          "channel": "email",
+          "conversationId": "t97epbqfepec9a9v655dm32zfx89t3ew",
+          "direction": "inbound",
+          "id": "td735hcj0cvagtkt96d32be8vs89tgvw",
+          "sentAtMs": 1783108519000,
+          "subject": "Interview Opportunity After Cannes Lions",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/d17536b6-a6b1-4b7b-9cad-0ece0319553b",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/e34d06c3-9d2e-4e16-9d9f-844c2a1b09b3"
+        }
+      ],
+      "messageCount": 3
+    },
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "Richard Lowe",
+          "id": "s978h3y829fps7j7dwz0pnx6cx8a9j8g",
+          "isSender": true
+        },
+        {
+          "displayName": "Alex from AI Central",
+          "id": "s9701cjg4vpw95k23xh7vbf92987gnyv"
+        },
+        {
+          "displayName": "Elizabeth from AI Central",
+          "id": "s97avr6w5e2qe31nkw8n71rvy587ghwj"
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": true,
+      "hasLinkedRecords": true,
+      "id": "t97a9rqda5jhcb2f8n21j80ge58dagqj",
+      "isClosed": false,
+      "lastMessageAtMs": 1788336804000,
+      "lastMessageSnippet": "Thanks for your reply, Alex. All the feedback from Universities, industry partners and students so far has been overwhelmingly positive, and we've held a project review meeting with both",
+      "lifecycle": "sent",
+      "mailbox": "sent",
+      "subject": "TWEA AI Hackathon 2026 - Partner Feedback",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t97a9rqda5jhcb2f8n21j80ge58dagqj",
+          "direction": "inbound",
+          "id": "td74m7dm9rrjbt0evh26sds3rx8dmbe8",
+          "sentAtMs": 1788336804000,
+          "subject": "RE: TWEA AI Hackathon 2026 - Partner Feedback",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/e260658b-9063-4bdd-8de9-b71488d96b73",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/be1a69d7-d053-4d88-aefc-6b309c23b40d"
+        },
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "Hi Richard, Thanks for this email, and apologies for the slow reply. Our feedback was very positive, and I feel we might have shared much of it during dinner. Universities are under increasing pressure to provide students with the education and skills they need...",
+          "channel": "email",
+          "conversationId": "t97a9rqda5jhcb2f8n21j80ge58dagqj",
+          "direction": "inbound",
+          "id": "td7ba14kgrk2trrdb9d6egyrj18dk9ft",
+          "sentAtMs": 1788271408000,
+          "subject": "Re: TWEA AI Hackathon 2026 - Partner Feedback",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/a1b492be-c4f0-41ee-bfca-f7ef1ced16d0",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/4a9f43f1-ddc6-469c-a6ee-2b366928b849"
+        },
+        {
+          "attachmentCount": 2,
+          "channel": "email",
+          "conversationId": "t97a9rqda5jhcb2f8n21j80ge58dagqj",
+          "direction": "inbound",
+          "id": "td70eegt9p9hwy8eyj93z37zqs8dad0m",
+          "sentAtMs": 1787910480000,
+          "subject": "TWEA AI Hackathon 2026 - Partner Feedback",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/580f8209-53d7-4af1-b7f1-5b48300c1050",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/4ec0da4b-2d31-4c0b-9ce2-b4c21c3a12ab"
+        }
+      ],
+      "messageCount": 3
+    },
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "Richard Lowe",
+          "id": "s978h3y829fps7j7dwz0pnx6cx8a9j8g",
+          "isSender": true
+        },
+        {
+          "displayName": "Tech West England Advocates",
+          "id": "s97670bkab1tnt2e1yssemnmg988e76k"
+        },
+        {
+          "displayName": "Alex from AI Central",
+          "id": "s9701cjg4vpw95k23xh7vbf92987gnyv",
+          "isSender": true
+        },
+        {
+          "displayName": "Elizabeth from AI Central",
+          "id": "s97avr6w5e2qe31nkw8n71rvy587ghwj"
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": true,
+      "hasLinkedRecords": true,
+      "id": "t97cf40qvpt4h3g2bmg5cyzcad8ck7dr",
+      "isClosed": false,
+      "lastMessageAtMs": 1788335709000,
+      "lastMessageSnippet": "Hi Alex, Thanks for circling back. Please do let me know what was confusing Re: Antidote Communications discussions and we can discuss further. Did you consider the GTA Leaders conference in Istanbul?",
+      "lifecycle": "sent",
+      "mailbox": "sent",
+      "subject": "AI Hackathon - Official LinkedIn Post - Winners, Partners, Universities and All Teams",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 3,
+          "channel": "email",
+          "conversationId": "t97cf40qvpt4h3g2bmg5cyzcad8ck7dr",
+          "direction": "inbound",
+          "id": "td7f8hd3ha1hbq9t3v26xxa5bh8dmhhx",
+          "sentAtMs": 1788335709000,
+          "subject": "RE: AI Hackathon - Official LinkedIn Post - Winners, Partners, Universities and All Teams",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/0841ae96-dd09-416f-baf7-2b91ab010c82",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/6da20a8f-35cb-4e6f-8d3c-b57d2c9c8be0"
+        },
+        {
+          "attachmentCount": 3,
+          "bodyPreview": "Hi Richard, Circling back on the tote bags, apologies for the delay - here's where to send them: Alex Fiore (c/o AI Central Media) 9 Hayes Grove SE22 8DF London, United Kingdom. re: PR agency/comms - i talked to becca last week however i'm a bit confused on how to proceed...",
+          "channel": "email",
+          "conversationId": "t97cf40qvpt4h3g2bmg5cyzcad8ck7dr",
+          "direction": "inbound",
+          "id": "td7d1563dvdxxw7c0p4acmwmy98dk03c",
+          "sentAtMs": 1788269121000,
+          "subject": "Re: AI Hackathon - Official LinkedIn Post - Winners, Partners, Universities and All Teams",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/397c9ed1-07b1-4ce0-badf-2fe044f11088",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/e02f99a8-56e8-4f39-b5af-2d725c120284"
+        },
+        {
+          "attachmentCount": 3,
+          "channel": "email",
+          "conversationId": "t97cf40qvpt4h3g2bmg5cyzcad8ck7dr",
+          "direction": "inbound",
+          "id": "td70qbswwjqrht9s4qzxwcn5a98cq6hw",
+          "sentAtMs": 1787020508000,
+          "subject": "RE: AI Hackathon - Official LinkedIn Post - Winners, Partners, Universities and All Teams",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/4ac602dd-410f-49b1-b09a-ae911021393c",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/11aa2797-864c-4b68-bb79-f963ff125832"
+        },
+        {
+          "attachmentCount": 3,
+          "bodyPreview": "hi Richard! Thanks for the email and post - looping in also Liz that's shaping up the editorial plan for the next weeks. I imagine you'll be in China by now - hope it's going well. couple of things: 1) who should I be talking to re: proceedings from the roundtable?...",
+          "channel": "email",
+          "conversationId": "t97cf40qvpt4h3g2bmg5cyzcad8ck7dr",
+          "direction": "inbound",
+          "id": "td76za7s2ct82zdfs0khvdv8cx8cnm9p",
+          "sentAtMs": 1786991760000,
+          "subject": "Re: AI Hackathon - Official LinkedIn Post - Winners, Partners, Universities and All Teams",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/c5c96b11-4857-4299-bfa8-c814b8184716",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/6fd35733-de67-4242-99d2-ba4a66a2f60b"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t97cf40qvpt4h3g2bmg5cyzcad8ck7dr",
+          "direction": "inbound",
+          "id": "td7d383a80q54bnn9ck3naaqtn8cje56",
+          "sentAtMs": 1786878456000,
+          "subject": "AI Hackathon - Official LinkedIn Post - Winners, Partners, Universities and All Teams",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/db160753-a445-4e44-8994-2aac6705ccd5",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/a2717648-91bf-4985-b1f8-7ca191ed1bc8"
+        }
+      ],
+      "messageCount": 5
+    },
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "Elizabeth from AI Central",
+          "id": "s97avr6w5e2qe31nkw8n71rvy587ghwj",
+          "isSender": true
+        },
+        {
+          "displayName": "Vince Mifsud",
+          "id": "s97dgfm8znzwm21y6a867cf2q189758q"
+        },
+        {
+          "displayName": "Jessica Doss",
+          "id": "s970g4nkd07c6whdaqf80z8tq9897908"
+        },
+        {
+          "displayName": "Alex from AI Central",
+          "id": "s9701cjg4vpw95k23xh7vbf92987gnyv"
+        },
+        {
+          "displayName": "Jessica Doss",
+          "id": "s97d1san2khteyegyndf21mf8n8981vk",
+          "isSender": true
+        },
+        {
+          "displayName": "Vince Mifsud",
+          "id": "s97eftk7xmnz4f25vbxdc1qh3n8af44c"
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": true,
+      "hasLinkedRecords": true,
+      "id": "t977xvpghvc5h3ffxf8y6yf95589991w",
+      "isClosed": false,
+      "lastMessageAtMs": 1788212415000,
+      "lastMessageSnippet": "Hi Jessica - - Alex here, hope you're doing well! I was thinking back to Cannes and the podcast we recorded with Vince on the yacht - - such a great session. Is it still in post-production, or did",
+      "lifecycle": "sent",
+      "mailbox": "sent",
+      "subject": "Cannes - Podcast 4pm Tomorrow with Alex",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "Hi Jessica - Alex here, hope you're doing well! I was thinking back to Cannes and the podcast we recorded with Vince on the yacht - such a great session. Is it still in post-production, or did I miss the release? Happy to help push it over the line from our side...",
+          "channel": "email",
+          "conversationId": "t977xvpghvc5h3ffxf8y6yf95589991w",
+          "direction": "inbound",
+          "id": "td7984fh5zc6agw5mrjehytq4n8dgf2w",
+          "sentAtMs": 1788212415000,
+          "subject": "Re: Cannes - Podcast 4pm Tomorrow with Alex",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/e8c42129-44eb-45c8-9df2-85733bfcfea5",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/5d808e56-2e62-4cd2-aa2f-0630c3b91739"
+        },
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "Hi Elizabeth, Thank you for...",
+          "channel": "email",
+          "conversationId": "t977xvpghvc5h3ffxf8y6yf95589991w",
+          "direction": "inbound",
+          "id": "td752fw9stvf39yree452a9swx8999wa",
+          "sentAtMs": 1782314792000,
+          "subject": "Re: Cannes - Podcast 4pm Tomorrow with Alex",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/0860d583-0cb0-489d-862a-b87ed5f7c0f5",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/6a3bd55c-f33f-4f9f-8e16-a9a6a882240e"
+        },
+        {
+          "bodyPreview": "Hi Vince, Alex and I had a great time last night on the yacht with the AdTonos crew - thank you so much for having us! Alex mentioned that you blocked a session for recording a podcast tomorrow at 4:00pm. Could you let us know the right person to coordinate with and the topics...",
+          "channel": "email",
+          "conversationId": "t977xvpghvc5h3ffxf8y6yf95589991w",
+          "direction": "inbound",
+          "id": "td79917mtc26705paxgyhgpt9h8982fz",
+          "sentAtMs": 1782294465000,
+          "subject": "Cannes - Podcast 4pm Tomorrow with Alex",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/0361001f-bfaa-45f7-82ad-720aac68b385",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/bab24f71-85ba-4bd3-beb0-2e6d701ef8ba"
+        }
+      ],
+      "messageCount": 3
+    },
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "alex@theaicentral.net",
+          "id": "s976a0zvjpr576m09v2tdmr0gs87g1zz",
+          "isSender": true,
+          "isWorkspaceMember": true
+        },
+        {
+          "displayName": "Ganapathy Sankarabaaham",
+          "id": "s979a6d3q4gwmb1y9zsbzpv1bd87hngw"
+        },
+        {
+          "displayName": "marc duke",
+          "id": "s979kg9twbawh2nz07da5jq6nd87g503"
+        },
+        {
+          "displayName": "Marc Duke",
+          "id": "s9720c3v0wb5jkwxsjp7cr471987hv67"
+        },
+        {
+          "displayName": "Marc Duke",
+          "id": "s97fe2vt2dgg19sn4sjs19rpwh8a1473"
+        },
+        {
+          "displayName": "Russ Shaw",
+          "id": "s975ea8rw7v8ekavtsehjqtv5987hbhe"
+        },
+        {
+          "displayName": "Tsvetelin Anastasov",
+          "id": "s977yxg59n253twdq6vrp84zhs88921e"
+        },
+        {
+          "displayName": "ZOLTAN Vass",
+          "id": "s9763eax6ssg2mm2199ppabw7s87h07r"
+        },
+        {
+          "displayName": "Alex from AI Central",
+          "id": "s9701cjg4vpw95k23xh7vbf92987gnyv",
+          "isSender": true
+        },
+        {
+          "displayName": "Elizabeth from AI Central",
+          "id": "s97ffcgkcgnmcxm2x1shswnmys87gz13"
+        },
+        {
+          "displayName": "Swetha Sitaraman",
+          "id": "s97a8n0z0zpch972xpr4ka41p18b2c1r",
+          "isSender": true
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": true,
+      "hasLinkedRecords": true,
+      "id": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+      "isClosed": false,
+      "lastMessageAtMs": 1788183572000,
+      "lastMessageSnippet": "Hi All, Attaching my document. Sorry again for the delay on my part; things got hectic, and I've been travelling with my family for the last 2 weeks. I'm free next week: 9 am to 3 pm, Monday to",
+      "lifecycle": "inbox",
+      "mailbox": "inbox",
+      "subject": "GTA Quarterly AI Pulse",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 2,
+          "bodyPreview": "Hi All, Attaching my document. Sorry again for the delay on my part; things got hectic, and I've been travelling with my family for the last 2 weeks. I'm free next week: 9 a.m. to 3 p.m., Monday to Wednesday. Please share available slots so I can book us in the diary. In addition to Marc's GTA Quarterly AI Pulse intro, which reads as a great overall intro to the series, I wrote up an intro for...",
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7b4gkzrk29kycbpevz6enjt98dgz3b",
+          "sentAtMs": 1788183572000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/cb4b69a4-c37b-494f-9521-98cd241c9c95",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/7e8669f7-c041-4fcd-898f-94df4af18dd7"
+        },
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "Hi Tsvetelin - hope you're well! Quick check-in on the whitepaper - when do you think you'll have your part ready to submit? I'm back in the office next week - keen to get everyone (Marc, Zoltan, Ganapathy, Russ) on a call to assess where things stand. Cheers, A",
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td70z71q2df1bqgkmvn57fjp2x8dhc0a",
+          "sentAtMs": 1788168659000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/9dc98e3b-fb2a-4de6-9e3c-a4ec6258762c",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/9dbba7a1-272c-44e6-ae64-1f7a0402b94a"
+        },
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "Hey guys, Ganapathy, I think everyone shared - except me! I'm so sorry.. this has been on my to-do forever, as I had some urgent opportunities and proposals I had to focus on that took lots of time. I'll share my piece based on Alex's template in the next 24hrs and I think Alex can move ahead with shaping the document. KR, Tsvetelin",
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td79fn106z2ydgf9me6e6d8w1s8d5jwq",
+          "sentAtMs": 1787661876000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/52656648-3185-4659-8ca2-4fafc7f21a3e",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/8413d8cb-a5f2-48ee-b616-e7eed20847a7"
+        },
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "Hi Marc, Tsvetelin, Zoltan, and Alex, Checking in to see if we have made any progress on this. Let me know if we need to connect. Regards, Ganapathy",
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7cfd4nh4mcfmad7vn07ar5g98d4hhj",
+          "sentAtMs": 1787661488000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/8aded89c-4667-4292-b1f8-499969bfce7c",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/60675b9b-e03d-4205-b185-ddba33ad9112"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td70c2z8vsabp7tmywe7kcwjkh8bvx3c",
+          "sentAtMs": 1785802983000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/c52738c7-0b6f-447d-abbe-c5e00f6da286",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/ad602654-ac74-4d5a-b5fb-6d89666a24ee"
+        },
+        {
+          "attachmentCount": 5,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7af3x8tvb9gr4tcxrxzz9ftx8br0xm",
+          "sentAtMs": 1785773581000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/dd86e02b-33f3-47d6-9830-a65eff3f153e",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/b2eba769-7dbb-4433-9285-37dd32d6fcf2"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7bsnha9jfg84xf19gr26j9v58bsgm5",
+          "sentAtMs": 1785752707000,
+          "subject": "RE: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/da4ab5e7-5050-4b64-bde7-df6a0f18ef80",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/2b34502a-a804-40ad-9c8b-fdf8398547e7"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td732n9nqrn7ngkgr3he14jyg58bjv7h",
+          "sentAtMs": 1785490626000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/5dc67b1b-c40a-466d-9919-ef385a3777ce",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/26955c25-3100-4842-9968-e0897f0dbeff"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td78jcasbs35s74vw52gpm56xx8bk2js",
+          "sentAtMs": 1785483548000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/85b8704a-31af-4911-967e-491745dc2582",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/0e494b8c-bf42-4835-9cf5-f197d18e497c"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7482dn4yhtdds3fr8zepsn818bkk5r",
+          "sentAtMs": 1785462630000,
+          "subject": "Fwd: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/8a4af5f5-f2c2-4b4a-aca8-818d54414f9f",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/9b795362-0cef-4d0d-8334-265326254e03"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td73sa3wx8x86364g7cg0w12bh8b2g8f",
+          "sentAtMs": 1784815668000,
+          "subject": "Fwd: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/fa9555ae-9427-4fb4-b0d6-9bf338cd041c",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/a3d14efe-77b0-4df4-a314-ff7fe55aad83"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7cs9re5e7x9by58tsennf8fh8b3g1b",
+          "sentAtMs": 1784640777000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/a5a876f8-1c7a-4ba4-aa40-00981847f847",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/13910ee4-7dd6-4fba-8650-f5cab7c70f01"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td76y84x2531cn7h6v0f6my2a18ayk6a",
+          "sentAtMs": 1784633961000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/46b82dd1-fde2-40ef-bcd9-7d6e756a14cb",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/29dcbd51-196d-40f6-a397-6cf3fccab8b8"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7cg8yybfd1f9efja16ns9g818awys3",
+          "sentAtMs": 1784583922000,
+          "subject": "RE: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/6641c496-2897-4536-a543-8dbc7501f51d",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/ddc69dc0-f310-4c9f-ad30-5762960e494f"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7dwk8a515nphbxtc9m7er7sd8an5mw",
+          "sentAtMs": 1784225068000,
+          "subject": "RE: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/340002af-4d1d-4766-9f7b-f1d91b00927e",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/46c261f8-8f15-4466-8422-52650c08d5e9"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td719gmzdr5b2cjnmvwh0cw7058anann",
+          "sentAtMs": 1784218625000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/abef3378-ccca-4e7e-b08c-1f54f3a728cf",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/b0306ba6-6cf4-4bc3-bb74-12dc3b147baf"
+        },
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7erp68g6r4h0mem2h3pq1m3s8anpz3",
+          "sentAtMs": 1784208705000,
+          "subject": "RE: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/3dfea568-1d57-4173-abac-a796873405f5",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/00ada012-3881-40d1-ab64-a667250aff3f"
+        },
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "Hi Alex, Love the tentative structure and what it could look like! Re distribution - I'm sure Russ and other TLA leaders will be happy to share with wider GTA/TLA via newsletter and group channels + I can share with our Data and AI group and personally share on LinkedIn. I will send an invite to Mark and Alex for Monday 2pm UK to go over the materials...",
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td7aayc458y3mm6y9f56b699g58amj5b",
+          "sentAtMs": 1784205583000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/c13059c9-76c4-4aa1-a9ba-0c24cf4da511",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/22883d20-c920-4938-8be1-906cd367130b"
+        },
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "Hi Alex, This is a good structure and thank you for turning this around quickly. As we build the use cases, we can bring in balance to cover different aspects of business and provide a practical takeaway for readers.",
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td78c0vz3y2gxgasdmgtcf2s698antht",
+          "sentAtMs": 1784170896000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/a557ba90-d948-4ef3-974c-18f8e43fc99c",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/0b1b0ffd-50c8-4a76-96b9-dfcd027c5091"
+        },
+        {
+          "attachmentCount": 1,
+          "bodyPreview": "hi everyone - it was indeed a very insightful convo. re: Tsvetelin + Marc: i could do next monday 2pm London. In the meantime, I asked my creative director Elizabeth (cc'd) to put together a mockup of the content format and distribution AI Central can help GTA produce. We can turn this conversation into an 18-20 page co-branded whitepaper that follows the 'Problem-Solutions-Takeaways' structure...",
+          "channel": "email",
+          "conversationId": "t979hrgcsh4gvtqp92e9t2wjex8agdeq",
+          "direction": "inbound",
+          "id": "td75nzynzdh2j37k50rxm210d18ak41m",
+          "sentAtMs": 1784132732000,
+          "subject": "Re: GTA Quarterly AI Pulse",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/1c231ada-e6b8-4489-b258-d886763e1485",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/35666b23-553e-4ce6-aae1-7463de665a76"
+        }
+      ],
+      "messageCount": 20,
+      "_export_note": "All 20 messages in this thread are included (some emoji-reaction-only replies carry no bodyPreview field, which matches the raw API response for those messages)."
+    },
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "Alex from AI Central",
+          "id": "s9701cjg4vpw95k23xh7vbf92987gnyv",
+          "isSender": true
+        },
+        {
+          "displayName": "Jazmin Notthoff",
+          "id": "s975e19x9kh2y5wpvagbnacd5d87g65y"
+        },
+        {
+          "displayName": "Amanda Mu\u00f1oz",
+          "id": "s97fve3jjqwwj6qtjj1nvka4sd87hgph"
+        },
+        {
+          "displayName": "Katie Fortunato",
+          "id": "s972v2hcj6b4qg5476fn7f0c5s87heh3"
+        },
+        {
+          "displayName": "Elizabeth from AI Central",
+          "id": "s97ffcgkcgnmcxm2x1shswnmys87gz13"
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": false,
+      "hasLinkedRecords": true,
+      "id": "t978qqs3a1dhmt4meyfk84469s87gs06",
+      "isClosed": false,
+      "lastMessageAtMs": 1788170655000,
+      "lastMessageSnippet": "Hi Jaz - - hope you're doing well! Just back from being OOO. Did it end up going out? Cheers, A On Mon, Aug 17, 2026 06:41 PM, Alex from AI Central wrote: hi Jaz, how are",
+      "lifecycle": "sent",
+      "mailbox": "sent",
+      "subject": "Jobstream Merch",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 0,
+          "bodyPreview": "Hi Jaz - hope you're doing well! Just back from being OOO. Did it end up going out? Cheers, A",
+          "channel": "email",
+          "conversationId": "t978qqs3a1dhmt4meyfk84469s87gs06",
+          "direction": "inbound",
+          "id": "td785brz817vbjs6ccyhxeyn3h8dge2m",
+          "sentAtMs": 1788170655000,
+          "subject": "Re: Jobstream Merch",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/e3e191ae-c305-4780-96ba-6fb1d159aad7",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/5abc177d-b8e9-4361-9c19-e548a4667a4c"
+        },
+        {
+          "attachmentCount": 0,
+          "bodyPreview": "hi Jaz, how are you? The other day, I wondered whether you shipped the merch as nothing has arrived at my office since May and i'll be ooo for the next couple of weeks. cheers, A",
+          "channel": "email",
+          "conversationId": "t978qqs3a1dhmt4meyfk84469s87gs06",
+          "direction": "inbound",
+          "id": "td78by4bc4gt96yhkypb18tbc18cm7gk",
+          "sentAtMs": 1786984868000,
+          "subject": "Re: Jobstream Merch",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/a6224999-92d5-43e0-8c58-0fcac85ea345",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/dccf7c5b-a9fe-4e33-b5d3-c1471012bb34"
+        },
+        {
+          "attachmentCount": 0,
+          "bodyPreview": "Hi Jazmin, nice to meet you - thanks! that's amazing. you can send them at my office at the following address. Size is L. Alex Fiore (c/o AI Central Media) 9 Hayes Grove, SE22 8DF, London, United Kingdom. Cheers, A",
+          "channel": "email",
+          "conversationId": "t978qqs3a1dhmt4meyfk84469s87gs06",
+          "direction": "inbound",
+          "id": "td74d1yxz2p586bc5rxktqxp0s87hme5",
+          "sentAtMs": 1779384079000,
+          "subject": "Re: Jobstream Merch",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/5196c07a-6a7a-4d1f-bd95-414f39416d78",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/feeb2ac4-1645-499e-9403-55cef7379a67"
+        },
+        {
+          "attachmentCount": 0,
+          "bodyPreview": "Hi, Hope you're doing well! My name is Jazmin and I'm part of the Jobstream team, working closely with Katie Fortunato on partnerships and creator community initiatives. We'd love to send you Jobstream merch as a thank you for being part of our partner community...",
+          "channel": "email",
+          "conversationId": "t978qqs3a1dhmt4meyfk84469s87gs06",
+          "direction": "inbound",
+          "id": "td7cw07cxtdz8j1smvfv86s0vd87hw54",
+          "sentAtMs": 1779382220000,
+          "subject": "Jobstream Merch",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/9f205522-a448-4b62-aeb9-f142a1646265",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/aad563d4-bbff-4f8a-9f4f-a725448d9e43"
+        }
+      ],
+      "messageCount": 4
+    },
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "Richard Lowe",
+          "id": "s978h3y829fps7j7dwz0pnx6cx8a9j8g",
+          "isSender": true
+        },
+        {
+          "displayName": "Tech West England Advocates",
+          "id": "s97670bkab1tnt2e1yssemnmg988e76k"
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": true,
+      "hasLinkedRecords": true,
+      "id": "t973kzynzjtn8jqzd4mfgteex18d8hvs",
+      "isClosed": false,
+      "lastMessageAtMs": 1787842884000,
+      "lastMessageSnippet": "Thank you for participating in our Tech West England Advocates, AI Roundtable to discuss: AI, Universities and The Future Workforce, kindly hosted by UWE Bristol. Our to all our partners and guests",
+      "lifecycle": "inbox",
+      "mailbox": "inbox",
+      "subject": "AI Roundtable & UK Tech Mission to Greater Bay Area, China",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 3,
+          "channel": "email",
+          "conversationId": "t973kzynzjtn8jqzd4mfgteex18d8hvs",
+          "direction": "inbound",
+          "id": "td78jzk1c5nfggtcgtw23fxm9n8d87qz",
+          "sentAtMs": 1787842884000,
+          "subject": "AI Roundtable & UK Tech Mission to Greater Bay Area, China",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/ec687051-f09f-42e3-8e1c-f0becd1f187e",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/f5615a52-b13d-4741-a0e9-6e2ada168186"
+        }
+      ],
+      "messageCount": 1
+    },
+    {
+      "assignees": [],
+      "attendees": [
+        {
+          "displayName": "Mat Zucker",
+          "id": "s9787j3d1x94ht6hp8eb9j780x89am5t",
+          "isSender": true
+        },
+        {
+          "displayName": "alex@theaicentral.net",
+          "id": "s976a0zvjpr576m09v2tdmr0gs87g1zz",
+          "isWorkspaceMember": true
+        }
+      ],
+      "channel": "email",
+      "hasAttachments": true,
+      "hasLinkedRecords": true,
+      "id": "t97f6rvtwyb1ee04z28ss6145n8d7wcg",
+      "isClosed": false,
+      "lastMessageAtMs": 1787765759000,
+      "lifecycle": "trashed",
+      "mailbox": "trash",
+      "subject": "Accepted: Discovery Call between Alex Fiore and Belle Lenz for Prophet",
+      "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+      "messages": [
+        {
+          "attachmentCount": 1,
+          "channel": "email",
+          "conversationId": "t97f6rvtwyb1ee04z28ss6145n8d7wcg",
+          "direction": "inbound",
+          "id": "td7fd0awanbq6d8xpk8d5dsvxx8d7fv3",
+          "sentAtMs": 1787765759000,
+          "subject": "Accepted: Discovery Call between Alex Fiore and Belle Lenz for Prophet",
+          "textHtmlUrl": "https://api.us.breakcold.com/api/storage/8a5f6934-c438-4e7b-92e1-739fee43328e",
+          "textPlainUrl": "https://api.us.breakcold.com/api/storage/68a5e48b-8290-4830-83eb-34a1ced8cdc2"
+        }
+      ],
+      "messageCount": 1
+    }
+  ],
+  "method": "inbox_conversations_search has no channel/date-range total-count endpoint, only cursor pagination. A full unfiltered pull (limit=100) showed the 100 most recent conversations span only ~2 days (2026-09-02 to 2026-09-04), nearly all automated: beehiiv reports, Senja testimonial notifications, Qonto/Revolut finance emails, newsletter subscriptions, etc - i.e. this is a live mirror of alex@thecentral.ai and alex@theaicentral.net Gmail, not Breakcold-native data. At that density the full history (CRM records go back to Feb 2026) is almost certainly in the high thousands to tens of thousands of conversations. Given that scale, and that this data is a live duplicate of Gmail (which Alex keeps regardless of this Breakcold cancellation), we did not attempt a full export. Instead we filtered to hasLinkedRecords=true - conversations Breakcold itself tagged as tied to a CRM person/company record, i.e. actual named business relationships rather than newsletters/receipts - and paginated that filtered set to gather the 9 conversations below, pulling full message lists for each via inbox_messages_list.",
+  "fullInboxNotExported": true,
+  "fullInboxReasoning": "See method field above and README.md for the full reasoning and what this means for Alex.",
+  "linkedConversationsCoverageCaveat": "The hasLinkedRecords=true cursor kept paginating with very sparse hits (1-3 matches per 50-100 scanned) going back from 2026-09-04 to about 2026-08-19 (~2.5 weeks) before we stopped after 9 captured. There are almost certainly more hasLinkedRecords=true conversations further back (CRM records go back to Feb 2026) that were NOT reached by this export. This is the single biggest known gap in this export - see README.",
+  "messageBodyCaveat": "inbox_messages_list does not inline full message bodies. Each message carries a short bodyPreview (truncated HTML snippet, captured here) plus textHtmlUrl/textPlainUrl pointing at api.us.breakcold.com/api/storage/... - Breakcolds own file storage. Those URLs were NOT fetched (would need a general HTTPS fetch tool not used in this run, and doing it for every message was out of scope given time). If Breakcold storage is torn down on cancellation, the full un-truncated body text behind those URLs could become unreachable - only the bodyPreview snippets captured here would remain from this export. This is very unlikely to be true data loss though: every one of these is an email Alex or Elizabeth sent or received, so the full text also lives in the source Gmail inbox (alex@thecentral.ai / alex@theaicentral.net), independent of Breakcold."
+}

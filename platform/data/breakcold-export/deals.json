@@ -1,0 +1,9 @@
+{
+  "exportedAt": "2026-09-04T00:00:00Z",
+  "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+  "objectTypeSlug": "deal",
+  "objectTypeId": "nn78q1epptzcfg48j2d294c4r5872ja9",
+  "recordCount": 0,
+  "records": [],
+  "note": "Confirmed via records_list with objectTypeSlug=deal (and again with objectTypeId + archived=true) that this Breakcold workspace has zero deal records, active or archived. This is not a fetch error - the Deal CRM object exists (see crm_objects_list) but has never had a record created in it. Nothing to export."
+}

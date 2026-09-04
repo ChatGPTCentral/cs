@@ -1,0 +1,9 @@
+{
+  "exportedAt": "2026-09-04T00:00:00Z",
+  "workspaceId": "px74ht6p6pjcc759aa7x4drap1873n45",
+  "noteCount": 0,
+  "notes": [],
+  "method": "Checked the fields.notes_count value on every one of the 323 person records and 400 company records pulled via records_list (0 deal records exist, so none to check there). Every single record showed notes_count: 0. Cross-checked directly with the notes_list tool on a sample of records (including ones flagged in earlier exploration) and it returned an empty notes array every time.",
+  "important_distinction": "Person and company records each carry a separate 'Quick Notes' text field (fields.notes in the raw person/company export already in Supabase) that in many records holds an AI-generated lead-qualification summary (e.g. 'There is currently no available information about this lead...'). That is NOT a note Alex wrote - it is Breakcold's own auto-generated field text, already captured as part of the person/company Supabase export done earlier today. This notes.json file is specifically about the Notes feature (notes_list/notes_get/notes_create tools), which is empty workspace-wide.",
+  "conclusion": "Alex has not written any manual CRM notes in Breakcold on any person, company, or deal record. There is nothing to lose here."
+}
