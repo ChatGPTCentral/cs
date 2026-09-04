@@ -11,10 +11,12 @@
   `1a0653b7325b38e4`)
 - last-outbound: 2026-09-04 17:40 (alex@thecentral.ai, thread
   `1a0653b7325b38e4`)
-- next-action: review and send the draft answering Louis's distribution
-  question - messageId `1a06d995fb68b9f2`
+- next-action: review and send the draft pitching the 5x newsletter +
+  5x carousel-ebook bundle - messageId `1a06da4e6e88e16e`, **detached
+  onto its own thread, not `1a0653b7325b38e4`** - see notes
 - commitments: none
-- threads: `1a0653b7325b38e4` (live)
+- threads: `1a0653b7325b38e4` (the real conversation with Louis),
+  `1a06da4e6e88e16e` (where the current draft actually lives, standalone)
 - notes: **Auto-genesis, 2026-09-03.** Cold pitch citing AI Central's
   300,000-reader case study and its n8n/Notion/Claude Code content
   system by name. Offers a free-tier test of Screenpipe (captures work
@@ -32,10 +34,17 @@
   dedicated tutorial, or paid inventory) and, if a fixed fee, the rate
   plus median unique clicks from 3 comparable software placements.
 
-  **Draft prepared, 2026-09-04.** Reply gives real numbers - LinkedIn
-  Main Ad ($899, min 20k impressions/100 clicks), Beehiiv Main Ad
-  ($1,299, min 30k impressions/200 clicks), Carousel + LinkedIn Main Ad
-  bundle ($999, min 20k impressions/200 downloads), and the real
-  comparable-software CTRs (Outskill 2.08% across 25 placements, Guidde
-  1.17% across 21, both repeat buyers). Points everything else to the
-  call. Not sent - waiting on Alex to review
+  **Draft prepared, 2026-09-04.** First version gave menu pricing
+  (LinkedIn Main Ad, Beehiiv Main Ad, small bundle) plus comparable-
+  software CTRs. Superseded same day, per Alex
+
+  **Pitch changed, 2026-09-04, per Alex.** Real recommendation instead
+  of a menu: 5x dedicated LinkedIn newsletter issues + 5x bespoke
+  ebooks distributed as LinkedIn carousels, $6,999 - the same format run
+  for Replit, ElevenLabs, Gamma and more. Framed as one of the last
+  September slots. Updated via `update_draft` - **known bug recurred**:
+  editing a plain-text-body draft detached it from the original thread
+  `1a0653b7325b38e4` onto a new standalone one, `1a06da4e6e88e16e`.
+  Verified via `get_draft` after the edit. Not sent - waiting on Alex to
+  review, and worth deciding by hand whether to send from the new thread
+  or manually move the content back into the original one
