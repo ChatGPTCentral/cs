@@ -39,6 +39,14 @@ We are not a blog. We are not an agency. We are a trusted media brand with a
 curated, senior audience - - the credibility of a trade publication with the
 speed and agility of a startup
 
+**Aspirational comp (internal, confirmed by Alex 4 Sep 2026):** imagine
+Bloomberg Businessweek, but for AI. Use it to calibrate tone and editorial
+ambition, not as a literal claim of affiliation with or endorsement by
+Bloomberg. In outward-facing copy, phrase it as an invitation to imagine
+("imagine X, but for Y"), never as a direct equivalence ("we are the X of
+Y") or an implied partnership. See `01_brand_positioning.md` in
+`alex-writing-style` for the same note.
+
 ---
 
 ## 2. AUDIENCE
@@ -412,6 +420,21 @@ same system with a distinct accent color per topic-specific publication
 - Usage: predominantly monochromatic compositions with selective accent
   touches. Two colors = complementary pair. Three = analogous or triadic.
   Four = tetradic. Limit most compositions to two accent colors
+
+**Semantic color rule (confirmed by Alex, 4 Sep 2026):** red is reserved for
+"bad" only - a miss, a warning, a negative figure. Never use it as a default
+or purely decorative accent. Green means "good" - a hit, a positive result,
+a win. Azul (`#046BB1`) and xanthous (`#E7B02F`) are the default accent
+colors for everything else, chosen for contrast, not for meaning. In
+practice: sales decks and other collateral should default to azul as the
+primary accent instead of a red; reach for persian red or jasper only when
+a figure is genuinely negative (a miss, a risk, a decline), and asparagus or
+viridian when a figure is genuinely positive (a hit, a win, growth) - not as
+a reflexive brand color choice. Alex flagged this after reviewing the media
+kit and case studies decks, which had defaulted to a red accent
+(`#C8102E`, not even one of the documented brand colors) with no
+correction. See `MEDIA-KIT-SOURCES.md` and `CASE-STUDIES-SOURCES.md` in the
+`decks` branch for the fix applied there.
 
 **Typography:** Inter, a clear, slightly technical sans serif. Heaviest
 weights and tight tracking (-5%) for display headlines and headings;

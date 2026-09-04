@@ -11,6 +11,8 @@
 
 We are not a blog. We are not an agency. We are a trusted media brand with a curated, senior audience - - the credibility of a trade publication with the speed and agility of a startup
 
+**Aspirational comp (internal, confirmed by Alex 4 Sep 2026):** imagine Bloomberg Businessweek, but for AI. This is the caliber and editorial authority AI Central is building toward - use it to calibrate tone and ambition, not as a literal claim of affiliation with or endorsement by Bloomberg. When it appears in outward-facing copy (decks, landing pages, pitches), phrase it as an invitation to imagine ("imagine X, but for Y"), never as a direct equivalence ("we are the X of Y") or an implied partnership
+
 ## What we sell
 
 - **Creative + distribution** - - LinkedIn Carousels
