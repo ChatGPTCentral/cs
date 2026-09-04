@@ -19,8 +19,8 @@
 <rect x="172" y="160.0" width="330" height="22" rx="4" fill="#F3F1EC"/>
 <rect x="172" y="160.0" width="15.3" height="22" rx="4" fill="#046BB1"/>
 <text x="512" y="175.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">1%</text>
-<text x="0" y="213.8" font-size="18" fill="#141414">Other</text>
+<text x="0" y="213.8" font-size="18" fill="#6E6E6E">Other</text>
 <rect x="172" y="198.0" width="330" height="22" rx="4" fill="#F3F1EC"/>
-<rect x="172" y="198.0" width="330.0" height="22" rx="4" fill="#046BB1"/>
+<rect x="172" y="198.0" width="330.0" height="22" rx="4" fill="#9C9C9C"/>
 <text x="512" y="213.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">30%</text>
 </svg>

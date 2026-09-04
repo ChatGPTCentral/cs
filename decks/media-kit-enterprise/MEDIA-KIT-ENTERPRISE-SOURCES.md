@@ -59,3 +59,22 @@ automatically since both decks share `_head.html` and the audience charts:
 geography legend and map moved from a red gradient to a blue one, and the
 About slide subline now opens with "Imagine Bloomberg Businessweek, but for
 AI - that's the brand we're building." No content or structure changed.
+
+## Revision, 4 Sep 2026 - shared fixes carried through from the review batch
+
+Alex's review-panel comments were left on the standard media kit
+(`/review/media-kit`), not this edition, so no Enterprise-specific slide
+content changed here. Two fixes did carry through automatically because
+they live in files this deck shares with the standard kit:
+
+- **`decks/_shared/deck_shared.py`'s `usecase()` helper** (used by this
+  deck's own "Why companies choose us" slide) now sets a taller
+  `min-height` with evenly-spaced bullets - same box-height fix requested
+  on the standard kit's equivalent slide.
+- **`chart-prof.svg`'s "Other" bar** (shared audience chart) recolored
+  from azul to grey, and the world map's North America/Europe coloring
+  reordered so North America is the primary azul - both fixed at the
+  shared-asset level, so this edition's own audience slide picks them up
+  automatically on rebuild.
+
+No other slide in this edition changed.

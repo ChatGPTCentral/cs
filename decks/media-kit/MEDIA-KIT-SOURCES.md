@@ -196,3 +196,117 @@ in this deck to begin with, so there was nothing to recolor on that front.
   positioning direction on 4 Sep 2026. Framed as an aspiration ("imagine"),
   not a claim of affiliation or equivalence. See `01_brand_positioning.md`
   for the documented version of this comp.
+
+## Revision, 4 Sep 2026 - review-panel comment batch (30 comments actioned/triaged)
+
+Alex left 30 open comments via the `/review/media-kit` panel. Actioned the
+unambiguous ones below; the rest are flagged as blocked or contradictory
+rather than guessed - see "Not done" at the end. No dollar figure or metric
+was invented anywhere in this pass.
+
+- **Slide 2 (About).** Partners logo image enlarged (`max-height:220px`,
+  `width:100%`, `object-fit:contain`) - this is one flattened composite
+  image, not sixteen individually addressable logos, so it can be made
+  bigger but not re-laid-out into a grid without the individual source
+  files. "Brand safety and editorial standards" section removed. Stat
+  tile 2 changed from "613K accounts reached" to "7" (channels), with
+  "readers in 151 countries and all 50 US states" moved into that tile
+  from tile 3; tile 3 is now just "London / Editorial team, led by the
+  founder."
+- **Slide 3 (Why) and slide 11 (Premium formats) box height.** The shared
+  `usecase()` helper in `decks/_shared/deck_shared.py` now sets
+  `min-height:600px` with bullets spaced `justify-content:space-evenly` -
+  fixes both slides in one place since they use the same helper.
+- **Slide 4 (Peace of mind).** Recolored per the red/bad, green/good rule
+  from the 4 Sep palette fix: the "solo creator" box is a light red tint
+  with X icons in persian red, "AI Central" is a light green tint with
+  check icons in asparagus. Both boxes made full-height. The closing
+  sentence box ("Our clients renew because...") removed.
+- **Slide 5 (Audience).** Removed the 613K stat tile (grid dropped from 4
+  to 3 columns - no replacement number invented). Removed the reach-
+  composition bar entirely. More space added between the h2 and the stat
+  row. World map recolored so North America (the largest segment) is azul,
+  the primary/most-saturated blue, with Europe and Asia in supporting
+  blues (marian blue, verdigris) - legend updated to match. The "Who they
+  are" chart's "Other" bar (`chart-prof.svg`, shared with the Enterprise
+  kit) recolored from azul to grey: it was rendering at full bar width
+  because it happens to be the largest single bucket (30.2%), which made
+  it visually read as a dominant, "everything is maxed out" category
+  rather than a catch-all - it's still the longest bar (that's true), but
+  now reads as the non-category it is.
+- **Slide 6 (Publications).** Reordered and renamed per Alex: beehiiv
+  leads as "AI Central Newsletter," the two LinkedIn surfaces renamed
+  "AI Central's LinkedIn Company Page" and "AI Central's LinkedIn
+  Newsletter." Trailing Substack/measurement paragraph removed. Boxes
+  made taller (`min-height:480px`) with a new "Ideal for" line per tile -
+  editorial guidance copy, not a data claim, in the same voice as the
+  existing format cards.
+- **Slide 8 (was "LinkedIn Carousel," now "Bespoke Ebook").** Renamed
+  throughout. Standalone ebook-only package rows (1/3/5, with their
+  discount-tier framing) removed - only the ebook+Main-Ad bundle rows
+  remain. "PDF downloads" dropped from the minimum-results column,
+  impressions kept.
+- **Slides 9-10 (LinkedIn Main Ad, Email newsletter ads).** Reordered to
+  match slide 8's structure (what you receive / placements first, packages
+  second, example image last). "Minimum results" renamed "Expected
+  results." Click figures dropped from package rows, impressions kept.
+  Max CPM/CPC sentences removed. Slide 10's Tools Ad placement eliminated
+  (two placements now, not three); slide subline and section heading
+  updated to match.
+- **Slide 11 (Premium formats).** Wireframe renders removed entirely.
+  "Ideal for" moved up under each format's title. Boxes made full-height
+  with bullets spaced out.
+- **Slide 12 (How it works).** Redrawn as a single left-to-right line of
+  six numbered stations connected by one line, echoing the brand's
+  "central station" identity concept, per Alex. Title simplified to "How
+  it works." Guaranteed results policy box removed. The two discount
+  lines (10% new clients, 10% new main-ad orders) removed; the
+  "Custom bundles" line isn't a discount, so it stayed, now in its own
+  card.
+- **Slide 13 (Case studies).** Date ranges removed from each client's
+  blurb (kept what ran, how many times, and that they rebooked). Luma AI
+  promoted from a footer mention to a full fifth tile, using the same
+  sourced figures already in `CASE-STUDIES-SOURCES.md` (2,944 downloads,
+  242K views, 2 campaigns) - no Luma logo asset exists, so it uses a type
+  wordmark, same as the full case-studies deck does. Grid widened from 4
+  to 5 columns.
+
+### Not done - flagged back to Alex rather than guessed
+
+- **Slide 7 (Advertising options).** Comment asks to eliminate "Secondary
+  Ad" and then lists "Secondary Ad" as a surviving product two lines
+  later - self-contradictory. Left slide 7 untouched pending clarification
+  on what the actual format lineup should be, since guessing wrong here
+  would misstate priced products.
+- **Slide 8 image.** Morgane flagged the ebook-examples image background
+  as "weird" - it's a single flattened screenshot (dark rounded-card
+  mockup frame), not something layout CSS can fix. Needs either a
+  replacement image or more specifics on what to change.
+- **Slide 8 bundle naming.** Alex's comment called the bundle partner
+  "LinkedIn Dedicated Issue," but the bundle table has always paired the
+  ebook with LinkedIn Main Ad - a separately-priced format, distinct from
+  the on-request Dedicated Issue on slide 11. Left as Main Ad pending
+  confirmation of which product he actually meant.
+- **Slide 13 title ("Client testimonials").** Not renamed - this slide
+  shows measured results (downloads, ad clicks), not quotes, and no
+  testimonial exists on file for any client (a standing rule in
+  `CASE-STUDIES-SOURCES.md`). Renaming it "testimonials" would mislabel
+  the content.
+- **Slide 13 additions (HubSpot, UX Pilot, SciSpace, Replit).** No sourced
+  campaign figures exist for any of the four. Replit specifically was
+  already evaluated and dropped from the case-studies deck for this exact
+  reason - see `CASE-STUDIES-SOURCES.md`. Adding tiles for any of the four
+  would mean inventing numbers, which this project does not do.
+- **Slide 6 LinkedIn data.** Alex asked to connect LinkedIn to pull live
+  figures instead of the Favikon snapshot - noted in the slide's
+  data-notes; no LinkedIn integration is available in this session to act
+  on it.
+- **Slide 5 "Student" category.** Morgane asked whether to rename or
+  replace it with the largest sub-segment of "Other" - the quiz-database
+  breakdown behind "Other" (30.2%) isn't available at that granularity
+  here, so nothing changed pending that data.
+- **Slide 14 (Team).** Alex asked to add logos for London Tech Advocates,
+  Global Tech Advocates, Cozora, the AI Collective, and four "Official
+  Press Delegate at" event logos (SXSW, AI Summit NY, AI Summit London,
+  Cannes Lions). No logo assets for any of these exist in the deck's asset
+  bundle - needs the actual files from Alex before this can be built.
