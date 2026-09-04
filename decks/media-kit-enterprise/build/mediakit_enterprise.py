@@ -13,9 +13,12 @@ only to keep format descriptions consistent - no price appears on any
 slide), live beehiiv publication stats (2 Sep 2026), quiz-DB audience sample.
 Every number is logged in MEDIA-KIT-SOURCES.md.
 """
-import json, pathlib, re
+import json, pathlib, re, sys
 
 B = pathlib.Path("/home/claude/build")
+sys.path.insert(0, str(B))
+from deck_shared import FOOT, label, bullets, usecase, make_renumber
+
 head = (B / "_head.html").read_text().replace(
     "table{width:100%;border-collapse:collapse;margin-top:44px;table-layout:fixed}",
     "table{width:100%;border-collapse:collapse;margin-top:0;table-layout:fixed}"
@@ -29,22 +32,7 @@ head = (B / "_head.html").read_text().replace(
 tail = (B / "_tail.html").read_text()
 A = json.load(open(B / "mk3-assets.json"))
 
-FOOT = '<div class="foot">AI CENTRAL</div>'
-
-def renumber(sec, n):
-    sec = re.sub(r'<!-- \d\d ─+', f'<!-- {n:02d} ' + '─' * 73, sec, count=1)
-    sec = sec.replace('<div class="foot">AI CENTRAL</div>',
-                      f'<div class="foot">AI CENTRAL &nbsp;·&nbsp; MEDIA KIT · ENTERPRISE &nbsp;·&nbsp; {n:02d}</div>')
-    return sec.rstrip()
-
-def label(t, col="var(--accent)", size=20):
-    return f'<div style="font-size:{size}px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:{col}">{t}</div>'
-
-def bullets(items, size=21, gap=7):
-    return "".join(
-        f'<div style="display:flex;gap:12px;padding:{gap}px 0;border-top:1px solid rgba(0,0,0,.08)">'
-        f'<div style="width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none;margin-top:{size*0.55:.0f}px"></div>'
-        f'<div style="font-size:{size}px;font-weight:300;line-height:1.35">{i}</div></div>' for i in items)
+renumber = make_renumber("MEDIA KIT · ENTERPRISE")
 
 def price_table(rows, cols, widths):
     th = "".join(f'<th style="width:{w}">{c}</th>' for c, w in zip(cols, widths))
@@ -97,13 +85,6 @@ S[2] = f'''<!-- 02 {'─'*73} -->
 </section>'''
 
 # ── 03 Why companies choose us ──────────────────────────────────────────────
-def usecase(n_, title, intro, items):
-    return f'''<div data-step="{n_}" style="background:var(--tint);padding:26px 30px">
-      <div style="font-size:17px;font-weight:700;letter-spacing:.16em;color:var(--muted)">0{n_}</div>
-      <div style="margin-top:6px;font-size:27px;font-weight:700;letter-spacing:-.01em">{title}</div>
-      <div style="margin-top:8px;font-size:20px;font-weight:300;line-height:1.35;color:#3A3A3A">{intro}</div>
-      <div style="margin-top:12px">{bullets(items, 20, 6)}</div>
-    </div>'''
 
 S[3] = f'''<!-- 03 {'─'*73} -->
 <section class="slide light" data-label="Why companies choose us"
