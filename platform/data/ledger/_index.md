@@ -111,6 +111,18 @@ re-approach) and **Markup Hero** (Jeff Solomon check-in). Both drafts
 blanked, both still wanted reach-outs - see the story files for the
 next-action to pick back up later.
 
+## 📅 Reminders set
+
+Not urgent yet - `next_action_date` in Supabase, will surface when due.
+
+| Story | Due | What |
+| --- | --- | --- |
+| [Prophet / Toni Lee PR](stories/prophet-tonileepr.md) | 2026-09-07 | send the media kit to Belle and Mat |
+| [Antidote](stories/antidote-partnership.md) | 2026-09-07 | send the media kit to Becca |
+| [Emergent / PartnerStack](stories/emergent-partnerstack.md) | 2026-09-07 | send the media kit to Randy |
+| [Breakcold](stories/breakcold-crm-adoption.md) | 2026-09-08 | cancel the subscription before the price jump |
+| [PickAndPartner](stories/pickandpartner-pitch.md) | 2026-09-05 | reply or decline the newsletter swap |
+
 ## 🔴 Your move
 
 The last word was theirs and nobody replied. Live or recent enough to prompt on.
