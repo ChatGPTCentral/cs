@@ -109,7 +109,7 @@ Reply is written and waiting in Gmail. One thing only Alex can supply.
 | --- | --- | --- |
 | [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) | shipping address for tote bags | `1a00a41717b4a24b` |
 | [anything.com](stories/anything-com-ads-pitch.md) | review and send - updated 3 Sep with dub.co proof + Skydive mention | `1a067f08380931ff` |
-| [Screenpipe](stories/screenpipe-pitch.md) | review and send - pitches the $6,999 5x newsletter + 5x carousel-ebook bundle. Draft detached onto its own thread, `1a06da4e6e88e16e`, not the real `1a0653b7325b38e4` conversation - needs a manual fix before sending | `1a06da4e6e88e16e` |
+| [Screenpipe](stories/screenpipe-pitch.md) | review and send - pitches the $6,999 5x newsletter + 5x carousel-ebook bundle, correctly threaded | `1a06e7bf24e47816` |
 
 Pulled 2026-09-04, per Alex, not ready yet: **Box** (Kat McMahon
 re-approach) and **Markup Hero** (Jeff Solomon check-in). Both drafts
@@ -126,6 +126,7 @@ that are not "reply to a thread": actions, decisions, waits.
 | Cancel Breakcold (or lock the annual rate, code GOTLUCKY) | action | [Breakcold](stories/breakcold-crm-adoption.md) | 2026-09-08 | per Alex |
 | Bulk-delete the ~26 blanked cold "++ AI Central" drafts | action | - | - | per Alex |
 | Delete the old Guidde "accept his terms" draft by hand | action | [Hod // Guidde](stories/hod-guidde.md) | - | per Alex |
+| Delete the superseded blanked Screenpipe draft | action | [Screenpipe](stories/screenpipe-pitch.md) | - | per Alex |
 
 ## 📅 Reminders set
 

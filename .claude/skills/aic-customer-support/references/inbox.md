@@ -133,6 +133,23 @@ drafts the whole thing again. The customer gets answered twice.
 Alex deletes the quote by hand in Gmail before sending. That is the workflow -
 one keystroke for him, and the alternative costs thread integrity.
 
+### Editing an existing draft can detach it too
+
+`update_draft` has the same failure mode, confirmed multiple times in the
+`inbox-ledger` skill (2026-09-04): passing `body` (plain text, no
+`htmlBody`) to update an existing threaded draft can silently move it onto
+a **new standalone thread** instead of editing it in place. `get_draft`
+right after the edit shows a different `threadId` than before - that is
+the tell, and the only reliable way to catch it, since `update_draft`
+itself reports success either way.
+
+**The fix that works:** do not try `update_draft` again on a
+detached draft. Blank it instead (`to: []`, a subject like "[DELETE ME]",
+a one-line body saying it is superseded) so it is harmless, then create a
+fresh draft with `create_draft` and `replyToMessageId` set to the
+counterpart's most recent message. Verify the new draft's `threadId`
+with `get_draft` before reporting it as ready.
+
 ### The signature
 
 Alex's sign-off block is a **Gmail signature**, which Gmail inserts only when

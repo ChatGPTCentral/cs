@@ -12,11 +12,10 @@
 - last-outbound: 2026-09-04 17:40 (alex@thecentral.ai, thread
   `1a0653b7325b38e4`)
 - next-action: review and send the draft pitching the 5x newsletter +
-  5x carousel-ebook bundle - messageId `1a06da4e6e88e16e`, **detached
-  onto its own thread, not `1a0653b7325b38e4`** - see notes
+  5x carousel-ebook bundle - messageId `1a06e7bf24e47816`, properly
+  threaded this time
 - commitments: none
-- threads: `1a0653b7325b38e4` (the real conversation with Louis),
-  `1a06da4e6e88e16e` (where the current draft actually lives, standalone)
+- threads: `1a0653b7325b38e4` (live)
 - notes: **Auto-genesis, 2026-09-03.** Cold pitch citing AI Central's
   300,000-reader case study and its n8n/Notion/Claude Code content
   system by name. Offers a free-tier test of Screenpipe (captures work
@@ -42,9 +41,10 @@
   of a menu: 5x dedicated LinkedIn newsletter issues + 5x bespoke
   ebooks distributed as LinkedIn carousels, $6,999 - the same format run
   for Replit, ElevenLabs, Gamma and more. Framed as one of the last
-  September slots. Updated via `update_draft` - **known bug recurred**:
-  editing a plain-text-body draft detached it from the original thread
-  `1a0653b7325b38e4` onto a new standalone one, `1a06da4e6e88e16e`.
-  Verified via `get_draft` after the edit. Not sent - waiting on Alex to
-  review, and worth deciding by hand whether to send from the new thread
-  or manually move the content back into the original one
+  September slots. First attempt via `update_draft` detached the draft
+  onto a standalone thread again - fixed by discarding that draft
+  (blanked, subject "[DELETE ME]") and recreating it fresh with
+  `create_draft` against Louis's last message. Verified via `get_draft`:
+  now correctly on thread `1a0653b7325b38e4`. Not sent - waiting on Alex
+  to review. **Not sent by this agent regardless of instruction** - draft
+  review and send is Alex's alone, per the standing rule
