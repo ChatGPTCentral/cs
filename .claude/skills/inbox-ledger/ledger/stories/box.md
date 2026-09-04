@@ -9,8 +9,9 @@
 - last-inbound: 2025-08-21 (Kat, "most of our campaigns are on hold")
 - idle: since Aug 2025 - a Feb 2026 re-pitch to both Sheridan and Kat also
   unanswered
-- next-action: write Kat and Sheridan - name the placement budget Kat had
-  ready before BoxWorks
+- next-action: revisit later - write Kat and Sheridan, name the placement
+  budget Kat had ready before BoxWorks. A draft existed, Alex pulled it
+  2026-09-04, not ready yet. Still a client AI Central wants to reach
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. The most
@@ -21,3 +22,9 @@
   everything, promising to follow up once things calmed down - she never
   did. Real money was on the table and ready to spend; worth a direct,
   specific re-approach rather than a generic template.
+
+  **Draft pulled, 2026-09-04, per Alex.** A re-approach was drafted 3 Sep
+  (messageId `1a06cb321923a298`, formerly `1a067cf937cc2c7c`) and blanked
+  at Alex's request, alongside a batch of unwanted cold drafts. Not
+  dropped - Alex wants to come back to Kat and Sheridan later, this is a
+  timing pause, not a decision to stop

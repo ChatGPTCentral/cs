@@ -105,8 +105,11 @@ Reply is written and waiting in Gmail. One thing only Alex can supply.
 | --- | --- | --- |
 | [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) | shipping address for tote bags | `1a00a41717b4a24b` |
 | [anything.com](stories/anything-com-ads-pitch.md) | review and send - updated 3 Sep with dub.co proof + Skydive mention | `1a067f08380931ff` |
-| [Box](stories/box.md) | review and send - Kat McMahon re-approach, 3 Sep | drafted, thread not yet linked |
-| [Markup Hero](stories/markup-hero.md) | review and send - Jeff Solomon check-in, 3 Sep | drafted, thread not yet linked |
+
+Pulled 2026-09-04, per Alex, not ready yet: **Box** (Kat McMahon
+re-approach) and **Markup Hero** (Jeff Solomon check-in). Both drafts
+blanked, both still wanted reach-outs - see the story files for the
+next-action to pick back up later.
 
 ## 🔴 Your move
 
