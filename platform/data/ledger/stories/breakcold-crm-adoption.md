@@ -25,6 +25,10 @@
   price or take -40% on the annual plan before it jumps to $99/mo on 9
   Sep. Real deadline, real cost decision, not a conversation to reply to
 
-  **Per Alex, 2026-09-04.** Reminder set for 8 Sep, a day ahead of the
-  price jump. Alex also wants a full export of his Breakcold contacts
-  brought into this platform
+  **Per Alex, 2026-09-04.** Full export done first - deals (0, never
+  used), notes (0, never written), meetings (3, no transcripts), 108
+  tasks and 9 linked conversations all pulled into
+  `platform/data/breakcold-export/`. Contacts (157 new people, 111 new
+  companies) merged into `ledger_people`/`ledger_companies`. Confirmed
+  safe to cancel. Reminder set for 8 Sep, a day ahead of the price jump -
+  next-action is now to actually cancel the subscription
