@@ -133,6 +133,7 @@ that are not "reply to a thread": actions, decisions, waits.
 | Finalize the media kit and case studies | action | - | 2026-09-06 | per Alex |
 | Connect Appeared.in MCP for newsletter-sponsor intelligence | wait | - | - | per Alex |
 | Revive the TechEx / Samuel Paternoster media partnership lead | decision | [TechEx / Paternoster](stories/techex-paternoster.md) | - | per Alex |
+| Resume applying to Passionfroot Discover briefs | action | - | 2026-09-07 | per Alex |
 
 ## 📅 Reminders set
 
