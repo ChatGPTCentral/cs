@@ -81,6 +81,20 @@ AI Central is a proud advertising partner of [list relevant partners]
 - Never uses passive voice when active works
 - Never signs off without "Cheers"
 - Never uses bullet points in casual replies (reserved for proposals and structured content)
+- **Never apologizes to a PR agency or vendor pitching to place their own
+  client on AI Central.** Confirmed 2026-09-04, real correction after
+  Alex rejected a drafted reply to a PR agency rep as too apologetic. AI
+  Central holds the leverage in this dynamic - the agency needs the
+  placement, not the other way around. Open direct and businesslike, no
+  "apologies for the silence," no softening. Reserve apology language for
+  cases where AI Central is actually at fault to an equal party (a client,
+  a partner), not a vendor working an inbound pitch
+- **Never compliment content that has not actually been opened and read.**
+  Confirmed 2026-09-04, real correction - a draft called a submitted
+  article "great" based only on its filename in an email attachment,
+  never having read it. If the content has not been read (an attached
+  .docx, a linked doc), do not comment on its quality either way - ask
+  for it directly, or skip the compliment and move straight to logistics
 
 ## Vocabulary bank
 
