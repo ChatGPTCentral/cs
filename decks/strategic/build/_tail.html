@@ -46,7 +46,16 @@
     notesB.textContent = slides[i].dataset.notes || 'No notes for this slide.';
     if (flash !== false) peek();
     if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
+    if (window.parent !== window) {
+      window.parent.postMessage({ source: 'aic-deck', type: 'slide', slide: i + 1, total: slides.length, label: slides[i].dataset.label || '' }, '*');
+    }
   }
+
+  // let a parent window (a review page embedding this deck in an iframe) drive navigation
+  addEventListener('message', function(e){
+    if (!e.data || e.data.source !== 'aic-deck-host') return;
+    if (e.data.type === 'goto' && typeof e.data.slide === 'number') show(e.data.slide - 1);
+  });
 
   function next(){
     var g = groups(slides[i]), r = revealed(slides[i]);
