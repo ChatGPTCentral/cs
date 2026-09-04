@@ -4,12 +4,12 @@
 - label-id: none
 - kind: project (inbound collaboration pitch)
 - people: Alan, alan@saypeter.com, CEO of SayPeter
-- last-touch: Alex - asked for a budget, waiting on Alan
+- last-touch: Alex - followed up again, waiting on Alan
 - start: 2026-08-12
 - last-inbound: 2026-08-12 (alan@saypeter.com, forwarded to Alex 17 Aug)
-- last-outbound: 2026-08-17 16:54 (alex@thecentral.ai, thread
-  `1a010a08ae9b1a08`)
-- idle: 17 days
+- last-outbound: 2026-09-04 12:52 (alex@thecentral.ai, thread
+  `1a010a08ae9b1a08`, cc elizabeth@theaicentral.net)
+- idle: 0 days
 - next-action: none - wait for Alan's reply on budget
 - commitments: none
 - threads: `1a010a08ae9b1a08` (live)

@@ -6,13 +6,14 @@
 - people: Hod (`hod@guidde.co`), Yoav (`yoav@guidde.co`, cc on later
   messages), Cielo Gil (`cielo.gil@guidde.co`, a separate SparkLoop-intro
   touch)
-- last-touch: Alex - sent a fresh re-engagement, waiting on Hod
+- last-touch: Alex - chased again on 2026-09-04, waiting on Hod
 - last-inbound: 2026-05-12 (hod@guidde.co - "I would prefer to use our
   existing credits first. This will allow me to evaluate the results
   before we decide on the continuity of our partnership and future
   packages")
-- last-outbound: 2026-08-31 (alex@thecentral.ai, new thread
-  `1a059d053fc34f9a`, subject "AI Central x Guidde - - Q4 2026")
+- last-outbound: 2026-09-04 (alex@thecentral.ai, to hod@guidde.co, cc
+  liz@thecentral.ai - follow-up on the 2026-08-31 thread
+  `1a059d053fc34f9a`)
 - idle: 0 days
 - next-action: none - wait for Hod's reply
 - commitments: none recorded
@@ -70,3 +71,9 @@
   draft is still sitting in Gmail (messageId `1a059c5eef76a2c5`) -
   trashing it hit an expired Gmail token. Delete by hand, or ask again
   once Gmail is reauthorized.
+
+  **Found by verification, 2026-09-04 - not mentioned by Alex.** Alex
+  chased again, unprompted, cc liz@thecentral.ai. This is the 7th outbound
+  on this relationship with zero replies across 3+ months of chasing.
+  Worth flagging as a stale, high-effort story - decide whether to keep
+  pushing or let it rest.
