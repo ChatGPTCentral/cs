@@ -127,6 +127,11 @@ that are not "reply to a thread": actions, decisions, waits.
 | Bulk-delete the ~26 blanked cold "++ AI Central" drafts | action | - | - | per Alex |
 | Delete the old Guidde "accept his terms" draft by hand | action | [Hod // Guidde](stories/hod-guidde.md) | - | per Alex |
 | Delete the superseded blanked Screenpipe draft | action | [Screenpipe](stories/screenpipe-pitch.md) | - | per Alex |
+| Respond to Marc Duke's Intelligence.com invite | action | [Mark Duke](stories/mark-duke.md) | 2026-09-05 | per Alex |
+| Send the WhatsApp follow-up to Jessica Doss | action | [Guideline AI / Jessica](stories/guideline-ai-jessica.md) | 2026-09-07 | per Alex |
+| Weekend support sweep: AI 101, Feedback, Issues to inbox-zero | action | - | 2026-09-06 | per Alex |
+| Finalize the media kit and case studies | action | - | 2026-09-06 | per Alex |
+| Connect Appeared.in MCP for newsletter-sponsor intelligence | wait | - | - | per Alex |
 
 ## 📅 Reminders set
 
