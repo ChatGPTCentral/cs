@@ -117,6 +117,7 @@ Not urgent yet - `next_action_date` in Supabase, will surface when due.
 
 | Story | Due | What |
 | --- | --- | --- |
+| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-09-08 | discovery call with Nicolia, 16:00-16:30 Europe/Rome |
 | [Prophet / Toni Lee PR](stories/prophet-tonileepr.md) | 2026-09-07 | send the media kit to Belle and Mat |
 | [Antidote](stories/antidote-partnership.md) | 2026-09-07 | send the media kit to Becca |
 | [Emergent / PartnerStack](stories/emergent-partnerstack.md) | 2026-09-07 | send the media kit to Randy |

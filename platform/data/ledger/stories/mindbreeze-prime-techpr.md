@@ -7,15 +7,17 @@
 - people: Nicolia L. Wiles, nwiles@prime-techpr.com, President and Founder
   of Prime Tech PR (Austin, London, Shenzhen), representing Daniel
   Fallmann, CEO of Mindbreeze (enterprise AI and knowledge management)
-- last-touch: Nicolia - replied 2026-09-04, not read yet
+- last-touch: Nicolia - booked the call, waiting for it to happen
 - start: 2026-06-16
 - last-inbound: 2026-09-04 17:11 (nwiles@prime-techpr.com, thread
-  `1a06288d9ac1f207`)
+  `1a06288d9ac1f207` - she's in Austin, TX, not Mindbreeze's Austria HQ;
+  said she'd grab time on Alex's calendar)
 - last-outbound: 2026-09-04 16:59 (alex@thecentral.ai, cc
   liz@thecentral.ai, thread `1a06288d9ac1f207`)
 - idle: 0 days
-- next-action: none - wait for Nicolia to answer the call ask, or for Liz
-  to hear back once she follows up on scheduling
+- next-action: none - call booked, 8 Sep 2026 16:00-16:30 Europe/Rome
+  (Google Calendar event `sd4lajap1rfqoog0th7sf3p4kk`, via Lunacal, Meet
+  link `meet.google.com/eof-csqy-bmv`)
 - commitments: 14 Jul 2026, Alex agreed to two of five pitched topics -
   "The 360-Degree View: Why Dashboards Are Dead and Context Is the New
   KPI" and "Workflow Automation That Actually Works." Terms he quoted: an
@@ -39,5 +41,10 @@
   once. Full breakdown logged as a worked example in
   `alex-writing-style/references/04_objections_playbook.md`
 
-  **Pulse check, 2026-09-04.** Nicolia replied via `1a06d675be712bb7` -
-  in attesa di lettura, next-action sopra è superato (aveva risposto)
+  **Pulse check, 2026-09-04, corrected per Alex.** Nicolia replied
+  (`1a06d675be712bb7`) saying she'd book time on Alex's calendar, then
+  did - Google Calendar shows a confirmed "Discovery Call between Alex
+  Fiore and Nicolia Wiles," 8 Sep 2026, 16:00-16:30 Europe/Rome, booked
+  via Lunacal. Alex flagged this call lives on the calendar, not in
+  Gmail - worth checking Calendar directly next time a booking link goes
+  out, not just the inbox
