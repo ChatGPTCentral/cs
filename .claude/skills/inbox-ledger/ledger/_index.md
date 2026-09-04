@@ -117,13 +117,16 @@ The last word was theirs and nobody replied. Live or recent enough to prompt on.
 
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
-| [Mark (Marwan)](stories/mark-marwan.md) | 2026-09-03 | 0d | mark@theaicentral.net - replied after 2 unanswered July chases, not read yet |
-| [Pillsbury Law](stories/pillsbury-law.md) | 2026-06-04 | 76d | steven.james@pillsburylaw.com - possibly two contacts sharing a domain |
-| [Tim Bourquin](stories/tim-bourquin.md) | 2026-06-22 | 58d | tim.bourquin@gmail.com |
-| [King Capital Advisors](stories/king-capital-advisors.md) | 2026-07-14 | 36d | info@king-capital-advisors.com |
-| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-07-14 | 51d | nwiles@prime-techpr.com - article delivered, 4 follow-ups unanswered |
+| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-07-14 | 51d | nwiles@prime-techpr.com - article delivered, 4 follow-ups unanswered. Reply drafted 2026-09-04, not saved yet |
 | [Spacebar Studios](stories/spacebarstudios-crosspromo.md) | 2026-09-02 | 1d | ivana@spacebarstudios.co - needs Alex to pick a newsletter for the swap |
 | [Screenpipe](stories/screenpipe-pitch.md) | 2026-09-03 | 0d | louis@screenpi.pe - cold pitch, decide whether to test it |
+
+Cleared this pass, verified 2026-09-04: **Mark (Marwan)** - Elizabeth is
+running the invoice thread directly, not Alex's move. **King Capital
+Advisors** - the login question was fully answered 14 Jul, nothing
+pending. **Pillsbury Law** and **Tim Bourquin** - both dormant, each
+story file already reads "none unless reviving," should not have been
+listed here
 
 Dropped this pass: **Austin Conference / Jobstream** and **Ben + Katy
 (MadRev)** - Alex chased both 2026-08-31, now waiting on them (see below).
