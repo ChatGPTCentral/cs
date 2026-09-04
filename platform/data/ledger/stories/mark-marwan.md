@@ -4,17 +4,16 @@
 - kind: person, internal
 - people: Mark (mark@theaicentral.net / mark@thecentral.ai), Elizabeth
   (elizabeth@theaicentral.net), Alex on cc
-- last-touch: Mark - replied 2026-09-03
+- last-touch: Elizabeth - not Alex's move, she is handling the invoice
+  directly
 - last-inbound: 2026-09-03 16:11 (mark@theaicentral.net, thread
   `1a05382e2fe260ce`, to elizabeth@theaicentral.net, cc mark@thecentral.ai,
   alex@thecentral.ai)
-- last-outbound: 2026-08-30 (elizabeth@theaicentral.net, monthly
-  invoice - INV-014, $530 - thread `1a05382e2fe260ce`)
+- last-outbound: 2026-09-04 13:49 (elizabeth@theaicentral.net, thread
+  `1a05382e2fe260ce`)
 - idle: 0 days
-- next-action: **unknown - bodies not read.** Elizabeth is chasing and not getting
-  answers
-- **Pulse check, 2026-09-03.** Mark replied via `1a0680aa8c1ac14d` - in
-  attesa di lettura, next-action sopra è superato (aveva risposto)
+- next-action: none for Alex - Elizabeth is running this directly, wait
+  for Mark to resend the invoice with the two carousel IDs
 - commitments: none recorded
 - threads: `19f5b6f7c1a9dc30` (live), 21 more unread
 - notes: **Elizabeth wrote twice - 28 and 29 July - with no reply from Mark.** Two
@@ -35,3 +34,8 @@
   Elizabeth sends Mark (e.g. INV-014, 30 Aug) is the invoice for what
   AI Central owes him for his work - money Alex needs to pay, not a
   payout Mark received passively.
+
+  **Resolved by Elizabeth, 2026-09-04.** Mark sent INV-014, missing the
+  two carousel IDs (#206, #207). Elizabeth cleared the invoice but asked
+  him to resend with those IDs included. This is Elizabeth's thread to
+  run - taken out of "Your move," Alex has nothing to do here
