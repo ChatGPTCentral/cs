@@ -81,14 +81,17 @@ AI Central is a proud advertising partner of [list relevant partners]
 - Never uses passive voice when active works
 - Never signs off without "Cheers"
 - Never uses bullet points in casual replies (reserved for proposals and structured content)
-- **Never apologizes to a PR agency or vendor pitching to place their own
-  client on AI Central.** Confirmed 2026-09-04, real correction after
-  Alex rejected a drafted reply to a PR agency rep as too apologetic. AI
-  Central holds the leverage in this dynamic - the agency needs the
-  placement, not the other way around. Open direct and businesslike, no
-  "apologies for the silence," no softening. Reserve apology language for
-  cases where AI Central is actually at fault to an equal party (a client,
-  a partner), not a vendor working an inbound pitch
+- **Never gives a sweeping apology to a PR agency or vendor pitching to
+  place their own client on AI Central.** Confirmed 2026-09-04, refined
+  after seeing what Alex actually sent in the same case. "Apologies for
+  the long silence, this fell through the cracks" concedes carelessness
+  and invites the other side to feel entitled to an accounting - never
+  write that to a vendor working an inbound pitch. A light, specific
+  apology tied to one real event is fine and is what Alex actually used:
+  "Apologies if I missed your call the other day." The difference is
+  scope - apologize for one concrete thing, never for a general pattern of
+  silence, to a vendor or agency. See the full worked example in
+  `04_objections_playbook.md`
 - **Never compliment content that has not actually been opened and read.**
   Confirmed 2026-09-04, real correction - a draft called a submitted
   article "great" based only on its filename in an email attachment,

@@ -117,11 +117,13 @@ The last word was theirs and nobody replied. Live or recent enough to prompt on.
 
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
-| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-07-14 | 51d | nwiles@prime-techpr.com - article delivered, 4 follow-ups unanswered. Reply drafted 2026-09-04, not saved yet |
 | [Spacebar Studios](stories/spacebarstudios-crosspromo.md) | 2026-09-02 | 1d | ivana@spacebarstudios.co - needs Alex to pick a newsletter for the swap |
 | [Screenpipe](stories/screenpipe-pitch.md) | 2026-09-03 | 0d | louis@screenpi.pe - cold pitch, decide whether to test it |
 
-Cleared this pass, verified 2026-09-04: **Mark (Marwan)** - Elizabeth is
+Cleared this pass, verified 2026-09-04: **Mindbreeze / Prime Tech PR** -
+Alex answered himself, real strategy not a status update (no pricing
+restated, opened a partnership track, closed on a call ask). Now waiting
+on Nicolia, see "Waiting on them" below. **Mark (Marwan)** - Elizabeth is
 running the invoice thread directly, not Alex's move. **King Capital
 Advisors** - the login question was fully answered 14 Jul, nothing
 pending. **Pillsbury Law** and **Tim Bourquin** - both dormant, each
@@ -138,6 +140,7 @@ Ball is legitimately in their court. Ranges from days to dormant.
 
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
+| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-09-04 | 0d | nwiles@prime-techpr.com - call ask sent, no pricing conceded, Liz cc'd for scheduling |
 | [GTA whitepaper](stories/gta-whitepaper.md) | 2026-08-31 | 0d | tsvetelin@thinkrevops.com - promised his part 25 Aug, still not sent |
 | [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-08-31 | 0d | jazmin@getjobstream.com - re-nudged on the merch thread |
 | [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-08-31 | 0d | ben@madrev.co / katy@madrev.co - quick bump re: the framer deal |
