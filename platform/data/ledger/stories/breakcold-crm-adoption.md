@@ -24,3 +24,7 @@
   (mass broadcast, not personal) - 5 days to lock in the current $59/mo
   price or take -40% on the annual plan before it jumps to $99/mo on 9
   Sep. Real deadline, real cost decision, not a conversation to reply to
+
+  **Per Alex, 2026-09-04.** Reminder set for 8 Sep, a day ahead of the
+  price jump. Alex also wants a full export of his Breakcold contacts
+  brought into this platform

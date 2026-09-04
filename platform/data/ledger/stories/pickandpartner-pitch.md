@@ -17,3 +17,5 @@
 - notes: PickAndPartner proposes a newsletter cross-promotion match -
   neatprompts.com, ~100k subscribers, ~40% open rate. Single message, no
   reply from Alex
+
+  **Per Alex, 2026-09-04.** Reminder set for 5 Sep
