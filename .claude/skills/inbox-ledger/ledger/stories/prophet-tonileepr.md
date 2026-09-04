@@ -32,3 +32,7 @@
   newsletters/new media before. Mat wants to understand AI Central's
   audience. Task set: send the media kit Monday 7 Sep, alongside Antidote
   and the PartnerStack contact (Randy Harinandan)
+
+  **Roadmap link, 2026-09-04.** Mat Zucker (Prophet's CMO) is New
+  York-based - see `../roadmap.md`, AI Summit New York is still TBD for
+  Dec 2026

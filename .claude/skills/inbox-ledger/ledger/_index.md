@@ -1,6 +1,10 @@
 # The board
 
-Ranked by what needs Alex first. Refreshed by `/ledger`.
+Ranked by what needs Alex first. Refreshed by `/ledger`. See
+[`roadmap.md`](roadmap.md) for where AI Central is headed, month by
+month, per Alex - checked against open stories below where relevant
+(New Media Summit Austin ↔ Mindbreeze/Prime Tech PR, AI Summit NY ↔
+Netline/Prophet).
 
 **Delta refresh, 2026-09-03.** This is a targeted refresh on top of the
 2026-08-19 full sweep below, not a re-run of full discovery - it folds in
@@ -105,6 +109,7 @@ Reply is written and waiting in Gmail. One thing only Alex can supply.
 | --- | --- | --- |
 | [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) | shipping address for tote bags | `1a00a41717b4a24b` |
 | [anything.com](stories/anything-com-ads-pitch.md) | review and send - updated 3 Sep with dub.co proof + Skydive mention | `1a067f08380931ff` |
+| [Screenpipe](stories/screenpipe-pitch.md) | review and send - answers Louis's distribution question with real pricing/CTR numbers | `1a06d995fb68b9f2` |
 
 Pulled 2026-09-04, per Alex, not ready yet: **Box** (Kat McMahon
 re-approach) and **Markup Hero** (Jeff Solomon check-in). Both drafts
@@ -142,7 +147,6 @@ The last word was theirs and nobody replied. Live or recent enough to prompt on.
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
 | [Spacebar Studios](stories/spacebarstudios-crosspromo.md) | 2026-09-02 | 1d | ivana@spacebarstudios.co - needs Alex to pick a newsletter for the swap |
-| [Screenpipe](stories/screenpipe-pitch.md) | 2026-09-03 | 0d | louis@screenpi.pe - cold pitch, decide whether to test it |
 
 Cleared this pass, verified 2026-09-04: **Mindbreeze / Prime Tech PR** -
 Alex answered himself, real strategy not a status update (no pricing

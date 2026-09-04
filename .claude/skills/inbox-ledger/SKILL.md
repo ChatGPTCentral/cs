@@ -177,9 +177,16 @@ same way `/ledger` already reads the board, rather than a new file that
 goes stale between sweeps.
 
 **Roadmap** ("where are we going") needs Alex's own input on real
-priorities - never write this section from inference. Ask him for it
-directly when he wants it built; until then, leave it out rather than
-fill it with a guess.
+priorities - never write this section from inference. Given, 2026-09-04:
+`ledger/roadmap.md` holds it, month by month, verbatim from what Alex
+stated. Update only from what he says directly, never expanded or
+inferred - the same hard rule as commitments and tasks. This is
+deliberately separate from `ledger_genesis_events` (Supabase), which is
+AI Central's *founding history*, not its future plan - do not conflate
+the two tables or files. When a roadmap item and an open story clearly
+connect (a confirmed event, a named person's location matching a
+prospect), note the link in both places, same as `roadmap.md` already
+does for Prophet/Antidote and the New Media Summit
 
 ## Hard rules
 

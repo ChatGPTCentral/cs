@@ -48,3 +48,6 @@
   via Lunacal. Alex flagged this call lives on the calendar, not in
   Gmail - worth checking Calendar directly next time a booking link goes
   out, not just the inbox
+
+  **Roadmap link, 2026-09-04.** Nicolia is Austin-based - see
+  `../roadmap.md`, New Media Summit Austin is confirmed for Feb 2027
