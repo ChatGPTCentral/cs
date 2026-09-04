@@ -1,22 +1,22 @@
 <svg viewBox="0 0 560 196" width="100%" role="img" aria-label="Where they work: Tech & software 18 percent, Education 11 percent, Finance 9 percent, Consulting & agencies 7 percent, Healthcare 3 percent">
 <text x="0" y="23.8" font-size="18" fill="#141414">Tech & software</text>
 <rect x="214" y="8.0" width="288" height="22" rx="4" fill="#F3F1EC"/>
-<rect x="214" y="8.0" width="288.0" height="22" rx="4" fill="#C8102E"/>
+<rect x="214" y="8.0" width="288.0" height="22" rx="4" fill="#046BB1"/>
 <text x="512" y="23.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">18%</text>
 <text x="0" y="61.8" font-size="18" fill="#141414">Education</text>
 <rect x="214" y="46.0" width="288" height="22" rx="4" fill="#F3F1EC"/>
-<rect x="214" y="46.0" width="176.0" height="22" rx="4" fill="#C8102E"/>
+<rect x="214" y="46.0" width="176.0" height="22" rx="4" fill="#046BB1"/>
 <text x="512" y="61.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">11%</text>
 <text x="0" y="99.8" font-size="18" fill="#141414">Finance</text>
 <rect x="214" y="84.0" width="288" height="22" rx="4" fill="#F3F1EC"/>
-<rect x="214" y="84.0" width="144.0" height="22" rx="4" fill="#C8102E"/>
+<rect x="214" y="84.0" width="144.0" height="22" rx="4" fill="#046BB1"/>
 <text x="512" y="99.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">9%</text>
 <text x="0" y="137.8" font-size="18" fill="#141414">Consulting & agencies</text>
 <rect x="214" y="122.0" width="288" height="22" rx="4" fill="#F3F1EC"/>
-<rect x="214" y="122.0" width="112.0" height="22" rx="4" fill="#C8102E"/>
+<rect x="214" y="122.0" width="112.0" height="22" rx="4" fill="#046BB1"/>
 <text x="512" y="137.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">7%</text>
 <text x="0" y="175.8" font-size="18" fill="#141414">Healthcare</text>
 <rect x="214" y="160.0" width="288" height="22" rx="4" fill="#F3F1EC"/>
-<rect x="214" y="160.0" width="48.0" height="22" rx="4" fill="#C8102E"/>
+<rect x="214" y="160.0" width="48.0" height="22" rx="4" fill="#046BB1"/>
 <text x="512" y="175.8" font-size="18" font-weight="700" fill="#141414" style="font-variant-numeric:tabular-nums">3%</text>
 </svg>

@@ -60,3 +60,9 @@ or reordered from the original - the data-integrity rules in
 `../case-studies/CASE-STUDIES-SOURCES.md` apply unchanged here. No client
 quotes were added (none exist on file for any of the five clients, same
 restriction as the original).
+
+## Revision, 4 Sep 2026 - palette correction
+
+Same fix as `../case-studies/CASE-STUDIES-SOURCES.md`: the `ACCENT` constant
+driving the per-client bar charts moved from red (`#C8102E`) to azul
+(`#046BB1`). No figure or narrative text changed.

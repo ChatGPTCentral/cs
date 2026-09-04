@@ -125,3 +125,13 @@ This deck was rebuilt in that light. Now 8 slides.
   file for any of the five clients - see `09_advertiser_trust_research.md`
   for why one must not be invented). Investment figures remain off every
   slide, per the original rule at the top of this file.
+
+## Revision, 4 Sep 2026 - palette correction
+
+Alex flagged that the deck's red accent did not reflect AI Central's actual
+brand palette and that red should read as "bad" only, with green for "good"
+and blue/yellow as accent colors. This deck has no good/bad indicators to
+recolor - the change is the accent itself: the `ACCENT` constant driving
+every per-client bar chart (Outskill, Guidde, ElevenLabs, Luma AI, Gamma)
+moved from `#C8102E` (red) to `#046BB1` (azul, the documented brand blue).
+No figure, chart value, or stat changed.

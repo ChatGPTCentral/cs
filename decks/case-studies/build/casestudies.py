@@ -15,7 +15,7 @@ tail = (B / "_tail.html").read_text()
 A = json.load(open(B / "mk3-assets.json"))
 assets = json.load(open(B / "assets.json"))
 
-ACCENT, SURFACE, GRID, INK, MUTED = "#C8102E", "#F3F1EC", "#E3DFD7", "#141414", "#6E6E6E"
+ACCENT, SURFACE, GRID, INK, MUTED = "#046BB1", "#F3F1EC", "#E3DFD7", "#141414", "#6E6E6E"
 FOOT = '<div class="foot">AI CENTRAL</div>'
 
 def renumber(sec, n):

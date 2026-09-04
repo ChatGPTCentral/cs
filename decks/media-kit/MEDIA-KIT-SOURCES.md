@@ -167,3 +167,32 @@ in the `cs` repo. Still 13 slides; content changed, not slide count.
   companies") was added - the audience slide still uses only the measured
   quiz-sample aggregates already in this file. The rate card is untouched
   pending Alex's decision on the pricing findings above.
+
+## Revision, 4 Sep 2026 - palette correction, positioning line
+
+Alex flagged that the deck's red accent did not reflect AI Central's actual
+brand palette (`AI_Central___Palette__Sheet1.csv`, shared 4 Sep 2026) and
+that he does not want red used as a default/decorative color: red should
+read as "bad" only, green as "good", and blue/yellow as the accent colors
+for contrast. This revision addresses the accent color; it does not add new
+green/red "good/bad" indicators to any stat or benchmark box - none exist
+in this deck to begin with, so there was nothing to recolor on that front.
+
+- **`--accent` changed from `#C8102E` ("Signal Red") to `#046BB1`** (azul,
+  the documented brand blue from the palette sheet). This recolors every
+  kicker, the big stat numbers, table highlight cells, and the footer
+  border across all 14 slides - all of it driven by one CSS variable.
+- **The reach-composition bar and geography legend (slide 5)** used a
+  red-shade gradient (`#C8102E`/`#B8730F`/`#A50D26`/`#D9636F`/`#CE4B59`) for
+  what was pure categorical charting, not a good/bad signal. Replaced with a
+  blue-family gradient (azul `#046BB1`, verdigris `#38A7AD`, marian blue
+  `#3B4C99`), keeping the neutral grey/tint tiers unchanged.
+- **The shared audience charts** (`chart-prof.svg`, `chart-ind.svg`,
+  `chart-map.svg` in `../strategic/build/`, used by this deck and the
+  Enterprise edition) got the same red-to-blue swap - the world map's four
+  intensity tiers now run light-to-dark blue instead of light-to-dark red.
+- **The About slide subline** now opens with "Imagine Bloomberg
+  Businessweek, but for AI - that's the brand we're building," per Alex's
+  positioning direction on 4 Sep 2026. Framed as an aspiration ("imagine"),
+  not a claim of affiliation or equivalence. See `01_brand_positioning.md`
+  for the documented version of this comp.

@@ -50,3 +50,12 @@ the standard kit outside of the rate-card consolidation above. No new
 claims were introduced - every sentence in the new slide 7 already existed
 in the standard kit's four rate-card slides, just recombined without the
 price column.
+
+## Revision, 4 Sep 2026 - palette correction, positioning line
+
+Same fix as `../media-kit/MEDIA-KIT-SOURCES.md`, carried through this fork
+automatically since both decks share `_head.html` and the audience charts:
+`--accent` moved from red (`#C8102E`) to azul (`#046BB1`), the reach bar and
+geography legend and map moved from a red gradient to a blue one, and the
+About slide subline now opens with "Imagine Bloomberg Businessweek, but for
+AI - that's the brand we're building." No content or structure changed.
