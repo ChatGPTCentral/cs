@@ -310,3 +310,32 @@ was invented anywhere in this pass.
   Press Delegate at" event logos (SXSW, AI Summit NY, AI Summit London,
   Cannes Lions). No logo assets for any of these exist in the deck's asset
   bundle - needs the actual files from Alex before this can be built.
+
+## Revision, 5 Sep 2026 - partner/press/affiliation logo grids
+
+Alex sent the real logo files as a zip attachment (`Clients : Partners -
+Logo.zip`, 15 files) - a plain paste of each image into chat doesn't
+survive as a file in this environment, and files in the ~10-40KB range
+were too large to retype from a Drive download reliably byte-for-byte, so
+zipping them was the fix that actually worked. Added a shared `logo_tile`
+/ `logo_grid` helper to `decks/_shared/deck_shared.py` (a `src=None` entry
+renders a labelled placeholder tile rather than failing, so a grid's
+spacing can be reviewed before every logo is in hand; a `full_bleed`
+flag lets a logo that ships on its own solid-colour background, like
+Cozora's, fill the tile instead of getting shrunk onto a white card).
+
+- **Slide 2 partners row.** Replaced the single flattened composite image
+  with an individual 5x2 logo grid for Alex's specific list (Gamma,
+  Notion, ElevenLabs, Replit, Taplio, Typeless, Luma AI, HubSpot, UX
+  Pilot, Outskill) - a different, shorter roster than the old composite's
+  15 logos. 9 of 10 are real assets (Gamma/ElevenLabs/Outskill reused
+  from the existing case-studies badges; Notion/Replit sourced earlier
+  from a GitHub icon-mirror repo; Taplio/HubSpot/UX Pilot from Alex's
+  zip). Luma AI is a small icon-only mark (design-icon repo), not a full
+  wordmark - flagged as the one open item on this slide.
+- **Slide 14 additions.** Added the two rows requested above: "Official
+  press delegate at" (London Tech Week, Cannes Lions, The AI Summit
+  London, SXSW London - all real, from Alex's zip) and "Affiliations"
+  (The AI Collective, Global Tech Advocates, London Tech Advocates,
+  Cozora - all real, from the same zip). The AI Summit New York has no
+  sourced logo anywhere and stays a placeholder tile pending that file.

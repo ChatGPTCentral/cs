@@ -9,7 +9,7 @@ import json, pathlib, re, sys
 
 B = pathlib.Path("/home/claude/build")
 sys.path.insert(0, str(B))
-from deck_shared import FOOT, label, bullets, usecase, make_renumber, GOOD, BAD
+from deck_shared import FOOT, label, bullets, usecase, make_renumber, GOOD, BAD, logo_grid
 
 head = (B / "_head.html").read_text().replace(
     "table{width:100%;border-collapse:collapse;margin-top:44px;table-layout:fixed}",
@@ -67,7 +67,18 @@ S[2] = f'''<!-- 02 {'─'*73} -->
   </div>
   <div data-step="2" style="margin-top:22px">
     {label("We have partnered with", "var(--muted)", 17)}
-    <img src="{A['partners']}" alt="ElevenLabs, Guidde, Gamma, Notion, Delve, Attio, HubSpot, Udacity, UX Pilot, Taplio, Fellow, Outskill, Synthflow, Typeless, Fyxer, Flow" style="max-height:220px;width:100%;object-fit:contain;display:block;margin-top:10px">
+    <div style="margin-top:10px">{logo_grid([
+      (A.get('logo_gamma'), "Gamma"),
+      (A.get('grid_notion'), "Notion"),
+      (A.get('logo_elevenlabs'), "ElevenLabs"),
+      (A.get('grid_replit'), "Replit"),
+      (A.get('grid_taplio_plain'), "Taplio"),
+      (A.get('grid_typeless'), "Typeless"),
+      (A.get('grid_luma'), "Luma AI"),
+      (A.get('grid_hubspot'), "HubSpot"),
+      (A.get('grid_uxpilot'), "UX Pilot"),
+      (A.get('logo_outskill'), "Outskill"),
+    ], cols=5, h=90)}</div>
   </div>
   {FOOT}
 </section>'''
@@ -462,6 +473,25 @@ S[14] = f'''<!-- 14 {'─'*73} -->
         <div style="margin-top:12px"><span style="color:var(--muted-dark)">Connect with Alex</span><br><b>linkedin.com/in/alex-ai</b></div>
       </div>
     </div>
+  </div>
+  <div data-step="3" style="margin-top:14px">
+    {label("Official press delegate at", "var(--muted)", 15)}
+    <div style="margin-top:8px">{logo_grid([
+      (A.get('evt_ltw'), "London Tech Week"),
+      (A.get('evt_cannes'), "Cannes Lions"),
+      (A.get('evt_aisummitlondon'), "The AI Summit London"),
+      (None, "The AI Summit New York"),
+      (A.get('evt_sxsw'), "SXSW London"),
+    ], cols=5, h=60, gap=12)}</div>
+  </div>
+  <div data-step="3" style="margin-top:12px">
+    {label("Affiliations", "var(--muted)", 15)}
+    <div style="margin-top:8px">{logo_grid([
+      (A.get('aff_collective'), "The AI Collective"),
+      (A.get('aff_gta'), "Global Tech Advocates"),
+      (A.get('aff_tla'), "London Tech Advocates"),
+      (A.get('aff_cozora'), "Cozora", True),
+    ], cols=4, h=60, gap=12)}</div>
   </div>
   {FOOT}
 </section>'''

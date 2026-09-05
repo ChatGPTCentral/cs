@@ -66,6 +66,35 @@ def label(t, col="var(--accent)", size=20):
     return f'<div style="font-size:{size}px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:{col}">{t}</div>'
 
 
+def logo_tile(src, name, h=88, full_bleed=False):
+    """One cell of a logo grid. src=None renders a placeholder card (dark
+    tile, name in white) instead of failing - used while a real asset is
+    still pending, so a grid can be reviewed for spacing before every logo
+    is in hand. full_bleed=True is for logo files that already ship on
+    their own branded background (e.g. a solid-colour square) - those fill
+    the tile edge-to-edge instead of getting shrunk onto a white card."""
+    if src and full_bleed:
+        inner = f'<img src="{src}" alt="{name}" style="width:100%;height:100%;object-fit:cover">'
+        bg = "transparent"
+    elif src:
+        inner = f'<img src="{src}" alt="{name}" style="max-width:80%;max-height:56%;object-fit:contain">'
+        bg = "#fff"
+    else:
+        inner = f'<div style="color:#fff;font-size:13px;font-weight:700;letter-spacing:.03em;text-align:center;padding:0 10px;line-height:1.3">{name}</div>'
+        bg = "#141414"
+    return (f'<div style="background:{bg};height:{h}px;border-radius:6px;overflow:hidden;'
+            f'display:flex;align-items:center;justify-content:center;'
+            f'border:1px solid var(--hair)">{inner}</div>')
+
+
+def logo_grid(items, cols, h=88, gap=16):
+    """items: list of (src_or_None, name) or (src_or_None, name, full_bleed) tuples."""
+    tiles = "".join(
+        logo_tile(item[0], item[1], h=h, full_bleed=item[2] if len(item) > 2 else False)
+        for item in items)
+    return f'<div style="display:grid;grid-template-columns:repeat({cols},1fr);gap:{gap}px">{tiles}</div>'
+
+
 def bullets(items, size=21, gap=7):
     return "".join(
         f'<div style="display:flex;gap:12px;padding:{gap}px 0;border-top:1px solid rgba(0,0,0,.08)">'
