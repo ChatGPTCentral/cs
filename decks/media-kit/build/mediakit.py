@@ -102,8 +102,8 @@ S[4] = f'''<!-- 04 {'─'*73} -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px">
     <div style="background:#F8ECEC;padding:28px 32px;min-height:640px;display:flex;flex-direction:column">
       <div style="font-size:26px;font-weight:700;color:var(--ink)">Working with a solo creator</div>
-      <div style="margin-top:14px;flex:1;display:flex;flex-direction:column;justify-content:space-evenly">{"".join(
-        f'<div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid rgba(0,0,0,.08)">'
+      <div style="margin-top:14px;flex:1;display:flex;flex-direction:column;justify-content:center">{"".join(
+        f'<div style="display:flex;gap:12px;padding:18px 0;border-top:1px solid rgba(0,0,0,.08)">'
         f'<div style="font-size:18px;font-weight:700;color:{BAD};flex:none">✕</div>'
         f'<div style="font-size:19px;font-weight:300;line-height:1.35">{i}</div></div>' for i in [
         "You are constantly chasing to deliver on time",
@@ -115,8 +115,8 @@ S[4] = f'''<!-- 04 {'─'*73} -->
     </div>
     <div style="background:#EBF4E8;padding:28px 32px;min-height:640px;display:flex;flex-direction:column">
       <div style="font-size:26px;font-weight:700;color:var(--ink)">Working with AI Central</div>
-      <div style="margin-top:14px;flex:1;display:flex;flex-direction:column;justify-content:space-evenly">{"".join(
-        f'<div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid rgba(0,0,0,.08)">'
+      <div style="margin-top:14px;flex:1;display:flex;flex-direction:column;justify-content:center">{"".join(
+        f'<div style="display:flex;gap:12px;padding:18px 0;border-top:1px solid rgba(0,0,0,.08)">'
         f'<div style="font-size:18px;font-weight:700;color:{GOOD};flex:none">✓</div>'
         f'<div style="font-size:19px;font-weight:300;line-height:1.35">{i}</div></div>' for i in [
         "You get on-time delivery, every time",
@@ -342,7 +342,7 @@ def premium(n_, name, what, ideal):
     return f'''<div data-step="{n_}" style="background:var(--tint);padding:26px 28px;min-height:600px;display:flex;flex-direction:column">
       <div style="font-size:25px;font-weight:700;letter-spacing:-.01em">{name}</div>
       <div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.35;color:var(--muted)">Ideal for {ideal}</div>
-      <div style="margin-top:16px;flex:1;display:flex;flex-direction:column;justify-content:space-evenly">{bullets(what, 18, 8)}</div>
+      <div style="margin-top:16px;flex:1;display:flex;flex-direction:column;justify-content:center">{bullets(what, 18, 18)}</div>
     </div>'''
 
 S[11] = f'''<!-- 11 {'─'*73} -->

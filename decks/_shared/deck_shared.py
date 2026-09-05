@@ -78,7 +78,7 @@ def usecase(n_, title, intro, items):
       <div style="font-size:17px;font-weight:700;letter-spacing:.16em;color:var(--muted)">0{n_}</div>
       <div style="margin-top:6px;font-size:27px;font-weight:700;letter-spacing:-.01em">{title}</div>
       <div style="margin-top:8px;font-size:20px;font-weight:300;line-height:1.35;color:#3A3A3A">{intro}</div>
-      <div style="margin-top:12px;flex:1;display:flex;flex-direction:column;justify-content:space-evenly">{bullets(items, 20, 6)}</div>
+      <div style="margin-top:12px;flex:1;display:flex;flex-direction:column;justify-content:center">{bullets(items, 20, 18)}</div>
     </div>'''
 
 
