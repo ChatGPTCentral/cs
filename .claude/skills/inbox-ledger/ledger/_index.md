@@ -147,6 +147,17 @@ Not urgent yet - `next_action_date` in Supabase, will surface when due.
 | [Emergent / PartnerStack](stories/emergent-partnerstack.md) | 2026-09-07 | send the media kit to Randy |
 | [Breakcold](stories/breakcold-crm-adoption.md) | 2026-09-08 | cancel the subscription before the price jump |
 | [PickAndPartner](stories/pickandpartner-pitch.md) | 2026-09-05 | reply or decline the newsletter swap |
+| [Sponsor Radar](stories/sponsor-radar-pitch.md) | 2026-09-07 | add a payment card to claim the $30/600-pitch credit before it expires |
+
+## ⛔ Conflicts awaiting Alex
+
+`ledger_pending_facts` in Supabase - the story was NOT touched, per the
+write-gate hard rule. Needs Alex's word before either the story or this
+list changes.
+
+| Story | Conflict |
+| --- | --- |
+| [InVideo](stories/invideo-pitch.md) | Alex said (2026-09-04) he'd sent Siddharth a reply, but no sent message exists in Gmail and the draft this agent prepared earlier the same session is completely gone. Needs Alex to check |
 
 ## 🔴 Your move
 
@@ -177,6 +188,7 @@ Ball is legitimately in their court. Ranges from days to dormant.
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
 | [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-09-04 | 0d | nwiles@prime-techpr.com - call ask sent, no pricing conceded, Liz cc'd for scheduling |
+| [Sponsor Scout](stories/sponsor-scout-nick-hughes.md) | 2026-09-04 | 0d | jnickhughes@gmail.com - Alex asked detailed comparison questions (vs. Appeared.in/WhoSponsorsStuff, MCP access) |
 | [GTA whitepaper](stories/gta-whitepaper.md) | 2026-08-31 | 0d | tsvetelin@thinkrevops.com - promised his part 25 Aug, still not sent |
 | [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-08-31 | 0d | jazmin@getjobstream.com - re-nudged on the merch thread |
 | [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-08-31 | 0d | ben@madrev.co / katy@madrev.co - quick bump re: the framer deal |

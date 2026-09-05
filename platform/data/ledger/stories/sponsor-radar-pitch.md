@@ -8,11 +8,12 @@
   Sponsor Radar
 - last-touch: Ryan Doyle
 - start: 2026-08-29
-- last-inbound: 2026-09-01 19:35 (doyle_r@doyleprojects.co, thread
+- last-inbound: 2026-09-04 17:28 (doyle_r@doyleprojects.co, thread
   `1a04df42ea54423a`)
-- last-outbound: 2026-08-30 (alex@thecentral.ai)
-- next-action: decide whether to try the $30 free-credit run before it
-  expires Monday, 7 Sep 2026 - still no case studies from Ryan
+- last-outbound: 2026-09-04 17:26 (alex@thecentral.ai)
+- next-action: **add a payment card on Sponsor Radar's dashboard to
+  claim the $30/600-pitch credit - sends start the next day, credit good
+  through Monday 7 Sep 2026**
 - commitments: none
 - threads: `1a04df42ea54423a` (live)
 - notes: **Per Alex, 2026-08-31.** Ryan is an agent who sells advertising
@@ -45,3 +46,21 @@
   Craft, The AI Marketer), WorkOS (2, incl. The Pragmatic Engineer,
   Simon Willison's Newsletter). The $30/600-pitch free-credit run is
   good through Monday, 7 Sep 2026. Still no case studies
+
+  **Auto-genesis, 2026-09-05.** Alex answered Ryan's list, 2 Sep 06:17,
+  with four real questions: will copy be approved before going out (he
+  caught Ryan's render overstating readers at 400,000 vs the real
+  300,000+); do the named sponsors (e.g. Wispr Flow) run through ad
+  networks rather than direct deals, since that's usually a blocker; who
+  appears as the sender (Ryan, or AI Central); and whether different
+  clients need different angles (Replit - a past client, vibe-coding
+  launches - vs. Antithesis - a new autonomous testing platform,
+  differentiation/positioning). Ryan answered same day (2 Sep 20:01):
+  copy is editable and shown before going live; no data on direct vs.
+  network sponsors; he appears as sender under "sponsor partnerships,
+  thecentral.ai"; the product is a spin-off of a service Doyle Projects
+  already runs at Sales.co for Ben's Bites, Pray.com, Alts.co and others,
+  and a single straightforward ask is deliberately the only angle for
+  now, more optionality later. Alex said "ok great, how do we start
+  then," 4 Sep 17:26 - Ryan replied same day: **add a payment card to
+  claim the $30 credit, sends start the next day**
