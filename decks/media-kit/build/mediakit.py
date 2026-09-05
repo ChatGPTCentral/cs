@@ -480,7 +480,7 @@ S[14] = f'''<!-- 14 {'─'*73} -->
       (A.get('evt_ltw'), "London Tech Week"),
       (A.get('evt_cannes'), "Cannes Lions"),
       (A.get('evt_aisummitlondon'), "The AI Summit London"),
-      (None, "The AI Summit New York"),
+      (A.get('evt_aisummitny'), "The AI Summit New York"),
       (A.get('evt_sxsw'), "SXSW London"),
     ], cols=5, h=60, gap=12)}</div>
   </div>

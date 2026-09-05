@@ -74,8 +74,8 @@ def logo_tile(src, name, h=88, full_bleed=False):
     their own branded background (e.g. a solid-colour square) - those fill
     the tile edge-to-edge instead of getting shrunk onto a white card."""
     if src and full_bleed:
-        inner = f'<img src="{src}" alt="{name}" style="width:100%;height:100%;object-fit:cover">'
-        bg = "transparent"
+        inner = f'<img src="{src}" alt="{name}" style="max-width:52%;max-height:52%;object-fit:contain;border-radius:4px">'
+        bg = "#fff"
     elif src:
         inner = f'<img src="{src}" alt="{name}" style="max-width:80%;max-height:56%;object-fit:contain">'
         bg = "#fff"
