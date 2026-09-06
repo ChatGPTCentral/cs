@@ -1,0 +1,211 @@
+</div></div>
+
+<div id="hud"><b id="hud-n">1</b><span>/</span><b id="hud-t">12</b>
+  <span>&nbsp;←→ move · S notes · F full screen · P print</span></div>
+<div id="notes"><i id="notes-l"></i><span id="notes-b"></span></div>
+<div id="edit-banner">Edit mode — click any text or image to change it</div>
+
+<script>
+(function(){
+  var slides = [].slice.call(document.querySelectorAll('.slide'));
+  var canvas = document.getElementById('canvas');
+  var hud = document.getElementById('hud'), hudN = document.getElementById('hud-n');
+  var notes = document.getElementById('notes');
+  var notesL = document.getElementById('notes-l'), notesB = document.getElementById('notes-b');
+  var i = 0, hudTimer, typed = '';
+
+  document.getElementById('hud-t').textContent = slides.length;
+
+  // ── inline edit mode ──────────────────────────────────────────────────
+  // Lets the /review/[deck] page on labs.thecentral.ai (ReviewClient.tsx)
+  // toggle click-to-edit-text / click-to-swap-image directly on the live
+  // deck, instead of a separate copy to keep in sync. Edits save to
+  // Supabase (via /api/deck-edits) keyed by this file's own slug, so they
+  // re-apply on every future load for every viewer, edit mode or not -
+  // see ai-central-forecaster's db/migrations/0012_deck_edits.sql.
+  var editMode = false;
+  var deckSlug = (location.pathname.split('/').pop() || 'deck').replace(/\.html$/, '');
+  var EDIT_API = '/api/deck-edits';
+
+  function isLeafText(el){
+    return el.children.length === 0 && el.textContent.replace(/\s+/g, '').length > 0;
+  }
+  function collectEditable(){
+    var out = [];
+    slides.forEach(function(s, si){
+      [].slice.call(s.querySelectorAll('div,span,h1,h2,h3,p,b')).filter(isLeafText).forEach(function(el, k){
+        if (!el.dataset.eid) el.dataset.eid = 's' + si + 't' + k;
+        out.push(el);
+      });
+      [].slice.call(s.querySelectorAll('img')).forEach(function(el, k){
+        if (!el.dataset.eid) el.dataset.eid = 's' + si + 'i' + k;
+        out.push(el);
+      });
+    });
+    return out;
+  }
+  var editables = collectEditable();
+
+  function applyOverrides(map){
+    editables.forEach(function(el){
+      var v = map[el.dataset.eid];
+      if (v == null) return;
+      if (el.tagName === 'IMG') el.src = v; else el.textContent = v;
+    });
+  }
+  fetch(EDIT_API + '?deck=' + encodeURIComponent(deckSlug)).then(function(r){ return r.json(); })
+    .then(function(data){ if (data && data.ok) applyOverrides(data.overrides || {}); })
+    .catch(function(){});
+
+  function saveOverride(eid, type, value){
+    fetch(EDIT_API, {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ deck_id: deckSlug, edit_id: eid, type: type, value: value }),
+    }).then(function(){
+      if (window.parent !== window) window.parent.postMessage({ source: 'aic-deck', type: 'edit-saved', eid: eid }, '*');
+    }).catch(function(){});
+  }
+
+  function setEditMode(on){
+    editMode = on;
+    document.body.classList.toggle('editing', on);
+    editables.forEach(function(el){
+      if (el.tagName !== 'IMG') el.contentEditable = on ? 'true' : 'false';
+    });
+    if (on) setSteps(slides[i], groups(slides[i]).length);      // reveal build steps so nothing is hidden behind a click-to-advance
+  }
+
+  var pendingImgTarget = null;
+  var editFileInput = document.createElement('input');
+  editFileInput.type = 'file'; editFileInput.accept = 'image/*'; editFileInput.style.display = 'none';
+  document.body.appendChild(editFileInput);
+  editFileInput.addEventListener('change', function(){
+    var f = editFileInput.files && editFileInput.files[0];
+    if (!f || !pendingImgTarget) return;
+    var reader = new FileReader();
+    reader.onload = function(){
+      pendingImgTarget.src = reader.result;
+      saveOverride(pendingImgTarget.dataset.eid, 'image', reader.result);
+      pendingImgTarget = null;
+      editFileInput.value = '';
+    };
+    reader.readAsDataURL(f);
+  });
+
+  addEventListener('blur', function(e){
+    var el = e.target;
+    if (editMode && el && el.dataset && el.dataset.eid && el.isContentEditable) {
+      saveOverride(el.dataset.eid, 'text', el.textContent);
+    }
+  }, true);
+
+  function fit(){
+    var s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    canvas.style.setProperty('--s', s);
+  }
+
+  // build steps: elements tagged data-step reveal group by group on advance
+  function groups(s){
+    var els = [].slice.call(s.querySelectorAll('[data-step]'));
+    var by = {};
+    els.forEach(function(el){ (by[el.dataset.step] = by[el.dataset.step] || []).push(el); });
+    return Object.keys(by).sort(function(a, b){ return a - b; }).map(function(k){ return by[k]; });
+  }
+  function setSteps(s, count){          // reveal the first `count` groups
+    groups(s).forEach(function(g, k){
+      g.forEach(function(el){ el.classList.toggle('rev', k < count); });
+    });
+  }
+  function revealed(s){
+    return groups(s).filter(function(g){ return g[0].classList.contains('rev'); }).length;
+  }
+
+  function show(n, flash){
+    var forward = n > i;
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+    setSteps(slides[i], forward && !editMode ? 0 : groups(slides[i]).length);
+    hudN.textContent = i + 1;
+    notesL.textContent = slides[i].dataset.label || '';
+    notesB.textContent = slides[i].dataset.notes || 'No notes for this slide.';
+    if (flash !== false) peek();
+    if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
+    if (window.parent !== window) {
+      window.parent.postMessage({ source: 'aic-deck', type: 'slide', slide: i + 1, total: slides.length, label: slides[i].dataset.label || '' }, '*');
+    }
+  }
+
+  // let a parent window (a review page embedding this deck in an iframe) drive navigation
+  addEventListener('message', function(e){
+    if (!e.data || e.data.source !== 'aic-deck-host') return;
+    if (e.data.type === 'goto' && typeof e.data.slide === 'number') show(e.data.slide - 1);
+    if (e.data.type === 'set-edit-mode') setEditMode(!!e.data.enabled);
+  });
+
+  function next(){
+    var g = groups(slides[i]), r = revealed(slides[i]);
+    if (r < g.length) setSteps(slides[i], r + 1);
+    else show(i + 1);
+  }
+  function prev(){
+    var r = revealed(slides[i]);
+    if (r > 0) setSteps(slides[i], r - 1);
+    else show(i - 1);
+  }
+
+  function peek(){
+    hud.classList.add('show');
+    clearTimeout(hudTimer);
+    hudTimer = setTimeout(function(){ hud.classList.remove('show'); }, 2200);
+  }
+
+  addEventListener('resize', fit);
+  addEventListener('mousemove', peek);
+
+  addEventListener('keydown', function(e){
+    if (e.target && (e.target.isContentEditable || e.target.tagName === 'INPUT')) {
+      if (e.key === 'Enter' || e.key === 'Escape') { e.preventDefault(); e.target.blur(); }
+      return;
+    }
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ') { next(); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') { prev(); e.preventDefault(); }
+    else if (k === 'Home') { show(0); e.preventDefault(); }
+    else if (k === 'End') { show(slides.length - 1); e.preventDefault(); }
+    else if (k === 'r' || k === 'R') { show(0); }
+    else if (k === 's' || k === 'S') { notes.classList.toggle('on'); }
+    else if (k === 'f' || k === 'F') {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+    }
+    else if (k === 'p' || k === 'P') { print(); }
+    else if (k >= '0' && k <= '9') {           // type 1-2 digits to jump
+      typed += k;
+      clearTimeout(show._t);
+      show._t = setTimeout(function(){
+        var n = parseInt(typed, 10); typed = '';
+        if (n >= 1 && n <= slides.length) show(n - 1);
+      }, 350);
+    }
+    else if (k === 'Escape') { notes.classList.remove('on'); }
+  });
+
+  // tap left / right half on touch, leaving links and buttons alone
+  addEventListener('click', function(e){
+    if (editMode) {
+      var img = e.target.closest('img');
+      if (img) { pendingImgTarget = img; editFileInput.click(); e.preventDefault(); }
+      return;
+    }
+    if (e.target.closest('a,button')) return;
+    if (e.clientX < innerWidth / 2) prev(); else next();
+  });
+
+  fit();
+  var start = parseInt((location.hash || '').slice(1), 10);
+  show(start >= 1 && start <= slides.length ? start - 1 : 0, false);
+})();
+</script>
+</body>
+</html>

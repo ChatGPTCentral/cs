@@ -37,3 +37,21 @@ file there) before rebuilding any deck.
 `build_mk_enterprise.py`, `casestudies.py`, `casestudies_extended.py`) and
 re-run `qa.js` on each before committing - a shared-file change touches
 every deck at once, so it's worth confirming all four still render clean.
+
+`_head.html` / `_tail.html` (added here 6 Sep 2026, previously untracked -
+they only ever lived as loose working files under `/home/claude/build/`)
+are the shared page chrome + runtime script every deck built from `mk.
+template.html`/`mk-enterprise.template.html`/the case-studies scripts gets
+baked in with: the slide-advance/build-step engine, the postMessage bridge
+a `/review/[deck]` page uses to drive navigation and read the current slide
+(`ai-central-forecaster`, `components/decks/ReviewClient.tsx`), and - as of
+6 Sep 2026 - inline edit mode (click-to-edit text, click-to-swap image).
+Edit mode is toggled by the host page posting `{source:'aic-deck-host',
+type:'set-edit-mode', enabled}`; edits save to Supabase via
+`/api/deck-edits` keyed by the deck's own filename slug and re-apply on
+every future load for every viewer, not just while editing - see that
+repo's `db/migrations/0012_deck_edits.sql`. Same sync rule as
+`deck_shared.py`: copy both files to `/home/claude/build/` before
+rebuilding any deck; `strategic/build/` keeps its own independent copy (a
+different deck, not part of the `/review/` registry) and is untouched by
+this one.
