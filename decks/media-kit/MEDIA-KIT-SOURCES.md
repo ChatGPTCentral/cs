@@ -425,3 +425,48 @@ branch (a829a4c); the two items worth a source note:
   logos enlarged again (90 -> 112px), and the "Let's talk" contact block
   now renders real `<a>` anchors (tel/mailto/https) instead of styled
   text.
+
+## Revision, 7 Sep 2026 (later) - dark footer bar, page nav, slide 2/13 follow-ups
+
+- **Footer redesign.** Now a full-bleed dark bar on every slide, light and
+  dark alike: deck label bottom-left, a standing "Have a question? Book a
+  call" link to cntral.ai/meet centered, page number bottom-right. Shared
+  layer (`deck_shared.py`'s `FOOT`/`make_renumber`, `_head.html`'s
+  `.foot` rules) - applies to any deck built from this runtime.
+- **Page nav.** A prev/current/next breadcrumb across the top of every
+  slide - previous slide muted and clickable, current slide as a pill,
+  next slide clickable - jumping via `#N` hrefs. New `page_nav()` in
+  `deck_shared.py`, opt-in per deck (only `mediakit.py` calls it so far,
+  since it needs every slide's label up front, unlike the per-slide
+  FOOT/renumber substitution); `_tail.html` gained a `hashchange`
+  listener so those links actually call `show()`. Surfaced two bugs
+  during wiring: the tag-end scan (`<section[^>]*>`) stopped at the
+  first `>`, and several slides' `data-notes` contain a literal `>` as
+  an arrow (e.g. "Beehiiv Newsletter > AI Central Newsletter") - fixed
+  with a quote-aware scanner. Also, `qa.js`'s overlap check started
+  flagging the world map chart on slide 5 as colliding with the new
+  full-width footer - a false positive: the map's raw path data extends
+  past its own viewBox (e.g. Antarctica, off the US-Europe corridor this
+  deck crops to), invisibly clipped by the SVG's own default
+  `overflow:hidden` but still measurable via `getBoundingClientRect()`.
+  `qa.js` now excludes `svg` descendants from that check.
+- **Slide 2 follow-ups.** `logo_tile()`'s placeholder branch (`src=None`)
+  now renders a real generated `<img>` (an SVG data URI with the name
+  baked in as its own text) instead of plain text, so edit mode's
+  click-to-swap-image works on a pending logo tile - Alex wants to
+  click WISPR Flow / SynthFlow AI / Lindy AI directly and upload without
+  a rebuild. Also reordered the 2nd stat card's text to lead with reach
+  ("Reaching readers in 151 countries and all 50 US states, across 7
+  channels") rather than the channel count.
+- **Slide 13 follow-ups.** Removed the Notion, Replit, UX Pilot and
+  SciSpace placeholder cards per Alex - back to the 7 clients with real
+  figures or real copy (Gamma, ElevenLabs, Guidde, Outskill, Luma AI,
+  HubSpot, Jobstream); resized the remaining cards up now that there's
+  more room. Alex asked to "link the logos ... to the cover one" - the
+  asset files for Gamma/ElevenLabs/Guidde/Outskill/Luma AI already
+  matched slide 2's (fixed in an earlier pass), so read this as also
+  wanting them clickable: those 5 logos, plus Jobstream's text-name
+  card, now link to slide 2 via the page-nav's hash navigation.
+  Flagged back to Alex that Jobstream has no tile on slide 2 at all, so
+  its link doesn't land on anything Jobstream-specific there - unsure
+  this is what "link" meant, pending his confirmation.
