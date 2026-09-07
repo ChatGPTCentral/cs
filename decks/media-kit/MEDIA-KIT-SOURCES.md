@@ -470,3 +470,42 @@ branch (a829a4c); the two items worth a source note:
   Flagged back to Alex that Jobstream has no tile on slide 2 at all, so
   its link doesn't land on anything Jobstream-specific there - unsure
   this is what "link" meant, pending his confirmation.
+
+## Revision, 7 Sep 2026 (evening) - footer/nav polish, Main Ad merge, slide 4/7/13 fixes
+
+- **Footer CTA true-centered.** The "Book a call" link used flex
+  `justify-content:space-between`, which only centers a middle child
+  when its two siblings are equal width - the deck label and page
+  number never are, so the CTA sat off-center. It's now absolutely
+  positioned at true `left:50%` of the bar, independent of the label
+  and page-number widths (`_head.html`'s `.foot`/`.fb-cta` rules).
+- **Slides 9+10 merged.** LinkedIn Main Ad and Email newsletter ads
+  were the same top-of-issue "main ad" format on two surfaces - Alex
+  flagged the redundancy directly. Merged into one "Main Ad" slide with
+  a unified what-you-receive/benefits list and both example images side
+  by side, beehiiv (HubSpot) first then LinkedIn (UX Pilot). The deck
+  drops from 15 to 14 slides; `mediakit.py`'s final assembly now
+  compacts the `S{}` dict keys after any merge/removal so page numbers
+  stay sequential (no gap where 10 used to be).
+- **Slide 10 (was 11, Premium formats).** Same bullet-divider
+  misalignment bug as slide 3's `usecase()` cards, in `premium()` this
+  time - fixed the same way (fixed-height "Ideal for" slot, top-aligned
+  bullets). Retitled "On-demand premium formats" per Alex's own wording.
+- **Slide 11 (was 12, How it works).** Kicker renamed "Our process"
+  (h2 stays "How it works").
+- **Slide 2.** Added a Jobstream placeholder logo tile (16th tile;
+  grid reflows from 5x3 to 4x4) so slide 13's Jobstream card would have
+  something on slide 2 to actually link to.
+- **Slide 12 (was 13, past campaigns).** HubSpot moved to the first
+  card. Grid switched from a 4-column CSS grid to a centered
+  flex-wrap layout (`flex:0 0 calc(25% - 15px)` per card,
+  `justify-content:center` on the row) so the uneven last row (3 of 7
+  cards) centers itself instead of leaving empty space on the right.
+- **Slide 4.** "Working with a solo creator"/"Working with AI Central"
+  titles enlarged again (34px -> 40px). Alex also flagged the green as
+  "not the green from my palette" - left unchanged rather than guess: it's
+  already the documented brand palette's asparagus (#62A758, verified
+  against the ai-central-brand skill's own color list), so I need the
+  actual hex or source he means before changing it.
+- **Slide 7.** Removed the "On request" price line from all 7 format
+  boxes per Alex - `fmt()` lost its now-unused `price` parameter.
