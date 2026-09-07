@@ -50,15 +50,22 @@ h2.wide{max-width:1620px}
 .subline{margin:26px 0 0;font-size:32px;font-weight:300;line-height:1.35;color:var(--muted);max-width:1500px}
 
 /* Full-bleed dark footer bar (7 Sep 2026, per Alex) - same on light and
-   dark slides, so no .dark override is needed for its own children. */
+   dark slides, so no .dark override is needed for its own children. The
+   label and page number sit at the fixed edges; the CTA is positioned
+   independently at true horizontal center (7 Sep 2026 follow-up - a
+   plain flex row with justify-content:space-between only centers the
+   middle child when its two siblings happen to be the same width, which
+   the label and page number never are), rather than relative-align
+   with them via flex distribution. */
 .foot{position:absolute;left:0;right:0;bottom:0;height:64px;z-index:5;
-  display:flex;align-items:center;justify-content:space-between;padding:0 106px;
-  background:var(--ink)}
+  display:flex;align-items:center;padding:0 106px;background:var(--ink)}
 .foot .fb-label{font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
   color:var(--muted-dark);white-space:nowrap}
-.foot .fb-cta{font-size:15px;font-weight:600;letter-spacing:.01em;color:var(--paper);
+.foot .fb-cta{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-size:15px;font-weight:600;letter-spacing:.01em;color:var(--paper);
   text-decoration:none;white-space:nowrap}
 .foot .fb-cta:hover{color:var(--accent)}
+.foot .pageno{margin-left:auto}
 .foot .pageno{font-size:14px;font-weight:600;letter-spacing:.15em;color:var(--muted-dark);
   font-variant-numeric:tabular-nums;white-space:nowrap}
 .badge{position:absolute;right:106px;bottom:80px;width:58px;height:58px;border-radius:50%;
