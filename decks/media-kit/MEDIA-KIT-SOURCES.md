@@ -339,3 +339,30 @@ Cozora's, fill the tile instead of getting shrunk onto a white card).
   (The AI Collective, Global Tech Advocates, London Tech Advocates,
   Cozora - all real, from the same zip). The AI Summit New York has no
   sourced logo anywhere and stays a placeholder tile pending that file.
+
+## Revision, 6 Sep 2026 - comment queue + closing slide + footer format
+
+Worked Alex's open `/review/media-kit` comment queue via `SELECT * FROM
+deck_comments WHERE deck_id = 'media-kit' AND status = 'open'`. Deck grew
+14 -> 18 slides. Full change list is in the commit message on the `decks`
+branch (a829a4c); the two items worth a source note:
+
+- **Slide 13, "Some of our past campaigns."** Alex asked to rebuild this
+  as a 4x2 logo grid including HubSpot, Notion and Jobstream. HubSpot and
+  Notion reuse the same logo assets already used on slide 2. "Jobstream"
+  has no logo asset in the deck's bundle and doesn't match any client
+  name in this file or in CASE-STUDIES-SOURCES.md - it renders as a
+  placeholder tile pending the logo file and a spelling check (could be a
+  misremembered name). This also means the slide no longer shows the
+  detailed measured figures (downloads, ad clicks) it used to carry for
+  the five sourced clients - those numbers are still real and still
+  logged in CASE-STUDIES-SOURCES.md, just not displayed here, since a
+  uniform 4x2 logo-square grid was Alex's explicit format request and a
+  mixed detailed/logo-only grid would have misrepresented the three
+  clients with no comparable figures on file.
+- **Footer format.** Page number moved out of the footer label string and
+  into its own bottom-right element - a shared-layer change in
+  `decks/_shared/deck_shared.py` / `_head.html`, so it applies to every
+  deck built from this runtime, not just the media kit. The footer LABEL
+  text itself ("MEDIA KIT 2026", quarter dropped) is media-kit-specific
+  and was changed only in `mediakit.py`.
