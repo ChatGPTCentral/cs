@@ -9,7 +9,7 @@ import json, pathlib, re, sys
 
 B = pathlib.Path("/home/claude/build")
 sys.path.insert(0, str(B))
-from deck_shared import FOOT, label, bullets, usecase, make_renumber, GOOD, BAD, logo_grid
+from deck_shared import FOOT, label, bullets, usecase, make_renumber, GOOD, BAD, logo_grid, page_nav
 
 head = (B / "_head.html").read_text().replace(
     "table{width:100%;border-collapse:collapse;margin-top:44px;table-layout:fixed}",
@@ -658,6 +658,46 @@ S[15] = f'''<!-- 15 {'─'*73} -->
   {FOOT}
 </section>'''
 
-out = head + "\n\n".join(renumber(S[i], i) for i in sorted(S)) + "\n\n" + tail
+# ── top page nav ─────────────────────────────────────────────────────────
+# Injected after renumbering, since it needs every slide's own data-label
+# up front rather than one slide at a time (unlike FOOT/renumber). See
+# page_nav() in deck_shared.py.
+def _label_of(sec):
+    m = re.search(r'data-label="([^"]*)"', sec)
+    return m.group(1) if m else ''
+
+def _end_of_open_tag(sec):
+    """Index just after the '>' that closes the leading <section ...> tag.
+    Scans quote-aware: data-notes frequently contains a literal '>' as an
+    arrow (e.g. "Beehiiv Newsletter > AI Central Newsletter"), and a plain
+    `sec.index('>')` or `<section[^>]*>` regex stops at that arrow instead
+    of the tag's real end, splicing whatever gets inserted into the middle
+    of the attribute string."""
+    i = sec.index('<section')
+    quote = None
+    while i < len(sec):
+        c = sec[i]
+        if quote:
+            if c == quote:
+                quote = None
+        elif c in '"\'':
+            quote = c
+        elif c == '>':
+            return i + 1
+        i += 1
+    raise ValueError("unterminated <section> tag")
+
+ns = sorted(S)
+numbered = {i: renumber(S[i], i) for i in ns}
+labels = {i: _label_of(numbered[i]) for i in ns}
+navved = {}
+for idx, i in enumerate(ns):
+    prev_i = ns[idx - 1] if idx > 0 else None
+    next_i = ns[idx + 1] if idx < len(ns) - 1 else None
+    nav = page_nav(prev_i, labels.get(prev_i, ''), labels[i], next_i, labels.get(next_i, ''))
+    pos = _end_of_open_tag(numbered[i])
+    navved[i] = numbered[i][:pos] + nav + numbered[i][pos:]
+
+out = head + "\n\n".join(navved[i] for i in ns) + "\n\n" + tail
 (B / "mk.template.html").write_text(out)
 print("media kit template:", len(S), "slides")

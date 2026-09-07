@@ -22,9 +22,16 @@ const fs = require('fs');
       const label = s.getAttribute('data-label') || '';
       const dy = s.scrollHeight - s.clientHeight, dx = s.scrollWidth - s.clientWidth;
       const chrome = [...s.querySelectorAll('.foot, .badge')];
+      // svg descendants excluded 7 Sep 2026: a cropped map chart's raw path
+      // data routinely extends past its own viewBox (e.g. Antarctica, off
+      // the US-Europe corridor this deck crops to) - invisibly clipped by
+      // the SVG's own default overflow:hidden, but getBoundingClientRect()
+      // still reports each <path>'s true, unclipped position. The full-
+      // width footer bar added the same day turned that long-invisible
+      // geometry into constant false-positive "overlaps" hits.
       const leaves = [...s.querySelectorAll('*')].filter(el =>
         !el.closest('.foot') && !el.closest('.badge') &&
-        !el.closest('[aria-hidden="true"]') && el.children.length === 0);
+        !el.closest('[aria-hidden="true"]') && !el.closest('svg') && el.children.length === 0);
       const hits = [];
       for (const c of chrome) {
         const cr = c.getBoundingClientRect();

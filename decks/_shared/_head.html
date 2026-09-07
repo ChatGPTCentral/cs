@@ -49,16 +49,38 @@ h2{margin-top:22px;font-size:76px;font-weight:700;line-height:.98;letter-spacing
 h2.wide{max-width:1620px}
 .subline{margin:26px 0 0;font-size:32px;font-weight:300;line-height:1.35;color:var(--muted);max-width:1500px}
 
-.foot{position:absolute;left:106px;bottom:46px;font-size:16px;font-weight:500;
-  letter-spacing:.2em;color:var(--muted)}
-.dark .foot{color:var(--faint-dark)}
-.pageno{position:absolute;right:106px;bottom:46px;font-size:16px;font-weight:500;
-  letter-spacing:.2em;color:var(--muted);font-variant-numeric:tabular-nums}
-.dark .pageno{color:var(--faint-dark)}
-.badge{position:absolute;right:106px;bottom:44px;width:58px;height:58px;border-radius:50%;
+/* Full-bleed dark footer bar (7 Sep 2026, per Alex) - same on light and
+   dark slides, so no .dark override is needed for its own children. */
+.foot{position:absolute;left:0;right:0;bottom:0;height:64px;z-index:5;
+  display:flex;align-items:center;justify-content:space-between;padding:0 106px;
+  background:var(--ink)}
+.foot .fb-label{font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted-dark);white-space:nowrap}
+.foot .fb-cta{font-size:15px;font-weight:600;letter-spacing:.01em;color:var(--paper);
+  text-decoration:none;white-space:nowrap}
+.foot .fb-cta:hover{color:var(--accent)}
+.foot .pageno{font-size:14px;font-weight:600;letter-spacing:.15em;color:var(--muted-dark);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.badge{position:absolute;right:106px;bottom:80px;width:58px;height:58px;border-radius:50%;
   font-size:24px;font-weight:700;text-align:center;line-height:58px;
   background:var(--ink);color:var(--paper)}
 .dark .badge{background:var(--paper);color:var(--ink)}
+
+/* ── top-of-slide page nav: prev (muted, clickable) - current (pill) -
+   next (clickable). Opt-in per deck - see deck_shared.py's page_nav(). */
+.pagenav{position:absolute;top:0;left:0;right:0;height:56px;z-index:5;
+  display:flex;align-items:center;justify-content:space-between;padding:0 106px}
+.pagenav .pn-side{flex:0 1 auto;max-width:36%;display:flex;align-items:center;gap:6px;
+  font-size:14px;font-weight:600;letter-spacing:.01em;text-decoration:none;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pagenav .pn-prev{color:var(--muted)}
+.pagenav .pn-next{color:var(--ink);justify-content:flex-end}
+.dark .pagenav .pn-next{color:var(--paper)}
+.pagenav .pn-prev:hover,.pagenav .pn-next:hover{color:var(--accent)}
+.pagenav .pn-current{flex:none;max-width:34%;padding:7px 22px;border-radius:20px;
+  background:var(--tint);font-size:13px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dark .pagenav .pn-current{background:var(--hair-dark);color:var(--paper)}
 
 /* ── click-to-reveal build steps ──────────────────────────────────────────── */
 .slide.on [data-step]{opacity:0;transform:translateY(16px);

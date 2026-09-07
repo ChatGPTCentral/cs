@@ -47,7 +47,17 @@ BAD = PALETTE["persian_red"]
 # inline SVG where a CSS var() can't reach)
 SURFACE, GRID, INK, MUTED = "#F3F1EC", "#E3DFD7", "#141414", "#6E6E6E"
 
-FOOT = '<div class="foot">AI CENTRAL</div><div class="pageno"></div>'
+# Footer is a full-bleed dark bar (7 Sep 2026, per Alex): deck label
+# bottom-left, a standing "book a call" CTA centered (same link on every
+# deck - not deck_label-dependent), page number bottom-right. Kept the
+# outer class as "foot" and the page-number cell as "pageno" even though
+# the markup grew, since every deck's qa.js/overlap.js already excludes
+# elements under ".foot" from the overlap check by that class name - and
+# `.pageno` cell's replace target below is unchanged.
+FOOT = ('<div class="foot"><div class="fb-label">AI CENTRAL</div>'
+        '<a class="fb-cta" href="https://cntral.ai/meet" target="_blank" rel="noopener">'
+        'Have a question? Book a call &rarr;</a>'
+        '<div class="pageno"></div></div>')
 
 
 def make_renumber(deck_label):
@@ -59,11 +69,29 @@ def make_renumber(deck_label):
     longer share one line."""
     def renumber(sec, n):
         sec = re.sub(r'<!-- \d\d ─+', f'<!-- {n:02d} ' + '─' * 73, sec, count=1)
-        sec = sec.replace('<div class="foot">AI CENTRAL</div>',
-                          f'<div class="foot">AI CENTRAL &nbsp;·&nbsp; {deck_label}</div>')
+        sec = sec.replace('<div class="fb-label">AI CENTRAL</div>',
+                          f'<div class="fb-label">AI CENTRAL &nbsp;&middot;&nbsp; {deck_label}</div>')
         sec = sec.replace('<div class="pageno"></div>', f'<div class="pageno">{n:02d}</div>')
         return sec.rstrip()
     return renumber
+
+
+def page_nav(prev_n, prev_label, cur_label, next_n, next_label):
+    """Top-of-slide breadcrumb (7 Sep 2026, per Alex): previous slide
+    (muted, clickable) on the left, the current slide as a pill in the
+    center, next slide (clickable) on the right - a folder-tab strip for
+    jumping slides without the arrow keys. `prev_n`/`next_n` are the
+    deck's own 1-based page numbers (None at the first/last slide); they
+    link to '#N', which _tail.html's hashchange listener turns into a
+    `show()` call. Opt-in per deck: call this from the build script's own
+    final-assembly step (see mediakit.py) - it isn't wired into
+    make_renumber/FOOT automatically, since it needs every slide's label
+    up front rather than one slide at a time."""
+    prev = (f'<a class="pn-side pn-prev" href="#{prev_n}">&lsaquo; {prev_label}</a>'
+            if prev_n else '<div class="pn-side pn-prev"></div>')
+    nxt = (f'<a class="pn-side pn-next" href="#{next_n}">{next_label} &rsaquo;</a>'
+           if next_n else '<div class="pn-side pn-next"></div>')
+    return f'<nav class="pagenav">{prev}<div class="pn-current">{cur_label}</div>{nxt}</nav>'
 
 
 # ── media kit helpers ────────────────────────────────────────────────────

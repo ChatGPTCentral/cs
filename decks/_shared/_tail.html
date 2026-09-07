@@ -186,6 +186,16 @@
     if (e.data.type === 'set-edit-mode') setEditMode(!!e.data.enabled);
   });
 
+  // the top-of-slide page nav (deck_shared.py's page_nav()) links to plain
+  // '#N' hrefs rather than calling show() directly, so a middle-click or
+  // "open in new tab" on a nav link still does something sane. A real hash
+  // navigation (unlike show()'s own history.replaceState calls) fires
+  // 'hashchange', so this is the only listener needed to make those links work.
+  addEventListener('hashchange', function(){
+    var n = parseInt((location.hash || '').slice(1), 10);
+    if (n >= 1 && n <= slides.length) show(n - 1);
+  });
+
   function next(){
     var g = groups(slides[i]), r = revealed(slides[i]);
     if (r < g.length) setSteps(slides[i], r + 1);
