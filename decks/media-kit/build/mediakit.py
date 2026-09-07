@@ -558,7 +558,8 @@ def campaign_card(src, name, objective, package, result, body, placeholder=False
 S[13] = f'''<!-- 13 {'─'*73} -->
 <section class="slide light" data-label="Some of our past campaigns"
   data-notes="Retitled from 'Case studies', 6 Sep 2026 per Alex. Rebuilt again 7 Sep 2026 per Alex: (a) logos now use the EXACT same asset keys as slide 2's grid - this fixes a real bug, Luma AI was rendering as a text placeholder here even though a real Luma icon (grid_luma) already exists and is used on slide 2; (b) the per-client text (objective/package/result/body) is back, for pagination. Gamma, ElevenLabs, Guidde, Outskill and Luma AI keep their real, sourced figures (CASE-STUDIES-SOURCES.md, unchanged from the original 5-tile version of this slide). HubSpot, Notion, Jobstream, Replit, UX Pilot and SciSpace have no sourced campaign figures anywhere in this deck's records, so per Alex's own instruction ('typeset some lorem ipsum and i'll fill it up myself') those cards carry placeholder lorem ipsum text, marked with a dashed border and muted italic type so they read as unfinished rather than as real numbers.
-  7 Sep 2026, follow-up: Replit and UX Pilot added as two more placeholder cards per Alex ('go with the other comments' - confirming the two follow-up questions left on this slide's old flagged comments). Both reuse the same logo assets already used on slide 2 (grid_replit, grid_uxpilot). SciSpace added the same way but has no logo asset anywhere in the deck's bundle, so it's a text placeholder like Jobstream. Alex noted he's producing the final case-study figures himself now, so all six no-data cards stay as lorem ipsum pending that - grid is 11 cards, 4/4/3 across three rows.">
+  7 Sep 2026, follow-up: Replit and UX Pilot added as two more placeholder cards per Alex ('go with the other comments' - confirming the two follow-up questions left on this slide's old flagged comments). Both reuse the same logo assets already used on slide 2 (grid_replit, grid_uxpilot). SciSpace added the same way but has no logo asset anywhere in the deck's bundle, so it's a text placeholder like Jobstream.
+  7 Sep 2026, later: HubSpot and Jobstream filled in with real copy Alex supplied directly (his own words, lightly fitted to the card's objective/package/result/body shape, not rewritten) - no longer lorem ipsum. Jobstream's name and existence as a real client is now confirmed by this (it was flagged earlier as possibly misremembered); it still has no logo file, so it stays a text-name card. Notion, Replit, UX Pilot and SciSpace remain lorem ipsum pending their own figures.">
   <div class="kicker">PAST CAMPAIGNS</div>
   <h2>Some of our past campaigns</h2>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px">
@@ -577,9 +578,14 @@ S[13] = f'''<!-- 13 {'─'*73} -->
     {campaign_card(A.get('grid_luma'), "Luma AI",
       "Drive trial signups for Luma's AI image and video tools", "10 bespoke LinkedIn Carousels, 2 campaigns",
       "2,944 downloads", "Explainer carousels for teams evaluating Luma's image and video tools, across two campaigns. Bought twice")}
-    {campaign_card(A.get('grid_hubspot'), "HubSpot", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
+    {campaign_card(A.get('grid_hubspot'), "HubSpot",
+      "Sustained demand generation for HubSpot's free AI offers", "129 email placements across 88 sends",
+      "14,683 clicks", "Seven months of unbroken presence in the daily send, averaging 167 clicks per issue. Renewed every week since January.")}
     {campaign_card(A.get('grid_notion'), "Notion", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
-    {campaign_card(None, "Jobstream", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
+    {campaign_card(None, "Jobstream",
+      "Brand awareness for Jobstream's job board launch, driving downloads on two proprietary whitepapers",
+      "2 bespoke whitepapers, a conference one-pager, a dedicated website section with branded job board, across 2 dedicated newsletter issues",
+      "65,453 views", "Two whitepapers built around Katie Fortunato's own POV and Jobstream's proprietary data, driving 330 whitepaper downloads and 4,579 views on a dedicated website section that outperformed initial projections - 3m 30s average dwell time, 3.5x the site average.")}
     {campaign_card(A.get('grid_replit'), "Replit", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
     {campaign_card(A.get('grid_uxpilot'), "UX Pilot", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
     {campaign_card(None, "SciSpace", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
