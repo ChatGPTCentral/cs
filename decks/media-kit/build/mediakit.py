@@ -198,7 +198,7 @@ def pub(n_, logo, name, sub, ideal, stats, foot):
 S[6] = f'''<!-- 06 {'─'*73} -->
 <section class="slide light" data-label="The publications"
   data-notes="Reordered and renamed per Alex, 4 Sep 2026: beehiiv leads, the two LinkedIn surfaces named as distinct AI Central properties rather than 'LinkedIn Newsletter'/'LinkedIn Company Page'. Figures unchanged from the Q3 kit / beehiiv API - LinkedIn newsletter and company page figures are from the Q3 kit, sourced from Favikon on 18 Aug 2026 - not independently verifiable here. beehiiv figures are LIVE from the beehiiv API on 2 Sep 2026: 97,681 active subscribers, 29.7% open rate and 2.34% click rate over the last 4 weeks, +4,906 new subscribers in the same window. The docx said 86K subscribers / 30.25% / 2.48% - the 86K was average sends, not active subscribers. Alex asked to connect LinkedIn for a live data pull instead of the Favikon snapshot - flagged back to him, no LinkedIn integration available in this session.
-  6 Sep 2026, per Alex: reordered again (beehiiv, LinkedIn Newsletter, LinkedIn Company Page); 'Average unique ad clicks' dropped from beehiiv (the other two never carried it, so it wasn't a fair three-way comparison); 'Ideal for' renamed 'Clients buy this for' and moved to the bottom of the card, larger; 'Posts a week' added for beehiiv and the LinkedIn Newsletter (4x, per Alex - both are the weekly-cadence AI Central sends) alongside the Company Page's existing Daily; a fourth box added below for thecentral.ai itself, reusing the already-sourced 20,000-visits/month figure quoted on slides 7 and 11.">
+  6 Sep 2026, per Alex: reordered again (beehiiv, LinkedIn Newsletter, LinkedIn Company Page); 'Average unique ad clicks' dropped from beehiiv (the other two never carried it, so it wasn't a fair three-way comparison); 'Ideal for' renamed 'Clients buy this for' and moved to the bottom of the card, larger; 'Posts a week' added for beehiiv and the LinkedIn Newsletter (4x, per Alex - both are the weekly-cadence AI Central sends) alongside the Company Page's existing Daily; a fourth box added below for thecentral.ai itself, reusing the already-sourced 20,000-visits/month figure quoted on slides 7 and 11. 7 Sep 2026: that fourth box moved from a dark/ink background to the same tint grey as the other three, per Alex.">
   <div class="kicker">THE PUBLICATIONS</div>
   <h2>Three publications, one senior audience</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px">
@@ -215,17 +215,19 @@ S[6] = f'''<!-- 06 {'─'*73} -->
       ("Average impressions per post", "4,500+"), ("Posts a week", "Daily")],
       "Source: Favikon, 18 Aug 2026")}
   </div>
-  <div data-step="4" style="margin-top:22px;background:var(--ink);padding:22px 28px;display:flex;align-items:center;justify-content:space-between">
-    <div style="font-size:24px;font-weight:700;color:var(--paper)">AI Central Website <span style="font-weight:300;color:var(--muted-dark)">· thecentral.ai</span></div>
+  <div data-step="4" style="margin-top:22px;background:var(--tint);padding:22px 28px;display:flex;align-items:center;justify-content:space-between">
+    <div style="font-size:24px;font-weight:700;color:var(--ink)">AI Central Website <span style="font-weight:300;color:var(--muted)">· thecentral.ai</span></div>
     <div style="font-size:22px;font-weight:700;color:var(--accent)">20,000 visitors a month</div>
   </div>
   {FOOT}
 </section>'''
 
 # ── 06 Advertising options ──────────────────────────────────────────────────
-CH_LINKEDIN = [(A['logo_linkedin'], "LinkedIn")]
-CH_NEWSLETTER = [(A['logo_beehiiv'], "Newsletter")]
-CH_WEBSITE = [(A['logo_aicentral'], "Website")]
+CH_BEEHIIV = [(A['logo_beehiiv'], "Beehiiv Newsletter")]
+CH_LI_NEWS = [(A['logo_linkedin'], "LinkedIn Newsletter")]
+CH_LI_PAGE = [(A['logo_linkedin'], "LinkedIn Company Page")]
+CH_WEBSITE = [(A['logo_aicentral'], "thecentral.ai website")]
+CH_BOTH_NEWS = CH_BEEHIIV + CH_LI_NEWS
 
 def fmt(n_, name, what, ideal, price, channels):
     avail = "".join(
@@ -245,46 +247,51 @@ def fmt(n_, name, what, ideal, price, channels):
 
 S[7] = f'''<!-- 07 {'─'*73} -->
 <section class="slide light" data-label="Advertising options"
-  data-notes="Seven formats (Tools Ad removed per Alex, 6 Sep 2026 - the kit's own docx never gave it a list price either). The first three carry a public rate card (slides 8-13, now interleaved with no-price versions of each - see those slides). The other four are quoted per campaign. Each box carries an 'Available on' row per Alex, 6 Sep 2026: welcome sequence and both ads are newsletter-only (not possible on either LinkedIn surface); the carousel/ebook and main ad are LinkedIn-only; the website banner is website-only - these are hard platform constraints, not marketing copy.">
+  data-notes="Rebuilt per Alex, 7 Sep 2026, into the seven boxes he specified directly (numbered list in his comment): Newsletter Main Ad and Newsletter Secondary Ad each now cover BOTH the beehiiv and LinkedIn newsletters as one box, rather than being split into separate LinkedIn/Email formats as before; the ebook and carousel are merged into one box; Dedicated Issue, Welcome Sequence and Website Banner carry over; Social Media Post is new. Alex's own list gave explicit 'Price: On request' for boxes 01-03 and left 04-07 without a price line - since every box on this slide has always shown a price/label at the bottom as part of the card design, the same 'On request' was kept for 04-07 too rather than leaving those four cards visually unfinished; flag if that reads wrong and any of them should carry a real number instead. Availability rows match his channel lists exactly. Box 07's description is a first draft - Alex left [Description] blank for it, so this is Claude's best guess at the offer (a dedicated LinkedIn company-page post) pending his actual copy.">
   <div class="kicker">ADVERTISING OPTIONS</div>
   <h2>Seven ways to reach them</h2>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px">
-    {fmt(1, "LinkedIn Carousel", "A co-branded PDF of up to 15 slides, made by our team, published in the feed", "education-led demand and building credibility", "From $699", CH_LINKEDIN)}
-    {fmt(2, "LinkedIn Main Ad", "Top placement in the LinkedIn newsletter. One partner per issue", "desktop offers: demos, extensions", "From $899", CH_LINKEDIN)}
-    {fmt(3, "Email Primary Ad", "Top placement in the email newsletter. One partner per issue", "mobile offers: downloads, webinars", "From $1,299", CH_NEWSLETTER)}
-    {fmt(4, "Email Secondary Ad", "Mid-issue placement, below the main editorial", "always-on awareness at a lower entry point", "On request", CH_NEWSLETTER)}
+    {fmt(1, "Newsletter Main Ad", "Top placement in the newsletter, on both surfaces. One partner per issue", "mobile and desktop offers: downloads, webinars, demos, extensions", "On request", CH_BOTH_NEWS)}
+    {fmt(2, "Newsletter Secondary Ad", "Mid-issue placement, below the main editorial, on both surfaces", "always-on awareness at a lower entry point", "On request", CH_BOTH_NEWS)}
+    {fmt(3, "Bespoke Ebook or LinkedIn Carousel", "A co-branded PDF or interactive flipbook, made by our team, published in the feed and the newsletter", "education-led demand and building credibility", "On request", CH_BOTH_NEWS)}
+    {fmt(4, "Dedicated Issue", "The whole send is yours. Written by our editors in the AI Central voice", "major launches and high-ticket offers", "On request", CH_BOTH_NEWS)}
   </div>
   <div data-step="2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
-    {fmt(5, "Dedicated Issue", "The whole send is yours. Written by our editors in the AI Central voice", "major launches and high-ticket offers", "On request", CH_NEWSLETTER)}
-    {fmt(6, "Welcome Sequence", "A dedicated email to every new subscriber for 3 months", "predictable, compounding lead flow", "On request", CH_NEWSLETTER)}
-    {fmt(7, "Website Banner", "Always-on banner on thecentral.ai, 20,000 visits a month", "continuous visibility between campaigns", "On request", CH_WEBSITE)}
+    {fmt(5, "Welcome Sequence", "A dedicated email to every new subscriber for 3 months", "predictable, compounding lead flow", "On request", CH_BEEHIIV)}
+    {fmt(6, "Website Banner", "Always-on banner on thecentral.ai, 20,000 visits a month", "continuous visibility between campaigns", "On request", CH_WEBSITE)}
+    {fmt(7, "Social Media Post", "A dedicated post on our LinkedIn company page, in the AI Central voice, tagging your brand", "sustained brand visibility and thought leadership", "On request", CH_LI_PAGE)}
   </div>
   {FOOT}
 </section>'''
 
-def no_price_slide(data_label, kicker, title, subline, receive_items, image_src, image_alt, benefits_items, data_notes,
-                    image_style="width:100%;border-radius:6px"):
+def no_price_slide(data_label, kicker, title, subline, sections, image_src, image_alt, data_notes,
+                    image_style="max-width:100%;max-height:620px;border-radius:6px"):
+    """sections: list of (heading, items) tuples, stacked top to bottom on the
+    left. Right side is the example image alone - per Alex, 7 Sep 2026:
+    left column text, right column image, not image-under-text."""
+    left = "".join(
+        f'<div style="margin-top:{0 if idx == 0 else 22}px">{label(heading)}'
+        f'<div style="margin-top:8px">{bullets(items, 18, 6)}</div></div>'
+        for idx, (heading, items) in enumerate(sections))
     return f'''<!-- 00 {'─'*73} -->
 <section class="slide light" data-label="{data_label}" data-notes="{data_notes}">
   <div class="kicker">{kicker}</div>
   <h2>{title}</h2>
-  <p class="subline">{subline}</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:24px;align-items:start">
-    <div data-step="1">
-      {label("What you receive")}
-      <div style="margin-top:8px">{bullets(receive_items, 19, 6)}</div>
-      <div style="margin-top:16px;text-align:center"><img src="{image_src}" alt="{image_alt}" style="{image_style}"></div>
-    </div>
-    <div data-step="2">
-      {label("Benefits")}
-      <div style="margin-top:8px">{bullets(benefits_items, 19, 8)}</div>
+  <p class="subline" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{subline}</p>
+  <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:44px;margin-top:20px;align-items:center">
+    <div data-step="1">{left}</div>
+    <div data-step="2" style="text-align:center">
+      <img src="{image_src}" alt="{image_alt}" style="{image_style}">
     </div>
   </div>
   {FOOT}
 </section>'''
 
 # ── 07 LinkedIn Carousel ────────────────────────────────────────────────────
-S[8] = f'''<!-- 08 {'─'*73} -->
+# HIDDEN per Alex, 7 Sep 2026 ("let's hide this one for now while we close
+# the non-price one") - kept here, out of the S[] sequence, so it isn't lost
+# and can go straight back in once the no-price version is settled.
+_HIDDEN_SLIDE_BESPOKE_EBOOK_PRICED = f'''<!-- 08 {'─'*73} -->
 <section class="slide light" data-label="Bespoke Ebook"
   data-notes="Renamed from 'LinkedIn Carousel' to 'Bespoke Ebook' per Alex, 4 Sep 2026. Standalone ebook-only rows (1/3/5, with their discount-tier framing) removed per Alex - only the ebook+Main-Ad bundle rows remain; 'PDF downloads' minimum dropped from those rows, impressions kept. Alex's comment referred to the bundle partner as 'LinkedIn Dedicated Issue' - the bundle table has always paired the ebook with LinkedIn Main Ad, a different, separately-priced format from the on-request Dedicated Issue (slide 11). Kept as Main Ad pending confirmation - flagged back to Alex. Rate card from 02_products_pricing.md (matches the Q2 playbook).
   KNOWN ISSUE, not yet fixed: Morgane flagged the carousel-examples image background as 'weird' - needs either a replacement image or specifics on what's wrong; nothing changed here pending that.">
@@ -317,23 +324,30 @@ S[8] = f'''<!-- 08 {'─'*73} -->
 </section>'''
 
 # ── 08b Bespoke Ebook, no-price version ─────────────────────────────────────
-S[9] = no_price_slide(
-  "Bespoke Ebook — no price", "ADVERTISING OPTIONS · 1/3 · FORMAT DETAIL", "Bespoke Ebook",
-  "Scroll-stopping, educational storytelling in the feed. Our team writes and designs it, you approve it, we publish it",
-  ["Up to 15 slides, co-branded, designed by our in-house team",
-   "Your link on every slide: 15 to 20 calls to action",
-   "A lifetime spot in the AI Library, 2,000+ views a month",
-   "Full republishing rights, plus 10% off any new main ad order",
-   "A performance report after publication"],
+S[8] = no_price_slide(
+  "Bespoke Ebook — no price", "ADVERTISING OPTIONS · FORMAT DETAIL", "Bespoke Ebook",
+  "Scroll-stopping storytelling, designed by our team and published in the feed",
+  [("What you receive", [
+      "Up to 15 pages, delivered as both a PDF and an interactive flipbook",
+      "Your link on every page",
+      "A dedicated send to our full list",
+      "Distribution across our social media channels"]),
+   ("Benefits", [
+      "A lifetime asset: stays live and discoverable long after the campaign ends",
+      "Full republishing rights - reuse it on your own channels",
+      "5% off any new order",
+      "Positions you as the go-to resource for the topic, not just another ad"]),
+   ("Examples", [
+      "10 Design Prompts You Must Try",
+      "How Enterprises Scale AI Voice Globally",
+      "The Ultimate Canva Updates For Creators",
+      "Fix Your LinkedIn Profile With AI"])],
   A['carousels'], "Ebook examples for Gamma, ElevenLabs, Canva, Guidde and Comet",
-  ["Scroll-stopping storytelling that builds credibility, not just clicks",
-   "A lifetime asset: stays live in the AI Library long after the campaign ends",
-   "Positions you as the go-to resource for the topic, not just another ad",
-   "Full republishing rights - reuse it on your own channels"],
-  "No-price version of slide 8, added per Alex 6 Sep 2026: same what-you-receive list and example image, plus a new benefits block, no rate card. For sharing the format itself without quoting a number.")
+  "No-price version of the ebook slide (the priced version is hidden for now, per Alex). 7 Sep 2026, per Alex: subtitle shortened to one line; what-you-receive and benefits were saying the same things (lifetime asset, republishing rights showed up in both) so they're split for real now - deliverables in one, outcomes in the other, plus a new third 'Examples' section naming actual past ebook titles pulled from the example image itself (Gamma, ElevenLabs, Canva, Guidde, Comet - not invented). '5% off any new order' and 'a dedicated send' are new claims from Alex's comment, not yet cross-checked against 02_products_pricing.md - flag if that discount rate or deliverable isn't accurate.")
 
 # ── 08 LinkedIn Main Ad ─────────────────────────────────────────────────────
-S[10] = f'''<!-- 09 {'─'*73} -->
+# HIDDEN per Alex, 7 Sep 2026 - see the same note on the ebook slide above.
+_HIDDEN_SLIDE_LINKEDIN_MAIN_AD_PRICED = f'''<!-- 09 {'─'*73} -->
 <section class="slide light" data-label="LinkedIn Main Ad"
   data-notes="Reordered to what-you-receive / packages / example, matching slide 8's structure, per Alex 4 Sep 2026. 'Minimum results' renamed 'Expected results' and click figures dropped, impressions kept. Max CPM/CPC sentence removed. Rate card from 02_products_pricing.md. Every Main Ad price is built to upsell into the ebook bundle for a small step: 1 ad $899 -> 1 ebook + 1 ad $999; 3 ads $2,499 -> $2,799; 5 ads $3,799 -> $4,499. The example creative is the UX Pilot DALL-E 3 Playbook placement from the kit.">
   <div class="kicker">ADVERTISING OPTIONS · 2/3</div>
@@ -372,25 +386,26 @@ S[10] = f'''<!-- 09 {'─'*73} -->
 </section>'''
 
 # ── 09b LinkedIn Main Ad, no-price version ──────────────────────────────────
-S[11] = no_price_slide(
-  "LinkedIn Main Ad — no price", "ADVERTISING OPTIONS · 2/3 · FORMAT DETAIL", "LinkedIn Main Ad",
-  "Premium placement at the top of our LinkedIn newsletter. Limited to one partner per issue. Sent as an email and posted in the feed",
-  ["Your logo at the top of the newsletter",
-   "Custom headline up to 10 words, copy up to 60 words",
-   "Large HD creative, 1920 x 1080",
-   "A dedicated call to action with a tracked link and pixel ID for retargeting",
-   "Your team can comment and engage, which helps the post travel",
-   "Lifetime SEO value: LinkedIn newsletters rank on linkedin.com's domain"],
+S[9] = no_price_slide(
+  "LinkedIn Main Ad — no price", "ADVERTISING OPTIONS · FORMAT DETAIL", "LinkedIn Main Ad",
+  "Premium placement at the top of our LinkedIn newsletter. Limited to one partner per issue",
+  [("What you receive", [
+      "Your logo at the top of the newsletter",
+      "Custom headline up to 10 words, copy up to 60 words",
+      "Large HD creative, 1920 x 1080",
+      "A dedicated call to action with a tracked link and pixel ID for retargeting"]),
+   ("Benefits", [
+      "Team engagement helps the post travel further in the feed",
+      "Lifetime SEO value - LinkedIn newsletters rank on linkedin.com's own domain",
+      "Pixel-based retargeting turns viewers into a warm audience for later campaigns",
+      "One placement, two surfaces: sent as an email and posted in the feed"])],
   A['shot_li_ad'], "Example: UX Pilot main ad in the LinkedIn newsletter",
-  ["Team engagement helps the post travel further in the feed",
-   "Lifetime SEO value - LinkedIn newsletters rank on linkedin.com's own domain",
-   "Pixel-based retargeting turns viewers into a warm audience for later campaigns",
-   "One placement, two surfaces: sent as an email and posted in the feed"],
-  "No-price version of slide 10, added per Alex 6 Sep 2026: same what-you-receive list and example image, plus a new benefits block, no rate card.",
-  image_style="max-height:270px;width:auto;max-width:100%;border-radius:6px;border:1px solid var(--hair)")
+  "No-price version of the LinkedIn Main Ad slide (the priced version is hidden for now, per Alex). 7 Sep 2026, per Alex: same left-text/right-image structure as the ebook slide - what you receive and benefits stacked on the left, the example image alone on the right.",
+  image_style="max-width:100%;max-height:560px;border-radius:6px;border:1px solid var(--hair)")
 
 # ── 09 Email ads (beehiiv) ──────────────────────────────────────────────────
-S[12] = f'''<!-- 10 {'─'*73} -->
+# HIDDEN per Alex, 7 Sep 2026 - see the same note on the ebook slide above.
+_HIDDEN_SLIDE_EMAIL_ADS_PRICED = f'''<!-- 10 {'─'*73} -->
 <section class="slide light" data-label="Email newsletter ads"
   data-notes="Reordered to placements / packages / example, matching slide 8, per Alex 4 Sep 2026. 'Minimum results' renamed 'Expected results', click figures dropped (impressions kept), Max CPM/CPC sentence removed. Tools Ad eliminated per Alex (also flagged on slide 7) - two placements remain, not three. Primary Ad rate card from 02_products_pricing.md. Secondary ad has no list price in any source - the clicks-per-issue range (30-80) comes from the kit's own tier graphic; ask Alex before quoting it. Example creative is the HubSpot co-branded issue.">
   <div class="kicker">ADVERTISING OPTIONS · 3/3</div>
@@ -424,20 +439,22 @@ S[12] = f'''<!-- 10 {'─'*73} -->
 </section>'''
 
 # ── 10b Email newsletter ads, no-price version ──────────────────────────────
-S[13] = no_price_slide(
-  "Email newsletter ads — no price", "ADVERTISING OPTIONS · 3/3 · FORMAT DETAIL", "Email newsletter ads",
-  "Two placements in every issue. Sent to 97K+ subscribers and published on thecentral.ai",
-  ["Top-of-issue placement above all editorial, or a mid-issue placement between editorial blocks",
-   "Logo, custom headline and copy, HD creative, one call to action",
-   "Sent to 97K+ subscribers and published on thecentral.ai",
-   "Full look-through analytics of openers and clickers"],
+S[10] = no_price_slide(
+  "Email newsletter ads — no price", "ADVERTISING OPTIONS · FORMAT DETAIL", "Email newsletter ads",
+  "Two placements in every issue, sent to 97K+ subscribers",
+  [("What you receive", [
+      "Top-of-issue placement above all editorial, or a mid-issue placement between editorial blocks",
+      "Logo, custom headline and copy, HD creative, one call to action",
+      "Sent to 97K+ subscribers and published on thecentral.ai",
+      "Full look-through analytics of openers and clickers"]),
+   ("Benefits", [
+      "Placed inside a publication readers already trust and open",
+      "Full look-through analytics of openers and clickers, for retargeting",
+      "Reaches a senior, high-intent inbox, not a cold list",
+      "Compounds with every issue as recurring placements build recognition"])],
   A['shot_hubspot'], "Example: HubSpot co-branded issue",
-  ["Placed inside a publication readers already trust and open",
-   "Full look-through analytics of openers and clickers, for retargeting",
-   "Reaches a senior, high-intent inbox, not a cold list",
-   "Compounds with every issue as recurring placements build recognition"],
-  "No-price version of slide 12, added per Alex 6 Sep 2026: what-you-receive summarizes both placements, plus a new benefits block, no rate card.",
-  image_style="max-height:390px;width:auto;max-width:100%;border-radius:6px;border:1px solid var(--hair)")
+  "No-price version of the email newsletter ads slide (the priced version is hidden for now, per Alex). 7 Sep 2026, per Alex: same left-text/right-image structure as the ebook slide.",
+  image_style="max-width:100%;max-height:580px;border-radius:6px;border:1px solid var(--hair)")
 
 # ── 10 Premium formats ──────────────────────────────────────────────────────
 def premium(n_, name, what, ideal):
@@ -447,9 +464,10 @@ def premium(n_, name, what, ideal):
       <div style="margin-top:16px;flex:1;display:flex;flex-direction:column;justify-content:center">{bullets(what, 18, 18)}</div>
     </div>'''
 
-S[14] = f'''<!-- 11 {'─'*73} -->
+S[11] = f'''<!-- 11 {'─'*73} -->
 <section class="slide light" data-label="Premium formats"
-  data-notes="Wireframe renders removed, 'ideal for' moved up under the title, boxes made full-height with bullets spaced out, per Alex 4 Sep 2026. The three formats without a list price. Quote per campaign; the pricing reference frames dedicated issues and multi-touch bundles at $5K to $10K+.">
+  data-notes="Wireframe renders removed, 'ideal for' moved up under the title, boxes made full-height with bullets spaced out, per Alex 4 Sep 2026. The three formats without a list price. Quote per campaign; the pricing reference frames dedicated issues and multi-touch bundles at $5K to $10K+.
+  7 Sep 2026: Alex flagged 'this title is wrong - revert to the old one' and 'website banner description is wrong', but didn't say what the old title was or what's wrong with the Website Banner box specifically - this slide's own title/kicker weren't touched in today's edits, and the Website Banner copy here ('Always-on banner on thecentral.ai, 20,000 visitors a month, every page') is the same figure quoted on slide 7. Left as-is pending clarification rather than guessing at a change that might be wrong in a different direction - which slide he meant, what title he wants instead, and what's specifically incorrect about the banner description.">
   <div class="kicker">PREMIUM FORMATS · QUOTED PER CAMPAIGN</div>
   <h2>When one placement is not enough</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px">
@@ -479,29 +497,38 @@ S[14] = f'''<!-- 11 {'─'*73} -->
 </section>'''
 
 # ── 11 How it works ──────────────────────────────────────────────────────────
-def step(n_, title, body):
+# Light-to-solid azul ramp, 7 Sep 2026 per Alex ("circles in scale of colors
+# from light blue to solid blue") - 6 steps interpolated from a pale tint of
+# the brand accent up to the accent itself (var(--accent) = #046BB1), so step
+# 6 still reads as the same blue used everywhere else in the deck. The first
+# three get dark text (the tints are too light for white to sit on).
+STEP_BG = ["#CFE6F5", "#A6CDE7", "#7EB5DA", "#559CCC", "#2D84BF", "#046BB1"]
+STEP_FG = ["var(--ink)", "var(--ink)", "var(--ink)", "#fff", "#fff", "#fff"]
+
+def step(idx, n_, title, body):
     return f'''<div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px">
-      <div style="width:72px;height:72px;border-radius:50%;background:var(--accent);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;flex:none">{n_}</div>
+      <div style="width:72px;height:72px;border-radius:50%;background:{STEP_BG[idx]};color:{STEP_FG[idx]};display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;flex:none">{n_}</div>
       <div style="margin-top:20px;font-size:26px;font-weight:700">{title}</div>
       <div style="margin-top:8px;font-size:19px;font-weight:300;line-height:1.4;color:var(--muted)">{body}</div>
     </div>'''
 
-S[15] = f'''<!-- 12 {'─'*73} -->
+S[12] = f'''<!-- 12 {'─'*73} -->
 <section class="slide light" data-label="How it works"
   data-notes="Redrawn as a single left-to-right transit line (station stops connected by one line), per Alex 4 Sep 2026 - matches the brand's 'central station' identity concept. Title simplified to 'How it works'. Guaranteed results policy box and the discount lines (10% new clients, 10% new main ad orders) removed per Alex; the custom-bundles line survives on its own since it isn't a discount. Six steps restored from the Q2 2026 Figma pitch deck at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md.
-  6 Sep 2026, per Alex: the grey 'custom bundles' box removed; the diagram enlarged (circles, titles and body copy all bigger) and centered vertically in the space between the title and the footer, rather than pinned to a fixed margin under the title.">
+  6 Sep 2026, per Alex: the grey 'custom bundles' box removed; the diagram enlarged (circles, titles and body copy all bigger) and centered vertically in the space between the title and the footer, rather than pinned to a fixed margin under the title.
+  7 Sep 2026, per Alex: circles now run light blue to solid blue left to right, instead of one flat accent color on all six.">
   <div class="kicker">HOW IT WORKS</div>
   <h2>How it works</h2>
   <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
     <div style="position:relative">
       <div style="position:absolute;top:36px;left:36px;right:36px;height:2px;background:var(--hair)"></div>
       <div style="position:relative;display:flex;justify-content:space-between">
-        {step("1", "Brief", "We agree the goal, the content angle, the target reader, and the date")}
-        {step("2", "Create", "Our team writes and designs the placement. You approve it before it goes out")}
-        {step("3", "Publish", "We publish across the agreed channels: email, LinkedIn newsletter, feed, website")}
-        {step("4", "Check in", "A mid-campaign call to review performance so far and adjust if needed")}
-        {step("5", "Report", "You get a performance report: impressions, clicks, downloads, signups")}
-        {step("6", "Plan the next one", "We bring follow-up campaign ideas based on what worked")}
+        {step(0, "1", "Brief", "We agree the goal, the content angle, the target reader, and the date")}
+        {step(1, "2", "Create", "Our team writes and designs the placement. You approve it before it goes out")}
+        {step(2, "3", "Publish", "We publish across the agreed channels: email, LinkedIn newsletter, feed, website")}
+        {step(3, "4", "Check in", "A mid-campaign call to review performance so far and adjust if needed")}
+        {step(4, "5", "Report", "You get a performance report: impressions, clicks, downloads, signups")}
+        {step(5, "6", "Plan the next one", "We bring follow-up campaign ideas based on what worked")}
       </div>
     </div>
   </div>
@@ -509,40 +536,59 @@ S[15] = f'''<!-- 12 {'─'*73} -->
 </section>'''
 
 # ── 13 Some of our past campaigns ────────────────────────────────────────────
-def campaign_tile(src, name):
-    if src:
-        inner = f'<img src="{src}" alt="{name}" style="max-width:72%;max-height:56%;object-fit:contain">'
-        bg = "#fff"
-    else:
-        inner = f'<div style="color:#fff;font-size:16px;font-weight:700;letter-spacing:.02em;text-align:center;padding:0 14px">{name}</div>'
-        bg = "#141414"
-    return (f'<div style="background:{bg};height:170px;border-radius:8px;border:1px solid var(--hair);'
-            f'display:flex;align-items:center;justify-content:center">{inner}</div>')
+LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
 
-S[16] = f'''<!-- 13 {'─'*73} -->
+def campaign_card(src, name, objective, package, result, body, placeholder=False):
+    logo = (f'<img src="{src}" alt="{name}" style="max-height:32px;max-width:150px;object-fit:contain">'
+            if src else f'<div style="font-size:16px;font-weight:700;letter-spacing:-.01em">{name}</div>')
+    border = "border:2px dashed #C9C4BA" if placeholder else "border:1px solid var(--hair)"
+    ink = "var(--muted)" if placeholder else "#3A3A3A"
+    result_color = "var(--muted)" if placeholder else "var(--accent)"
+    style = "font-style:italic" if placeholder else ""
+    return f'''<div style="background:var(--tint);{border};padding:14px 16px;display:flex;flex-direction:column">
+      <div style="height:32px;display:flex;align-items:center">{logo}</div>
+      <div style="margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Objective</div>
+      <div style="font-size:13px;line-height:1.3;color:{ink};{style}">{objective}</div>
+      <div style="margin-top:5px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Package</div>
+      <div style="font-size:13px;line-height:1.3;color:{ink};{style}">{package}</div>
+      <div style="margin-top:6px;font-size:21px;font-weight:700;line-height:1;color:{result_color};{style}">{result}</div>
+      <div style="margin-top:5px;font-size:12px;line-height:1.3;color:{ink};{style}">{body}</div>
+    </div>'''
+
+S[13] = f'''<!-- 13 {'─'*73} -->
 <section class="slide light" data-label="Some of our past campaigns"
-  data-notes="Retitled from 'Case studies' and rebuilt as a 4x2 logo grid per Alex, 6 Sep 2026, who asked to include most of the companies shown at the start of the kit (slide 2), specifically naming HubSpot, Notion and Jobstream. HubSpot and Notion reuse the same logo assets already used on slide 2. 'Jobstream' has no logo asset anywhere in this deck's bundle and doesn't match any client name in CASE-STUDIES-SOURCES.md or the beehiiv/LinkedIn campaign records checked for the case-studies deck - it renders here as a placeholder pending the logo file and a spelling check (could be a misremembered name). The detailed measured figures this slide used to show (downloads, ad clicks, objective/package per client) are dropped in this uniform-grid format, per Alex's explicit '4 col x 2 rows squares' request - those numbers are still real and sourced (CASE-STUDIES-SOURCES.md), just not displayed here since three of the eight logos have no comparable figures on file and a mixed detailed/logo-only grid would misrepresent the ones that do.">
+  data-notes="Retitled from 'Case studies', 6 Sep 2026 per Alex. Rebuilt again 7 Sep 2026 per Alex: (a) logos now use the EXACT same asset keys as slide 2's grid - this fixes a real bug, Luma AI was rendering as a text placeholder here even though a real Luma icon (grid_luma) already exists and is used on slide 2; (b) the per-client text (objective/package/result/body) is back, for pagination. Gamma, ElevenLabs, Guidde, Outskill and Luma AI keep their real, sourced figures (CASE-STUDIES-SOURCES.md, unchanged from the original 5-tile version of this slide). HubSpot, Notion and Jobstream have no sourced campaign figures anywhere in this deck's records, so per Alex's own instruction ('typeset some lorem ipsum and i'll fill it up myself') those three cards carry placeholder lorem ipsum text, marked with a dashed border and muted italic type so they read as unfinished rather than as real numbers - Jobstream also still has no logo file or confirmed spelling.">
   <div class="kicker">PAST CAMPAIGNS</div>
   <h2>Some of our past campaigns</h2>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px">
-    {campaign_tile(A.get('logo_gamma'), "Gamma")}
-    {campaign_tile(A.get('logo_elevenlabs'), "ElevenLabs")}
-    {campaign_tile(A.get('logo_guidde'), "Guidde")}
-    {campaign_tile(A.get('logo_outskill'), "Outskill")}
-    {campaign_tile(None, "Luma AI")}
-    {campaign_tile(A.get('grid_hubspot'), "HubSpot")}
-    {campaign_tile(A.get('grid_notion'), "Notion")}
-    {campaign_tile(None, "Jobstream")}
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px">
+    {campaign_card(A.get('logo_gamma'), "Gamma",
+      "Launch of Gamma AI Agent and increase signups", "11 bespoke LinkedIn Carousels, 2 campaigns",
+      "3,823 downloads", "Eleven bespoke carousels across two campaigns, targeting Gamma's ideal customer, with a lead-capture download. Bought twice")}
+    {campaign_card(A.get('logo_elevenlabs'), "ElevenLabs",
+      "Launch of Creative Studio and increase product signups", "10 bespoke LinkedIn Carousels, 2 campaigns",
+      "2,640 downloads", "Explainer carousels for the highest-intent segments, distributed through our placements and the AI Library. Bought twice")}
+    {campaign_card(A.get('logo_guidde'), "Guidde",
+      "Brand awareness and full-funnel growth", "21 Email Primary Ad placements",
+      "5,131 unique clicks", "Recurring monthly placements aligned to Guidde's product moments. Bought 21 times")}
+    {campaign_card(A.get('logo_outskill'), "Outskill",
+      "Brand awareness, webinar and course promotion", "25 Email Primary Ad placements",
+      "7,318 unique clicks", "Webinar pushes, course promotions and launch windows aligned to Outskill's calendar. Bought 25 times")}
+    {campaign_card(A.get('grid_luma'), "Luma AI",
+      "Drive trial signups for Luma's AI image and video tools", "10 bespoke LinkedIn Carousels, 2 campaigns",
+      "2,944 downloads", "Explainer carousels for teams evaluating Luma's image and video tools, across two campaigns. Bought twice")}
+    {campaign_card(A.get('grid_hubspot'), "HubSpot", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
+    {campaign_card(A.get('grid_notion'), "Notion", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
+    {campaign_card(None, "Jobstream", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
   </div>
-  <div data-step="2" style="margin-top:22px;font-size:19px;font-weight:300;color:var(--muted)">All logos are real advertising and campaign clients. Full case metrics and methodology are in the case-studies deck, on request</div>
   {FOOT}
 </section>'''
 
 # ── 13 Team + contact ───────────────────────────────────────────────────────
-S[17] = f'''<!-- 14 {'─'*73} -->
+S[14] = f'''<!-- 14 {'─'*73} -->
 <section class="slide light" data-label="Meet the team"
   data-notes="Bio is the kit's, in shorter sentences. The $0 to $16M ARR fintech stat and the LinkedIn profile link were restored from legacy materials at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. 'Teaches AI and monetization at Cozora Academy' replaces the vaguer 'university level' phrasing, matching the canonical bio already in 01_brand_positioning.md and sales_agent_training_data.json. Contact links from the brand skill's key-links table. Media kit URL cntral.ai/media-kit; storefront cntral.ai/storefront.
-  6 Sep 2026, per Alex: 'Advertise now' and 'This kit' rows removed from the contact block.">
+  6 Sep 2026, per Alex: 'Advertise now' and 'This kit' rows removed from the contact block.
+  7 Sep 2026: press-delegate and affiliations logos enlarged (h 60 -> 90) per Alex. Separately: Alex reported his own uploaded logo replacements for this row had been lost - true, and specific to how edit mode used to compute an edit's id (by slide position, which a rebuild that adds/removes slides shifts). That's fixed now (see decks/_shared/_tail.html - ids are content-hashed, not positional) and his 7 real uploaded images (4 press-delegate, 3 affiliations logos) were recovered from Supabase under their old ids and re-saved against the new ones this same rebuild generates, so they should reappear once this deploys rather than needing to be re-uploaded.">
   <div class="kicker">MEET THE TEAM</div>
   <h2>Based in London, led by the founder</h2>
   <div style="display:grid;grid-template-columns:300px 1fr 420px;gap:48px;margin-top:34px;align-items:start">
@@ -569,7 +615,7 @@ S[17] = f'''<!-- 14 {'─'*73} -->
       (A.get('evt_aisummitlondon'), "The AI Summit London"),
       (A.get('evt_aisummitny'), "The AI Summit New York"),
       (A.get('evt_sxsw'), "SXSW London"),
-    ], cols=5, h=60, gap=12)}</div>
+    ], cols=5, h=90, gap=14)}</div>
   </div>
   <div data-step="3" style="margin-top:12px">
     {label("Affiliations", "var(--muted)", 15)}
@@ -578,13 +624,13 @@ S[17] = f'''<!-- 14 {'─'*73} -->
       (A.get('aff_gta'), "Global Tech Advocates"),
       (A.get('aff_tla'), "London Tech Advocates"),
       (A.get('aff_cozora'), "Cozora", True),
-    ], cols=4, h=60, gap=12)}</div>
+    ], cols=4, h=90, gap=14)}</div>
   </div>
   {FOOT}
 </section>'''
 
-# ── 18 Closing ──────────────────────────────────────────────────────────────
-S[18] = f'''<!-- 15 {'─'*73} -->
+# ── 15 Closing ──────────────────────────────────────────────────────────────
+S[15] = f'''<!-- 15 {'─'*73} -->
 <section class="slide dark" data-label="Closing"
   data-notes="Bookends the cover: same mark, no title, so the deck opens and closes on the wordmark alone.">
   <div style="flex:1;display:flex;align-items:center;justify-content:center">

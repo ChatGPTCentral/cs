@@ -20,26 +20,70 @@
   // Lets the /review/[deck] page on labs.thecentral.ai (ReviewClient.tsx)
   // toggle click-to-edit-text / click-to-swap-image directly on the live
   // deck, instead of a separate copy to keep in sync. Edits save to
-  // Supabase (via /api/deck-edits) keyed by this file's own slug, so they
+  // Supabase (via /api/doc-edits) keyed by this file's own slug, so they
   // re-apply on every future load for every viewer, edit mode or not -
-  // see ai-central-forecaster's db/migrations/0012_deck_edits.sql.
+  // see ai-central-forecaster's db/migrations/0013_doc_edits.sql.
   var editMode = false;
   var deckSlug = (location.pathname.split('/').pop() || 'deck').replace(/\.html$/, '');
-  var EDIT_API = '/api/deck-edits';
+  var EDIT_API = '/api/doc-edits';
 
   function isLeafText(el){
     return el.children.length === 0 && el.textContent.replace(/\s+/g, '').length > 0;
   }
+
+  // ── how an element's edit id is derived ───────────────────────────────
+  // Semantic, not positional. The first version of this keyed each element
+  // by slide index plus its position among that slide's editable elements
+  // ('s3t7'), which meant that inserting a slide, or adding a line inside
+  // one, silently shifted every id after it and orphaned every edit saved
+  // against them. Rebuilding a deck is normal, so that scheme lost edits as
+  // a matter of routine.
+  //
+  // An id is now <slide>:<kind>:<hash>, where <slide> is the slide's own
+  // data-label (already unique per deck, and the same label qa.js reports)
+  // and <hash> is taken from the element's own build-time content. Neither
+  // depends on where the element sits, so slides and lines can be added,
+  // removed or reordered and every existing edit still lands.
+  //
+  // The hash is over the ORIGINAL built content, never the edited value:
+  // ids are assigned before applyOverrides runs, so an element keeps its id
+  // after being edited. Changing the source text in the build script does
+  // change the id, which is the right behaviour - the line the edit was
+  // written against no longer exists.
+  //
+  // Residual limit, deliberately small: two elements with identical text in
+  // the SAME slide are told apart by a '~n' suffix in document order, so
+  // deleting the first of such a pair still shifts the second. Rare, and
+  // far narrower than every id on the slide moving.
+  function slideKey(s, si){
+    var label = (s.getAttribute('data-label') || '').toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+    return label || ('s' + si);
+  }
+  function hash(str){
+    var h = 5381;
+    for (var i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) >>> 0;
+    return h.toString(36);
+  }
   function collectEditable(){
-    var out = [];
+    var out = [], used = {};
     slides.forEach(function(s, si){
-      [].slice.call(s.querySelectorAll('div,span,h1,h2,h3,p,b')).filter(isLeafText).forEach(function(el, k){
-        if (!el.dataset.eid) el.dataset.eid = 's' + si + 't' + k;
+      var key = slideKey(s, si);
+      function assign(el, kind, basis){
+        var base = key + ':' + kind + ':' + hash(basis), id = base, n = 0;
+        while (used[id]) id = base + '~' + (++n);
+        used[id] = 1;
+        if (!el.dataset.eid) el.dataset.eid = id;
         out.push(el);
+      }
+      [].slice.call(s.querySelectorAll('div,span,h1,h2,h3,p,b')).filter(isLeafText).forEach(function(el){
+        assign(el, 't', el.textContent.replace(/\s+/g, ' ').trim());
       });
-      [].slice.call(s.querySelectorAll('img')).forEach(function(el, k){
-        if (!el.dataset.eid) el.dataset.eid = 's' + si + 'i' + k;
-        out.push(el);
+      [].slice.call(s.querySelectorAll('img')).forEach(function(el){
+        // Images are mostly inlined data URIs here, so hash a bounded slice
+        // plus the length rather than walking megabytes of base64 on load.
+        var src = el.getAttribute('src') || '';
+        assign(el, 'i', (el.getAttribute('alt') || '') + '|' + src.slice(0, 512) + '|' + src.length);
       });
     });
     return out;
@@ -53,14 +97,14 @@
       if (el.tagName === 'IMG') el.src = v; else el.textContent = v;
     });
   }
-  fetch(EDIT_API + '?deck=' + encodeURIComponent(deckSlug)).then(function(r){ return r.json(); })
+  fetch(EDIT_API + '?doc=' + encodeURIComponent(deckSlug)).then(function(r){ return r.json(); })
     .then(function(data){ if (data && data.ok) applyOverrides(data.overrides || {}); })
     .catch(function(){});
 
   function saveOverride(eid, type, value){
     fetch(EDIT_API, {
       method: 'POST', headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ deck_id: deckSlug, edit_id: eid, type: type, value: value }),
+      body: JSON.stringify({ doc_id: deckSlug, edit_id: eid, type: type, value: value }),
     }).then(function(){
       if (window.parent !== window) window.parent.postMessage({ source: 'aic-deck', type: 'edit-saved', eid: eid }, '*');
     }).catch(function(){});
