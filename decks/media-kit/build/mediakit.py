@@ -539,28 +539,29 @@ S[12] = f'''<!-- 12 {'─'*73} -->
 LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
 
 def campaign_card(src, name, objective, package, result, body, placeholder=False):
-    logo = (f'<img src="{src}" alt="{name}" style="max-height:32px;max-width:150px;object-fit:contain">'
-            if src else f'<div style="font-size:16px;font-weight:700;letter-spacing:-.01em">{name}</div>')
+    logo = (f'<img src="{src}" alt="{name}" style="max-height:26px;max-width:140px;object-fit:contain">'
+            if src else f'<div style="font-size:15px;font-weight:700;letter-spacing:-.01em">{name}</div>')
     border = "border:2px dashed #C9C4BA" if placeholder else "border:1px solid var(--hair)"
     ink = "var(--muted)" if placeholder else "#3A3A3A"
     result_color = "var(--muted)" if placeholder else "var(--accent)"
     style = "font-style:italic" if placeholder else ""
-    return f'''<div style="background:var(--tint);{border};padding:14px 16px;display:flex;flex-direction:column">
-      <div style="height:32px;display:flex;align-items:center">{logo}</div>
-      <div style="margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Objective</div>
-      <div style="font-size:13px;line-height:1.3;color:{ink};{style}">{objective}</div>
-      <div style="margin-top:5px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Package</div>
-      <div style="font-size:13px;line-height:1.3;color:{ink};{style}">{package}</div>
-      <div style="margin-top:6px;font-size:21px;font-weight:700;line-height:1;color:{result_color};{style}">{result}</div>
-      <div style="margin-top:5px;font-size:12px;line-height:1.3;color:{ink};{style}">{body}</div>
+    return f'''<div style="background:var(--tint);{border};padding:11px 14px;display:flex;flex-direction:column">
+      <div style="height:26px;display:flex;align-items:center">{logo}</div>
+      <div style="margin-top:6px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Objective</div>
+      <div style="font-size:12px;line-height:1.25;color:{ink};{style}">{objective}</div>
+      <div style="margin-top:4px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Package</div>
+      <div style="font-size:12px;line-height:1.25;color:{ink};{style}">{package}</div>
+      <div style="margin-top:5px;font-size:18px;font-weight:700;line-height:1;color:{result_color};{style}">{result}</div>
+      <div style="margin-top:4px;font-size:11px;line-height:1.25;color:{ink};{style}">{body}</div>
     </div>'''
 
 S[13] = f'''<!-- 13 {'─'*73} -->
 <section class="slide light" data-label="Some of our past campaigns"
-  data-notes="Retitled from 'Case studies', 6 Sep 2026 per Alex. Rebuilt again 7 Sep 2026 per Alex: (a) logos now use the EXACT same asset keys as slide 2's grid - this fixes a real bug, Luma AI was rendering as a text placeholder here even though a real Luma icon (grid_luma) already exists and is used on slide 2; (b) the per-client text (objective/package/result/body) is back, for pagination. Gamma, ElevenLabs, Guidde, Outskill and Luma AI keep their real, sourced figures (CASE-STUDIES-SOURCES.md, unchanged from the original 5-tile version of this slide). HubSpot, Notion and Jobstream have no sourced campaign figures anywhere in this deck's records, so per Alex's own instruction ('typeset some lorem ipsum and i'll fill it up myself') those three cards carry placeholder lorem ipsum text, marked with a dashed border and muted italic type so they read as unfinished rather than as real numbers - Jobstream also still has no logo file or confirmed spelling.">
+  data-notes="Retitled from 'Case studies', 6 Sep 2026 per Alex. Rebuilt again 7 Sep 2026 per Alex: (a) logos now use the EXACT same asset keys as slide 2's grid - this fixes a real bug, Luma AI was rendering as a text placeholder here even though a real Luma icon (grid_luma) already exists and is used on slide 2; (b) the per-client text (objective/package/result/body) is back, for pagination. Gamma, ElevenLabs, Guidde, Outskill and Luma AI keep their real, sourced figures (CASE-STUDIES-SOURCES.md, unchanged from the original 5-tile version of this slide). HubSpot, Notion, Jobstream, Replit, UX Pilot and SciSpace have no sourced campaign figures anywhere in this deck's records, so per Alex's own instruction ('typeset some lorem ipsum and i'll fill it up myself') those cards carry placeholder lorem ipsum text, marked with a dashed border and muted italic type so they read as unfinished rather than as real numbers.
+  7 Sep 2026, follow-up: Replit and UX Pilot added as two more placeholder cards per Alex ('go with the other comments' - confirming the two follow-up questions left on this slide's old flagged comments). Both reuse the same logo assets already used on slide 2 (grid_replit, grid_uxpilot). SciSpace added the same way but has no logo asset anywhere in the deck's bundle, so it's a text placeholder like Jobstream. Alex noted he's producing the final case-study figures himself now, so all six no-data cards stay as lorem ipsum pending that - grid is 11 cards, 4/4/3 across three rows.">
   <div class="kicker">PAST CAMPAIGNS</div>
   <h2>Some of our past campaigns</h2>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px">
     {campaign_card(A.get('logo_gamma'), "Gamma",
       "Launch of Gamma AI Agent and increase signups", "11 bespoke LinkedIn Carousels, 2 campaigns",
       "3,823 downloads", "Eleven bespoke carousels across two campaigns, targeting Gamma's ideal customer, with a lead-capture download. Bought twice")}
@@ -579,6 +580,9 @@ S[13] = f'''<!-- 13 {'─'*73} -->
     {campaign_card(A.get('grid_hubspot'), "HubSpot", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
     {campaign_card(A.get('grid_notion'), "Notion", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
     {campaign_card(None, "Jobstream", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
+    {campaign_card(A.get('grid_replit'), "Replit", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
+    {campaign_card(A.get('grid_uxpilot'), "UX Pilot", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
+    {campaign_card(None, "SciSpace", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
   </div>
   {FOOT}
 </section>'''
