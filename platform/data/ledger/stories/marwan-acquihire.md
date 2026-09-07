@@ -15,7 +15,7 @@
 - next-action: 3-month compensation review, end of October 2026
 - commitments: base about $1,200/month package (see below), reviewed end of
   October
-- threads: none - found via Notion call transcripts, not Gmail
+- threads: `1a05382e2fe260ce` (live - monthly payout, Elizabeth-run)
 - notes: **Real numeric drift across three calls - flag each stage, don't
   average or pick one.**
   - **20 Jun 2026, internal idea.** Triggered by Marwan asking for $2,000
@@ -45,3 +45,11 @@
     entirely - Marwan focuses 100% on AI Central instead. Carousel
     Goldmine's site, Gumroad account and templates transfer to AI Central,
     rebranded "AI Central Carousel Goldmine."
+
+  **Auto-genesis, 2026-09-07.** The monthly payout mechanic is real and
+  running in Gmail, not just Notion - thread `1a05382e2fe260ce`.
+  Elizabeth sent Marwan's August payout breakdown 30 Aug (INV-014, $530:
+  $500 SM management fee + 2 carousels at $15 each). Marwan sent his
+  invoice back 3 Sep. Elizabeth cleared it 4 Sep but flagged the invoice
+  was missing the carousel IDs, which she identified herself. Elizabeth-run
+  end to end, cc Alex only

@@ -72,3 +72,11 @@
   originally pitched Vince Mifsud, who handed it to CMO Tim Peters;
   accepted 2 Jul, last touched 7 Jul, silent since. See his own person
   record.
+
+  **Auto-genesis, 2026-09-07.** A real Gmail thread exists for David
+  Castañeda (Visionaries 777) after all - thread `19ff24a0d8f9ebb8`.
+  Lara O'Shea (laraoshea@gmail.com) pitched an interview on his behalf,
+  11 Aug, cc `voices@thecentral.ai`. Alex replied 17 Aug connecting her
+  to Elizabeth (COO) to scope the engagement. Elizabeth followed up
+  3 Sep asking what type of engagement Lara is looking for - no reply
+  since, ball is with Lara. Elizabeth-run, not Alex's move
