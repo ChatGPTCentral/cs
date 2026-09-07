@@ -13,6 +13,7 @@ accent color in four separate files plus three SVGs, and a copy-paste
 mismatch between two of them (Europe/Asia legend colors) shipped briefly
 as a result. See MEDIA-KIT-SOURCES.md, "Revision, 4 Sep 2026".
 """
+import base64
 import re
 
 # ── AI Central brand palette (ai-central-brand skill, SKILL.md #4) ─────────
@@ -99,6 +100,22 @@ def label(t, col="var(--accent)", size=20):
     return f'<div style="font-size:{size}px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:{col}">{t}</div>'
 
 
+def _placeholder_logo_src(name):
+    """A dark tile carrying `name` as its own baked-in white text, built as
+    an SVG data URI rather than plain text - so a pending-logo tile is
+    still a real <img> that edit mode's click-to-swap-image (_tail.html)
+    can find and let Alex replace directly, instead of dead text he can
+    only fix by asking for a rebuild. See logo_tile()'s src=None branch."""
+    safe = (name.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+            .replace('"', '&quot;'))
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120">'
+           f'<rect width="100%" height="100%" fill="#141414"/>'
+           f'<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" '
+           f'fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-weight="700" '
+           f'font-size="17" letter-spacing="0.3">{safe}</text></svg>')
+    return "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode()
+
+
 def logo_tile(src, name, h=88, full_bleed=False):
     """One cell of a logo grid. src=None renders a placeholder card (dark
     tile, name in white) instead of failing - used while a real asset is
@@ -113,7 +130,7 @@ def logo_tile(src, name, h=88, full_bleed=False):
         inner = f'<img src="{src}" alt="{name}" style="max-width:80%;max-height:56%;object-fit:contain">'
         bg = "#fff"
     else:
-        inner = f'<div style="color:#fff;font-size:13px;font-weight:700;letter-spacing:.03em;text-align:center;padding:0 10px;line-height:1.3">{name}</div>'
+        inner = f'<img src="{_placeholder_logo_src(name)}" alt="{name}" style="width:100%;height:100%;object-fit:cover">'
         bg = "#141414"
     return (f'<div style="background:{bg};height:{h}px;border-radius:6px;overflow:hidden;'
             f'display:flex;align-items:center;justify-content:center;'

@@ -56,13 +56,14 @@ S[1] = f'''<!-- 01 {'─'*73} -->
 # ── 02 About ────────────────────────────────────────────────────────────────
 S[2] = f'''<!-- 02 {'─'*73} -->
 <section class="slide light" data-label="About AI Central Media"
-  data-notes="Positioning statement is the brand skill's canonical line. '100+ companies' is backed by 104 distinct advertisers in the beehiiv ad export plus the direct clients in the invoice book; the Q3 docx said 75+, which undercounts. The brand started in 2023 (LinkedIn page May 2023, beehiiv Nov 2023); the docx said 2024, which is the company registration year - we say 2023 for the brand.">
+  data-notes="Positioning statement is the brand skill's canonical line. '100+ companies' is backed by 104 distinct advertisers in the beehiiv ad export plus the direct clients in the invoice book; the Q3 docx said 75+, which undercounts. The brand started in 2023 (LinkedIn page May 2023, beehiiv Nov 2023); the docx said 2024, which is the company registration year - we say 2023 for the brand.
+  7 Sep 2026, per Alex: 2nd stat card text reordered to lead with reach ('Reaching readers in 151 countries and all 50 US states, across 7 channels') rather than lead with the channel count. Added a 3rd logo row (Guidde, a second Taplio mark, plus WISPR Flow/SynthFlow AI/Lindy AI placeholders) - those three placeholders now render as a real (generated) image rather than plain text, per Alex's follow-up ask to be able to click and replace them himself in edit mode; see logo_tile() in deck_shared.py.">
   <div class="kicker">ABOUT AI CENTRAL MEDIA</div>
   <h2>We turn attention into pipeline for AI and SaaS brands</h2>
   <p class="subline">Imagine Bloomberg Businessweek, but for AI - that's the brand we're building. Our flagship publication, AI Central, covers practical AI for senior professionals, and we pair premium placements with editorial-grade creative that speaks to senior operators</p>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px">
     <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">100+</div><div class="stat-l" style="font-size:19px;margin-top:6px">AI companies, SaaS platforms, education brands and growth teams have advertised with us since 2023</div></div>
-    <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">7</div><div class="stat-l" style="font-size:19px;margin-top:6px">Channels we operate across, reaching readers in 151 countries and all 50 US states</div></div>
+    <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">7</div><div class="stat-l" style="font-size:19px;margin-top:6px">Reaching readers in 151 countries and all 50 US states, across 7 channels</div></div>
     <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">London</div><div class="stat-l" style="font-size:19px;margin-top:6px">Editorial team, led by the founder</div></div>
   </div>
   <div data-step="2" style="margin-top:22px">
@@ -544,59 +545,56 @@ S[12] = f'''<!-- 12 {'─'*73} -->
 </section>'''
 
 # ── 13 Some of our past campaigns ────────────────────────────────────────────
-LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-
-def campaign_card(src, name, objective, package, result, body, placeholder=False):
-    logo = (f'<img src="{src}" alt="{name}" style="max-height:26px;max-width:140px;object-fit:contain">'
-            if src else f'<div style="font-size:15px;font-weight:700;letter-spacing:-.01em">{name}</div>')
+def campaign_card(src, name, objective, package, result, body, placeholder=False, link_to=None):
+    logo = (f'<img src="{src}" alt="{name}" style="max-height:32px;max-width:160px;object-fit:contain">'
+            if src else f'<div style="font-size:17px;font-weight:700;letter-spacing:-.01em">{name}</div>')
+    if link_to:
+        logo = f'<a href="#{link_to}" style="display:inline-flex;line-height:0;color:inherit;text-decoration:none">{logo}</a>'
     border = "border:2px dashed #C9C4BA" if placeholder else "border:1px solid var(--hair)"
     ink = "var(--muted)" if placeholder else "#3A3A3A"
     result_color = "var(--muted)" if placeholder else "var(--accent)"
     style = "font-style:italic" if placeholder else ""
-    return f'''<div style="background:var(--tint);{border};padding:11px 14px;display:flex;flex-direction:column">
-      <div style="height:26px;display:flex;align-items:center">{logo}</div>
-      <div style="margin-top:6px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Objective</div>
-      <div style="font-size:12px;line-height:1.25;color:{ink};{style}">{objective}</div>
-      <div style="margin-top:4px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Package</div>
-      <div style="font-size:12px;line-height:1.25;color:{ink};{style}">{package}</div>
-      <div style="margin-top:5px;font-size:18px;font-weight:700;line-height:1;color:{result_color};{style}">{result}</div>
-      <div style="margin-top:4px;font-size:11px;line-height:1.25;color:{ink};{style}">{body}</div>
+    return f'''<div style="background:var(--tint);{border};padding:16px 18px;display:flex;flex-direction:column">
+      <div style="height:32px;display:flex;align-items:center">{logo}</div>
+      <div style="margin-top:9px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Objective</div>
+      <div style="font-size:14px;line-height:1.3;color:{ink};{style}">{objective}</div>
+      <div style="margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Package</div>
+      <div style="font-size:14px;line-height:1.3;color:{ink};{style}">{package}</div>
+      <div style="margin-top:8px;font-size:23px;font-weight:700;line-height:1;color:{result_color};{style}">{result}</div>
+      <div style="margin-top:6px;font-size:13px;line-height:1.3;color:{ink};{style}">{body}</div>
     </div>'''
 
 S[13] = f'''<!-- 13 {'─'*73} -->
 <section class="slide light" data-label="Some of our past campaigns"
   data-notes="Retitled from 'Case studies', 6 Sep 2026 per Alex. Rebuilt again 7 Sep 2026 per Alex: (a) logos now use the EXACT same asset keys as slide 2's grid - this fixes a real bug, Luma AI was rendering as a text placeholder here even though a real Luma icon (grid_luma) already exists and is used on slide 2; (b) the per-client text (objective/package/result/body) is back, for pagination. Gamma, ElevenLabs, Guidde, Outskill and Luma AI keep their real, sourced figures (CASE-STUDIES-SOURCES.md, unchanged from the original 5-tile version of this slide). HubSpot, Notion, Jobstream, Replit, UX Pilot and SciSpace have no sourced campaign figures anywhere in this deck's records, so per Alex's own instruction ('typeset some lorem ipsum and i'll fill it up myself') those cards carry placeholder lorem ipsum text, marked with a dashed border and muted italic type so they read as unfinished rather than as real numbers.
   7 Sep 2026, follow-up: Replit and UX Pilot added as two more placeholder cards per Alex ('go with the other comments' - confirming the two follow-up questions left on this slide's old flagged comments). Both reuse the same logo assets already used on slide 2 (grid_replit, grid_uxpilot). SciSpace added the same way but has no logo asset anywhere in the deck's bundle, so it's a text placeholder like Jobstream.
-  7 Sep 2026, later: HubSpot and Jobstream filled in with real copy Alex supplied directly (his own words, lightly fitted to the card's objective/package/result/body shape, not rewritten) - no longer lorem ipsum. Jobstream's name and existence as a real client is now confirmed by this (it was flagged earlier as possibly misremembered); it still has no logo file, so it stays a text-name card. Notion, Replit, UX Pilot and SciSpace remain lorem ipsum pending their own figures.">
+  7 Sep 2026, later: HubSpot and Jobstream filled in with real copy Alex supplied directly (his own words, lightly fitted to the card's objective/package/result/body shape, not rewritten) - no longer lorem ipsum. Jobstream's name and existence as a real client is now confirmed by this (it was flagged earlier as possibly misremembered); it still has no logo file, so it stays a text-name card.
+  7 Sep 2026, later still, per Alex: Notion, Replit, UX Pilot and SciSpace placeholder cards removed - back to the 7 clients with real figures or real copy (Gamma, ElevenLabs, Guidde, Outskill, Luma AI, HubSpot, Jobstream). Cards resized up now that there's more room (padding, logo size and all type sizes increased). Also per Alex ('link the logos ... to the cover one'): the 6 logos that also appear on slide 2 (Gamma, ElevenLabs, Guidde, Outskill, Luma AI - Jobstream has no logo file anywhere, so its text-name card links the same way) now link to slide 2 ('#2'), where each partner's logo lives in the main showcase grid - read as 'jump to where this partner is introduced', since the asset files were already identical to slide 2's on every card that has one.">
   <div class="kicker">PAST CAMPAIGNS</div>
   <h2>Some of our past campaigns</h2>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px">
     {campaign_card(A.get('logo_gamma'), "Gamma",
       "Launch of Gamma AI Agent and increase signups", "11 bespoke LinkedIn Carousels, 2 campaigns",
-      "3,823 downloads", "Eleven bespoke carousels across two campaigns, targeting Gamma's ideal customer, with a lead-capture download. Bought twice")}
+      "3,823 downloads", "Eleven bespoke carousels across two campaigns, targeting Gamma's ideal customer, with a lead-capture download. Bought twice", link_to=2)}
     {campaign_card(A.get('logo_elevenlabs'), "ElevenLabs",
       "Launch of Creative Studio and increase product signups", "10 bespoke LinkedIn Carousels, 2 campaigns",
-      "2,640 downloads", "Explainer carousels for the highest-intent segments, distributed through our placements and the AI Library. Bought twice")}
+      "2,640 downloads", "Explainer carousels for the highest-intent segments, distributed through our placements and the AI Library. Bought twice", link_to=2)}
     {campaign_card(A.get('logo_guidde'), "Guidde",
       "Brand awareness and full-funnel growth", "21 Email Primary Ad placements",
-      "5,131 unique clicks", "Recurring monthly placements aligned to Guidde's product moments. Bought 21 times")}
+      "5,131 unique clicks", "Recurring monthly placements aligned to Guidde's product moments. Bought 21 times", link_to=2)}
     {campaign_card(A.get('logo_outskill'), "Outskill",
       "Brand awareness, webinar and course promotion", "25 Email Primary Ad placements",
-      "7,318 unique clicks", "Webinar pushes, course promotions and launch windows aligned to Outskill's calendar. Bought 25 times")}
+      "7,318 unique clicks", "Webinar pushes, course promotions and launch windows aligned to Outskill's calendar. Bought 25 times", link_to=2)}
     {campaign_card(A.get('grid_luma'), "Luma AI",
       "Drive trial signups for Luma's AI image and video tools", "10 bespoke LinkedIn Carousels, 2 campaigns",
-      "2,944 downloads", "Explainer carousels for teams evaluating Luma's image and video tools, across two campaigns. Bought twice")}
+      "2,944 downloads", "Explainer carousels for teams evaluating Luma's image and video tools, across two campaigns. Bought twice", link_to=2)}
     {campaign_card(A.get('grid_hubspot'), "HubSpot",
       "Sustained demand generation for HubSpot's free AI offers", "129 email placements across 88 sends",
       "14,683 clicks", "Seven months of unbroken presence in the daily send, averaging 167 clicks per issue. Renewed every week since January.")}
-    {campaign_card(A.get('grid_notion'), "Notion", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
     {campaign_card(None, "Jobstream",
       "Brand awareness for Jobstream's job board launch, driving downloads on two proprietary whitepapers",
       "2 bespoke whitepapers, a conference one-pager, a dedicated website section with branded job board, across 2 dedicated newsletter issues",
-      "65,453 views", "Two whitepapers built around Katie Fortunato's own POV and Jobstream's proprietary data, driving 330 whitepaper downloads and 4,579 views on a dedicated website section that outperformed initial projections - 3m 30s average dwell time, 3.5x the site average.")}
-    {campaign_card(A.get('grid_replit'), "Replit", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
-    {campaign_card(A.get('grid_uxpilot'), "UX Pilot", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
-    {campaign_card(None, "SciSpace", LOREM, LOREM, "Lorem ipsum", LOREM, placeholder=True)}
+      "65,453 views", "Two whitepapers built around Katie Fortunato's own POV and Jobstream's proprietary data, driving 330 whitepaper downloads and 4,579 views on a dedicated website section that outperformed initial projections - 3m 30s average dwell time, 3.5x the site average.", link_to=2)}
   </div>
   {FOOT}
 </section>'''
