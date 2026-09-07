@@ -78,7 +78,12 @@ S[2] = f'''<!-- 02 {'─'*73} -->
       (A.get('grid_hubspot'), "HubSpot"),
       (A.get('grid_uxpilot'), "UX Pilot"),
       (A.get('logo_outskill'), "Outskill"),
-    ], cols=5, h=90)}</div>
+      (A.get('logo_guidde'), "Guidde"),
+      (None, "WISPR Flow"),
+      (None, "SynthFlow AI"),
+      (A.get('grid_taplio'), "Taplio"),
+      (None, "Lindy AI"),
+    ], cols=5, h=78, gap=12)}</div>
   </div>
   {FOOT}
 </section>'''
@@ -180,74 +185,77 @@ S[5] = f'''<!-- 05 {'─'*73} -->
 </section>'''
 
 # ── 05 The publications ─────────────────────────────────────────────────────
-def pub(n_, logo, name, sub, ideal, stats, foot):
+def pub(n_, logo, name, sub, ideal, stats, logo_fit="cover"):
     rows = "".join(
         f'<div style="display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-top:1px solid rgba(0,0,0,.08)">'
         f'<div style="font-size:19px;font-weight:300;color:#3A3A3A">{k}</div>'
         f'<div style="font-size:23px;font-weight:700;font-variant-numeric:tabular-nums">{v}</div></div>' for k, v in stats)
-    return f'''<div data-step="{n_}" style="background:var(--tint);padding:24px 28px;min-height:480px;display:flex;flex-direction:column">
+    logo_box = (
+        f'<div style="width:40px;height:40px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center">'
+        f'<img src="{logo}" alt="" style="max-width:78%;max-height:60%;object-fit:contain"></div>'
+        if logo_fit == "contain" else
+        f'<img src="{logo}" alt="" style="width:40px;height:40px;border-radius:8px;object-fit:cover">')
+    return f'''<div data-step="{n_}" style="background:var(--tint);padding:24px 26px;min-height:480px;display:flex;flex-direction:column">
       <div style="display:flex;align-items:center;gap:14px">
-        <img src="{logo}" alt="" style="width:40px;height:40px;border-radius:8px;object-fit:cover">
-        <div><div style="font-size:26px;font-weight:700;letter-spacing:-.01em">{name}</div><div style="font-size:17px;color:var(--muted)">{sub}</div></div>
+        {logo_box}
+        <div><div style="font-size:23px;font-weight:700;letter-spacing:-.01em">{name}</div><div style="font-size:16px;color:var(--muted)">{sub}</div></div>
       </div>
       <div style="margin-top:14px">{rows}</div>
-      <div style="margin-top:auto;padding-top:14px;font-size:20px;font-weight:400;line-height:1.3;color:var(--ink)">Clients buy this for <b>{ideal}</b></div>
-      <div style="margin-top:8px;font-size:16px;font-weight:300;color:var(--muted)">{foot}</div>
+      <div style="margin-top:auto;padding-top:14px;font-size:19px;font-weight:400;line-height:1.3;color:var(--ink)">Clients buy this for <b>{ideal}</b></div>
     </div>'''
 
 S[6] = f'''<!-- 06 {'─'*73} -->
 <section class="slide light" data-label="The publications"
   data-notes="Reordered and renamed per Alex, 4 Sep 2026: beehiiv leads, the two LinkedIn surfaces named as distinct AI Central properties rather than 'LinkedIn Newsletter'/'LinkedIn Company Page'. Figures unchanged from the Q3 kit / beehiiv API - LinkedIn newsletter and company page figures are from the Q3 kit, sourced from Favikon on 18 Aug 2026 - not independently verifiable here. beehiiv figures are LIVE from the beehiiv API on 2 Sep 2026: 97,681 active subscribers, 29.7% open rate and 2.34% click rate over the last 4 weeks, +4,906 new subscribers in the same window. The docx said 86K subscribers / 30.25% / 2.48% - the 86K was average sends, not active subscribers. Alex asked to connect LinkedIn for a live data pull instead of the Favikon snapshot - flagged back to him, no LinkedIn integration available in this session.
-  6 Sep 2026, per Alex: reordered again (beehiiv, LinkedIn Newsletter, LinkedIn Company Page); 'Average unique ad clicks' dropped from beehiiv (the other two never carried it, so it wasn't a fair three-way comparison); 'Ideal for' renamed 'Clients buy this for' and moved to the bottom of the card, larger; 'Posts a week' added for beehiiv and the LinkedIn Newsletter (4x, per Alex - both are the weekly-cadence AI Central sends) alongside the Company Page's existing Daily; a fourth box added below for thecentral.ai itself, reusing the already-sourced 20,000-visits/month figure quoted on slides 7 and 11. 7 Sep 2026: that fourth box moved from a dark/ink background to the same tint grey as the other three, per Alex.">
+  6 Sep 2026, per Alex: reordered again (beehiiv, LinkedIn Newsletter, LinkedIn Company Page); 'Average unique ad clicks' dropped from beehiiv (the other two never carried it, so it wasn't a fair three-way comparison); 'Ideal for' renamed 'Clients buy this for' and moved to the bottom of the card, larger; 'Posts a week' added for beehiiv and the LinkedIn Newsletter (4x, per Alex - both are the weekly-cadence AI Central sends) alongside the Company Page's existing Daily; a fourth box added below for thecentral.ai itself, reusing the already-sourced 20,000-visits/month figure quoted on slides 7 and 11. 7 Sep 2026: that fourth box moved from a dark/ink background to the same tint grey as the other three, per Alex.
+  7 Sep 2026, per Alex: restructured into exactly 4 equal-height boxes in one row - AI Central Newsletter (thecentral.ai), AI Central Newsletter (LinkedIn), Social Media (LinkedIn), Website - the naming he wants carried everywhere else in the deck. The per-card 'Source: ...' caption was dropped (per Alex, 'remove source') - sourcing for these figures stays logged in MEDIA-KIT-SOURCES.md instead of on the slide itself.">
   <div class="kicker">THE PUBLICATIONS</div>
-  <h2>Three publications, one senior audience</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px">
-    {pub(1, A['logo_beehiiv'], "AI Central Newsletter", "on thecentral.ai, via beehiiv", "mobile-first offers: downloads, webinar signups", [
+  <h2>Four channels, one senior audience</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px">
+    {pub(1, A['logo_beehiiv'], "AI Central Newsletter (thecentral.ai)", "via beehiiv", "mobile-first offers: downloads, webinar signups", [
       ("Active subscribers", "97K+"), ("New subscribers a month", "+4,900"),
-      ("Average open rate", "30%"), ("Average unique CTR", "2.3%"), ("Posts a week", "4x")],
-      "Source: beehiiv, last 4 weeks to 2 Sep 2026")}
-    {pub(2, A['logo_linkedin'], "AI Central's LinkedIn Newsletter", "AI Central, on LinkedIn", "desktop-first offers: demos, extensions, announcements", [
+      ("Average open rate", "30%"), ("Average unique CTR", "2.3%"), ("Posts a week", "4x")])}
+    {pub(2, A['logo_linkedin'], "AI Central Newsletter (LinkedIn)", "AI Central, on LinkedIn", "desktop-first offers: demos, extensions, announcements", [
       ("Active subscribers", "181K+"), ("New subscribers a month", "+5,500"),
-      ("Average unique CTR", "2.7%"), ("Posts a week", "4x")],
-      "Source: Favikon, 18 Aug 2026")}
-    {pub(3, A['logo_linkedin'], "AI Central's LinkedIn Company Page", "linkedin.com/company/chat-gpt-central", "sustained brand visibility and thought leadership, not single placements", [
+      ("Average unique CTR", "2.7%"), ("Posts a week", "4x")])}
+    {pub(3, A['logo_linkedin'], "Social Media (LinkedIn)", "linkedin.com/company/chat-gpt-central", "sustained brand visibility and thought leadership, not single placements", [
       ("Active followers", "289K"), ("New followers a month", "+8,300"),
-      ("Average impressions per post", "4,500+"), ("Posts a week", "Daily")],
-      "Source: Favikon, 18 Aug 2026")}
-  </div>
-  <div data-step="4" style="margin-top:22px;background:var(--tint);padding:22px 28px;display:flex;align-items:center;justify-content:space-between">
-    <div style="font-size:24px;font-weight:700;color:var(--ink)">AI Central Website <span style="font-weight:300;color:var(--muted)">· thecentral.ai</span></div>
-    <div style="font-size:22px;font-weight:700;color:var(--accent)">20,000 visitors a month</div>
+      ("Average impressions per post", "4,500+"), ("Posts a week", "Daily")])}
+    {pub(4, A['logo_aicentral'], "Website", "thecentral.ai", "continuous presence between and beyond campaigns", [
+      ("Visitors a month", "20,000")], logo_fit="contain")}
   </div>
   {FOOT}
 </section>'''
 
 # ── 06 Advertising options ──────────────────────────────────────────────────
-CH_BEEHIIV = [(A['logo_beehiiv'], "Beehiiv Newsletter")]
-CH_LI_NEWS = [(A['logo_linkedin'], "LinkedIn Newsletter")]
-CH_LI_PAGE = [(A['logo_linkedin'], "LinkedIn Company Page")]
-CH_WEBSITE = [(A['logo_aicentral'], "thecentral.ai website")]
+CH_BEEHIIV = [(A['logo_beehiiv'], "AI Central Newsletter (thecentral.ai)")]
+CH_LI_NEWS = [(A['logo_linkedin'], "AI Central Newsletter (LinkedIn)")]
+CH_LI_PAGE = [(A['logo_linkedin'], "Social Media (LinkedIn)")]
+CH_WEBSITE = [(A['logo_aicentral'], "Website")]
 CH_BOTH_NEWS = CH_BEEHIIV + CH_LI_NEWS
 
 def fmt(n_, name, what, ideal, price, channels):
     avail = "".join(
-        f'<span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:500;color:var(--muted)">'
-        f'<img src="{src}" alt="" style="width:16px;height:16px;border-radius:3px;object-fit:cover">{ch}</span>'
+        f'<div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--muted)">'
+        f'<div style="width:16px;height:16px;border-radius:3px;background:#fff;flex:none;display:flex;align-items:center;justify-content:center">'
+        f'<img src="{src}" alt="" style="max-width:85%;max-height:85%;object-fit:contain"></div>{ch}</div>'
         for src, ch in channels)
     return f'''<div style="background:var(--tint);padding:18px 22px;display:flex;flex-direction:column">
       <div style="font-size:15px;font-weight:700;letter-spacing:.16em;color:var(--muted)">0{n_}</div>
       <div style="margin-top:4px;font-size:23px;font-weight:700;letter-spacing:-.01em">{name}</div>
       <div style="margin-top:6px;font-size:18px;font-weight:300;line-height:1.35;color:#3A3A3A">{what}</div>
       <div style="margin-top:8px;font-size:17px;font-weight:300;line-height:1.35;color:var(--muted)">Ideal for {ideal}</div>
-      <div style="margin-top:auto;padding-top:12px;display:flex;gap:14px;flex-wrap:wrap;border-top:1px solid var(--hair);padding-top:10px">
-        <span style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Available on</span>{avail}
+      <div style="margin-top:auto;padding-top:12px;border-top:1px solid var(--hair)">
+        <span style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Available on</span>
+        <div style="margin-top:6px;display:flex;flex-direction:column;gap:5px">{avail}</div>
       </div>
       <div style="margin-top:10px;font-size:19px;font-weight:700;color:var(--accent)">{price}</div>
     </div>'''
 
 S[7] = f'''<!-- 07 {'─'*73} -->
 <section class="slide light" data-label="Advertising options"
-  data-notes="Rebuilt per Alex, 7 Sep 2026, into the seven boxes he specified directly (numbered list in his comment): Newsletter Main Ad and Newsletter Secondary Ad each now cover BOTH the beehiiv and LinkedIn newsletters as one box, rather than being split into separate LinkedIn/Email formats as before; the ebook and carousel are merged into one box; Dedicated Issue, Welcome Sequence and Website Banner carry over; Social Media Post is new. Alex's own list gave explicit 'Price: On request' for boxes 01-03 and left 04-07 without a price line - since every box on this slide has always shown a price/label at the bottom as part of the card design, the same 'On request' was kept for 04-07 too rather than leaving those four cards visually unfinished; flag if that reads wrong and any of them should carry a real number instead. Availability rows match his channel lists exactly. Box 07's description is a first draft - Alex left [Description] blank for it, so this is Claude's best guess at the offer (a dedicated LinkedIn company-page post) pending his actual copy.">
+  data-notes="Rebuilt per Alex, 7 Sep 2026, into the seven boxes he specified directly (numbered list in his comment): Newsletter Main Ad and Newsletter Secondary Ad each now cover BOTH the beehiiv and LinkedIn newsletters as one box, rather than being split into separate LinkedIn/Email formats as before; the ebook and carousel are merged into one box; Dedicated Issue, Welcome Sequence and Website Banner carry over; Social Media Post is new. Alex's own list gave explicit 'Price: On request' for boxes 01-03 and left 04-07 without a price line - since every box on this slide has always shown a price/label at the bottom as part of the card design, the same 'On request' was kept for 04-07 too rather than leaving those four cards visually unfinished; flag if that reads wrong and any of them should carry a real number instead. Availability rows match his channel lists exactly. Box 07's description is a first draft - Alex left [Description] blank for it, so this is Claude's best guess at the offer (a dedicated LinkedIn company-page post) pending his actual copy.
+  7 Sep 2026, per Alex: 'Available on' tags now stack vertically instead of running inline, and the channel names are renamed to match slide 6 - 'Beehiiv Newsletter' -> 'AI Central Newsletter (thecentral.ai)', 'LinkedIn Newsletter' -> 'AI Central Newsletter (LinkedIn)'. Also renamed 'LinkedIn Company Page' -> 'Social Media (LinkedIn)' and 'thecentral.ai website' -> 'Website' for the same consistency, even though only the first two were named explicitly in his comment.">
   <div class="kicker">ADVERTISING OPTIONS</div>
   <h2>Seven ways to reach them</h2>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px">
@@ -338,12 +346,12 @@ S[8] = no_price_slide(
       "5% off any new order",
       "Positions you as the go-to resource for the topic, not just another ad"]),
    ("Examples", [
-      "10 Design Prompts You Must Try",
-      "How Enterprises Scale AI Voice Globally",
-      "The Ultimate Canva Updates For Creators",
-      "Fix Your LinkedIn Profile With AI"])],
+      '<a href="https://docs.thecentral.ai/10-design-prompts-you-must-try" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">10 Design Prompts You Can Try Today</a> - Gamma',
+      '<a href="https://docs.thecentral.ai/elevenlabs-best-way-to-dub-video" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">The Best Way To Dub Videos, Full Guide</a> - ElevenLabs',
+      '<a href="https://docs.thecentral.ai/how-to-build-ios-apps-with-replit" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">How to Build iOS Apps with Replit</a> - Replit',
+      '<a href="https://docs.thecentral.ai/jobstream-creator-income-playbook" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">The Creator Income Playbook</a> - Jobstream'])],
   A['carousels'], "Ebook examples for Gamma, ElevenLabs, Canva, Guidde and Comet",
-  "No-price version of the ebook slide (the priced version is hidden for now, per Alex). 7 Sep 2026, per Alex: subtitle shortened to one line; what-you-receive and benefits were saying the same things (lifetime asset, republishing rights showed up in both) so they're split for real now - deliverables in one, outcomes in the other, plus a new third 'Examples' section naming actual past ebook titles pulled from the example image itself (Gamma, ElevenLabs, Canva, Guidde, Comet - not invented). '5% off any new order' and 'a dedicated send' are new claims from Alex's comment, not yet cross-checked against 02_products_pricing.md - flag if that discount rate or deliverable isn't accurate.")
+  "No-price version of the ebook slide (the priced version is hidden for now, per Alex). 7 Sep 2026, per Alex: subtitle shortened to one line; what-you-receive and benefits were saying the same things (lifetime asset, republishing rights showed up in both) so they're split for real now - deliverables in one, outcomes in the other, plus a new third 'Examples' section. '5% off any new order' and 'a dedicated send' are new claims from Alex's comment, not yet cross-checked against 02_products_pricing.md - flag if that discount rate or deliverable isn't accurate.\n  7 Sep 2026, per Alex: the four Examples are now real, linked documents pulled from the Notion 'AI Central Document Database' - rows where Main is set and Flipbook URL starts with docs.thecentral.ai (31 qualify in total; these 4 were picked to show a spread of different clients rather than listing all 31). The earlier four titles here were invented placeholders, not real documents - replaced.")
 
 # ── 08 LinkedIn Main Ad ─────────────────────────────────────────────────────
 # HIDDEN per Alex, 7 Sep 2026 - see the same note on the ebook slide above.
@@ -467,9 +475,9 @@ def premium(n_, name, what, ideal):
 S[11] = f'''<!-- 11 {'─'*73} -->
 <section class="slide light" data-label="Premium formats"
   data-notes="Wireframe renders removed, 'ideal for' moved up under the title, boxes made full-height with bullets spaced out, per Alex 4 Sep 2026. The three formats without a list price. Quote per campaign; the pricing reference frames dedicated issues and multi-touch bundles at $5K to $10K+.
-  7 Sep 2026: Alex flagged 'this title is wrong - revert to the old one' and 'website banner description is wrong', but didn't say what the old title was or what's wrong with the Website Banner box specifically - this slide's own title/kicker weren't touched in today's edits, and the Website Banner copy here ('Always-on banner on thecentral.ai, 20,000 visitors a month, every page') is the same figure quoted on slide 7. Left as-is pending clarification rather than guessing at a change that might be wrong in a different direction - which slide he meant, what title he wants instead, and what's specifically incorrect about the banner description.">
+  7 Sep 2026: the 'website banner description is wrong' half of Alex's comment turned out to be a data bug, not a content one - two stray Supabase overrides from an unrelated migration were clobbering this slide's live text at load time; fixed by deleting the bad override rows, no source change needed. The title itself Alex clarified separately: these are 'further premium editorial products we can develop', not framed as a fallback for when one placement isn't enough - retitled accordingly.">
   <div class="kicker">PREMIUM FORMATS · QUOTED PER CAMPAIGN</div>
-  <h2>When one placement is not enough</h2>
+  <h2>Further premium formats we can build for you</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px">
     {premium(1, "Dedicated Issue", [
       "100% share of voice. The whole send is yours",
@@ -598,7 +606,8 @@ S[14] = f'''<!-- 14 {'─'*73} -->
 <section class="slide light" data-label="Meet the team"
   data-notes="Bio is the kit's, in shorter sentences. The $0 to $16M ARR fintech stat and the LinkedIn profile link were restored from legacy materials at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. 'Teaches AI and monetization at Cozora Academy' replaces the vaguer 'university level' phrasing, matching the canonical bio already in 01_brand_positioning.md and sales_agent_training_data.json. Contact links from the brand skill's key-links table. Media kit URL cntral.ai/media-kit; storefront cntral.ai/storefront.
   6 Sep 2026, per Alex: 'Advertise now' and 'This kit' rows removed from the contact block.
-  7 Sep 2026: press-delegate and affiliations logos enlarged (h 60 -> 90) per Alex. Separately: Alex reported his own uploaded logo replacements for this row had been lost - true, and specific to how edit mode used to compute an edit's id (by slide position, which a rebuild that adds/removes slides shifts). That's fixed now (see decks/_shared/_tail.html - ids are content-hashed, not positional) and his 7 real uploaded images (4 press-delegate, 3 affiliations logos) were recovered from Supabase under their old ids and re-saved against the new ones this same rebuild generates, so they should reappear once this deploys rather than needing to be re-uploaded.">
+  7 Sep 2026: press-delegate and affiliations logos enlarged (h 60 -> 90, then 90 -> 112) per Alex, asked twice. Separately: Alex reported his own uploaded logo replacements for this row had been lost - true, and specific to how edit mode used to compute an edit's id (by slide position, which a rebuild that adds/removes slides shifts). That's fixed now (see decks/_shared/_tail.html - ids are content-hashed, not positional) and his 7 real uploaded images (4 press-delegate, 3 affiliations logos) were recovered from Supabase under their old ids and re-saved against the new ones this same rebuild generates, so they should reappear once this deploys rather than needing to be re-uploaded.
+  7 Sep 2026, per Alex: the three Let's talk rows are now real anchor tags (tel/mailto/https), not styled text - Book a call links to cntral.ai/meet, Email opens a mailto: to collabs@thecentral.ai, Connect with Alex opens the LinkedIn profile, all in a new tab except the mailto.">
   <div class="kicker">MEET THE TEAM</div>
   <h2>Based in London, led by the founder</h2>
   <div style="display:grid;grid-template-columns:300px 1fr 420px;gap:48px;margin-top:34px;align-items:start">
@@ -611,9 +620,9 @@ S[14] = f'''<!-- 14 {'─'*73} -->
     <div data-step="2" style="background:var(--ink);color:var(--paper);padding:30px 34px">
       <div style="font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--accent)">Let's talk</div>
       <div style="margin-top:18px;font-size:22px;line-height:1.5">
-        <div><span style="color:var(--muted-dark)">Book a call</span><br><b>cntral.ai/meet</b></div>
-        <div style="margin-top:12px"><span style="color:var(--muted-dark)">Email</span><br><b>collabs@thecentral.ai</b></div>
-        <div style="margin-top:12px"><span style="color:var(--muted-dark)">Connect with Alex</span><br><b>linkedin.com/in/alex-ai</b></div>
+        <div><span style="color:var(--muted-dark)">Book a call</span><br><a href="https://cntral.ai/meet" target="_blank" rel="noopener" style="color:var(--paper);font-weight:700;text-decoration:none">cntral.ai/meet</a></div>
+        <div style="margin-top:12px"><span style="color:var(--muted-dark)">Email</span><br><a href="mailto:collabs@thecentral.ai" style="color:var(--paper);font-weight:700;text-decoration:none">collabs@thecentral.ai</a></div>
+        <div style="margin-top:12px"><span style="color:var(--muted-dark)">Connect with Alex</span><br><a href="https://linkedin.com/in/alex-ai" target="_blank" rel="noopener" style="color:var(--paper);font-weight:700;text-decoration:none">linkedin.com/in/alex-ai</a></div>
       </div>
     </div>
   </div>
@@ -625,7 +634,7 @@ S[14] = f'''<!-- 14 {'─'*73} -->
       (A.get('evt_aisummitlondon'), "The AI Summit London"),
       (A.get('evt_aisummitny'), "The AI Summit New York"),
       (A.get('evt_sxsw'), "SXSW London"),
-    ], cols=5, h=90, gap=14)}</div>
+    ], cols=5, h=112, gap=14)}</div>
   </div>
   <div data-step="3" style="margin-top:12px">
     {label("Affiliations", "var(--muted)", 15)}
@@ -634,7 +643,7 @@ S[14] = f'''<!-- 14 {'─'*73} -->
       (A.get('aff_gta'), "Global Tech Advocates"),
       (A.get('aff_tla'), "London Tech Advocates"),
       (A.get('aff_cozora'), "Cozora", True),
-    ], cols=4, h=90, gap=14)}</div>
+    ], cols=4, h=112, gap=14)}</div>
   </div>
   {FOOT}
 </section>'''
