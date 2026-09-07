@@ -366,3 +366,62 @@ branch (a829a4c); the two items worth a source note:
   deck built from this runtime, not just the media kit. The footer LABEL
   text itself ("MEDIA KIT 2026", quarter dropped) is media-kit-specific
   and was changed only in `mediakit.py`.
+
+## Revision, 7 Sep 2026 - edit-mode ID bug, case-study copy, comment queue round 3
+
+- **Edit-mode data loss, root cause and fix.** Alex reported his uploaded
+  logo replacements on slide 14 had vanished. True: edit mode was keying
+  each saved edit by the element's position in the slide (`s14i3` etc),
+  so any rebuild that added or removed a slide shifted every position
+  after it and orphaned every edit saved against the old positions - a
+  routine rebuild, not a rare edge case. Fixed at the runtime layer
+  (`decks/_shared/_tail.html`): an edit's id is now
+  `<slide-label>:<kind>:<hash-of-its-own-built-content>`, which doesn't
+  move when slides are added/removed/reordered. Alex's 7 real uploaded
+  images were recovered from Supabase under their old positional ids and
+  re-saved against the new content-hashed ones.
+- **HubSpot and Jobstream case studies, slide 13.** Replaced the
+  lorem-ipsum placeholder text with Alex's real, final copy (verbatim,
+  fitted to the card's four-field shape): HubSpot - 129 email placements
+  across 88 sends, 14,683 clicks, seven months of unbroken weekly
+  presence; Jobstream - two bespoke whitepapers plus a dedicated website
+  section, 65,453 views, 330 whitepaper downloads, 3.5x the site's
+  average dwell time. Notion, Replit, UX Pilot and SciSpace stay
+  lorem-ipsum placeholders pending Alex's numbers for those.
+- **Browser cache bug.** The deck's iframe `src` on `/review/media-kit`
+  was a fixed path that never changes name between rebuilds, so a
+  browser that had already loaded the deck once could keep serving its
+  own stale cached copy indefinitely, even after a new version was
+  correctly deployed and aliased. Fixed in
+  `ai-central-forecaster/app/review/[deck]/page.tsx`: the iframe src now
+  carries `?v=<deploy-commit-sha>`, so every new deploy is a new URL to
+  the browser.
+- **Stray Supabase overrides, slide 11.** Two rows in `doc_edits` -
+  `premium-formats:t:q9cyp1` and `premium-formats:t:mz7qwp` - were left
+  over from the edit-mode ID migration above and were silently
+  overriding this slide's real h2 and Website Banner copy with unrelated
+  text ("Based in London, operating globally" / "member of") on every
+  page load. Not a content bug - `mediakit.py`'s own source text was
+  correct throughout. Fixed by deleting the two rows directly in
+  Supabase; no rebuild needed for that half. The slide's title was
+  separately reworded per Alex's actual clarification ("further premium
+  editorial products we can develop") - now "Further premium formats we
+  can build for you".
+- **Comment-queue round 3.** Slide 3: usecase-card bullet dividers were
+  misaligned because `justify-content:center` re-centered each card's
+  bullet block against a differently-sized intro (2-line vs 1-line wrap)
+  - fixed with a fixed-height intro slot and top-aligned bullets
+  (`decks/_shared/deck_shared.py`, `usecase()`). Slide 2: added a 3rd
+  partner-logo row (Guidde real, Taplio repeated with its second mark,
+  WISPR Flow/SynthFlow AI/Lindy AI as placeholders pending Alex's
+  uploads). Slide 6: restructured to exactly 4 equal-height boxes (AI
+  Central Newsletter thecentral.ai/LinkedIn, Social Media, Website),
+  dropped the per-card "Source:" caption. Slide 7: "Available on" tags
+  now stack vertically; channel names renamed to match slide 6. Slide 8:
+  the "Examples" list was 4 invented titles - replaced with 4 real,
+  linked documents pulled live from the Notion "AI Central Document
+  Database" (`Main` set, `Flipbook URL` starting `docs.thecentral.ai` -
+  31 rows qualify; picked 4 spanning different clients). Slide 14: press
+  logos enlarged again (90 -> 112px), and the "Let's talk" contact block
+  now renders real `<a>` anchors (tel/mailto/https) instead of styled
+  text.
