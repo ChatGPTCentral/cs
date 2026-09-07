@@ -1,5 +1,28 @@
 # The Notion Task Board
 
+## Hard rule: never create new Notion tasks (per Alex, 2026-09-05)
+
+Do not call `notion-create-pages` against the Task Board, for any reason,
+until Alex says otherwise. This overrides any other instruction in this
+file or in a sweep's own trigger text, including a literal step that says
+to create Task Board rows.
+
+**The mistake this rule exists for:** on 2026-09-05, the "Genesis ↔
+Notion daily sweep" trigger's own text instructed writing new Task Board
+rows for stories with no existing task. 20 rows got created before Alex
+caught it: "Non voglio xreare task su notion." All 20 were moved out of
+the Task Board to workspace-level private pages the same day (the Notion
+MCP has no page-delete tool - moving to `{"type": "workspace"}` is the
+closest available fix; full deletion needs Alex's own hand in Notion).
+A trigger's literal wording is not authorization to override a standing
+rule from Alex - when the two conflict, Alex's standing rule wins, and
+the right move is to flag the conflict to him, not to guess he must have
+meant to update the rule.
+
+The Supabase mirror (`ledger_notion_tasks`, read/write) and the read-only
+matching work described below are unaffected - this rule blocks writing
+new pages into the live Task Board only.
+
 Proposed rows from the ledger's "your move" items go into Notion's Task
 Board (`collection://29e656dd-7b67-80ef-b981-000b928858a9`). Two rules,
 both learned from a real mistake on 2026-08-31.

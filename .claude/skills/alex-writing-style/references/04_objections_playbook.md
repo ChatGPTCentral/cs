@@ -60,6 +60,51 @@ verification process we do not actually run - - see
 
 **Takeaway for the agent:** when a prospect anchors on a bad past CPC, don't argue the number - - reframe the format (add an interview or evergreen asset), then out-math the objection with real CPM/CPC comparisons against paid social benchmarks
 
+## Real-world negotiation example: guest-content pitch from a PR agency (Nicolia Wiles, Prime Tech PR / Daniel Fallmann, Mindbreeze - - 2026-09-04)
+
+**Setup:** a PR agency (Prime Tech PR) submitted a guest article for their
+client (Daniel Fallmann, CEO of Mindbreeze) months earlier, then sent four
+unanswered check-ins asking when it would run. Alex had originally quoted
+two options: free as an exclusive website post, or $999 to also run as a
+dedicated newsletter issue
+
+**The agent's first draft (rejected):** answered the literal question -
+apologized for the delay, restated both pricing options, asked her to
+pick one, greenlit the second article. Competent, but passive - it let
+Nicolia set the terms of the exchange
+
+**What Alex actually sent, and why it's a better play:**
+- **No pricing restated, no free option mentioned at all.** Instead: "September's
+  calendar is almost full with paying clients, and AI Central's columnists
+  take precedence" - creates real scarcity and implies paying clients get
+  priority, without explicitly demanding payment
+- **Delegated the logistics to Liz (COO)**, keeping Alex above the
+  scheduling back-and-forth while the relationship still moves
+- **Opened a second track:** noted AI Central works with London PR
+  agencies already and it "would be interesting to discuss a
+  partnership" - Prime Tech PR is London/Austin-based, AI Central has a
+  London trip and an Austin conference already on the calendar, so the
+  geography was a real, not invented, hook
+- **Asked "Where are you based?"** - light rapport question that is
+  also partnership due diligence
+- **Ended on a call ask, not a pricing answer** - "Are you free for a
+  chat next week?" A call surfaces and can resolve three interests at
+  once (get paid, explore the partnership, meet Daniel - a Forbes
+  council CEO) that a transactional email reply would have closed off
+  by settling only the original question
+- **One light, situational apology only** - "Apologies if I missed your
+  call the other day" - concedes a single missed call, not the whole
+  silence. Contrast with the rejected draft's "apologies for the long
+  silence, this fell through the cracks," which conceded carelessness
+  and invited Nicolia to feel entitled to an accounting
+
+**Takeaway for the agent:** a question from someone pitching to place
+their own client is not just something to answer - work out what Alex
+actually wants out of the exchange (get paid, get introduced, open a
+bigger relationship) before drafting, and let the reply serve that,
+not just the literal question. See the OPERATING MANDATE section of
+`SKILL.md` for the general version of this rule
+
 ## General negotiation principles (from the writing style guide)
 
 - **Acknowledge positive intent first** - - "thanks for getting back to me," "I really appreciate your transparency on the budget side"

@@ -1,6 +1,10 @@
 # The board
 
-Ranked by what needs Alex first. Refreshed by `/ledger`.
+Ranked by what needs Alex first. Refreshed by `/ledger`. See
+[`roadmap.md`](roadmap.md) for where AI Central is headed, month by
+month, per Alex - checked against open stories below where relevant
+(New Media Summit Austin ↔ Mindbreeze/Prime Tech PR, AI Summit NY ↔
+Netline/Prophet).
 
 **Delta refresh, 2026-09-03.** This is a targeted refresh on top of the
 2026-08-19 full sweep below, not a re-run of full discovery - it folds in
@@ -105,11 +109,55 @@ Reply is written and waiting in Gmail. One thing only Alex can supply.
 | --- | --- | --- |
 | [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) | shipping address for tote bags | `1a00a41717b4a24b` |
 | [anything.com](stories/anything-com-ads-pitch.md) | review and send - updated 3 Sep with dub.co proof + Skydive mention | `1a067f08380931ff` |
+| [Screenpipe](stories/screenpipe-pitch.md) | review and send - pitches the $6,999 5x newsletter + 5x carousel-ebook bundle, correctly threaded | `1a06e7bf24e47816` |
 
 Pulled 2026-09-04, per Alex, not ready yet: **Box** (Kat McMahon
 re-approach) and **Markup Hero** (Jeff Solomon check-in). Both drafts
 blanked, both still wanted reach-outs - see the story files for the
 next-action to pick back up later.
+
+## 📋 Tasks (not email)
+
+New this pass, per Alex - `ledger_tasks` in Supabase. Things Alex owes
+that are not "reply to a thread": actions, decisions, waits.
+
+| Task | Kind | Story | Due | Source |
+| --- | --- | --- | --- | --- |
+| Cancel Breakcold (or lock the annual rate, code GOTLUCKY) | action | [Breakcold](stories/breakcold-crm-adoption.md) | 2026-09-08 | per Alex |
+| Bulk-delete the ~26 blanked cold "++ AI Central" drafts | action | - | - | per Alex |
+| Delete the old Guidde "accept his terms" draft by hand | action | [Hod // Guidde](stories/hod-guidde.md) | - | per Alex |
+| Delete the superseded blanked Screenpipe draft | action | [Screenpipe](stories/screenpipe-pitch.md) | - | per Alex |
+| Respond to Marc Duke's Intelligence.com invite | action | [Mark Duke](stories/mark-duke.md) | 2026-09-05 | per Alex |
+| Send the WhatsApp follow-up to Jessica Doss | action | [Guideline AI / Jessica](stories/guideline-ai-jessica.md) | 2026-09-07 | per Alex |
+| Weekend support sweep: AI 101, Feedback, Issues to inbox-zero | action | - | 2026-09-06 | per Alex |
+| Finalize the media kit and case studies | action | - | 2026-09-06 | per Alex |
+| Connect Appeared.in MCP for newsletter-sponsor intelligence | wait | - | - | per Alex |
+| Revive the TechEx / Samuel Paternoster media partnership lead | decision | [TechEx / Paternoster](stories/techex-paternoster.md) | - | per Alex |
+| Resume applying to Passionfroot Discover briefs | action | - | 2026-09-07 | per Alex |
+
+## 📅 Reminders set
+
+Not urgent yet - `next_action_date` in Supabase, will surface when due.
+
+| Story | Due | What |
+| --- | --- | --- |
+| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-09-08 | discovery call with Nicolia, 16:00-16:30 Europe/Rome |
+| [Prophet / Toni Lee PR](stories/prophet-tonileepr.md) | 2026-09-07 | send the media kit to Belle and Mat |
+| [Antidote](stories/antidote-partnership.md) | 2026-09-07 | send the media kit to Becca |
+| [Emergent / PartnerStack](stories/emergent-partnerstack.md) | 2026-09-07 | send the media kit to Randy |
+| [Breakcold](stories/breakcold-crm-adoption.md) | 2026-09-08 | cancel the subscription before the price jump |
+| [PickAndPartner](stories/pickandpartner-pitch.md) | 2026-09-05 | reply or decline the newsletter swap |
+| [Sponsor Radar](stories/sponsor-radar-pitch.md) | 2026-09-07 | add a payment card to claim the $30/600-pitch credit before it expires |
+
+## ⛔ Conflicts awaiting Alex
+
+`ledger_pending_facts` in Supabase - the story was NOT touched, per the
+write-gate hard rule. Needs Alex's word before either the story or this
+list changes.
+
+| Story | Conflict |
+| --- | --- |
+| [InVideo](stories/invideo-pitch.md) | Alex said (2026-09-04) he'd sent Siddharth a reply, but no sent message exists in Gmail and the draft this agent prepared earlier the same session is completely gone. Needs Alex to check |
 
 ## 🔴 Your move
 
@@ -117,11 +165,12 @@ The last word was theirs and nobody replied. Live or recent enough to prompt on.
 
 | Story | Waiting on you since | Idle | Who |
 | --- | --- | --- | --- |
-| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-07-14 | 51d | nwiles@prime-techpr.com - article delivered, 4 follow-ups unanswered. Reply drafted 2026-09-04, not saved yet |
 | [Spacebar Studios](stories/spacebarstudios-crosspromo.md) | 2026-09-02 | 1d | ivana@spacebarstudios.co - needs Alex to pick a newsletter for the swap |
-| [Screenpipe](stories/screenpipe-pitch.md) | 2026-09-03 | 0d | louis@screenpi.pe - cold pitch, decide whether to test it |
 
-Cleared this pass, verified 2026-09-04: **Mark (Marwan)** - Elizabeth is
+Cleared this pass, verified 2026-09-04: **Mindbreeze / Prime Tech PR** -
+Alex answered himself, real strategy not a status update (no pricing
+restated, opened a partnership track, closed on a call ask). Now waiting
+on Nicolia, see "Waiting on them" below. **Mark (Marwan)** - Elizabeth is
 running the invoice thread directly, not Alex's move. **King Capital
 Advisors** - the login question was fully answered 14 Jul, nothing
 pending. **Pillsbury Law** and **Tim Bourquin** - both dormant, each
@@ -138,6 +187,8 @@ Ball is legitimately in their court. Ranges from days to dormant.
 
 | Story | Last chased | Idle | Who owes |
 | --- | --- | --- | --- |
+| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-09-04 | 0d | nwiles@prime-techpr.com - call ask sent, no pricing conceded, Liz cc'd for scheduling |
+| [Sponsor Scout](stories/sponsor-scout-nick-hughes.md) | 2026-09-04 | 0d | jnickhughes@gmail.com - Alex asked detailed comparison questions (vs. Appeared.in/WhoSponsorsStuff, MCP access) |
 | [GTA whitepaper](stories/gta-whitepaper.md) | 2026-08-31 | 0d | tsvetelin@thinkrevops.com - promised his part 25 Aug, still not sent |
 | [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-08-31 | 0d | jazmin@getjobstream.com - re-nudged on the merch thread |
 | [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-08-31 | 0d | ben@madrev.co / katy@madrev.co - quick bump re: the framer deal |
@@ -172,7 +223,10 @@ items aren't buried under nine-month-old single-touch contacts.
 | [Reader's feedback](stories/readers-feedback.md) | 9-11 months | 3 individual readers, grouped |
 | [M&A exploration](stories/ma-exploration.md) | 128d | support@justwebsitebrokerage.com (Joe Burrill) - chased Alex 4 times, no reply found. Two other advisor threads from the same intro (Quiet Light, Anny.biz) resolved separately, see the story file |
 | Luke McCgwire (beehiiv) | 176d | luke.mccgwire@beehiiv.com - proposed a call twice, see `beehiiv-richard-evans.md` |
-| Javeriya Ahsan | 140d | javeriya.ahsan123@gmail.com - sent a proposal 2026-04-01, never acknowledged |
+
+**Closed, 2026-09-04, per Alex:** [Javeriya Ahsan](stories/javeriya-social-media-candidate.md) -
+confirmed not worth reviving, zero signal across two attempts. Removed
+from this list
 
 ## 🏠 Internal
 

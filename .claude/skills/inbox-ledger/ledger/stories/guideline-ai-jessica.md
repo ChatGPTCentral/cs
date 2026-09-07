@@ -14,9 +14,9 @@
 - last-outbound: 2026-08-31 23:40 (alex@thecentral.ai, to jessica.doss, cc
   elizabeth)
 - idle: 4 days
-- next-action: Alex to send a WhatsApp follow-up (has Jessica's personal
-  number) - text drafted 2026-09-04, given to Alex as plain text, not sent
-  by this agent
+- next-action: **send the WhatsApp follow-up Monday 7 Sep 2026** - text
+  already drafted 2026-09-04, given to Alex as plain text, not sent by
+  this agent
 - commitments: none recorded
 - threads: not in Gmail history scanned so far - known only from the
   pasted email
@@ -30,3 +30,5 @@
   **Per Alex, 2026-09-04.** No reply on email after 4 days. Alex has
   Jessica's personal phone number and wants to try WhatsApp instead -
   asked for a short, friendly message, text only, he sends it himself
+
+  **Scheduled, 2026-09-04.** Alex wants to send it Monday, not today

@@ -7,7 +7,8 @@
 - last-inbound: 2025-12-10 (bulandundonnelly@gmail.com)
 - last-outbound: not in the live thread
 - idle: 252 days
-- next-action: none unless Alex wants to revive it
+- next-action: **respond to Marc's Intelligence.com invite, Saturday 5
+  Sep 2026** - thread `1a03974c17cfac28`, per Alex
 - commitments: none recorded
 - threads: `19b0331c16b4afff` (live), 8 more unread
 - notes: an introductions relationship that went quiet in December. 37 messages
@@ -23,3 +24,9 @@
   is a volunteer organization Alex joined. Zoltan (zoltan@futureofwork.uk)
   is also one of Marc's intros - he returns later as part of
   gta-whitepaper, so don't read him as a separate person there.
+
+  **New channel found, 2026-09-04.** Marc joined intelligence.com (a
+  professional network for trusted introductions) and invited Alex, 25
+  Aug 2026 (`connectors@intelligence.com`, thread `1a03974c17cfac28`).
+  Alex wants to respond and use it as the way back into this relationship
+  - tackling it Saturday 5 Sep

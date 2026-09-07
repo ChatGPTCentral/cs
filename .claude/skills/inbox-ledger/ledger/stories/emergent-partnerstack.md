@@ -16,7 +16,9 @@
 - last-outbound: 2026-09-03 13:01 (elizabeth@theaicentral.net, thread
   `1a05d4a6d24bca49`, to randy.harinandan@partnerstack.com, cc
   ashley@partnerstack.com, bcc alex)
-- next-action: none - wait for Randy's reply
+- next-action: **send the AI Central media kit to Randy, Monday 7 Sep
+  2026** (per Alex, alongside Prophet and Antidote) - separate from
+  waiting on his reply about the Emergent affiliate terms
 - **Pulse check, 2026-09-03.** Elizabeth ha risposto a Randy via
   `1a0675c747b0523a` - in attesa di risposta
 - commitments: none
