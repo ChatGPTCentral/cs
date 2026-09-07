@@ -47,16 +47,21 @@ BAD = PALETTE["persian_red"]
 # inline SVG where a CSS var() can't reach)
 SURFACE, GRID, INK, MUTED = "#F3F1EC", "#E3DFD7", "#141414", "#6E6E6E"
 
-FOOT = '<div class="foot">AI CENTRAL</div>'
+FOOT = '<div class="foot">AI CENTRAL</div><div class="pageno"></div>'
 
 
 def make_renumber(deck_label):
     """Binds a renumber(sec, n) to this deck's footer label, e.g.
-    make_renumber("MEDIA KIT Q3 2026") or make_renumber("CASE STUDIES · EXTENDED")."""
+    make_renumber("MEDIA KIT Q3 2026") or make_renumber("CASE STUDIES · EXTENDED").
+
+    Page number moved off the footer label and into its own bottom-right
+    element 6 Sep 2026, per Alex - the footer text and the page number no
+    longer share one line."""
     def renumber(sec, n):
         sec = re.sub(r'<!-- \d\d ─+', f'<!-- {n:02d} ' + '─' * 73, sec, count=1)
         sec = sec.replace('<div class="foot">AI CENTRAL</div>',
-                          f'<div class="foot">AI CENTRAL &nbsp;·&nbsp; {deck_label} &nbsp;·&nbsp; {n:02d}</div>')
+                          f'<div class="foot">AI CENTRAL &nbsp;·&nbsp; {deck_label}</div>')
+        sec = sec.replace('<div class="pageno"></div>', f'<div class="pageno">{n:02d}</div>')
         return sec.rstrip()
     return renumber
 
@@ -102,10 +107,10 @@ def bullets(items, size=21, gap=7):
         f'<div style="font-size:{size}px;font-weight:300;line-height:1.35">{i}</div></div>' for i in items)
 
 
-def usecase(n_, title, intro, items):
+def usecase(n_, title, intro, items, title_size=27):
     return f'''<div data-step="{n_}" style="background:var(--tint);padding:26px 30px;min-height:600px;display:flex;flex-direction:column">
       <div style="font-size:17px;font-weight:700;letter-spacing:.16em;color:var(--muted)">0{n_}</div>
-      <div style="margin-top:6px;font-size:27px;font-weight:700;letter-spacing:-.01em">{title}</div>
+      <div style="margin-top:6px;font-size:{title_size}px;font-weight:700;letter-spacing:-.01em">{title}</div>
       <div style="margin-top:8px;font-size:20px;font-weight:300;line-height:1.35;color:#3A3A3A">{intro}</div>
       <div style="margin-top:12px;flex:1;display:flex;flex-direction:column;justify-content:center">{bullets(items, 20, 18)}</div>
     </div>'''
