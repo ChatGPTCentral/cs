@@ -120,12 +120,13 @@ S[3] = f'''<!-- 03 {'─'*73} -->
 # ── 04 Peace of mind ────────────────────────────────────────────────────────
 S[4] = f'''<!-- 04 {'─'*73} -->
 <section class="slide light" data-label="Peace of mind, every campaign"
-  data-notes="Restored from the Q2 2026 Figma pitch deck at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. The direct comparison to a solo creator is the clearest 'why us' angle across every source in the pack. Column headers enlarged and colored per the deck's own GOOD/BAD semantic roles (red = bad, green = good), 6 Sep 2026 per Alex.">
+  data-notes="Restored from the Q2 2026 Figma pitch deck at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. The direct comparison to a solo creator is the clearest 'why us' angle across every source in the pack. Column headers enlarged and colored per the deck's own GOOD/BAD semantic roles (red = bad, green = good), 6 Sep 2026 per Alex.
+  7 Sep 2026, per Alex: titles enlarged again (34px -> 40px). He also flagged the green (GOOD = asparagus #62A758) as 'not the green from my palette' - left it unchanged rather than guess a replacement: this hex is the one documented in the ai-central-brand skill's own color palette, so if a different green is wanted, I need the actual hex he means (or where it's from) rather than picking another shade blind.">
   <div class="kicker">WHY AI CENTRAL</div>
   <h2>Peace of mind, every campaign</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px">
     <div style="background:#F8ECEC;padding:28px 32px;min-height:640px;display:flex;flex-direction:column">
-      <div style="font-size:34px;font-weight:700;color:{BAD}">Working with a solo creator</div>
+      <div style="font-size:40px;font-weight:700;color:{BAD}">Working with a solo creator</div>
       <div style="margin-top:14px;flex:1;display:flex;flex-direction:column;justify-content:center">{"".join(
         f'<div style="display:flex;gap:12px;padding:18px 0;border-top:1px solid rgba(0,0,0,.08)">'
         f'<div style="font-size:18px;font-weight:700;color:{BAD};flex:none">✕</div>'
@@ -138,7 +139,7 @@ S[4] = f'''<!-- 04 {'─'*73} -->
         "There is little GTM or paid-ads understanding"])}</div>
     </div>
     <div style="background:#EBF4E8;padding:28px 32px;min-height:640px;display:flex;flex-direction:column">
-      <div style="font-size:34px;font-weight:700;color:{GOOD}">Working with AI Central</div>
+      <div style="font-size:40px;font-weight:700;color:{GOOD}">Working with AI Central</div>
       <div style="margin-top:14px;flex:1;display:flex;flex-direction:column;justify-content:center">{"".join(
         f'<div style="display:flex;gap:12px;padding:18px 0;border-top:1px solid rgba(0,0,0,.08)">'
         f'<div style="font-size:18px;font-weight:700;color:{GOOD};flex:none">✓</div>'
@@ -237,7 +238,7 @@ CH_LI_PAGE = [(A['logo_linkedin'], "Social Media (LinkedIn)")]
 CH_WEBSITE = [(A['logo_aicentral'], "Website")]
 CH_BOTH_NEWS = CH_BEEHIIV + CH_LI_NEWS
 
-def fmt(n_, name, what, ideal, price, channels):
+def fmt(n_, name, what, ideal, channels):
     avail = "".join(
         f'<div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--muted)">'
         f'<div style="width:16px;height:16px;border-radius:3px;background:#fff;flex:none;display:flex;align-items:center;justify-content:center">'
@@ -252,25 +253,25 @@ def fmt(n_, name, what, ideal, price, channels):
         <span style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Available on</span>
         <div style="margin-top:6px;display:flex;flex-direction:column;gap:5px">{avail}</div>
       </div>
-      <div style="margin-top:10px;font-size:19px;font-weight:700;color:var(--accent)">{price}</div>
     </div>'''
 
 S[7] = f'''<!-- 07 {'─'*73} -->
 <section class="slide light" data-label="Advertising options"
   data-notes="Rebuilt per Alex, 7 Sep 2026, into the seven boxes he specified directly (numbered list in his comment): Newsletter Main Ad and Newsletter Secondary Ad each now cover BOTH the beehiiv and LinkedIn newsletters as one box, rather than being split into separate LinkedIn/Email formats as before; the ebook and carousel are merged into one box; Dedicated Issue, Welcome Sequence and Website Banner carry over; Social Media Post is new. Alex's own list gave explicit 'Price: On request' for boxes 01-03 and left 04-07 without a price line - since every box on this slide has always shown a price/label at the bottom as part of the card design, the same 'On request' was kept for 04-07 too rather than leaving those four cards visually unfinished; flag if that reads wrong and any of them should carry a real number instead. Availability rows match his channel lists exactly. Box 07's description is a first draft - Alex left [Description] blank for it, so this is Claude's best guess at the offer (a dedicated LinkedIn company-page post) pending his actual copy.
-  7 Sep 2026, per Alex: 'Available on' tags now stack vertically instead of running inline, and the channel names are renamed to match slide 6 - 'Beehiiv Newsletter' -> 'AI Central Newsletter (thecentral.ai)', 'LinkedIn Newsletter' -> 'AI Central Newsletter (LinkedIn)'. Also renamed 'LinkedIn Company Page' -> 'Social Media (LinkedIn)' and 'thecentral.ai website' -> 'Website' for the same consistency, even though only the first two were named explicitly in his comment.">
+  7 Sep 2026, per Alex: 'Available on' tags now stack vertically instead of running inline, and the channel names are renamed to match slide 6 - 'Beehiiv Newsletter' -> 'AI Central Newsletter (thecentral.ai)', 'LinkedIn Newsletter' -> 'AI Central Newsletter (LinkedIn)'. Also renamed 'LinkedIn Company Page' -> 'Social Media (LinkedIn)' and 'thecentral.ai website' -> 'Website' for the same consistency, even though only the first two were named explicitly in his comment.
+  7 Sep 2026, later, per Alex: removed the 'On request' price line from every box - these are pure format/availability cards now, no price signal at all.">
   <div class="kicker">ADVERTISING OPTIONS</div>
   <h2>Seven ways to reach them</h2>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px">
-    {fmt(1, "Newsletter Main Ad", "Top placement in the newsletter, on both surfaces. One partner per issue", "mobile and desktop offers: downloads, webinars, demos, extensions", "On request", CH_BOTH_NEWS)}
-    {fmt(2, "Newsletter Secondary Ad", "Mid-issue placement, below the main editorial, on both surfaces", "always-on awareness at a lower entry point", "On request", CH_BOTH_NEWS)}
-    {fmt(3, "Bespoke Ebook or LinkedIn Carousel", "A co-branded PDF or interactive flipbook, made by our team, published in the feed and the newsletter", "education-led demand and building credibility", "On request", CH_BOTH_NEWS)}
-    {fmt(4, "Dedicated Issue", "The whole send is yours. Written by our editors in the AI Central voice", "major launches and high-ticket offers", "On request", CH_BOTH_NEWS)}
+    {fmt(1, "Newsletter Main Ad", "Top placement in the newsletter, on both surfaces. One partner per issue", "mobile and desktop offers: downloads, webinars, demos, extensions", CH_BOTH_NEWS)}
+    {fmt(2, "Newsletter Secondary Ad", "Mid-issue placement, below the main editorial, on both surfaces", "always-on awareness at a lower entry point", CH_BOTH_NEWS)}
+    {fmt(3, "Bespoke Ebook or LinkedIn Carousel", "A co-branded PDF or interactive flipbook, made by our team, published in the feed and the newsletter", "education-led demand and building credibility", CH_BOTH_NEWS)}
+    {fmt(4, "Dedicated Issue", "The whole send is yours. Written by our editors in the AI Central voice", "major launches and high-ticket offers", CH_BOTH_NEWS)}
   </div>
   <div data-step="2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
-    {fmt(5, "Welcome Sequence", "A dedicated email to every new subscriber for 3 months", "predictable, compounding lead flow", "On request", CH_BEEHIIV)}
-    {fmt(6, "Website Banner", "Always-on banner on thecentral.ai, 20,000 visits a month", "continuous visibility between campaigns", "On request", CH_WEBSITE)}
-    {fmt(7, "Social Media Post", "A dedicated post on our LinkedIn company page, in the AI Central voice, tagging your brand", "sustained brand visibility and thought leadership", "On request", CH_LI_PAGE)}
+    {fmt(5, "Welcome Sequence", "A dedicated email to every new subscriber for 3 months", "predictable, compounding lead flow", CH_BEEHIIV)}
+    {fmt(6, "Website Banner", "Always-on banner on thecentral.ai, 20,000 visits a month", "continuous visibility between campaigns", CH_WEBSITE)}
+    {fmt(7, "Social Media Post", "A dedicated post on our LinkedIn company page, in the AI Central voice, tagging your brand", "sustained brand visibility and thought leadership", CH_LI_PAGE)}
   </div>
   {FOOT}
 </section>'''
