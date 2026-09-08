@@ -7,9 +7,11 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Alex - sent the status-check, waiting on Tsvetelin's part
-- last-inbound: 2026-08-25 (tsvetelin@thinkrevops.com, promised his piece
-  "in the next 24hrs" - did not follow through by 31 Aug)
+- last-touch: Tsvetelin - sent a calendar invite 2026-09-08, ball is Alex's
+- last-inbound: 2026-09-08 (tsvetelin@thinkrevops.com, thread
+  `1a0810c37b3c7fbb`, "GTA AI Pulse check-in" invite for Wed 9 Sep
+  14:30-15:00 CEST - "didn't see a mail from you with slots - please let
+  [us know]")
 - last-outbound: 2026-08-31 09:30 (alex@thecentral.ai, to
   tsvetelin@thinkrevops.com, cc Ganapathy, Marc, Zoltan, Swetha)
 - idle: 0 days
