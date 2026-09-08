@@ -162,7 +162,8 @@ S[5] = f'''<!-- 05 {'─'*73} -->
 <section class="slide light" data-label="The audience"
   data-notes="Reach: 300K+ is subscribers across the three publications (181K LinkedIn newsletter + 97.7K beehiiv + 44K Substack); 613K is accounts reached a month (Buffer + beehiiv + LinkedIn impressions, Aug 2026). Both true, different definitions - say which one you mean. Seniority, industries and geography are measured on the quiz database sample (1,985 / 2,278 / 4,714 respondents) and applied to the full audience, per Alex. The old '40% Founders, C-level and Execs' line is NOT supported by the data (13.9% founder + C-suite; 29.6% VP and above; 50.5% manager and above) - do not use it. 'LinkedIn is the main source of decision-makers' is the kit's claim; in the last 4 weeks beehiiv's top acquisition sources were Netline and Refind, so we say organic on LinkedIn, not 'majority organic' overall.
   8 Sep 2026, per Alex: the map sat at max-width:860px inside a much wider (1092px) grid column, left-aligned by default - leaving a ~230px gap of whitespace on the right that Alex flagged. Wrapped the whole 'Where they are' block (label, map, legend, caption) in a flex container with justify-content:flex-end so it right-aligns as one unit, closing the gap on the left instead.
-  8 Sep 2026, per Alex (follow-up): the right column (map + legend + caption) sat noticeably lower than the left column's industry breakdown, since the row's align-items:start top-anchored both columns regardless of their own heights. Switched to align-items:end so both columns bottom-align instead - the map block shifts up to meet the breakdown percentages rather than needing a hand-tuned margin.">
+  8 Sep 2026, per Alex (follow-up): the right column (map + legend + caption) sat noticeably lower than the left column's industry breakdown, since the row's align-items:start top-anchored both columns regardless of their own heights. Switched to align-items:end so both columns bottom-align instead - the map block shifted up to meet the breakdown percentages.
+  8 Sep 2026, per Alex (second follow-up): that bottom-alignment fix pushed the "Where they are" label out of line with "Who they are" at the top instead - the two column titles are the more important alignment, so switched back to align-items:start. Top labels now match; the map's own bottom no longer lines up with the breakdown's, which is the accepted trade-off of the two columns being different heights.">
   <div class="kicker">THE AUDIENCE</div>
   <h2 style="font-size:62px">Senior professionals with budget, in 151 countries</h2>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:34px;border-bottom:1px solid var(--hair);padding-bottom:14px">
@@ -170,7 +171,7 @@ S[5] = f'''<!-- 05 {'─'*73} -->
     <div><div class="stat" style="font-size:40px">35-55</div><div class="stat-l" style="font-size:18px;margin-top:5px">Key age cohort, in the peak earning years</div></div>
     <div><div class="stat" style="font-size:40px">50%</div><div class="stat-l" style="font-size:18px;margin-top:5px">Manager and above · 30% VP, director, founder or C-suite</div></div>
   </div>
-  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:22px;align-items:end">
+  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:22px;align-items:start">
     <div data-step="2">
       {label("Who they are")}
       <div style="margin-top:10px">__CHART_PROF__</div>
