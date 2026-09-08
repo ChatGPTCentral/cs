@@ -117,12 +117,27 @@ def _placeholder_logo_src(name):
 
 
 def logo_tile(src, name, h=88, full_bleed=False):
-    """One cell of a logo grid. src=None renders a placeholder card (dark
-    tile, name in white) instead of failing - used while a real asset is
-    still pending, so a grid can be reviewed for spacing before every logo
-    is in hand. full_bleed=True is for logo files that already ship on
-    their own branded background (e.g. a solid-colour square) - those fill
-    the tile edge-to-edge instead of getting shrunk onto a white card."""
+    """One cell of a logo grid. src=None renders a placeholder card (a
+    small dark chip on the same white card as a real logo) instead of
+    failing - used while a real asset is still pending, so a grid can be
+    reviewed for spacing before every logo is in hand. full_bleed=True is
+    for logo files that already ship on their own branded background
+    (e.g. a solid-colour square) - those fill the tile edge-to-edge
+    instead of getting shrunk onto a white card.
+
+    The placeholder <img> deliberately uses the SAME sizing/white-card
+    styling as a real logo (7 Sep 2026 follow-up, per Alex) - it used to
+    fill the tile edge-to-edge on a dark background (width/height:100%,
+    object-fit:cover), which looked fine for the generated placeholder
+    SVG itself, but meant that once Alex replaced it via edit mode's
+    click-to-swap-image, HIS real logo inherited that same fill/cover
+    treatment too: oversized, cropped, and showing whatever background
+    color the source file happened to have (often not white). Matching
+    the real-logo styling here means a swapped-in image just renders
+    like every other logo. NOTE: only the CSS changed, not the call to
+    _placeholder_logo_src() below - that function's output feeds the
+    edit-id hash (see _tail.html's collectEditable), so changing it would
+    orphan any placeholder Alex has already uploaded a real logo into."""
     if src and full_bleed:
         inner = f'<img src="{src}" alt="{name}" style="max-width:52%;max-height:52%;object-fit:contain;border-radius:4px">'
         bg = "#fff"
@@ -130,8 +145,8 @@ def logo_tile(src, name, h=88, full_bleed=False):
         inner = f'<img src="{src}" alt="{name}" style="max-width:80%;max-height:56%;object-fit:contain">'
         bg = "#fff"
     else:
-        inner = f'<img src="{_placeholder_logo_src(name)}" alt="{name}" style="width:100%;height:100%;object-fit:cover">'
-        bg = "#141414"
+        inner = f'<img src="{_placeholder_logo_src(name)}" alt="{name}" style="max-width:80%;max-height:56%;object-fit:contain">'
+        bg = "#fff"
     return (f'<div style="background:{bg};height:{h}px;border-radius:6px;overflow:hidden;'
             f'display:flex;align-items:center;justify-content:center;'
             f'border:1px solid var(--hair)">{inner}</div>')

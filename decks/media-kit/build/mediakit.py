@@ -58,7 +58,8 @@ S[2] = f'''<!-- 02 {'─'*73} -->
 <section class="slide light" data-label="About AI Central Media"
   data-notes="Positioning statement is the brand skill's canonical line. '100+ companies' is backed by 104 distinct advertisers in the beehiiv ad export plus the direct clients in the invoice book; the Q3 docx said 75+, which undercounts. The brand started in 2023 (LinkedIn page May 2023, beehiiv Nov 2023); the docx said 2024, which is the company registration year - we say 2023 for the brand.
   7 Sep 2026, per Alex: 2nd stat card text reordered to lead with reach ('Reaching readers in 151 countries and all 50 US states, across 7 channels') rather than lead with the channel count. Added a 3rd logo row (Guidde, a second Taplio mark, plus WISPR Flow/SynthFlow AI/Lindy AI placeholders) - those three placeholders now render as a real (generated) image rather than plain text, per Alex's follow-up ask to be able to click and replace them himself in edit mode; see logo_tile() in deck_shared.py.
-  7 Sep 2026, later: added a Jobstream placeholder tile too (16th logo) - Alex asked slide 13 to use 'the same logo we used in the second page' for Jobstream among others, but Jobstream had never actually been on this slide, so there was no shared asset to point to. Added it here as a placeholder (same click-to-upload mechanism), and slide 13's Jobstream card links here now like the rest. Grid switched from 5 cols x 3 rows to 4 cols x 4 rows for 16 items - stays an even grid rather than a lone tile on its own row.">
+  7 Sep 2026, later: added a Jobstream placeholder tile too (16th logo) - Alex asked slide 13 to use 'the same logo we used in the second page' for Jobstream among others, but Jobstream had never actually been on this slide, so there was no shared asset to point to. Added it here as a placeholder (same click-to-upload mechanism), and slide 13's Jobstream card links here now like the rest. Grid switched from 5 cols x 3 rows to 4 cols x 4 rows for 16 items - stays an even grid rather than a lone tile on its own row.
+  8 Sep 2026, per Alex: Jobstream's placeholder replaced with the real logo file he sent (added to mk3-assets.json as logo_jobstream, used on this slide and slide 13 both). Separately, he flagged the WISPR Flow/SynthFlow AI/Lindy AI logos he'd uploaded himself as rendering wrong (SynthFlow oversized, WISPR Flow and Lindy showing a black background) - real bug in logo_tile()'s placeholder branch: it filled the tile edge-to-edge (width/height:100%, object-fit:cover) on a dark background, which looked fine for the placeholder SVG itself but meant any real logo swapped in via edit mode inherited that same oversized/cropped/dark-background treatment. Fixed to use the same contained, white-card styling as every other logo - see logo_tile() in deck_shared.py. This didn't touch the placeholder SVG generator itself, so it doesn't disturb the edit-ids of logos Alex has already uploaded.">
   <div class="kicker">ABOUT AI CENTRAL MEDIA</div>
   <h2>We turn attention into pipeline for AI and SaaS brands</h2>
   <p class="subline">Imagine Bloomberg Businessweek, but for AI - that's the brand we're building. Our flagship publication, AI Central, covers practical AI for senior professionals, and we pair premium placements with editorial-grade creative that speaks to senior operators</p>
@@ -85,7 +86,7 @@ S[2] = f'''<!-- 02 {'─'*73} -->
       (None, "SynthFlow AI"),
       (A.get('grid_taplio'), "Taplio"),
       (None, "Lindy AI"),
-      (None, "Jobstream"),
+      (A.get('logo_jobstream'), "Jobstream"),
     ], cols=4, h=58, gap=10)}</div>
   </div>
   {FOOT}
@@ -578,7 +579,8 @@ S[13] = f'''<!-- 13 {'─'*73} -->
   7 Sep 2026, follow-up: Replit and UX Pilot added as two more placeholder cards per Alex ('go with the other comments' - confirming the two follow-up questions left on this slide's old flagged comments). Both reuse the same logo assets already used on slide 2 (grid_replit, grid_uxpilot). SciSpace added the same way but has no logo asset anywhere in the deck's bundle, so it's a text placeholder like Jobstream.
   7 Sep 2026, later: HubSpot and Jobstream filled in with real copy Alex supplied directly (his own words, lightly fitted to the card's objective/package/result/body shape, not rewritten) - no longer lorem ipsum. Jobstream's name and existence as a real client is now confirmed by this (it was flagged earlier as possibly misremembered); it still has no logo file, so it stays a text-name card.
   7 Sep 2026, later still, per Alex: Notion, Replit, UX Pilot and SciSpace placeholder cards removed - back to the 7 clients with real figures or real copy (Gamma, ElevenLabs, Guidde, Outskill, Luma AI, HubSpot, Jobstream). Cards resized up now that there's more room (padding, logo size and all type sizes increased). Also per Alex ('link the logos ... to the cover one'): all 7 logos now link to slide 2 ('#2'), where each partner's logo lives in the main showcase grid - Jobstream got a placeholder tile added there (see slide 2's data-notes) specifically so this link would land on something real.
-  7 Sep 2026, even later, per Alex: HubSpot moved to the first card. Grid switched from a 4-column CSS grid to a centered flex-wrap layout, so the uneven last row (3 of 7 cards) centers itself instead of leaving empty space on the right - 'paginate better ... fit the whole page'.">
+  7 Sep 2026, even later, per Alex: HubSpot moved to the first card. Grid switched from a 4-column CSS grid to a centered flex-wrap layout, so the uneven last row (3 of 7 cards) centers itself instead of leaving empty space on the right - 'paginate better ... fit the whole page'.
+  8 Sep 2026, per Alex: Jobstream's card finally has a real logo (his file, added as logo_jobstream) instead of a text-name card - matches every other card now.">
   <div class="kicker">PAST CAMPAIGNS</div>
   <h2>Some of our past campaigns</h2>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:26px">
@@ -600,7 +602,7 @@ S[13] = f'''<!-- 13 {'─'*73} -->
     {campaign_card(A.get('grid_luma'), "Luma AI",
       "Drive trial signups for Luma's AI image and video tools", "10 bespoke LinkedIn Carousels, 2 campaigns",
       "2,944 downloads", "Explainer carousels for teams evaluating Luma's image and video tools, across two campaigns. Bought twice", link_to=2)}
-    {campaign_card(None, "Jobstream",
+    {campaign_card(A.get('logo_jobstream'), "Jobstream",
       "Brand awareness for Jobstream's job board launch, driving downloads on two proprietary whitepapers",
       "2 bespoke whitepapers, a conference one-pager, a dedicated website section with branded job board, across 2 dedicated newsletter issues",
       "65,453 views", "Two whitepapers built around Katie Fortunato's own POV and Jobstream's proprietary data, driving 330 whitepaper downloads and 4,579 views on a dedicated website section that outperformed initial projections - 3m 30s average dwell time, 3.5x the site average.", link_to=2)}
