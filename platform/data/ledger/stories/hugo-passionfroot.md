@@ -20,3 +20,14 @@
   August). Not merged outright - the sender switching from a named person to a
   support alias could also mean Hugo left and someone else took over. Worth a
   body read before treating it as continuous
+
+  **Draft prepared, 2026-09-08, per Alex.** New thread `1a0818eae85e82cd`,
+  not sent yet. Alex wants to flag a 0% response rate on Passionfroot,
+  which he attributes to ElevenLabs campaigns that were scheduled but
+  never ran because Passionfroot never shared the brief. Also flags
+  silence from Hugo/support since the last real reply, 13 Aug 2026 (the
+  LinkedIn company-page thread above). The ElevenLabs claim is Alex's own
+  account, not independently verified against a Gmail thread in this
+  ledger - the real ElevenLabs/Imogen thread on file (`19a97cb380f6d107`)
+  ends Dec 2025 with Imogen asking to reconnect in January, no visible
+  record of a scheduled-but-briefless campaign after that
