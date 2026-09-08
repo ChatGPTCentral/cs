@@ -719,12 +719,10 @@ S = {new_n: S[old_n] for new_n, old_n in enumerate(sorted(S), start=1)}
 
 ns = sorted(S)
 numbered = {i: renumber(S[i], i) for i in ns}
-# 8 Sep 2026, per Alex: the cover's own footer shouldn't carry a page
-# number ("01" read as redundant/extra on a title slide) - strip just
-# that cell's text back out after renumber() fills it in, rather than
-# teaching make_renumber() a page-1 special case every other deck would
-# also inherit.
-numbered[1] = numbered[1].replace('<div class="pageno">01</div>', '<div class="pageno"></div>')
+# 8 Sep 2026, per Alex: the cover's footer briefly had its page number
+# stripped ("01" read as redundant on a title slide), then restored the
+# same day at his follow-up request - footer now matches every other
+# slide (label left, page number right), no special-casing needed here.
 labels = {i: _label_of(numbered[i]) for i in ns}
 navved = {}
 for idx, i in enumerate(ns):
