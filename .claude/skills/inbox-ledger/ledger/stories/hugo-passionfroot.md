@@ -3,10 +3,13 @@
 - label-id: `Label_322524788560555789`
 - kind: person/org
 - people: hugo@passionfroot.me, and separately `support@passionfroot.me`
-- last-touch: Alex, dormant on the labelled thread
+- last-touch: Alex - sent the 0% response-rate email, 2026-09-08, ball is
+  Passionfroot's
 - last-inbound: 2026-04-03 (hugo@passionfroot.me, in reply to Alex's chase)
-- last-outbound: 2026-04-07 (alex@thecentral.ai, unanswered since)
-- idle: 134 days on the labelled thread
+- last-outbound: 2026-09-08 15:12 (alex@thecentral.ai, to
+  hugo@passionfroot.me, cc support@passionfroot.me and
+  elizabeth@theaicentral.net, thread `1a0818eae85e82cd`)
+- idle: 0 days
 - next-action: **check whether `support@passionfroot.me` (3 unlabelled threads,
   14 Jul - 13 Aug, already flagged in the full sweep) is a continuation of this
   same relationship under a different address.** If so, this story is far more
@@ -31,3 +34,7 @@
   ledger - the real ElevenLabs/Imogen thread on file (`19a97cb380f6d107`)
   ends Dec 2025 with Imogen asking to reconnect in January, no visible
   record of a scheduled-but-briefless campaign after that
+
+  **Pulse check, 2026-09-08.** Alex sent the draft above via
+  `1a08193983161ce6` (thread `1a0818eae85e82cd`, cc
+  elizabeth@theaicentral.net) - in attesa di risposta

@@ -5,15 +5,13 @@
 - label-id: none
 - kind: project (cold inbound pitch)
 - people: Louis, louis@screenpi.pe, org Screenpipe
-- last-touch: Alex - reply drafted 2026-09-04, not sent yet
+- last-touch: Alex - sent the pitch, 2026-09-08, ball is Louis's
 - start: 2026-09-03
 - last-inbound: 2026-09-04 17:46 (louis@screenpi.pe, thread
   `1a0653b7325b38e4`)
-- last-outbound: 2026-09-04 17:40 (alex@thecentral.ai, thread
-  `1a0653b7325b38e4`)
-- next-action: review and send the draft pitching the 5x newsletter +
-  5x carousel-ebook bundle - messageId `1a06e7bf24e47816`, properly
-  threaded this time
+- last-outbound: 2026-09-08 15:09 (alex@thecentral.ai, thread
+  `1a0653b7325b38e4`, message `1a08190f72a5d0da`)
+- next-action: none - wait for Louis's reply
 - commitments: none
 - threads: `1a0653b7325b38e4` (live)
 - notes: **Auto-genesis, 2026-09-03.** Cold pitch citing AI Central's
@@ -48,3 +46,6 @@
   now correctly on thread `1a0653b7325b38e4`. Not sent - waiting on Alex
   to review. **Not sent by this agent regardless of instruction** - draft
   review and send is Alex's alone, per the standing rule
+
+  **Pulse check, 2026-09-08.** Alex sent the draft via `1a08190f72a5d0da`
+  - in attesa di risposta
