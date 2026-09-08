@@ -567,3 +567,40 @@ branch (a829a4c); the two items worth a source note:
   Confirmed by cropping before/after screenshots pixel-for-pixel rather
   than eyeballing it. Raised to `(94, 90)` - `max-height` from 74% to
   90% is what actually moved the needle - and reverified visually.
+
+## Revision, 8 Sep 2026 - footer color, cover cleanup, slide 5 alignment, slide 4 green, Website icon
+
+- **Footer background -> #333333.** Alex: every slide's footer bar,
+  not just the Cover/Closing background from the previous revision.
+  `.foot`'s `background:var(--ink)` (#141414) in `_head.html` -> a
+  literal `#333333`.
+- **Cover page cleanup, three follow-ups.** (1) The `<div class="pageno">01</div>`
+  removal already covered the footer's own page number; Alex also
+  wanted the "Q3 2026 · AI Central Media" subline gone entirely from
+  under the PARTNERSHIP & MEDIA KIT kicker - dropped. (2) The top-of-slide
+  page nav's center pill read "COVER" on the one slide where a
+  "current page" label added nothing - stripped just that `pn-current`
+  element for slide 1 in the final-assembly loop (regex on the
+  already-built `page_nav()` output), leaving the "About AI Central
+  Media >" link on the right intact.
+- **Slide 5 (audience), map vertical alignment.** The map/legend/caption
+  column and the industry-breakdown column sat top-aligned
+  (`align-items:start` on their shared grid row) despite differing
+  heights, so the map's bottom trailed below the breakdown's last row.
+  Switched to `align-items:end` so both columns bottom-align instead -
+  the whole "Where they are" block shifts up to meet the breakdown.
+- **Slide 4 green, resolved.** Alex clarified: the pink/green card
+  *backgrounds* were correct as-is - the ask was for the "Working with
+  AI Central" header text and the checkmark glyphs specifically to move
+  off GOOD/asparagus (#62A758) onto PALETTE['viridian'] (#2D8879), a
+  different green already in the documented brand palette. Backgrounds
+  (#F8ECEC / #EBF4E8) untouched.
+- **Slides 6 & 7, Website icon.** Both used `logo_aicentral` - the full
+  1200x286 wordmark - squeezed into a 40px/16px square slot next to
+  "Website", letterboxed and visually smaller than the other channels'
+  actual square/circular logos. That file's own left-hand icon block is
+  a clean 286x286 square, so cropped it out as a new asset
+  (`logo_aicentral_square`) rather than distorting or re-deriving one -
+  used on slide 6's publications card and slide 7's Website channel tag
+  (and by extension slide 11's "Website Banner" card, which shares
+  `CH_WEBSITE`).

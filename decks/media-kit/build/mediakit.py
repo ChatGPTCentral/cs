@@ -9,7 +9,7 @@ import json, pathlib, re, sys
 
 B = pathlib.Path("/home/claude/build")
 sys.path.insert(0, str(B))
-from deck_shared import FOOT, label, bullets, usecase, make_renumber, GOOD, BAD, logo_grid, page_nav
+from deck_shared import FOOT, label, bullets, usecase, make_renumber, GOOD, BAD, logo_grid, page_nav, PALETTE
 
 head = (B / "_head.html").read_text().replace(
     "table{width:100%;border-collapse:collapse;margin-top:44px;table-layout:fixed}",
@@ -43,13 +43,11 @@ S = {}
 S[1] = f'''<!-- 01 {'─'*73} -->
 <section class="slide dark" data-label="Cover" style="background:#333333"
   data-notes="Advertiser-facing. No financials, no valuation, no investor framing anywhere in this deck.
-  8 Sep 2026, per Alex: background changed to #333333 (jet_black, the brand kit's own value - matches PALETTE['jet_black'] in deck_shared.py) instead of the deck's default dark-slide ink (#141414). Scoped to this slide's own inline style rather than the shared --ink token, which also drives the Closing slide (bookend, same treatment applied there directly), badges and the contact box on Meet the team - none of those were mentioned, so left on the original ink.">
+  8 Sep 2026, per Alex: background changed to #333333 (jet_black, the brand kit's own value - matches PALETTE['jet_black'] in deck_shared.py) instead of the deck's default dark-slide ink (#141414). Scoped to this slide's own inline style rather than the shared --ink token, which also drives the Closing slide (bookend, same treatment applied there directly), badges and the contact box on Meet the team - none of those were mentioned, so left on the original ink.
+  8 Sep 2026, per Alex (follow-up): dropped the 'Q3 2026 · AI Central Media' subline under the PARTNERSHIP & MEDIA KIT kicker per his request.">
   <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:64px">
     <img src="{A['logo_aicentral']}" alt="AI Central" style="width:760px;max-width:70%;height:auto">
-    <div>
-      <div class="kicker" style="font-size:30px;letter-spacing:.34em;text-align:center">PARTNERSHIP &amp; MEDIA KIT</div>
-      <div style="margin-top:22px;font-size:25px;font-weight:400;color:var(--muted-dark);text-align:center;letter-spacing:.03em">Q3 2026 · AI Central Media</div>
-    </div>
+    <div class="kicker" style="font-size:30px;letter-spacing:.34em;text-align:center">PARTNERSHIP &amp; MEDIA KIT</div>
   </div>
   {FOOT}
 </section>'''
@@ -124,7 +122,8 @@ S[3] = f'''<!-- 03 {'─'*73} -->
 S[4] = f'''<!-- 04 {'─'*73} -->
 <section class="slide light" data-label="Peace of mind, every campaign"
   data-notes="Restored from the Q2 2026 Figma pitch deck at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. The direct comparison to a solo creator is the clearest 'why us' angle across every source in the pack. Column headers enlarged and colored per the deck's own GOOD/BAD semantic roles (red = bad, green = good), 6 Sep 2026 per Alex.
-  7 Sep 2026, per Alex: titles enlarged again (34px -> 40px). He also flagged the green (GOOD = asparagus #62A758) as 'not the green from my palette' - left it unchanged rather than guess a replacement: this hex is the one documented in the ai-central-brand skill's own color palette, so if a different green is wanted, I need the actual hex he means (or where it's from) rather than picking another shade blind.">
+  7 Sep 2026, per Alex: titles enlarged again (34px -> 40px). He flagged the green (GOOD = asparagus #62A758) as 'not the green from my palette'.
+  8 Sep 2026, per Alex (follow-up): background stays #EBF4E8 (unchanged, not the part he meant) - the header text and checkmarks move to PALETTE['viridian'] (#2D8879), a different green already in the documented brand palette.">
   <div class="kicker">WHY AI CENTRAL</div>
   <h2>Peace of mind, every campaign</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px">
@@ -142,10 +141,10 @@ S[4] = f'''<!-- 04 {'─'*73} -->
         "There is little GTM or paid-ads understanding"])}</div>
     </div>
     <div style="background:#EBF4E8;padding:28px 32px;min-height:640px;display:flex;flex-direction:column">
-      <div style="font-size:40px;font-weight:700;color:{GOOD}">Working with AI Central</div>
+      <div style="font-size:40px;font-weight:700;color:{PALETTE['viridian']}">Working with AI Central</div>
       <div style="margin-top:14px;flex:1;display:flex;flex-direction:column;justify-content:center">{"".join(
         f'<div style="display:flex;gap:12px;padding:18px 0;border-top:1px solid rgba(0,0,0,.08)">'
-        f'<div style="font-size:18px;font-weight:700;color:{GOOD};flex:none">✓</div>'
+        f'<div style="font-size:18px;font-weight:700;color:{PALETTE["viridian"]};flex:none">✓</div>'
         f'<div style="font-size:19px;font-weight:300;line-height:1.35">{i}</div></div>' for i in [
         "You get on-time delivery, every time",
         "You get pixel-perfect, on-brand content from day one",
@@ -162,7 +161,8 @@ S[4] = f'''<!-- 04 {'─'*73} -->
 S[5] = f'''<!-- 05 {'─'*73} -->
 <section class="slide light" data-label="The audience"
   data-notes="Reach: 300K+ is subscribers across the three publications (181K LinkedIn newsletter + 97.7K beehiiv + 44K Substack); 613K is accounts reached a month (Buffer + beehiiv + LinkedIn impressions, Aug 2026). Both true, different definitions - say which one you mean. Seniority, industries and geography are measured on the quiz database sample (1,985 / 2,278 / 4,714 respondents) and applied to the full audience, per Alex. The old '40% Founders, C-level and Execs' line is NOT supported by the data (13.9% founder + C-suite; 29.6% VP and above; 50.5% manager and above) - do not use it. 'LinkedIn is the main source of decision-makers' is the kit's claim; in the last 4 weeks beehiiv's top acquisition sources were Netline and Refind, so we say organic on LinkedIn, not 'majority organic' overall.
-  8 Sep 2026, per Alex: the map sat at max-width:860px inside a much wider (1092px) grid column, left-aligned by default - leaving a ~230px gap of whitespace on the right that Alex flagged. Wrapped the whole 'Where they are' block (label, map, legend, caption) in a flex container with justify-content:flex-end so it right-aligns as one unit, closing the gap on the left instead.">
+  8 Sep 2026, per Alex: the map sat at max-width:860px inside a much wider (1092px) grid column, left-aligned by default - leaving a ~230px gap of whitespace on the right that Alex flagged. Wrapped the whole 'Where they are' block (label, map, legend, caption) in a flex container with justify-content:flex-end so it right-aligns as one unit, closing the gap on the left instead.
+  8 Sep 2026, per Alex (follow-up): the right column (map + legend + caption) sat noticeably lower than the left column's industry breakdown, since the row's align-items:start top-anchored both columns regardless of their own heights. Switched to align-items:end so both columns bottom-align instead - the map block shifts up to meet the breakdown percentages rather than needing a hand-tuned margin.">
   <div class="kicker">THE AUDIENCE</div>
   <h2 style="font-size:62px">Senior professionals with budget, in 151 countries</h2>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:34px;border-bottom:1px solid var(--hair);padding-bottom:14px">
@@ -170,7 +170,7 @@ S[5] = f'''<!-- 05 {'─'*73} -->
     <div><div class="stat" style="font-size:40px">35-55</div><div class="stat-l" style="font-size:18px;margin-top:5px">Key age cohort, in the peak earning years</div></div>
     <div><div class="stat" style="font-size:40px">50%</div><div class="stat-l" style="font-size:18px;margin-top:5px">Manager and above · 30% VP, director, founder or C-suite</div></div>
   </div>
-  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:22px;align-items:start">
+  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:22px;align-items:end">
     <div data-step="2">
       {label("Who they are")}
       <div style="margin-top:10px">__CHART_PROF__</div>
@@ -218,7 +218,8 @@ S[6] = f'''<!-- 06 {'─'*73} -->
 <section class="slide light" data-label="The publications"
   data-notes="Reordered and renamed per Alex, 4 Sep 2026: beehiiv leads, the two LinkedIn surfaces named as distinct AI Central properties rather than 'LinkedIn Newsletter'/'LinkedIn Company Page'. Figures unchanged from the Q3 kit / beehiiv API - LinkedIn newsletter and company page figures are from the Q3 kit, sourced from Favikon on 18 Aug 2026 - not independently verifiable here. beehiiv figures are LIVE from the beehiiv API on 2 Sep 2026: 97,681 active subscribers, 29.7% open rate and 2.34% click rate over the last 4 weeks, +4,906 new subscribers in the same window. The docx said 86K subscribers / 30.25% / 2.48% - the 86K was average sends, not active subscribers. Alex asked to connect LinkedIn for a live data pull instead of the Favikon snapshot - flagged back to him, no LinkedIn integration available in this session.
   6 Sep 2026, per Alex: reordered again (beehiiv, LinkedIn Newsletter, LinkedIn Company Page); 'Average unique ad clicks' dropped from beehiiv (the other two never carried it, so it wasn't a fair three-way comparison); 'Ideal for' renamed 'Clients buy this for' and moved to the bottom of the card, larger; 'Posts a week' added for beehiiv and the LinkedIn Newsletter (4x, per Alex - both are the weekly-cadence AI Central sends) alongside the Company Page's existing Daily; a fourth box added below for thecentral.ai itself, reusing the already-sourced 20,000-visits/month figure quoted on slides 7 and 11. 7 Sep 2026: that fourth box moved from a dark/ink background to the same tint grey as the other three, per Alex.
-  7 Sep 2026, per Alex: restructured into exactly 4 equal-height boxes in one row - AI Central Newsletter (thecentral.ai), AI Central Newsletter (LinkedIn), Social Media (LinkedIn), Website - the naming he wants carried everywhere else in the deck. The per-card 'Source: ...' caption was dropped (per Alex, 'remove source') - sourcing for these figures stays logged in MEDIA-KIT-SOURCES.md instead of on the slide itself.">
+  7 Sep 2026, per Alex: restructured into exactly 4 equal-height boxes in one row - AI Central Newsletter (thecentral.ai), AI Central Newsletter (LinkedIn), Social Media (LinkedIn), Website - the naming he wants carried everywhere else in the deck. The per-card 'Source: ...' caption was dropped (per Alex, 'remove source') - sourcing for these figures stays logged in MEDIA-KIT-SOURCES.md instead of on the slide itself.
+  8 Sep 2026, per Alex: the Website card's icon was the full wide wordmark (logo_aicentral, 1200x286) squeezed into a square slot, letterboxed and off-balance next to the other publications' actual square/circular logos. The mark's own left-hand icon block is a perfect 286x286 square within that same file, so cropped it out as a new asset (logo_aicentral_square) instead of distorting or re-deriving one - used here and on slide 7's matching Website channel tag.">
   <div class="kicker">THE PUBLICATIONS</div>
   <h2>Four channels, one senior audience</h2>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px">
@@ -231,7 +232,7 @@ S[6] = f'''<!-- 06 {'─'*73} -->
     {pub(3, A['logo_linkedin'], "Social Media (LinkedIn)", "linkedin.com/company/chat-gpt-central", "sustained brand visibility and thought leadership, not single placements", [
       ("Active followers", "289K"), ("New followers a month", "+8,300"),
       ("Average impressions per post", "4,500+"), ("Posts a week", "Daily")])}
-    {pub(4, A['logo_aicentral'], "Website", "thecentral.ai", "continuous presence between and beyond campaigns", [
+    {pub(4, A['logo_aicentral_square'], "Website", "thecentral.ai", "continuous presence between and beyond campaigns", [
       ("Visitors a month", "20,000")], logo_fit="contain")}
   </div>
   {FOOT}
@@ -241,7 +242,7 @@ S[6] = f'''<!-- 06 {'─'*73} -->
 CH_BEEHIIV = [(A['logo_beehiiv'], "AI Central Newsletter (thecentral.ai)")]
 CH_LI_NEWS = [(A['logo_linkedin'], "AI Central Newsletter (LinkedIn)")]
 CH_LI_PAGE = [(A['logo_linkedin'], "Social Media (LinkedIn)")]
-CH_WEBSITE = [(A['logo_aicentral'], "Website")]
+CH_WEBSITE = [(A['logo_aicentral_square'], "Website")]
 CH_BOTH_NEWS = CH_BEEHIIV + CH_LI_NEWS
 
 def fmt(n_, name, what, ideal, channels):
@@ -709,12 +710,24 @@ S = {new_n: S[old_n] for new_n, old_n in enumerate(sorted(S), start=1)}
 
 ns = sorted(S)
 numbered = {i: renumber(S[i], i) for i in ns}
+# 8 Sep 2026, per Alex: the cover's own footer shouldn't carry a page
+# number ("01" read as redundant/extra on a title slide) - strip just
+# that cell's text back out after renumber() fills it in, rather than
+# teaching make_renumber() a page-1 special case every other deck would
+# also inherit.
+numbered[1] = numbered[1].replace('<div class="pageno">01</div>', '<div class="pageno"></div>')
 labels = {i: _label_of(numbered[i]) for i in ns}
 navved = {}
 for idx, i in enumerate(ns):
     prev_i = ns[idx - 1] if idx > 0 else None
     next_i = ns[idx + 1] if idx < len(ns) - 1 else None
     nav = page_nav(prev_i, labels.get(prev_i, ''), labels[i], next_i, labels.get(next_i, ''))
+    if i == 1:
+        # 8 Sep 2026, per Alex: drop the "COVER" current-page pill from
+        # the title slide's own top nav - it read as clutter on a slide
+        # with no real "previous" to navigate from anyway. The "About AI
+        # Central Media >" link on the right stays.
+        nav = re.sub(r'<div class="pn-current">.*?</div>', '', nav, count=1)
     pos = _end_of_open_tag(numbered[i])
     navved[i] = numbered[i][:pos] + nav + numbered[i][pos:]
 
