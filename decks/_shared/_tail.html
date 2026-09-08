@@ -99,7 +99,16 @@
   }
   fetch(EDIT_API + '?doc=' + encodeURIComponent(deckSlug)).then(function(r){ return r.json(); })
     .then(function(data){ if (data && data.ok) applyOverrides(data.overrides || {}); })
-    .catch(function(){});
+    .catch(function(){})
+    .then(function(){
+      // 8 Sep 2026: signal completion (success or failure alike) so a
+      // host page - e.g. ReviewClient.tsx's Download PDF button - can
+      // wait for saved overrides (Alex's own text/image edits) to land
+      // before calling print(). Without this, print() had no way to
+      // know the overrides fetch was still in flight and could capture
+      // the deck's un-overridden baked-in content instead.
+      if (window.parent !== window) window.parent.postMessage({ source: 'aic-deck', type: 'overrides-applied' }, '*');
+    });
 
   function saveOverride(eid, type, value){
     fetch(EDIT_API, {
