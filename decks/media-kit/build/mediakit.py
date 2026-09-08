@@ -167,7 +167,8 @@ S[5] = f'''<!-- 05 {'─'*73} -->
   8 Sep 2026, per Alex (second follow-up): that bottom-alignment fix pushed the 'Where they are' label out of line with 'Who they are' at the top instead - the two column titles are the more important alignment, so switched back to align-items:start. Top labels now match; the map's own bottom no longer lines up with the breakdown's, which is the accepted trade-off of the two columns being different heights.
   8 Sep 2026, per Alex (third follow-up): reversed again - the map's bottom lining up with the breakdown percentages is what Alex actually wants, top-label mismatch accepted as the trade-off this time. Back to align-items:end.
   8 Sep 2026, per Alex (fourth follow-up): turns out he wanted both at once - 'Where they are' top-aligned with 'Who they are' (Job Title Breakdown) AND the map/legend/caption bottom-aligned with the industry breakdown stats. A single align-items on the row can only pick one edge for the whole column, so restructured instead: the row stretches both columns to equal height (align-items:stretch), the right column is its own flex column with the label pinned at its top, and a flex:1 spacer below the label pushes the map/legend/caption group down to the bottom (and right, replacing the old row-level justify-content:flex-end) of the stretched column. Top labels and bottom map both line up now, independent of each other.
-  Also fixed the same day: this slide's h2 heading carried a one-off font-size:62px, out of step with every other slide's default 76px (deck_shared.py's page_nav / the shared h2 rule in _head.html) - no note anywhere explains why this slide alone was shrunk, so removed it to match. At the shared 76px size the headline wraps to two lines (it doesn't at 62px), so the stat row and audience grid below lost their old margin-top to keep the slide from overflowing - the trade Alex accepted by asking for the shared size.">
+  Also fixed the same day: this slide's h2 heading carried a one-off font-size:62px, out of step with every other slide's default 76px (deck_shared.py's page_nav / the shared h2 rule in _head.html) - no note anywhere explains why this slide alone was shrunk, so removed it to match. At the shared 76px size the headline wraps to two lines (it doesn't at 62px), so the stat row and audience grid below lost their old margin-top to keep the slide from overflowing - the trade Alex accepted by asking for the shared size.
+  8 Sep 2026, per Alex (fifth follow-up, two fixes): (1) that last spacing cut left the stat row's own bottom hairline sitting right on top of 'JOB TITLE BREAKDOWN'/'WHERE THEY ARE' with no breathing room - restored a real margin-top above the audience grid. (2) the label-to-label top alignment from the fourth follow-up was the wrong pair to match after all - Alex wants the DATA aligned, not the headings: the top of the breakdown bars level with the top of the map itself, and the bottom of the industry breakdown level with the bottom of the map's legend (not the caption below it, which still trails outside the aligned block). Both labels sit above this aligned zone now and are free to land at different heights. Right column: label, then a flex:1 zone holding just the map and the legend row with justify-content:space-between (map pinned to the zone's top, legend pinned to its bottom), then the caption positioned absolutely right below it (position:relative on the column) so it can't eat into that zone's flex space. The label-to-content margin (10px) is kept identical on both sides so the top edges land on the same line. Turned out the map+legend zone's own natural height is a touch taller than the breakdown bars' natural height, so the grid row's auto height was actually being driven by the RIGHT column, leaving dead space under the left column's industry breakdown instead of the two bottoms meeting - gave the left column the same trick in reverse: it's now a flex column too, with the gap between the two breakdown sections (not the outer margins) absorbing the slack via flex:1/justify-content:flex-end, so 'Industry breakdown' + its chart get pushed down flush with the column's own bottom regardless of which side ends up taller.">
   <div class="kicker">THE AUDIENCE</div>
   <h2>Senior professionals with budget, in 151 countries</h2>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:8px;border-bottom:1px solid var(--hair);padding-bottom:4px">
@@ -175,27 +176,27 @@ S[5] = f'''<!-- 05 {'─'*73} -->
     <div><div class="stat" style="font-size:40px">35-55</div><div class="stat-l" style="font-size:18px;margin-top:5px">Key age cohort, in the peak earning years</div></div>
     <div><div class="stat" style="font-size:40px">50%</div><div class="stat-l" style="font-size:18px;margin-top:5px">Manager and above · 30% VP, director, founder or C-suite</div></div>
   </div>
-  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:6px;align-items:stretch">
-    <div data-step="2">
+  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:26px;align-items:stretch">
+    <div data-step="2" style="display:flex;flex-direction:column">
       {label("Who they are")}
-      <div style="margin-top:8px">__CHART_PROF__</div>
-      <div style="margin-top:10px">{label("Where they work")}</div>
-      <div style="margin-top:8px">__CHART_IND__</div>
+      <div style="margin-top:10px">__CHART_PROF__</div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end">
+        <div>{label("Where they work")}</div>
+        <div style="margin-top:10px">__CHART_IND__</div>
+      </div>
     </div>
-    <div data-step="3" style="display:flex;flex-direction:column">
-      {label("Where they are")}
-      <div style="flex:1;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end">
-        <div style="max-width:860px;width:100%">
-          <div style="margin-top:10px">__CHART_MAP__</div>
-          <div style="display:flex;gap:18px;margin-top:8px;font-size:17px;color:var(--muted);flex-wrap:wrap">
-            <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#046BB1;vertical-align:-1px"></i> North America 50%</span>
-            <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#3B4C99;vertical-align:-1px"></i> Europe 13% + UK 6%</span>
-            <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#38A7AD;vertical-align:-1px"></i> Asia 14%</span>
-            <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#E3DFD7;vertical-align:-1px"></i> Rest 17%</span>
-          </div>
-          <div style="margin-top:8px;font-size:18px;font-weight:300;line-height:1.4;color:var(--muted)">LinkedIn is our main source of decision makers, and most of that audience found us organically</div>
+    <div data-step="3" style="display:flex;flex-direction:column;align-items:flex-end;position:relative">
+      <div style="max-width:860px;width:100%">{label("Where they are")}</div>
+      <div style="max-width:860px;width:100%;flex:1;display:flex;flex-direction:column;justify-content:space-between;margin-top:10px">
+        <div>__CHART_MAP__</div>
+        <div style="display:flex;gap:18px;font-size:17px;color:var(--muted);flex-wrap:wrap">
+          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#046BB1;vertical-align:-1px"></i> North America 50%</span>
+          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#3B4C99;vertical-align:-1px"></i> Europe 13% + UK 6%</span>
+          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#38A7AD;vertical-align:-1px"></i> Asia 14%</span>
+          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#E3DFD7;vertical-align:-1px"></i> Rest 17%</span>
         </div>
       </div>
+      <div style="position:absolute;top:100%;right:0;max-width:860px;width:100%;margin-top:8px;font-size:18px;font-weight:300;line-height:1.4;color:var(--muted)">LinkedIn is our main source of decision makers, and most of that audience found us organically</div>
     </div>
   </div>
   {FOOT}
