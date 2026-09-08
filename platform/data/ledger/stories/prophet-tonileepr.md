@@ -7,13 +7,13 @@
 - people: Belle Lenz (belle@tonileepr.com, Toni Lee PR, PR agency based in
   Los Angeles, representing Prophet), Mat Zucker (mzucker@prophet.com,
   CMO of Prophet, based in New York)
-- last-touch: Alex - owes them a media kit
+- last-touch: Alex - sent the media kit, 2026-09-08, ball is theirs
 - start: 2026-09-02
 - last-inbound: none tracked
-- last-outbound: none tracked
-- next-action: **send the AI Central media kit to Belle and Mat, Monday 7
-  Sep 2026**
-- commitments: send the media kit
+- last-outbound: 2026-09-08 18:08 (alex@thecentral.ai, to
+  mzucker@prophet.com and belle@tonileepr.com, thread `1a081e12c5cbaef6`)
+- next-action: none - wait for their reply
+- commitments: send the media kit - done
 - threads: none found
 - notes: **Auto-genesis, 2026-09-03.** Google Calendar event "Discovery
   Call between Alex Fiore and Belle Lenz for Prophet," 2 Sep 2026,
@@ -36,3 +36,6 @@
   **Roadmap link, 2026-09-04.** Mat Zucker (Prophet's CMO) is New
   York-based - see `../roadmap.md`, AI Summit New York is still TBD for
   Dec 2026
+
+  **Pulse check, 2026-09-08.** Alex sent the media kit via
+  `1a082355b4ece77b` (thread `1a081e12c5cbaef6`) - in attesa di risposta

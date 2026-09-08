@@ -8,16 +8,17 @@
   (PR/comms agency, no owned distribution channels). Introduced by
   Richard Lowe (West England Tech Advocates / Hewlett Rand), the same
   connector behind the Bristol AI Hackathon relationship
-- last-touch: Alex - owes them a media kit
+- last-touch: Alex - sent the media kit, 2026-09-08, ball is theirs
 - start: 2026-08-24 (calendar invite for the intro call)
 - last-inbound: none tracked in Gmail - relationship has run through
   Richard's thread and the Notion meeting transcript so far
-- last-outbound: none tracked
-- next-action: **send the AI Central media kit to Becca, Monday 7 Sep
-  2026**
-- commitments: send the media kit. Per the meeting transcript, Antidote
-  committed to send case studies of paid client results in return -
-  not yet received
+- last-outbound: 2026-09-08 18:06 (alex@thecentral.ai, to
+  becca.williams@antidotecomms.com, cc liz@thecentral.ai, thread
+  `1a081e1502018db9`)
+- next-action: none - wait for Becca's reply
+- commitments: send the media kit - done. Per the meeting transcript,
+  Antidote committed to send case studies of paid client results in
+  return - not yet received
 - threads: none found in Gmail - the intro was scheduled via a Google
   Meet invite (`1a03521b2a63a7ce`), no correspondence since
 - notes: **Notion transcript, 2026-08-26 ("AI Central Media & Antidote:
@@ -38,3 +39,6 @@
   **Per Alex, 2026-09-04.** Task set to send the media kit Monday 7 Sep,
   alongside Prophet (Mat Zucker/Belle Lenz) and the PartnerStack contact
   (Randy Harinandan)
+
+  **Pulse check, 2026-09-08.** Alex sent the media kit via
+  `1a08233193d6d634` (thread `1a081e1502018db9`) - in attesa di risposta
