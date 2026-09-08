@@ -159,7 +159,8 @@ S[4] = f'''<!-- 04 {'─'*73} -->
 # ── 05 The audience ─────────────────────────────────────────────────────────
 S[5] = f'''<!-- 05 {'─'*73} -->
 <section class="slide light" data-label="The audience"
-  data-notes="Reach: 300K+ is subscribers across the three publications (181K LinkedIn newsletter + 97.7K beehiiv + 44K Substack); 613K is accounts reached a month (Buffer + beehiiv + LinkedIn impressions, Aug 2026). Both true, different definitions - say which one you mean. Seniority, industries and geography are measured on the quiz database sample (1,985 / 2,278 / 4,714 respondents) and applied to the full audience, per Alex. The old '40% Founders, C-level and Execs' line is NOT supported by the data (13.9% founder + C-suite; 29.6% VP and above; 50.5% manager and above) - do not use it. 'LinkedIn is the main source of decision-makers' is the kit's claim; in the last 4 weeks beehiiv's top acquisition sources were Netline and Refind, so we say organic on LinkedIn, not 'majority organic' overall.">
+  data-notes="Reach: 300K+ is subscribers across the three publications (181K LinkedIn newsletter + 97.7K beehiiv + 44K Substack); 613K is accounts reached a month (Buffer + beehiiv + LinkedIn impressions, Aug 2026). Both true, different definitions - say which one you mean. Seniority, industries and geography are measured on the quiz database sample (1,985 / 2,278 / 4,714 respondents) and applied to the full audience, per Alex. The old '40% Founders, C-level and Execs' line is NOT supported by the data (13.9% founder + C-suite; 29.6% VP and above; 50.5% manager and above) - do not use it. 'LinkedIn is the main source of decision-makers' is the kit's claim; in the last 4 weeks beehiiv's top acquisition sources were Netline and Refind, so we say organic on LinkedIn, not 'majority organic' overall.
+  8 Sep 2026, per Alex: the map sat at max-width:860px inside a much wider (1092px) grid column, left-aligned by default - leaving a ~230px gap of whitespace on the right that Alex flagged. Wrapped the whole 'Where they are' block (label, map, legend, caption) in a flex container with justify-content:flex-end so it right-aligns as one unit, closing the gap on the left instead.">
   <div class="kicker">THE AUDIENCE</div>
   <h2 style="font-size:62px">Senior professionals with budget, in 151 countries</h2>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:34px;border-bottom:1px solid var(--hair);padding-bottom:14px">
@@ -174,16 +175,18 @@ S[5] = f'''<!-- 05 {'─'*73} -->
       <div style="margin-top:16px">{label("Where they work")}</div>
       <div style="margin-top:10px">__CHART_IND__</div>
     </div>
-    <div data-step="3">
-      {label("Where they are")}
-      <div style="margin-top:10px;max-width:860px">__CHART_MAP__</div>
-      <div style="display:flex;gap:18px;margin-top:8px;font-size:17px;color:var(--muted);flex-wrap:wrap">
-        <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#046BB1;vertical-align:-1px"></i> North America 50%</span>
-        <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#3B4C99;vertical-align:-1px"></i> Europe 13% + UK 6%</span>
-        <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#38A7AD;vertical-align:-1px"></i> Asia 14%</span>
-        <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#E3DFD7;vertical-align:-1px"></i> Rest 17%</span>
+    <div data-step="3" style="display:flex;justify-content:flex-end">
+      <div style="max-width:860px;width:100%">
+        {label("Where they are")}
+        <div style="margin-top:10px">__CHART_MAP__</div>
+        <div style="display:flex;gap:18px;margin-top:8px;font-size:17px;color:var(--muted);flex-wrap:wrap">
+          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#046BB1;vertical-align:-1px"></i> North America 50%</span>
+          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#3B4C99;vertical-align:-1px"></i> Europe 13% + UK 6%</span>
+          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#38A7AD;vertical-align:-1px"></i> Asia 14%</span>
+          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#E3DFD7;vertical-align:-1px"></i> Rest 17%</span>
+        </div>
+        <div style="margin-top:8px;font-size:18px;font-weight:300;line-height:1.4;color:var(--muted)">LinkedIn is our main source of decision makers, and most of that audience found us organically</div>
       </div>
-      <div style="margin-top:8px;font-size:18px;font-weight:300;line-height:1.4;color:var(--muted)">LinkedIn is our main source of decision makers, and most of that audience found us organically</div>
     </div>
   </div>
   {FOOT}
