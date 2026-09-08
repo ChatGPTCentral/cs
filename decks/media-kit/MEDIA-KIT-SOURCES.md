@@ -509,3 +509,41 @@ branch (a829a4c); the two items worth a source note:
   actual hex or source he means before changing it.
 - **Slide 7.** Removed the "On request" price line from all 7 format
   boxes per Alex - `fmt()` lost its now-unused `price` parameter.
+
+## Revision, 8 Sep 2026 - logo-placeholder rendering bug, Jobstream logo, map alignment
+
+- **Logo-placeholder rendering bug, fixed.** Alex uploaded real logos
+  over the WISPR Flow / SynthFlow AI / Lindy AI placeholders via edit
+  mode and reported: SynthFlow AI rendering oversized, WISPR Flow and
+  Lindy AI showing a black background instead of white like the other
+  tiles. Root cause: `logo_tile()`'s `src=None` branch filled the tile
+  edge-to-edge on a dark background (`width/height:100%`,
+  `object-fit:cover`) - correct for the generated placeholder SVG
+  itself, but any REAL logo swapped in via edit mode inherited that
+  same treatment, since edit mode only replaces the `<img src>`, never
+  the surrounding styling baked in at build time. Fixed by giving the
+  placeholder branch the exact same sizing as a real logo
+  (`max-width:80%;max-height:56%;object-fit:contain`, white card) - a
+  swapped-in image now renders like every other logo. Deliberately did
+  NOT touch `_placeholder_logo_src()` itself (the SVG generator) since
+  its output feeds the edit-id hash (`_tail.html`'s `collectEditable`) -
+  changing it would have orphaned the uploads Alex had already made.
+  Their logo files' own backgrounds (where not transparent) still show
+  through inside the contained box - flagged back that a transparent or
+  white-background version would get closer to full parity with the
+  other tiles.
+- **Jobstream's real logo.** Alex sent the file directly. Added to
+  `mk3-assets.json` as `logo_jobstream`; used on slide 2's grid
+  (replacing its placeholder tile) and slide 13's campaign card
+  (replacing the text-name-only treatment) - both baked into the build
+  now rather than living as a runtime edit-mode override, since Alex
+  handed it over as a file rather than uploading it himself.
+- **Slide 5 map alignment.** The map div was `max-width:860px` sitting
+  inside a considerably wider (1092px) grid column, left-aligned by
+  default - a ~230px gap of whitespace on the right that Alex flagged.
+  Wrapped the whole "Where they are" block (label, map, legend, caption)
+  in a flex container with `justify-content:flex-end` so it right-aligns
+  as one unit, closing the gap on the left instead.
+- **"London" -> "London-based".** Alex's own edit-mode change to this
+  stat card didn't actually save (the override in Supabase still read
+  plain "London"). Applied it directly.
