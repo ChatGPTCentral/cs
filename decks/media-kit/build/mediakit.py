@@ -41,8 +41,9 @@ S = {}
 
 # ── 01 Cover ────────────────────────────────────────────────────────────────
 S[1] = f'''<!-- 01 {'─'*73} -->
-<section class="slide dark" data-label="Cover"
-  data-notes="Advertiser-facing. No financials, no valuation, no investor framing anywhere in this deck.">
+<section class="slide dark" data-label="Cover" style="background:#333333"
+  data-notes="Advertiser-facing. No financials, no valuation, no investor framing anywhere in this deck.
+  8 Sep 2026, per Alex: background changed to #333333 (jet_black, the brand kit's own value - matches PALETTE['jet_black'] in deck_shared.py) instead of the deck's default dark-slide ink (#141414). Scoped to this slide's own inline style rather than the shared --ink token, which also drives the Closing slide (bookend, same treatment applied there directly), badges and the contact box on Meet the team - none of those were mentioned, so left on the original ink.">
   <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:64px">
     <img src="{A['logo_aicentral']}" alt="AI Central" style="width:760px;max-width:70%;height:auto">
     <div>
@@ -59,7 +60,8 @@ S[2] = f'''<!-- 02 {'─'*73} -->
   data-notes="Positioning statement is the brand skill's canonical line. '100+ companies' is backed by 104 distinct advertisers in the beehiiv ad export plus the direct clients in the invoice book; the Q3 docx said 75+, which undercounts. The brand started in 2023 (LinkedIn page May 2023, beehiiv Nov 2023); the docx said 2024, which is the company registration year - we say 2023 for the brand.
   7 Sep 2026, per Alex: 2nd stat card text reordered to lead with reach ('Reaching readers in 151 countries and all 50 US states, across 7 channels') rather than lead with the channel count. Added a 3rd logo row (Guidde, a second Taplio mark, plus WISPR Flow/SynthFlow AI/Lindy AI placeholders) - those three placeholders now render as a real (generated) image rather than plain text, per Alex's follow-up ask to be able to click and replace them himself in edit mode; see logo_tile() in deck_shared.py.
   7 Sep 2026, later: added a Jobstream placeholder tile too (16th logo) - Alex asked slide 13 to use 'the same logo we used in the second page' for Jobstream among others, but Jobstream had never actually been on this slide, so there was no shared asset to point to. Added it here as a placeholder (same click-to-upload mechanism), and slide 13's Jobstream card links here now like the rest. Grid switched from 5 cols x 3 rows to 4 cols x 4 rows for 16 items - stays an even grid rather than a lone tile on its own row.
-  8 Sep 2026, per Alex: Jobstream's placeholder replaced with the real logo file he sent (added to mk3-assets.json as logo_jobstream, used on this slide and slide 13 both). Separately, he flagged the WISPR Flow/SynthFlow AI/Lindy AI logos he'd uploaded himself as rendering wrong (SynthFlow oversized, WISPR Flow and Lindy showing a black background) - real bug in logo_tile()'s placeholder branch: it filled the tile edge-to-edge (width/height:100%, object-fit:cover) on a dark background, which looked fine for the placeholder SVG itself but meant any real logo swapped in via edit mode inherited that same oversized/cropped/dark-background treatment. Fixed to use the same contained, white-card styling as every other logo - see logo_tile() in deck_shared.py. This didn't touch the placeholder SVG generator itself, so it doesn't disturb the edit-ids of logos Alex has already uploaded.">
+  8 Sep 2026, per Alex: Jobstream's placeholder replaced with the real logo file he sent (added to mk3-assets.json as logo_jobstream, used on this slide and slide 13 both). Separately, he flagged the WISPR Flow/SynthFlow AI/Lindy AI logos he'd uploaded himself as rendering wrong (SynthFlow oversized, WISPR Flow and Lindy showing a black background) - real bug in logo_tile()'s placeholder branch: it filled the tile edge-to-edge (width/height:100%, object-fit:cover) on a dark background, which looked fine for the placeholder SVG itself but meant any real logo swapped in via edit mode inherited that same oversized/cropped/dark-background treatment. Fixed to use the same contained, white-card styling as every other logo - see logo_tile() in deck_shared.py. This didn't touch the placeholder SVG generator itself, so it doesn't disturb the edit-ids of logos Alex has already uploaded.
+  8 Sep 2026, follow-up, per Alex: SynthFlow AI and Jobstream flagged again as too small relative to the other tiles at the standard 80/56 contain box. Added a per-tile scale override (logo_grid()'s items can now take a 4th tuple element). First tried (94, 74) - barely changed anything, because both logos are wide/landscape wordmarks and this grid's tiles are short (h=58px): object-fit:contain is bottlenecked by max-height long before it reaches max-width on a wide image in a short box, so raising max-width alone did almost nothing. Raised max-height to 90 instead - (94, 90) - which is the dimension that actually mattered.">
   <div class="kicker">ABOUT AI CENTRAL MEDIA</div>
   <h2>We turn attention into pipeline for AI and SaaS brands</h2>
   <p class="subline">Imagine Bloomberg Businessweek, but for AI - that's the brand we're building. Our flagship publication, AI Central, covers practical AI for senior professionals, and we pair premium placements with editorial-grade creative that speaks to senior operators</p>
@@ -83,10 +85,10 @@ S[2] = f'''<!-- 02 {'─'*73} -->
       (A.get('logo_outskill'), "Outskill"),
       (A.get('logo_guidde'), "Guidde"),
       (None, "WISPR Flow"),
-      (None, "SynthFlow AI"),
+      (None, "SynthFlow AI", False, (94, 90)),
       (A.get('grid_taplio'), "Taplio"),
       (None, "Lindy AI"),
-      (A.get('logo_jobstream'), "Jobstream"),
+      (A.get('logo_jobstream'), "Jobstream", False, (94, 90)),
     ], cols=4, h=58, gap=10)}</div>
   </div>
   {FOOT}
@@ -662,8 +664,9 @@ S[14] = f'''<!-- 14 {'─'*73} -->
 
 # ── 15 Closing ──────────────────────────────────────────────────────────────
 S[15] = f'''<!-- 15 {'─'*73} -->
-<section class="slide dark" data-label="Closing"
-  data-notes="Bookends the cover: same mark, no title, so the deck opens and closes on the wordmark alone.">
+<section class="slide dark" data-label="Closing" style="background:#333333"
+  data-notes="Bookends the cover: same mark, no title, so the deck opens and closes on the wordmark alone.
+  8 Sep 2026: background changed to #333333 to match the Cover's own change, per Alex - see slide 1's data-notes.">
   <div style="flex:1;display:flex;align-items:center;justify-content:center">
     <img src="{A['logo_aicentral']}" alt="AI Central" style="width:760px;max-width:70%;height:auto">
   </div>

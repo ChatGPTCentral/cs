@@ -116,14 +116,18 @@ def _placeholder_logo_src(name):
     return "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode()
 
 
-def logo_tile(src, name, h=88, full_bleed=False):
+def logo_tile(src, name, h=88, full_bleed=False, scale=None):
     """One cell of a logo grid. src=None renders a placeholder card (a
     small dark chip on the same white card as a real logo) instead of
     failing - used while a real asset is still pending, so a grid can be
     reviewed for spacing before every logo is in hand. full_bleed=True is
     for logo files that already ship on their own branded background
     (e.g. a solid-colour square) - those fill the tile edge-to-edge
-    instead of getting shrunk onto a white card.
+    instead of getting shrunk onto a white card. scale=(max_width_pct,
+    max_height_pct) overrides the default 80/56 for one tile whose own
+    file has a lot of internal padding and reads small next to the
+    others at the standard size (8 Sep 2026, per Alex - SynthFlow AI and
+    Jobstream specifically).
 
     The placeholder <img> deliberately uses the SAME sizing/white-card
     styling as a real logo (7 Sep 2026 follow-up, per Alex) - it used to
@@ -138,14 +142,15 @@ def logo_tile(src, name, h=88, full_bleed=False):
     _placeholder_logo_src() below - that function's output feeds the
     edit-id hash (see _tail.html's collectEditable), so changing it would
     orphan any placeholder Alex has already uploaded a real logo into."""
+    mw, mh = scale if scale else (80, 56)
     if src and full_bleed:
         inner = f'<img src="{src}" alt="{name}" style="max-width:52%;max-height:52%;object-fit:contain;border-radius:4px">'
         bg = "#fff"
     elif src:
-        inner = f'<img src="{src}" alt="{name}" style="max-width:80%;max-height:56%;object-fit:contain">'
+        inner = f'<img src="{src}" alt="{name}" style="max-width:{mw}%;max-height:{mh}%;object-fit:contain">'
         bg = "#fff"
     else:
-        inner = f'<img src="{_placeholder_logo_src(name)}" alt="{name}" style="max-width:80%;max-height:56%;object-fit:contain">'
+        inner = f'<img src="{_placeholder_logo_src(name)}" alt="{name}" style="max-width:{mw}%;max-height:{mh}%;object-fit:contain">'
         bg = "#fff"
     return (f'<div style="background:{bg};height:{h}px;border-radius:6px;overflow:hidden;'
             f'display:flex;align-items:center;justify-content:center;'
@@ -153,9 +158,13 @@ def logo_tile(src, name, h=88, full_bleed=False):
 
 
 def logo_grid(items, cols, h=88, gap=16):
-    """items: list of (src_or_None, name) or (src_or_None, name, full_bleed) tuples."""
+    """items: list of (src_or_None, name) or (src_or_None, name, full_bleed)
+    or (src_or_None, name, full_bleed, scale) tuples - scale is logo_tile()'s
+    own (max_width_pct, max_height_pct) override, for one-off oversized
+    padding in a specific source file."""
     tiles = "".join(
-        logo_tile(item[0], item[1], h=h, full_bleed=item[2] if len(item) > 2 else False)
+        logo_tile(item[0], item[1], h=h, full_bleed=item[2] if len(item) > 2 else False,
+                  scale=item[3] if len(item) > 3 else None)
         for item in items)
     return f'<div style="display:grid;grid-template-columns:repeat({cols},1fr);gap:{gap}px">{tiles}</div>'
 
