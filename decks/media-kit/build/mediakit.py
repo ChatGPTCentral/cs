@@ -98,7 +98,7 @@ S[3] = f'''<!-- 03 {'─'*73} -->
   data-notes="Three campaign types, straight from the Q3 kit. Map a prospect to one of these on the first call, then pick the format on slides 8-14. 6 Sep 2026, per Alex: box titles enlarged, and a fourth box (Bespoke training) added - AI Central runs hands-on training sessions alongside its media placements; bullets describe the offering qualitatively since no pricing/volume figures for this line exist in any sourced material yet.">
   <div class="kicker">WHY COMPANIES CHOOSE AI CENTRAL</div>
   <h2>Three kinds of campaign we run</h2>
-  <p class="subline">Senior operators and decision makers, actively building with AI. Tell us the goal and we pick the mix</p>
+  <p class="subline">Senior operators and decision makers, actively building with AI. Tell us the goal and we pick the mix.</p>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px">
     {usecase(1, "Lead generation", "We convert attention into qualified opportunities", [
       "Increase free trial or product signups", "Drive webinar registrations",
