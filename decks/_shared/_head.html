@@ -193,6 +193,14 @@ body.editing #edit-banner{display:block}
 /* ── print: one slide per page, unscaled ──────────────────────────────────── */
 @page{size:1920px 1080px;margin:0}
 @media print{
+  /* Load-bearing (7 Sep 2026 textbook lesson, applied here 8 Sep 2026):
+     without this, Chrome's own print pipeline drops background colors by
+     default unless the user manually ticks "Background graphics" in the
+     print dialog - most won't. Every dark slide (Cover, Closing, and any
+     .dark section) would print as a blank white sheet with invisible
+     white-on-white text. print-color-adjust:exact forces backgrounds to
+     print as authored, with no dialog toggle required. */
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   html,body{height:auto;background:#fff}
   #stage{position:static;display:block;overflow:visible}
   #canvas{width:1920px;height:auto;transform:none!important}
