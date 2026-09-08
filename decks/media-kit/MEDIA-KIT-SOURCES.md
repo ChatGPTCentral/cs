@@ -639,3 +639,26 @@ branch (a829a4c); the two items worth a source note:
   and baked it into `mk3-assets.json` as a new `logo_luma_ai` asset -
   now the real default for both slide 2's grid and slide 12's card,
   rather than something only slide 2 had via a live-only override.
+
+## Revision, 8 Sep 2026 - true-centered nav pill, Download PDF support
+
+- **Top-nav pill, true centering.** Same bug class as the footer CTA
+  fix earlier the same day: `justify-content:space-between` on the
+  `.pagenav` flex row only centers the middle pill when its two
+  siblings (the prev/next labels) happen to be equal width, which they
+  rarely are - measured up to 45px off true-center on some slides
+  (e.g. slide 4, "Why companies choose us" vs "The audience"). Pulled
+  `.pn-current` out of the flex flow and centered it independently via
+  `position:absolute;left:50%;transform:translate(-50%,-50%)`; measured
+  within 1px of true center across every slide afterward.
+- **Print CSS: force backgrounds to print.** Ahead of adding a Download
+  PDF button on the review page (`app/review/[deck]`, in the
+  `ai-central-forecaster` repo - see that repo's own history for the
+  button itself), added `print-color-adjust:exact` to the deck's
+  `@media print` block. Without it, Chrome's print pipeline drops
+  background colors by default unless the user manually ticks
+  "Background graphics" in the print dialog - every dark slide (Cover,
+  Closing, any `.dark` section) would print as a blank white sheet with
+  invisible white-on-white text. Same bug the textbook reader hit and
+  fixed (PR #58) - applied the same lesson here before shipping the
+  button, rather than after a report came in.
