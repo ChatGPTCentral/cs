@@ -642,7 +642,8 @@ S[14] = f'''<!-- 14 {'─'*73} -->
   6 Sep 2026, per Alex: 'Advertise now' and 'This kit' rows removed from the contact block.
   7 Sep 2026: press-delegate and affiliations logos enlarged (h 60 -> 90, then 90 -> 112) per Alex, asked twice. Separately: Alex reported his own uploaded logo replacements for this row had been lost - true, and specific to how edit mode used to compute an edit's id (by slide position, which a rebuild that adds/removes slides shifts). That's fixed now (see decks/_shared/_tail.html - ids are content-hashed, not positional) and his 7 real uploaded images (4 press-delegate, 3 affiliations logos) were recovered from Supabase under their old ids and re-saved against the new ones this same rebuild generates, so they should reappear once this deploys rather than needing to be re-uploaded.
   7 Sep 2026, per Alex: the three Let's talk rows are now real anchor tags (tel/mailto/https), not styled text - Book a call links to cntral.ai/meet, Email opens a mailto: to collabs@thecentral.ai, Connect with Alex opens the LinkedIn profile, all in a new tab except the mailto.
-  8 Sep 2026, per Alex: bottom-row label renamed 'Affiliations' -> 'Member of' (the logos underneath are AI Central's own memberships, not affiliate relationships).">
+  8 Sep 2026, per Alex: bottom-row label renamed 'Affiliations' -> 'Member of' (the logos underneath are AI Central's own memberships, not affiliate relationships).
+  8 Sep 2026, per Alex (follow-up): the 'Let's talk' box's background switched from var(--ink) to an explicit #333333 - the same lighter charcoal already used for the cover/closing bookend backgrounds, rather than the deck's near-black ink token.">
   <div class="kicker">MEET THE TEAM</div>
   <h2>Based in London, led by the founder</h2>
   <div style="display:grid;grid-template-columns:300px 1fr 420px;gap:48px;margin-top:34px;align-items:start">
@@ -652,7 +653,7 @@ S[14] = f'''<!-- 14 {'─'*73} -->
       <div style="font-size:20px;color:var(--muted)">Founder and Chief Editor, AI Central Media</div>
       <div style="margin-top:16px;font-size:20px;font-weight:300;line-height:1.45">Alex leads the editorial team. He is a founding member of the San Francisco AI Collective, and part of the Data and AI Group at Global Tech Advocates in London. He teaches AI and monetization at Cozora Academy, writes for several industry magazines, and holds an MSc in quantitative finance. Before AI Central, he was on the founding team of a UK AI fintech, where he built the go-to-market strategy and led the platform launch, taking the company from $0 to $16M ARR</div>
     </div>
-    <div data-step="2" style="background:var(--ink);color:var(--paper);padding:30px 34px">
+    <div data-step="2" style="background:#333333;color:var(--paper);padding:30px 34px">
       <div style="font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--accent)">Let's talk</div>
       <div style="margin-top:18px;font-size:22px;line-height:1.5">
         <div><span style="color:var(--muted-dark)">Book a call</span><br><a href="https://cntral.ai/meet" target="_blank" rel="noopener" style="color:var(--paper);font-weight:700;text-decoration:none">cntral.ai/meet</a></div>
