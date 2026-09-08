@@ -11,7 +11,7 @@
   alex@thecentral.ai)
 - last-outbound: 2026-09-04 13:49 (elizabeth@theaicentral.net, thread
   `1a05382e2fe260ce`)
-- idle: 0 days
+- idle: 4 days
 - next-action: none for Alex - Elizabeth is running this directly, wait
   for Mark to resend the invoice with the two carousel IDs
 - commitments: none recorded

@@ -10,7 +10,12 @@
 - last-inbound: 2026-09-04 (alexander@newslettertrafficnetwork.com, reply
   to Alex's 2026-09-04 send, thread `19fcd3c79f80a800`)
 - last-outbound: 2026-09-04 (alex@thecentral.ai, thread `19fcd3c79f80a800`)
-- idle: 0 days
+- idle: 4 days
+- **update, 2026-09-08 full sweep.** Elizabeth followed up 09-07, sharing
+  Alex's booking calendar (`cntral.ai/meet`) so Alexander can pick a time -
+  thread now waiting on Alexander to book, not purely "Alex's move." Idle
+  count kept against the last real content message (09-04) since a shared
+  calendar link isn't itself a reply
 - next-action: reply - Alexander is happy to catch up end of month and
   wants AI Central in Newsletter Traffic Network's CPC campaigns
 - commitments: none

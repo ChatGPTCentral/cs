@@ -20,7 +20,7 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
 - last-outbound: 2026-08-31 10:04 (alex@thecentral.ai, to Jazmin, cc Katie
   and Liz, thread `19e4b71f458018eb` "Jobstream Merch" - "just back from
   being OOO, did it end up going out?")
-- idle: 0 days
+- idle: 8 days
 - next-action: none - wait for Jazmin's reply
 - notes-correction: Alex recalled this as "last week, July 17" when asking
   for the nudge; the real prior touch was 17 Aug 2026, per Gmail

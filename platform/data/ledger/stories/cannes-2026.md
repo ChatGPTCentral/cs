@@ -7,7 +7,7 @@
 - last-inbound: 2026-06-29 (sarah@wavelength.now)
 - last-outbound: 2026-09-03 (alex@thecentral.ai, thread `19f298cc647fb0dd`,
   to Alistair Gosling)
-- idle: 0 days on the Alistair thread
+- idle: 5 days on the Alistair thread
 - next-action: none - wait for Alistair's reply
 - commitments: none recorded
 - threads: `19f0fb77d4b5bf87` (live), 9 more unread

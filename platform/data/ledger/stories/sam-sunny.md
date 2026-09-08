@@ -6,8 +6,13 @@
 - status: internal, stalled
 - last-inbound: n/a - all internal
 - last-outbound: 2026-07-28 (sam@theaicentral.net)
-- idle: 22 days
-- next-action: **unknown - bodies not read**
+- idle: 42 days
+- next-action: **unsent draft in Gmail** - "Newsletter Performance Check - -
+  5 Sep - - opens sliding, nothing scheduled" (thread `1a070e3dac6da7b6`,
+  alex@thecentral.ai to sam@thecentral.ai cc elizabeth, created 2026-09-05,
+  sitting unsent 3 days). A detailed performance review with three questions
+  and three commitments asked of Sam - review and send, or the deadlines in
+  it (Sat 5 Sep, Sun 6 Sep, Mon 7 Sep) have already passed unsent
 - commitments: none recorded
 - threads: `19fa98a059dfbe13` (live), 6 more unread
 - notes: Elizabeth wrote to Sam, Sam replied the same day, then silence. Distinct

@@ -12,9 +12,12 @@
 - last-inbound: 2026-09-02 08:13 (Richard@hewlettrand.com, thread
   `1a047c4e361b5de3`) and 2026-09-02 07:55 (thread `1a00a41717b4a24b`)
 - last-outbound: 2026-09-01 (alex@thecentral.ai, both threads)
-- idle: 0 days
-- next-action: **unknown - bodies not read.** Read both threads before
-  drafting
+- idle: 6 days
+- next-action: **reply to Richard** - his 2026-09-02 message on both
+  threads is still unanswered (6 days). On `1a00a41717b4a24b` he asked what
+  was confusing re: Antidote Communications and whether AI Central considered
+  the GTA Leaders conference in Istanbul; the `1a047c4e361b5de3` thread carries
+  his three-part follow-on-stories ask
 - **Pulse check, 2026-09-02.** Richard ha risposto su `1a047c4e361b5de3`
   e `1a00a41717b4a24b` - in attesa di lettura
 - commitments:

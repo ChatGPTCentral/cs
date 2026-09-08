@@ -13,6 +13,9 @@
 - next-action: none - the Refind Grow ad is live and running, no
   correspondence needed unless Alex wants to check performance or
   revisit Earn
+- **flag, 2026-09-08 full sweep**: `ledger/_index.md`'s "Old and unanswered"
+  table still listed this at 209d idle - stale, contradicts this file's own
+  2026-09-01 correction. Removed from that table this pass
 - commitments: none recorded
 - threads: `19cdc00a52373f56` (Mar 2026, the real resolution - live),
   `19ace55a5c44ee68` (Nov 2025 - Jan 2026, superseded by the thread

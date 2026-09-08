@@ -2,6 +2,34 @@
 
 One entry per sweep. Newest first.
 
+## 2026-09-08 - full sweep
+
+- window: `in:sent after:2026/08/19` (since last run)
+- search: phrase set in `references/commitments.md`
+- hits: 3 threads
+
+### Opened
+
+None new. The three hits were: the GTA Quarterly AI Pulse thread (no fresh
+"I'll..." language inside the window - see `gta-whitepaper.md`, already
+tracked via its own next-action), the Newsletter Traffic Network thread
+(Alexander's "happy to catch up end of month" - a soft scheduling line, not
+a quoted AI Central promise), and the AI Hackathon Bristol thread (Richard's
+tote-bag promise, already tracked and already marked kept in
+`ai-hackathon-bristol.md`).
+
+### Carried from the 2026-08-19 run, re-verified this pass
+
+| Promise | To | Made | Age | Status |
+| --- | --- | --- | --- | --- |
+| "I'll go back to them and ask what happened to your details. I'll let you know what they say" | Sue Sutcliffe | 2026-08-07 | 32d | **open** - support-owned, `aic-customer-support` territory, not re-verified here |
+| "Our team will start working on it and I'll let you know when we plan to publish the interview" | Faizan Alvi + Tahmid | 2026-08-02 | 37d | **open** - no publish date sent yet, not re-checked this pass |
+| "i'll follow-up in the other thread regarding the progress on the XML integration" | Aneeka Velummylum (Netline) | 2026-06-29 | - | **fulfilled, 2026-08-31** per `netline.md` - closed out of the open table |
+
+### Next run
+
+Default to since-2026-09-08.
+
 ## 2026-08-19 - first run
 
 - window: `newer_than:90d` (no prior run to resume from)

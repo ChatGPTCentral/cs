@@ -6,7 +6,7 @@
 - last-touch: Mitch - unanswered
 - last-inbound: 2026-03-12 (mitch@sparkloop.app)
 - last-outbound: 2026-03-12 (alex@thecentral.ai, earlier the same day)
-- idle: 160 days
+- idle: 180 days
 - next-action: none unless reviving
 - commitments: none recorded
 - threads: `19cd2fc0307b0457`

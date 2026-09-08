@@ -8,7 +8,7 @@
 - last-touch: Alex, effectively dormant
 - last-inbound: 2025-12-10 (jajasalinas@gmail.com, same-day reply to Alex)
 - last-outbound: 2025-12-17 (alex@thecentral.ai)
-- idle: 253 days
+- idle: 265 days
 - next-action: none unless Alex wants to revive it
 - commitments: none recorded
 - threads: `19b09ac68d7ae275`

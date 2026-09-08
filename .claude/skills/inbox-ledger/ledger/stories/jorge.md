@@ -6,10 +6,15 @@
 - last-touch: Jorge
 - last-inbound: 2026-09-01 10:22 (jorge@groou.xyz, thread `19ed0311ba3d51a0`, to elizabeth@theaicentral.net cc alex@thecentral.ai)
 - last-outbound: 2026-08-05 (alex@thecentral.ai)
-- idle: 0 days
-- next-action: none - ball is with Jorge, and recently
+- idle: 7 days
+- next-action: **reply to Jorge** - he wrote to Elizabeth (cc Alex) on
+  2026-09-01 and nobody on the team has answered yet
 - commitments: none recorded
 - threads: `19fccf36f95ad9c0` (live, **unlabelled**), `19d2ab514c83a274` (labelled, 21 more unread)
+- notes: **correction, 2026-09-08 full sweep.** Previous version of this file
+  had `last-touch: Jorge` but read the ball as still his ("none - ball is with
+  Jorge") - backwards per the whose-move rule: the newest message is *from*
+  Jorge, to the team, so the team owes the reply. Moved to "Your move"
 - notes: **correction, 2026-08-19.** The prior version of this file read only the
   labelled thread and reported 146 days idle. A participant-cluster sweep found
   an unlabelled thread from 4-5 August: Jorge wrote to Alex and Elizabeth, Alex

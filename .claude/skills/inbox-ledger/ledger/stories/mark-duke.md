@@ -7,8 +7,9 @@
 - last-inbound: 2025-12-10 (bulandundonnelly@gmail.com)
 - last-outbound: not in the live thread
 - idle: 252 days
-- next-action: **respond to Marc's Intelligence.com invite, Saturday 5
-  Sep 2026** - thread `1a03974c17cfac28`, per Alex
+- next-action: **respond to Marc's Intelligence.com invite - overdue.**
+  Alex targeted Saturday 5 Sep 2026, thread `1a03974c17cfac28`; today is
+  2026-09-08, 3 days past that self-set date with no reply seen
 - commitments: none recorded
 - threads: `19b0331c16b4afff` (live), 8 more unread
 - notes: an introductions relationship that went quiet in December. 37 messages

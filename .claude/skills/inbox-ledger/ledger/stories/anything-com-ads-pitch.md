@@ -10,6 +10,12 @@
 - start: 2026-03-24
 - end: (open)
 - next-action: review and send the draft, thread `1a067f08380931ff`
+- **flag, 2026-09-08 full sweep**: this draft no longer appears in Gmail's
+  Drafts folder (only one draft exists in the account right now, an
+  unrelated internal one - see `sam-sunny.md`). Not confirmed sent - no
+  matching message in `in:sent`. Same shape as the InVideo pending-fact
+  conflict (`ledger_pending_facts`) - flagging rather than assuming either
+  way. Confirm with Alex whether this went out or needs recreating
 - commitments: none
 - threads: `19d07f989b801e8d` (24 Mar 2026), plus a long LinkedIn DM thread
   not captured here

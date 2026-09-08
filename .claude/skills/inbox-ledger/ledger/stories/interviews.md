@@ -5,9 +5,11 @@
 - people: Elizabeth runs it; guests vary - latest elettra.fiumi@gmail.com
 - last-touch: Elizabeth
 - last-inbound: not in the live thread
-- last-outbound: 2026-08-14 (elizabeth@theaicentral.net)
-- idle: 5 days
-- next-action: none. Healthy
+- last-outbound: 2026-08-25 10:20 (elizabeth@theaicentral.net, thread
+  `1a0386fd4ac0e20e`, to Emailcktan@gmail.com - a newer guest thread than the
+  08-14 one previously recorded)
+- idle: 14 days
+- next-action: none. Healthy - Elizabeth runs this pipeline
 - commitments: none recorded
 - threads: `1a000d495322ee8e` (live), 50 more unread
 - notes: the healthiest story in the ledger and the one Alex is least likely to

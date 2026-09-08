@@ -10,9 +10,10 @@
   `1a0406cba2e234d0`)
 - last-outbound: 2026-08-31 08:28 (alex@thecentral.ai, sent - thread
   `1a0406cba2e234d0`)
-- idle: 0 - just replied
+- idle: 8 days
 - next-action: none - wait for Richard to confirm the 1 Oct Enterprise
-  move
+  move. Per Alex 2026-09-01, quiet until closer to that date is expected,
+  not cold
 - **Pulse check, 2026-08-31.** Richard replied via `1a0406cba2e234d0` -
   read and respond
 - commitments: told Richard AI Central moves into Enterprise on 1
