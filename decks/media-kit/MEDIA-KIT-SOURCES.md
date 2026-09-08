@@ -547,3 +547,23 @@ branch (a829a4c); the two items worth a source note:
 - **"London" -> "London-based".** Alex's own edit-mode change to this
   stat card didn't actually save (the override in Supabase still read
   plain "London"). Applied it directly.
+
+## Revision, 8 Sep 2026 - cover/closing background, SynthFlow AI & Jobstream logo size
+
+- **Cover & Closing background -> #333333.** Alex: the brand kit's
+  jet_black, not the deck's default `--ink` (#141414). Scoped to just
+  these two bookend slides via an inline `style="background:#333333"`
+  on each `<section>`, rather than touching the shared `--ink` token
+  (which every other dark slide and piece of chrome also relies on).
+- **SynthFlow AI / Jobstream logos too small.** Both are wide/landscape
+  marks sitting in the same short (h=58px) grid tile as the other 14
+  logos, so `logo_tile()`'s existing `scale` param (added in the
+  previous revision for exactly this pair) was already in play at
+  `(94, 74)` - visually still barely bigger than the rest. Root cause:
+  for a landscape image under `object-fit:contain` in a short
+  container, `max-height` is almost always the binding constraint, not
+  `max-width` - raising width from 80% to 94% did next to nothing while
+  the 58px-tall tile capped the render long before width ever would.
+  Confirmed by cropping before/after screenshots pixel-for-pixel rather
+  than eyeballing it. Raised to `(94, 90)` - `max-height` from 74% to
+  90% is what actually moved the needle - and reverified visually.
