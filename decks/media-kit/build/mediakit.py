@@ -77,7 +77,7 @@ S[2] = f'''<!-- 02 {'─'*73} -->
       (A.get('grid_replit'), "Replit"),
       (A.get('grid_taplio_plain'), "Taplio"),
       (A.get('grid_typeless'), "Typeless"),
-      (A.get('grid_luma'), "Luma AI"),
+      (A.get('logo_luma_ai'), "Luma AI"),
       (A.get('grid_hubspot'), "HubSpot"),
       (A.get('grid_uxpilot'), "UX Pilot"),
       (A.get('logo_outskill'), "Outskill"),
@@ -203,13 +203,13 @@ def pub(n_, logo, name, sub, ideal, stats, logo_fit="cover"):
         f'<div style="font-size:23px;font-weight:700;font-variant-numeric:tabular-nums">{v}</div></div>' for k, v in stats)
     logo_box = (
         f'<div style="width:40px;height:40px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center">'
-        f'<img src="{logo}" alt="" style="max-width:78%;max-height:60%;object-fit:contain"></div>'
+        f'<img src="{logo}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:8px"></div>'
         if logo_fit == "contain" else
         f'<img src="{logo}" alt="" style="width:40px;height:40px;border-radius:8px;object-fit:cover">')
     return f'''<div data-step="{n_}" style="background:var(--tint);padding:24px 26px;min-height:480px;display:flex;flex-direction:column">
-      <div style="display:flex;align-items:center;gap:14px">
+      <div style="display:flex;align-items:flex-start;gap:14px">
         {logo_box}
-        <div><div style="font-size:23px;font-weight:700;letter-spacing:-.01em">{name}</div><div style="font-size:16px;color:var(--muted)">{sub}</div></div>
+        <div><div style="font-size:23px;font-weight:700;letter-spacing:-.01em;line-height:1.25;min-height:58px">{name}</div><div style="font-size:16px;color:var(--muted)">{sub}</div></div>
       </div>
       <div style="margin-top:14px">{rows}</div>
       <div style="margin-top:auto;padding-top:14px;font-size:19px;font-weight:400;line-height:1.3;color:var(--ink)">Clients buy this for <b>{ideal}</b></div>
@@ -220,7 +220,8 @@ S[6] = f'''<!-- 06 {'─'*73} -->
   data-notes="Reordered and renamed per Alex, 4 Sep 2026: beehiiv leads, the two LinkedIn surfaces named as distinct AI Central properties rather than 'LinkedIn Newsletter'/'LinkedIn Company Page'. Figures unchanged from the Q3 kit / beehiiv API - LinkedIn newsletter and company page figures are from the Q3 kit, sourced from Favikon on 18 Aug 2026 - not independently verifiable here. beehiiv figures are LIVE from the beehiiv API on 2 Sep 2026: 97,681 active subscribers, 29.7% open rate and 2.34% click rate over the last 4 weeks, +4,906 new subscribers in the same window. The docx said 86K subscribers / 30.25% / 2.48% - the 86K was average sends, not active subscribers. Alex asked to connect LinkedIn for a live data pull instead of the Favikon snapshot - flagged back to him, no LinkedIn integration available in this session.
   6 Sep 2026, per Alex: reordered again (beehiiv, LinkedIn Newsletter, LinkedIn Company Page); 'Average unique ad clicks' dropped from beehiiv (the other two never carried it, so it wasn't a fair three-way comparison); 'Ideal for' renamed 'Clients buy this for' and moved to the bottom of the card, larger; 'Posts a week' added for beehiiv and the LinkedIn Newsletter (4x, per Alex - both are the weekly-cadence AI Central sends) alongside the Company Page's existing Daily; a fourth box added below for thecentral.ai itself, reusing the already-sourced 20,000-visits/month figure quoted on slides 7 and 11. 7 Sep 2026: that fourth box moved from a dark/ink background to the same tint grey as the other three, per Alex.
   7 Sep 2026, per Alex: restructured into exactly 4 equal-height boxes in one row - AI Central Newsletter (thecentral.ai), AI Central Newsletter (LinkedIn), Social Media (LinkedIn), Website - the naming he wants carried everywhere else in the deck. The per-card 'Source: ...' caption was dropped (per Alex, 'remove source') - sourcing for these figures stays logged in MEDIA-KIT-SOURCES.md instead of on the slide itself.
-  8 Sep 2026, per Alex: the Website card's icon was the full wide wordmark (logo_aicentral, 1200x286) squeezed into a square slot, letterboxed and off-balance next to the other publications' actual square/circular logos. The mark's own left-hand icon block is a perfect 286x286 square within that same file, so cropped it out as a new asset (logo_aicentral_square) instead of distorting or re-deriving one - used here and on slide 7's matching Website channel tag.">
+  8 Sep 2026, per Alex: the Website card's icon was the full wide wordmark (logo_aicentral, 1200x286) squeezed into a square slot, letterboxed and off-balance next to the other publications' actual square/circular logos. The mark's own left-hand icon block is a perfect 286x286 square within that same file, so cropped it out as a new asset (logo_aicentral_square) instead of distorting or re-deriving one - used here and on slide 7's matching Website channel tag.
+  8 Sep 2026, per Alex (follow-up): two fixes. (1) Boxes 3 and 4 (Social Media, Website) had single-line titles while boxes 1 and 2 wrap to two lines, so the header row's align-items:center vertically centered each logo against ITS OWN title height, pushing box 3/4's logos and second lines up out of line with 1/2's. Switched to align-items:flex-start and gave every title a min-height (58px, enough for two lines) so all four logos and stat-row starting points now share one baseline regardless of title length. (2) The Website icon's logo_fit='contain' branch inset the square logo_aicentral_square asset at 78%/60% inside its white tile, leaving a visible white margin the other three logos don't have - since the asset is already a clean square with no need to protect an aspect ratio, switched it to fill the tile edge to edge like the other three (width/height:100%, object-fit:cover) instead.">
   <div class="kicker">THE PUBLICATIONS</div>
   <h2>Four channels, one senior audience</h2>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px">
@@ -247,10 +248,15 @@ CH_WEBSITE = [(A['logo_aicentral_square'], "Website")]
 CH_BOTH_NEWS = CH_BEEHIIV + CH_LI_NEWS
 
 def fmt(n_, name, what, ideal, channels):
+    # 8 Sep 2026, per Alex: the Website tag's icon (logo_aicentral_square)
+    # left a visible white margin at the standard 85%-contain inset - it's
+    # already a clean square asset with no aspect ratio to protect, so it
+    # fills its tile edge to edge instead, same fix as the pub() cards on
+    # slide 6 just above.
     avail = "".join(
         f'<div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--muted)">'
         f'<div style="width:16px;height:16px;border-radius:3px;background:#fff;flex:none;display:flex;align-items:center;justify-content:center">'
-        f'<img src="{src}" alt="" style="max-width:85%;max-height:85%;object-fit:contain"></div>{ch}</div>'
+        f'<img src="{src}" alt="" style="{"width:100%;height:100%;object-fit:cover;border-radius:3px" if src == A["logo_aicentral_square"] else "max-width:85%;max-height:85%;object-fit:contain"}"></div>{ch}</div>'
         for src, ch in channels)
     return f'''<div style="background:var(--tint);padding:18px 22px;display:flex;flex-direction:column">
       <div style="font-size:15px;font-weight:700;letter-spacing:.16em;color:var(--muted)">0{n_}</div>
@@ -345,7 +351,7 @@ _HIDDEN_SLIDE_BESPOKE_EBOOK_PRICED = f'''<!-- 08 {'─'*73} -->
 
 # ── 08b Bespoke Ebook, no-price version ─────────────────────────────────────
 S[8] = no_price_slide(
-  "Bespoke Ebook — no price", "ADVERTISING OPTIONS · FORMAT DETAIL", "Bespoke Ebook",
+  "Bespoke Ebook", "ADVERTISING OPTIONS · FORMAT DETAIL", "Bespoke Ebook",
   "Scroll-stopping storytelling, designed by our team and published in the feed",
   [("What you receive", [
       "Up to 15 pages, delivered as both a PDF and an interactive flipbook",
@@ -363,7 +369,7 @@ S[8] = no_price_slide(
       '<a href="https://docs.thecentral.ai/how-to-build-ios-apps-with-replit" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">How to Build iOS Apps with Replit</a> - Replit',
       '<a href="https://docs.thecentral.ai/jobstream-creator-income-playbook" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">The Creator Income Playbook</a> - Jobstream'])],
   A['carousels'], "Ebook examples for Gamma, ElevenLabs, Canva, Guidde and Comet",
-  "No-price version of the ebook slide (the priced version is hidden for now, per Alex). 7 Sep 2026, per Alex: subtitle shortened to one line; what-you-receive and benefits were saying the same things (lifetime asset, republishing rights showed up in both) so they're split for real now - deliverables in one, outcomes in the other, plus a new third 'Examples' section. '5% off any new order' and 'a dedicated send' are new claims from Alex's comment, not yet cross-checked against 02_products_pricing.md - flag if that discount rate or deliverable isn't accurate.\n  7 Sep 2026, per Alex: the four Examples are now real, linked documents pulled from the Notion 'AI Central Document Database' - rows where Main is set and Flipbook URL starts with docs.thecentral.ai (31 qualify in total; these 4 were picked to show a spread of different clients rather than listing all 31). The earlier four titles here were invented placeholders, not real documents - replaced.")
+  "No-price version of the ebook slide (the priced version is hidden for now, per Alex). 7 Sep 2026, per Alex: subtitle shortened to one line; what-you-receive and benefits were saying the same things (lifetime asset, republishing rights showed up in both) so they're split for real now - deliverables in one, outcomes in the other, plus a new third 'Examples' section. '5% off any new order' and 'a dedicated send' are new claims from Alex's comment, not yet cross-checked against 02_products_pricing.md - flag if that discount rate or deliverable isn't accurate.\n  7 Sep 2026, per Alex: the four Examples are now real, linked documents pulled from the Notion 'AI Central Document Database' - rows where Main is set and Flipbook URL starts with docs.thecentral.ai (31 qualify in total; these 4 were picked to show a spread of different clients rather than listing all 31). The earlier four titles here were invented placeholders, not real documents - replaced.\n  8 Sep 2026, per Alex: data-label (drives the top-nav breadcrumb on this and the neighboring slides) shortened from 'Bespoke Ebook - no price' to just 'Bespoke Ebook' - the on-slide title never carried that suffix, only the internal nav label did, and Alex doesn't want 'no price' visible anywhere on the page.")
 
 # ── 08 LinkedIn Main Ad ─────────────────────────────────────────────────────
 # HIDDEN per Alex, 7 Sep 2026 - see the same note on the ebook slide above.
@@ -582,12 +588,13 @@ def campaign_card(src, name, objective, package, result, body, placeholder=False
 
 S[13] = f'''<!-- 13 {'─'*73} -->
 <section class="slide light" data-label="Some of our past campaigns"
-  data-notes="Retitled from 'Case studies', 6 Sep 2026 per Alex. Rebuilt again 7 Sep 2026 per Alex: (a) logos now use the EXACT same asset keys as slide 2's grid - this fixes a real bug, Luma AI was rendering as a text placeholder here even though a real Luma icon (grid_luma) already exists and is used on slide 2; (b) the per-client text (objective/package/result/body) is back, for pagination. Gamma, ElevenLabs, Guidde, Outskill and Luma AI keep their real, sourced figures (CASE-STUDIES-SOURCES.md, unchanged from the original 5-tile version of this slide). HubSpot, Notion, Jobstream, Replit, UX Pilot and SciSpace have no sourced campaign figures anywhere in this deck's records, so per Alex's own instruction ('typeset some lorem ipsum and i'll fill it up myself') those cards carry placeholder lorem ipsum text, marked with a dashed border and muted italic type so they read as unfinished rather than as real numbers.
+  data-notes="Retitled from 'Case studies', 6 Sep 2026 per Alex. Rebuilt again 7 Sep 2026 per Alex: (a) logos now use the EXACT same asset keys as slide 2's grid - this fixes a real bug, Luma AI was rendering as a text placeholder here even though a real Luma icon already exists and is used on slide 2 (see the 8 Sep follow-up note below - that icon was later upgraded from a bare glyph to the real wordmark, logo_luma_ai); (b) the per-client text (objective/package/result/body) is back, for pagination. Gamma, ElevenLabs, Guidde, Outskill and Luma AI keep their real, sourced figures (CASE-STUDIES-SOURCES.md, unchanged from the original 5-tile version of this slide). HubSpot, Notion, Jobstream, Replit, UX Pilot and SciSpace have no sourced campaign figures anywhere in this deck's records, so per Alex's own instruction ('typeset some lorem ipsum and i'll fill it up myself') those cards carry placeholder lorem ipsum text, marked with a dashed border and muted italic type so they read as unfinished rather than as real numbers.
   7 Sep 2026, follow-up: Replit and UX Pilot added as two more placeholder cards per Alex ('go with the other comments' - confirming the two follow-up questions left on this slide's old flagged comments). Both reuse the same logo assets already used on slide 2 (grid_replit, grid_uxpilot). SciSpace added the same way but has no logo asset anywhere in the deck's bundle, so it's a text placeholder like Jobstream.
   7 Sep 2026, later: HubSpot and Jobstream filled in with real copy Alex supplied directly (his own words, lightly fitted to the card's objective/package/result/body shape, not rewritten) - no longer lorem ipsum. Jobstream's name and existence as a real client is now confirmed by this (it was flagged earlier as possibly misremembered); it still has no logo file, so it stays a text-name card.
   7 Sep 2026, later still, per Alex: Notion, Replit, UX Pilot and SciSpace placeholder cards removed - back to the 7 clients with real figures or real copy (Gamma, ElevenLabs, Guidde, Outskill, Luma AI, HubSpot, Jobstream). Cards resized up now that there's more room (padding, logo size and all type sizes increased). Also per Alex ('link the logos ... to the cover one'): all 7 logos now link to slide 2 ('#2'), where each partner's logo lives in the main showcase grid - Jobstream got a placeholder tile added there (see slide 2's data-notes) specifically so this link would land on something real.
   7 Sep 2026, even later, per Alex: HubSpot moved to the first card. Grid switched from a 4-column CSS grid to a centered flex-wrap layout, so the uneven last row (3 of 7 cards) centers itself instead of leaving empty space on the right - 'paginate better ... fit the whole page'.
-  8 Sep 2026, per Alex: Jobstream's card finally has a real logo (his file, added as logo_jobstream) instead of a text-name card - matches every other card now.">
+  8 Sep 2026, per Alex: Jobstream's card finally has a real logo (his file, added as logo_jobstream) instead of a text-name card - matches every other card now.
+  8 Sep 2026, per Alex (follow-up): 'use the same logo from page 2' for Luma AI - this card already pointed at the same asset KEY as slide 2 (grid_luma), but that key is a bare abstract diamond glyph with no wordmark, since that's all Alex had originally provided; he separately uploaded a real 'Luma AI' wordmark onto slide 2's tile via edit mode, which only patches that one element at runtime and was never reflected here. Pulled his uploaded image back out of Supabase, verified it byte-for-byte (md5 + length match against the stored row), and baked it into mk3-assets.json as a new logo_luma_ai asset - now the actual default for both slide 2's grid and this card, rather than depending on a live-only override slide 12 never had.">
   <div class="kicker">PAST CAMPAIGNS</div>
   <h2>Some of our past campaigns</h2>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:26px">
@@ -606,7 +613,7 @@ S[13] = f'''<!-- 13 {'─'*73} -->
     {campaign_card(A.get('logo_outskill'), "Outskill",
       "Brand awareness, webinar and course promotion", "25 Email Primary Ad placements",
       "7,318 unique clicks", "Webinar pushes, course promotions and launch windows aligned to Outskill's calendar. Bought 25 times", link_to=2)}
-    {campaign_card(A.get('grid_luma'), "Luma AI",
+    {campaign_card(A.get('logo_luma_ai'), "Luma AI",
       "Drive trial signups for Luma's AI image and video tools", "10 bespoke LinkedIn Carousels, 2 campaigns",
       "2,944 downloads", "Explainer carousels for teams evaluating Luma's image and video tools, across two campaigns. Bought twice", link_to=2)}
     {campaign_card(A.get('logo_jobstream'), "Jobstream",

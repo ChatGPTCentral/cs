@@ -604,3 +604,38 @@ branch (a829a4c); the two items worth a source note:
   used on slide 6's publications card and slide 7's Website channel tag
   (and by extension slide 11's "Website Banner" card, which shares
   `CH_WEBSITE`).
+
+## Revision, 8 Sep 2026 - slide 6/7 alignment & icon fill, "no price" label, Luma AI logo
+
+- **Slide 6, logo/header alignment.** Boxes 1-2 (AI Central Newsletter)
+  wrap to two-line titles; boxes 3-4 (Social Media, Website) don't. The
+  header row's `align-items:center` centered each card's logo against
+  its OWN title height, so 3/4's logos (and everything below them) sat
+  noticeably higher than 1/2's. Switched to `align-items:flex-start`
+  and gave every title a `min-height` (58px, room for two lines) so all
+  four logos and stat rows now share one baseline regardless of how the
+  title wraps.
+- **Slides 6 & 7, Website icon fill.** `logo_aicentral_square` (added
+  last revision) is a clean square with nothing to protect aspect-ratio
+  wise, but both places it's used (slide 6's card, slide 7's channel
+  tag) still inset it at 78-85% `contain`, leaving a visible white
+  margin the other logos don't have. Switched both to fill their tile
+  edge to edge (`object-fit:cover` at 100%/100%) instead.
+- **Slides 7 & 8, "no price" label.** The Bespoke Ebook no-price slide's
+  `data-label` (drives the top-nav breadcrumb, not the on-slide title)
+  read "Bespoke Ebook — no price" - visible on both this slide's own nav
+  pill and its neighbors' prev/next links. Alex didn't want "no price"
+  showing anywhere on the page; shortened to "Bespoke Ebook".
+- **Slide 12 (past campaigns), Luma AI logo.** "Use the same logo from
+  page 2" - the card already pointed at the same asset KEY as slide 2
+  (`grid_luma`), but that key is a bare abstract diamond glyph with no
+  wordmark, since that's all that existed when the card was built. Alex
+  had separately uploaded a real "Luma AI" wordmark onto slide 2's tile
+  via edit mode at some point - a runtime-only patch to that one
+  element, invisible to slide 12 and to the static build. Pulled the
+  uploaded image back out of Supabase (`doc_edits`, edit id
+  `about-ai-central-media:i:z3wuz8`), verified it byte-for-byte against
+  the stored row (md5 `fd7070b737c905e7cef92c2b75e4dfa6`, 16091 chars),
+  and baked it into `mk3-assets.json` as a new `logo_luma_ai` asset -
+  now the real default for both slide 2's grid and slide 12's card,
+  rather than something only slide 2 had via a live-only override.
