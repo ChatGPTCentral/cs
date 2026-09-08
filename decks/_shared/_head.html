@@ -74,7 +74,14 @@ h2.wide{max-width:1620px}
 .dark .badge{background:var(--paper);color:var(--ink)}
 
 /* ── top-of-slide page nav: prev (muted, clickable) - current (pill) -
-   next (clickable). Opt-in per deck - see deck_shared.py's page_nav(). */
+   next (clickable). Opt-in per deck - see deck_shared.py's page_nav().
+   8 Sep 2026, per Alex: the pill was NOT actually centered - a plain
+   flex row with justify-content:space-between only centers the middle
+   child when its two siblings happen to be equal width, which prev/next
+   labels never are (measured up to 45px off true-center on some
+   slides). Same root cause as the footer CTA fix earlier the same day -
+   pn-current is pulled out of the flex flow and centered independently
+   via absolute positioning instead of flex distribution. */
 .pagenav{position:absolute;top:0;left:0;right:0;height:56px;z-index:5;
   display:flex;align-items:center;justify-content:space-between;padding:0 106px}
 .pagenav .pn-side{flex:0 1 auto;max-width:36%;display:flex;align-items:center;gap:6px;
@@ -84,7 +91,8 @@ h2.wide{max-width:1620px}
 .pagenav .pn-next{color:var(--ink);justify-content:flex-end}
 .dark .pagenav .pn-next{color:var(--paper)}
 .pagenav .pn-prev:hover,.pagenav .pn-next:hover{color:var(--accent)}
-.pagenav .pn-current{flex:none;max-width:34%;padding:7px 22px;border-radius:20px;
+.pagenav .pn-current{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  max-width:34%;padding:7px 22px;border-radius:20px;
   background:var(--tint);font-size:13px;font-weight:700;text-transform:uppercase;
   letter-spacing:.1em;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .dark .pagenav .pn-current{background:var(--hair-dark);color:var(--paper)}
