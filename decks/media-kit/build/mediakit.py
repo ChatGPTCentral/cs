@@ -59,14 +59,15 @@ S[2] = f'''<!-- 02 {'─'*73} -->
   7 Sep 2026, per Alex: 2nd stat card text reordered to lead with reach ('Reaching readers in 151 countries and all 50 US states, across 7 channels') rather than lead with the channel count. Added a 3rd logo row (Guidde, a second Taplio mark, plus WISPR Flow/SynthFlow AI/Lindy AI placeholders) - those three placeholders now render as a real (generated) image rather than plain text, per Alex's follow-up ask to be able to click and replace them himself in edit mode; see logo_tile() in deck_shared.py.
   7 Sep 2026, later: added a Jobstream placeholder tile too (16th logo) - Alex asked slide 13 to use 'the same logo we used in the second page' for Jobstream among others, but Jobstream had never actually been on this slide, so there was no shared asset to point to. Added it here as a placeholder (same click-to-upload mechanism), and slide 13's Jobstream card links here now like the rest. Grid switched from 5 cols x 3 rows to 4 cols x 4 rows for 16 items - stays an even grid rather than a lone tile on its own row.
   8 Sep 2026, per Alex: Jobstream's placeholder replaced with the real logo file he sent (added to mk3-assets.json as logo_jobstream, used on this slide and slide 13 both). Separately, he flagged the WISPR Flow/SynthFlow AI/Lindy AI logos he'd uploaded himself as rendering wrong (SynthFlow oversized, WISPR Flow and Lindy showing a black background) - real bug in logo_tile()'s placeholder branch: it filled the tile edge-to-edge (width/height:100%, object-fit:cover) on a dark background, which looked fine for the placeholder SVG itself but meant any real logo swapped in via edit mode inherited that same oversized/cropped/dark-background treatment. Fixed to use the same contained, white-card styling as every other logo - see logo_tile() in deck_shared.py. This didn't touch the placeholder SVG generator itself, so it doesn't disturb the edit-ids of logos Alex has already uploaded.
-  8 Sep 2026, follow-up, per Alex: SynthFlow AI and Jobstream flagged again as too small relative to the other tiles at the standard 80/56 contain box. Added a per-tile scale override (logo_grid()'s items can now take a 4th tuple element). First tried (94, 74) - barely changed anything, because both logos are wide/landscape wordmarks and this grid's tiles are short (h=58px): object-fit:contain is bottlenecked by max-height long before it reaches max-width on a wide image in a short box, so raising max-width alone did almost nothing. Raised max-height to 90 instead - (94, 90) - which is the dimension that actually mattered.">
+  8 Sep 2026, follow-up, per Alex: SynthFlow AI and Jobstream flagged again as too small relative to the other tiles at the standard 80/56 contain box. Added a per-tile scale override (logo_grid()'s items can now take a 4th tuple element). First tried (94, 74) - barely changed anything, because both logos are wide/landscape wordmarks and this grid's tiles are short (h=58px): object-fit:contain is bottlenecked by max-height long before it reaches max-width on a wide image in a short box, so raising max-width alone did almost nothing. Raised max-height to 90 instead - (94, 90) - which is the dimension that actually mattered.
+  8 Sep 2026, per Alex (later): 3rd stat card's caption changed from 'Editorial team, led by the founder' to 'Globally minded' - the London stat is about where the team is based, and Alex wants the caption to speak to reach/outlook instead of restating the office location.">
   <div class="kicker">ABOUT AI CENTRAL MEDIA</div>
   <h2>We turn attention into pipeline for AI and SaaS brands</h2>
   <p class="subline">Imagine Bloomberg Businessweek, but for AI - that's the brand we're building. Our flagship publication, AI Central, covers practical AI for senior professionals, and we pair premium placements with editorial-grade creative that speaks to senior operators</p>
   <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px">
     <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">100+</div><div class="stat-l" style="font-size:19px;margin-top:6px">AI companies, SaaS platforms, education brands and growth teams have advertised with us since 2023</div></div>
     <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">7</div><div class="stat-l" style="font-size:19px;margin-top:6px">Reaching readers in 151 countries and all 50 US states, across 7 channels</div></div>
-    <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">London</div><div class="stat-l" style="font-size:19px;margin-top:6px">Editorial team, led by the founder</div></div>
+    <div style="background:var(--tint);padding:18px 22px"><div class="stat" style="font-size:46px">London</div><div class="stat-l" style="font-size:19px;margin-top:6px">Globally minded</div></div>
   </div>
   <div data-step="2" style="margin-top:22px">
     {label("We have partnered with", "var(--muted)", 17)}
@@ -163,33 +164,37 @@ S[5] = f'''<!-- 05 {'─'*73} -->
   data-notes="Reach: 300K+ is subscribers across the three publications (181K LinkedIn newsletter + 97.7K beehiiv + 44K Substack); 613K is accounts reached a month (Buffer + beehiiv + LinkedIn impressions, Aug 2026). Both true, different definitions - say which one you mean. Seniority, industries and geography are measured on the quiz database sample (1,985 / 2,278 / 4,714 respondents) and applied to the full audience, per Alex. The old '40% Founders, C-level and Execs' line is NOT supported by the data (13.9% founder + C-suite; 29.6% VP and above; 50.5% manager and above) - do not use it. 'LinkedIn is the main source of decision-makers' is the kit's claim; in the last 4 weeks beehiiv's top acquisition sources were Netline and Refind, so we say organic on LinkedIn, not 'majority organic' overall.
   8 Sep 2026, per Alex: the map sat at max-width:860px inside a much wider (1092px) grid column, left-aligned by default - leaving a ~230px gap of whitespace on the right that Alex flagged. Wrapped the whole 'Where they are' block (label, map, legend, caption) in a flex container with justify-content:flex-end so it right-aligns as one unit, closing the gap on the left instead.
   8 Sep 2026, per Alex (follow-up): the right column (map + legend + caption) sat noticeably lower than the left column's industry breakdown, since the row's align-items:start top-anchored both columns regardless of their own heights. Switched to align-items:end so both columns bottom-align instead - the map block shifted up to meet the breakdown percentages.
-  8 Sep 2026, per Alex (second follow-up): that bottom-alignment fix pushed the "Where they are" label out of line with "Who they are" at the top instead - the two column titles are the more important alignment, so switched back to align-items:start. Top labels now match; the map's own bottom no longer lines up with the breakdown's, which is the accepted trade-off of the two columns being different heights.
-  8 Sep 2026, per Alex (third follow-up): reversed again - the map's bottom lining up with the breakdown percentages is what Alex actually wants, top-label mismatch accepted as the trade-off this time. Back to align-items:end.">
+  8 Sep 2026, per Alex (second follow-up): that bottom-alignment fix pushed the 'Where they are' label out of line with 'Who they are' at the top instead - the two column titles are the more important alignment, so switched back to align-items:start. Top labels now match; the map's own bottom no longer lines up with the breakdown's, which is the accepted trade-off of the two columns being different heights.
+  8 Sep 2026, per Alex (third follow-up): reversed again - the map's bottom lining up with the breakdown percentages is what Alex actually wants, top-label mismatch accepted as the trade-off this time. Back to align-items:end.
+  8 Sep 2026, per Alex (fourth follow-up): turns out he wanted both at once - 'Where they are' top-aligned with 'Who they are' (Job Title Breakdown) AND the map/legend/caption bottom-aligned with the industry breakdown stats. A single align-items on the row can only pick one edge for the whole column, so restructured instead: the row stretches both columns to equal height (align-items:stretch), the right column is its own flex column with the label pinned at its top, and a flex:1 spacer below the label pushes the map/legend/caption group down to the bottom (and right, replacing the old row-level justify-content:flex-end) of the stretched column. Top labels and bottom map both line up now, independent of each other.
+  Also fixed the same day: this slide's h2 heading carried a one-off font-size:62px, out of step with every other slide's default 76px (deck_shared.py's page_nav / the shared h2 rule in _head.html) - no note anywhere explains why this slide alone was shrunk, so removed it to match. At the shared 76px size the headline wraps to two lines (it doesn't at 62px), so the stat row and audience grid below lost their old margin-top to keep the slide from overflowing - the trade Alex accepted by asking for the shared size.">
   <div class="kicker">THE AUDIENCE</div>
-  <h2 style="font-size:62px">Senior professionals with budget, in 151 countries</h2>
-  <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:34px;border-bottom:1px solid var(--hair);padding-bottom:14px">
+  <h2>Senior professionals with budget, in 151 countries</h2>
+  <div data-step="1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:8px;border-bottom:1px solid var(--hair);padding-bottom:4px">
     <div><div class="stat red" style="font-size:40px">300K+</div><div class="stat-l" style="font-size:18px;margin-top:5px">Subscribers across our three publications</div></div>
     <div><div class="stat" style="font-size:40px">35-55</div><div class="stat-l" style="font-size:18px;margin-top:5px">Key age cohort, in the peak earning years</div></div>
     <div><div class="stat" style="font-size:40px">50%</div><div class="stat-l" style="font-size:18px;margin-top:5px">Manager and above · 30% VP, director, founder or C-suite</div></div>
   </div>
-  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:22px;align-items:end">
+  <div style="display:grid;grid-template-columns:560px 1fr;gap:56px;margin-top:6px;align-items:stretch">
     <div data-step="2">
       {label("Who they are")}
-      <div style="margin-top:10px">__CHART_PROF__</div>
-      <div style="margin-top:16px">{label("Where they work")}</div>
-      <div style="margin-top:10px">__CHART_IND__</div>
+      <div style="margin-top:8px">__CHART_PROF__</div>
+      <div style="margin-top:10px">{label("Where they work")}</div>
+      <div style="margin-top:8px">__CHART_IND__</div>
     </div>
-    <div data-step="3" style="display:flex;justify-content:flex-end">
-      <div style="max-width:860px;width:100%">
-        {label("Where they are")}
-        <div style="margin-top:10px">__CHART_MAP__</div>
-        <div style="display:flex;gap:18px;margin-top:8px;font-size:17px;color:var(--muted);flex-wrap:wrap">
-          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#046BB1;vertical-align:-1px"></i> North America 50%</span>
-          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#3B4C99;vertical-align:-1px"></i> Europe 13% + UK 6%</span>
-          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#38A7AD;vertical-align:-1px"></i> Asia 14%</span>
-          <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#E3DFD7;vertical-align:-1px"></i> Rest 17%</span>
+    <div data-step="3" style="display:flex;flex-direction:column">
+      {label("Where they are")}
+      <div style="flex:1;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end">
+        <div style="max-width:860px;width:100%">
+          <div style="margin-top:10px">__CHART_MAP__</div>
+          <div style="display:flex;gap:18px;margin-top:8px;font-size:17px;color:var(--muted);flex-wrap:wrap">
+            <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#046BB1;vertical-align:-1px"></i> North America 50%</span>
+            <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#3B4C99;vertical-align:-1px"></i> Europe 13% + UK 6%</span>
+            <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#38A7AD;vertical-align:-1px"></i> Asia 14%</span>
+            <span><i style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#E3DFD7;vertical-align:-1px"></i> Rest 17%</span>
+          </div>
+          <div style="margin-top:8px;font-size:18px;font-weight:300;line-height:1.4;color:var(--muted)">LinkedIn is our main source of decision makers, and most of that audience found us organically</div>
         </div>
-        <div style="margin-top:8px;font-size:18px;font-weight:300;line-height:1.4;color:var(--muted)">LinkedIn is our main source of decision makers, and most of that audience found us organically</div>
       </div>
     </div>
   </div>
@@ -223,14 +228,15 @@ S[6] = f'''<!-- 06 {'─'*73} -->
   7 Sep 2026, per Alex: restructured into exactly 4 equal-height boxes in one row - AI Central Newsletter (thecentral.ai), AI Central Newsletter (LinkedIn), Social Media (LinkedIn), Website - the naming he wants carried everywhere else in the deck. The per-card 'Source: ...' caption was dropped (per Alex, 'remove source') - sourcing for these figures stays logged in MEDIA-KIT-SOURCES.md instead of on the slide itself.
   8 Sep 2026, per Alex: the Website card's icon was the full wide wordmark (logo_aicentral, 1200x286) squeezed into a square slot, letterboxed and off-balance next to the other publications' actual square/circular logos. The mark's own left-hand icon block is a perfect 286x286 square within that same file, so cropped it out as a new asset (logo_aicentral_square) instead of distorting or re-deriving one - used here and on slide 7's matching Website channel tag.
   8 Sep 2026, per Alex (follow-up): two fixes. (1) Boxes 3 and 4 (Social Media, Website) had single-line titles while boxes 1 and 2 wrap to two lines, so the header row's align-items:center vertically centered each logo against ITS OWN title height, pushing box 3/4's logos and second lines up out of line with 1/2's. Switched to align-items:flex-start and gave every title a min-height (58px, enough for two lines) so all four logos and stat-row starting points now share one baseline regardless of title length. (2) The Website icon's logo_fit='contain' branch inset the square logo_aicentral_square asset at 78%/60% inside its white tile, leaving a visible white margin the other three logos don't have - since the asset is already a clean square with no need to protect an aspect ratio, switched it to fill the tile edge to edge like the other three (width/height:100%, object-fit:cover) instead.
-  8 Sep 2026, per Alex (second follow-up): the min-height fix above put the reserved space in the wrong place - it sat on the title itself, so on the two single-line cards (3/4) their sub-line (URL) floated in the empty space below the title instead of sitting right under it, leaving a much bigger gap than on the two-line cards. Moved the min-height (80px) onto the wrapper around BOTH the title and sub-line together, so the sub-line always sits directly under its own title with no forced gap - any leftover reserved space now falls after the sub-line, invisibly, instead of between the two.">
+  8 Sep 2026, per Alex (second follow-up): the min-height fix above put the reserved space in the wrong place - it sat on the title itself, so on the two single-line cards (3/4) their sub-line (URL) floated in the empty space below the title instead of sitting right under it, leaving a much bigger gap than on the two-line cards. Moved the min-height (80px) onto the wrapper around BOTH the title and sub-line together, so the sub-line always sits directly under its own title with no forced gap - any leftover reserved space now falls after the sub-line, invisibly, instead of between the two.
+  8 Sep 2026, per Alex (third follow-up): card 1's icon swapped from logo_beehiiv to logo_aicentral_square (same asset already used on card 4/Website) - same change carried through to CH_BEEHIIV below, which drives the matching 'Available on' tag on slide 7. Card 1's sub-line ('via beehiiv') is now a real link to thecentral.ai/subscribe; card 2's sub-line ('AI Central, on LinkedIn') is now a real link to the newsletter's actual LinkedIn URL - both open in a new tab, matching the link styling already used for slide 8's Examples list.">
   <div class="kicker">THE PUBLICATIONS</div>
   <h2>Four channels, one senior audience</h2>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px">
-    {pub(1, A['logo_beehiiv'], "AI Central Newsletter (thecentral.ai)", "via beehiiv", "mobile-first offers: downloads, webinar signups", [
+    {pub(1, A['logo_aicentral_square'], "AI Central Newsletter (thecentral.ai)", '<a href="https://thecentral.ai/subscribe" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">thecentral.ai/subscribe</a>', "mobile-first offers: downloads, webinar signups", [
       ("Active subscribers", "97K+"), ("New subscribers a month", "+4,900"),
       ("Average open rate", "30%"), ("Average unique CTR", "2.3%"), ("Posts a week", "4x")])}
-    {pub(2, A['logo_linkedin'], "AI Central Newsletter (LinkedIn)", "AI Central, on LinkedIn", "desktop-first offers: demos, extensions, announcements", [
+    {pub(2, A['logo_linkedin'], "AI Central Newsletter (LinkedIn)", '<a href="https://www.linkedin.com/newsletters/7139692272719224832/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">linkedin.com/newsletters/7139692272719224832/</a>', "desktop-first offers: demos, extensions, announcements", [
       ("Active subscribers", "181K+"), ("New subscribers a month", "+5,500"),
       ("Average unique CTR", "2.7%"), ("Posts a week", "4x")])}
     {pub(3, A['logo_linkedin'], "Social Media (LinkedIn)", "linkedin.com/company/chat-gpt-central", "sustained brand visibility and thought leadership, not single placements", [
@@ -243,7 +249,7 @@ S[6] = f'''<!-- 06 {'─'*73} -->
 </section>'''
 
 # ── 06 Advertising options ──────────────────────────────────────────────────
-CH_BEEHIIV = [(A['logo_beehiiv'], "AI Central Newsletter (thecentral.ai)")]
+CH_BEEHIIV = [(A['logo_aicentral_square'], "AI Central Newsletter (thecentral.ai)")]
 CH_LI_NEWS = [(A['logo_linkedin'], "AI Central Newsletter (LinkedIn)")]
 CH_LI_PAGE = [(A['logo_linkedin'], "Social Media (LinkedIn)")]
 CH_WEBSITE = [(A['logo_aicentral_square'], "Website")]
@@ -632,7 +638,8 @@ S[14] = f'''<!-- 14 {'─'*73} -->
   data-notes="Bio is the kit's, in shorter sentences. The $0 to $16M ARR fintech stat and the LinkedIn profile link were restored from legacy materials at Alex's confirmation, 2 Sep 2026 - see 10_legacy_materials_audit.md. 'Teaches AI and monetization at Cozora Academy' replaces the vaguer 'university level' phrasing, matching the canonical bio already in 01_brand_positioning.md and sales_agent_training_data.json. Contact links from the brand skill's key-links table. Media kit URL cntral.ai/media-kit; storefront cntral.ai/storefront.
   6 Sep 2026, per Alex: 'Advertise now' and 'This kit' rows removed from the contact block.
   7 Sep 2026: press-delegate and affiliations logos enlarged (h 60 -> 90, then 90 -> 112) per Alex, asked twice. Separately: Alex reported his own uploaded logo replacements for this row had been lost - true, and specific to how edit mode used to compute an edit's id (by slide position, which a rebuild that adds/removes slides shifts). That's fixed now (see decks/_shared/_tail.html - ids are content-hashed, not positional) and his 7 real uploaded images (4 press-delegate, 3 affiliations logos) were recovered from Supabase under their old ids and re-saved against the new ones this same rebuild generates, so they should reappear once this deploys rather than needing to be re-uploaded.
-  7 Sep 2026, per Alex: the three Let's talk rows are now real anchor tags (tel/mailto/https), not styled text - Book a call links to cntral.ai/meet, Email opens a mailto: to collabs@thecentral.ai, Connect with Alex opens the LinkedIn profile, all in a new tab except the mailto.">
+  7 Sep 2026, per Alex: the three Let's talk rows are now real anchor tags (tel/mailto/https), not styled text - Book a call links to cntral.ai/meet, Email opens a mailto: to collabs@thecentral.ai, Connect with Alex opens the LinkedIn profile, all in a new tab except the mailto.
+  8 Sep 2026, per Alex: bottom-row label renamed 'Affiliations' -> 'Member of' (the logos underneath are AI Central's own memberships, not affiliate relationships).">
   <div class="kicker">MEET THE TEAM</div>
   <h2>Based in London, led by the founder</h2>
   <div style="display:grid;grid-template-columns:300px 1fr 420px;gap:48px;margin-top:34px;align-items:start">
@@ -662,7 +669,7 @@ S[14] = f'''<!-- 14 {'─'*73} -->
     ], cols=5, h=112, gap=14)}</div>
   </div>
   <div data-step="3" style="margin-top:12px">
-    {label("Affiliations", "var(--muted)", 15)}
+    {label("Member of", "var(--muted)", 15)}
     <div style="margin-top:8px">{logo_grid([
       (A.get('aff_collective'), "The AI Collective"),
       (A.get('aff_gta'), "Global Tech Advocates"),
