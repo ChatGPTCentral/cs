@@ -39,3 +39,10 @@
   two carousel IDs (#206, #207). Elizabeth cleared the invoice but asked
   him to resend with those IDs included. This is Elizabeth's thread to
   run - taken out of "Your move," Alex has nothing to do here
+
+  **Pulse check, 2026-09-09.** Alex personally sent a message on this
+  thread via `1a086e0dc5e9ac31`, cc Mark and Elizabeth, at 15:54 - despite
+  this story being marked "not Alex's move." Content not read (metadata
+  only, per pulse-check rule) - flagged for the full sweep to reconcile.
+  Likely connects to the "Marwan documents" item from Alex's voice note
+  earlier today
