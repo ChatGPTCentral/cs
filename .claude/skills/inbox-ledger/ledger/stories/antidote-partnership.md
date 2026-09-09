@@ -8,13 +8,13 @@
   (PR/comms agency, no owned distribution channels). Introduced by
   Richard Lowe (West England Tech Advocates / Hewlett Rand), the same
   connector behind the Bristol AI Hackathon relationship
-- last-touch: Alex - sent the media kit, 2026-09-08, ball is theirs
+- last-touch: Alex - replied to Becca 2026-09-09 14:24, ball is theirs
 - start: 2026-08-24 (calendar invite for the intro call)
-- last-inbound: none tracked in Gmail - relationship has run through
-  Richard's thread and the Notion meeting transcript so far
-- last-outbound: 2026-09-08 18:06 (alex@thecentral.ai, to
-  becca.williams@antidotecomms.com, cc liz@thecentral.ai, thread
-  `1a081e1502018db9`)
+- last-inbound: 2026-09-09 06:42 (becca.williams@antidotecomms.com, cc
+  liz@thecentral.ai, thread `1a081e1502018db9`, message `1a084e7efcc2db2e`)
+- last-outbound: 2026-09-09 14:24 (alex@thecentral.ai, thread
+  `1a081e1502018db9`, message `1a0868e23f38a975`, to
+  becca.williams@antidotecomms.com, cc liz@thecentral.ai)
 - next-action: none - wait for Becca's reply
 - commitments: send the media kit - done. Per the meeting transcript,
   Antidote committed to send case studies of paid client results in
@@ -42,3 +42,7 @@
 
   **Pulse check, 2026-09-08.** Alex sent the media kit via
   `1a08233193d6d634` (thread `1a081e1502018db9`) - in attesa di risposta
+
+  **Pulse check, 2026-09-09.** Becca replied via `1a084e7efcc2db2e`
+  (missed by the hourly window it landed in) and Alex replied back via
+  `1a0868e23f38a975` - in attesa di risposta
