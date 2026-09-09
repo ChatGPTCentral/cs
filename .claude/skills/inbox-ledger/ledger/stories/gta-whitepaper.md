@@ -7,12 +7,12 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Marc Duke - replied 2026-09-09, ball is Alex's
+- last-touch: Alex - replied to Marc 2026-09-09 12:39, ball is theirs
 - last-inbound: 2026-09-09 12:36 (marcduke@dukeconnect.co.uk, thread
   `1a086153670818f1`, message `1a0862be7c03f442`)
-- last-outbound: 2026-09-09 12:12 (alex@thecentral.ai, thread
-  `1a086153670818f1`, message `1a086157c881d06e`, to tsvetelin@thinkrevops.com
-  and marcduke@dukeconnect.co.uk)
+- last-outbound: 2026-09-09 12:39 (alex@thecentral.ai, thread
+  `1a086153670818f1`, message `1a0862e30dbee527`, to marcduke@dukeconnect.co.uk,
+  cc tsvetelin@thinkrevops.com)
 - idle: 0 days
 - next-action: none recorded yet - pulse check only, mechanical. Old
   next-action below (reply to Tsvetelin's calendar invite,
@@ -32,8 +32,9 @@
   `19edf85ff0a1f34e`
 - notes: **Pulse check, 2026-09-09.** Alex sent a new message via
   `1a086157c881d06e` (thread `1a086153670818f1`) to Tsvetelin and Marc
-  Duke. Marc replied same window via `1a0862be7c03f442` - in attesa di
-  risposta da Alex
+  Duke. Marc replied same window via `1a0862be7c03f442`, and Alex
+  replied back to Marc (cc Tsvetelin) via `1a0862e30dbee527` - in attesa
+  di risposta
 
   GTA is **Global Tech Advocates**, Russ Shaw's network - not a
   three-letter unknown. Six external participants across four threads, none of
