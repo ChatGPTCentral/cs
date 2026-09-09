@@ -9,7 +9,8 @@
 - status: open - ongoing friendship, recurs often
 - start: 2025-10-29
 - end: (ongoing)
-- next-action: none currently tracked
+- next-action: **reach out to Vasily** - Alex expects to be back in
+  London next week (per Alex, voice note 2026-09-09)
 - commitments: none
 - threads: `199ca2bf7e774cb2` (29 Oct 2025), `199ca323e536e6c5` (30 Oct 2025)
 - notes: A close friend of Alex's - per his own account, month-by-month

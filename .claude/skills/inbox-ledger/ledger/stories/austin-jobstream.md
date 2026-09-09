@@ -21,7 +21,10 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
   and Liz, thread `19e4b71f458018eb` "Jobstream Merch" - "just back from
   being OOO, did it end up going out?")
 - idle: 8 days
-- next-action: none - wait for Jazmin's reply
+- next-action: none - wait for Jazmin's reply on the merch thread. Separately,
+  per Alex (voice note, 2026-09-09): reach out to Katie Fortunato directly -
+  she is the founder, real relationship, worth a fresh touch alongside the
+  Jazmin thread
 - notes-correction: Alex recalled this as "last week, July 17" when asking
   for the nudge; the real prior touch was 17 Aug 2026, per Gmail
 - commitments: none recorded

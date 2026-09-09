@@ -19,6 +19,10 @@
   from `Sunny >> Deals`, which is Sam's outbound pipeline - this label is
   conversation *with* Sam
 
+  **Per Alex, voice note 2026-09-09.** Alex has a call with Sam scheduled
+  for later today - likely covers the unsent performance-review draft
+  above in person rather than by email
+
   **Auto-genesis, 2026-09-06.** An internal "Sunny Check In" call was held
   5 Sep 2026, 11:30-12:00 CEST (Elizabeth organizer, Sam accepted, Alex
   needsAction), event id `4pnqamqdftb1s5epj43q90on0c`. No transcript

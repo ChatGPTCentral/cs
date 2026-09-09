@@ -28,3 +28,7 @@
   at Alex's request, alongside a batch of unwanted cold drafts. Not
   dropped - Alex wants to come back to Kat and Sheridan later, this is a
   timing pause, not a decision to stop
+
+  **Per Alex, voice note 2026-09-09.** Alex is genuinely unsure whether
+  this is still a live deal - calls it "a very old thing." Not resolved
+  either way - needs Alex to actually decide before any further action

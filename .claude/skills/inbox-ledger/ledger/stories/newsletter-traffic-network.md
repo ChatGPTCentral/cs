@@ -30,3 +30,7 @@
   Alexander replied the same day - happy to catch up end of month, wants
   AI Central running in Newsletter Traffic Network's CPC campaigns. Next
   move is Alex's, not urgent
+
+  **Per Alex, voice note 2026-09-09.** Alex has already moved the call
+  with Alexander to end of month on his own calendar - confirmed done,
+  no further action needed on this right now
