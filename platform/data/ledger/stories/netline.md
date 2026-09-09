@@ -7,13 +7,18 @@
   (`daniel@netline.com`, Director of Partner Development) - the address Alex
   named but that had not turned up in any thread read until this pass
 - last-touch: Awais Shahid - replied 2026-09-08, ball is Alex's
-- last-inbound: 2026-09-08 13:14 (Awais.Shahid@informa.com, thread
-  `1a067b9a68290465`)
-- last-outbound: 2026-09-03 16:19 (alex@thecentral.ai, thread
-  `1a067b9a68290465`, to Awais.Shahid@informa.com, cc
-  elizabeth@thecentral.ai, bcc daniel@netline.com)
+- last-inbound: 2026-09-08 14:00 (Awais.Shahid@informa.com, thread
+  `1a067b9a68290465`, message `1a081524904c09c5`)
+- last-outbound: 2026-09-08 13:21 (alex@thecentral.ai, thread
+  `1a067b9a68290465`, message `1a0812e179cd482b`, to Awais.Shahid@informa.com)
 - idle: 0 days
-- next-action: none - wait for Awais Shahid's reply
+- next-action: **sign and return the prospective agreement Awais sent,
+  message `1a081524904c09c5`** - no signed copy on file yet
+- **Auto-genesis, 2026-09-09.** Same thread kept moving past the
+  2026-09-08 13:14 pulse check already on file. Alex replied 13:21
+  ("Yes that looks great - - send it over"), Awais sent the prospective
+  agreement as an attachment at 14:00 asking Alex to sign and return it.
+  Ball is Alex's, and it is now a concrete ask, not a wait
 - **Pulse check, 2026-09-08.** Awais replied via `1a08128b0f276c09` - "That
   sounds great! I can get a prospective agreement over which will have the
   deliverables from our side with dates in it, and you can add in the

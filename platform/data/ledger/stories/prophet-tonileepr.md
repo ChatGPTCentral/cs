@@ -7,12 +7,15 @@
 - people: Belle Lenz (belle@tonileepr.com, Toni Lee PR, PR agency based in
   Los Angeles, representing Prophet), Mat Zucker (mzucker@prophet.com,
   CMO of Prophet, based in New York)
-- last-touch: Alex - sent the media kit, 2026-09-08, ball is theirs
+- last-touch: Mat Zucker - replied 2026-09-08, ball is Alex's
 - start: 2026-09-02
-- last-inbound: none tracked
+- last-inbound: 2026-09-08 22:20 (mzucker@prophet.com, thread
+  `1a081e12c5cbaef6`, message `1a0831cc86f43df9`)
 - last-outbound: 2026-09-08 18:08 (alex@thecentral.ai, to
   mzucker@prophet.com and belle@tonileepr.com, thread `1a081e12c5cbaef6`)
-- next-action: none - wait for their reply
+- next-action: none recorded - Mat's reply is a two-word "Thanks Alex!",
+  does not answer any of the three asks in Alex's message (campaign
+  support, London catch-up with the UK team, AI Summit NY attendance)
 - commitments: send the media kit - done
 - threads: none found
 - notes: **Auto-genesis, 2026-09-03.** Google Calendar event "Discovery
@@ -39,3 +42,8 @@
 
   **Pulse check, 2026-09-08.** Alex sent the media kit via
   `1a082355b4ece77b` (thread `1a081e12c5cbaef6`) - in attesa di risposta
+
+  **Auto-genesis, 2026-09-09.** Mat replied same day, 22:20, message
+  `1a0831cc86f43df9` - just "Thanks Alex!", quoting the media-kit email
+  back. No answer yet on campaign support, the London catch-up offer or
+  AI Summit NY attendance

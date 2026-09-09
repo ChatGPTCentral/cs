@@ -7,7 +7,7 @@
 - people: Nicolia L. Wiles, nwiles@prime-techpr.com, President and Founder
   of Prime Tech PR (Austin, London, Shenzhen), representing Daniel
   Fallmann, CEO of Mindbreeze (enterprise AI and knowledge management)
-- last-touch: Nicolia - booked the call, waiting for it to happen
+- last-touch: call held, 2026-09-08 - no transcript, content unknown
 - start: 2026-06-16
 - last-inbound: 2026-09-04 17:11 (nwiles@prime-techpr.com, thread
   `1a06288d9ac1f207` - she's in Austin, TX, not Mindbreeze's Austria HQ;
@@ -15,9 +15,8 @@
 - last-outbound: 2026-09-04 16:59 (alex@thecentral.ai, cc
   liz@thecentral.ai, thread `1a06288d9ac1f207`)
 - idle: 0 days
-- next-action: none - call booked, 8 Sep 2026 16:00-16:30 Europe/Rome
-  (Google Calendar event `sd4lajap1rfqoog0th7sf3p4kk`, via Lunacal, Meet
-  link `meet.google.com/eof-csqy-bmv`)
+- next-action: **the call happened but no transcript was captured - ask
+  Alex what was discussed and what, if anything, he committed to**
 - commitments: 14 Jul 2026, Alex agreed to two of five pitched topics -
   "The 360-Degree View: Why Dashboards Are Dead and Context Is the New
   KPI" and "Workflow Automation That Actually Works." Terms he quoted: an
@@ -51,3 +50,11 @@
 
   **Roadmap link, 2026-09-04.** Nicolia is Austin-based - see
   `../roadmap.md`, New Media Summit Austin is confirmed for Feb 2027
+
+  **Auto-genesis, 2026-09-09.** The 8 Sep call happened - Notion logged a
+  page for it ("Discovery Call between Alex Fiore and Nicolia Wiles"),
+  but the page itself says "No transcript was captured. Check your
+  microphone and system audio settings, then try recording again."
+  No Gmail follow-up since. Content of the call is not known from this
+  pass - next-action is to ask Alex directly, per the write-gate rule
+  against inventing next steps a source does not support
