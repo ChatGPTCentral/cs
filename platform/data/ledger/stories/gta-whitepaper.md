@@ -7,34 +7,58 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Alex - replied to Marc 2026-09-09 12:39, ball is theirs
+- last-touch: Alex - the "GTA AI Pulse check-in" call happened today,
+  2026-09-09 (Alex, Marc Duke, Tsvetelin). Ball is explicitly Alex's -
+  his own words closing the call: "the ball is a bit in my court, I'll
+  update you guys tomorrow"
 - last-inbound: 2026-09-09 12:36 (marcduke@dukeconnect.co.uk, thread
   `1a086153670818f1`, message `1a0862be7c03f442`)
 - last-outbound: 2026-09-09 12:39 (alex@thecentral.ai, thread
   `1a086153670818f1`, message `1a0862e30dbee527`, to marcduke@dukeconnect.co.uk,
   cc tsvetelin@thinkrevops.com)
 - idle: 0 days
-- next-action: none recorded yet - pulse check only, mechanical. Old
-  next-action below (reply to Tsvetelin's calendar invite,
-  `1a0810c37b3c7fbb`) is superseded by this new thread; needs the full
-  sweep to read the actual content
-- next-action-superseded: reply to Tsvetelin's calendar invite - "GTA AI Pulse
-  check-in," Wed 9 Sep 14:30-15:00 CEST, thread `1a0810c37b3c7fbb`. He asked
-  "didn't see a mail from you with slots - please let us know." Corrected,
-  2026-09-08 full sweep: this file previously read "wait for Tsvetelin" even
-  though the newest message is from him asking Alex a direct question - ball
-  is Alex's
+- next-action: **share the first draft on the Gmail thread tomorrow
+  (Thu 10 Sep) at lunch** - the team worked on it while Alex was away;
+  a live-PDF format mixing GTA and London Tech Advocates perspectives.
+  Separately, **reach out to Alex's two existing contacts at Seven
+  Hills PR** (Russ Shaw's agency) about the launch. Per the call
+  transcript (Notion, `3d6656dd7b678068a757fb6e87387513`), not
+  invented
 - commitments: Alex asked when Tsvetelin's part will be ready and proposed a
   group call next week (Alex is back in the office) to assess where the
   whitepaper stands
 - threads: `1a086153670818f1` (new, 2026-09-09, live), `19f60e9ebd451424`
   (the real status-check thread), `19ff67b1360150c6`, `19f21eef04aa4e4e`,
   `19edf85ff0a1f34e`
-- notes: **Pulse check, 2026-09-09.** Alex sent a new message via
+- notes: **GTA AI Pulse check-in call, 2026-09-09, real transcript.**
+  Alex, Marc Duke and Tsvetelin (Svelin). Alex's team drafted a first
+  good version of the whitepaper while he was travelling - live PDF,
+  blending GTA and London Tech Advocates perspectives, expected
+  tomorrow (10 Sep) at lunch, to be shared on the Gmail thread. Group
+  agreed on an **online-first launch** (in-person judged too hard
+  logistically given everyone's September). Alex has two existing
+  contacts at Seven Hills (Russ Shaw's PR agency) and will reach out
+  directly once the PDF is finalized - ideas floated: a podcast
+  recording, inviting journalists/PR agencies. Alex is in London next
+  Monday (15 Sep), open to something in-person if timing works. Marc
+  gave Alex an explicit green light to run this independently ("you've
+  picked it up and breathed life into it... just go for it"), asked to
+  be cc'd on any presentation to Russ but said not to treat him as a
+  bottleneck. Tsvetelin is in Bulgaria then Montenegro (a friend's
+  wedding) until 20 Sep, open to joining online only. Marc also flagged
+  a busy September but is enthusiastic. **Second edition already
+  discussed**: Alex travels outside the UK 1-20 Oct, so the group's
+  preferred window for a second iteration is end of October or
+  20 Oct-15 Nov - ideas on the table: a short reader survey, possibly
+  new contributors. Alex closed the call: "the ball is a bit in my
+  court, I'll update you guys tomorrow." Source: Notion transcript
+  `3d6656dd7b678068a757fb6e87387513`, per Alex's own pointer
+
+  **Pulse check, 2026-09-09.** Alex sent a new message via
   `1a086157c881d06e` (thread `1a086153670818f1`) to Tsvetelin and Marc
-  Duke. Marc replied same window via `1a0862be7c03f442`, and Alex
-  replied back to Marc (cc Tsvetelin) via `1a0862e30dbee527` - in attesa
-  di risposta
+  Duke ahead of the call above. Marc replied same window via
+  `1a0862be7c03f442`, and Alex replied back to Marc (cc Tsvetelin) via
+  `1a0862e30dbee527`
 
   GTA is **Global Tech Advocates**, Russ Shaw's network - not a
   three-letter unknown. Six external participants across four threads, none of
