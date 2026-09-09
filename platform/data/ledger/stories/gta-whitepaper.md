@@ -7,15 +7,18 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Tsvetelin - sent a calendar invite 2026-09-08, ball is Alex's
-- last-inbound: 2026-09-08 (tsvetelin@thinkrevops.com, thread
-  `1a0810c37b3c7fbb`, "GTA AI Pulse check-in" invite for Wed 9 Sep
-  14:30-15:00 CEST - "didn't see a mail from you with slots - please let
-  [us know]")
-- last-outbound: 2026-08-31 09:30 (alex@thecentral.ai, to
-  tsvetelin@thinkrevops.com, cc Ganapathy, Marc, Zoltan, Swetha)
+- last-touch: Marc Duke - replied 2026-09-09, ball is Alex's
+- last-inbound: 2026-09-09 12:36 (marcduke@dukeconnect.co.uk, thread
+  `1a086153670818f1`, message `1a0862be7c03f442`)
+- last-outbound: 2026-09-09 12:12 (alex@thecentral.ai, thread
+  `1a086153670818f1`, message `1a086157c881d06e`, to tsvetelin@thinkrevops.com
+  and marcduke@dukeconnect.co.uk)
 - idle: 0 days
-- next-action: **reply to Tsvetelin's calendar invite** - "GTA AI Pulse
+- next-action: none recorded yet - pulse check only, mechanical. Old
+  next-action below (reply to Tsvetelin's calendar invite,
+  `1a0810c37b3c7fbb`) is superseded by this new thread; needs the full
+  sweep to read the actual content
+- next-action-superseded: reply to Tsvetelin's calendar invite - "GTA AI Pulse
   check-in," Wed 9 Sep 14:30-15:00 CEST, thread `1a0810c37b3c7fbb`. He asked
   "didn't see a mail from you with slots - please let us know." Corrected,
   2026-09-08 full sweep: this file previously read "wait for Tsvetelin" even
@@ -24,9 +27,15 @@
 - commitments: Alex asked when Tsvetelin's part will be ready and proposed a
   group call next week (Alex is back in the office) to assess where the
   whitepaper stands
-- threads: `19f60e9ebd451424` (live - the real status-check thread),
-  `19ff67b1360150c6`, `19f21eef04aa4e4e`, `19edf85ff0a1f34e`
-- notes: GTA is **Global Tech Advocates**, Russ Shaw's network - not a
+- threads: `1a086153670818f1` (new, 2026-09-09, live), `19f60e9ebd451424`
+  (the real status-check thread), `19ff67b1360150c6`, `19f21eef04aa4e4e`,
+  `19edf85ff0a1f34e`
+- notes: **Pulse check, 2026-09-09.** Alex sent a new message via
+  `1a086157c881d06e` (thread `1a086153670818f1`) to Tsvetelin and Marc
+  Duke. Marc replied same window via `1a0862be7c03f442` - in attesa di
+  risposta da Alex
+
+  GTA is **Global Tech Advocates**, Russ Shaw's network - not a
   three-letter unknown. Six external participants across four threads, none of
   them labelled, which is why the label-based ledger never saw this story despite
   it being one of the most active in the account.
