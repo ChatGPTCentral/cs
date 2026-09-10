@@ -4,16 +4,16 @@
 - kind: person, internal
 - people: Mark (mark@theaicentral.net / mark@thecentral.ai), Elizabeth
   (elizabeth@theaicentral.net), Alex on cc
-- last-touch: Elizabeth - not Alex's move, she is handling the invoice
-  directly
+- last-touch: Alex - nudged the invoice thread himself, 2026-09-09
 - last-inbound: 2026-09-03 16:11 (mark@theaicentral.net, thread
   `1a05382e2fe260ce`, to elizabeth@theaicentral.net, cc mark@thecentral.ai,
   alex@thecentral.ai)
-- last-outbound: 2026-09-04 13:49 (elizabeth@theaicentral.net, thread
-  `1a05382e2fe260ce`)
-- idle: 4 days
-- next-action: none for Alex - Elizabeth is running this directly, wait
-  for Mark to resend the invoice with the two carousel IDs
+- last-outbound: 2026-09-09 15:54 (alex@thecentral.ai, thread
+  `1a05382e2fe260ce`, message `1a086e0dc5e9ac31`, to
+  elizabeth@theaicentral.net, cc mark@theaicentral.net, mark@thecentral.ai)
+- idle: 0 days
+- next-action: none recorded - wait for Mark to resend the invoice with
+  the two carousel IDs, now with Alex's own nudge on the thread
 - commitments: none recorded
 - threads: `19f5b6f7c1a9dc30` (live), 21 more unread
 - notes: **Elizabeth wrote twice - 28 and 29 July - with no reply from Mark.** Two
@@ -44,5 +44,11 @@
   thread via `1a086e0dc5e9ac31`, cc Mark and Elizabeth, at 15:54 - despite
   this story being marked "not Alex's move." Content not read (metadata
   only, per pulse-check rule) - flagged for the full sweep to reconcile.
-  Likely connects to the "Marwan documents" item from Alex's voice note
-  earlier today
+
+  **Auto-genesis, 2026-09-10 - content read.** The message is one line:
+  "Marwan - bringing this up," to elizabeth@theaicentral.net, cc Mark on
+  the still-open INV-014 thread ("Re: Your August 2026 Payout"). Alex is
+  personally re-surfacing the stalled carousel-ID request (#206, #207)
+  that Elizabeth asked Mark to resend on 2026-09-04, six days unanswered.
+  Ball is Mark's to resend the invoice, but Alex nudging it himself is a
+  real escalation signal, not routine. Source: `1a086e0dc5e9ac31`

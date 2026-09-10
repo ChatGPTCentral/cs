@@ -9,10 +9,8 @@
 - last-outbound: 2026-09-09 14:59 (alex@thecentral.ai, thread
   `1a086978c6a3f203`, to sam@theaicentral.net, cc elizabeth@theaicentral.net)
 - idle: 0 days
-- next-action: none recorded yet - pulse check only, mechanical. Unclear
-  whether this new thread is the same "Newsletter Performance Check"
-  content as the old unsent draft below (different thread id) - needs
-  the full sweep to read the actual content and confirm
+- next-action: none for Alex - wait for a reply on the unsent
+  performance-review draft below, still unsent
 - next-action-superseded (unconfirmed): **unsent draft in Gmail** - "Newsletter
   Performance Check - - 5 Sep - - opens sliding, nothing scheduled" (thread
   `1a070e3dac6da7b6`, alex@thecentral.ai to sam@thecentral.ai cc elizabeth,
@@ -37,3 +35,16 @@
   **Pulse check, 2026-09-09.** Alex sent a new message via thread
   `1a086978c6a3f203` to Sam, cc Elizabeth. Sam replied same window via
   `1a086d00a31aaf1c` - in attesa di risposta
+
+  **Auto-genesis, 2026-09-10 - content read.** Resolved: thread
+  `1a086978c6a3f203` is a different topic, not the "Newsletter
+  Performance Check." Subject "AI Central Official Media Kit (September
+  2026)" - Alex shared the new official media kit with Sam and
+  Elizabeth ("let's decide on a 1:1 basis, keep me in the loop"), Sam
+  replied it looked great. The unsent 5 Sep performance-review draft
+  (thread `1a070e3dac6da7b6`) is still separate and still unsent.
+  Also found: a recurring "Beehiiv Performance Review" calendar event
+  (Alex, Sam, Elizabeth) - occurrences today (10 Sep) and 11 Sep,
+  13:30 UTC - likely the real venue for the performance-review content,
+  not written here per the auto-genesis rule against logging future
+  events into story files; see `ledger_upcoming_meetings`
