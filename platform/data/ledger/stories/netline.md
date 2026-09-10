@@ -3,26 +3,109 @@
 - query: none - no label. Found by discovery + the commitment scanner
 - label-id: none
 - kind: org (person cluster)
-- people: Aneeka Velummylum (`apatel@netline.com`), **Daniel Frignito**
-  (`daniel@netline.com`, Director of Partner Development) - the address Alex
-  named but that had not turned up in any thread read until this pass
-- last-touch: Awais Shahid - replied 2026-09-08, ball is Alex's
-- last-inbound: 2026-09-08 14:00 (Awais.Shahid@informa.com, thread
-  `1a067b9a68290465`, message `1a081524904c09c5`)
+- people: Aneeka Patel (`apatel@netline.com`) - her own signature block reads
+  "Aneeka Patel, Account Manager" on every message on file. NetLine's Exchange
+  directory shows her as "Velummylum, Aneeka" (seen only in reply-header
+  lines, never in a signature) - two surnames for one person, not two
+  people. **Verified, 2026-09-10**: this closes the identity question -
+  see the dated note below. **Daniel Frignito** (`daniel@netline.com`,
+  Senior Director of Partner Development) - the address Alex named but
+  that had not turned up in any thread read until an earlier pass
+- last-touch: Aneeka - replied 2026-09-08 21:46 (thread `19cf6dc21ce7fabd`,
+  message `1a082fd60f87886b`), ball is Alex's - a draft reply is ready,
+  see the dated note below. Separately, Awais Shahid also replied
+  2026-09-08 13:14 on the AI Summit New York thread, also Alex's ball,
+  not part of the Aneeka confusion
+- last-inbound: 2026-09-08 21:46 (apatel@netline.com, thread
+  `19cf6dc21ce7fabd`, message `1a082fd60f87886b`)
 - last-outbound: 2026-09-08 13:21 (alex@thecentral.ai, thread
   `1a067b9a68290465`, message `1a0812e179cd482b`, to Awais.Shahid@informa.com)
 - idle: 0 days
-- next-action: **URGENT, per Alex 2026-09-10 - fully investigate and
-  tackle the Aneeka/NetLine situation.** Alex's own words: he does not
-  understand it. Real loose threads on file: the broken-TradePub-links
-  commitment (fulfilled by email 2026-08-31, no confirmation from Aneeka
-  it was acted on), the workspace-migration issue "Anika is helping
-  investigate" per the 2026-09-03 call (unresolved), the NetLine payout
-  decrease/stall raised on the same call, and two superseded drafts still
-  stuck on the thread (deletion blocked earlier by an expired Gmail
-  token). Separately: sign and return the prospective agreement Awais
-  sent, message `1a081524904c09c5` - Alex is handling this one himself
-  today, per his own message, not this agent's job right now
+- next-action: **RESOLVED, 2026-09-10 - see "Aneeka/NetLine, fully
+  explained" below.** Alex asked to understand the situation and clean up
+  what could be closed. Done: read the whole thread end to end, confirmed
+  the identity match, drew a fresh draft on the one real unanswered gap
+  (a link-swap confirmation), confirmed the two stuck drafts are gone.
+  What is left for Alex, not this agent: review and send the new draft
+  on thread `19cf6dc21ce7fabd` (message `1a08b4f67cc55d18`), and separately
+  sign and return the prospective agreement Awais sent, message
+  `1a081524904c09c5` - Alex is handling that one himself, per his own
+  message, not this agent's job
+- **Aneeka/NetLine, fully explained, 2026-09-10.** Alex marked this urgent
+  and said he had not understood the situation. Read every real thread
+  with Aneeka, end to end, including messages after 2026-08-31 that were
+  not yet in this file. Five open questions, five real answers:
+
+  1. **Identity - resolved.** "Aneeka" is Aneeka Patel at `apatel@netline.com`.
+     Every signature block on her messages reads "Aneeka Patel, Account
+     Manager." NetLine's email system separately shows her directory name
+     as "Velummylum, Aneeka" in reply-header lines. Same person, two
+     surnames on file at NetLine - not a wrong address and not two people.
+     `apatel` = "A. Patel," her own name. Nothing to fix here.
+
+  2. **Broken links (w_chau222/211/209/192) - confirmed resolved, action
+     needed on our side.** Alex's 31 Aug email asking why these broke and
+     four TradePub questions got a real answer, in three follow-up
+     messages from Aneeka (2 Sep, 2 Sep, 8 Sep), not silence:
+     - The links broke because NetLine paused the old "ChatGPT Central"
+       Content Contributor campaign when they cloned it into a new
+       "AI Central" one (the rename Alex and Daniel discussed back in
+       July). Direct-campaign links were never affected, only these four
+       Content Contributor links
+     - At Alex's request Aneeka resumed the ChatGPT Central campaign
+       (2 Sep) so nothing broke further while this got sorted
+     - On 8 Sep (unread until this pass) Aneeka sent the actual fix: four
+       replacement links -
+       `w_chau222`->`w_chau226`, `w_chau192`->`w_chau235`,
+       `w_chau211`->`w_chau254`, `w_chau209`->`w_chau252` - and asked
+       whether she can now pause the ChatGPT Central library entirely,
+       since AI Central's library is live and both would otherwise run as
+       duplicates. **Nobody had replied to her - that's the real gap.**
+       A draft reply is ready: message `1a08b4f67cc55d18` on thread
+       `19cf6dc21ce7fabd`, saying yes to the pause and confirming the four
+       links will be swapped. Not sent - Alex's to review
+     - The four original TradePub questions (earn from both domains, leads
+       from both, where new uploads go, will gptcentral sunset) - answered
+       in substance across Aneeka's 2 Sep replies: leads come from
+       AI Central's library only now; `gptcentral.tradepub.com` and
+       `aicentral.tradepub.com` are both linked to the same account for
+       Direct campaigns: new content still uploads under whichever brand
+       is used. No explicit yes/no was given on a future gptcentral
+       sunset - that one question is technically still open, but is minor
+       next to the link fix above
+
+  3. **Workspace-migration issue - this IS the broken-links thread, not a
+     separate one.** The 2026-09-03 call noted "Anika is helping
+     investigate" the GPT Central -> AI Central migration breaking
+     TradePub links, called it "manageable but unresolved" at call time.
+     That is the exact same issue as #2 above, playing out in email in
+     real time around the same days. It is now resolved to the same
+     degree #2 is: cause identified, fix in hand, pending the reply above.
+     No re-upload of ~200 pieces of content was needed - it was a broken
+     link problem, not a lost-content problem
+
+  4. **Payout decrease/stall - never answered, no detail exists.**
+     Searched every Aneeka/NetLine thread for payout, payment or balance
+     detail beyond the June payment-terms-threshold change (minimum
+     payout raised to $500, effective 7/1/2026, on thread `19f051b899628bb5`).
+     Found nothing else. The "slightly decreased or stalled" note from the
+     2026-09-03 call has no supporting number, reason or follow-up email
+     anywhere on file. This is genuinely unanswered, not just unread -
+     if Alex wants a real answer he has to ask Aneeka for one, nobody has
+     yet
+
+  5. **Two superseded drafts - already gone.** Tried `trash_message` again
+     on `1a058fe6baf2e1bb` and `1a04f511d3139175`. The trash call itself
+     still fails (now an insufficient-scope error, not the earlier expired
+     token), but `get_message` on both IDs returns "not found" and neither
+     appears in `list_drafts` - both are already gone from the mailbox by
+     some other route. No cleanup action left to take
+
+  **Bottom line for Alex:** the confusion was real but the situation is
+  not - NetLine (Aneeka) answered every substantive question already, the
+  only thing that stalled was AI Central's own side going quiet after her
+  8 Sep message. One draft reply closes it, once reviewed and sent.
+
 - **Intel cross-reference, 2026-09-10.** Awais Shahid (Associate
   Marketing Manager, The AI Summit Series | Informa) is on the same
   team as Rory Crone (Senior Director, Marketing, The AI Summit Series),
@@ -69,13 +152,15 @@
   from and get leads from both `gptcentral.tradepub.com` and
   `aicentral.tradepub.com`, where new uploads go, whether gptcentral.tradepub
   will be sunset, and flags four broken links (`w_chau222/211/209/192`) as
-  actively disrupting operations, asking Aneeka to restore them. **Cleanup
-  needed:** two now-superseded drafts are still sitting on this thread -
-  messageId `1a058fe6baf2e1bb` (my "sorry for the radio silence" draft from
-  earlier today) and `1a04f511d3139175` (an older, pre-existing draft from
-  2026-08-29, "Closing the loop I promised on the payment-terms thread").
-  Both attempts to trash them hit an expired Gmail token - delete by hand,
-  or ask again once Gmail is reauthorized
+  actively disrupting operations, asking Aneeka to restore them. **Aneeka
+  replied three times (2, 2, 8 Sep) and fixed it - see the "fully
+  explained" note above for the full chain and the one reply still
+  needed.** Cleanup on the two superseded drafts (`1a058fe6baf2e1bb`,
+  `1a04f511d3139175`) is done - **2026-09-10**: both are gone from the
+  mailbox (`get_message` returns not-found on each, neither is in
+  `list_drafts`). The `trash_message` call itself still errors
+  (insufficient scope now, not the earlier expired token), but there is
+  nothing left to trash
 - threads: case-study and TradePub-listing threads Nov 2025 - Dec 2025 (Daniel,
   then Aneeka), plus the unread commitment-scanner thread carrying the June
   promise
