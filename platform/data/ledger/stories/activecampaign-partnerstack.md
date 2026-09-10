@@ -17,8 +17,8 @@
   `1a08681446ac2b40`, message `1a086e318b4e759a`, to
   elizabeth@theaicentral.net)
 - idle: 0 days
-- next-action: Elizabeth to send Derrick the AI Central media kit,
-  cc Alex - per Alex's reply, not yet confirmed sent
+- next-action: none - draft to Derrick prepared 2026-09-10, per Alex,
+  directly (thread `1a08a8822888186f`), not sent yet - media kit + intro
 - commitments: none recorded
 - threads: `1a08681446ac2b40` (live)
 - notes: **Auto-genesis, 2026-09-10.** AI Central's PartnerStack

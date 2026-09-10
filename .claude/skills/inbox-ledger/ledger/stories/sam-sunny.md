@@ -36,6 +36,9 @@
   `1a086978c6a3f203` to Sam, cc Elizabeth. Sam replied same window via
   `1a086d00a31aaf1c` - in attesa di risposta
 
+  **Per Alex, 2026-09-10.** Alex plans to talk to Sam directly today -
+  likely the Beehiiv Performance Review call, 15:30 CEST
+
   **Auto-genesis, 2026-09-10 - content read.** Resolved: thread
   `1a086978c6a3f203` is a different topic, not the "Newsletter
   Performance Check." Subject "AI Central Official Media Kit (September

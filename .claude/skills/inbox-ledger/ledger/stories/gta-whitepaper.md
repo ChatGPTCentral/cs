@@ -30,7 +30,10 @@
 - threads: `1a086153670818f1` (new, 2026-09-09, live), `19f60e9ebd451424`
   (the real status-check thread), `19ff67b1360150c6`, `19f21eef04aa4e4e`,
   `19edf85ff0a1f34e`
-- notes: **GTA AI Pulse check-in call, 2026-09-09, real transcript.**
+- notes: **Per Alex, 2026-09-10.** Alex is working on the whitepaper
+  himself this morning - the draft due "at lunch" per yesterday's call
+
+  **GTA AI Pulse check-in call, 2026-09-09, real transcript.**
   Alex, Marc Duke and Tsvetelin (Svelin). Alex's team drafted a first
   good version of the whitepaper while he was travelling - live PDF,
   blending GTA and London Tech Advocates perspectives, expected

@@ -52,3 +52,7 @@
   that Elizabeth asked Mark to resend on 2026-09-04, six days unanswered.
   Ball is Mark's to resend the invoice, but Alex nudging it himself is a
   real escalation signal, not routine. Source: `1a086e0dc5e9ac31`
+
+  **Per Alex, 2026-09-10.** Mark has been paid - INV-014 resolved.
+  Separately, Alex plans to talk to Mark directly today (in person/call,
+  not email)
