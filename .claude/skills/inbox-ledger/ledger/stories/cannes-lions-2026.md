@@ -8,13 +8,18 @@
   Informa - not yet a person record, see candidates), Steve Latham
   (Cannes Lions, learning programs), plus the many Cannes contacts
   tracked on the cannes-2026 sub-stories
-- last-touch: Indiana - Alex owes Indiana the media partnership proposal
-- last-inbound: 2026-08-28 (IndianaE@canneslions.com, "Yes, of course!
-  Talk soon")
-- last-outbound: 2026-08-28 (alex@thecentral.ai, "Thanks!")
-- next-action: send Indiana the media partnership proposal - audience
-  stats, platform overview, editorial focus areas including the learning
-  programs
+- last-touch: Rory Crone - looped in Suzanne and Darren, 2026-09-08, ball
+  is Alex's
+- last-inbound: 2026-09-08 18:04 (Rory.Crone@informa.com, thread
+  `19fdbc31c3cc1c7b`, message `1a082316a641e22e`)
+- last-outbound: 2026-09-10 (alex@thecentral.ai, thread `19fdbc31c3cc1c7b`,
+  message `1a08aadc6a8513ae`, to Rory.Crone@informa.com, Suzanne and
+  Darren (society32.com), cc Indiana and Elizabeth) - draft prepared,
+  not sent yet
+- next-action: none - draft prepared, waiting on Suzanne/Darren/Rory's
+  reply. Separately, still owe Indiana the media partnership proposal
+  (audience stats, platform overview, editorial focus areas including
+  the learning programs) - not urgent per Alex, 2026-09-01
 - commitments:
   - "Indiana to email AI Central when Cannes Lions press applications
     open (expected November)" - made 2026-08-28 by Indiana - open
@@ -56,3 +61,18 @@
 
   **Per Alex, 2026-09-01.** No rush - the proposal can go out in 1-2
   weeks, not urgent right now.
+
+  **Intel, 2026-09-10, per Alex's request before replying.** Indiana
+  introduced Rory Crone (Senior Director, Marketing, The AI Summit
+  Series, Informa) on 7 Sep, who looped in Suzanne and Darren
+  ("our PR team," @society32.com - an external PR agency, not Informa
+  staff) on 8 Sep. Confirmed real org link to the Netline/Awais story:
+  **Awais Shahid, who is running the AI Summit New York media-partner
+  agreement (see [[netline]]), is "Associate Marketing Manager, The AI
+  Summit Series | Informa" - the same team Rory senior-directs.** Not a
+  coincidence, and not previously connected in either story file. No
+  direct email evidence of Rory and Awais interacting with each other,
+  so the exact reporting line isn't confirmed - but same team, same
+  event series, Rory clearly more senior. The reply sent today names
+  the Awais/NY relationship explicitly so Informa's side sees this as
+  one continuous relationship, not two separate cold approaches

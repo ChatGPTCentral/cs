@@ -14,6 +14,14 @@
 - idle: 0 days
 - next-action: **sign and return the prospective agreement Awais sent,
   message `1a081524904c09c5`** - no signed copy on file yet
+- **Intel cross-reference, 2026-09-10.** Awais Shahid (Associate
+  Marketing Manager, The AI Summit Series | Informa) is on the same
+  team as Rory Crone (Senior Director, Marketing, The AI Summit Series),
+  who Indiana Edwards (Cannes Lions) introduced Alex to separately on
+  the [[cannes-lions-2026]] thread - see that story for the full intel.
+  No confirmed direct link between the two in any email on file, but
+  same team, same event series
+
 - **Auto-genesis, 2026-09-09.** Same thread kept moving past the
   2026-09-08 13:14 pulse check already on file. Alex replied 13:21
   ("Yes that looks great - - send it over"), Awais sent the prospective
