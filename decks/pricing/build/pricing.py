@@ -142,28 +142,23 @@ S[1] = f'''<!-- 01 {'─'*73} -->
 # ── 02 Rate card ─────────────────────────────────────────────────────────────
 # Content forked from the media kit's own rate card slide (added there 9 Sep
 # 2026, moved here the same day) - see that repo's own git history for the
-# slide's original build/verification notes. Unchanged here except the
-# kicker (no "ADVERTISING OPTIONS ·" prefix - this deck has no slide 7 to
-# follow) and the intro line (no longer "quoted per campaign" as a contrast
-# to a price-carrying slide 7 that doesn't exist in this deck).
+# slide's original build/verification notes.
 S[2] = f'''<!-- 02 {'─'*73} -->
 <section class="slide light" data-label="Rate card"
   data-notes="Numbers cross-checked against 02_products_pricing.md and the Q1 2026 Sales Playbook Alex shared (the two agree on every figure). Only two formats have ever had real, sourced package tiers anywhere in this deck family's records: Newsletter Main Ad and Bespoke Ebook/LinkedIn Carousel. The other five (Newsletter Secondary Ad, Dedicated Issue, Welcome Sequence, Website Banner, Social Media Post) have never been priced in any source material - marked 'Priced on request' rather than inventing figures; their one-line descriptions match the media kit's own advertising-options slide verbatim. Flag if real numbers exist for any of these.
-  Newsletter Main Ad note: the media kit's advertising-options slide shows this as ONE format running 'on both surfaces' (beehiiv + LinkedIn together), but the source pricing has always been two SEPARATE per-channel rate ladders - there has never been a single sourced number for a combined cross-channel buy. Shown here as one table with a Channel column rather than inventing a merged price; flag if a real bundled rate exists instead. Every ladder (both Main Ad channels, plus the ebook bundle) condensed to 1/3/5 package tiers - the source docs give 5 discrete Main Ad tiers (1-5 ads) but no table in this deck family has ever shown more than three at once.">
+  Newsletter Main Ad repriced 10 Sep 2026, per Alex: the old ladder priced the LinkedIn channel below the beehiiv/thecentral.ai channel at every tier despite LinkedIn Newsletter having far more subscribers (181K+ vs 97K+). Checked actual average delivered performance (MEDIA-KIT-SOURCES.md): LinkedIn averages 300 unique ad clicks per placement, beehiiv averages 312 - functionally the same, so the bigger list had no business being priced lower. LinkedIn Main Ad now uses the exact same price/guarantee ladder as Beehiiv Main Ad (see 02_products_pricing.md for the full repricing note), which also means the table no longer needs a Channel column - one price, runs on both. This is Claude's own researched fix per Alex's explicit ask ('let's invent and research'), not independently re-confirmed tier by tier - revisit if any number doesn't match his intent. KNOWN UNRESOLVED: the Bespoke Ebook bundle below ($999/$2,799/$4,499) was priced as a small upsell over the OLD $899 LinkedIn Main Ad rate - at the new $1,299 rate that bundle is now cheaper than the Main Ad it contains. Left unchanged pending Alex's call (the media kit's live Bespoke Ebook slide uses the same untouched bundle numbers) - see 02_products_pricing.md's own note on this.">
   <div class="kicker">RATE CARD</div>
   <h2>Transparent pricing, guaranteed minimums</h2>
   <p class="subline">Every paid package below carries a guaranteed minimum result</p>
   <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:44px;margin-top:22px">
     <div data-step="1">
       {label("Newsletter Main Ad")}
+      <div style="margin-top:3px;font-size:15px;font-weight:300;color:var(--muted)">Runs on both AI Central Newsletter (LinkedIn) and (thecentral.ai) at once</div>
       <div style="margin-top:8px">{price_table([
-        ("1 ad", "$899", "LinkedIn", "20,000 impressions, 100 clicks"),
-        ("3 ads", "$2,499", "LinkedIn", "60,000 impressions, 300 clicks"),
-        ("5 ads", "$3,799", "LinkedIn", "100,000 impressions, 500 clicks"),
-        ("1 ad", "$1,299", "thecentral.ai", "30,000 impressions, 200 clicks"),
-        ("3 ads", "$3,699", "thecentral.ai", "90,000 impressions, 600 clicks"),
-        ("5 ads", "$5,499", "thecentral.ai", "150,000 impressions, 1,000 clicks"),
-      ], ["Package", "Price", "Channel", "Minimum results"], ["16%", "14%", "24%", "46%"])}</div>
+        ("1 ad", "$1,299", "30,000 impressions, 200 clicks"),
+        ("3 ads", "$3,699", "90,000 impressions, 600 clicks"),
+        ("5 ads", "$5,499", "150,000 impressions, 1,000 clicks"),
+      ], ["Package", "Price", "Minimum results"], ["30%", "18%", "52%"])}</div>
       <div style="margin-top:20px">{label("Bespoke Ebook / LinkedIn Carousel + Main Ad")}</div>
       <div style="margin-top:8px">{price_table([
         ("1 ebook + 1 Main Ad", "$999", "20,000 impressions"),

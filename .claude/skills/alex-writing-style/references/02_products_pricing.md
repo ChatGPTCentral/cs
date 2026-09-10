@@ -50,19 +50,24 @@ Full catalog. Never quote pricing without checking this file first
 
 **How it works:** 1) Agree on angles/ICP/schedule 2) Client shares assets (headline, copy, HD creative, landing page URL) 3) AI Central shares performance report
 
-**Packages:**
+**Packages** (repriced 10 Sep 2026, per Alex - see note below):
 | Package | Price | Per-ad / discount | Minimum results |
 | --- | --- | --- | --- |
-| 1 ad | $899 | - | 20,000 impressions, 100 unique clicks (max CPM $44.95, max CPC $8.9) |
-| 2 ads | $1,750 | $875/ad, 2.5% off | 40,000 impressions, 200 unique clicks (max CPM $43.75, max CPC $8.7) |
-| 3 ads | $2,499 | $833/ad, 5.0% off | 60,000 impressions, 300 unique clicks (max CPM $41.65, max CPC $8.3) |
-| 4 ads | $3,200 | $800/ad, 12% off | 80,000 impressions, 400 unique clicks (max CPM $40.00, max CPC $8.0) |
-| 5 ads | $3,799 | $759/ad, 15% off | 100,000 impressions, 500 unique clicks (max CPM $37.99, max CPC $7.5) |
+| 1 ad | $1,299 | - | 30,000 impressions, 200 unique clicks (max CPM $43.3, max CPC $6.4) |
+| 2 ads | $2,499 | $1,249/ad, 2.5% off | 60,000 impressions, 400 unique clicks (max CPM $41.65, max CPC $6.2) |
+| 3 ads | $3,699 | $1,233/ad, 5.0% off | 90,000 impressions, 600 unique clicks (max CPM $41.1, max CPC $6.1) |
+| 4 ads | $4,599 | $1,149/ad, 12% off | 120,000 impressions, 800 unique clicks (max CPM $38.3, max CPC $5.7) |
+| 5 ads | $5,499 | $1,099/ad, 15% off | 150,000 impressions, 1,000 unique clicks (max CPM $36.6, max CPC $5.4) |
 
-**Built-in upsell path (all LinkedIn Main Ad pricing is designed to upsell into carousel bundles with a small push):**
-- 1 Main Ad ($899) → 1 Carousel + 1 Main Ad ($999) = **+$100 upsell**
-- 3 Main Ads ($2,499) → 3 Carousels + 3 Main Ads ($2,799) = **+$300 upsell**
-- 5 Main Ads ($3,799) → 5 Carousels + 5 Main Ads ($4,499) = **+$700 upsell**
+**Repricing note, 10 Sep 2026, per Alex:** the old ladder ($899-$3,799) priced LinkedIn Main Ad below Beehiiv Main Ad ($1,299-$5,499) at every tier, despite LinkedIn Newsletter having far more subscribers (181K+ vs 97K+ - MEDIA-KIT-SOURCES.md). Checked the two channels' actual average delivered performance (also MEDIA-KIT-SOURCES.md): LinkedIn averages 300 unique ad clicks per placement, beehiiv averages 312 - functionally the same. A channel with a comparable or better real track record and a much bigger list has no business being priced lower, so LinkedIn Main Ad now uses the exact same price/guarantee ladder as Beehiiv Main Ad. This is Claude's own researched fix, done at Alex's explicit request ("let's invent and research") after he flagged the gap as confusing to a prospect - not independently re-confirmed with him tier by tier, so revisit if any number here doesn't match his intent.
+
+**Known downstream inconsistency, not yet resolved:** Product 1's "1 Carousel + 1 LinkedIn Newsletter Main Ad = $999" bundle (and the 3x/5x tiers below it) was priced as a small upsell over the OLD $899 LinkedIn Main Ad rate. At the new $1,299 standalone rate, that bundle is now cheaper than the Main Ad it contains, which never makes sense as a bundle. This file's bundle pricing is UNCHANGED pending Alex's call - the media kit's own Bespoke Ebook slide (live on labs.thecentral.ai) still shows the old $999/$2,799/$4,499 bundle tiers built against the old Main Ad price, and hasn't been touched.
+
+**Built-in upsell path - STALE, pending the bundle-pricing decision above:**
+- ~~1 Main Ad ($899) → 1 Carousel + 1 Main Ad ($999) = +$100 upsell~~
+- ~~3 Main Ads ($2,499) → 3 Carousels + 3 Main Ads ($2,799) = +$300 upsell~~
+- ~~5 Main Ads ($3,799) → 5 Carousels + 5 Main Ads ($4,499) = +$700 upsell~~
+- At the new LinkedIn Main Ad prices, every one of these bundles is now a discount off the standalone ad alone, before the carousel is even counted. Needs new bundle numbers once Alex decides how to handle the downstream inconsistency above.
 
 ---
 
