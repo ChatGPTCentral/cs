@@ -10,7 +10,8 @@
   Più che volentieri!" - agreeing to cover the "community" topic in a
   future episode)
 - last-outbound: 2026-09-10 (alex@thecentral.ai, draft prepared, thread
-  `19f6be8057294eb1`, message `1a08aadf6a15168c`) - not sent yet
+  `19f6be8057294eb1`, message `1a08ab242ba39928`) - not sent yet, Alex's
+  own final wording (asks about interview clip status + a new episode)
 - next-action: none - draft resurfacing the relationship prepared, per
   Alex ("riportare a galla Manuel Bleve")
 - commitments: "ne dobbiamo parlare in un prossimo episodio" - Alex to
@@ -28,3 +29,12 @@
   for a call or document, not expanded further here). Manuel agreed
   enthusiastically. No contact since 23 Jul - about 7 weeks quiet before
   today's resurface draft
+
+  **Draft rewritten, 2026-09-10, per Alex's own wording.** Asks where
+  the interview clips stand, offers the calendar link, and floats a
+  second episode given "tante cose nuove e interessanti da luglio."
+  First attempt via `update_draft` detached the draft onto a new,
+  unthreaded thread (same known bug documented elsewhere in this
+  ledger) - fixed by blanking that draft (subject "[DELETE ME]") and
+  recreating fresh with `create_draft` against Manuel's last message.
+  Verified via `get_draft`: now correctly on thread `19f6be8057294eb1`
