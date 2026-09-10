@@ -13,11 +13,11 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
 - kind: project + person (now: several people at one company)
 - people: Amanda, Katie, and **Jazmin** (jazmin@getjobstream.com) - all
   @getjobstream.com
-- last-touch: Alex - sent a fresh touch to Katie directly, waiting on both
-  her and Jazmin
-- last-inbound: 2026-07-02 (jazmin@getjobstream.com, on the Cannes-debrief
-  thread `19f22034be72195f`) - the merchandise thread itself has no inbound
-  since Jazmin's original 21 May offer
+- last-touch: Katie - replied 2026-09-10 20:37 (thread `1a08671da7015f25`,
+  message `1a08d0a2272c0c0e`) - content not read yet, metadata only,
+  pulse check
+- last-inbound: 2026-09-10 20:37 (katie@getjobstream.com, thread
+  `1a08671da7015f25`, message `1a08d0a2272c0c0e`)
 - last-outbound: 2026-09-10 10:23 (alex@thecentral.ai, **sent**, to
   katie@getjobstream.com, cc liz@thecentral.ai, new thread
   `1a08671da7015f25`, message `1a08ad808d364ccf`, subject "hi katie" -
@@ -26,6 +26,8 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
 - next-action: none - sent, per Alex's 2026-09-09 voice note (reach out to
   Katie Fortunato directly, the founder, real relationship). Separately
   still wait for Jazmin's reply on the merch thread `19e4b71f458018eb`
+- **Pulse check, 2026-09-10.** Katie ha risposto via `1a08d0a2272c0c0e` -
+  in attesa di lettura
 - notes-correction: Alex recalled this as "last week, July 17" when asking
   for the nudge; the real prior touch was 17 Aug 2026, per Gmail
 - commitments: none recorded
