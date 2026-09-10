@@ -46,3 +46,11 @@
   **Pulse check, 2026-09-09.** Becca replied via `1a084e7efcc2db2e`
   (missed by the hourly window it landed in) and Alex replied back via
   `1a0868e23f38a975` - in attesa di risposta
+
+  **Cross-check, 2026-09-10.** Re-read the 26 Aug transcript in full for
+  [[ai-hackathon-bristol]]. Alex told Becca directly the whitepaper plan is
+  real, not just Richard's idea: "probably the most pragmatical thing that
+  we discussed was somehow to turn some of the insights of the points that
+  have been raised at this AI Roundtable into a white paper-ish format."
+  Antidote's fit is distribution, since they have no owned channels of
+  their own. Full detail in the Bristol story - not duplicated here
