@@ -301,6 +301,62 @@ S[7] = f'''<!-- 07 {'─'*73} -->
   {FOOT}
 </section>'''
 
+# ── 07b Rate card ────────────────────────────────────────────────────────────
+# New slide, 9 Sep 2026 per Alex, inserted right after Advertising options
+# (which dropped its own price line on 7 Sep - see that slide's data-notes).
+# Uses the float key 7.5 rather than renumbering every slide from 8 onward -
+# the S={...} compaction/renumber pass a few hundred lines down sorts on the
+# raw key value regardless of type, so this lands as page 8 with zero other
+# edits required; see that pass's own comment for how the gap-fill works.
+_ON_REQUEST = [
+  ("Newsletter Secondary Ad", "Mid-issue placement, below the main editorial, on both surfaces"),
+  ("Dedicated Issue", "The whole send is yours. Written by our editors in the AI Central voice"),
+  ("Welcome Sequence", "A dedicated email to every new subscriber for 3 months"),
+  ("Website Banner", "Always-on banner on thecentral.ai, 20,000 visits a month"),
+  ("Social Media Post", "A dedicated post on our LinkedIn company page, in the AI Central voice, tagging your brand"),
+]
+S[7.5] = f'''<!-- 08 {'─'*73} -->
+<section class="slide light" data-label="Rate card"
+  data-notes="New slide per Alex, 9 Sep 2026 - a standalone master price table, built for inspiration from the Q1 2026 Sales Playbook he shared plus 02_products_pricing.md (the two agree on every figure). Only two of the seven slide-7 formats have ever had real, sourced numbers anywhere in this deck's records: Newsletter Main Ad and Bespoke Ebook/LinkedIn Carousel. The other five (Newsletter Secondary Ad, Dedicated Issue, Welcome Sequence, Website Banner, Social Media Post) have never been priced in any source material - marked 'Priced on request' here rather than inventing figures; their one-line descriptions are copied verbatim from slide 7. Flag if real numbers exist for any of these.
+  Newsletter Main Ad note: slide 7 shows this as ONE box running 'on both surfaces' (beehiiv + LinkedIn together), but the source pricing has always been two SEPARATE per-channel rate ladders - there has never been a single sourced number for a combined cross-channel buy. Shown here as one table with a Channel column rather than inventing a merged price or repeating a second table+header for what is otherwise identical structure; flag if a real bundled rate exists instead. Every ladder (both Main Ad channels, plus the ebook bundle) condensed to 1/3/5 package tiers, matching the convention the hidden priced ebook slide already uses for its own bundle - the source docs give 5 discrete LinkedIn/beehiiv Main Ad tiers (1-5 ads) but this deck has never shown more than three on one price table. price_table() is otherwise unchanged (still a generic 3+ column renderer, index 0 = name, index 1 = accent/bold) - this table just orders its columns Package/Price/Channel/Minimum results so Price stays at index 1.">
+  <div class="kicker">ADVERTISING OPTIONS · RATE CARD</div>
+  <h2>Transparent pricing, guaranteed minimums</h2>
+  <p class="subline">Every paid package below carries a guaranteed minimum result. Formats without a fixed number are quoted per campaign</p>
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:44px;margin-top:22px">
+    <div data-step="1">
+      {label("Newsletter Main Ad")}
+      <div style="margin-top:8px">{price_table([
+        ("1 ad", "$899", "LinkedIn", "20,000 impressions, 100 clicks"),
+        ("3 ads", "$2,499", "LinkedIn", "60,000 impressions, 300 clicks"),
+        ("5 ads", "$3,799", "LinkedIn", "100,000 impressions, 500 clicks"),
+        ("1 ad", "$1,299", "thecentral.ai", "30,000 impressions, 200 clicks"),
+        ("3 ads", "$3,699", "thecentral.ai", "90,000 impressions, 600 clicks"),
+        ("5 ads", "$5,499", "thecentral.ai", "150,000 impressions, 1,000 clicks"),
+      ], ["Package", "Price", "Channel", "Minimum results"], ["16%", "14%", "24%", "46%"])}</div>
+      <div style="margin-top:20px">{label("Bespoke Ebook / LinkedIn Carousel + Main Ad")}</div>
+      <div style="margin-top:8px">{price_table([
+        ("1 ebook + 1 Main Ad", "$999", "20,000 impressions"),
+        ("3 ebooks + 3 Main Ads", "$2,799", "60,000 impressions"),
+        ("5 ebooks + 5 Main Ads", "$4,499", "100,000 impressions"),
+      ], ["Package", "Price", "Minimum results"], ["44%", "16%", "40%"])}</div>
+    </div>
+    <div data-step="2">
+      {label("Priced on request")}
+      <div style="margin-top:8px">{"".join(
+        f'<div style="padding:11px 0;border-top:1px solid rgba(0,0,0,.08)">'
+        f'<div style="font-size:18px;font-weight:700;letter-spacing:-.005em">{n}</div>'
+        f'<div style="margin-top:3px;font-size:15px;font-weight:300;line-height:1.35;color:var(--muted)">{d}</div></div>'
+        for n, d in _ON_REQUEST)}</div>
+      <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--hair)">
+        {label("Discount policy", "var(--muted)", 15)}
+        <div style="margin-top:8px;font-size:17px;font-weight:300;line-height:1.4;color:#3A3A3A">10% off for new clients. Up to 5% off, discretionary, to close</div>
+      </div>
+      <div style="margin-top:14px;font-size:15px;font-weight:300;line-height:1.4;color:var(--muted)">LinkedIn Ads benchmarks run $30 to 80 CPM and $5 to 12 CPC - every guaranteed minimum above beats that</div>
+    </div>
+  </div>
+  {FOOT}
+</section>'''
+
 def no_price_slide(data_label, kicker, title, subline, sections, image_src, image_alt, data_notes,
                     image_style="max-width:100%;max-height:620px;border-radius:6px"):
     """sections: list of (heading, items) tuples, stacked top to bottom on the
