@@ -10,15 +10,13 @@
 - end: (ongoing)
 - last-inbound: 2026-09-10 09:36 (sean@meco.app, thread
   `1a08a8d58cfc6ad8`, message `1a08aad3c389dc8b`) - Sean replied same
-  morning, content not read yet (metadata only, pulse check). The
-  24-Sep chase-reminder below may now be moot - needs the full sweep to
-  confirm whether he agreed to terminate
-- next-action: **follow up if Sean hasn't confirmed termination by
-  2026-09-24** - Alex sent his own version (not the draft above) on
-  2026-09-10, message `1a08aa58d2f572e0`, subject "Appeared.in -
-  Termination of contract," cc Erim and Elizabeth. States the contract
-  ends **11 November 2026** and asks Sean to confirm on his end that it
-  won't auto-renew. Waiting on Sean's confirmation
+  morning, content not read yet (metadata only, pulse check)
+- last-outbound: 2026-09-10 09:58 (alex@thecentral.ai, thread
+  `1a08a8d58cfc6ad8`, message `1a08ac108b5a2ea9`, cc Erim and Elizabeth) -
+  Alex replied to Sean, content not read yet (metadata only, pulse check)
+- next-action: none - wait for their reply
+- **Pulse check, 2026-09-10.** Alex ha risposto via `1a08ac108b5a2ea9` -
+  in attesa di risposta
 - commitments: none
 - threads: `19a39ce525b355c9` (10 Nov 2025), `19a6ccc4f5357347` (11 Nov 2025),
   `19a7218c9e886585` (eSignature + non-renewal request), `19cb437bffabb194`
