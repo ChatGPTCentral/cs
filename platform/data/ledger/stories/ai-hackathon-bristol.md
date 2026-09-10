@@ -143,16 +143,23 @@ not consume match credits.
 email, 2 with LinkedIn only). 15 got no confident match and no email was
 guessed for them.
 
-**CRM add.** Breakcold closed this morning (2026-09-10) - see
-[[breakcold-crm-adoption]]. Apollo now serves as the CRM. Created 26 Apollo
-contacts plus Richard Lowe and Sven Thate (28 total, 2 already existed from
-earlier BDR work and got the label added separately). Created 13 Apollo
-accounts for the distinct organizations: UWE Bristol, University of Bristol,
-NCC, Capsule Insurance, Lloyds Banking Group, Ingeniumai, Hiscox,
-Founderstorm, Tech West England Advocates, Rootcause.ai, CameThru, plus 2 that
-already existed as accounts (SVV, Responsible AI Institute). All 28 contacts
-and 15 accounts carry the label `Bristol AI Roundtable 2026-08-14` so the
-cohort stays identifiable and does not blend into Apollo's existing base.
+**CRM correction, 2026-09-10, per Alex.** Apollo is enrichment only, never
+the CRM - the real CRM is the platform's own Supabase tables
+(`ledger_people`, `ledger_companies`, rendered at `/people` and `/clienti`
+in the `platform/` app), not Apollo and not Breakcold. The Apollo
+contacts/accounts created earlier today stay in place as enrichment
+records but are not the system of record.
+
+25 of the 26 new roundtable contacts are now real `ledger_people` rows
+(Fenton Cayless already existed - updated in place, not duplicated),
+linked to 12 new `ledger_companies` rows (University of Bristol, UWE
+Bristol, NCC, Capsule Insurance, Lloyds Banking Group, Hiscox, Ingeniumai,
+Tech West England Advocates, Rootcause.ai, CameThru, SVV, Responsible AI
+Institute), all tagged with the list `Bristol AI Roundtable 2026-08-14` so
+the cohort is filterable on `/people`. Each person's background field
+carries their Apollo match status from the enrichment pass below, so
+nothing from that work was lost - it moved from the wrong system to the
+right one.
 
 ## The Becca / Antidote conversation, mined in full - 2026-09-10
 

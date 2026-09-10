@@ -276,6 +276,18 @@ a real email. **The account's real history starts 23 Jan 2025** - both
 mining passes above already cover its entire span, start to now. There is
 no earlier mailbox history left to mine.
 
+## Apollo is enrichment only, never the CRM
+
+**Corrected 2026-09-10, per Alex, after a background agent mistakenly
+wrote the Bristol AI Hackathon Roundtable cohort into Apollo as if Apollo
+were the CRM.** Apollo.io is a data source: email/LinkedIn match,
+organization lookup. It is not where Alex's contacts live. The CRM is
+always `ledger_people` / `ledger_companies` on the platform, as described
+throughout this file - even when another CRM tool (Breakcold, Apollo) is
+active or convenient for a different job. Enrich with Apollo, then write
+the result into `ledger_people`/`ledger_companies` using the format
+above - never stop at the Apollo record and call the job done.
+
 ## Eventual goal: a network visualization
 
 Alex's stated long-term aim for this layer is a visual map of his network -

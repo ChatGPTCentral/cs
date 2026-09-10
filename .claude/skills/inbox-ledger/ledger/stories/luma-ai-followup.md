@@ -11,9 +11,9 @@
 - end: (ongoing)
 - last-inbound: 2026-08-20 (trevor@lumalabs.ai, handing off to Eugenio
   for EMEA partnerships)
-- last-outbound: 2026-08-31 08:30 (alex@thecentral.ai, to
-  eugenio.delaoliva@lumalabs.ai, cc Trevor)
-- next-action: none - wait for Eugenio's reply
+- last-outbound: 2026-09-10 10:11 (alex@thecentral.ai, **sent**, message
+  `1a08accf020f72b3`, thread `1a018daa8ca98841`, cc elizabeth)
+- next-action: none - bump sent, wait for Eugenio's reply
 - commitments: none
 - threads: `1a018daa8ca98841` (20 Aug - 31 Aug 2026)
 - notes: AI Central has worked with Luma AI before through Passionfroot,
@@ -38,7 +38,7 @@
   proposing a next wave for Sept-Oct around Ray3.2 or Luma Agents, with
   a calendar link to book a call.
 
-  **Bump drafted, 2026-09-10, per Alex.** 10 days idle, no reply -
-  quick nudge drafted, thread `1a018daa8ca98841`, message
-  `1a08ab96e8341523`, cc Trevor - "Hey Eugenio - hope this email did
-  not get buried in your inbox." Not sent yet
+  **Bump sent, 2026-09-10, per Alex.** 10 days idle, no reply - quick
+  nudge, "Hey Eugenio - hope this email did not get buried in your
+  inbox." **Sent 10:11 UTC, message `1a08accf020f72b3`,** thread
+  `1a018daa8ca98841`, cc Elizabeth

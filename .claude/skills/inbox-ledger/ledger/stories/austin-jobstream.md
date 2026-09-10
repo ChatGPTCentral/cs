@@ -13,24 +13,26 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
 - kind: project + person (now: several people at one company)
 - people: Amanda, Katie, and **Jazmin** (jazmin@getjobstream.com) - all
   @getjobstream.com
-- last-touch: Alex - sent the nudge himself, waiting on Jazmin
+- last-touch: Alex - sent a fresh touch to Katie directly, waiting on both
+  her and Jazmin
 - last-inbound: 2026-07-02 (jazmin@getjobstream.com, on the Cannes-debrief
   thread `19f22034be72195f`) - the merchandise thread itself has no inbound
   since Jazmin's original 21 May offer
-- last-outbound: 2026-08-31 10:04 (alex@thecentral.ai, to Jazmin, cc Katie
-  and Liz, thread `19e4b71f458018eb` "Jobstream Merch" - "just back from
-  being OOO, did it end up going out?")
-- idle: 8 days
-- next-action: none - wait for Jazmin's reply on the merch thread. Separately,
-  per Alex (voice note, 2026-09-09): reach out to Katie Fortunato directly -
-  she is the founder, real relationship, worth a fresh touch alongside the
-  Jazmin thread
+- last-outbound: 2026-09-10 10:23 (alex@thecentral.ai, **sent**, to
+  katie@getjobstream.com, cc liz@thecentral.ai, new thread
+  `1a08671da7015f25`, message `1a08ad808d364ccf`, subject "hi katie" -
+  asks how Jobstream is doing and to catch up on Q4 support)
+- idle: 0 days
+- next-action: none - sent, per Alex's 2026-09-09 voice note (reach out to
+  Katie Fortunato directly, the founder, real relationship). Separately
+  still wait for Jazmin's reply on the merch thread `19e4b71f458018eb`
 - notes-correction: Alex recalled this as "last week, July 17" when asking
   for the nudge; the real prior touch was 17 Aug 2026, per Gmail
 - commitments: none recorded
 - threads: `19cb44719437ae8e` (Amanda, Mar, labelled), `19f22034be72195f`
   (Jazmin, Jul, Cannes debrief, unlabelled), `19e4b71f458018eb` (Jazmin +
-  Katie, "Jobstream Merch", May-Aug, unlabelled), 4 more unread
+  Katie, "Jobstream Merch", May-Aug, unlabelled), `1a08671da7015f25`
+  ("hi katie", 2026-09-10, new thread), 4 more unread
 - notes: **correction, 2026-08-19, full sweep.** Previously logged as 160 days
   idle from Amanda's March message alone. A more recent, unlabelled exchange
   with a different person at the same company - Jazmin - pushes the real idle

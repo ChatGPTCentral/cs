@@ -9,11 +9,11 @@
 - last-inbound: 2026-07-23 08:59 (manuel.bleve@beehiiv.com, "Assolutamente!!
   Più che volentieri!" - agreeing to cover the "community" topic in a
   future episode)
-- last-outbound: 2026-09-10 (alex@thecentral.ai, draft prepared, thread
-  `19f6be8057294eb1`, message `1a08ab242ba39928`) - not sent yet, Alex's
-  own final wording (asks about interview clip status + a new episode)
-- next-action: none - draft resurfacing the relationship prepared, per
-  Alex ("riportare a galla Manuel Bleve")
+- last-outbound: 2026-09-10 10:08 (alex@thecentral.ai, **sent**, thread
+  `19f6be8057294eb1`, message `1a08aca1266443ab`) - Alex's own wording
+  (asks about interview clip status + a new episode)
+- next-action: none - sent, per Alex ("riportare a galla Manuel Bleve"),
+  wait for reply
 - commitments: "ne dobbiamo parlare in un prossimo episodio" - Alex to
   Manuel, 2026-07-16, re: the community topic - still open, not yet
   scheduled
@@ -38,3 +38,5 @@
   ledger) - fixed by blanking that draft (subject "[DELETE ME]") and
   recreating fresh with `create_draft` against Manuel's last message.
   Verified via `get_draft`: now correctly on thread `19f6be8057294eb1`
+
+  **Sent, 2026-09-10, per Alex.** Message `1a08aca1266443ab`, 10:08 UTC

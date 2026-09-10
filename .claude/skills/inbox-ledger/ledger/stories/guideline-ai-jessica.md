@@ -11,12 +11,10 @@
 - last-touch: Alex - sent, no reply after 4 days
 - start: unclear - the Cannes recording predates this thread
 - last-inbound: none seen in this ledger
-- last-outbound: 2026-08-31 23:40 (alex@thecentral.ai, to jessica.doss, cc
-  elizabeth)
-- idle: 4 days
-- next-action: **send the WhatsApp follow-up Monday 7 Sep 2026** - text
-  already drafted 2026-09-04, given to Alex as plain text, not sent by
-  this agent
+- last-outbound: 2026-09-10 10:09 (alex@thecentral.ai, **sent**, message
+  `1a08acb7ae093472`, thread `19ef907493db26ba`, cc elizabeth)
+- idle: 0 days
+- next-action: none - bump sent, per Alex, wait for reply
 - commitments: none recorded
 - threads: not in Gmail history scanned so far - known only from the
   pasted email
@@ -34,6 +32,6 @@
   **Scheduled, 2026-09-04.** Alex wants to send it Monday, not today
 
   **Per Alex, 2026-09-10.** Plan changed - a quick email bump instead of
-  the WhatsApp text. Draft prepared, thread `19ef907493db26ba`, message
-  `1a08ab96473bbb1b`, cc Elizabeth - "Hey Jessica - hope this email did
-  not get buried in your inbox." Not sent yet
+  the WhatsApp text. "Hey Jessica - hope this email did not get buried
+  in your inbox." **Sent 10:09 UTC, message `1a08acb7ae093472`,** thread
+  `19ef907493db26ba`, cc Elizabeth
