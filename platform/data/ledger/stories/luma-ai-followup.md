@@ -37,3 +37,8 @@
   referencing both past campaign waves and the 126K-impression result,
   proposing a next wave for Sept-Oct around Ray3.2 or Luma Agents, with
   a calendar link to book a call.
+
+  **Bump drafted, 2026-09-10, per Alex.** 10 days idle, no reply -
+  quick nudge drafted, thread `1a018daa8ca98841`, message
+  `1a08ab96e8341523`, cc Trevor - "Hey Eugenio - hope this email did
+  not get buried in your inbox." Not sent yet

@@ -32,3 +32,8 @@
   asked for a short, friendly message, text only, he sends it himself
 
   **Scheduled, 2026-09-04.** Alex wants to send it Monday, not today
+
+  **Per Alex, 2026-09-10.** Plan changed - a quick email bump instead of
+  the WhatsApp text. Draft prepared, thread `19ef907493db26ba`, message
+  `1a08ab96473bbb1b`, cc Elizabeth - "Hey Jessica - hope this email did
+  not get buried in your inbox." Not sent yet

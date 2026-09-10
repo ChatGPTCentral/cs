@@ -51,3 +51,8 @@
   **Per Alex, 2026-09-01.** Since Richard already knows AI Central moves
   to Enterprise on 1 Oct, a few weeks of silence from here is expected,
   not a dropped ball - nothing to chase until closer to that date.
+
+  **Reminder set, 2026-09-10, per Alex.** Real Google Calendar event
+  created for 20 Sep 2026, 09:00 CEST - "Reminder: follow up with
+  Richard Evans (beehiiv Enterprise move, 1 Oct)," event id
+  `1htitsbpsjpt0i2fo2oq7inki4`
