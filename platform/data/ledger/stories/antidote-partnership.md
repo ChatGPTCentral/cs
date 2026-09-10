@@ -15,7 +15,10 @@
 - last-outbound: 2026-09-09 14:24 (alex@thecentral.ai, thread
   `1a081e1502018db9`, message `1a0868e23f38a975`, to
   becca.williams@antidotecomms.com, cc liz@thecentral.ai)
-- next-action: none - wait for Becca's reply
+- next-action: **send Becca the interview** - per Alex, 2026-09-10. Alex
+  did not name which interview - likely the "PR industry trends" piece he
+  offered Becca on the 26 Aug call (see notes below), not confirmed. Ask
+  Alex which piece before sending if unclear
 - commitments: send the media kit - done. Per the meeting transcript,
   Antidote committed to send case studies of paid client results in
   return - not yet received
@@ -54,3 +57,6 @@
   have been raised at this AI Roundtable into a white paper-ish format."
   Antidote's fit is distribution, since they have no owned channels of
   their own. Full detail in the Bristol story - not duplicated here
+
+  **Per Alex, 2026-09-10.** Send Becca the interview - task set, which
+  interview not specified

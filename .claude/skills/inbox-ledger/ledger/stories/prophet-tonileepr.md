@@ -13,9 +13,11 @@
   `1a081e12c5cbaef6`, message `1a0831cc86f43df9`)
 - last-outbound: 2026-09-08 18:08 (alex@thecentral.ai, to
   mzucker@prophet.com and belle@tonileepr.com, thread `1a081e12c5cbaef6`)
-- next-action: none recorded - Mat's reply is a two-word "Thanks Alex!",
-  does not answer any of the three asks in Alex's message (campaign
-  support, London catch-up with the UK team, AI Summit NY attendance)
+- next-action: **send Mat Zucker the interview** - per Alex, 2026-09-10.
+  Alex did not name which interview - ask before sending if unclear. Mat's
+  22:20 reply ("Thanks Alex!") still has not answered any of the three
+  asks in Alex's 8 Sep message (campaign support, London catch-up with the
+  UK team, AI Summit NY attendance)
 - commitments: send the media kit - done
 - threads: none found
 - notes: **Auto-genesis, 2026-09-03.** Google Calendar event "Discovery
@@ -47,3 +49,6 @@
   `1a0831cc86f43df9` - just "Thanks Alex!", quoting the media-kit email
   back. No answer yet on campaign support, the London catch-up offer or
   AI Summit NY attendance
+
+  **Per Alex, 2026-09-10.** Send Mat the interview - task set, which
+  interview not specified
