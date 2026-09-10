@@ -8,11 +8,12 @@
 - status: open - ongoing partner relationship
 - start: 2025-05-10
 - end: (ongoing)
-- next-action: **draft prepared for Sean, 2026-09-10, not yet sent** -
-  thread `1a08a8d58cfc6ad8`, asks him to confirm the renewal date and
-  cancellation steps. If no reply by 2026-09-24, chase again - real
-  contract renewal date not confirmed yet, likely around Nov 2026 based
-  on the original Nov 2025 signing
+- next-action: **follow up if Sean hasn't confirmed termination by
+  2026-09-24** - Alex sent his own version (not the draft above) on
+  2026-09-10, message `1a08aa58d2f572e0`, subject "Appeared.in -
+  Termination of contract," cc Erim and Elizabeth. States the contract
+  ends **11 November 2026** and asks Sean to confirm on his end that it
+  won't auto-renew. Waiting on Sean's confirmation
 - commitments: none
 - threads: `19a39ce525b355c9` (10 Nov 2025), `19a6ccc4f5357347` (11 Nov 2025),
   `19a7218c9e886585` (eSignature + non-renewal request), `19cb437bffabb194`
@@ -36,3 +37,8 @@
   own May email (3k); flagging the discrepancy rather than picking one.
   Draft sent directly to Sean today asking him to confirm the real
   renewal date, since neither figure nor date is confirmed on file
+
+  **Update, 2026-09-10.** Alex sent his own message instead of the
+  drafted one (thread `1a08a8d58cfc6ad8`, message `1a08aa58d2f572e0`) -
+  real termination date now on file: **11 November 2026**. Reminder set
+  to chase Sean for confirmation if he hasn't replied by 24 Sep
