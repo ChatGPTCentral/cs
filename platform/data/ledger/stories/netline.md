@@ -12,8 +12,17 @@
 - last-outbound: 2026-09-08 13:21 (alex@thecentral.ai, thread
   `1a067b9a68290465`, message `1a0812e179cd482b`, to Awais.Shahid@informa.com)
 - idle: 0 days
-- next-action: **sign and return the prospective agreement Awais sent,
-  message `1a081524904c09c5`** - no signed copy on file yet
+- next-action: **URGENT, per Alex 2026-09-10 - fully investigate and
+  tackle the Aneeka/NetLine situation.** Alex's own words: he does not
+  understand it. Real loose threads on file: the broken-TradePub-links
+  commitment (fulfilled by email 2026-08-31, no confirmation from Aneeka
+  it was acted on), the workspace-migration issue "Anika is helping
+  investigate" per the 2026-09-03 call (unresolved), the NetLine payout
+  decrease/stall raised on the same call, and two superseded drafts still
+  stuck on the thread (deletion blocked earlier by an expired Gmail
+  token). Separately: sign and return the prospective agreement Awais
+  sent, message `1a081524904c09c5` - Alex is handling this one himself
+  today, per his own message, not this agent's job right now
 - **Intel cross-reference, 2026-09-10.** Awais Shahid (Associate
   Marketing Manager, The AI Summit Series | Informa) is on the same
   team as Rory Crone (Senior Director, Marketing, The AI Summit Series),
