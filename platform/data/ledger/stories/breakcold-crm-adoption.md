@@ -6,12 +6,10 @@
 - kind: project (vendor adoption, ongoing)
 - people: Arnaud Belinga, arnaud.belinga@breakcold.com, founder of
   Breakcold
-- status: open - current CRM
+- status: closed - cancelled
 - start: 2026-02-16
-- end: (ongoing)
-- next-action: **decide before 9 Sep 2026** - Breakcold's Only Plan goes
-  from $59/mo to $99/mo that day. Lock the current price, or buy the
-  annual plan at -40% ($35.40/mo, code GOTLUCKY) before then
+- end: 2026-09-10
+- next-action: none - cancelled, confirmed by Alex
 - commitments: none
 - threads: `19c66f4109e8a55e` (16 Feb 2026), `1a0684b3a196a04a` (price
   increase notice, 3 Sep 2026)
@@ -32,3 +30,6 @@
   companies) merged into `ledger_people`/`ledger_companies`. Confirmed
   safe to cancel. Reminder set for 8 Sep, a day ahead of the price jump -
   next-action is now to actually cancel the subscription
+
+  **Cancelled, 2026-09-10, per Alex.** Subscription cancelled - story
+  closed
