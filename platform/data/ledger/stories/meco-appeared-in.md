@@ -8,6 +8,11 @@
 - status: open - ongoing partner relationship
 - start: 2025-05-10
 - end: (ongoing)
+- last-inbound: 2026-09-10 09:36 (sean@meco.app, thread
+  `1a08a8d58cfc6ad8`, message `1a08aad3c389dc8b`) - Sean replied same
+  morning, content not read yet (metadata only, pulse check). The
+  24-Sep chase-reminder below may now be moot - needs the full sweep to
+  confirm whether he agreed to terminate
 - next-action: **follow up if Sean hasn't confirmed termination by
   2026-09-24** - Alex sent his own version (not the draft above) on
   2026-09-10, message `1a08aa58d2f572e0`, subject "Appeared.in -
