@@ -14,20 +14,23 @@ slide. Only Newsletter Main Ad and Bespoke Ebook/LinkedIn Carousel have ever
 had real package tiers on file; the rest are marked "Priced on request"
 rather than inventing numbers - see that slide's own data-notes below.
 
-Case studies: forked verbatim from case-studies-extended/build/
-casestudies_extended.py (4 Sep 2026 fork of the original case-studies deck)
-- same renewals table and five client one-pagers, byte-identical stats,
-charts and benchmark boxes. Only that deck's own cover and closing slides
-are dropped here (replaced with this deck's own cover, and a closer that
-doesn't say "there is no rate card in this edition" - this deck IS the
-rate card). See CASE-STUDIES-EXTENDED-SOURCES.md in that deck's folder for
-full data provenance - not duplicated here.
+Case studies: forked from case-studies-extended/build/casestudies_extended.py
+- same renewals table and five client one-pagers, same underlying figures.
+10 Sep 2026: that deck's cards were rebuilt from headline+chart+benchmark-box
+to a standard four-part story (who's the company / what they wanted to
+achieve / what we did / results, plus a placeholder for a client-supplied
+image) - no chart, no time reference, per Alex. This fork picked up that
+same rebuild the same day. Only that deck's own cover and closing slides are
+dropped here (replaced with this deck's own cover, and a closer that doesn't
+say "there is no rate card in this edition" - this deck IS the rate card).
+See CASE-STUDIES-EXTENDED-SOURCES.md in that deck's folder for full data
+provenance - not duplicated here.
 """
 import json, pathlib, re, sys
 
 B = pathlib.Path("/home/claude/build")
 sys.path.insert(0, str(B))
-from deck_shared import FOOT, label, bullets, make_renumber, bars_svg, stat, case, page_nav
+from deck_shared import FOOT, label, make_renumber, stat, page_nav
 
 head = (B / "_head.html").read_text().replace(
     "table{width:100%;border-collapse:collapse;margin-top:44px;table-layout:fixed}",
@@ -74,14 +77,36 @@ def price_table(rows, cols, widths):
         trs.append(f"<tr>{tds}</tr>")
     return f'<table><thead><tr>{th}</tr></thead><tbody>{"".join(trs)}</tbody></table>'
 
-# ── case-study data - byte-identical copy from casestudies_extended.py ─────
-OUTSKILL_M = [("Jul 24",273),("Aug 24",1222),("Sep 24",184),("Oct 24",189),("Jan 25",1002),("Mar 25",566),
-              ("Apr 25",538),("Jun 25",884),("Jul 25",747),("Aug 25",340),("Sep 25",635),("Oct 25",738)]
-GUIDDE_M   = [("Dec 24",137),("Feb 25",1246),("Mar 25",408),("Apr 25",206),("May 25",769),("Jun 25",1051),
-              ("Jul 25",167),("Aug 25",265),("Sep 25",582),("Oct 25",300)]
-ELEVEN = [("Jan 1",189),("Jan 2",285),("Jan 3",285),("Jan 4",319),("Jan 5",455),("Mar 1",266),("Mar 2",261),("Mar 3",225),("Mar 4",203),("Mar 5",152)]
-GAMMA  = [("Jan 1",491),("Jan 2",703),("Jan 3",401),("Jan 4",311),("Jan 5",186),("Feb 1",354),("Feb 2",340),("Feb 3",224),("Feb 4",240),("Feb 5",307),("Feb 6",266)]
-LUMA   = [("Jan 1",449),("Jan 2",389),("Jan 3",403),("Jan 4",281),("Jan 5",234),("May 1",345),("May 2",260),("May 3",214),("May 4",228),("May 5",141)]
+# ── standard 4-part case-study card - copied from case-studies-extended's
+# own case_card(), 10 Sep 2026 fork (same day that deck's cards were
+# rebuilt away from headline+chart+benchmark-box to this format, per Alex:
+# "not referencing the time or any chart, just result"). Who's the company,
+# what they wanted to achieve, what we did, results, plus a placeholder
+# panel for a client-supplied image.
+def case_card(n_, logo_html, client, company_line, objective, what_we_did, stats, image_caption, notes):
+    return f'''<!-- {n_:02d} {'─'*73} -->
+<section class="slide light" data-label="{client}" data-notes="{notes}">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div class="kicker">CASE STUDY · {client.upper()}</div>
+    <div style="height:44px;display:flex;align-items:center">{logo_html}</div>
+  </div>
+  <h2 style="font-size:46px">{company_line}</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:26px;align-items:start">
+    <div data-step="1">
+      {label("What they wanted to achieve", "var(--accent)", 18)}
+      <div style="margin-top:6px;font-size:20px;font-weight:300;line-height:1.4">{objective}</div>
+      <div style="margin-top:20px">{label("What we did", "var(--accent)", 18)}</div>
+      <div style="margin-top:6px;font-size:20px;font-weight:300;line-height:1.4">{what_we_did}</div>
+      <div style="margin-top:20px">{label("Results", "var(--accent)", 18)}</div>
+      <div style="margin-top:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px">{"".join(stats)}</div>
+    </div>
+    <div data-step="2" style="background:var(--tint);border:1px dashed var(--hair);border-radius:8px;min-height:520px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
+      <div style="font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Image</div>
+      <div style="font-size:15px;font-weight:300;color:var(--muted);text-align:center;padding:0 40px;line-height:1.4">{image_caption}</div>
+    </div>
+  </div>
+  {FOOT}
+</section>'''
 
 RENEWALS = [
     ("Outskill", "25 email Primary Ad placements", "25 separate purchases", "Jul 2024 to Nov 2025 · 16 months"),
@@ -182,55 +207,45 @@ S[3] = f'''<!-- 03 {'─'*73} -->
   {FOOT}
 </section>'''
 
-S[4] = case(4, f'<img src="{A["logo_outskill"]}" alt="Outskill" style="height:44px;border-radius:5px">', "Outskill",
-  "A Primary Ad slot Outskill kept in rotation for 16 straight months",
-  "Grow enrolments for Outskill's AI courses and fill recurring webinars, with pushes timed to their launch calendar. What started as a single placement in July 2024 became a standing slot: 25 separate purchases, one after another, through November 2025",
-  "25 Primary Ad placements in the email newsletter, July 2024 to November 2025. Each placement carried one offer, one creative and one call to action",
-  [stat("25","Email placements"), stat("7,318","Unique ad clicks", True), stat("2.1%","Average ad CTR"), stat("402K","Unique opens*")],
-  "Unique ad clicks by month", bars_svg(OUTSKILL_M, 1400, aria="Outskill unique ad clicks by month, July 2024 to October 2025"),
-  "Against our 200-click benchmark", [("Placements at or above it","18 of 25 · 72%"),("Average per placement","305 clicks"),("Best placement","754 clicks"),("Emails delivered","1.40M")],
-  "Measured in beehiiv post analytics. Direct placements only; ad-network placements excluded",
-  "Source: Newsletter Stats sheet, Advertiser Source = Direct, advertiser 'Growthschool / Outskill', 25 rows. 1,395,554 delivered, 401,895 unique opens, 29.5% average open rate, 7,318 unique ad clicks (26,813 total), 2.08% average ad CTR, median 298 unique clicks per placement, best 754 on 30 Jan 2025 (DeepSeek cheatsheets issue), lowest 76. 18 of 25 placements cleared our 200-click Primary Ad benchmark; the 7 that fell short averaged 122 clicks. Nov 2025 placement recorded 0 clicks and is not charted. *Open rate is shown for reference only: Apple Mail Privacy Protection pre-fetches images on roughly half of all opens industry-wide, so clicks are the reliable signal here, not opens.")
+S[4] = case_card(4, f'<img src="{A["logo_outskill"]}" alt="Outskill" style="height:44px;border-radius:5px">', "Outskill",
+  "Outskill &mdash; AI upskilling academy and community for professionals",
+  "Grow enrolments for Outskill's AI courses and fill recurring webinars, with pushes timed to their own launch calendar",
+  "Primary Ad placements in the email newsletter, kept in standing rotation. Each placement carried one offer, one creative and one call to action",
+  [stat("25","Email placements"), stat("7,318","Unique ad clicks", True), stat("2.1%","Average ad CTR"), stat("402K","Unique opens")],
+  "Outskill campaign creative or a placement screenshot",
+  "Source: Newsletter Stats sheet, Advertiser Source = Direct, advertiser 'Growthschool / Outskill', 25 rows, Jul 2024 to Nov 2025. 1,395,554 delivered, 401,895 unique opens, 29.5% average open rate, 7,318 unique ad clicks (26,813 total), 2.08% average ad CTR, median 298 unique clicks per placement, best 754 on 30 Jan 2025, lowest 76. 18 of 25 placements cleared our 200-click Primary Ad benchmark; the 7 that fell short averaged 122 clicks. Full data in case-studies-extended/CASE-STUDIES-SOURCES.md.")
 
-S[5] = case(5, f'<img src="{A["logo_guidde"]}" alt="Guidde" style="height:44px;border-radius:5px">', "Guidde",
-  "Ten months of waves, timed to Guidde's own product calendar, not ours",
-  "Full-funnel growth: awareness of Guidde's AI video documentation, then signups, in waves aligned to product moments. 21 placements between December 2024 and October 2025, spaced around Guidde's own launch windows rather than a fixed cadence",
-  "21 Primary Ad placements in the email newsletter, December 2024 to October 2025, plus three LinkedIn newsletter issues in autumn 2025",
-  [stat("21","Email placements"), stat("5,131","Unique ad clicks", True), stat("1.17%","Average ad CTR"), stat("467K","Unique opens*")],
-  "Unique ad clicks by month", bars_svg(GUIDDE_M, 1400, aria="Guidde unique ad clicks by month, December 2024 to October 2025"),
-  "Against our 200-click benchmark", [("Placements at or above it","11 of 21 · 52%"),("Average per placement","244 clicks"),("Best placement","532 clicks"),("Emails delivered","1.50M")],
-  "Measured in beehiiv post analytics and LinkedIn newsletter analytics. Direct placements only",
-  "Source: Newsletter Stats sheet, Advertiser Source = Direct, advertiser 'Guidde', 21 rows: 1,500,314 delivered, 466,951 unique opens, 31.2% average open rate, 5,131 unique ad clicks (19,716 total), 1.17% average ad CTR, median 202, best 532 on 2 Feb 2025, lowest 117. 11 of 21 placements cleared our 200-click Primary Ad benchmark; the other 10 averaged 169 clicks, a normal range for a recurring monthly placement. LinkedIn Newsletters sheet, Direct, Guidde: 3 issues 28 Sep to 16 Oct 2025, 68,194 article views, 317,899 sends - no ad click tracking on those, so no click figure is claimed for LinkedIn. Per Alex, Guidde's work was mostly email. *Open rate is shown for reference only: Apple Mail Privacy Protection pre-fetches images on roughly half of all opens industry-wide, so clicks are the reliable signal here, not opens.")
+S[5] = case_card(5, f'<img src="{A["logo_guidde"]}" alt="Guidde" style="height:44px;border-radius:5px">', "Guidde",
+  "Guidde &mdash; AI-powered video documentation platform, turning recordings into instant how-to guides",
+  "Full-funnel growth: awareness of Guidde's AI video documentation, then signups, in waves aligned to product moments",
+  "Primary Ad placements in the email newsletter, plus three LinkedIn newsletter issues, spaced around Guidde's own launch windows rather than a fixed cadence",
+  [stat("21","Email placements"), stat("5,131","Unique ad clicks", True), stat("1.17%","Average ad CTR"), stat("467K","Unique opens")],
+  "Guidde campaign creative or a placement screenshot",
+  "Source: Newsletter Stats sheet, Advertiser Source = Direct, advertiser 'Guidde', 21 rows, Dec 2024 to Oct 2025: 1,500,314 delivered, 466,951 unique opens, 31.2% average open rate, 5,131 unique ad clicks (19,716 total), 1.17% average ad CTR, median 202, best 532 on 2 Feb 2025, lowest 117. 11 of 21 placements cleared our 200-click Primary Ad benchmark. Full data in case-studies-extended/CASE-STUDIES-SOURCES.md.")
 
-S[6] = case(6, f'<img src="{A["logo_elevenlabs"]}" alt="ElevenLabs" style="height:44px;border-radius:5px">', "ElevenLabs",
-  "A second campaign followed two months after the first had a full report",
-  "Launch Creative Studio and drive product signups among creators, marketing and enterprise teams, working from the highest-intent ICP segments identified with the ElevenLabs team. The first batch of five carousels ran in January 2026, a second in March",
-  "Two campaigns of five bespoke LinkedIn carousels each, January and March 2026. Each carousel was a free ebook on one use case, with a lead-capture download",
+S[6] = case_card(6, f'<img src="{A["logo_elevenlabs"]}" alt="ElevenLabs" style="height:44px;border-radius:5px">', "ElevenLabs",
+  "ElevenLabs &mdash; market-leading AI audio and voice generation platform",
+  "Launch Creative Studio and drive product signups among creators, marketing and enterprise teams, working from the highest-intent ICP segments identified with the ElevenLabs team",
+  "Two campaigns of five bespoke LinkedIn carousels each. Each carousel was a free ebook on one use case, with a lead-capture download",
   [stat("10","Carousels"), stat("259K","Views"), stat("2,640","Downloads", True), stat("7.7%","Average engagement")],
-  "Downloads per carousel: five in January, five in March 2026", bars_svg(ELEVEN, 500, aria="ElevenLabs downloads per carousel, ten carousels across January and March 2026"),
-  "Against our LinkedIn Ads benchmark", [("Cost per 1,000 views","$43 to $45"),("Benchmark CPM","$75"),("Cost per download","$3.91 to $4.88"),("Benchmark CPD","$8")],
-  "Measured in native LinkedIn post analytics, reported to the client as delivered",
-  "Source: AI Central x ElevenLabs campaign reports, batch 1 (January 2026) and batch 2 (March 2026). Batch 1: 132,958 views, 1,533 downloads, investment $5,999, CPM $45.12, CPD $3.91. Batch 2: 125,986 views, 1,107 downloads, investment $5,399, CPM $42.85, CPD $4.88. Engagement 4.9% to 10.2%, mean 7.7%. Carousels, in chart order: Voice as a product feature 189; Stories with AI voice 285; 10 enterprise uses 285; Creative teams stay consistent 319; Ads that convert 455; Creators expand reach 266; AI voice into cash 261; Global content 225; Best way to dub 203; AI video dubbing 152. Investment figures are deliberately not on the slide. Benchmark ($75 CPM, $8 CPD) is self-reported in our own campaign reports, standardized across all three carousel case studies; it is not independently audited industry data.")
+  "ElevenLabs carousel creative or a campaign screenshot",
+  "Source: AI Central x ElevenLabs campaign reports, batch 1 (January 2026) and batch 2 (March 2026). Batch 1: 132,958 views, 1,533 downloads, investment $5,999, CPM $45.12, CPD $3.91. Batch 2: 125,986 views, 1,107 downloads, investment $5,399, CPM $42.85, CPD $4.88. Investment figures deliberately not on the slide. Full data in case-studies-extended/CASE-STUDIES-SOURCES.md.")
 
-S[7] = case(7, '<div style="font-size:30px;font-weight:700;letter-spacing:-.02em">Luma AI</div>', "Luma AI",
-  "A second campaign, four months later, once the first had proved out",
-  "Drive trial signups for Luma's AI image and video tools among marketing, brand and creative teams. January's five carousels had a full report behind them before the second batch of five went into production in May",
-  "Two campaigns of five bespoke LinkedIn carousels each, January and May 2026. Each carousel was a free ebook on one creative workflow, with a lead-capture download",
+S[7] = case_card(7, '<div style="font-size:30px;font-weight:700;letter-spacing:-.02em">Luma AI</div>', "Luma AI",
+  "Luma AI &mdash; AI image and video generation tools for creative teams",
+  "Drive trial signups for Luma's AI image and video tools among marketing, brand and creative teams",
+  "Two campaigns of five bespoke LinkedIn carousels each. Each carousel was a free ebook on one creative workflow, with a lead-capture download",
   [stat("10","Carousels"), stat("242K","Views"), stat("2,944","Downloads", True), stat("6.6%","Average engagement")],
-  "Downloads per carousel: five in January, five in May 2026", bars_svg(LUMA, 500, aria="Luma AI downloads per carousel, ten carousels across January and May 2026"),
-  "Against our LinkedIn Ads benchmark", [("Cost per 1,000 views","$43 to $48"),("Benchmark CPM","$75"),("Cost per download","$2.85 to $5.05"),("Benchmark CPD","$8")],
-  "Measured in native LinkedIn post analytics, reported to the client as delivered",
-  "Source: AI Central x Luma AI campaign reports, January 2026 and May 2026. Jan: 115,836 views, 1,756 downloads, investment $4,999, CPM $43.16, CPD $2.85. May: 125,815 views, 1,188 downloads, investment $5,999, CPM $47.68, CPD $5.05. Engagement 4.8% to 8.2%, mean 6.6%. Carousels, in chart order: Realistic images 449; Ideas into images 389; Create AI images 403; Campaign visuals 281; Visual workspace 234; Own AI creative tool 345; Weekly content pipeline 260; Visual campaign 214; Brand identity system 228; Scale visual content 141. No Luma logo asset in any source - wordmark set in type. Investment figures are deliberately not on the slide. Benchmark ($75 CPM, $8 CPD) is self-reported in our own campaign reports, standardized across all three carousel case studies; it is not independently audited industry data.")
+  "Luma AI carousel creative or a campaign screenshot",
+  "Source: AI Central x Luma AI campaign reports, January 2026 and May 2026. Jan: 115,836 views, 1,756 downloads, investment $4,999, CPM $43.16, CPD $2.85. May: 125,815 views, 1,188 downloads, investment $5,999, CPM $47.68, CPD $5.05. No Luma logo asset in any source - wordmark set in type. Full data in case-studies-extended/CASE-STUDIES-SOURCES.md.")
 
-S[8] = case(8, f'<img src="{A["logo_gamma"]}" alt="Gamma" style="height:44px;border-radius:5px">', "Gamma",
-  "A second, larger batch, one month after the first",
-  "Launch Gamma's AI agent for presentations and drive signups among professionals who build decks. Five carousels in January 2026 were followed by six in February - the second batch larger than the first",
-  "Two campaigns of bespoke LinkedIn carousels, five in January and six in February 2026. Each carousel was a free ebook on one presentation workflow, with a lead-capture download",
+S[8] = case_card(8, f'<img src="{A["logo_gamma"]}" alt="Gamma" style="height:44px;border-radius:5px">', "Gamma",
+  "Gamma &mdash; AI-powered presentation platform",
+  "Launch Gamma's AI agent for presentations and drive signups among professionals who build decks",
+  "Two campaigns of bespoke LinkedIn carousels, eleven in total. Each carousel was a free ebook on one presentation workflow, with a lead-capture download",
   [stat("11","Carousels"), stat("290K","Views"), stat("3,823","Downloads", True), stat("6.9%","Average engagement")],
-  "Downloads per carousel: five in January, six in February 2026", bars_svg(GAMMA, 800, aria="Gamma downloads per carousel, eleven carousels across January and February 2026"),
-  "Against our LinkedIn Ads benchmark", [("Cost per 1,000 views","$20 to $24"),("Benchmark CPM","$75"),("Cost per download","$1.19 to $2.31"),("Benchmark CPD","$8")],
-  "Measured in native LinkedIn post analytics, reported to the client as delivered",
-  "Source: AI Central x Gamma campaign reports, batch 1 (January 2026, 5 carousels) and batch 2 (February 2026, 6 carousels). Batch 1: 124,366 views, 2,092 downloads, investment $2,499, CPM $20.09, CPD $1.19. Batch 2: 165,561 views, 1,731 unique downloads, investment $3,999, CPM $24.15, CPD $2.31. Engagement 5.8% to 8.2%, mean 6.9%. Carousels in chart order: 10 Design Prompts 491; Idea to Visual in 3 Steps 703; Tips for Non-Designers 401; Personal Design Workflow 311; Top 5 Gamma Hacks 186; AI Slides in 2026 354; Board-ready Presentations 340; Emails into Slide Decks 224; CheatSheet into a Deck 240; Presentation from Claude 307; Ultimate Presentation Guide 266. This report's own footnote cited a $45 CPM benchmark; standardized here to $75 to match the other two carousel case studies, so the comparison across cards is consistent rather than each report's own figure. Both figures are self-reported in AI Central's own campaign reports, not independently audited industry data. Investment figures are deliberately not on the slide. Ledger context: 22 paid slots over five months, $11,292 confirmed via Passionfroot; the Q3 kit's '1,000+ downloads' undersold this by nearly 4x.")
+  "Gamma carousel creative or a campaign screenshot",
+  "Source: AI Central x Gamma campaign reports, batch 1 (January 2026, 5 carousels) and batch 2 (February 2026, 6 carousels). Batch 1: 124,366 views, 2,092 downloads, investment $2,499, CPM $20.09, CPD $1.19. Batch 2: 165,561 views, 1,731 unique downloads, investment $3,999, CPM $24.15, CPD $2.31. Investment figures deliberately not on the slide. Full data in case-studies-extended/CASE-STUDIES-SOURCES.md.")
 
 # ── 09 Closing ───────────────────────────────────────────────────────────────
 # Adapted, not copied verbatim, from case-studies-extended's own S[8]: that
