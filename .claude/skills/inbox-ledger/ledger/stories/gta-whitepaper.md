@@ -166,3 +166,12 @@
   now actually sent to Tsvetelin, cc Ganapathy, Marc, Zoltan and Swetha
   Sitaraman (a Vajra Global colleague of Ganapathy's, new to this
   story). No reply yet as of this update.
+
+  **Second bump drafted, 2026-09-10, per Alex - the Alejandro/JC
+  sub-thread, cold.** Thread `19ff67b1360150c6` is a separate ask inside
+  this story: Alejandro Martinez and Jose Carlos Sanchez (Propelling
+  Tech, co-lead Tech New York Advocates) were introduced by Russ Shaw on
+  12 Aug re: their AI event at IE Business School and whether the GTA
+  Quarterly AI Pulse report could plug in. Alex's first reply went 17 Aug,
+  a bump followed 3 Sep - seven days with no reply since. A light second
+  nudge drafted, cc Russ and Liz, message `1a08c44b34609e64`. Not sent
