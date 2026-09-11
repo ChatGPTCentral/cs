@@ -6,14 +6,17 @@
 - kind: project (inbound sponsorship pitch)
 - people: Kenta Tanaka, kenta.tanaka@fotor.com, Marketing Specialist,
   Fotor (Everimaging Co., Ltd.)
-- status: open - proposal sent, awaiting reply
+- status: open - Kenta replied to the proposal, 2026-09-11
 - start: 2026-09-09
-- last-inbound: 2026-09-09 14:26 (kenta.tanaka@fotor.com, thread
-  `1a08622acd7384ae`)
+- last-inbound: 2026-09-11 07:33 (kenta.tanaka@fotor.com, thread
+  `1a08622acd7384ae`, message `1a08f62c09ba037a`) - content not read
+  yet, metadata only, pulse check
 - last-outbound: 2026-09-09 16:09 (alex@thecentral.ai, thread
   `1a08622acd7384ae`, message `1a086eebd37d5e31`)
 - idle: 0 days
 - next-action: none - wait for Kenta's reply
+- **Pulse check, 2026-09-11.** Kenta ha risposto via `1a08f62c09ba037a`
+  - in attesa di lettura
 - commitments: none
 - threads: `1a08622acd7384ae` (live)
 - notes: Real inbound pitch, not spam - Fotor Video Agent (AI video
