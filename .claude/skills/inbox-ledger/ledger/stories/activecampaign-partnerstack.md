@@ -15,8 +15,8 @@
   `1a08681446ac2b40`)
 - last-outbound: 2026-09-10 11:21 (elizabeth@theaicentral.net, **sent**,
   cc alex@thecentral.ai, thread `1a08681446ac2b40`, message
-  `1a08b0d0d0e53597`, to derrick.hernandez@activecampaign.com - content
-  not read yet, metadata only, pulse check)
+  `1a08b0d0d0e53597`, to derrick.hernandez@activecampaign.com - real
+  content below)
 - idle: 0 days
 - next-action: none - wait for Derrick's reply. **Stale draft flagged:**
   a separate draft to Derrick prepared 2026-09-10 (thread
@@ -37,3 +37,9 @@
   send him the media kit." Same pattern as `emergent-partnerstack` -
   a distinct company, same PartnerStack mechanism, different direction
   (ActiveCampaign reaching out to AI Central, not the other way round)
+
+  **Auto-genesis, 2026-09-11 - content read.** Elizabeth's message to
+  Derrick attached the 2026 media kit and asked directly if he was
+  available for a call "tomorrow" (11 Sep). No reply from Derrick yet as
+  of this pass. Source: thread `1a08681446ac2b40`, message
+  `1a08b0d0d0e53597`

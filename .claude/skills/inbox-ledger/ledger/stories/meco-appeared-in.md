@@ -9,12 +9,12 @@
 - start: 2025-05-10
 - end: (ongoing)
 - last-inbound: 2026-09-10 09:36 (sean@meco.app, thread
-  `1a08a8d58cfc6ad8`, message `1a08aad3c389dc8b`) - Sean replied same
-  morning, content not read yet (metadata only, pulse check)
+  `1a08a8d58cfc6ad8`, message `1a08aad3c389dc8b`) - real content below
 - last-outbound: 2026-09-10 09:58 (alex@thecentral.ai, thread
   `1a08a8d58cfc6ad8`, message `1a08ac108b5a2ea9`, cc Erim and Elizabeth) -
-  Alex replied to Sean, content not read yet (metadata only, pulse check)
-- next-action: none - wait for their reply
+  real content below
+- next-action: wait for Sean's reply - he owes feedback framing plus the
+  curated media-kit list Alex asked for
 - **Pulse check, 2026-09-10.** Alex ha risposto via `1a08ac108b5a2ea9` -
   in attesa di risposta
 - commitments: none
@@ -45,3 +45,17 @@
   drafted one (thread `1a08a8d58cfc6ad8`, message `1a08aa58d2f572e0`) -
   real termination date now on file: **11 November 2026**. Reminder set
   to chase Sean for confirmation if he hasn't replied by 24 Sep
+
+  **Auto-genesis, 2026-09-11 - content read.** Sean confirmed the
+  non-renewal and that access continues until the current term ends; he
+  asked for honest feedback on what led to the decision. Alex answered
+  directly: in a year, no sponsor closed could be attributed to
+  Appeared.in, AI Central also works with external sales agencies that
+  may already use the same product blended with others, and the recent
+  MCP release looks like a real step forward. At $2,750, paying without
+  any client outcome doesn't make sense - open to reconsidering if that
+  changes. Alex also asked (P.S.) for a curated list of media kits Sean
+  had mentioned sharing, and whether it lives on the platform. No reply
+  yet from Sean on either the feedback or the media-kit list. Source:
+  thread `1a08a8d58cfc6ad8`, messages `1a08aad3c389dc8b` and
+  `1a08ac108b5a2ea9`

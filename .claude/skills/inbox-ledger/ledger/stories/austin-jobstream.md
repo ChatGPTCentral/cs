@@ -14,8 +14,7 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
 - people: Amanda, Katie, and **Jazmin** (jazmin@getjobstream.com) - all
   @getjobstream.com
 - last-touch: Katie - replied 2026-09-10 20:37 (thread `1a08671da7015f25`,
-  message `1a08d0a2272c0c0e`) - content not read yet, metadata only,
-  pulse check
+  message `1a08d0a2272c0c0e`) - real content below
 - last-inbound: 2026-09-10 20:37 (katie@getjobstream.com, thread
   `1a08671da7015f25`, message `1a08d0a2272c0c0e`)
 - last-outbound: 2026-09-10 10:23 (alex@thecentral.ai, **sent**, to
@@ -28,6 +27,20 @@ is now this story's start date on `/genesis`, not the earlier placeholder.
   still wait for Jazmin's reply on the merch thread `19e4b71f458018eb`
 - **Pulse check, 2026-09-10.** Katie ha risposto via `1a08d0a2272c0c0e` -
   in attesa di lettura
+
+- **Auto-genesis, 2026-09-11 - content read.** Katie's reply raises two
+  things: she flags AI Central's job-board account had dozens of logins
+  in June, then none in July or August, and offers an API plus a
+  filter/CSV export as ways to automate refreshing content instead.
+  Separately, she floats a possible new subscription tier for a
+  "verified employer network" (vetted, immediately-hiring listings, no
+  aggregation) and asks what communities would pay for that - a genuine
+  question, not a pitch with terms attached. On events, she says no more
+  before AI Summit New York in December given other client work in the
+  pipeline. Also shared an HR Brew piece quoting Jobstream's partner
+  Recruitics on job ads moving to social. Ball is Alex's - nothing
+  committed on either side yet. Source: thread `1a08671da7015f25`,
+  message `1a08d0a2272c0c0e`
 - notes-correction: Alex recalled this as "last week, July 17" when asking
   for the nudge; the real prior touch was 17 Aug 2026, per Gmail
 - commitments: none recorded

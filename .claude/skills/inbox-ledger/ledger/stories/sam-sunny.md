@@ -51,3 +51,22 @@
   13:30 UTC - likely the real venue for the performance-review content,
   not written here per the auto-genesis rule against logging future
   events into story files; see `ledger_upcoming_meetings`
+
+  **Auto-genesis, 2026-09-11 - the 10 Sep call happened, real content
+  found.** Notion transcript
+  (`https://app.notion.com/p/3d7656dd7b67807f9fcafc569aa2b347`), "AI
+  Central Newsletter & Platform Strategy Meeting," confirms this was the
+  Beehiiv Performance Review occurrence above, not the unsent 5 Sep
+  draft. Alex approved Sunny's humanized-intro rewrite for the
+  newsletter. PDF downloads are down 35-55% over the last two issues
+  (average is normally 210+) - cause not confirmed, content or visuals
+  suspected. Alex pushed back on redesigning PDF covers, framing content
+  and outreach as the priority instead. Action items for Sunny: read and
+  review every AI Bootcamp chapter for clarity and missing screenshots;
+  sign up on `app.thecentral.ai` and test it as a first-time user,
+  reporting bugs; build 5 rotating content-block variants per newsletter
+  section (e.g. testimonials) to stop the layout going stale; write up
+  the prompt-pack/library-funnel idea in a structured doc before
+  presenting it. Newsletter issues for Thu/Fri/Sun must close by 6pm.
+  Liz to finish sharing the remaining AI Bootcamp chapters with Sunny in
+  Notion. Source: Notion transcript above

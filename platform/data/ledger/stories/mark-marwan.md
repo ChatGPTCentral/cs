@@ -56,3 +56,20 @@
   **Per Alex, 2026-09-10.** Mark has been paid - INV-014 resolved.
   Separately, Alex plans to talk to Mark directly today (in person/call,
   not email)
+
+  **Auto-genesis, 2026-09-11 - the call happened, real content found.**
+  Calendar confirms "Alex & Marwan (AI Central Updates)," 2026-09-10
+  14:30-15:30 CEST (event `37huiavugcdeuaf4v27rciisr8`). Notion transcript
+  (`https://app.notion.com/p/3d7656dd7b6780b78738c4a8b8ba09f7`) shows this
+  was a platform demo, not the invoice follow-up: Alex showed Marwan the
+  new platform (`up.thecentral.ai`) as its first outside tester, plus a
+  new MCP connector that lets Claude search the AI Central library
+  directly. Alex confirmed Marwan's role is shifting from carousel
+  production to content manager - building step-by-step, beginner-level
+  content (articles, guides, screenshots), with AI (Claude Design) doing
+  more of the drafting at scale. Action items: Marwan to log into
+  `up.thecentral.ai`, test it as a first-time client and document bugs
+  with screenshots; Alex to send a calendar invite for a follow-up call
+  Saturday; Marwan to attend that call with feedback; Marwan to start
+  exploring Claude Design. Source: Notion transcript above, cross-checked
+  against the calendar event

@@ -16,9 +16,11 @@
 - last-outbound: 2026-09-03 13:01 (elizabeth@theaicentral.net, thread
   `1a05d4a6d24bca49`, to randy.harinandan@partnerstack.com, cc
   ashley@partnerstack.com, bcc alex)
-- next-action: none - draft to Randy prepared 2026-09-10, per Alex
-  (thread `1a08a882a012850b`), not sent yet. Covers the media kit and
-  asks where things stand on the Emergent affiliate terms
+- next-action: call booked with Randy, 2026-09-14 16:00-16:30 UK time -
+  covers the media kit and where things stand on the Emergent affiliate
+  terms. Separately, a draft to Randy prepared 2026-09-10, per Alex
+  (thread `1a08a882a012850b`), still sits unsent - may be superseded by
+  the call, Alex's call whether to still send it
 - **Pulse check, 2026-09-03.** Elizabeth ha risposto a Randy via
   `1a0675c747b0523a` - in attesa di risposta
 - commitments: none
@@ -35,3 +37,11 @@
   partners an extra $5-6K. Product demo at app.emergent.sh, program
   details at market.partnerstack.com/page/emergentlabsinc. Ball is
   Elizabeth's - no reply yet on her side
+
+  **Auto-genesis, 2026-09-11.** Elizabeth booked a call with Randy
+  directly on his scheduler: "30 Min w/ Randy @ PartnerStack (Elizabeth
+  from AI Central)," Monday 14 Sept 2026, 16:00-16:30 UK time (11:00am
+  Eastern), Google Meet. Calendar event `dc33f1kk4eaj95huvjuak64sc4` on
+  Elizabeth's calendar, confirmed 2026-09-10 13:23. Also upserted to
+  `ledger_upcoming_meetings`. Source: Google Calendar (Elizabeth), plus
+  the forwarded booking notification, Gmail thread `1a08b841446b2a90`

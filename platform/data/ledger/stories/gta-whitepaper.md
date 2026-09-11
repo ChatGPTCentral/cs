@@ -175,3 +175,9 @@
   Quarterly AI Pulse report could plug in. Alex's first reply went 17 Aug,
   a bump followed 3 Sep - seven days with no reply since. A light second
   nudge drafted, cc Russ and Liz, message `1a08c44b34609e64`. Not sent
+
+  **Correction, auto-genesis 2026-09-11.** That second nudge was sent,
+  not left as a draft: message `1a08c5266602e324`, 2026-09-10 17:16,
+  same thread `19ff67b1360150c6`, same wording ("one more nudge... happy
+  to find 15 min to discuss the AI event at IE Business School"). No
+  reply yet from Alejandro or JC as of this pass
