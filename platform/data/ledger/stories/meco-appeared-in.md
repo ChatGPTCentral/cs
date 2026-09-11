@@ -8,8 +8,9 @@
 - status: open - ongoing partner relationship
 - start: 2025-05-10
 - end: (ongoing)
-- last-inbound: 2026-09-10 09:36 (sean@meco.app, thread
-  `1a08a8d58cfc6ad8`, message `1a08aad3c389dc8b`) - real content below
+- last-inbound: 2026-09-11 08:55 (sean@meco.app, thread
+  `1a08a8d58cfc6ad8`, message `1a08fadc2838680d`) - content not read
+  yet, metadata only, pulse check
 - last-outbound: 2026-09-10 09:58 (alex@thecentral.ai, thread
   `1a08a8d58cfc6ad8`, message `1a08ac108b5a2ea9`, cc Erim and Elizabeth) -
   real content below
@@ -17,6 +18,8 @@
   curated media-kit list Alex asked for
 - **Pulse check, 2026-09-10.** Alex ha risposto via `1a08ac108b5a2ea9` -
   in attesa di risposta
+- **Pulse check, 2026-09-11.** Sean ha risposto via `1a08fadc2838680d` -
+  in attesa di lettura
 - commitments: none
 - threads: `19a39ce525b355c9` (10 Nov 2025), `19a6ccc4f5357347` (11 Nov 2025),
   `19a7218c9e886585` (eSignature + non-renewal request), `19cb437bffabb194`
