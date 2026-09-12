@@ -9,13 +9,13 @@
 - start: 2025-05-10
 - end: (ongoing)
 - last-inbound: 2026-09-11 08:55 (sean@meco.app, thread
-  `1a08a8d58cfc6ad8`, message `1a08fadc2838680d`) - content not read
-  yet, metadata only, pulse check
+  `1a08a8d58cfc6ad8`, message `1a08fadc2838680d`) - content read,
+  auto-genesis 2026-09-12
 - last-outbound: 2026-09-10 09:58 (alex@thecentral.ai, thread
   `1a08a8d58cfc6ad8`, message `1a08ac108b5a2ea9`, cc Erim and Elizabeth) -
   real content below
-- next-action: wait for Sean's reply - he owes feedback framing plus the
-  curated media-kit list Alex asked for
+- next-action: Alex's call whether to take Sean up on the offered call
+  with whoever runs AI Central's internal outbound
 - **Pulse check, 2026-09-10.** Alex ha risposto via `1a08ac108b5a2ea9` -
   in attesa di risposta
 - **Pulse check, 2026-09-11.** Sean ha risposto via `1a08fadc2838680d` -
@@ -62,3 +62,12 @@
   yet from Sean on either the feedback or the media-kit list. Source:
   thread `1a08a8d58cfc6ad8`, messages `1a08aad3c389dc8b` and
   `1a08ac108b5a2ea9`
+
+  **Auto-genesis, 2026-09-12 - content read.** Sean answered both open
+  points: he offered a call with whoever handles AI Central's internal
+  outbound, to help get the best use out of the platform for the
+  remaining term, and sent the curated Media Kit Gallery link Alex
+  asked for (https://newsletter-media-kits.kit.com/11871870dc). No new
+  date or figure on the renewal beyond the 11 Nov 2026 termination
+  already on file. Source: thread `1a08a8d58cfc6ad8`, message
+  `1a08fadc2838680d`
