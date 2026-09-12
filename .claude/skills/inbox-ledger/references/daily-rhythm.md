@@ -55,6 +55,21 @@ distinct thing done gets its own line, no folding several into one
 summarizing sentence. Ends with what carries into tomorrow's morning
 brief, so the loop closes.
 
+## Delivery
+
+**Added 2026-09-12, per Alex.** All three touchpoints also send by real
+email via Resend (not the Gmail connector - a separate account, not
+covered by the draft-only rule) - `mcp__Resend__send-email`, from
+`Brief AI Central <noreply@app.thecentral.ai>` (domain verified on
+Resend, region eu-west-1), to `alex@thecentral.ai` and
+`liz@thecentral.ai`. This is in addition to the in-session chat message,
+not a replacement - send both every time. Subject line: "Morning brief -
+{date}" / "Midday update - {date}" / "Closing recap - {date}".
+
+The weekly recap (`weekly-recap.md`, Saturdays) does not yet send by
+email - not asked for explicitly. Add the same Resend block there if
+Alex wants it too.
+
 ## Hard rules
 
 Same as everywhere else in this skill: never invent a fact, a date, or
