@@ -10,8 +10,9 @@
 - status: open - real, paying relationship, currently mid-cycle
 - start: 2025-12-11
 - end: (ongoing)
-- next-action: Connie asked (2 Jul 2026) to finish 2 posts still owed on
-  the last order before starting anything new - confirm those are closed
+- next-action: **decide on the remaining 2 LinkedIn carousels, and
+  pursue a new deal** (per Alex, 2026-09-12) - stuck/in progress, not
+  closed yet
 - commitments: none quoted
 - threads: `19a97cb380f6d107` (11 Dec 2025)
 - notes: This is where the ElevenLabs relationship actually started, and
@@ -28,6 +29,11 @@
   official press partner for the AI Summit New York (Netline/Awais
   story, still being finalized as of this date - see
   netline.md). Awaiting reply
+
+  **Per Alex, 2026-09-12.** Wrote to ElevenLabs again this week - 2
+  LinkedIn carousels are still outstanding on their side, and Alex is
+  separately working to close a new deal with them. No specific Gmail
+  thread identified for this pass - logged per Alex's own statement.
 
   **Passionfroot data, 2026-08-27.** Confirms the relationship is live and
   recurring: a Main Ad slot ran on repeat through summer 2026 ($3,900 and

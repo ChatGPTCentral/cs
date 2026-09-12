@@ -52,3 +52,9 @@
 
   **Per Alex, 2026-09-10.** Send Mat the interview - task set, which
   interview not specified
+
+  **Per Alex, 2026-09-12 - the real purpose of the interview offer.**
+  Mat is CMO of Prophet, an advisory firm. The free interview is a
+  deliberate goodwill move - build the relationship and use it to work
+  out the best commercial angle with Prophet, not a pure editorial
+  courtesy

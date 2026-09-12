@@ -77,3 +77,8 @@
   on this relationship with zero replies across 3+ months of chasing.
   Worth flagging as a stale, high-effort story - decide whether to keep
   pushing or let it rest.
+
+  **Rechecked, 2026-09-12, per Alex.** Confirmed via thread
+  `1a059d053fc34f9a`: still no reply from Hod since the 4 Sep chase.
+  Per Alex, follow up again if no reply by Wed 16 Sep - logged as a
+  `ledger_tasks` row.

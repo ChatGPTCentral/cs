@@ -7,23 +7,23 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Alex - the "GTA AI Pulse check-in" call happened today,
-  2026-09-09 (Alex, Marc Duke, Tsvetelin). Ball is explicitly Alex's -
-  his own words closing the call: "the ball is a bit in my court, I'll
-  update you guys tomorrow"
+- last-touch: Alex - sent the first whitepaper draft Friday 11 Sep
+  2026 per his own statement (no matching Gmail thread found). Ball is
+  now with Marc Duke and Tsvetelin for feedback
 - last-inbound: 2026-09-09 12:36 (marcduke@dukeconnect.co.uk, thread
   `1a086153670818f1`, message `1a0862be7c03f442`)
 - last-outbound: 2026-09-09 12:39 (alex@thecentral.ai, thread
   `1a086153670818f1`, message `1a0862e30dbee527`, to marcduke@dukeconnect.co.uk,
   cc tsvetelin@thinkrevops.com)
 - idle: 0 days
-- next-action: **share the first draft on the Gmail thread tomorrow
-  (Thu 10 Sep) at lunch** - the team worked on it while Alex was away;
-  a live-PDF format mixing GTA and London Tech Advocates perspectives.
-  Separately, **reach out to Alex's two existing contacts at Seven
-  Hills PR** (Russ Shaw's agency) about the launch. Per the call
-  transcript (Notion, `3d6656dd7b678068a757fb6e87387513`), not
-  invented
+- next-action: **hold - wait for Marc Duke and Tsvetelin's feedback**
+  (per Alex, 2026-09-12). Alex sent the first draft Friday 11 Sep; Marc
+  and Tsvetelin said they'd send feedback, so the whitepaper is
+  waiting on them, not on Alex. No matching Gmail thread was found for
+  this send as of this update - noted here per Alex's own statement,
+  not a transcript. Separately, still owed: **reach out to Alex's two
+  existing contacts at Seven Hills PR** (Russ Shaw's agency) about the
+  launch, once the draft is locked
 - commitments: Alex asked when Tsvetelin's part will be ready and proposed a
   group call next week (Alex is back in the office) to assess where the
   whitepaper stands

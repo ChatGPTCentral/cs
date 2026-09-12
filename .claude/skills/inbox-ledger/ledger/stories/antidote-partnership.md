@@ -60,3 +60,9 @@
 
   **Per Alex, 2026-09-10.** Send Becca the interview - task set, which
   interview not specified
+
+  **Per Alex, 2026-09-12 - the real purpose of the interview offer.**
+  Becca is CEO of Antidote, a PR agency. The free interview is a
+  deliberate goodwill move - build the relationship and use it to work
+  out the best commercial angle with Antidote, not a pure editorial
+  courtesy

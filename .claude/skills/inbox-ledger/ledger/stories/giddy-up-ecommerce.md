@@ -33,6 +33,9 @@
   Charge Universe - offering to help dial in the copy across all
   listings if Elizabeth wants that. No reply yet from Elizabeth. Source:
   thread `1a039deece4fa230`
+- **Naming, per Alex, 2026-09-12.** The thecentral.ai website section
+  for this is called "the Store," not "Giddy Up" - same underlying
+  project, customer-facing name only
 - notes: Eili pitched Giddy Up's program as a fit for AI Central's
   audience (skews 35-55, 70-80% US/Canada, about 300,000 total). Giddy Up's CPA
   model pays back 50-100% of product value (vs. 1-2% on Amazon, 20% on

@@ -49,3 +49,8 @@
 
   **Pulse check, 2026-09-08.** Alex sent the draft via `1a08190f72a5d0da`
   - in attesa di risposta
+
+  **Rechecked, 2026-09-12, per Alex.** Confirmed via thread
+  `1a0653b7325b38e4`: still no reply from Louis since the 8 Sep send.
+  Per Alex, follow up via web if no reply by Wed 16 Sep - logged as a
+  `ledger_tasks` row.

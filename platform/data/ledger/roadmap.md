@@ -11,11 +11,17 @@ or changed items; note the date of each update.
 - Launch of AI Bootcamp - AI 101
 - Re-develop all sales collateral (Media Kit + Products + Pricing)
 - Re-adjust sales targets and pipeline
+- **Targets, per Alex, 2026-09-12 (fixed for the month):** Revenue
+  $15,000, AI Library Trials 120. The daily "current" figures against
+  these targets are Alex's own to update each morning on `/brief` -
+  not pulled automatically from any source
 
 ## October 2026
 
 - AI Bootcamp - AI 202
-- Beta test of the New AI Library with friends and family
+- Beta test of the New AI Library with friends and family - testers so
+  far, per Alex 2026-09-12: Marwan, Sunny, Luca, Lorenzo, Peppe,
+  Rachel, George, and someone from Cozora (name not yet given)
 - (TBD) Event with Vasily in London - 26 October
 
 ## November 2026
@@ -28,10 +34,15 @@ or changed items; note the date of each update.
 ## December 2026
 
 - 2026 Wrapped
-- (TBD) Participate in The AI Summit (New York) - **per Alex,
-  2026-09-12: start planning the US trip now**, not closer to the date -
-  see `ledger_tasks` and `netline.md`/`prophet-tonileepr.md`/
-  `all-tech-is-human.md` for the New York contacts this connects to
+- (TBD) Participate in The AI Summit (New York), likely **Dec 3-10** -
+  **per Alex, 2026-09-12: start planning the US trip now**, not closer
+  to the date. Not linked to the Netline/Awais media-partner deal - a
+  separate track, per Alex. NY contacts to work: All Tech Is Human, AI
+  Collective (see `genai-collective.md`), and Tech New York Advocates
+  / "GTA New York" (Alejandro Martinez, Jose Carlos Sanchez - see
+  `gta-whitepaper.md`) - plus `prophet-tonileepr.md`/
+  `all-tech-is-human.md` already on file. See `ledger_tasks` for the
+  planning task itself
 - Xmas campaign
 - New Year's Eve campaign (aka Start 2027)
 

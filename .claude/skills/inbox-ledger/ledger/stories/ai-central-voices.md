@@ -73,6 +73,14 @@
   accepted 2 Jul, last touched 7 Jul, silent since. See his own person
   record.
 
+  **Next 15 interviews, per Alex, 2026-09-12.** A real sourcing plan
+  for the next batch: 5 from subscribers who left testimonials, 5 from
+  Bristol (the AI Hackathon contacts), 5 from following up and
+  reviewing the interview sheet for names already in the pipeline. Open
+  question from Alex, not yet decided: whether these next interviews
+  should become chapters, integrated into the AI Bootcamp, rather than
+  standalone pieces - a real idea to explore, not yet a decision
+
   **Auto-genesis, 2026-09-07.** A real Gmail thread exists for David
   Castañeda (Visionaries 777) after all - thread `19ff24a0d8f9ebb8`.
   Lara O'Shea (laraoshea@gmail.com) pitched an interview on his behalf,
