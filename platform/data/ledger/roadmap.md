@@ -11,10 +11,11 @@ or changed items; note the date of each update.
 - Launch of AI Bootcamp - AI 101
 - Re-develop all sales collateral (Media Kit + Products + Pricing)
 - Re-adjust sales targets and pipeline
-- **Targets, per Alex, 2026-09-12 (fixed for the month):** Revenue
-  $15,000, AI Library Trials 120. The daily "current" figures against
-  these targets are Alex's own to update each morning on `/brief` -
-  not pulled automatically from any source
+- **Targets, per Alex, 2026-09-12 (fixed for the month, revised by
+  Alex himself the same day when he edited the brief on `/brief`):**
+  Revenue $15,000, AI Library Trials 150. The daily "current" figures
+  against these targets are Alex's own to update each morning on
+  `/brief` - not pulled automatically from any source
 
 ## October 2026
 
