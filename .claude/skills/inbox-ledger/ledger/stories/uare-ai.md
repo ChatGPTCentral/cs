@@ -2,14 +2,17 @@
 
 - query: none - Passionfroot conversation, not Gmail
 - label-id: none
-- kind: project (live pitch, not yet closed)
+- kind: project (dead deal, per Alex - reopen with a new angle)
 - people: Sonia, Yev also named at the start
-- last-touch: Alex - is holding a slot, waiting on Uare's decision
+- last-touch: Alex - was holding a slot, waiting on Uare's decision
 - start: 2026-05-09
 - last-outbound: 2026-08-03 (Alex, holding an Aug-Sept slot with Uare's
   name on it)
 - idle: since 2026-08-03
-- next-action: follow up on the held Aug-Sept slot before it lapses
+- next-action: **per Alex, 2026-09-12 - this deal is closed/dead, not a
+  live slot to chase.** Do not follow up asking about the lapsed
+  Aug-Sept slot - reopen the relationship with a genuinely new angle
+  instead of resuming the old pitch
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27 - the single

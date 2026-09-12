@@ -10,8 +10,11 @@
 - start: 2024-07-30
 - last-inbound: 2026-02-24 (Yasaman, asking for LinkedIn/newsletter rates)
 - idle: 184 days as of 2026-08-27
-- next-action: send the rates Yasaman actually asked for - the thread
-  stalled on a request, not a decline
+- next-action: **per Alex, 2026-09-12 - this is a dead conversation, not
+  a live follow-up.** 200+ days idle - answering Yasaman's Feb 2026 rate
+  request today would read as bizarre. Reopen with a fresh outreach and
+  a new angle, referencing the history but not pretending the thread is
+  still warm
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27 - **directly

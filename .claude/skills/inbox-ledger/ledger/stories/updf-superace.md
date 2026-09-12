@@ -9,8 +9,9 @@
 - start: 2026-01-12
 - last-inbound: 2026-01-12 (liki's own inbound inquiry)
 - idle: 227 days as of 2026-08-27
-- next-action: offer liki a budget-sized option - the $2,499 package
-  overshot a stated small budget
+- next-action: **per Alex, 2026-09-12 - dead, not a live follow-up.**
+  227+ days idle. Reopen with a fresh outreach and a new angle rather
+  than resuming the old pricing conversation cold
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. liki reached

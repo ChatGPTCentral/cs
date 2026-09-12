@@ -8,8 +8,9 @@
 - start: 2025-05-12
 - last-inbound: 2025-06-02 (Jessica, "Hey Alex kindly update")
 - idle: since Jun 2025 - Alex's Feb 2026 re-pitch also went unanswered
-- next-action: answer Jessica's $100 first-send offer - it was never
-  answered
+- next-action: **per Alex, 2026-09-12 - dead, not a live follow-up.**
+  Idle since Jun 2025, over a year. Reopen with a fresh outreach and a
+  new angle rather than answering a $100 offer from mid-2025 cold
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Jessica

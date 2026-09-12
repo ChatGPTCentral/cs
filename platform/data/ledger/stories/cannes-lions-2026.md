@@ -20,6 +20,11 @@
   reply. Separately, still owe Indiana the media partnership proposal
   (audience stats, platform overview, editorial focus areas including
   the learning programs) - not urgent per Alex, 2026-09-01
+
+  **Sequencing note, per Alex, 2026-09-12.** Rory Crone is next after
+  [[netline]] (Awais Shahid, same Informa/AI Summit Series team) is
+  closed - Alex's own stated order, do not lead with Rory before Awais
+  is done
 - commitments:
   - "Indiana to email AI Central when Cannes Lions press applications
     open (expected November)" - made 2026-08-28 by Indiana - open

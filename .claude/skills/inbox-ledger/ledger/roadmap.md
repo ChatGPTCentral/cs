@@ -28,9 +28,24 @@ or changed items; note the date of each update.
 ## December 2026
 
 - 2026 Wrapped
-- (TBD) Participate in The AI Summit (New York)
+- (TBD) Participate in The AI Summit (New York) - **per Alex,
+  2026-09-12: start planning the US trip now**, not closer to the date -
+  see `ledger_tasks` and `netline.md`/`prophet-tonileepr.md`/
+  `all-tech-is-human.md` for the New York contacts this connects to
 - Xmas campaign
 - New Year's Eve campaign (aka Start 2027)
+
+## Website / platform (added per Alex, 2026-09-12, no month assigned yet)
+
+- Giddy Up section
+- AI Bootcamp section
+- Quiz section
+- Restyle of `/library` and `/upgrade`
+
+## Accounting (added per Alex, 2026-09-12, no month assigned yet)
+
+- Invoices to Valentina (studio-galdieri)
+- Ongoing expense tracking
 
 ## January 2027
 

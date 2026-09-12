@@ -11,8 +11,10 @@
 - last-inbound: 2024-01-24 (Bijan, sharing the 20%-for-3-years affiliate
   program terms)
 - idle: since Jan 2024 - three later re-pitches all unanswered
-- next-action: sign up to Bijan's 20% affiliate program - the no-cost
-  option still on the table
+- next-action: **per Alex, 2026-09-12 - dead, not a live follow-up.**
+  Idle since Jan 2024, over 2.5 years - the 20% affiliate terms may not
+  even still stand. Reach out fresh to confirm the offer before signing
+  up to anything, not a silent sign-up on a stale term
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Bijan

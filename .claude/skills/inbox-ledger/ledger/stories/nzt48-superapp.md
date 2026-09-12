@@ -8,8 +8,9 @@
 - start: 2026-02-10
 - last-inbound: 2026-02-10 (Vitalik's own inbound proposal, $499)
 - idle: 198 days as of 2026-08-27
-- next-action: counter Vitalik at his own $499 level, not the $1,199
-  package
+- next-action: **per Alex, 2026-09-12 - dead, not a live follow-up.**
+  ~200 days idle. Reopen with a fresh outreach and a new angle, not a
+  same-day counter-offer as if the original pitch were still open
 - commitments: none quoted
 - threads: none (Passionfroot only)
 - notes: found via the Passionfroot data import, 2026-08-27. Vitalik Kotyk

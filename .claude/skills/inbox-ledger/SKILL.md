@@ -262,5 +262,6 @@ and the eventual network-visualization goal are in `references/background.md`.
 - `references/background.md` - the CRM layer: Alex-provided context, format, the network-viz goal
 - `references/task-board.md` - the Notion Task Board: verifying a task before writing it, the notion_url format
 - `references/weekly-recap.md` - the Saturday weekly recap: exhaustive itemized format, never a themed summary
+- `references/daily-rhythm.md` - the three weekday touchpoints: morning brief, midday update, closing recap
 - `../aic-customer-support/references/inbox.md` - Gmail mechanics, signature,
   threading, the quoting trade-off

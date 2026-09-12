@@ -31,6 +31,12 @@
   sign and return the prospective agreement Awais sent, message
   `1a081524904c09c5` - Alex is handling that one himself, per his own
   message, not this agent's job
+
+  **Sequencing note, per Alex, 2026-09-12.** Once the Awais/Informa
+  agreement above is signed and closed, the next move is
+  [[cannes-lions-2026]] - Rory Crone (Senior Director, Marketing, The AI
+  Summit Series), same Informa team as Awais. Do not start on Rory
+  before Awais is done - Alex's own stated order
 - **Aneeka/NetLine, fully explained, 2026-09-10.** Alex marked this urgent
   and said he had not understood the situation. Read every real thread
   with Aneeka, end to end, including messages after 2026-08-31 that were
