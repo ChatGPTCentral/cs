@@ -3,14 +3,18 @@
 // the daily-rhythm emails. Content is written in a small plain-text
 // convention so Alex can edit it as plain text on /brief, not raw HTML:
 //
-//   ## Section title     -> a bold section header
-//   - item text          -> a bullet line (consecutive "- " lines group)
+//   ## Section title      -> a top-level section header
+//   ### Subsection        -> a smaller subsection header, e.g. "Website"
+//   #### LABEL            -> a small state-label header, e.g. "STUCK"
+//   - item text           -> a bullet line (consecutive "- " lines group)
+//   - - item text         -> a nested bullet (one level per repeated "- ")
 //   blank line            -> ends the current bullet group
 //   anything else         -> a plain paragraph line
 //   **text**              -> inline bold, inside any of the above
 //
 // See .claude/skills/inbox-ledger/references/daily-rhythm.md for the
-// delivery mechanism this feeds (the /brief review-and-send page).
+// delivery mechanism this feeds (the /brief review-and-send page), and
+// Alex's own 2026-09-12 rewrite for the real template this grew from.
 
 function escapeHtml(s) {
   return String(s)
@@ -23,43 +27,62 @@ function inlineFormat(s) {
   return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
 }
 
+const BULLET_RE = /^(?:- )+/;
+
 export function renderBriefBody(content) {
   const lines = String(content || "").split("\n");
   const blocks = [];
-  let currentBullets = null;
+  let currentList = null;
 
   for (const rawLine of lines) {
     const line = rawLine.trimEnd();
-    if (line.startsWith("## ")) {
-      currentBullets = null;
-      blocks.push({ type: "header", text: line.slice(3).trim() });
-    } else if (line.startsWith("- ")) {
-      if (!currentBullets) {
-        currentBullets = { type: "bullets", items: [] };
-        blocks.push(currentBullets);
+    const bulletMatch = line.match(BULLET_RE);
+
+    if (line.startsWith("#### ")) {
+      currentList = null;
+      blocks.push({ type: "h3", text: line.slice(5).trim() });
+    } else if (line.startsWith("### ")) {
+      currentList = null;
+      blocks.push({ type: "h2", text: line.slice(4).trim() });
+    } else if (line.startsWith("## ")) {
+      currentList = null;
+      blocks.push({ type: "h1", text: line.slice(3).trim() });
+    } else if (bulletMatch) {
+      const depth = bulletMatch[0].length / 2;
+      const text = line.slice(bulletMatch[0].length).trim();
+      if (!currentList) {
+        currentList = { type: "list", items: [] };
+        blocks.push(currentList);
       }
-      currentBullets.items.push(line.slice(2).trim());
+      currentList.items.push({ depth, text });
     } else if (line.trim() === "") {
-      currentBullets = null;
+      currentList = null;
     } else {
-      currentBullets = null;
+      currentList = null;
       blocks.push({ type: "text", text: line.trim() });
     }
   }
 
   return blocks
     .map((block) => {
-      if (block.type === "header") {
+      if (block.type === "h1") {
         return `<tr><td style="padding:16px 24px 4px 24px;"><span style="color:#1a1a2e; font-size:15px; font-weight:bold;">${inlineFormat(block.text)}</span></td></tr>`;
       }
-      if (block.type === "bullets") {
+      if (block.type === "h2") {
+        return `<tr><td style="padding:10px 24px 2px 24px;"><span style="color:#1a1a2e; font-size:13.5px; font-weight:bold;">${inlineFormat(block.text)}</span></td></tr>`;
+      }
+      if (block.type === "h3") {
+        return `<tr><td style="padding:8px 24px 2px 24px;"><span style="color:#6b6b7a; font-size:11.5px; font-weight:bold; letter-spacing:0.04em; text-transform:uppercase;">${inlineFormat(block.text)}</span></td></tr>`;
+      }
+      if (block.type === "list") {
         const items = block.items
-          .map(
-            (item, i) =>
-              `<p style="margin:0 0 ${i === block.items.length - 1 ? 0 : 4}px 0;">- ${inlineFormat(item)}</p>`
-          )
+          .map((item, i) => {
+            const indent = 24 + (item.depth - 1) * 16;
+            const marginBottom = i === block.items.length - 1 ? 0 : 4;
+            return `<p style="margin:0 0 ${marginBottom}px 0; padding-left:${indent}px; text-indent:-12px;">- ${inlineFormat(item.text)}</p>`;
+          })
           .join("");
-        return `<tr><td style="padding:0 24px 16px 24px; font-size:14px; color:#333333; line-height:1.6;">${items}</td></tr>`;
+        return `<tr><td style="padding:0 24px 14px 0; font-size:14px; color:#333333; line-height:1.6;">${items}</td></tr>`;
       }
       return `<tr><td style="padding:0 24px 12px 24px; font-size:14px; color:#333333; line-height:1.5;">${inlineFormat(block.text)}</td></tr>`;
     })

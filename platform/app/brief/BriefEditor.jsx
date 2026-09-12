@@ -61,8 +61,9 @@ export default function BriefEditor({ brief }) {
         style={{ fontFamily: "ui-monospace, Menlo, monospace", fontSize: 13, lineHeight: 1.5 }}
       />
       <div style={{ fontSize: 12, color: "var(--ink-faint)" }}>
-        To: {brief.to_emails} - use <code>## Title</code> for a section header,{" "}
-        <code>- item</code> for a bullet, <code>**text**</code> for bold.
+        To: {brief.to_emails} - <code>## Section</code>, <code>### Subsection</code>,{" "}
+        <code>#### LABEL</code> for headers - <code>- item</code> for a bullet,{" "}
+        <code>- - item</code> for a nested one - <code>**text**</code> for bold.
       </div>
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
         <button type="button" onClick={handleSave} disabled={sent || isPending}>
