@@ -98,12 +98,30 @@ second full brief:
 
 ## 3. Closing recap (~16:00 UTC / 18:00 CEST, Mon-Fri)
 
-Answers "what actually got done today." Verified against real sources
-(Gmail `in:sent` for today, today's commits, today's calls if any
-transcript exists) - the same discipline as `weekly-recap.md`: every
-distinct thing done gets its own line, no folding several into one
-summarizing sentence. Ends with what carries into tomorrow's morning
-brief, so the loop closes.
+Answers "what's still open, what's done, what's new today" - not a
+prose recap. **Changed 2026-09-12, per Alex**, after the morning
+brief's first run showed the real problem with free-text editing: he
+has to rewrite prose to correct it, and I have to diff his rewrite
+against mine and guess what each change meant. A checklist has no
+ambiguity - so closing is a real page, not an email to edit.
+
+`/closing` on the platform (`https://cs-taupe-omega.vercel.app/closing`)
+lists every open `ledger_tasks` row with a three-way control (Still
+open / Done / Dropped, defaulting to Still open), a small form to add
+a task that came up today, and a free-text box for anything that
+doesn't reduce to a task (a story detail, a call, a reply) - that note
+is saved into Supabase `ledger_closing_notes` for the next real sweep
+to read and fold into the right story file properly (with Gmail
+verification, real thread ids), not applied blind from the note text
+alone.
+
+The trigger's job at closing time is narrower than before: open
+`/closing` is Alex's job, not something to email him. The agent's part
+is the **next** morning or pulse-check sweep - read any unprocessed
+`ledger_closing_notes` rows, apply them to the right story files with
+the same discipline as any other sweep (verify against Gmail/Calendar
+where the note implies something checkable), then mark them
+`processed = true`.
 
 ## Delivery
 
@@ -135,12 +153,14 @@ ledger edits, threading, and validating a reply is really from Alex/Liz
 and not spoofed. Not built - `/brief` already covers pre-send editing;
 revisit only if Alex explicitly asks for post-send editing by reply.
 
-**Midday update and closing recap - parked, 2026-09-12, per Alex.**
-Still send by direct Resend email as before (see git history before
-this note) until Alex decides how he wants to handle those two -
-he asked to do this "one piece at a time," starting with the morning
-brief. Do not change their delivery mechanism or content structure
-without his explicit say-so.
+**Closing recap - moved off email entirely, 2026-09-12, per Alex.**
+No `ledger_briefs` row, no Resend send - see section 3 above. It is a
+page Alex fills himself at `/closing`, not a document sent to him.
+
+**Midday update - still parked, 2026-09-12, per Alex.** Untouched -
+he asked to do this "one piece at a time," morning first, then closing.
+Do not change its delivery mechanism or content structure without his
+explicit say-so.
 
 The weekly recap (`weekly-recap.md`, Saturdays) does not send by email
 at all yet - not asked for explicitly.
