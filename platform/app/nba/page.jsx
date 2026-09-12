@@ -7,28 +7,21 @@ import Avatar from "../people/Avatar";
 
 export const dynamic = "force-dynamic";
 
-// "0 - URGENT" -> 0 ... "4 - STRATEGIC" -> 4; no priority sorts last.
-function priorityRank(p) {
-  const n = parseInt(p, 10);
-  return Number.isNaN(n) ? 5 : n;
-}
-
 function daysBetween(fromIso, toIso) {
   return Math.round((new Date(toIso) - new Date(fromIso)) / 86400000);
 }
 
-function NotionTaskLine({ t }) {
+// One line per open ledger_tasks row - the same table /brief reads
+// "Priorities"/"Open tasks" from and /closing marks Done/Dropped on.
+// No link to click through to (unlike the old Notion task board rows) -
+// just a plain flag of what's open.
+function TaskLine({ t, today }) {
+  const overdue = t.due_date && t.due_date < today;
   return (
-    <a
-      href={t.notion_url}
-      target="_blank"
-      rel="noreferrer"
-      className={`nba-task${priorityRank(t.priority) === 0 ? " nba-task-urgent" : ""}`}
-    >
-      {t.priority ? `${t.priority.slice(0, 1)} · ` : ""}
-      {t.task}
-      {t.status && t.status !== "Not started" ? ` (${t.status.toLowerCase()})` : ""}
-    </a>
+    <div className={`nba-task${overdue ? " nba-task-urgent" : ""}`}>
+      {t.kind} - {t.title}
+      {t.due_date ? ` (${overdue ? "in ritardo dal " : "entro il "}${t.due_date})` : ""}
+    </div>
   );
 }
 
@@ -88,7 +81,7 @@ function StoryRow({ item, today }) {
       {item.tasks.length > 0 && (
         <div className="nba-tasks">
           {item.tasks.map((t) => (
-            <NotionTaskLine key={t.notion_url} t={t} />
+            <TaskLine key={t.id} t={t} today={today} />
           ))}
         </div>
       )}
@@ -162,7 +155,10 @@ export default async function NbaPage() {
       "ledger_stories",
       "?select=id,slug,title,kind,next_action,next_action_date,strategy&or=(next_action.not.is.null,next_action_date.not.is.null)"
     ),
-    supabaseSelect("ledger_notion_tasks", "?select=notion_url,task,status,priority,bucket,channel,story_slug"),
+    // The same backlog /brief pulls "Priorities"/"Open tasks" from and
+    // /closing marks Done/Dropped on - this page is meant to be that
+    // backlog's live view, shrinking and growing as those two touch it.
+    supabaseSelect("ledger_tasks", "?status=eq.open&select=id,title,kind,story_slug,due_date"),
     supabaseSelect(
       "ledger_upcoming_meetings",
       `?start_time=gte.${nowIso}&order=start_time.asc&select=event_id,title,start_time,attendees,story_slug,notes`
@@ -186,12 +182,11 @@ export default async function NbaPage() {
       boardOnly.push(t);
     }
   }
+  const dueRank = (t) => (t.due_date ? t.due_date : "9999-99-99");
   for (const list of tasksBySlug.values()) {
-    list.sort((a, b) => priorityRank(a.priority) - priorityRank(b.priority));
+    list.sort((a, b) => dueRank(a).localeCompare(dueRank(b)));
   }
-  boardOnly.sort(
-    (a, b) => priorityRank(a.priority) - priorityRank(b.priority) || a.task.localeCompare(b.task)
-  );
+  boardOnly.sort((a, b) => dueRank(a).localeCompare(dueRank(b)) || a.title.localeCompare(b.title));
 
   const actionSlugs = new Set();
   const items = stories.map((s) => {
@@ -219,8 +214,8 @@ export default async function NbaPage() {
     .sort((a, b) => (a.date < b.date ? -1 : 1));
   const undated = items.filter((i) => !i.date && i.action);
 
-  // Stories that carry open Notion tasks but no next_action of their own -
-  // the task board knows something the genesis field doesn't yet.
+  // Stories that carry an open ledger_tasks row but no next_action of
+  // their own - the task layer knows something the genesis field doesn't yet.
   const taskOnlySlugs = [...tasksBySlug.keys()].filter((slug) => !actionSlugs.has(slug));
   let taskOnlyStories = [];
   if (taskOnlySlugs.length > 0) {
@@ -240,18 +235,19 @@ export default async function NbaPage() {
         tasks: tasksBySlug.get(s.slug) || [],
       }))
       .sort(
-        (a, b) =>
-          priorityRank(a.tasks[0]?.priority) - priorityRank(b.tasks[0]?.priority) ||
-          a.title.localeCompare(b.title)
+        (a, b) => dueRank(a.tasks[0]).localeCompare(dueRank(b.tasks[0])) || a.title.localeCompare(b.title)
       );
   }
 
   return (
     <>
       <p style={{ fontSize: 13.5, color: "var(--ink-faint)", margin: "0 0 20px" }}>
-        Next best action &mdash; l&apos;unione di genesi e Task Board: ogni storia con una
-        prossima azione, i task Notion collegati, e il resto del board. Ordinato per
-        urgenza. I campi si modificano qui e valgono ovunque.
+        Il backlog - ogni storia con una prossima azione, più ogni task
+        aperto in <code>ledger_tasks</code>. Cala quando <a href="/closing">/closing</a>{" "}
+        segna qualcosa Done, cresce quando <a href="/brief">/brief</a> o{" "}
+        <a href="/closing">/closing</a> aggiungono qualcosa di nuovo - questa
+        pagina non fa altro che leggerlo dal vivo. I campi si modificano qui
+        e valgono ovunque.
       </p>
 
       {meetings.length > 0 && (
@@ -296,9 +292,9 @@ export default async function NbaPage() {
 
       {taskOnlyStories.length > 0 && (
         <Section
-          title="Sul Task Board, senza next-action in genesi"
+          title="Task aperti, senza next-action in genesi"
           count={taskOnlyStories.length}
-          note="Il board le traccia già - la genesi ancora no. Scrivi l'azione qui per allinearle."
+          note="ledger_tasks li traccia già - la genesi ancora no. Scrivi l'azione qui per allinearle."
         >
           {taskOnlyStories.map((i) => (
             <StoryRow key={i.slug} item={i} today={today} />
@@ -316,13 +312,13 @@ export default async function NbaPage() {
 
       {boardOnly.length > 0 && (
         <Section
-          title="Task Board - non legati a una storia"
+          title="Task trasversali - non legati a una storia"
           count={boardOnly.length}
-          note="Ordinati per priorità Notion. Il link apre il task."
+          note="Da ledger_tasks, ordinati per scadenza. Segnali Done o Dropped su /closing."
         >
           <div className="nba-tasks">
             {boardOnly.map((t) => (
-              <NotionTaskLine key={t.notion_url} t={t} />
+              <TaskLine key={t.id} t={t} today={today} />
             ))}
           </div>
         </Section>

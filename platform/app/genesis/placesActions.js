@@ -4,7 +4,9 @@ import { supabaseInsert, supabaseUpdate } from "../../lib/supabase";
 import { revalidatePath } from "next/cache";
 
 // Presence periods are Alex's own record of where he was - entered by
-// hand here, never inferred by any sweep.
+// hand here, never inferred by any sweep. Lives under /genesis (merged
+// 2026-09-12, per Alex - geography is a dimension of the genesis, not a
+// separate thing) - was /places/actions.js.
 export async function addPlace(formData) {
   const place = (formData.get("place") || "").toString().trim();
   if (!place) return;
@@ -16,7 +18,7 @@ export async function addPlace(formData) {
     note: (formData.get("note") || "").toString().trim() || null,
   });
 
-  revalidatePath("/places");
+  revalidatePath("/genesis");
 }
 
 export async function updatePlaceField(formData) {
@@ -28,5 +30,5 @@ export async function updatePlaceField(formData) {
   }
   if (Object.keys(patch).length === 0) return;
   await supabaseUpdate("ledger_places", `?id=eq.${id}`, patch);
-  revalidatePath("/places");
+  revalidatePath("/genesis");
 }

@@ -1,7 +1,10 @@
 import { supabaseSelect } from "../../lib/supabase";
 import { updateGenesisEvent, addGenesisEvent } from "./actions";
+import { addPlace, updatePlaceField } from "./placesActions";
 import { updateStoryNextAction, updateStoryNextActionDate } from "../story/actions";
 import SavedToast from "../people/SavedToast";
+import TableCellInput from "../people/TableCellInput";
+import SaveWatcher from "../people/SaveWatcher";
 import GenesisExplorer from "./GenesisExplorer";
 
 export const dynamic = "force-dynamic";
@@ -28,7 +31,7 @@ export default async function GenesisPage({ searchParams }) {
   const yearParam = searchParams?.year;
   const showAllYears = yearParam === "all";
 
-  const [events, people, stories, notionTasks] = await Promise.all([
+  const [events, people, stories, notionTasks, places, locatedStories] = await Promise.all([
     supabaseSelect(
       "ledger_genesis_events",
       "?order=year.asc.nullslast,month.asc.nullslast,sort_order.asc"
@@ -44,7 +47,26 @@ export default async function GenesisPage({ searchParams }) {
       "ledger_notion_tasks",
       "?story_slug=not.is.null&status=neq.Done&select=notion_url,task,status,priority,story_slug"
     ),
+    // Geography merged in from /places, 2026-09-12, per Alex - "where you
+    // were" is a dimension of the genesis, not a separate thing.
+    supabaseSelect("ledger_places", "?order=start_date.desc.nullslast"),
+    supabaseSelect(
+      "ledger_stories",
+      "?location=not.is.null&select=slug,title,kind,location,start_date,end_date&order=start_date.asc"
+    ),
   ]);
+
+  const placesByLocation = new Map();
+  for (const s of locatedStories) {
+    if (!placesByLocation.has(s.location)) placesByLocation.set(s.location, []);
+    placesByLocation.get(s.location).push(s);
+  }
+  const storiesByPlace = [...placesByLocation.entries()]
+    .map(([place, list]) => {
+      const dates = list.map((s) => s.start_date).filter(Boolean).sort();
+      return { place, list, first: dates[0] || null, last: dates[dates.length - 1] || null };
+    })
+    .sort((a, b) => ((a.last || "") < (b.last || "") ? 1 : -1));
 
   const notionTasksBySlug = new Map();
   for (const t of notionTasks) {
@@ -221,6 +243,75 @@ export default async function GenesisPage({ searchParams }) {
           ))}
         </div>
       )}
+
+      <div className="content wide-content" style={{ marginTop: 20 }}>
+        <h2 style={{ fontWeight: 600, fontSize: 19, margin: "16px 0 4px" }}>
+          Dove sei stato
+        </h2>
+        <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 12px" }}>
+          I periodi della tua vita per luogo (Messico, Italia, Londra...).
+          Li scrivi tu - nessuno sweep li inventa. Le date possono restare
+          vuote finché non le ricordi.
+        </p>
+
+        {places.length === 0 && (
+          <p style={{ color: "var(--ink-faint)" }}>
+            Ancora vuoto - aggiungi il primo periodo qui sotto.
+          </p>
+        )}
+        {places.map((p) => (
+          <div key={p.id} className="entry" style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+            <TableCellInput action={updatePlaceField} id={p.id} name="place" defaultValue={p.place} placeholder="luogo" />
+            <span className="entry-meta" style={{ margin: 0 }}>dal</span>
+            <TableCellInput action={updatePlaceField} id={p.id} name="start_date" defaultValue={p.start_date || ""} type="date" placeholder="inizio" />
+            <span className="entry-meta" style={{ margin: 0 }}>al</span>
+            <TableCellInput action={updatePlaceField} id={p.id} name="end_date" defaultValue={p.end_date || ""} type="date" placeholder="(in corso)" />
+            <TableCellInput action={updatePlaceField} id={p.id} name="note" defaultValue={p.note || ""} placeholder="nota..." />
+          </div>
+        ))}
+
+        <form action={addPlace} className="crm-form" style={{ marginTop: 14 }}>
+          <label className="field-label" htmlFor="f-place">Nuovo periodo</label>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <input id="f-place" name="place" placeholder="es. Città del Messico" required style={{ minWidth: 180 }} />
+            <input name="start_date" type="date" />
+            <input name="end_date" type="date" />
+            <input name="note" placeholder="nota (opzionale)" style={{ flex: 1, minWidth: 160 }} />
+            <button type="submit">Aggiungi</button>
+          </div>
+          <SaveWatcher />
+        </form>
+
+        {storiesByPlace.length > 0 && (
+          <>
+            <h2 style={{ fontWeight: 600, fontSize: 19, margin: "24px 0 4px" }}>
+              Dove sono successe le cose
+            </h2>
+            <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 12px" }}>
+              Derivato dal campo luogo delle storie ({locatedStories.length} storie con
+              un luogo). Il campo si corregge sulla pagina della storia.
+            </p>
+            {storiesByPlace.map(({ place, list, first, last }) => (
+              <div key={place} style={{ marginBottom: 16 }}>
+                <p style={{ fontWeight: 600, margin: "0 0 4px" }}>
+                  {place}{" "}
+                  <span className="entry-meta">
+                    · {list.length} {list.length === 1 ? "storia" : "storie"}
+                    {first ? ` · ${first.slice(0, 7)}${last && last !== first ? ` → ${last.slice(0, 7)}` : ""}` : ""}
+                  </span>
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                  {list.map((s) => (
+                    <a key={s.slug} href={`/story/${s.slug}`} className="list-tab">
+                      {s.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+      </div>
 
       <SavedToast />
     </>
