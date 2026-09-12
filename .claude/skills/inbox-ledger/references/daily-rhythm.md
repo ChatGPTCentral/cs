@@ -112,16 +112,28 @@ brief, so the loop closes.
 edit the wording before it goes out, at least for the first several
 runs - so the trigger instead inserts a new row into Supabase
 `ledger_briefs` (project `hvzmgpdfznjdxnruiqmy`): `kind='morning'`,
-`brief_date`, `subject`, `content` (the plain-text body above),
+`brief_date`, `subject='[Morning Brief] - Your Todo's'`, `content`
+(the plain-text body above),
 `to_emails='alex@thecentral.ai,liz@thecentral.ai'`, `status='draft'`.
 Alex reviews and edits it at `/brief` on the platform
 (`https://cs-taupe-omega.vercel.app/brief`) and presses "Send now"
 when ready - that button calls `/api/send-brief`, a plain Vercel API
-route that sends via Resend directly (needs `RESEND_API_KEY` set on
-Vercel), independent of any agent session. Whatever is in the box at
-send time is exactly what goes out, verbatim - Alex's edit is absolute,
-nothing rewrites it afterward. Still send the same content as a chat
-message too, with a note that the draft is waiting on `/brief`.
+route that sends via Resend directly as **"AI Secretary"**
+(`noreply@app.thecentral.ai`, needs `RESEND_API_KEY` set on Vercel),
+independent of any agent session. Whatever is in the box at send time
+is exactly what goes out, verbatim - Alex's edit is absolute, nothing
+rewrites it afterward. Still send the same content as a chat message
+too, with a note that the draft is waiting on `/brief`.
+
+**Reply-to the sent email - asked about 2026-09-12, not built.** Alex
+asked whether someone (e.g. Liz) could reply to the email itself and
+have that reshape the brief. Technically possible via Resend's inbound-
+email parsing (a receiving route + webhook that reads the reply and
+updates the `ledger_briefs` row or logs a `ledger_pending_facts` entry),
+but real added complexity - parsing free text back into structured
+ledger edits, threading, and validating a reply is really from Alex/Liz
+and not spoofed. Not built - `/brief` already covers pre-send editing;
+revisit only if Alex explicitly asks for post-send editing by reply.
 
 **Midday update and closing recap - parked, 2026-09-12, per Alex.**
 Still send by direct Resend email as before (see git history before

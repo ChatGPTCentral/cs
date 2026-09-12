@@ -104,6 +104,7 @@ export function renderBriefHtml({ subject, dateLabel, content }) {
       : ""
   }
 </td></tr>
+<tr><td style="padding-top:20px; line-height:1px; font-size:1px;">&nbsp;</td></tr>
 ${renderBriefBody(content)}
 <tr><td style="background-color:#f4f4f4; padding:14px 24px; font-size:12px; color:#888888;">
 Draft-only. Nothing above was sent until you pressed Send.

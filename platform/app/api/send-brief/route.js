@@ -44,7 +44,7 @@ export async function POST(request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Brief AI Central <noreply@app.thecentral.ai>",
+      from: "AI Secretary <noreply@app.thecentral.ai>",
       to: toList,
       subject,
       html,
