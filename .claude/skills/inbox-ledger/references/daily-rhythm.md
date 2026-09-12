@@ -18,30 +18,46 @@ sized to a real day (Alex can do more than 3 things, said explicitly
 2026-09-12). Pull from data the mechanical sweeps already maintain, do
 not re-derive from scratch.
 
-**Fixed content structure, per Alex, 2026-09-12** - write in English,
-in this exact order, each a `## ` section:
+**Fixed content structure, per Alex's own rewrite, 2026-09-12** - write
+in English, in this exact order and nesting:
 
 1. Opening line: "Hey there, today is {weekday}, this is what we need
    to do:"
-2. `## Mid-term priorities` - verbatim from `ledger/roadmap.md`, the
-   current month plus the next one
-3. `## Editorial tasks` - beehiiv, LinkedIn newsletter, Substack, idea
-   generation, anything on the editorial calendar
-4. `## Open tasks` - any other open task that is not sales and not
-   partnership (from `ledger_tasks`, `status = open`)
-5. `## Follow-up // Sales conversations` - sales, sponsorship,
-   Passionfroot, brand deals
-6. `## Follow-up // Partnerships & Events` - partnerships,
-   collaborations, events, external stakeholders
-7. `## Follow-up // Others` - anything left over. Say plainly when
+2. `## September's Targets:` (rename per current month) - the fixed
+   monthly targets from `roadmap.md` (e.g. Revenue, AI Library Trials),
+   each as `- Metric: $X (Current: $Y)`. **The target is fixed and
+   comes from `roadmap.md`; the "Current" figure is Alex's own to type
+   each day - never compute or guess it**
+3. `## Priorities` - real near-term priorities, not the whole roadmap -
+   pull from `ledger_tasks` (`status = open`, cross-cutting, no
+   story_slug) rather than reproducing `roadmap.md` verbatim
+4. `## Editorial tasks` - beehiiv, LinkedIn newsletter, Substack, idea
+   generation, the editorial calendar, and the AI Central Voices
+   pipeline (new interviews to send/source - use `### `-free bullets,
+   `[New Interview] :: ...` style is Alex's own convention, keep it)
+5. `## Open tasks` - any other open task that is not sales and not
+   partnership, grouped into `### ` subsections by area (Website,
+   a person/project name, Admin, etc. - whatever `ledger_tasks` groups
+   naturally into that day)
+6. `## Follow-up // Sales conversations` - grouped into `### `
+   subsections (e.g. Affiliate, Brand Deals), and Brand Deals further
+   grouped into `#### ` state labels: OPEN, TO CREATE, STUCK, REVIVE.
+   An empty label under a header is fine - never invent an item to
+   fill it
+7. `## Follow-up // Partnerships & Events` - partnerships,
+   collaborations, events, external stakeholders. Nested nested bullets
+   (`- - `, `- - -`) are fine for grouping sub-items like a list of
+   contacts under one initiative
+8. `## Follow-up // Others` - anything left over. Say plainly when
    nothing is left, never leave the section out silently and never
    invent content to fill it
 
-Write in the small plain-text convention `/brief` renders into HTML
-(see `platform/lib/briefTemplate.js`): `## Title` for a section header,
-`- item` for a bullet (consecutive bullet lines group into one list),
-a blank line to end a bullet group, `**text**` for inline bold (use it
-to mark "Overdue:" or similar).
+Write in the plain-text convention `/brief` renders into HTML (see
+`platform/lib/briefTemplate.js`): `## Section`, `### Subsection`,
+`#### LABEL` for headers at three levels, `- item` for a bullet
+(consecutive bullet lines group into one list, a blank line ends the
+group), `- - item` for a nested bullet (one level per repeated `- `),
+`**text**` for inline bold (e.g. to mark "Overdue:").
 
 Sources for the sections above, same discipline as before - never
 invent a fact or a date:
@@ -57,8 +73,17 @@ invent a fact or a date:
   don't repeat its digest verbatim, just fold in anything Alex needs to
   act on today specifically
 - `ledger_tasks` (`status = open`) and `roadmap.md` for the
-  cross-cutting programs that land in Open tasks / Partnerships &
-  Events above
+  cross-cutting programs and monthly targets above
+
+**On the first real run (2026-09-12), Alex's own rewrite of the draft
+surfaced several ledger corrections this doc's earlier version had
+missed** - see the "Resolve morning-brief diff" commit the same day.
+Take that as a model: when Alex edits a brief instead of just
+approving it, diff his version against what was sent and treat every
+difference as either a structural preference (adopt silently) or a
+possible fact correction (ask, don't assume) - never silently drop
+something that disappeared from his rewrite without checking whether
+it means "done" or just "not today."
 
 ## 2. Midday update (~12:00 UTC / 14:00 CEST, Mon-Fri)
 
