@@ -16,7 +16,35 @@ moment he gives a real preference.**
 Answers "what's on my plate today." Not a single ordered plan - a menu,
 sized to a real day (Alex can do more than 3 things, said explicitly
 2026-09-12). Pull from data the mechanical sweeps already maintain, do
-not re-derive from scratch:
+not re-derive from scratch.
+
+**Fixed content structure, per Alex, 2026-09-12** - write in English,
+in this exact order, each a `## ` section:
+
+1. Opening line: "Hey there, today is {weekday}, this is what we need
+   to do:"
+2. `## Mid-term priorities` - verbatim from `ledger/roadmap.md`, the
+   current month plus the next one
+3. `## Editorial tasks` - beehiiv, LinkedIn newsletter, Substack, idea
+   generation, anything on the editorial calendar
+4. `## Open tasks` - any other open task that is not sales and not
+   partnership (from `ledger_tasks`, `status = open`)
+5. `## Follow-up // Sales conversations` - sales, sponsorship,
+   Passionfroot, brand deals
+6. `## Follow-up // Partnerships & Events` - partnerships,
+   collaborations, events, external stakeholders
+7. `## Follow-up // Others` - anything left over. Say plainly when
+   nothing is left, never leave the section out silently and never
+   invent content to fill it
+
+Write in the small plain-text convention `/brief` renders into HTML
+(see `platform/lib/briefTemplate.js`): `## Title` for a section header,
+`- item` for a bullet (consecutive bullet lines group into one list),
+a blank line to end a bullet group, `**text**` for inline bold (use it
+to mark "Overdue:" or similar).
+
+Sources for the sections above, same discipline as before - never
+invent a fact or a date:
 
 - Real calendar events today (`ledger_upcoming_meetings` / a fresh
   Calendar check) - with a one-line prep note for each if the story it
@@ -28,12 +56,9 @@ not re-derive from scratch:
 - Anything that moved overnight the auto-genesis sweep already found -
   don't repeat its digest verbatim, just fold in anything Alex needs to
   act on today specifically
-- The open cross-cutting programs from `ledger_tasks` and
-  `roadmap.md` that don't have a natural daily trigger of their own
-  (website sections, accounting, the AI Summit NY trip planning,
-  Bristol follow-through, sequencing notes like Awais-then-Rory) -
-  rotate through these rather than listing all of them every day, so
-  they surface regularly without becoming background noise
+- `ledger_tasks` (`status = open`) and `roadmap.md` for the
+  cross-cutting programs that land in Open tasks / Partnerships &
+  Events above
 
 ## 2. Midday update (~12:00 UTC / 14:00 CEST, Mon-Fri)
 
@@ -57,18 +82,31 @@ brief, so the loop closes.
 
 ## Delivery
 
-**Added 2026-09-12, per Alex.** All three touchpoints also send by real
-email via Resend (not the Gmail connector - a separate account, not
-covered by the draft-only rule) - `mcp__Resend__send-email`, from
-`Brief AI Central <noreply@app.thecentral.ai>` (domain verified on
-Resend, region eu-west-1), to `alex@thecentral.ai` and
-`liz@thecentral.ai`. This is in addition to the in-session chat message,
-not a replacement - send both every time. Subject line: "Morning brief -
-{date}" / "Midday update - {date}" / "Closing recap - {date}".
+**Morning brief - changed 2026-09-12, per Alex.** Does not call
+`mcp__Resend__send-email` directly any more. Alex wants to review and
+edit the wording before it goes out, at least for the first several
+runs - so the trigger instead inserts a new row into Supabase
+`ledger_briefs` (project `hvzmgpdfznjdxnruiqmy`): `kind='morning'`,
+`brief_date`, `subject`, `content` (the plain-text body above),
+`to_emails='alex@thecentral.ai,liz@thecentral.ai'`, `status='draft'`.
+Alex reviews and edits it at `/brief` on the platform
+(`https://cs-taupe-omega.vercel.app/brief`) and presses "Send now"
+when ready - that button calls `/api/send-brief`, a plain Vercel API
+route that sends via Resend directly (needs `RESEND_API_KEY` set on
+Vercel), independent of any agent session. Whatever is in the box at
+send time is exactly what goes out, verbatim - Alex's edit is absolute,
+nothing rewrites it afterward. Still send the same content as a chat
+message too, with a note that the draft is waiting on `/brief`.
 
-The weekly recap (`weekly-recap.md`, Saturdays) does not yet send by
-email - not asked for explicitly. Add the same Resend block there if
-Alex wants it too.
+**Midday update and closing recap - parked, 2026-09-12, per Alex.**
+Still send by direct Resend email as before (see git history before
+this note) until Alex decides how he wants to handle those two -
+he asked to do this "one piece at a time," starting with the morning
+brief. Do not change their delivery mechanism or content structure
+without his explicit say-so.
+
+The weekly recap (`weekly-recap.md`, Saturdays) does not send by email
+at all yet - not asked for explicitly.
 
 ## Hard rules
 
