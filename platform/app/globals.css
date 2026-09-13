@@ -1,45 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* Notion's own light palette - white page, near-black warm-gray text,
-   Notion blue for links and actions, near-flat surfaces (border, not
-   shadow, does the separating). */
+/* AI Central "second brain" design system - baby-powder paper, jet-black
+   hairlines, radius 0, fulvous accent. Replaces the old Notion palette,
+   per the BrainRail/Second Brain Mission Control design handoff,
+   2026-09-13. Variable NAMES are kept where an old one already existed,
+   so every page that references e.g. var(--accent) re-themes for free -
+   only the values changed. New tokens (rail, chip, latte, etc.) are
+   additions the handoff calls for that had no old equivalent. */
 :root {
-  --ground: #FFFFFF;
+  --ground: #FFFDFA;
   --surface: #FFFFFF;
-  --surface-2: #F7F7F5;
-  --ink: #37352F;
-  --ink-dim: #787774;
-  --ink-faint: #9B9A97;
-  --line: #E9E9E7;
-  --accent: #2383E2;
-  --accent-ink: #0B6FCA;
-  --accent-wash: #E7F3FE;
+  --surface-2: #F4EFE5;
+  --rail-bg: #FBF7EE;
+  --sunk: #F4EFE5;
+  --row-hover: #FBF6E9;
+  --latte: #FEF7E7;
+
+  --ink: #1A1A1A;
+  --ink-body: #333333;
+  --ink-dim: #4A4A4A;
+  --ink-muted: #6B6B6B;
+  --ink-faint: #9C9C9C;
+
+  --line: #E8E2D4;
+  --border-hair: #E8E2D4;
+  --row-sep: #F1ECE2;
+  --chip-border: #C9C2B4;
+  --avatar-fallback: #EDE8DF;
+
+  --accent: #E48715;
+  --accent-ink: #B26A00;
+  --accent-wash: #FEF7E7;
+  --xanthous: #E7B02F;
+
+  --link: #046BB1;
+
   /* Second axis for the story timeline - moments (bounded events) vs
-     threads (ongoing relationships, which keep --accent). Warm on purpose,
-     so the two read apart at a glance without a third unrelated hue. */
-  --moment: #AD7A1E;
-  --moment-ink: #8A5F13;
-  --moment-wash: #FBF1DF;
+     threads (ongoing relationships). */
+  --moment: #E7B02F;
+  --moment-ink: #91690A;
+  --moment-wash: #FCF2DA;
   /* Network graph's strongest edge - two people on the same real email
-     thread, not hand-tagged. Green (from the AI Central brand palette's
-     asparagus) so it reads apart from --accent (shared story) and the
-     gray dashed shared-org edge at a glance. */
-  --thread-strong: #4A8F3C;
+     thread, not hand-tagged. Reuses the "thread" story-kind hue (azul)
+     so it reads as the same concept everywhere. */
+  --thread-strong: #046BB1;
   /* Genesis "kind" - what a story actually is, separate from its
-     momento/filo axis. Event and sale get their own hue so a physical
-     trip and a relationship thread never look the same at a glance. */
-  --event: #1B7F79;
-  --event-ink: #145F5B;
-  --event-wash: #E4F5F3;
-  --sale: #6E3FA3;
-  --sale-ink: #57318A;
-  --sale-wash: #F1EAFB;
-  /* Semantic only - a story's next-action date gone past, nothing to do
-     with a story's kind or axis, so it needs its own hue. */
-  --danger: #C4402A;
-  --danger-wash: #FBE9E6;
-  --shadow: 0 1px 2px rgba(15,15,15,0.05);
-  --radius: 3px;
+     momento/filo axis. */
+  --event: #2D8879;
+  --event-ink: #1F5F54;
+  --event-wash: #E1F0ED;
+  --sale: #3B4C99;
+  --sale-ink: #2C3973;
+  --sale-wash: #E7EAF6;
+  /* Semantic only - a story's next-action date gone past. */
+  --danger: #BE3B3B;
+  --danger-wash: #F9E7E7;
+  --success: #62A758;
+
+  --shadow: none;
+  --shadow-palette: 0 8px 24px rgba(0,0,0,0.18);
+  --radius: 0;
 }
 
 /* Fixed to the light palette above, on purpose - Alex asked for one white
@@ -58,49 +78,60 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--accent-ink); text-decoration-color: var(--accent); text-underline-offset: 2px; }
-a:hover { text-decoration-thickness: 2px; }
+a { color: var(--link); text-decoration: none; text-underline-offset: 2px; }
+a:hover { text-decoration: underline; }
 
-code { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.9em; background: var(--surface-2); padding: 1px 5px; border-radius: 3px; }
+code { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.9em; background: var(--surface-2); padding: 1px 5px; border-radius: 0; }
 
-.page {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 32px 24px 96px;
-}
+/* ---------- shell: rail + main, replaces the old header.top/.topnav ---------- */
 
-header.top {
+.shell { display: flex; min-height: 100vh; align-items: stretch; }
+.shell-main { flex: 1; display: flex; flex-direction: column; min-width: 0; container-type: inline-size; }
+
+.shell-topbar {
+  height: 40px;
+  min-height: 40px;
+  padding: 0 28px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
-  padding-bottom: 16px;
+  font-size: 12px;
+  color: var(--ink-muted);
   border-bottom: 1px solid var(--line);
 }
-
-.wordmark {
+.shell-breadcrumb { display: flex; align-items: center; gap: 6px; overflow: hidden; white-space: nowrap; }
+.shell-breadcrumb .sep { color: var(--chip-border); }
+.shell-breadcrumb .current { color: var(--ink); font-weight: 600; }
+.shell-dents { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.shell-dent {
+  border: 1px solid var(--ink-body);
+  font-size: 11px;
   font-weight: 700;
-  font-size: 20px;
-  letter-spacing: -0.01em;
-  color: var(--ink);
+  padding: 3px 8px;
+  color: var(--ink-body);
   text-decoration: none;
+  white-space: nowrap;
 }
-.wordmark em { color: var(--accent-ink); font-style: normal; }
+a.shell-dent:hover { text-decoration: none; background: var(--sunk); }
 
-.topnav { display: flex; gap: 18px; font-size: 13.5px; }
-.topnav a { color: var(--ink-dim); text-decoration: none; font-weight: 500; }
-.topnav a:hover { color: var(--accent-ink); }
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 36px 48px 72px;
+  width: 100%;
+}
 
 /* ---------- rendered markdown content ---------- */
 
-.content { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px 32px 32px; }
+.content { background: var(--surface); border: 1px solid var(--line); border-radius: 0; box-shadow: var(--shadow); padding: 8px 32px 32px; }
 
-/* Breaks a content card out of .page's 860px column, for things (the
-   people spreadsheet) that genuinely need the screen's width. */
+/* Breaks a content card out of .page's 880px column, for things (the
+   people spreadsheet) that genuinely need the screen's width. Sized off
+   .shell-main via a container query unit, not the viewport - the rail
+   now eats part of the viewport, so 100vw would run under it. */
 .wide-content {
-  width: 100vw;
+  width: 100cqw;
   max-width: 1400px;
   position: relative;
   left: 50%;
@@ -151,7 +182,7 @@ header.top {
 
 /* ---------- story index list ---------- */
 
-.story-list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.story-list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 0; overflow: hidden; }
 .story-list a {
   display: block;
   background: var(--surface);
@@ -184,7 +215,7 @@ p .field-label { display: inline-block; min-width: 60px; }
   font-size: 14px;
   padding: 9px 11px;
   border: 1px solid var(--line);
-  border-radius: 3px;
+  border-radius: 0;
   background: var(--surface-2);
   color: var(--ink);
 }
@@ -202,7 +233,7 @@ p .field-label { display: inline-block; min-width: 60px; }
   font-weight: 600;
   padding: 8px 16px;
   border: none;
-  border-radius: 3px;
+  border-radius: 0;
   background: var(--accent);
   color: #FFFFFF;
   cursor: pointer;
@@ -221,7 +252,7 @@ p .field-label { display: inline-block; min-width: 60px; }
   font-weight: 600;
   padding: 8px 16px;
   border: none;
-  border-radius: 3px;
+  border-radius: 0;
   background: var(--accent);
   color: #FFFFFF;
   cursor: pointer;
@@ -261,7 +292,7 @@ p .field-label { display: inline-block; min-width: 60px; }
   font-size: 12.5px;
   font-weight: 500;
   padding: 5px 11px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid var(--line);
   background: var(--surface-2);
   color: var(--ink-dim);
@@ -339,7 +370,7 @@ p .field-label { display: inline-block; min-width: 60px; }
   font-size: 12.5px;
   padding: 4px 6px;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0;
   background: transparent;
   color: var(--ink);
 }
@@ -381,14 +412,14 @@ p .field-label { display: inline-block; min-width: 60px; }
   flex: 1;
   height: 20px;
   background: var(--surface-2);
-  border-radius: 3px;
+  border-radius: 0;
 }
 .timeline-bar {
   position: absolute;
   top: 2px;
   bottom: 2px;
   background: var(--accent);
-  border-radius: 3px;
+  border-radius: 0;
   min-width: 4px;
 }
 .timeline-bar-ongoing {
@@ -406,7 +437,7 @@ p .field-label { display: inline-block; min-width: 60px; }
 
 .quarter-card {
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0;
   margin-bottom: 14px;
   overflow: hidden;
   background: var(--surface);
@@ -453,9 +484,9 @@ p .field-label { display: inline-block; min-width: 60px; }
 }
 .quarter-group-title .dot { width: 8px; height: 8px; }
 .quarter-group-title.moments { color: var(--moment-ink); }
-.quarter-group-title.moments .dot { background: var(--moment); border-radius: 2px; }
+.quarter-group-title.moments .dot { background: var(--moment); border-radius: 0; }
 .quarter-group-title.threads { color: var(--accent-ink); }
-.quarter-group-title.threads .dot { background: var(--accent); border-radius: 50%; }
+.quarter-group-title.threads .dot { background: var(--accent); border-radius: 0; }
 
 .axis-chip-list { display: flex; flex-direction: column; gap: 6px; }
 .axis-chip {
@@ -464,7 +495,7 @@ p .field-label { display: inline-block; min-width: 60px; }
   gap: 8px;
   font-size: 13px;
   padding: 5px 8px;
-  border-radius: 5px;
+  border-radius: 0;
   line-height: 1.35;
 }
 .axis-chip.moment { background: var(--moment-wash); }
@@ -499,7 +530,7 @@ p .field-label { display: inline-block; min-width: 60px; }
   top: 5px;
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--accent);
 }
 .ray-line {
@@ -513,7 +544,7 @@ p .field-label { display: inline-block; min-width: 60px; }
 .axis-select {
   font-size: 11px;
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 0;
   background: var(--surface);
   color: var(--ink-dim);
   padding: 2px 4px;
@@ -529,7 +560,7 @@ p .field-label { display: inline-block; min-width: 60px; }
   font-size: 13.5px;
   font-weight: 600;
   padding: 10px 18px;
-  border-radius: 6px;
+  border-radius: 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   opacity: 0;
   transform: translateY(8px);
@@ -549,15 +580,6 @@ p .field-label { display: inline-block; min-width: 60px; }
 .review-discard { background: none; color: var(--ink-dim); border-color: var(--line); }
 @media (max-width: 720px) {
   .review-row { grid-template-columns: 1fr; }
-}
-
-footer.snapshot-note {
-  margin-top: 36px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  font-size: 12.5px;
-  color: var(--ink-faint);
-  max-width: 64ch;
 }
 
 /* Genesis timeline - one straight rail per year, month labels locked to
@@ -618,7 +640,7 @@ footer.snapshot-note {
 .genesis-entry {
   padding: 14px 16px;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0;
   background: var(--surface-2);
 }
 .genesis-entry .table-cell-input { width: 100%; }
@@ -646,7 +668,7 @@ footer.snapshot-note {
   gap: 6px;
   font-size: 12.5px;
   padding: 3px 10px 3px 3px;
-  border-radius: 999px;
+  border-radius: 0;
   background: var(--accent-wash);
   color: var(--accent-ink);
   text-decoration: none;
@@ -706,7 +728,7 @@ footer.snapshot-note {
   align-items: center;
   gap: 6px;
   padding: 5px 10px 5px 18px;
-  border-radius: var(--radius);
+  border-radius: 0;
   font-size: 13px;
   color: var(--ink-dim);
 }
@@ -757,7 +779,7 @@ footer.snapshot-note {
 .genesis-story-card {
   border: 1px solid var(--line);
   border-left: 3px solid var(--ink-faint);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 8px 12px;
   display: flex;
   flex-direction: column;
@@ -824,7 +846,7 @@ footer.snapshot-note {
   letter-spacing: 0.03em;
   color: var(--danger);
   background: var(--danger-wash);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 1px 5px;
   white-space: nowrap;
 }
@@ -882,7 +904,7 @@ footer.snapshot-note {
   font-size: 13px;
   padding: 6px 10px;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0;
   min-width: 180px;
 }
 .network-toggle {
@@ -906,7 +928,7 @@ footer.snapshot-note {
 .network-story-panel {
   margin-top: 12px;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 12px 14px;
   background: var(--surface-2);
 }
@@ -955,7 +977,7 @@ footer.snapshot-note {
   font-size: 11px;
   color: var(--ink-faint);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 1px 6px;
   white-space: nowrap;
 }
@@ -997,7 +1019,7 @@ footer.snapshot-note {
 .content mark {
   background: var(--accent-wash, #e8f1ec);
   color: inherit;
-  border-radius: 2px;
+  border-radius: 0;
   padding: 0 2px;
 }
 
@@ -1025,7 +1047,7 @@ footer.snapshot-note {
   border: 1px dashed var(--line);
   background: none;
   color: #6C4CF1;
-  border-radius: var(--radius);
+  border-radius: 0;
   font-size: 12px;
   line-height: 1;
   padding: 2px 6px;
@@ -1041,7 +1063,7 @@ footer.snapshot-note {
   z-index: 5;
   background: #232329;
   border: 1px solid #43434a;
-  border-radius: 6px;
+  border-radius: 0;
   padding: 8px 10px;
   max-width: 220px;
   pointer-events: auto;
@@ -1079,4 +1101,122 @@ footer.snapshot-note {
   font-size: 13px;
   width: 100%;
   margin-top: 2px;
+}
+
+/* ---------- BrainRail: the left rail shell ---------- */
+/* Reference: design_handoff_second_brain/BrainRail.dc.html, 2026-09-13 */
+
+.rail {
+  width: 232px;
+  min-width: 232px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--rail-bg);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--ink-body);
+}
+.rail-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 16px 14px 12px;
+}
+.rail-brand img { width: 24px; height: 24px; display: block; }
+.rail-brand-name { font-size: 13.5px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+.rail-brand-eyebrow { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-faint); margin-top: 2px; }
+
+.rail-search,
+.rail-capture {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 14px 6px;
+  height: 30px;
+  padding: 0 9px;
+  cursor: pointer;
+  font-family: inherit;
+  background: var(--ground);
+  border: 1px solid var(--ink-body);
+  color: inherit;
+  width: calc(100% - 28px);
+}
+.rail-search span { font-size: 12px; color: var(--ink-muted); }
+.rail-capture {
+  margin-bottom: 10px;
+  border: 1px dashed var(--chip-border);
+  background: transparent;
+}
+.rail-capture span { font-size: 12px; font-weight: 600; color: var(--ink-body); }
+.rail-capture:hover { border-color: var(--accent); background: var(--latte); }
+.rail-capture:disabled { cursor: not-allowed; opacity: 0.6; }
+.rail-capture:disabled:hover { border-color: var(--chip-border); background: transparent; }
+.rail-kbd {
+  margin-left: auto;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--ink-dim);
+  border: 1px solid var(--chip-border);
+  padding: 1px 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rail-nav { flex: 1; display: flex; flex-direction: column; overflow-y: auto; }
+.rail-group-label {
+  margin: 14px 0 3px;
+  padding: 0 14px 0 17px;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+}
+.rail-item {
+  height: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-dim);
+  background: transparent;
+  border-left: 3px solid transparent;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.rail-item:hover { background: var(--sunk); text-decoration: none; }
+.rail-item svg { color: var(--ink-faint); flex-shrink: 0; }
+.rail-item span.rail-item-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rail-item .rail-count { margin-left: auto; font-size: 11px; font-weight: 600; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.rail-item.active {
+  background: var(--latte);
+  border-left-color: var(--accent);
+  color: var(--ink);
+  font-weight: 700;
+}
+.rail-item.active svg { color: var(--ink); }
+.rail-item.active:hover { background: var(--latte); }
+
+.rail-footer { border-top: 1px solid var(--line); padding: 8px 0 12px; }
+.rail-identity { display: flex; align-items: center; gap: 9px; padding: 10px 14px 0 17px; }
+.rail-identity-mark {
+  width: 24px; height: 24px;
+  background: var(--ink-body);
+  color: var(--latte);
+  font-size: 9.5px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.rail-identity-name { font-size: 12px; font-weight: 600; color: var(--ink); }
+.rail-identity-email { font-size: 10.5px; color: var(--ink-faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+@media (max-width: 860px) {
+  .rail { display: none; }
 }

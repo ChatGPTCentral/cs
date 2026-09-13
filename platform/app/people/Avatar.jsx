@@ -8,14 +8,15 @@ export default function Avatar({ name, photoUrl, size = 28 }) {
   const style = {
     width: size,
     height: size,
-    borderRadius: "50%",
+    borderRadius: 0,
+    border: "1px solid var(--border-hair)",
     flex: `0 0 ${size}px`,
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
     fontSize: size * 0.42,
     fontWeight: 600,
-    background: "var(--surface-2)",
+    background: "var(--avatar-fallback)",
     color: "var(--ink-faint)",
     overflow: "hidden",
   };

@@ -14,7 +14,7 @@ export default function CompanyLogo({ src, name, size = 20 }) {
       alt=""
       width={size}
       height={size}
-      style={{ borderRadius: 4, objectFit: "contain", background: "#fff", border: "1px solid var(--line)", flex: `0 0 ${size}px` }}
+      style={{ borderRadius: 0, objectFit: "contain", background: "#fff", border: "1px solid var(--line)", flex: `0 0 ${size}px` }}
       onError={() => setFailed(true)}
     />
   );

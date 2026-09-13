@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <title>Second brain mission control · AI Central</title>
+  <link rel="stylesheet" href="_ds/ai-central-media-official-design-system-019dc18e-f216-7d94-bd9f-f65518d6ec82/colors_and_type.css">
+  <script src="_ds/ai-central-media-official-design-system-019dc18e-f216-7d94-bd9f-f65518d6ec82/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:#E9E5DC;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:#046BB1;text-decoration:none} a:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}
+    .dv-turn{padding:40px 44px 32px;border-bottom:2px solid #B8B0A0;scroll-margin-top:16px}
+    .dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 8px}
+    .dv-tid{font:800 11px Inter,system-ui,sans-serif;padding:4px 8px;background:#333333;color:#FFFDFA;text-decoration:none}
+    .dv-tname{font:800 22px/1.2 Inter,system-ui,sans-serif;color:#1A1A1A;letter-spacing:-0.02em}
+    .dv-opts{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+    .dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px}
+    .dv-oid{font:800 11px Inter,system-ui,sans-serif;padding:4px 8px;background:#333333;color:#FFFDFA;text-decoration:none}
+    .dv-olabel{display:flex;align-items:baseline;gap:10px;font:400 12.5px/1.4 Inter,system-ui,sans-serif;color:#6B6B6B}
+    .dv-olabel b{font-weight:700;color:#1A1A1A}
+    .dv-card{flex:none;min-width:1440px;background:#FFFDFA;border:1px solid #B8B0A0;box-shadow:0 3px 14px rgba(0,0,0,0.1);overflow:hidden;display:flex;align-items:stretch}
+    .dv-opt:target .dv-oid{background:#E48715}
+    .dv-next{margin:26px 0 0;font:13px/1.5 Inter,system-ui,sans-serif;color:#6B6B6B;max-width:900px}
+  </style>
+</helmet>
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Second brain mission control · first pass</span></div>
+  <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px;max-width:1240px;margin:0 0 28px;font-size:13px;line-height:1.55;color:#4A4A4A">
+    <div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:#9C9C9C;margin-bottom:6px">What changes</div>The 13-link top bar becomes a 232px paper rail with three groups: <b style="color:#1A1A1A">Today</b> (the daily loop - - Today, Brief, Closing), <b style="color:#1A1A1A">Brain</b> (Stories, People, Companies, Genesis, Network) and <b style="color:#1A1A1A">Queues</b> (review people, link proposals, leads). Home is no longer the whole backlog: it answers the three things you picked - - meetings, overdue, open tasks - - and the rest of the board is one line at the bottom. Every value that Supabase holds stays editable in place, Notion-style: plain text until hovered.</div>
+    <div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:#9C9C9C;margin-bottom:6px">Visual system</div>AI Central tokens, calm register: baby powder page, cosmic latte for the active row and table header bands, jet black 1px frames only where a plate needs to read as "the thing" (today's meetings, the command palette). Radius 0. Inter 13-14px body, 30px/800 titles, 10px eyebrows. Fulvous is the one accent (active nav bar, capture); azul for links; persian red only for overdue. Story kinds keep their four hues: xanthous moment, azul thread, viridian event, marian blue sale.</div>
+    <div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:#9C9C9C;margin-bottom:6px">Assumptions</div>English copy throughout (today's Italian labels translated). Real names and tasks from <code style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;background:#F4EFE5;padding:1px 4px">_index.md</code> as of 8-13 Sep; meetings are real past calls re-dated to today for the mock. No emoji (brand rule; the ledger's section emoji become eyebrows). Compare with <a href="Current%20Inbox%20Ledger%20(Recreation).dc.html">today's platform</a>.</div>
+  </div>
+  <div class="dv-opts">
+
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><b>Today</b> · the home. Rail + one document column: meetings plate, overdue, open tasks, then the rest of the board in one line</div>
+      <div class="dv-card" style="width:1440px" data-screen-label="1a Today">
+        <dc-import name="BrainRail" active="Today" hint-size="232px,980px"></dc-import>
+        <main style="flex:1;min-width:0;background:#FFFDFA;display:flex;flex-direction:column">
+          <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:12px;color:#6B6B6B">
+            <span><span style="color:#1A1A1A;font-weight:600">Today</span></span>
+            <span style="display:flex;align-items:center;gap:14px"><span>Ledger read 07:30 · <a href="#">refresh with /ledger</a></span><span style="display:inline-flex;align-items:center;gap:6px;border:1px solid #333333;padding:3px 8px;font-size:11px;font-weight:700;color:#1A1A1A">Morning brief sent <span style="color:#62A758">✓</span></span></span>
+          </div>
+          <div style="max-width:880px;width:100%;margin:0 auto;padding:36px 48px 72px;box-sizing:border-box">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9C9C9C">Saturday · 13 September 2026 · week 37</div>
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:6px;flex-wrap:wrap">
+              <h1 style="margin:0;font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#1A1A1A">Today</h1>
+              <div style="display:inline-flex;border:1px solid #333333;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">
+                <span style="padding:6px 12px">3 meetings</span>
+                <span style="padding:6px 12px;border-left:1px solid #333333;color:#BE3B3B">9 overdue</span>
+                <span style="padding:6px 12px;border-left:1px solid #333333">8 open tasks</span>
+                <span style="padding:6px 12px;border-left:1px solid #333333;color:#6B6B6B;font-weight:500">your move on 6</span>
+              </div>
+            </div>
+            <p style="margin:10px 0 0;font-size:14px;line-height:1.5;color:#4A4A4A;max-width:62ch">Three calls, all about the same two threads: the GTA whitepaper and Informa. The media kit is still the thing blocking three sends.</p>
+
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin:36px 0 10px"><span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#1A1A1A">Meetings <span style="color:#9C9C9C;margin-left:6px">3</span></span><a href="#" style="font-size:12px">Open calendar ↗</a></div>
+            <div style="border:1px solid #333333;background:#FFFFFF">
+              <div style="display:grid;grid-template-columns:76px 1fr auto;gap:0 16px;padding:14px 18px;border-bottom:1px solid #E8E2D4;align-items:start">
+                <div><div style="font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">11:00</div><div style="font-size:10.5px;color:#9C9C9C;margin-top:2px">45 min · Meet</div></div>
+                <div style="min-width:0">
+                  <div style="font-size:14px;font-weight:600;color:#1A1A1A">GTA AI Pulse · whitepaper check-in</div>
+                  <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+                    <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.45;color:#4A4A4A"><img src="assets/photo-person-1.jpg" alt="" style="width:22px;height:22px;object-fit:cover;filter:grayscale(1);flex-shrink:0;border:1px solid #333333"><span><a href="#" style="font-weight:600;color:#1A1A1A">Marc Duke</a> · Duke Connect - - gave you the green light to run the whitepaper independently; wants to be cc'd on anything to Russ, "not a bottleneck"</span></div>
+                    <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.45;color:#4A4A4A"><span style="width:22px;height:22px;background:#EDE8DF;color:#4A4A4A;font-size:9.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">TA</span><span><a href="#" style="font-weight:600;color:#1A1A1A">Tsvetelin Anastasov</a> · ThinkRevOps - - in Bulgaria then Montenegro until 20 Sep, online only; his survey piece was the late one</span></div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><a href="#" style="font-size:12px;font-weight:600;border:1px solid #333333;padding:4px 9px;color:#1A1A1A;white-space:nowrap">GTA whitepaper →</a><span style="font-size:11px;color:#9C9C9C;white-space:nowrap">draft sent Fri · waiting on their notes</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:76px 1fr auto;gap:0 16px;padding:14px 18px;border-bottom:1px solid #E8E2D4;align-items:start">
+                <div><div style="font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">15:30</div><div style="font-size:10.5px;color:#9C9C9C;margin-top:2px">30 min · Zoom</div></div>
+                <div style="min-width:0">
+                  <div style="font-size:14px;font-weight:600;color:#1A1A1A">AI Central & NetLine · business catch-up</div>
+                  <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+                    <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.45;color:#4A4A4A"><span style="width:22px;height:22px;background:#EDE8DF;color:#4A4A4A;font-size:9.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">DF</span><span><a href="#" style="font-weight:600;color:#1A1A1A">Daniel Frignito</a> · NetLine - - met in person 4 times; referred you to Awais for the AI Summit NY media-partner slot</span></div>
+                    <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.45;color:#4A4A4A"><span style="width:22px;height:22px;background:#EDE8DF;color:#4A4A4A;font-size:9.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">AP</span><span><a href="#" style="font-weight:600;color:#1A1A1A">Aneeka Patel</a> · NetLine - - fixed the four broken TradePub links on 8 Sep; still waiting for your yes on pausing the ChatGPT Central library</span></div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><a href="#" style="font-size:12px;font-weight:600;border:1px solid #333333;padding:4px 9px;color:#1A1A1A;white-space:nowrap">Netline →</a><span style="font-size:11px;color:#BE3B3B;white-space:nowrap">1 reply owed · payout question never asked</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:76px 1fr auto;gap:0 16px;padding:14px 18px;align-items:start">
+                <div><div style="font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">16:00</div><div style="font-size:10.5px;color:#9C9C9C;margin-top:2px">30 min · Lunacal</div></div>
+                <div style="min-width:0">
+                  <div style="font-size:14px;font-weight:600;color:#1A1A1A">Discovery call · Nicolia Wiles</div>
+                  <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+                    <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.45;color:#4A4A4A"><img src="assets/photo-person-2.jpg" alt="" style="width:22px;height:22px;object-fit:cover;filter:grayscale(1);flex-shrink:0;border:1px solid #333333"><span><a href="#" style="font-weight:600;color:#1A1A1A">Nicolia Wiles</a> · Prime Tech PR, Austin - - represents Daniel Fallmann (Mindbreeze); four unanswered check-ins before you replied on 4 Sep; you postponed the thread a week</span></div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><a href="#" style="font-size:12px;font-weight:600;border:1px solid #333333;padding:4px 9px;color:#1A1A1A;white-space:nowrap">Mindbreeze →</a><span style="font-size:11px;color:#9C9C9C;white-space:nowrap">$999 issue or free web post - - your terms from 14 Jul</span></div>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin:36px 0 6px"><span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#1A1A1A">Overdue <span style="color:#BE3B3B;margin-left:6px">9</span></span><span style="font-size:12px;color:#9C9C9C">oldest first · tick = done in the ledger</span></div>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#1A1A1A"><span style="width:13px;height:13px;border:1px solid #333333"></span><span>Respond to Marc Duke's Intelligence.com invite</span><a href="#" style="font-size:12px">Mark Duke (Intros)</a><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">8d late</span></div>
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#1A1A1A"><span style="width:13px;height:13px;border:1px solid #333333"></span><span>Reply or decline the newsletter swap</span><a href="#" style="font-size:12px">PickAndPartner</a><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">8d late</span></div>
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#1A1A1A"><span style="width:13px;height:13px;border:1px solid #333333"></span><span>Finalize the media kit and case studies <span style="font-size:11px;font-weight:700;color:#B26A00;background:#FEF7E7;border:1px solid #E48715;padding:1px 6px;margin-left:8px">blocks 3 sends</span></span><span style="font-size:12px;color:#9C9C9C">no story</span><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">7d late</span></div>
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#1A1A1A"><span style="width:13px;height:13px;border:1px solid #333333"></span><span>Weekend support sweep: AI 101, Feedback, Issues</span><span style="font-size:12px;color:#9C9C9C">support · Kris</span><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">7d late</span></div>
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0 9px 22px;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#4A4A4A"><span style="width:13px;height:13px;border:1px solid #C9C2B4"></span><span>Send media kit to Belle + Mat</span><a href="#" style="font-size:12px">Prophet</a><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">6d late</span></div>
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0 9px 22px;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#4A4A4A"><span style="width:13px;height:13px;border:1px solid #C9C2B4"></span><span>Send media kit to Becca</span><a href="#" style="font-size:12px">Antidote</a><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">6d late</span></div>
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0 9px 22px;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#4A4A4A"><span style="width:13px;height:13px;border:1px solid #C9C2B4"></span><span>Send media kit to Randy</span><a href="#" style="font-size:12px">Emergent / PartnerStack</a><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">6d late</span></div>
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#1A1A1A"><span style="width:13px;height:13px;border:1px solid #333333"></span><span>Send the WhatsApp follow-up to Jessica Doss</span><a href="#" style="font-size:12px">Guideline AI / Jessica</a><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">6d late</span></div>
+              <div style="display:grid;grid-template-columns:18px 1fr 170px 64px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13.5px;color:#1A1A1A"><span style="width:13px;height:13px;border:1px solid #333333"></span><span>Decide the new carousel batch for Marwan <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6B6B6B;border:1px solid #C9C2B4;padding:1px 5px;margin-left:8px">decision</span></span><a href="#" style="font-size:12px">Marwan acquihire</a><span style="text-align:right;font-size:11px;font-weight:700;color:#BE3B3B;font-variant-numeric:tabular-nums">6d late</span></div>
+            </div>
+
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin:36px 0 8px"><span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#1A1A1A">Open tasks <span style="color:#9C9C9C;margin-left:6px">8</span></span><span style="font-size:12px;color:#9C9C9C">from ledger_tasks · Done or Dropped happens in <a href="#">Closing</a></span></div>
+            <div style="border:1px solid #333333;background:#FFFFFF">
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:7px 14px;background:#FEF7E7;border-bottom:1px solid #333333;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6B6B6B"><span>Task</span><span>Kind</span><span>Story</span><span style="text-align:right">Due</span></div>
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:9px 14px;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A;align-items:center" style-hover="background:#FBF6E9"><span>Sign and return the Awais / Informa agreement</span><span style="font-size:12px;color:#6B6B6B">action</span><a href="#" style="font-size:12.5px">Netline</a><span style="text-align:right;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums">Sun 14 Sep</span></div>
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:9px 14px;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A;align-items:center" style-hover="background:#FBF6E9"><span>Revisit the Mindbreeze thread - - do not restart before</span><span style="font-size:12px;color:#6B6B6B">reminder</span><a href="#" style="font-size:12.5px">Mindbreeze / Prime Tech PR</a><span style="text-align:right;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums">Wed 17 Sep</span></div>
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:9px 14px;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A;align-items:center" style-hover="background:#FBF6E9"><span>Reach out to the two Seven Hills PR contacts about the launch</span><span style="font-size:12px;color:#6B6B6B">action</span><a href="#" style="font-size:12.5px">GTA whitepaper</a><span style="text-align:right;font-size:12px;color:#9C9C9C">once draft is locked</span></div>
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:9px 14px;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A;align-items:center" style-hover="background:#FBF6E9"><span>Get Mitali's replacement contact at GrowthSchool</span><span style="font-size:12px;color:#6B6B6B">action</span><a href="#" style="font-size:12.5px">Mitali // Outskill</a><span style="text-align:right;font-size:12px;color:#9C9C9C">no date</span></div>
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:9px 14px;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A;align-items:center" style-hover="background:#FBF6E9"><span>Bulk-delete the ~26 blanked cold drafts</span><span style="font-size:12px;color:#6B6B6B">action</span><span style="font-size:12px;color:#9C9C9C">-</span><span style="text-align:right;font-size:12px;color:#9C9C9C">no date</span></div>
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:9px 14px;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A;align-items:center" style-hover="background:#FBF6E9"><span>Delete the old Guidde draft by hand</span><span style="font-size:12px;color:#6B6B6B">action</span><a href="#" style="font-size:12.5px">Hod // Guidde</a><span style="text-align:right;font-size:12px;color:#9C9C9C">no date</span></div>
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:9px 14px;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A;align-items:center" style-hover="background:#FBF6E9"><span>Connect the Appeared.in MCP</span><span style="font-size:12px;color:#6B6B6B">wait</span><span style="font-size:12px;color:#9C9C9C">-</span><span style="text-align:right;font-size:12px;color:#9C9C9C">no date</span></div>
+              <div style="display:grid;grid-template-columns:1fr 90px 190px 110px;gap:12px;padding:9px 14px;font-size:13px;color:#1A1A1A;align-items:center" style-hover="background:#FBF6E9"><span>Revive TechEx / Samuel Paternoster</span><span style="font-size:12px;color:#6B6B6B">decision</span><a href="#" style="font-size:12.5px">TechEx / Paternoster</a><span style="text-align:right;font-size:12px;color:#9C9C9C">no date</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:8px;height:34px;border:1px dashed #C9C2B4;padding:0 12px;font-size:13px;color:#9C9C9C;cursor:text" style-hover="border-color:#E48715;background:#FEF7E7"><span style="color:#E48715;font-weight:700">+</span> Capture a task, a note or a decision - - press C anywhere</div>
+
+            <div style="margin-top:40px;padding-top:16px;border-top:1px solid #E8E2D4;font-size:12.5px;line-height:1.7;color:#6B6B6B">Rest of the board: <a href="#">your move on 6 stories</a> (Jorge, AI Hackathon Bristol, Spacebar Studios, Newsletter Traffic Network, GTA whitepaper, Netline) · <a href="#">2 conflicts awaiting your word</a> (InVideo, anything.com) · <a href="#">1 draft blocked</a> (Sam's performance review) · <a href="#">waiting on them, 17</a> · <a href="#">2 open commitments</a></div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a><b>Story · document</b> · Notion-style page: a property block on top, the narrative as the page body, links at the end</div>
+      <div class="dv-card" style="width:1440px" data-screen-label="1b Story document">
+        <dc-import name="BrainRail" active="Stories" hint-size="232px,1180px"></dc-import>
+        <main style="flex:1;min-width:0;background:#FFFDFA;display:flex;flex-direction:column">
+          <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:12px;color:#6B6B6B">
+            <span><a href="#" style="color:#6B6B6B">Stories</a> <span style="margin:0 6px;color:#C9C2B4">/</span> <span style="color:#1A1A1A;font-weight:600">GTA whitepaper</span></span>
+            <span style="display:flex;align-items:center;gap:8px"><a href="#" style="display:inline-flex;align-items:center;border:1px solid #333333;padding:3px 8px;font-size:11px;font-weight:700;color:#1A1A1A">Open in Gmail ↗</a><a href="#" style="display:inline-flex;align-items:center;border:1px solid #333333;padding:3px 8px;font-size:11px;font-weight:700;color:#1A1A1A">On Genesis →</a></span>
+          </div>
+          <div style="max-width:880px;width:100%;margin:0 auto;padding:36px 48px 72px;box-sizing:border-box">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9C9C9C">Project · thread · started 24 Jul 2025 · ongoing</div>
+            <h1 style="margin:6px 0 0;font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#1A1A1A">GTA whitepaper</h1>
+            <p style="margin:10px 0 0;font-size:14px;line-height:1.5;color:#4A4A4A;max-width:64ch">The community-sourced "How AI leaders use AI for GTM" report with Global Tech Advocates. First draft went out Friday; launch is online-first.</p>
+
+            <div style="margin-top:28px;display:grid;grid-template-columns:150px 1fr;row-gap:2px;font-size:13.5px;color:#1A1A1A;align-items:center">
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0">Whose move</span><div style="padding:4px 6px;display:flex;align-items:center;gap:10px" style-hover="background:#F4EFE5"><span style="display:inline-flex;border:1px solid #333333;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em"><span style="padding:3px 8px;background:#333333;color:#E7B02F">Waiting on them</span><span style="padding:3px 8px;color:#1A1A1A">idle 2d</span></span><span style="color:#4A4A4A">Marc Duke and Tsvetelin owe feedback on the draft</span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0">Kind</span><div style="padding:4px 6px;display:flex;align-items:center;gap:10px" style-hover="background:#F4EFE5"><span>Project</span><span style="display:inline-flex;border:1px solid #333333;font-size:11px;font-weight:700"><span style="padding:2px 8px;color:#6B6B6B">moment</span><span style="padding:2px 8px;background:#333333;color:#FFFDFA;border-left:1px solid #333333">thread</span></span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0">Company</span><div style="padding:4px 6px;display:flex;align-items:center;gap:8px" style-hover="background:#F4EFE5"><span style="width:18px;height:18px;background:#333333;color:#FFFDFA;font-size:8px;font-weight:800;display:inline-flex;align-items:center;justify-content:center">GT</span><a href="#" style="color:#1A1A1A;font-weight:600">Global Tech Advocates</a><span style="color:#9C9C9C;font-size:12px">partner · Seven Hills is their PR</span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0">Location</span><div style="padding:4px 6px" style-hover="background:#F4EFE5">London <span style="color:#9C9C9C">· online-first launch, in-person 15 Sep if timing works</span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0">Dates</span><div style="padding:4px 6px;display:flex;align-items:center;gap:8px;font-variant-numeric:tabular-nums" style-hover="background:#F4EFE5"><span>24 Jul 2025</span><span style="color:#9C9C9C">→</span><span style="color:#9C9C9C">ongoing</span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0">Next action</span><div style="padding:4px 6px;display:flex;align-items:center;gap:10px" style-hover="background:#F4EFE5"><span style="flex:1">Hold - - wait for Marc Duke and Tsvetelin's feedback</span><span style="font-size:12px;font-weight:700;border:1px solid #333333;padding:2px 8px;font-variant-numeric:tabular-nums;white-space:nowrap">Wed 17 Sep</span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0;align-self:start;margin-top:4px">Strategy</span><div style="padding:6px 8px;border-left:2px solid #E48715;background:#FEF7E7;line-height:1.5;color:#1A1A1A" style-hover="background:#FDF1D9">Run it independently, keep Marc cc'd. Online-first launch, then Seven Hills for the PR push. Second edition end of October as a member survey, not another live call. <span style="font-size:11px;color:#B26A00;font-weight:700;margin-left:6px">yours - - every draft starts here</span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0;align-self:start;margin-top:4px">People</span><div style="padding:4px 6px;display:flex;flex-wrap:wrap;gap:6px" style-hover="background:#F4EFE5">
+                <a href="#" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #C9C2B4;padding:3px 8px 3px 3px;font-size:12.5px;color:#1A1A1A;font-weight:500"><img src="assets/photo-person-1.jpg" alt="" style="width:18px;height:18px;object-fit:cover;filter:grayscale(1)">Marc Duke</a>
+                <a href="#" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #C9C2B4;padding:3px 8px 3px 3px;font-size:12.5px;color:#1A1A1A;font-weight:500"><span style="width:18px;height:18px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">TA</span>Tsvetelin Anastasov</a>
+                <a href="#" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #C9C2B4;padding:3px 8px 3px 3px;font-size:12.5px;color:#1A1A1A;font-weight:500"><span style="width:18px;height:18px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">RS</span>Russ Shaw</a>
+                <a href="#" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #C9C2B4;padding:3px 8px 3px 3px;font-size:12.5px;color:#1A1A1A;font-weight:500"><span style="width:18px;height:18px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">G</span>Ganapathy</a>
+                <a href="#" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #C9C2B4;padding:3px 8px 3px 3px;font-size:12.5px;color:#1A1A1A;font-weight:500"><span style="width:18px;height:18px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">Z</span>Zoltan</a>
+                <a href="#" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #C9C2B4;padding:3px 8px 3px 3px;font-size:12.5px;color:#1A1A1A;font-weight:500"><span style="width:18px;height:18px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">SS</span>Swetha Sitaraman</a>
+                <span style="display:inline-flex;align-items:center;border:1px dashed #C9C2B4;padding:3px 8px;font-size:12.5px;color:#9C9C9C">+ tag</span>
+              </div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0">Threads</span><div style="padding:4px 6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center" style-hover="background:#F4EFE5"><a href="#" style="font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:600;border:1px solid #333333;padding:2px 7px;color:#1A1A1A">1a0861…18f1 ↗</a><a href="#" style="font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:600;border:1px solid #C9C2B4;padding:2px 7px;color:#4A4A4A">19f60e…1424 ↗</a><a href="#" style="font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:600;border:1px solid #C9C2B4;padding:2px 7px;color:#4A4A4A">19ff67…50c6 ↗</a><span style="font-size:12px;color:#9C9C9C">+2 older</span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding:6px 0">Tasks</span><div style="padding:4px 6px;display:flex;align-items:center;gap:10px" style-hover="background:#F4EFE5"><span style="width:13px;height:13px;border:1px solid #333333;flex-shrink:0"></span><span>Reach out to the two Seven Hills PR contacts about the launch</span><span style="font-size:12px;color:#9C9C9C;margin-left:auto">once the draft is locked</span></div>
+            </div>
+
+            <h2 style="margin:40px 0 12px;font-size:16px;font-weight:800;letter-spacing:-0.02em;color:#1A1A1A">Notes</h2>
+            <div style="font-size:14px;line-height:1.65;color:#333333;display:flex;flex-direction:column;gap:14px">
+              <p style="margin:0"><b style="color:#1A1A1A">Per Alex, 12 Sep.</b> Hold. The first draft went to Marc and Tsvetelin on Friday 11 Sep; both said they would send feedback. No matching Gmail thread yet - - logged from Alex's own statement, not a transcript.</p>
+              <p style="margin:0"><b style="color:#1A1A1A">Check-in call, 9 Sep, real transcript.</b> Alex, Marc Duke and Tsvetelin. Online-first launch agreed (in-person judged too hard for everyone's September). Alex has two existing contacts at <a href="#" style="border-bottom:1px solid rgba(4,107,177,0.35)">Seven Hills</a>, Russ Shaw's PR agency, and will reach out once the PDF is final. Marc: "you've picked it up and breathed life into it, just go for it." Second edition pencilled for 20 Oct - 15 Nov, possibly as a short reader survey. Source: Notion transcript.</p>
+              <p style="margin:0"><b style="color:#1A1A1A">Status check, 31 Aug.</b> Sent inside the "GTA Quarterly AI Pulse" thread, not a fresh draft. That thread was far more active than this file had recorded - - an Aug 25 round where Ganapathy chased and Tsvetelin admitted he was the only one who had not shared his piece.</p>
+              <p style="margin:0"><b style="color:#1A1A1A">Planning call, 20 Jul.</b> Foreword drafted; first edition limited to the original participants; branded Global Tech Advocates; distributed via Seven Hills. Typical production cost £15-20K - - AI Central contributes it free and the group declines sponsorship to protect independence. Related to <a href="#" style="border-bottom:1px solid rgba(4,107,177,0.35)">AI Hackathon Bristol</a> through Marc Duke.</p>
+              <p style="margin:0"><b style="color:#1A1A1A">Origin, 24 Jul 2025.</b> Russ Shaw personally welcomed Alex to Tech London Advocates after a <span style="border-bottom:1px dashed #9C9C9C;color:#6B6B6B" title="not linked yet">London Tech Week</span> panel, cc'ing Marc immediately. The whitepaper plan of 19 Jun 2026 is eleven months into an established relationship, not the start of one.</p>
+            </div>
+
+            <h2 style="margin:40px 0 10px;font-size:16px;font-weight:800;letter-spacing:-0.02em;color:#1A1A1A">Linked</h2>
+            <div style="display:grid;grid-template-columns:150px 1fr;row-gap:10px;font-size:13.5px;align-items:start">
+              <span style="font-size:12.5px;color:#6B6B6B;padding-top:3px">Points here</span><div style="display:flex;flex-wrap:wrap;gap:6px"><a href="#" style="border:1px solid #C9C2B4;padding:3px 9px;font-size:12.5px;color:#1A1A1A;font-weight:500">AI Hackathon Bristol</a><a href="#" style="border:1px solid #C9C2B4;padding:3px 9px;font-size:12.5px;color:#1A1A1A;font-weight:500">Mark Duke (Intros)</a><a href="#" style="border:1px solid #C9C2B4;padding:3px 9px;font-size:12.5px;color:#1A1A1A;font-weight:500">Netline</a></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding-top:3px">Mentioned, not linked</span><div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span style="display:inline-flex;align-items:stretch;border:1px dashed #C9C2B4;font-size:12.5px"><span style="padding:3px 9px;color:#4A4A4A">London Tech Week 2026</span><span style="padding:3px 8px;border-left:1px dashed #C9C2B4;color:#E48715;font-weight:800;cursor:pointer">+</span></span><span style="display:inline-flex;align-items:stretch;border:1px dashed #C9C2B4;font-size:12.5px"><span style="padding:3px 9px;color:#4A4A4A">Seven Hills</span><span style="padding:3px 8px;border-left:1px dashed #C9C2B4;color:#E48715;font-weight:800;cursor:pointer">+</span></span><span style="font-size:12px;color:#9C9C9C">applied on the next /ledger</span></div>
+              <span style="font-size:12.5px;color:#6B6B6B;padding-top:3px">Neighbourhood</span><div style="font-size:13px;color:#4A4A4A">14 nodes within two hops · <a href="#">open in Network →</a></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a><b>Story · dossier</b> · the narrative becomes a dated log in the centre; state, strategy, people and threads live in a right rail that never scrolls away</div>
+      <div class="dv-card" style="width:1440px" data-screen-label="1c Story dossier">
+        <dc-import name="BrainRail" active="Stories" hint-size="232px,1080px"></dc-import>
+        <main style="flex:1;min-width:0;background:#FFFDFA;display:flex;flex-direction:column">
+          <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:12px;color:#6B6B6B;border-bottom:1px solid #E8E2D4">
+            <span><a href="#" style="color:#6B6B6B">Stories</a> <span style="margin:0 6px;color:#C9C2B4">/</span> <span style="color:#1A1A1A;font-weight:600">GTA whitepaper</span></span>
+            <span style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;color:#9C9C9C">saved · 10:41</span><a href="#" style="display:inline-flex;align-items:center;border:1px solid #333333;padding:3px 8px;font-size:11px;font-weight:700;color:#1A1A1A">On Genesis →</a></span>
+          </div>
+          <div style="display:flex;align-items:stretch;flex:1">
+            <div style="flex:1;min-width:0;padding:32px 44px 64px">
+              <div style="display:flex;align-items:center;gap:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9C9C9C"><span>Project</span><span style="color:#C9C2B4">·</span><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:7px;height:7px;background:#046BB1"></span>thread</span><span style="color:#C9C2B4">·</span><span>24 Jul 2025 → ongoing</span><span style="color:#C9C2B4">·</span><span>London</span></div>
+              <h1 style="margin:6px 0 0;font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#1A1A1A">GTA whitepaper</h1>
+              <p style="margin:10px 0 0;font-size:14px;line-height:1.5;color:#4A4A4A;max-width:64ch">The community-sourced "How AI leaders use AI for GTM" report with Global Tech Advocates. First draft went out Friday; launch is online-first.</p>
+
+              <div style="display:flex;align-items:baseline;justify-content:space-between;margin:32px 0 6px"><span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#1A1A1A">Log <span style="color:#9C9C9C;margin-left:6px">newest first</span></span><span style="display:inline-flex;border:1px solid #333333;font-size:11px;font-weight:700"><span style="padding:2px 8px;background:#333333;color:#FFFDFA">all</span><span style="padding:2px 8px;color:#6B6B6B;border-left:1px solid #333333">mail</span><span style="padding:2px 8px;color:#6B6B6B;border-left:1px solid #333333">calls</span><span style="padding:2px 8px;color:#6B6B6B;border-left:1px solid #333333">yours</span></span></div>
+              <div style="display:flex;flex-direction:column">
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #F1ECE2"><div><div style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">12 Sep</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#B26A00;margin-top:3px">per Alex</div></div><div style="font-size:13.5px;line-height:1.55;color:#333333">Hold. First draft went to Marc and Tsvetelin on Friday 11 Sep; both said they would send feedback. No matching Gmail thread yet - - logged from Alex's own statement, not a transcript.</div></div>
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #F1ECE2"><div><div style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">10 Sep</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9C9C9C;margin-top:3px">Gmail · sent</div></div><div style="font-size:13.5px;line-height:1.55;color:#333333">Second nudge to Alejandro Martinez and Jose Carlos Sanchez (Propelling Tech) on the IE Business School event, cc Russ and Liz. "One more nudge... happy to find 15 min." No reply yet. <a href="#" style="font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:600">19ff67…50c6 ↗</a></div></div>
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #F1ECE2"><div><div style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">9 Sep</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9C9C9C;margin-top:3px">Notion · call</div></div><div style="font-size:13.5px;line-height:1.55;color:#333333">GTA AI Pulse check-in with Marc Duke and Tsvetelin. Online-first launch agreed. Alex will reach out to his two contacts at <a href="#">Seven Hills</a> once the PDF is final. Marc: "you've picked it up and breathed life into it, just go for it." Second edition pencilled for 20 Oct - 15 Nov, possibly as a reader survey. Tsvetelin abroad until 20 Sep, online only.</div></div>
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #F1ECE2"><div><div style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">9 Sep</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9C9C9C;margin-top:3px">Gmail · 3 msgs</div></div><div style="font-size:13.5px;line-height:1.55;color:#333333">Pulse check ahead of the call: Alex to Tsvetelin and Marc, Marc replied, Alex replied back cc Tsvetelin. <a href="#" style="font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:600">1a0861…18f1 ↗</a></div></div>
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #F1ECE2"><div><div style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">31 Aug</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9C9C9C;margin-top:3px">Gmail · sent</div></div><div style="font-size:13.5px;line-height:1.55;color:#333333">Status check sent inside the "GTA Quarterly AI Pulse" thread. That thread was far more active than recorded: on 25 Aug Ganapathy chased and Tsvetelin admitted he was the only one who had not shared his piece, promising it "in the next 24hrs." He did not deliver. <a href="#" style="font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:600">19f60e…1424 ↗</a></div></div>
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #F1ECE2"><div><div style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">20 Jul</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9C9C9C;margin-top:3px">Notion · call</div></div><div style="font-size:13.5px;line-height:1.55;color:#333333">Planning call after the roundtable. Foreword drafted; first edition limited to the original participants; branded Global Tech Advocates; distributed via Seven Hills. Production would cost £15-20K - - AI Central contributes it free, the group declines sponsorship. Target launch ~6 Sep.</div></div>
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #F1ECE2"><div><div style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">19 Jun</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9C9C9C;margin-top:3px">Gmail + call</div></div><div style="font-size:13.5px;line-height:1.55;color:#333333">The real launch call - - only Alex and Tsvetelin showed. Survey format locked: "How AI Leaders Use AI for GTM," GTA leads survey design, AI Central brings a 4-person editorial team plus distribution to ~500K readers. In-person London roundtable preferred over a webinar.</div></div>
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0"><div><div style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#1A1A1A">24 Jul 2025</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#9C9C9C;margin-top:3px">Gmail · origin</div></div><div style="font-size:13.5px;line-height:1.55;color:#333333">Russ Shaw personally welcomed Alex to Tech London Advocates after a London Tech Week panel, cc'ing Marc immediately. Marc offered the CreaTech Slack and a first chat within days.</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;margin-top:10px;height:34px;border:1px dashed #C9C2B4;padding:0 12px;font-size:13px;color:#9C9C9C;cursor:text" style-hover="border-color:#E48715;background:#FEF7E7"><span style="color:#E48715;font-weight:700">+</span> Add to the log - - a call, a reply, a decision. Folded into the story on the next sweep</div>
+            </div>
+
+            <aside style="width:320px;flex-shrink:0;background:#FBF7EE;border-left:1px solid #E8E2D4;padding:24px 22px 40px;display:flex;flex-direction:column;gap:22px;font-size:13px;color:#333333">
+              <div style="border:1px solid #333333;background:#FFFFFF">
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#333333;color:#FFFDFA"><span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#E7B02F">Waiting on them</span><span style="font-size:11px;font-weight:700;font-variant-numeric:tabular-nums">idle 2d</span></div>
+                <div style="padding:10px 12px;font-size:12.5px;line-height:1.5;color:#4A4A4A">Marc Duke and Tsvetelin owe feedback on Friday's draft. Last touch was yours, 11 Sep.</div>
+              </div>
+              <div>
+                <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C;margin-bottom:6px">Next action</div>
+                <div style="padding:6px 8px;background:#FFFFFF;border:1px solid #E8E2D4;font-size:13px;line-height:1.5;color:#1A1A1A" style-hover="border-color:#333333">Hold - - wait for Marc Duke and Tsvetelin's feedback</div>
+                <div style="display:flex;align-items:center;gap:8px;margin-top:6px;font-size:12px;color:#6B6B6B">due <span style="font-weight:700;color:#1A1A1A;border:1px solid #333333;padding:1px 7px;font-variant-numeric:tabular-nums">Wed 17 Sep</span><span style="margin-left:auto;color:#9C9C9C">then: Seven Hills PR</span></div>
+              </div>
+              <div>
+                <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C;margin-bottom:6px">Your strategy</div>
+                <div style="padding:8px 10px;background:#FEF7E7;border:1px solid #E48715;font-size:13px;line-height:1.5;color:#1A1A1A">Run it independently, keep Marc cc'd. Online-first launch, then Seven Hills for the PR push. Second edition end of October as a member survey, not another live call.</div>
+                <div style="font-size:11px;color:#B26A00;margin-top:5px;font-weight:600">Your words. Every draft and follow-up starts here; nothing automated edits it.</div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px"><span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C">People · 6</span><a href="#" style="font-size:11px">tag</a></div>
+                <div style="display:flex;flex-direction:column;gap:7px;font-size:12.5px">
+                  <div style="display:flex;align-items:center;gap:8px"><img src="assets/photo-person-1.jpg" alt="" style="width:20px;height:20px;object-fit:cover;filter:grayscale(1)"><a href="#" style="color:#1A1A1A;font-weight:600">Marc Duke</a><span style="color:#9C9C9C;margin-left:auto">Duke Connect · 9 Sep</span></div>
+                  <div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">TA</span><a href="#" style="color:#1A1A1A;font-weight:600">Tsvetelin Anastasov</a><span style="color:#9C9C9C;margin-left:auto">ThinkRevOps · 9 Sep</span></div>
+                  <div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">RS</span><a href="#" style="color:#1A1A1A;font-weight:600">Russ Shaw</a><span style="color:#9C9C9C;margin-left:auto">GTA · 12 Aug</span></div>
+                  <div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">G</span><a href="#" style="color:#1A1A1A;font-weight:600">Ganapathy</a><span style="color:#9C9C9C;margin-left:auto">Vajra Global · 25 Aug</span></div>
+                  <div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">Z</span><a href="#" style="color:#1A1A1A;font-weight:600">Zoltan</a><span style="color:#9C9C9C;margin-left:auto">Future of Work · 15 Jul</span></div>
+                  <div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">SS</span><a href="#" style="color:#1A1A1A;font-weight:600">Swetha Sitaraman</a><span style="color:#9C9C9C;margin-left:auto">cc only</span></div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C;margin-bottom:6px">Threads · 5</div>
+                <div style="display:flex;flex-direction:column;gap:5px;font-size:12px">
+                  <a href="#" style="display:flex;align-items:center;justify-content:space-between;color:#1A1A1A"><span style="font-family:ui-monospace,Menlo,monospace;font-weight:600">1a0861…18f1</span><span style="color:#6B6B6B">live · Open in Gmail ↗</span></a>
+                  <a href="#" style="display:flex;align-items:center;justify-content:space-between;color:#1A1A1A"><span style="font-family:ui-monospace,Menlo,monospace;font-weight:600">19f60e…1424</span><span style="color:#6B6B6B">status checks ↗</span></a>
+                  <a href="#" style="display:flex;align-items:center;justify-content:space-between;color:#1A1A1A"><span style="font-family:ui-monospace,Menlo,monospace;font-weight:600">19ff67…50c6</span><span style="color:#6B6B6B">Alejandro / JC ↗</span></a>
+                  <span style="color:#9C9C9C">+2 historical</span>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C;margin-bottom:6px">Tasks</div>
+                <div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#1A1A1A">
+                  <div style="display:flex;align-items:flex-start;gap:8px"><span style="width:12px;height:12px;border:1px solid #333333;flex-shrink:0;margin-top:2px"></span><span>Reach out to Seven Hills PR about the launch <span style="color:#9C9C9C">· once locked</span></span></div>
+                  <div style="display:flex;align-items:flex-start;gap:8px;color:#9C9C9C"><span style="width:12px;height:12px;background:#333333;flex-shrink:0;margin-top:2px"></span><span style="text-decoration:line-through">Sign off the GTA whitepaper draft</span> <span>· 11 Sep</span></div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C;margin-bottom:6px">Linked</div>
+                <div style="font-size:12.5px;line-height:1.7;color:#4A4A4A">Points here: <a href="#">AI Hackathon Bristol</a>, <a href="#">Mark Duke (Intros)</a>, <a href="#">Netline</a><br>Unlinked mentions: London Tech Week 2026 <span style="color:#E48715;font-weight:800;cursor:pointer">+</span>, Seven Hills <span style="color:#E48715;font-weight:800;cursor:pointer">+</span><br><a href="#">14 nodes in Network →</a></div>
+              </div>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="dv-opt" id="1d">
+      <div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a><b>Command palette</b> · ⌘K over any page: jump to a story, person or company, then act on it without leaving</div>
+      <div class="dv-card" style="width:1440px;height:760px;position:relative" data-screen-label="1d Command palette">
+        <dc-import name="BrainRail" active="Today" hint-size="232px,760px"></dc-import>
+        <main style="flex:1;min-width:0;background:#FFFDFA;display:flex;flex-direction:column">
+          <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:12px;color:#6B6B6B"><span style="color:#1A1A1A;font-weight:600">Today</span><span>Ledger read 07:30</span></div>
+          <div style="max-width:880px;width:100%;margin:0 auto;padding:36px 48px;box-sizing:border-box">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9C9C9C">Saturday · 13 September 2026 · week 37</div>
+            <h1 style="margin:6px 0 0;font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#1A1A1A">Today</h1>
+            <div style="margin:36px 0 10px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#1A1A1A">Meetings <span style="color:#9C9C9C;margin-left:6px">3</span></div>
+            <div style="border:1px solid #333333;background:#FFFFFF;height:150px"></div>
+            <div style="margin:36px 0 10px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#1A1A1A">Overdue <span style="color:#BE3B3B;margin-left:6px">9</span></div>
+            <div style="height:1px;background:#F1ECE2;margin:0 0 30px"></div><div style="height:1px;background:#F1ECE2;margin:0 0 30px"></div><div style="height:1px;background:#F1ECE2"></div>
+          </div>
+        </main>
+        <div style="position:absolute;inset:0;background:rgba(51,51,51,0.45);display:flex;justify-content:center;align-items:flex-start;padding-top:96px">
+          <div style="width:640px;background:#FFFDFA;border:1px solid #333333;box-shadow:0 8px 24px rgba(0,0,0,0.18);font-size:13px;color:#1A1A1A">
+            <div style="display:flex;align-items:center;gap:10px;height:48px;padding:0 16px;border-bottom:1px solid #333333">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+              <span style="font-size:15px;color:#1A1A1A">mar<span style="display:inline-block;width:1.5px;height:17px;background:#E48715;vertical-align:-3px;margin-left:1px"></span></span>
+              <span style="margin-left:auto;font-size:10px;font-weight:700;color:#6B6B6B;border:1px solid #C9C2B4;padding:1px 5px">esc</span>
+            </div>
+            <div style="padding:8px 16px 4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C">Jump to</div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px 7px 13px;background:#FEF7E7;border-left:3px solid #E48715"><img src="assets/photo-person-1.jpg" alt="" style="width:20px;height:20px;object-fit:cover;filter:grayscale(1)"><span style="font-weight:600">Marc Duke</span><span style="color:#6B6B6B">person · Duke Connect</span><span style="margin-left:auto;font-size:11px;color:#6B6B6B">last touch 9 Sep · in 2 stories</span><span style="font-size:10px;font-weight:700;color:#6B6B6B;border:1px solid #C9C2B4;padding:1px 5px">↵</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;border-left:3px solid transparent" style-hover="background:#F4EFE5"><span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;background:#046BB1"></span></span><span style="font-weight:600">Mark Duke (Intros)</span><span style="color:#6B6B6B">story · thread</span><span style="margin-left:auto;font-size:11px;color:#BE3B3B;font-weight:700">1 task 8d late</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;border-left:3px solid transparent" style-hover="background:#F4EFE5"><span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;background:#3B4C99"></span></span><span style="font-weight:600">Marwan acquihire</span><span style="color:#6B6B6B">story · sale</span><span style="margin-left:auto;font-size:11px;color:#BE3B3B;font-weight:700">decision 6d late</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;border-left:3px solid transparent" style-hover="background:#F4EFE5"><span style="width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;background:#9C9C9C"></span></span><span style="font-weight:600">Mark (Marwan)</span><span style="color:#6B6B6B">story · internal</span><span style="margin-left:auto;font-size:11px;color:#6B6B6B">Elizabeth's thread</span></div>
+            <div style="padding:12px 16px 4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C;display:flex;align-items:center;gap:8px">Act on Marc Duke <span style="font-size:10px;font-weight:700;color:#6B6B6B;border:1px solid #C9C2B4;padding:0 4px;text-transform:none;letter-spacing:0">tab</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;border-left:3px solid transparent" style-hover="background:#F4EFE5"><span style="width:20px;text-align:center;color:#6B6B6B">↗</span><span>Open his 3 Gmail threads</span><span style="margin-left:auto;font-size:10px;font-weight:700;color:#6B6B6B;border:1px solid #C9C2B4;padding:1px 5px">⌘↵</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;border-left:3px solid transparent" style-hover="background:#F4EFE5"><span style="width:20px;text-align:center;color:#E48715;font-weight:800">+</span><span>Capture a task about Marc</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;border-left:3px solid transparent" style-hover="background:#F4EFE5"><span style="width:20px;text-align:center;color:#6B6B6B">≡</span><span>Add to today's log <span style="color:#6B6B6B">- - a call, a reply, a detail</span></span></div>
+            <div style="padding:12px 16px 4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9C9C9C">Commands</div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;border-left:3px solid transparent" style-hover="background:#F4EFE5"><span style="width:20px;text-align:center;color:#6B6B6B">›</span><span>New story</span><span style="margin-left:auto;font-size:11px;color:#9C9C9C">title, kind, start date</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:7px 16px 9px;border-left:3px solid transparent" style-hover="background:#F4EFE5"><span style="width:20px;text-align:center;color:#6B6B6B">›</span><span>Go to Closing</span><span style="margin-left:auto;font-size:11px;color:#9C9C9C">mark Done or Dropped</span></div>
+            <div style="display:flex;align-items:center;gap:14px;padding:8px 16px;border-top:1px solid #E8E2D4;background:#FBF7EE;font-size:11px;color:#6B6B6B"><span><b style="color:#1A1A1A">↑↓</b> move</span><span><b style="color:#1A1A1A">↵</b> open</span><span><b style="color:#1A1A1A">tab</b> actions</span><span><b style="color:#1A1A1A">⌘↵</b> Gmail</span><span style="margin-left:auto">searching stories, people, companies, genesis</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dv-opt" id="1e">
+      <div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a><b>Quick capture</b> · press C anywhere: one line in, the brain parses the type, the story, the person and the date - - you confirm, it lands in the ledger</div>
+      <div class="dv-card" style="width:1440px;height:760px" data-screen-label="1e Quick capture">
+        <dc-import name="BrainRail" active="Today" hint-size="232px,760px"></dc-import>
+        <main style="flex:1;min-width:0;background:#FFFDFA;display:flex;flex-direction:column">
+          <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:12px;color:#6B6B6B"><span style="color:#1A1A1A;font-weight:600">Today</span><span>Ledger read 07:30</span></div>
+          <div style="max-width:880px;width:100%;margin:0 auto;padding:36px 48px 0;box-sizing:border-box;flex:1">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9C9C9C">Saturday · 13 September 2026 · week 37</div>
+            <h1 style="margin:6px 0 0;font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#1A1A1A">Today</h1>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin:36px 0 6px"><span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#1A1A1A">Captured today <span style="color:#9C9C9C;margin-left:6px">3</span></span><span style="font-size:12px;color:#9C9C9C">folded into stories on the next sweep · nothing sends</span></div>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:grid;grid-template-columns:52px 74px 1fr 200px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A"><span style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#6B6B6B">10:12</span><span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6B6B6B;border:1px solid #C9C2B4;padding:1px 5px;justify-self:start">note</span><span>Nicolia ghosted the 8 Sep call - - postponed the thread a week</span><a href="#" style="font-size:12px;text-align:right">Mindbreeze / Prime Tech PR</a></div>
+              <div style="display:grid;grid-template-columns:52px 74px 1fr 200px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A"><span style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#6B6B6B">09:48</span><span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#1A1A1A;border:1px solid #333333;padding:1px 5px;justify-self:start">task</span><span>Sign and return the Awais / Informa agreement <span style="color:#6B6B6B">· due Sun 14 Sep</span></span><a href="#" style="font-size:12px;text-align:right">Netline</a></div>
+              <div style="display:grid;grid-template-columns:52px 74px 1fr 200px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #F1ECE2;font-size:13px;color:#1A1A1A"><span style="font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#6B6B6B">07:55</span><span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6B6B6B;border:1px solid #C9C2B4;padding:1px 5px;justify-self:start">decision</span><span>Not attending Media Operator Conference NY - - $2,000, not a brand fit</span><span style="font-size:12px;color:#9C9C9C;text-align:right">no story · goes to genesis</span></div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #333333;background:#FFFFFF">
+            <div style="max-width:880px;width:100%;margin:0 auto;padding:16px 48px 22px;box-sizing:border-box">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                <span style="display:inline-flex;border:1px solid #333333;font-size:11.5px;font-weight:700"><span style="padding:4px 10px;color:#6B6B6B">note</span><span style="padding:4px 10px;background:#333333;color:#FFFDFA;border-left:1px solid #333333">task</span><span style="padding:4px 10px;color:#6B6B6B;border-left:1px solid #333333">decision</span><span style="padding:4px 10px;color:#6B6B6B;border-left:1px solid #333333">wait</span><span style="padding:4px 10px;color:#6B6B6B;border-left:1px solid #333333">reminder</span></span>
+                <span style="font-size:11px;color:#9C9C9C">type detected from the sentence - - override by clicking</span>
+              </div>
+              <div style="margin-top:12px;font-size:17px;line-height:1.4;color:#1A1A1A;padding:6px 0;border-bottom:1px solid #E8E2D4">Ask <span style="background:#FEF7E7;border-bottom:2px solid #E48715">Aneeka</span> for the payout numbers <span style="background:#FEF7E7;border-bottom:2px solid #E48715">before Friday</span><span style="display:inline-block;width:1.5px;height:19px;background:#E48715;vertical-align:-4px;margin-left:1px"></span></div>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;font-size:12.5px">
+                <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid #333333;padding:3px 8px;color:#1A1A1A"><span style="width:7px;height:7px;background:#046BB1"></span><span style="color:#6B6B6B">story</span><b>Netline</b><span style="color:#9C9C9C;font-size:11px">via Aneeka</span><span style="color:#9C9C9C;margin-left:2px;cursor:pointer">×</span></span>
+                <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid #333333;padding:3px 8px 3px 3px;color:#1A1A1A"><span style="width:18px;height:18px;background:#EDE8DF;font-size:8px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;color:#4A4A4A">AP</span><b>Aneeka Patel</b><span style="color:#9C9C9C;font-size:11px">NetLine</span><span style="color:#9C9C9C;margin-left:2px;cursor:pointer">×</span></span>
+                <span style="display:inline-flex;align-items:center;gap:6px;border:1px solid #333333;padding:3px 8px;color:#1A1A1A"><span style="color:#6B6B6B">due</span><b style="font-variant-numeric:tabular-nums">Fri 18 Sep</b><span style="color:#9C9C9C;margin-left:2px;cursor:pointer">×</span></span>
+                <span style="display:inline-flex;align-items:center;gap:6px;border:1px dashed #C9C2B4;padding:3px 8px;color:#6B6B6B;cursor:pointer" style-hover="border-color:#E48715;color:#1A1A1A">+ field</span>
+                <span style="margin-left:auto;font-size:11.5px;color:#B26A00;font-weight:600">The payout question was never asked - - this closes item 4 on Netline</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px">
+                <span style="font-size:11.5px;color:#6B6B6B">Writes to <code style="font-family:ui-monospace,Menlo,monospace;font-size:11px;background:#F4EFE5;padding:1px 4px">ledger_tasks</code> now, appears on Today and on the Netline page. Nothing is sent.</span>
+                <span style="display:flex;align-items:center;gap:8px">
+                  <span style="font-size:12px;font-weight:700;border:1px solid #333333;padding:7px 12px;color:#1A1A1A;cursor:pointer" style-hover="background:#FEF7E7">Save and add another</span>
+                  <span style="display:inline-flex;align-items:stretch;border:1px solid #333333;cursor:pointer"><span style="padding:7px 14px;font-size:12px;font-weight:700;background:#333333;color:#FFFDFA">Save to ledger</span><span style="padding:7px 10px;font-size:12px;font-weight:700;background:#333333;color:#E7B02F;border-left:1px solid rgba(255,253,250,0.25)">↵</span></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  <p class="dv-next">Try next: "make <a class="dv-oid" href="#1a">1a</a> denser, two columns" · "use the dossier rail from <a class="dv-oid" href="#1c">1c</a> on the People page" · "black plate rail instead of paper" · "show Brief and Closing in the new shell"</p>
+</section>
+</x-dc>
+</body>
+</html>

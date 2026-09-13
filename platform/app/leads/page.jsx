@@ -133,7 +133,7 @@ export default async function LeadsPage({ searchParams }) {
                     alt=""
                     width={56}
                     height={56}
-                    style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
+                    style={{ borderRadius: 0, objectFit: "cover", flexShrink: 0 }}
                   />
                 ) : (
                   <div
@@ -141,7 +141,7 @@ export default async function LeadsPage({ searchParams }) {
                     style={{
                       width: 56,
                       height: 56,
-                      borderRadius: "50%",
+                      borderRadius: 0,
                       background: "var(--line)",
                       flexShrink: 0,
                     }}
