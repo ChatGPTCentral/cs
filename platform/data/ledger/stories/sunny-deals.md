@@ -2,6 +2,9 @@
 - query: `label:Sunny->>-Deals`
 - label-id: `Label_5058825882633906580`
 - kind: project
+- status: closed - per Alex, 2026-09-13. The 2026-01/04 cold-outreach
+  pipeline itself is done; a fresh reach-out to the same companies is a
+  separate, new initiative, not this story continuing
 - people: Sam (sam@theaicentral.net) running cold outbound, one thread per
   counterparty
 - last-touch: Sam - on every thread but one, nobody ever replied
@@ -9,9 +12,8 @@
 - last-outbound: 2026-04-02 (sam@theaicentral.net, Framer and a Lovable
   contact)
 - idle: 139 days on the newest thread, most threads are older
-- next-action: **bodies read, 2026-08-30.** 29 companies pitched cold, zero
-  replies except Perplexity. Reactivation needs Alex's call on scope and
-  angle - see the roster below
+- next-action: none - closed. See the roster below for the company list
+  if/when Alex starts a new outreach round
 - commitments: none recorded
 - threads: 49 messages across 29 companies, one entry per company below
 - notes: this was a **pipeline**, not one conversation. The full review below
@@ -64,7 +66,23 @@ Roster - company, contact(s) pitched, last activity, status:
 | Iru | daniel.scott@iru.com | 2026-02-18 | no reply |
 | Framer | zhanna@framer.com | 2026-04-02 | no reply |
 
-**Reactivation drafted, 2026-08-30.** Alex chose: all 29 companies, fresh
+**Correction, per Alex, 2026-09-13 - the entry below was never true.**
+Alex confirmed directly: he never created these 27 drafts, and the plan
+recorded below did not happen. The "Sunny >> Deals" label is real - it is
+Sam's (Sunny's) own early-2026 cold outreach to these 29 companies - but
+the reactivation step never went further than being written into this
+file. This story is now **closed** per Alex's instruction: whatever
+"Sunny Deals" was, it is done, not an open loop to keep tracking.
+
+Alex separately wants to reach out to this same list of people again, as
+a fresh initiative - but that is new work, not a continuation of this
+closed story. See the roster and the one-by-one unpack below for the
+company list to work from when that starts, following the cold-outreach
+research standard in `alex-writing-style` (real research and a picked
+angle per company, small batches - never a repeat of the templated-batch
+mistake this same list caused once already, 2026-08-31).
+
+~~**Reactivation drafted, 2026-08-30.** Alex chose: all 29 companies, fresh
 start (no reference to the old thread), naming ElevenLabs, Gamma, Luma AI
 and Replit as proof. 27 Gmail drafts created, one per company, signed as
 Alex (not Sam - his current status on the outbound pipeline is unknown, so
@@ -79,7 +97,7 @@ drafted:
   under this pipeline
 
 All 27 drafts sit in Gmail, unsent, awaiting Alex's review per the standing
-draft-only rule.
+draft-only rule.~~ **Never actually happened - see the correction above.**
 
 **One-by-one unpack, 2026-09-13, per Alex.** Alex asked for a company-by-company
 breakdown of the 27 reactivation drafts. He treats all 27 as real potential
