@@ -18,6 +18,10 @@
 - next-action: Elizabeth's call - find and send Wellput a copy of the
   newsletter issue for reservation R-1006273 (AI Central x EZ Texting,
   31 Aug 2026), or confirm it never ran
+- **Per Alex, 2026-09-13.** Reminder for tomorrow (14 Sep): review the
+  mail he forwarded to Liz on this thread (R-1006273). Logged as a task,
+  not a decision made yet
+
 - **Pulse check, 2026-09-11.** Alex ha girato una nuova campagna a
   Elizabeth via `1a09212c7785d73d` - stesso pattern del 4/9
 - **Auto-genesis, 2026-09-12 - content read, correcting the pulse-check
