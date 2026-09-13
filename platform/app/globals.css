@@ -276,13 +276,15 @@ p .field-label { display: inline-block; min-width: 60px; }
 
 /* ---------- people spreadsheet ---------- */
 
-.people-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.people-table { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
 .people-table th,
 .people-table td {
   border: 1px solid var(--line);
   padding: 6px 8px;
   text-align: left;
   vertical-align: middle;
+  height: 40px;
+  overflow: hidden;
 }
 .people-table th {
   background: var(--surface-2);
@@ -296,7 +298,38 @@ p .field-label { display: inline-block; min-width: 60px; }
 .people-table th a { color: inherit; text-decoration: none; }
 .people-table th a:hover { color: var(--ink); }
 .people-table tbody tr:nth-child(even) { background: var(--surface-2); }
-.people-table-meta { color: var(--ink-faint); font-size: 12px; white-space: nowrap; }
+.people-table-meta { color: var(--ink-faint); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Every row stays one line tall - a long org name truncates with an
+   ellipsis (full text on hover via the title attribute) and the story
+   pills scroll sideways instead of wrapping to a second line. */
+.people-table td.people-table-org {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+.people-table-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 4px;
+  scrollbar-width: thin;
+}
+.people-table-tags .list-tab { flex: 0 0 auto; }
+.people-table-tags .table-inline-form { flex: 0 0 auto; }
+/* table-layout: fixed needs explicit column widths, or every column
+   gets an equal share regardless of content - star/archive stay tiny,
+   Background gets the most room since it's the longest free text. */
+.people-table col.col-star,
+.people-table col.col-actions { width: 32px; }
+.people-table col.col-name { width: 15%; }
+.people-table col.col-org { width: 12%; }
+.people-table col.col-identity { width: 15%; }
+.people-table col.col-stories { width: 14%; }
+.people-table col.col-lists { width: 9%; }
+.people-table col.col-cadence { width: 9%; }
+.people-table col.col-touched { width: 7%; }
+.people-table col.col-background { width: 20%; }
 
 .table-inline-form { margin: 0; }
 .table-cell-input {

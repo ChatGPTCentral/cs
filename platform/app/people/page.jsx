@@ -197,6 +197,18 @@ export default async function PeoplePage({ searchParams }) {
         {people.length > 0 && (
           <div style={{ overflowX: "auto" }}>
             <table className="people-table">
+              <colgroup>
+                <col className="col-star" />
+                <col className="col-name" />
+                <col className="col-org" />
+                <col className="col-identity" />
+                <col className="col-stories" />
+                <col className="col-lists" />
+                <col className="col-cadence" />
+                <col className="col-touched" />
+                <col className="col-background" />
+                <col className="col-actions" />
+              </colgroup>
               <thead>
                 <tr>
                   <th></th>
@@ -242,31 +254,29 @@ export default async function PeoplePage({ searchParams }) {
                       </form>
                     </td>
                     <td>
-                      <a href={`/people/${p.id}`} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <a href={`/people/${p.id}`} style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
                         <Avatar name={p.name} photoUrl={p.photo_url} size={22} />
-                        <strong>{p.name}</strong>
+                        <strong style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{p.name}</strong>
                       </a>
                     </td>
-                    <td>{p.org || ""}</td>
-                    <td className="people-table-meta">{p.identity || ""}</td>
+                    <td className="people-table-org" title={p.org || ""}>{p.org || ""}</td>
+                    <td className="people-table-meta" title={p.identity || ""}>{p.identity || ""}</td>
                     <td>
-                      {parseStorySlugs(p.stories).length > 0 && (
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 4 }}>
-                          {parseStorySlugs(p.stories).map((slug) => (
-                            <a key={slug} href={`/story/${slug}`} className="list-tab" style={{ fontSize: 11 }}>
-                              {storyTitleBySlug.get(slug) || slug}
-                            </a>
-                          ))}
-                        </div>
-                      )}
-                      <TableCellInput
-                        action={updateStories}
-                        id={p.id}
-                        name="stories"
-                        defaultValue={p.stories || ""}
-                        placeholder="Add a story slug..."
-                        listId="story-slugs"
-                      />
+                      <div className="people-table-tags">
+                        {parseStorySlugs(p.stories).map((slug) => (
+                          <a key={slug} href={`/story/${slug}`} className="list-tab" style={{ fontSize: 11 }}>
+                            {storyTitleBySlug.get(slug) || slug}
+                          </a>
+                        ))}
+                        <TableCellInput
+                          action={updateStories}
+                          id={p.id}
+                          name="stories"
+                          defaultValue={p.stories || ""}
+                          placeholder="Add a story slug..."
+                          listId="story-slugs"
+                        />
+                      </div>
                     </td>
                     <td>
                       <TableCellInput
