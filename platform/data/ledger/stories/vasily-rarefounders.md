@@ -20,6 +20,10 @@
   months, not as a vendor or prospect but as a real personal
   relationship.
 
+  **Per Alex, 2026-09-13.** Reminder for tomorrow (14 Sep): ask Vasily
+  whether to do the 15 Sep call in person instead, since Alex has to go
+  to London anyway. Logged as a task, not a decision made yet
+
   **Notion call sweep, 2026-08-26.** 16 Jul 2026: a group planning call
   (Vasily, Fraya Brinkman - "Freya" in the transcript, Alex, others) for an
   AI Central panel + drinks event on 26 October, with Carta already signed

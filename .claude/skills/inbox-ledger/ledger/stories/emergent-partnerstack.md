@@ -38,6 +38,14 @@
   details at market.partnerstack.com/page/emergentlabsinc. Ball is
   Elizabeth's - no reply yet on her side
 
+  **Clarified by Alex, 2026-09-13.** The call tomorrow (14 Sep) is with
+  Randy Harinandan himself - he is PartnerStack staff (Senior Network
+  Development Manager), not an Emergent employee. "Emergent" is the
+  brand name written in the original email; Randy's actual role at
+  PartnerStack is introducing people to affiliate programs generally,
+  Emergent's included. Nothing in the story record was wrong, this
+  just confirms the reading above is the right one
+
   **Auto-genesis, 2026-09-11.** Elizabeth booked a call with Randy
   directly on his scheduler: "30 Min w/ Randy @ PartnerStack (Elizabeth
   from AI Central)," Monday 14 Sept 2026, 16:00-16:30 UK time (11:00am

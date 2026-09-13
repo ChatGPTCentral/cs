@@ -32,6 +32,10 @@
   `1a081524904c09c5` - Alex is handling that one himself, per his own
   message, not this agent's job
 
+  **Per Alex, 2026-09-13.** Plans to close and sign the Awais/Informa
+  agreement tomorrow, 14 Sep. Logged as a task, not a next-action
+  invented by this agent - see `ledger_tasks`
+
   **Sequencing note, per Alex, 2026-09-12.** Once the Awais/Informa
   agreement above is signed and closed, the next move is
   [[cannes-lions-2026]] - Rory Crone (Senior Director, Marketing, The AI
