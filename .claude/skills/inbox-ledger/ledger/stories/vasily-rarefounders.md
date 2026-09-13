@@ -9,8 +9,10 @@
 - status: open - ongoing friendship, recurs often
 - start: 2025-10-29
 - end: (ongoing)
-- next-action: none - **call booked for next week** (per Alex,
-  2026-09-12) - no action needed until then
+- next-action: none - **call confirmed**, "RareFounders + AI Central
+  (Q4 event)," Tue 15 Sep 2026, 16:00-16:30 CEST, Google Meet (event
+  `1isdeojkrl3cff0ekb62db6r9o`). Attendees: Alex (organizer),
+  Elizabeth, Vasily, Fraya. No action needed until then
 - commitments: none
 - threads: `199ca2bf7e774cb2` (29 Oct 2025), `199ca323e536e6c5` (30 Oct 2025)
 - notes: A close friend of Alex's - per his own account, month-by-month
