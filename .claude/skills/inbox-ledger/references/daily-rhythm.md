@@ -52,6 +52,24 @@ in English, in this exact order and nesting:
    nothing is left, never leave the section out silently and never
    invent content to fill it
 
+**Full enumeration, never a curated subset - per Alex, 2026-09-14.**
+"Ogni report deve avere tutti i task, non una selezione - sta a noi poi
+fare una selezione tra quelli più vicini ai soldi." Every open
+`ledger_tasks` row that belongs in a section goes in, in full - deciding
+which ones matter most this run is Alex's own read of the complete
+list, not a filter this job applies on his behalf. Same rule for the
+weekly plan (`weekly-plan.md`) and any other report built from this
+backlog.
+
+**Do not force-split tasks across days that have no real date behind
+them - per Alex, 2026-09-14**, same feedback, aimed first at
+`weekly-plan.md`'s day-by-day section but the same logic applies here:
+only give a task its own day when a real `due_date` or calendar time
+backs it. "La regola è che ogni giorno cerchiamo di fare il possibile"
+(the rule is each day we try to get done what we can) - the backlog
+sections above are one pool, not a forecast of which day each item gets
+done.
+
 Write in the plain-text convention `/brief` renders into HTML (see
 `platform/lib/briefTemplate.js`): `## Section`, `### Subsection`,
 `#### LABEL` for headers at three levels, `- item` for a bullet

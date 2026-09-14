@@ -33,14 +33,35 @@ something to pad.
 
 ## Structure
 
-1. **Day by day, Monday through Friday** - one block per day: real
-   calendar commitments, and any next-action or task due that specific
-   day. A day with nothing dated goes in as an explicit "nothing dated
-   yet" line, never silently skipped
+**Corrected 2026-09-14, per Alex, after the first real run split open
+tasks across Monday-Friday day-blocks that did not have real per-day
+dates behind them.** His words: "non c'è bisogno di splittare in tre -
+la regola è che ogni giorno cerchiamo di fare il possibile" (no need to
+split across days - the rule is each day we try to get done what we
+can). Do not invent a day assignment for a task just to spread the list
+out. The backlog is one pool; which day something actually gets done is
+worked out day-of, not predicted by this PDF.
+
+1. **Day by day, Monday through Friday** - real calendar commitments
+   and next-actions/tasks that carry an actual `due_date` or a real
+   meeting time land on their real day. Everything else - the open
+   backlog with no specific date - does NOT get force-distributed
+   across the week. Put it in the sections below instead, once, not
+   spread thin to make every day look populated. A day with nothing
+   real dated to it gets an explicit "nothing dated yet" line, never
+   silently skipped and never padded with undated items just to fill it
 2. **Priorities / Editorial / Open tasks / Sales / Partnerships &
    Events / Others** - same sections and grouping as the morning brief
    (`daily-rhythm.md` section 1, points 3-8), since this is the same
-   backlog viewed for the week instead of the day
+   backlog viewed for the week instead of the day. **Every open item in
+   the relevant `ledger_tasks` rows goes in - full enumeration, never a
+   curated subset.** Per Alex, 2026-09-14: "ogni report deve avere
+   tutti i task, non una selezione - sta a noi poi fare una selezione
+   tra quelli più vicini ai soldi" (every report needs every task, not
+   a selection - picking which ones are closest to the money is our
+   job afterward, not this report's). Deciding what matters most is
+   Alex's own read of the full list, not a filter this job applies for
+   him
 3. **Full overdue enumeration** - every story with a `next_action_date`
    before today, one row each (story, next_action text, days late).
    Same rule as `weekly-recap.md`: never collapse a batch (the
