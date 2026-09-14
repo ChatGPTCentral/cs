@@ -8,17 +8,16 @@
   (PR/comms agency, no owned distribution channels). Introduced by
   Richard Lowe (West England Tech Advocates / Hewlett Rand), the same
   connector behind the Bristol AI Hackathon relationship
-- last-touch: Alex - replied to Becca 2026-09-09 14:24, ball is theirs
+- last-touch: Elizabeth - sent Becca the AI Central Voices interview
+  questionnaire link, 2026-09-14 07:00, ball is theirs
 - start: 2026-08-24 (calendar invite for the intro call)
 - last-inbound: 2026-09-09 06:42 (becca.williams@antidotecomms.com, cc
   liz@thecentral.ai, thread `1a081e1502018db9`, message `1a084e7efcc2db2e`)
-- last-outbound: 2026-09-09 14:24 (alex@thecentral.ai, thread
-  `1a081e1502018db9`, message `1a0868e23f38a975`, to
-  becca.williams@antidotecomms.com, cc liz@thecentral.ai)
-- next-action: **send Becca the interview** - per Alex, 2026-09-10. Alex
-  did not name which interview - likely the "PR industry trends" piece he
-  offered Becca on the 26 Aug call (see notes below), not confirmed. Ask
-  Alex which piece before sending if unclear
+- last-outbound: 2026-09-14 07:00 (elizabeth@theaicentral.net, thread
+  `1a081e1502018db9`, message `1a09eb7c10f69c45`, to alex@thecentral.ai,
+  cc becca.williams@antidotecomms.com, liz@thecentral.ai)
+- next-action: none - waiting for Becca to fill out and return the AI
+  Central Voices interview questionnaire Elizabeth sent
 - commitments: send the media kit - done. Per the meeting transcript,
   Antidote committed to send case studies of paid client results in
   return - not yet received
@@ -60,6 +59,12 @@
 
   **Per Alex, 2026-09-10.** Send Becca the interview - task set, which
   interview not specified
+
+  **Auto-genesis, 2026-09-14.** Elizabeth sent Becca the AI Central Voices
+  interview questionnaire link (Google Doc), cc Alex and Liz, resolving
+  the open "send Becca the interview" task. Ball is Becca's to fill it
+  out and return it. Source: thread `1a081e1502018db9`, message
+  `1a09eb7c10f69c45`
 
   **Per Alex, 2026-09-12 - the real purpose of the interview offer.**
   Becca is CEO of Antidote, a PR agency. The free interview is a

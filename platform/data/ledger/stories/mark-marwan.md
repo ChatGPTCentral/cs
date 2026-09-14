@@ -12,8 +12,11 @@
   `1a05382e2fe260ce`, message `1a086e0dc5e9ac31`, to
   elizabeth@theaicentral.net, cc mark@theaicentral.net, mark@thecentral.ai)
 - idle: 0 days
-- next-action: none recorded - wait for Mark to resend the invoice with
-  the two carousel IDs, now with Alex's own nudge on the thread
+- next-action: **stale, corrected 2026-09-14** - the invoice below was
+  resolved 2026-09-10. Current open items, per the 2026-09-12 call: wait
+  for Marwan to send his library UX fixes (structured text format), his
+  Gmail address (for platform credits), and to invite friends to test
+  the platform
 - commitments: none recorded
 - threads: `19f5b6f7c1a9dc30` (live), 21 more unread
 - notes: **Elizabeth wrote twice - 28 and 29 July - with no reply from Mark.** Two
@@ -56,6 +59,24 @@
   **Per Alex, 2026-09-10.** Mark has been paid - INV-014 resolved.
   Separately, Alex plans to talk to Mark directly today (in person/call,
   not email)
+
+  **Auto-genesis, 2026-09-14 - the 2026-09-12 call transcript found.**
+  Notion transcript (`https://app.notion.com/p/3d9656dd7b6781faa25fc625380f6e6a`)
+  for "Marwan/Alex," 2026-09-12, confirms this was a platform/library UX
+  review, not a separate topic. Real content: Marwan walked Alex through
+  ~30 library miscategorization issues (guides filed under the wrong
+  section) and proposed reorganizing guides into sets of 5 per tool/topic
+  (ChatGPT, Claude, ElevenLabs, etc.) instead of a mixed random layout.
+  Alex reframed the product's value proposition from "tickets" (one-time
+  access) to "direction" (an ongoing relationship, like a doctor) and
+  introduced a "portable intelligence" concept - installing the library
+  into a user's own AI workspace via MCP, not just reading it on the
+  platform. Alex named signup/onboarding as the single top priority over
+  content. Action items: Marwan to send his library UX fixes in a
+  structured text format Alex can feed to Claude Code; Marwan to send his
+  Gmail address for more platform credits; Marwan to invite friends
+  (e.g. siblings) to test the platform for more feedback. Source: Notion
+  transcript above
 
   **Auto-genesis, 2026-09-13.** The promised follow-up call happened as
   scheduled: Calendar shows "Marwan/Alex," 2026-09-12 (Saturday)
