@@ -85,6 +85,17 @@ possible fact correction (ask, don't assume) - never silently drop
 something that disappeared from his rewrite without checking whether
 it means "done" or just "not today."
 
+## 1b. Weekly plan PDF (Mondays, 07:00 UTC, before the morning brief)
+
+Answers "what's on my plate this week" - the forward-looking mirror of
+`weekly-recap.md`'s backward-looking Saturday recap. Added 2026-09-14
+per Alex: "ogni lunedi voglio il pdf di cosa fare questa settimana."
+Full structure, sources and the PDF-rendering mechanics live in
+`weekly-plan.md` - read that before running it, don't reconstruct the
+format from memory. Delivered as an actual PDF file via `SendUserFile`,
+not a `ledger_briefs` draft - this one is a direct chat deliverable, not
+something Alex reviews and sends himself.
+
 ## 2. Midday update (~12:00 UTC / 14:00 CEST, Mon-Fri)
 
 Answers "what's moved since this morning." Short, a check-in, not a
