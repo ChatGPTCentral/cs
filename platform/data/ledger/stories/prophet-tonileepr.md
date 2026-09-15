@@ -7,15 +7,19 @@
 - people: Belle Lenz (belle@tonileepr.com, Toni Lee PR, PR agency based in
   Los Angeles, representing Prophet), Mat Zucker (mzucker@prophet.com,
   CMO of Prophet, based in New York)
-- last-touch: Mat Zucker - replied 2026-09-14 19:43, said he'll submit
-  the interview - hold, no chase needed
+- last-touch: Mat Zucker - asked how long Alex is in London and who
+  from Prophet should meet him, plus whether any Q4 media budget could
+  free up, 2026-09-15 12:38. Ball is Alex's
 - start: 2026-09-02
-- last-inbound: 2026-09-14 19:43 (mzucker@prophet.com, thread
-  `1a081e12c5cbaef6`, message `1a0a1723d6eea7e7`)
-- last-outbound: 2026-09-14 14:17 (alex@thecentral.ai, to
-  mzucker@prophet.com, cc belle@tonileepr.com, thread `1a081e12c5cbaef6`,
-  message `1a0a0475c2008869`)
-- next-action: none - hold, Mat is submitting the interview himself
+- last-inbound: 2026-09-15 12:38 (mzucker@prophet.com, cc
+  belle@tonileepr.com, thread `1a0a4eb5231b699e`, message
+  `1a0a5137c25f0ea4`)
+- last-outbound: 2026-09-15 12:20 (alex@thecentral.ai, to
+  mzucker@prophet.com, cc belle@tonileepr.com, thread `1a0a4eb5231b699e`,
+  message `1a0a502a81da78fa`)
+- next-action: answer Mat directly - how long Alex is in London, and
+  react to his note that most Q4 media is booked but he'll check for
+  an opening
 - commitments: send the media kit - done
 - threads: none found
 - notes: **Auto-genesis, 2026-09-03.** Google Calendar event "Discovery
@@ -66,3 +70,23 @@
   **Per Alex, 2026-09-15 - content of the 14/9 reply.** Mat's message
   says he'll be submitting the interview. Hold - no chase needed, this
   is on Mat's side now
+
+  **Real exchange, 2026-09-15 - the interview delivered, a live Q4
+  conversation opens.** New thread `1a0a4eb5231b699e` (same subject
+  line as the old one plus "- Mat Zucker Q&A", not the same thread id
+  as before). Mat sent back the completed interview Q&A doc, 11:54
+  (message `1a0a4eb5231b699e`) - drafted answers with bold and links,
+  Google Doc link `1HOD_iyzBxQXGhSlFwSW1_qQREOoUjdflVoNTtf1PJFo`. Alex
+  replied himself, 12:20 (message `1a0a502a81da78fa`): will check the
+  publish date with Elizabeth (his COO), and asked two real questions -
+  who's the right Prophet contact to meet in London (Alex is back
+  there now), and whether the media kit could be a valuable Q4
+  addition to Prophet's marketing mix. Mat replied, 12:38 (message
+  `1a0a5137c25f0ea4`, unread until now): will check if anyone from
+  Prophet's AI CoE or marketing strategy team wants to meet in London
+  (their EMEA marketing manager is Berlin-based, not useful for that
+  trip) and asked how long Alex is in town; on the media kit, says
+  most of Prophet's Q4 media is already planned but he'll check for
+  anything unbooked or movable "for a test of some sort." This is the
+  live commercial angle Alex has been building toward since the
+  2026-09-12 note on the real purpose of the interview offer
