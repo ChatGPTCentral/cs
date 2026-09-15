@@ -9,18 +9,21 @@
   being promoted) via the PartnerStack affiliate network. On AI Central's
   side: Alex (handed off), Elizabeth (owns affiliate strategy, now the
   contact)
-- last-touch: Elizabeth - replied to Randy, 2026-09-03
+- last-touch: Randy - sent call follow-up notes with a 9-point action
+  list, 2026-09-14, ball is Elizabeth/Alex's
 - start: 2026-09-01
-- last-inbound: 2026-09-01 14:05 (randy.harinandan@partnerstack.com,
-  thread `1a05d4a6d24bca49`, to elizabeth@thecentral.ai, bcc alex)
-- last-outbound: 2026-09-03 13:01 (elizabeth@theaicentral.net, thread
-  `1a05d4a6d24bca49`, to randy.harinandan@partnerstack.com, cc
-  ashley@partnerstack.com, bcc alex)
-- next-action: call booked with Randy, 2026-09-14 16:00-16:30 UK time -
-  covers the media kit and where things stand on the Emergent affiliate
-  terms. Separately, a draft to Randy prepared 2026-09-10, per Alex
-  (thread `1a08a882a012850b`), still sits unsent - may be superseded by
-  the call, Alex's call whether to still send it
+- last-inbound: 2026-09-14 19:29 (randy.harinandan@partnerstack.com,
+  thread `1a05d4a6d24bca49`, to elizabeth@theaicentral.net, forwarded
+  to alex@thecentral.ai by Elizabeth 2026-09-15 11:04, message
+  `1a0a4bd5079bf914`)
+- last-outbound: 2026-09-14 (elizabeth@theaicentral.net to Randy,
+  during/around the call - exact message not on file, inferred from
+  Randy's "great speaking with you today")
+- next-action: work through Randy's 9-point list (below) - the two
+  items needing Alex specifically: (1) help Elizabeth shape a specific
+  Emergent package with benchmarking/performance data, (2) tell
+  Elizabeth the preferred commission type (upfront, hybrid, CPL, or
+  rev share) so she can tell Randy
 - **Pulse check, 2026-09-03.** Elizabeth ha risposto a Randy via
   `1a0675c747b0523a` - in attesa di risposta
 - commitments: none
@@ -53,3 +56,28 @@
   Elizabeth's calendar, confirmed 2026-09-10 13:23. Also upserted to
   `ledger_upcoming_meetings`. Source: Google Calendar (Elizabeth), plus
   the forwarded booking notification, Gmail thread `1a08b841446b2a90`
+
+  **Call held, 2026-09-14 - outcome, forwarded by Elizabeth 2026-09-15.**
+  Randy's real 9-point follow-up, message `1a0a4bd5079bf914`:
+  1. Randy will share the media kit with PartnerStack's CSMs who manage
+     bigger vendors
+  2. Elizabeth will update AI Central's content marketplace listing
+     with more specific packages (LinkedIn vs. newsletter split, price
+     ranges, custom-opportunity info)
+  3. Elizabeth will talk to Alex about building a specific Emergent
+     package with benchmarking/performance data
+  4. Randy will schedule a call with Emergent itself for Elizabeth and
+     Alex
+  5. Randy sent a list of active PartnerStack vendors (a shared Google
+     Sheet, link in the email) for Elizabeth to review
+  6. Elizabeth will review that list and identify an initial target
+     list of companies
+  7. Elizabeth will check with Alex on the preferred commission type
+     (upfront, hybrid, CPL, or rev share) and tell Randy
+  8. Randy will check with PartnerStack's own newsletter/site editor
+     about slotting AI Central into their case-study queue
+  9. Elizabeth will schedule a check-in with Randy in about 6 weeks
+  This resolves the "no idea what came out of the call" gap flagged in
+  the 15 Sep revenue recap - real next steps exist now, most of them
+  Elizabeth's to run, two need Alex's input (package benchmarking data,
+  commission-type preference)

@@ -6,8 +6,8 @@
   `arajput@wellput.io`, plus a third address that varies -
   `avelhankar@wellput.io` on some threads, `awadghule@wellput.io` on others
 - ours: Elizabeth runs it, Alex is bcc'd on their inbound and cc'd on replies
-- last-touch: Elizabeth - asked Alex if he has the email version of the
-  ad, 2026-09-14, ball is Alex's
+- last-touch: Elizabeth - sent Ankita the original LinkedIn newsletter
+  email as proof, 2026-09-15, ball is theirs (Wellput's)
 - last-inbound: 2026-09-11 19:53 (adops@wellput.io, thread
   `1a09208d69e06fb0`, cc cswerdloff@wellput.io, arajput@wellput.io,
   avelhankar@wellput.io) - content read, auto-genesis 2026-09-12
@@ -18,9 +18,9 @@
   thread `1a09208d69e06fb0`, message `1a0a12257af1bf91`, to
   alex@thecentral.ai)
 - idle: 0 days
-- next-action: Alex's call - Elizabeth found the placement in the
-  LinkedIn Newsletter but could not find an email version in
-  alex@thecentral.ai's inbox, and is asking Alex directly if he has it
+- next-action: none - Elizabeth resolved it herself, no email version
+  ever existed. Wait for Wellput/Ankita to confirm the placement is
+  verified
 - **Per Alex, 2026-09-13.** Reminder for tomorrow (14 Sep): review the
   mail he forwarded to Liz on this thread (R-1006273). Logged as a task,
   not a decision made yet
@@ -37,10 +37,19 @@
   issue, or flag that it did not run. Source: thread `1a09208d69e06fb0`,
   message `1a09208d69e06fb0`
 - commitments: none recorded
-- **Auto-genesis, 2026-09-15.** Elizabeth replied on the same thread:
-  she found the ad in the LinkedIn Newsletter but has not found an email
-  version in alex@thecentral.ai's inbox, and is asking Alex directly if
-  he has it. Source: thread `1a09208d69e06fb0`, message `1a0a12257af1bf91`
+- **Auto-genesis, 2026-09-15, morning.** Elizabeth replied on the same
+  thread: she found the ad in the LinkedIn Newsletter but had not found
+  an email version in alex@thecentral.ai's inbox, and asked Alex
+  directly if he has it. Source: thread `1a09208d69e06fb0`, message
+  `1a0a12257af1bf91`
+
+- **Resolved, 2026-09-15, later same day.** Elizabeth answered her own
+  question without waiting on Alex - forwarded Ankita the actual 31 Aug
+  LinkedIn Newsletter send (.eml attached) as proof the R-1006273
+  EZ Texting ad ran there. Confirms there never was a separate email
+  version - it only ran in the LinkedIn Newsletter. Ball is now
+  Wellput's to verify. Source: thread `1a09208d69e06fb0`, message
+  `1a0a4d6982b87b90`
 - threads: `19faedbb128fa82b`, `19fa933665a23c11`, `19f7fa595b07717d`,
   `19f4dc004174b7f7`, `19f4c761c0127a6a` (10-29 July), `1a06e4ea260e394f`
   (4 Sep), `1a09208d69e06fb0` (live, 11 Sep, placement verification)

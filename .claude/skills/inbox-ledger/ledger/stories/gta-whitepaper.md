@@ -7,31 +7,44 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Alex - sent the first whitepaper draft Friday 11 Sep
-  2026 per his own statement (no matching Gmail thread found). Ball is
-  now with Marc Duke and Tsvetelin for feedback
+- last-touch: Marc Duke - confirmed the draft is reviewed and approved
+  by him, Zoltan, Tsvetelin and Ganapathy, and looped in Russ Shaw for
+  the one missing piece (his intro), 2026-09-15. Ball is Alex's - Russ
+  is waiting on Alex for timing
 - last-inbound: 2026-09-09 12:36 (marcduke@dukeconnect.co.uk, thread
   `1a086153670818f1`, message `1a0862be7c03f442`)
 - last-outbound: 2026-09-09 12:39 (alex@thecentral.ai, thread
   `1a086153670818f1`, message `1a0862e30dbee527`, to marcduke@dukeconnect.co.uk,
   cc tsvetelin@thinkrevops.com)
 - idle: 0 days
-- next-action: **hold - wait for Marc Duke and Tsvetelin's feedback**
-  (per Alex, 2026-09-12). Alex sent the first draft Friday 11 Sep; Marc
-  and Tsvetelin said they'd send feedback, so the whitepaper is
-  waiting on them, not on Alex. No matching Gmail thread was found for
-  this send as of this update - noted here per Alex's own statement,
-  not a transcript. Separately, still owed: **reach out to Alex's two
-  existing contacts at Seven Hills PR** (Russ Shaw's agency) about the
-  launch, once the draft is locked
+- next-action: **advise Russ Shaw on timing for his intro** - Marc's
+  email says "as soon as" is his own preference, but it's Alex's call
+  to make and communicate to Russ. Once Russ's intro is in, the piece
+  is ready to launch to the GTA world. Seven Hills PR (Matic Boh,
+  mboh@sevenhillsbpigroup.com) is already cc'd on the loop-in email, so
+  the "reach out to Seven Hills" item below is effectively done via cc,
+  though Alex may still want a direct word with them
 - commitments: Alex asked when Tsvetelin's part will be ready and proposed a
   group call next week (Alex is back in the office) to assess where the
   whitepaper stands
-- threads: `1a086153670818f1` (new, 2026-09-09, live), `19f60e9ebd451424`
+- threads: `1a0a4cc916057961` (new, 2026-09-15, live - the Russ Shaw
+  intro ask), `1a086153670818f1` (2026-09-09), `19f60e9ebd451424`
   (the real status-check thread), `19ff67b1360150c6`, `19f21eef04aa4e4e`,
   `19edf85ff0a1f34e`
 - notes: **Per Alex, 2026-09-10.** Alex is working on the whitepaper
   himself this morning - the draft due "at lunch" per yesterday's call
+
+  **Resolved, 2026-09-15.** Marc Duke emailed Russ Shaw (cc Tsvetelin,
+  Ganapathy, Zoltan, Swetha, Liz, and Seven Hills PR's Matic Boh at
+  both his addresses), subject "GTA Quarterly AI Pulse - intro
+  required," message `1a0a4cc916057961`, attaching "[DRAFT] - AI
+  Central x GTA - AI Quarterly September 2026.pdf". Confirms the draft
+  has been reviewed and approved by Marc, Zoltan, Tsvetelin and
+  Ganapathy - the only missing piece is a brief intro from Russ with
+  his latest thoughts on AI. Marc asked Alex directly to advise Russ
+  on timing ("I think it's as soon as" is Marc's own guess, not
+  Alex's answer yet). This also loops in Seven Hills PR by cc, the
+  step this story had flagged as still owed
 
   **GTA AI Pulse check-in call, 2026-09-09, real transcript.**
   Alex, Marc Duke and Tsvetelin (Svelin). Alex's team drafted a first

@@ -9,12 +9,14 @@
   to aamir on this date; not a cold start
 - last-inbound: 2026-07-02 (implicitly - see notes; no reply after Alex's
   2 Jul pitch)
-- last-outbound: 2026-09-04 (alex@thecentral.ai, thread `19f229b9b2a27a27`) -
-  bounced back, mitali@growthschool.io is disabled
+- last-outbound: 2026-09-15 11:03 (alex@thecentral.ai, to
+  aamir.akhtar@growthschool.io and pankhuri@growthschool.io, cc
+  elizabeth@theaicentral.net, thread `19f229b9b2a27a27`, message
+  `1a0a4bc5983c14dd`) - previous 2026-09-04 attempt to
+  mitali@growthschool.io bounced, disabled address
 - idle: 0 days
-- next-action: mitali@growthschool.io is dead - confirm with Aamir or
-  Pankhuri (both still cc'd, likely received it) whether Mitali has a
-  new address, or route the deal through them instead
+- next-action: none - wait for Aamir or Pankhuri to confirm Mitali's
+  new address or pick up the deal themselves
 - commitments: none recorded
 - threads: `19d114698754d603` (Mar-Apr, renewal + scheduling),
   `19e20b6a87171dd5` ("Finishing the 2 slots remaining", May, urgent
@@ -43,3 +45,7 @@
   is inactive. Aamir and Pankhuri were both cc'd and likely got a real
   copy. The relationship is not dead, but Mitali's address is - needs a
   live contact at GrowthSchool before this goes further.
+
+  **Sent, 2026-09-15.** Asked Aamir and Pankhuri directly (cc
+  Elizabeth) whether Mitali has a new address or who's picking up
+  sponsorships now, message `1a0a4bc5983c14dd`

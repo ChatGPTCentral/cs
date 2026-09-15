@@ -10,14 +10,16 @@
   contributor), Sherine Kazim (sherine@alltechishuman.org, Advisor - Tech
   Ethics Think Tank / LP In-Visible Ventures - ex-CXO Wunderman Thompson
   NA, ex-Obama Foundation advisor)
-- status: cold - met, not yet followed up
+- status: open - reached out, waiting on them
 - start: 2026-06-02 (SXSW - All Tech Is Human event)
 - end: (ongoing)
-- next-action: reach out to David and Sherine - per Alex, voice note
-  2026-09-09, ahead of the AI Summit New York trip (first week of
-  December)
+- last-outbound: 2026-09-15 11:09 (alex@thecentral.ai, to
+  david@alltechishuman.org and sherine@alltechishuman.org, cc
+  liz@thecentral.ai, thread `1a0a4b7b9379f5b2`, message
+  `1a0a4c1c7cf580b3`)
+- next-action: none - wait for their reply
 - commitments: none
-- threads: none (no email exchange on file yet)
+- threads: `1a0a4b7b9379f5b2` (live)
 - notes: From Alex's SXSW interview-candidate CSV. David's entry was
   originally logged "Bounced - resend (email fixed)" - the CSV's own note
   says the listed address was corrected for a typo, so david@alltechishuman.org
@@ -36,3 +38,7 @@
   to - are not resolved to real names yet. Nothing in this CSV maps
   cleanly to either group; needs Alex to name them before any outreach
   or story gets created for those two
+
+  **Sent, 2026-09-15.** First outreach to both, combined into one
+  email cc Liz, message `1a0a4c1c7cf580b3` - reconnecting ahead of the
+  December trip, invited both to AI Central Voices
