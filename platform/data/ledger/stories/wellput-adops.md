@@ -6,8 +6,9 @@
   `arajput@wellput.io`, plus a third address that varies -
   `avelhankar@wellput.io` on some threads, `awadghule@wellput.io` on others
 - ours: Elizabeth runs it, Alex is bcc'd on their inbound and cc'd on replies
-- last-touch: Elizabeth - sent Ankita the original LinkedIn newsletter
-  email as proof, 2026-09-15, ball is theirs (Wellput's)
+- last-touch: Ankita (Wellput) - asked to confirm AI Central is a
+  LinkedIn newsletter, 2026-09-15 18:50, ball is Elizabeth's (Alex only
+  cc'd)
 - last-inbound: 2026-09-11 19:53 (adops@wellput.io, thread
   `1a09208d69e06fb0`, cc cswerdloff@wellput.io, arajput@wellput.io,
   avelhankar@wellput.io) - content read, auto-genesis 2026-09-12
@@ -50,6 +51,10 @@
   version - it only ran in the LinkedIn Newsletter. Ball is now
   Wellput's to verify. Source: thread `1a09208d69e06fb0`, message
   `1a0a4d6982b87b90`
+
+  **Ankita replied, 2026-09-15 18:50.** "Just confirming AI central is
+  a LinkedIn newsletter?" - a simple clarifying question, Elizabeth's
+  to answer, Alex only cc'd. Message `1a0a668937da8727`
 - threads: `19faedbb128fa82b`, `19fa933665a23c11`, `19f7fa595b07717d`,
   `19f4dc004174b7f7`, `19f4c761c0127a6a` (10-29 July), `1a06e4ea260e394f`
   (4 Sep), `1a09208d69e06fb0` (live, 11 Sep, placement verification)

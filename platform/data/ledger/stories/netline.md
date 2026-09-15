@@ -11,26 +11,21 @@
   see the dated note below. **Daniel Frignito** (`daniel@netline.com`,
   Senior Director of Partner Development) - the address Alex named but
   that had not turned up in any thread read until an earlier pass
-- last-touch: Aneeka - replied 2026-09-08 21:46 (thread `19cf6dc21ce7fabd`,
-  message `1a082fd60f87886b`), ball is Alex's - a draft reply is ready,
-  see the dated note below. Separately, Awais Shahid also replied
-  2026-09-08 13:14 on the AI Summit New York thread, also Alex's ball,
-  not part of the Aneeka confusion
-- last-inbound: 2026-09-08 21:46 (apatel@netline.com, thread
-  `19cf6dc21ce7fabd`, message `1a082fd60f87886b`)
+- last-touch: Aneeka - chased again, 2026-09-15 18:05, asking if the
+  links got updated. Ball is Alex's - the draft reply (below) is still
+  sitting unsent since 2026-09-10
+- last-inbound: 2026-09-15 18:05 (apatel@netline.com, cc alex@thecentral.ai,
+  thread `19cf6dc21ce7fabd`, message `1a0a63fc6f74d481`)
 - last-outbound: 2026-09-08 13:21 (alex@thecentral.ai, thread
   `1a067b9a68290465`, message `1a0812e179cd482b`, to Awais.Shahid@informa.com)
 - idle: 0 days
-- next-action: **RESOLVED, 2026-09-10 - see "Aneeka/NetLine, fully
-  explained" below.** Alex asked to understand the situation and clean up
-  what could be closed. Done: read the whole thread end to end, confirmed
-  the identity match, drew a fresh draft on the one real unanswered gap
-  (a link-swap confirmation), confirmed the two stuck drafts are gone.
-  What is left for Alex, not this agent: review and send the new draft
-  on thread `19cf6dc21ce7fabd` (message `1a08b4f67cc55d18`), and separately
-  sign and return the prospective agreement Awais sent, message
-  `1a081524904c09c5` - Alex is handling that one himself, per his own
-  message, not this agent's job
+- next-action: **send the draft reply to Aneeka** - message
+  `1a08b4f67cc55d18` on thread `19cf6dc21ce7fabd`, ready since 2026-09-10,
+  confirming the link swap and the ChatGPT Central pause. She's now
+  chased twice (8 Sep, 15 Sep) with no reply. Separately: sign and
+  return the prospective agreement Awais sent, message `1a081524904c09c5` -
+  Alex is handling that one himself, per his own message, not this
+  agent's job
 
   **Per Alex, 2026-09-13.** Plans to close and sign the Awais/Informa
   agreement tomorrow, 14 Sep. Logged as a task, not a next-action
@@ -115,6 +110,12 @@
   not - NetLine (Aneeka) answered every substantive question already, the
   only thing that stalled was AI Central's own side going quiet after her
   8 Sep message. One draft reply closes it, once reviewed and sent.
+
+  **Aneeka chased again, 2026-09-15 18:05.** "Just wanted to follow up
+  on my previous email. Were you able to update the links and are
+  there any other links that are not working?" Message `1a0a63fc6f74d481`,
+  cc Alex. The 10 Sep draft reply (`1a08b4f67cc55d18`) is still sitting
+  unsent - this is her second chase on it
 
 - **Intel cross-reference, 2026-09-10.** Awais Shahid (Associate
   Marketing Manager, The AI Summit Series | Informa) is on the same
