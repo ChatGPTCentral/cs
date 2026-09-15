@@ -6,16 +6,16 @@
 - kind: project (inbound sponsorship pitch)
 - people: Kenta Tanaka, kenta.tanaka@fotor.com, Marketing Specialist,
   Fotor (Everimaging Co., Ltd.)
-- status: open - Kenta replied to the proposal, 2026-09-11
+- status: open - answered Kenta's questions, waiting on his internal
+  review
 - start: 2026-09-09
 - last-inbound: 2026-09-11 07:33 (kenta.tanaka@fotor.com, thread
   `1a08622acd7384ae`, message `1a08f62c09ba037a`) - content read,
   auto-genesis 2026-09-12
-- last-outbound: 2026-09-09 16:09 (alex@thecentral.ai, thread
-  `1a08622acd7384ae`, message `1a086eebd37d5e31`)
-- idle: 1 day
-- next-action: answer Kenta's 4 questions (below) and register a Fotor
-  account so he can issue the 3,000-credit code
+- last-outbound: 2026-09-15 11:29 (alex@thecentral.ai, thread
+  `1a08622acd7384ae`, message `1a0a4d4887d6ae7a`)
+- idle: 0 days
+- next-action: none - wait for Kenta's reply
 - **Pulse check, 2026-09-11.** Kenta ha risposto via `1a08f62c09ba037a`
   - in attesa di lettura
 - **Auto-genesis, 2026-09-12 - content read.** Kenta did not accept or
@@ -45,3 +45,14 @@
   bundled at $1,899 (5% new-client discount off $1,998), plus taking
   Fotor up on the 3,000 credits to test the product firsthand. Media
   kit PDF attached ("AI Central - Media Kit (2026).pdf")
+
+  **Sent, 2026-09-15, message `1a0a4d4887d6ae7a`.** Answered Kenta's
+  four questions: standalone Main Ad is $1,299 (no separate "Secondary
+  Ad" product); cited Outskill (25 placements) and Guidde (21
+  placements) as the two longest-running repeat clients on this email
+  format, with real screenshots/links to follow separately; gave their
+  real CTRs (Outskill 2.08%, Guidde 1.17%) as the closest data on file,
+  offered to check for a placement-type-specific breakdown; said the
+  US-specific share of the 50% North America figure needs a real pull
+  from analytics rather than a guess, to follow separately. Also asked
+  which email to use to register the Fotor account for the credit code
