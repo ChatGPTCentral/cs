@@ -9,14 +9,20 @@
   - Brad Wayland, `brad@quietlight.com`, introduced via Lauren Winigrad
     `lauren@quietlight.com` (Quiet Light)
   - Joe Burrill, `support@justwebsitebrokerage.com` (Just Website Brokerage)
-- last-touch: Joe Burrill on the Just Website Brokerage thread - no reply from Alex
-  found in any message read; resolved/closed on the other two
-- last-inbound: 2026-04-13 (support@justwebsitebrokerage.com, still chasing)
+- last-touch: Lexi Grant (They Got Acquired) - asked directly whether
+  Alex chose an advisor/broker, 2026-09-15, new thread, no reply from
+  Alex since March on this sub-thread
+- last-inbound: 2026-09-15 19:43 (team@theygotacquired.com, thread
+  `19d1c254c1fdfb99`, message `1a0a698eb33fbf66`)
 - last-outbound: none found - every message in this sub-thread is from
   theygotacquired.com or justwebsitebrokerage.com, cc'ing Alex
-- idle: 128 days
-- next-action: none unless reviving - Joe Burrill asked Alex to complete a
-  seller form four times (Mar27, Apr3, Apr9, Apr13) with no reply visible
+- idle: 0 days (this sub-thread) / 128 days (Joe Burrill sub-thread)
+- next-action: **flagged, not decided** - Lexi asked directly if Alex
+  picked an advisor. Whether/how to reply needs Alex's own read, not
+  invented here. Separately, still open: Joe Burrill asked Alex to
+  complete a seller form four times (Mar27, Apr3, Apr9, Apr13) with no
+  reply visible - per Alex's 2026-08-23 note, left unanswered on
+  purpose, lost interest in that one specifically
 - commitments: none recorded
 - threads: intro chain starting `19cb59bdbf91d85a` (theygotacquired.com, 3 Mar
   2026), Quiet Light thread resolving into a scheduled call ("just booked",
@@ -36,6 +42,14 @@
   that's where these three came from. Alex confirmed the Just Website
   Brokerage thread was left unanswered on purpose - he lost interest in
   that story.
+
+  **New inbound, 2026-09-15 19:43.** Lexi Grant, founder of They Got
+  Acquired, message `1a0a698eb33fbf66`: "did you end up choosing an
+  M&A advisor/broker to work with? If you have any feedback to share
+  on those conversations, that's always appreciated." This is a
+  separate sub-thread from the Nick Santillo call, quiet since 24
+  March. Whether Alex is still exploring a sale and wants to engage is
+  his own call, not inferred here
 
   **Notion call sweep, 2026-08-26.** Full transcripts found for the two
   broker calls, six days apart, with real numbers that do not reconcile -
