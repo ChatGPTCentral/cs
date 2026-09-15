@@ -7,14 +7,15 @@
 - people: Belle Lenz (belle@tonileepr.com, Toni Lee PR, PR agency based in
   Los Angeles, representing Prophet), Mat Zucker (mzucker@prophet.com,
   CMO of Prophet, based in New York)
-- last-touch: Mat Zucker - replied 2026-09-14 19:43, ball is Alex's
+- last-touch: Mat Zucker - replied 2026-09-14 19:43, said he'll submit
+  the interview - hold, no chase needed
 - start: 2026-09-02
 - last-inbound: 2026-09-14 19:43 (mzucker@prophet.com, thread
   `1a081e12c5cbaef6`, message `1a0a1723d6eea7e7`)
 - last-outbound: 2026-09-14 14:17 (alex@thecentral.ai, to
   mzucker@prophet.com, cc belle@tonileepr.com, thread `1a081e12c5cbaef6`,
   message `1a0a0475c2008869`)
-- next-action: none - wait for their reply
+- next-action: none - hold, Mat is submitting the interview himself
 - commitments: send the media kit - done
 - threads: none found
 - notes: **Auto-genesis, 2026-09-03.** Google Calendar event "Discovery
@@ -61,3 +62,7 @@
 
   **Pulse check, 2026-09-14, 20:38.** Mat Zucker ha risposto via
   `1a0a1723d6eea7e7` - ball is Alex's
+
+  **Per Alex, 2026-09-15 - content of the 14/9 reply.** Mat's message
+  says he'll be submitting the interview. Hold - no chase needed, this
+  is on Mat's side now
