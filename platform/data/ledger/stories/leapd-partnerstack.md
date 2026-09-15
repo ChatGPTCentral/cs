@@ -5,7 +5,8 @@
 - kind: project (sponsorship, inbound, real revenue)
 - people: Cyrus (Leapd, leapd.ai - AI agents for founders to build and run
   their business) - request submitted via Passionfroot, Alex has no direct
-  email for him yet, only the platform thread
+  email for him yet, only the platform thread. Also Joe (hello@leapd.ai),
+  same company, reached out separately by Gmail - see notes
 - status: open - $1,500 single-ad proposal sent by Alex, upsell drafted,
   not yet sent
 - start: 2026-09-14
@@ -65,6 +66,16 @@
   >
   > P.S. docs.thecentral.ai has our full media kit if useful for your
   > team.
+
+  **Auto-genesis, 2026-09-15.** A second, separate inbound landed in
+  Gmail the same day (2026-09-14 15:39): "Joe" at hello@leapd.ai wrote
+  to collabs@thecentral.ai, subject "collab with LEAPD" - same company,
+  nearly identical pitch to Cyrus's Passionfroot request ("we help
+  founders to build and run their business with AI agents... asking for
+  the media kit about placement and cost"). Not yet replied to on this
+  channel. Source: thread `1a0a092f23083465`, message `1a0a092f23083465`.
+  Treating this as the same Leapd relationship, not a second lead -
+  Alex's upsell above answers both, whichever channel he replies on
 
   Pricing basis: catalog 1 Beehiiv Main Ad $1,299 + 3 Carousels $1,999 =
   $3,298 list, bundled to $3,000; catalog 1 Beehiiv Main Ad + 5 Carousels
