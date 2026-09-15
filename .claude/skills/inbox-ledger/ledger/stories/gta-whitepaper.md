@@ -7,22 +7,24 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Marc Duke - confirmed the draft is reviewed and approved
-  by him, Zoltan, Tsvetelin and Ganapathy, and looped in Russ Shaw for
-  the one missing piece (his intro), 2026-09-15. Ball is Alex's - Russ
-  is waiting on Alex for timing
-- last-inbound: 2026-09-09 12:36 (marcduke@dukeconnect.co.uk, thread
-  `1a086153670818f1`, message `1a0862be7c03f442`)
+- last-touch: Russ Shaw - said yes to writing the intro, asked Alex for
+  timing and the key points he'd like made, 2026-09-15 13:16. Ball is
+  Alex's
+- last-inbound: 2026-09-15 13:16 (russ.shaw@globaltechadvocates.com, cc
+  alex@thecentral.ai, tsvetelin@scapebridge.com, ganapathy@vajraglobal.com,
+  zoltan@futureofwork.uk, swetha.sitaraman@vajraglobal.com,
+  liz@thecentral.ai, matic.boh@wearesevenhills.com,
+  mboh@sevenhillsbpigroup.com, gta@wearesevenhills.com, thread
+  `1a0a4cc916057961`, message `1a0a53625efcc133`)
 - last-outbound: 2026-09-09 12:39 (alex@thecentral.ai, thread
   `1a086153670818f1`, message `1a0862e30dbee527`, to marcduke@dukeconnect.co.uk,
   cc tsvetelin@thinkrevops.com)
 - idle: 0 days
-- next-action: **advise Russ Shaw on timing for his intro** - Marc's
-  email says "as soon as" is his own preference, but it's Alex's call
-  to make and communicate to Russ. Once Russ's intro is in, the piece
-  is ready to launch to the GTA world. Seven Hills PR (Matic Boh,
-  mboh@sevenhillsbpigroup.com) is already cc'd on the loop-in email, so
-  the "reach out to Seven Hills" item below is effectively done via cc,
+- next-action: **give Russ two things: timing for his intro, and the
+  key points Alex wants him to make.** He said yes immediately and is
+  waiting on both before he writes it. Seven Hills PR (Matic Boh,
+  mboh@sevenhillsbpigroup.com) is already cc'd throughout, so the
+  "reach out to Seven Hills" item below is effectively done via cc,
   though Alex may still want a direct word with them
 - commitments: Alex asked when Tsvetelin's part will be ready and proposed a
   group call next week (Alex is back in the office) to assess where the
@@ -45,6 +47,11 @@
   on timing ("I think it's as soon as" is Marc's own guess, not
   Alex's answer yet). This also loops in Seven Hills PR by cc, the
   step this story had flagged as still owed
+
+  **Russ said yes, 2026-09-15 13:16.** Message `1a0a53625efcc133`,
+  same thread: "Very happy to do this. If you can share timings and
+  any key points you'd like me to make, that would be great." Waiting
+  on Alex for both before he can write the intro
 
   **GTA AI Pulse check-in call, 2026-09-09, real transcript.**
   Alex, Marc Duke and Tsvetelin (Svelin). Alex's team drafted a first
