@@ -12,7 +12,9 @@
   October
 - start: 2026-06-20
 - end: (ongoing)
-- next-action: 3-month compensation review, end of October 2026
+- next-action: decide the next carousel batch's content, in a "Ruben
+  Hassid" style/angle per Alex, 2026-09-15 (overdue since 7 Sep). Also:
+  3-month compensation review, end of October 2026
 - commitments: base about $1,200/month package (see below), reviewed end of
   October
 - threads: `1a05382e2fe260ce` (live - monthly payout, Elizabeth-run)
@@ -53,3 +55,16 @@
   invoice back 3 Sep. Elizabeth cleared it 4 Sep but flagged the invoice
   was missing the carousel IDs, which she identified herself. Elizabeth-run
   end to end, cc Alex only
+
+  **Identity note.** This is the same Marwan as [[mark-marwan]] ("Mark
+  from AI Central" is his rebranded identity per the 8 Jul deal above) -
+  two story files for one person, not two Marwans. `ledger_tasks` had
+  this flagged as ambiguous ("which Marwan - internal Mark or the MA
+  Design carousel agency") until Alex confirmed, 2026-09-15, that the
+  "next batch of documents" task and this carousel-batch task are the
+  same thing
+
+  **Per Alex, 2026-09-15 - creative direction for the next batch.**
+  Wants the next carousel batch done "alla Ruben Hassid" - his style as
+  the reference/angle, not a specific brief yet. Next-action updated to
+  reflect this instead of a generic "decide the batch"
