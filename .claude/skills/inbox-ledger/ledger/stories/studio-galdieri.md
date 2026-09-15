@@ -42,3 +42,8 @@
   no-invoice expenses (restaurants, taxis); Danilo to estimate 2025 tax at
   30-45% of profit; team to meet the Buffetti/Ebridge consultant about
   linking the Excel files to the accounting software.
+
+  **Per Alex, 2026-09-15.** Sent Valentina the invoices - she is
+  processing them now. Ball is hers. Alex still has the general expense
+  tracking to finish on his own side (separate, ongoing task, not this
+  specific invoice hand-off)
