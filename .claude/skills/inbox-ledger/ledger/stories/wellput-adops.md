@@ -67,3 +67,11 @@
   budget). Alex bcc'd on the original, forwarded it bare to Elizabeth 19
   minutes later - the established pattern for this relationship. Her
   call whether to reserve it
+
+  **Auto-genesis, 2026-09-15, 15:08.** Another new campaign pitch,
+  "LeadPost" (targets B2B/B2C marketers in lead-gen/customer
+  acquisition - home services, auto, real estate, insurance),
+  first-come-first-served, limited budget. Alex bcc'd, thread
+  `1a0a59d3ec32c3b8`, message `1a0a59d3ec32c3b8`. Not yet forwarded to
+  Elizabeth as of this pass - same pattern as Galactic Fed, her call
+  whether to reserve it once he does
