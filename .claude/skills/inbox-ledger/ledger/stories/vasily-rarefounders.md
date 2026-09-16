@@ -52,9 +52,12 @@
   (neither channel has a tool here). A third, Jason Day at Luma, sent by
   email. A fourth, Fiona Turko at Gamma via LinkedIn DM, drafted -
   routing ask, not a direct pitch, since Alex wants Gamma's London team
-  and Fiona is Canada-based. See [[canva-nuria-speaker]],
-  [[luma-carola-speaker]], [[luma-jasonday-speaker]] and
-  [[gamma-fiona-speaker]].
+  and Fiona is Canada-based. A fifth, Jake MccGwire at beehiiv (Head of
+  Product, London-based), drafted - direct invite, grounded in AI
+  Central's real paying Enterprise relationship with beehiiv, not a
+  creator/content angle. See [[canva-nuria-speaker]],
+  [[luma-carola-speaker]], [[luma-jasonday-speaker]],
+  [[gamma-fiona-speaker]] and [[beehiiv-jake-speaker]].
 
   **Template update, 2026-09-16.** For Jason (no prior relationship,
   unlike Mat), Alex added a new "About AI Central Media" boilerplate
