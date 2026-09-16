@@ -3,16 +3,17 @@
 - query: none - no Gmail label
 - label-id: none
 - kind: project (re-engagement, real past relationship - see notes)
-- people: Patrice (patrice@taplio.com, Taplio by lempire)
-- status: open - Patrice replied, ball is Alex's
+- people: Patrice (patrice@taplio.com, Taplio by lempire), Annika
+  Bautista (annika@lempire.co, plans Taplio's media investments)
+- status: open - sent, ball is Annika's
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: 2026-09-16 14:06 (patrice@taplio.com, thread
   `1a0a5c7613874554`, message `1a0aa8ac0582e853`)
-- last-outbound: 2026-09-16 13:23 (alex@thecentral.ai, **sent**, message
-  `1a0aa62bb370b169`, thread `1a0a5c7613874554`, real media kit PDF
-  attached, calendly link https://cntral.ai/meet)
-- next-action: none - wait for Patrice's reply
+- last-outbound: 2026-09-16 16:15 (alex@thecentral.ai, **sent**, message
+  `1a0ab005d99c17bf`, thread `1a0a5c7613874554`, to patrice@taplio.com,
+  cc annika@lempire.co)
+- next-action: none - wait for their reply
 - commitments: none
 - threads: `1a0a5c7613874554`
 - notes: Alex asked for a reply telling Patrice "we worked together in
@@ -46,3 +47,7 @@
   **Pulse check, 2026-09-16.** Patrice ha risposto via `1a0aa8ac0582e853`
   - passa la palla ad Annika Bautista, annika@lempire.co, che si occupa
   dei loro media investment. Ball torna ad Alex
+
+  **Pulse check, 2026-09-16 (bis).** Alex ha risposto via
+  `1a0ab005d99c17bf` - in attesa di risposta (si presenta ad Annika,
+  offre di accelerare le campagne di fine Q3 e Q4)

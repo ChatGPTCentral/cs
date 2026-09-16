@@ -8,15 +8,16 @@
   per his LinkedIn) - a third Luma contact, distinct from Trevor/
   Eugenio in [[luma-ai-followup]] and from Carola Dixon in
   [[luma-carola-speaker]]
-- status: open - Jason replied, ball is Alex's
+- status: open - sent, ball is Eugenio's
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: 2026-09-16 14:46 (jasonday@lumalabs.ai, cc
   eugenio.delaoliva@lumalabs.ai, thread `1a0aa6f11795ee6d`, message
   `1a0aaaf41eb832cc`)
-- last-outbound: 2026-09-16 13:41 (alex@thecentral.ai, **sent**, message
-  `1a0aa7349b6e177b`, thread `1a0aa6f11795ee6d`)
-- next-action: none - wait for Jason's reply
+- last-outbound: 2026-09-16 16:13 (alex@thecentral.ai, **sent**, message
+  `1a0aafe82fd59ca7`, thread `1a0aa6f11795ee6d`, to jasonday@lumalabs.ai,
+  cc eugenio.delaoliva@lumalabs.ai)
+- next-action: none - wait for their reply
 - commitments: none
 - threads: `1a0aa6f11795ee6d` (new thread, no prior history with this
   address)
@@ -54,3 +55,7 @@
   eugenio.delaoliva@lumalabs.ai. Same Eugenio (EMEA partnerships) as
   [[luma-ai-followup]] - the speaker-invite and the sponsorship-revival
   threads have converged on one Luma contact. Ball is Alex's
+
+  **Pulse check, 2026-09-16.** Alex ha risposto via `1a0aafe82fd59ca7` -
+  in attesa di risposta (says nice to meet Eugenio, notes Trevor Cloak
+  may have also connected them recently, offers to chat or meet)
