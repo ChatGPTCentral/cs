@@ -41,4 +41,9 @@
   current decision superseding the 09-10 pivot, not a duplicate ask.
   Text given in chat (WhatsApp has no send tool here, Alex sends it
   himself): short, friendly, references the Cannes recording and the
-  amplification offer, asks for a timing update. Not yet confirmed sent
+  amplification offer, asks for a timing update.
+
+  **Sent, per Alex, 2026-09-16.** Confirmed sent via WhatsApp - no
+  Gmail trace to verify exact wording against (WhatsApp is outside
+  this agent's tools), taking his report at face value. last-touch
+  updated to Alex, ball is Jessica's on two channels now

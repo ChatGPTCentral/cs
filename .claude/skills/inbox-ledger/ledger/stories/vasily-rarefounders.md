@@ -45,7 +45,12 @@
   built the product. Now what?", plus When/Where and a RareFounders
   boilerplate. First speaker invited: Mat Zucker (Prophet's CMO) - see
   [[prophet-tonileepr]] for that thread. This finalized copy is now the
-  reference template for inviting further speakers Action items: Vasi to
+  reference template for inviting further speakers.
+
+  **More speaker invites, 2026-09-16.** Two more, texts drafted in chat
+  (Alex sends both himself, neither channel has a tool here): Nuria at
+  Canva via LinkedIn DM, and Carola Dixon at Luma via WhatsApp. See
+  [[canva-nuria-speaker]] and [[luma-carola-speaker]]. Action items: Vasi to
   send AI Central the Instinct AI link, AI Central to try it; AI
   Central to identify panel speakers and demo companies and send to
   Vasi; both to clarify full event details by next week; Vasi to help

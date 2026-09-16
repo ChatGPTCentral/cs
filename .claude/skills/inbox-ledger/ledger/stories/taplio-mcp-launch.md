@@ -4,15 +4,16 @@
 - label-id: none
 - kind: project (re-engagement, real past relationship - see notes)
 - people: Patrice (patrice@taplio.com, Taplio by lempire)
-- status: open - draft ready, waiting for Alex to send
+- status: open - sent, ball is Patrice's
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: 2026-09-15 15:55 (patrice@taplio.com, thread
   `1a0a5c7613874554` - mass Customer.io newsletter blast announcing
   Taplio LinkedIn MCP 2.0, "Hey AI," greeting, not a personal message)
-- last-outbound: none yet - draft only, message `1a0aa5edf3727305`,
-  thread `1a0a5c7613874554`
-- next-action: Alex to review and send the draft
+- last-outbound: 2026-09-16 13:23 (alex@thecentral.ai, **sent**, message
+  `1a0aa62bb370b169`, thread `1a0a5c7613874554`, real media kit PDF
+  attached, calendly link https://cntral.ai/meet)
+- next-action: none - wait for Patrice's reply
 - commitments: none
 - threads: `1a0a5c7613874554`
 - notes: Alex asked for a reply telling Patrice "we worked together in
@@ -36,3 +37,9 @@
   2.0 launch to AI Central's audience via a Main Ad + LinkedIn
   Newsletter placement, proposed a call rather than quoting numbers
   cold (withhold, don't concede - per the operating mandate).
+
+  **Sent, 2026-09-16 13:23 - nearly this agent's draft verbatim.** Alex
+  kept the structure and every line, added "with very good results" to
+  the past-placements sentence, attached the real media kit PDF, and
+  added the calendly link. Closest match to a drafted email this
+  session - the research-before-writing approach held up
