@@ -7,23 +7,20 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Russ Shaw - said yes to writing the intro, asked Alex for
-  timing and the key points he'd like made, 2026-09-15 13:16. Ball is
-  Alex's
+- last-touch: Alex - gave Russ timing and the key points, 2026-09-16
+  11:34. Ball is Russ's
 - last-inbound: 2026-09-15 13:16 (russ.shaw@globaltechadvocates.com, cc
   alex@thecentral.ai, tsvetelin@scapebridge.com, ganapathy@vajraglobal.com,
   zoltan@futureofwork.uk, swetha.sitaraman@vajraglobal.com,
   liz@thecentral.ai, matic.boh@wearesevenhills.com,
   mboh@sevenhillsbpigroup.com, gta@wearesevenhills.com, thread
   `1a0a4cc916057961`, message `1a0a53625efcc133`)
-- last-outbound: 2026-09-15 10:20 (alex@thecentral.ai, thread
-  `19f60e9ebd451424`, message `1a0a4956bc2c8245`, to
-  marcduke@dukeconnect.co.uk - "not yet, would you do it or would you
-  prefer me to do it?")
+- last-outbound: 2026-09-16 11:34 (alex@thecentral.ai, thread
+  `1a0a4cc916057961`, message `1a0a9feeeb17c804`, to
+  russ.shaw@globaltechadvocates.com, cc marcduke@dukeconnect.co.uk and
+  the rest of the thread - timing "next Wednesday", three key points)
 - idle: 0 days
-- next-action: **give Russ two things: timing for his intro, and the
-  key points Alex wants him to make.** He said yes immediately and is
-  waiting on both before he writes it. Seven Hills PR (Matic Boh,
+- next-action: none - wait for Russ's intro. Seven Hills PR (Matic Boh,
   mboh@sevenhillsbpigroup.com) is already cc'd throughout, so the
   "reach out to Seven Hills" item below is effectively done via cc,
   though Alex may still want a direct word with them
@@ -36,6 +33,12 @@
   `19edf85ff0a1f34e`
 - notes: **Per Alex, 2026-09-10.** Alex is working on the whitepaper
   himself this morning - the draft due "at lunch" per yesterday's call
+
+  **Pulse check, 2026-09-16.** Alex ha risposto via `1a0a4cc916057961`
+  (timing: next Wednesday - edited the draft's own suggested
+  Thursday/Friday; key points: GTA/TLA mission, where members are
+  landing on AI, first of a recurring quarterly series) - in attesa di
+  risposta.
 
   **Draft prepared, 2026-09-16, per Alex.** He asked for the reply to
   Russ himself since he had the full context - drafted on the live

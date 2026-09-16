@@ -6,22 +6,22 @@
   `arajput@wellput.io`, plus a third address that varies -
   `avelhankar@wellput.io` on some threads, `awadghule@wellput.io` on others
 - ours: Elizabeth runs it, Alex is bcc'd on their inbound and cc'd on replies
-- last-touch: Ankita (Wellput) - asked to confirm AI Central is a
-  LinkedIn newsletter, 2026-09-15 18:50, ball is Elizabeth's (Alex only
-  cc'd)
-- last-inbound: 2026-09-11 19:53 (adops@wellput.io, thread
-  `1a09208d69e06fb0`, cc cswerdloff@wellput.io, arajput@wellput.io,
-  avelhankar@wellput.io) - content read, auto-genesis 2026-09-12
-- last-outbound: 2026-09-11 20:04 (alex@thecentral.ai, thread
-  `1a09208d69e06fb0`, message `1a09212c7785d73d`, to
-  elizabeth@theaicentral.net - same bare-forward pattern as before)
-- last-inbound (internal): 2026-09-14 18:16 (elizabeth@theaicentral.net,
-  thread `1a09208d69e06fb0`, message `1a0a12257af1bf91`, to
-  alex@thecentral.ai)
+- last-touch: Alex - replied to Ankita directly, 2026-09-16 11:13. Ball
+  is Ankita's
+- last-inbound: 2026-09-15 18:50 (adops@wellput.io, thread
+  `1a09208d69e06fb0`, message `1a0a668937da8727`, Ankita asking to
+  confirm AI Central is a LinkedIn newsletter)
+- last-outbound: 2026-09-16 11:13 (alex@thecentral.ai, thread
+  `1a09208d69e06fb0`, message `1a0a9ebd1b0f63cf`, to adops@wellput.io,
+  cc elizabeth+cswerdloff+arajput+avelhankar - confirmed the LinkedIn
+  Newsletter context, asked if Ankita is the right person for a Q4
+  monetization chat)
 - idle: 0 days
-- next-action: none - Elizabeth resolved it herself, no email version
-  ever existed. Wait for Wellput/Ankita to confirm the placement is
-  verified
+- next-action: none - wait for Ankita's reply
+
+  **Pulse check, 2026-09-16.** Alex ha risposto via `1a09208d69e06fb0`
+  (confermato il contesto LinkedIn Newsletter, chiesto un chat su Q4
+  monetization) - in attesa di risposta.
 - **Per Alex, 2026-09-13.** Reminder for tomorrow (14 Sep): review the
   mail he forwarded to Liz on this thread (R-1006273). Logged as a task,
   not a decision made yet

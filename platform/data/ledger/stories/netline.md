@@ -16,23 +16,27 @@
   sitting unsent since 2026-09-10
 - last-inbound: 2026-09-15 18:05 (apatel@netline.com, cc alex@thecentral.ai,
   thread `19cf6dc21ce7fabd`, message `1a0a63fc6f74d481`)
-- last-outbound: 2026-09-15 12:15 (elizabeth@theaicentral.net, thread
-  `1a067b9a68290465`, message `1a0a4fee98dc52d3`, to
-  Awais.Shahid@informa.com, cc alex@thecentral.ai - signed contract
-  attached, asked for intros to senior leaders/speakers)
+- last-outbound: 2026-09-16 11:07 (alex@thecentral.ai, thread
+  `1a067b9a68290465`, message `1a0a9e692e67e0c3`, to
+  Awais.Shahid@informa.com, cc elizabeth - asked who coordinates the
+  joint announcement and whether he has an intro list of
+  executives/speakers/thought leaders yet)
 - idle: 0 days
 - next-action: **send the draft reply to Aneeka** - message
   `1a08b4f67cc55d18` on thread `19cf6dc21ce7fabd`, ready since 2026-09-10,
   confirming the link swap and the ChatGPT Central pause. She's now
-  chased twice (8 Sep, 15 Sep) with no reply. Separately: **Alex and
-  Elizabeth both need to register for AI Summit New York press
-  passes** via the registration link Awais sent, message
-  `1a0a5cf9bfb8ca0c` (2026-09-15 16:03) - press passes cover every room
-  except the VIP lounge, which is press-restricted this year
+  chased twice (8 Sep, 15 Sep) with no reply. Separately, on the Awais
+  sub-thread: none - wait for his reply on the announcement/intro-list
+  questions. The press-pass registration itself (message
+  `1a0a5cf9bfb8ca0c`) is still open for Alex and Elizabeth to complete
 
   **Per Alex, 2026-09-13.** Plans to close and sign the Awais/Informa
   agreement tomorrow, 14 Sep. Logged as a task, not a next-action
   invented by this agent - see `ledger_tasks`
+
+  **Pulse check, 2026-09-16.** Alex ha risposto via `1a067b9a68290465`
+  (chiesto chi coordina l'annuncio congiunto e se Awais ha già una
+  lista di executive/speaker) - in attesa di risposta.
 
   **Signed and closed, 2026-09-14/15, thread `1a067b9a68290465`.**
   Awais confirmed no press in the VIP lounge this year, press passes
