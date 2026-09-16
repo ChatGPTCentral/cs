@@ -7,13 +7,13 @@
 - people: Fiona Turko (Leading Global Creator Marketing @ Gamma,
   Canada-based, not the London team herself - real 1st-degree LinkedIn
   connection, see [[gamma-sponsorship]] for the full Gamma relationship)
-- status: open - invite text drafted, waiting for Alex to send
+- status: open - sent, ball is Fiona's
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: none in this thread yet
-- last-outbound: none yet - drafted in chat 2026-09-16, Alex sends via
-  LinkedIn DM himself (no LinkedIn DM tool here)
-- next-action: Alex to send the DM, then wait for Fiona's answer
+- last-outbound: 2026-09-16 (LinkedIn DM, **sent** per Alex, no tool
+  here to verify exact wording)
+- next-action: none - wait for Fiona's answer
 - commitments: none
 - threads: none (LinkedIn only - real DM history with Fiona goes back
   to 2026-03-16, most recent exchange 2026-06-25 asking who to connect
