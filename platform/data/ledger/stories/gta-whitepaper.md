@@ -7,8 +7,10 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Russ Shaw - confirmed he's on it, no intro text yet,
-  2026-09-16 12:06. Ball is still Russ's (writing the intro)
+- last-touch: Alex - proposed a coordination call this week and looped
+  Liz in as the AI Central-side release owner, 2026-09-16 12:10. Ball
+  is Russ/Seven Hills' (to schedule the call, and still to write the
+  intro)
 - last-inbound: 2026-09-16 12:06 (russ.shaw@globaltechadvocates.com, cc
   marcduke@dukeconnect.co.uk, tsvetelin@scapebridge.com,
   ganapathy@vajraglobal.com, zoltan@futureofwork.uk,
@@ -17,15 +19,16 @@
   gta@wearesevenhills.com, and a new address cescoffier@bpigroup.com
   ("Carl" per the message text - not yet identity-resolved), thread
   `1a0a4cc916057961`, message `1a0aa1c7d68a7450`)
-- last-outbound: 2026-09-16 11:34 (alex@thecentral.ai, thread
-  `1a0a4cc916057961`, message `1a0a9feeeb17c804`, to
-  russ.shaw@globaltechadvocates.com, cc marcduke@dukeconnect.co.uk and
-  the rest of the thread - timing "next Wednesday", three key points)
+- last-outbound: 2026-09-16 12:10 (alex@thecentral.ai, thread
+  `1a0a4cc916057961`, message `1a0aa200171f0aaf`, to
+  russ.shaw@globaltechadvocates.com, cc Carl/Matic/GTA SH plus the
+  rest of the thread - told them AI Central is planning a parallel
+  release of its own (website, LinkedIn, newsletters, 300K readers),
+  proposed a call this week to coordinate, added Liz as the AI
+  Central-side release owner)
 - idle: 0 days
-- next-action: none - wait for Russ's actual intro text. His
-  2026-09-16 reply only confirmed the plan (Seven Hills will put the
-  report on the GTA website and do a LinkedIn post once it's ready),
-  the intro itself hasn't landed yet. Seven Hills PR (Matic Boh,
+- next-action: none - wait for Russ's actual intro text and for the
+  coordination call to get scheduled. Seven Hills PR (Matic Boh,
   mboh@sevenhillsbpigroup.com) is already cc'd throughout, so the
   "reach out to Seven Hills" item below is effectively done via cc,
   though Alex may still want a direct word with them
@@ -44,6 +47,13 @@
   Thursday/Friday; key points: GTA/TLA mission, where members are
   landing on AI, first of a recurring quarterly series) - in attesa di
   risposta.
+
+  **Alex proposed a coordination call, 2026-09-16 12:10.** Replying
+  to Russ's confirmation, Alex told Carl/Matic/GTA SH that AI Central
+  is planning its own parallel release (website, LinkedIn, newsletters
+  reaching 300K readers), proposed jumping on a call this week to
+  coordinate the two releases, and added Liz to the thread as the
+  person supervising AI Central's side of it
 
   **Russ confirmed the plan, 2026-09-16 12:06.** He caught up with
   Matic and "Carl" at Seven Hills this morning: once the intro is
