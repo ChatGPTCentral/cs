@@ -7,11 +7,12 @@
   Sitaraman (Vajra Global, cc only). Cc: Alejandro Martinez and Jose Carlos
   Sanchez (Propelling Tech), `gta@wearesevenhills.com`
 - ours on the thread: Alex (both addresses), Liz
-- last-touch: Alex - proposed a coordination call this week and looped
-  Liz in as the AI Central-side release owner, 2026-09-16 12:10. Ball
-  is Russ/Seven Hills' (to schedule the call, and still to write the
-  intro)
-- last-inbound: 2026-09-16 12:06 (russ.shaw@globaltechadvocates.com, cc
+- last-touch: Zoltan - sent his edits on the whitepaper draft,
+  2026-09-16 20:14. Ball is Alex's
+- last-inbound: 2026-09-16 20:14 (zoltan@futureofwork.uk, thread
+  `19f60e9ebd451424`, message `1a0abdb56fecf8c9` - edited case study
+  text attached, asks Alex to let him review again once changed)
+- last-inbound (Russ/Seven Hills thread): 2026-09-16 12:06 (russ.shaw@globaltechadvocates.com, cc
   marcduke@dukeconnect.co.uk, tsvetelin@scapebridge.com,
   ganapathy@vajraglobal.com, zoltan@futureofwork.uk,
   swetha.sitaraman@vajraglobal.com, liz@thecentral.ai,
@@ -272,3 +273,9 @@
   same thread `19ff67b1360150c6`, same wording ("one more nudge... happy
   to find 15 min to discuss the AI event at IE Business School"). No
   reply yet from Alejandro or JC as of this pass
+
+  **Pulse check, 2026-09-16.** Zoltan ha risposto via
+  `1a0abdb56fecf8c9` - in attesa di risposta. Non un semplice bump: ha
+  fatto modifiche vere al draft del whitepaper (case study affinato),
+  allegate in un .txt, e chiede ad Alex di poterlo rivedere di nuovo
+  una volta applicate. Judgement call per il full sweep, non deciso qui
