@@ -7,13 +7,11 @@
 - people: Belle Lenz (belle@tonileepr.com, Toni Lee PR, PR agency based in
   Los Angeles, representing Prophet), Mat Zucker (mzucker@prophet.com,
   CMO of Prophet, based in New York)
-- last-touch: Alex - told Mat his London window, then pivoted to
-  invite Prophet to speak at the Oct 26 RareFounders x AI Central
-  event, 2026-09-16 12:05. Ball is Mat's
+- last-touch: Mat - replied 2026-09-16 13:20. Ball is Alex's
 - start: 2026-09-02
-- last-inbound: 2026-09-15 12:38 (mzucker@prophet.com, cc
+- last-inbound: 2026-09-16 13:20 (mzucker@prophet.com, cc
   belle@tonileepr.com, thread `1a0a4eb5231b699e`, message
-  `1a0a5137c25f0ea4`)
+  `1a0aa605da850631`)
 - last-outbound: 2026-09-16 12:05 (alex@thecentral.ai, to
   mzucker@prophet.com, cc belle@tonileepr.com, thread
   `1a0a4eb5231b699e`, message `1a0aa1bcd8dfe2b0`)
@@ -98,4 +96,9 @@
   What Actually Works," When/Where (Oct 26 from 18:30, The Ministry,
   South London), and a RareFounders boilerplate blurb. This is the
   first real speaker outreach for that event and the reference
-  template for inviting others
+  template for inviting others.
+
+  **Pulse check, 2026-09-16.** Mat ha risposto via `1a0aa605da850631` -
+  in attesa di risposta (declines the speaker slot: Prophet already
+  has AI-events on marketing modernization lined up for Sept/NYC,
+  Oct/Chicago, mid-Nov/London, team is "tapped out")
