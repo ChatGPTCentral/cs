@@ -50,8 +50,11 @@
   **More speaker invites, 2026-09-16.** Nuria at Canva via LinkedIn DM
   and Carola Dixon at Luma via WhatsApp, both sent by Alex himself
   (neither channel has a tool here). A third, Jason Day at Luma, sent by
-  email. See [[canva-nuria-speaker]], [[luma-carola-speaker]] and
-  [[luma-jasonday-speaker]].
+  email. A fourth, Fiona Turko at Gamma via LinkedIn DM, drafted -
+  routing ask, not a direct pitch, since Alex wants Gamma's London team
+  and Fiona is Canada-based. See [[canva-nuria-speaker]],
+  [[luma-carola-speaker]], [[luma-jasonday-speaker]] and
+  [[gamma-fiona-speaker]].
 
   **Template update, 2026-09-16.** For Jason (no prior relationship,
   unlike Mat), Alex added a new "About AI Central Media" boilerplate
