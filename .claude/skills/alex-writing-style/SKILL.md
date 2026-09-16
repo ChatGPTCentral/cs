@@ -347,6 +347,40 @@ Cheers,
 A
 ```
 
+### 8. Inbound PartnerStack Affiliate Invite (Reverse-Sell)
+
+**Added 2026-09-16, per Alex - a real recurring pattern.** A brand on
+PartnerStack invites AI Central to join *their* affiliate program (AI
+Central as the promoter, earning commission on referrals - see
+`expertex-ai-partnerstack.md` and `thetop-partnerstack.md` in the
+inbox-ledger for two real examples). Alex's standing move: accept, then
+use the reply to open the reverse deal - AI Central as their paid media
+partner too, not just their affiliate.
+
+**Structure:** Accept the invite → pivot to the reverse pitch → name
+the hybrid precedent (ElevenLabs, Gamma) → offer the media kit → CTA
+
+```
+Hi [Name],
+
+Thanks for reaching out - happy to join [Company]'s affiliate program on PartnerStack, count us in.
+
+Separately, I think there's a bigger opportunity here. AI Central reaches 300k+ founders, operators and senior professionals across our newsletter and LinkedIn network, and we run hybrid partnerships with companies like ElevenLabs and Gamma - we're both a PartnerStack affiliate for them and a paid media partner, running LinkedIn Main Ads and co-branded ebooks/carousels to our audience.
+
+Given how relevant [Company] is to exactly the kind of people we reach, a Main Ad + ebook package could work well for you too.
+
+Happy to send our media kit over and figure out the right package - would a quick call help?
+
+Cheers,
+
+A
+```
+
+**Never claim the media kit is attached unless it actually is** - the
+real Q3 2026 media kit lives in Drive as a multi-MB PDF, too large to
+attach through this agent's tooling in one pass. Offer to send it, or
+flag to Alex that he needs to attach it by hand before sending.
+
 ## LINKEDIN DM TEMPLATES
 
 ### DM to a Company Page (via Passionfroot)
