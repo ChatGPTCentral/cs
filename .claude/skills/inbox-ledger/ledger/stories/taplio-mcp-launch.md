@@ -4,12 +4,11 @@
 - label-id: none
 - kind: project (re-engagement, real past relationship - see notes)
 - people: Patrice (patrice@taplio.com, Taplio by lempire)
-- status: open - sent, ball is Patrice's
+- status: open - Patrice replied, ball is Alex's
 - start: 2026-09-16
 - end: (ongoing)
-- last-inbound: 2026-09-15 15:55 (patrice@taplio.com, thread
-  `1a0a5c7613874554` - mass Customer.io newsletter blast announcing
-  Taplio LinkedIn MCP 2.0, "Hey AI," greeting, not a personal message)
+- last-inbound: 2026-09-16 14:06 (patrice@taplio.com, thread
+  `1a0a5c7613874554`, message `1a0aa8ac0582e853`)
 - last-outbound: 2026-09-16 13:23 (alex@thecentral.ai, **sent**, message
   `1a0aa62bb370b169`, thread `1a0a5c7613874554`, real media kit PDF
   attached, calendly link https://cntral.ai/meet)
@@ -43,3 +42,7 @@
   the past-placements sentence, attached the real media kit PDF, and
   added the calendly link. Closest match to a drafted email this
   session - the research-before-writing approach held up
+
+  **Pulse check, 2026-09-16.** Patrice ha risposto via `1a0aa8ac0582e853`
+  - passa la palla ad Annika Bautista, annika@lempire.co, che si occupa
+  dei loro media investment. Ball torna ad Alex
