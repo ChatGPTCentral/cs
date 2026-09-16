@@ -5,12 +5,15 @@
 - label-id: none
 - kind: project (cold inbound pitch)
 - people: Louis, louis@screenpi.pe, org Screenpipe
-- last-touch: Alex - sent the pitch, 2026-09-08, ball is Louis's
+- last-touch: Alex - sent a check-in bump, 2026-09-16 12:11, ball is
+  Louis's
 - start: 2026-09-03
 - last-inbound: 2026-09-04 17:46 (louis@screenpi.pe, thread
   `1a0653b7325b38e4`)
-- last-outbound: 2026-09-08 15:09 (alex@thecentral.ai, thread
-  `1a0653b7325b38e4`, message `1a08190f72a5d0da`)
+- last-outbound: 2026-09-16 12:11 (alex@thecentral.ai, thread
+  `1a0653b7325b38e4`, message `1a0aa2116fed027b` - "just checking in,
+  let me know if the September slot still works or if you need a bit
+  more time")
 - next-action: none - wait for Louis's reply
 - commitments: none
 - threads: `1a0653b7325b38e4` (live)
@@ -54,3 +57,8 @@
   `1a0653b7325b38e4`: still no reply from Louis since the 8 Sep send.
   Per Alex, follow up via web if no reply by Wed 16 Sep - logged as a
   `ledger_tasks` row.
+
+  **Follow-up sent, 2026-09-16 12:11.** A short check-in bump on
+  whether the September slot for the $4,999 package still works - not
+  via the web as originally flagged, just a direct email reply on the
+  same thread. Waiting on Louis

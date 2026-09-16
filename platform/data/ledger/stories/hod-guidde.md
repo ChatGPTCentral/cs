@@ -6,14 +6,15 @@
 - people: Hod (`hod@guidde.co`), Yoav (`yoav@guidde.co`, cc on later
   messages), Cielo Gil (`cielo.gil@guidde.co`, a separate SparkLoop-intro
   touch)
-- last-touch: Alex - chased again on 2026-09-04, waiting on Hod
+- last-touch: Alex - new follow-up with a content-refresh angle,
+  2026-09-16 12:14, waiting on Hod
 - last-inbound: 2026-05-12 (hod@guidde.co - "I would prefer to use our
   existing credits first. This will allow me to evaluate the results
   before we decide on the continuity of our partnership and future
   packages")
-- last-outbound: 2026-09-04 (alex@thecentral.ai, to hod@guidde.co, cc
-  liz@thecentral.ai - follow-up on the 2026-08-31 thread
-  `1a059d053fc34f9a`)
+- last-outbound: 2026-09-16 12:14 (alex@thecentral.ai, thread
+  `1a059d053fc34f9a`, message `1a0aa242893f05f7`, to hod@guidde.co, cc
+  liz@thecentral.ai)
 - idle: 0 days
 - next-action: none - wait for Hod's reply
 - commitments: none recorded
@@ -82,3 +83,10 @@
   `1a059d053fc34f9a`: still no reply from Hod since the 4 Sep chase.
   Per Alex, follow up again if no reply by Wed 16 Sep - logged as a
   `ledger_tasks` row.
+
+  **Follow-up sent, 2026-09-16 12:14 - a new angle, not a repeat bump.**
+  Alex noticed Guidde's own blog posts are almost a year old and
+  offered to help refresh/repurpose them and distribute to AI
+  Central's audience, with a screenshot attached (presumably one of
+  the dated articles). A different hook than the "recharge and
+  reconnect" opener from 31 Aug - waiting on Hod
