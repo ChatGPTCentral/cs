@@ -3,10 +3,10 @@
 - label-id: `Label_4787366530861469637`
 - kind: person
 - people: Marc Duke (marcduke@dukeconnect.co.uk), bulandundonnelly@gmail.com
-- status: open - Alex replied on the Intelligence.com thread, ball is
-  Marc's
-- last-inbound: 2026-08-25 (connectors@intelligence.com, thread
-  `1a03974c17cfac28` - Marc's Intelligence.com invite)
+- status: open - Marc replied, ball is Alex's
+- last-inbound: 2026-09-16 21:15 (marcduke@dukeconnect.co.uk, thread
+  `1a03974c17cfac28`, message `1a0ac130dc2d4a30` - "I have set up the
+  account but not used it yet")
 - last-outbound: 2026-09-16 12:48 (alex@thecentral.ai, thread
   `1a03974c17cfac28`, message `1a0aa42feef4a6a4`, to
   marcduke@dukeconnect.co.uk - "are you using it? is it somehow
@@ -41,3 +41,7 @@
   to marcduke@dukeconnect.co.uk (Gmail resolved the reply-to address
   from the connectors@intelligence.com notification to Marc's real
   address). Waiting on his answer
+
+  **Pulse check, 2026-09-16.** Marc ha risposto via `1a0ac130dc2d4a30`
+  - "I have set up the account but not used it yet." In attesa di
+  risposta

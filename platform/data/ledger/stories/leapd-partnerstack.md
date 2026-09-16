@@ -7,10 +7,12 @@
   their business) - request submitted via Passionfroot, Alex has no direct
   email for him yet, only the platform thread. Also Joe (hello@leapd.ai),
   same company, reached out separately by Gmail - see notes
-- status: open - $1,500 single-ad proposal sent, upsell sent to both
-  Cyrus and Joe, waiting on a reply
+- status: open - Cyrus replied, ball is Alex's
 - start: 2026-09-14
 - end: (ongoing)
+- last-inbound: 2026-09-16 20:58 (hello@leapd.ai, thread
+  `1a0a092f23083465`, message `1a0ac0391e40763a` - Cyrus, replying on
+  Joe's Gmail thread)
 - next-action: none - wait for a reply on either channel
 - commitments: none
 - threads: none (Passionfroot only, no MCP connector for it in this
@@ -94,3 +96,8 @@
   current partners - a general name-drop, not a specific-numbers claim,
   so no conflict with `07_case_studies_and_pipeline.md`'s note that
   Replit has no measured case-study figures on file.
+
+  **Pulse check, 2026-09-16.** Cyrus ha risposto via `1a0ac0391e40763a`
+  - prima di committarsi al Main Ad, propone un placement secondario di
+  test da $400 per misurare la resa con la loro audience, poi valutare
+  il Main Ad. In attesa di risposta - judgement call per il full sweep
