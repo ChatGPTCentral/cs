@@ -24,8 +24,18 @@
   the style used for the Jessica Doss WhatsApp text
   ([[guideline-ai-jessica]]).
 
-  Drafted text: "Hey Carola! It's Alex from AI Central - I'm putting
-  together an event in London on Oct 26 about distribution becoming the
-  new moat for B2B (panel + live demos from AI builders), and think
-  Luma would be a great fit for the speaker lineup. Interesting? It's
-  from 18:30 at The Ministry, South London 😊"
+  Drafted text (English, superseded): "Hey Carola! It's Alex from AI
+  Central - I'm putting together an event in London on Oct 26 about
+  distribution becoming the new moat for B2B (panel + live demos from
+  AI builders), and think Luma would be a great fit for the speaker
+  lineup. Interesting? It's from 18:30 at The Ministry, South London 😊"
+
+  **Per Alex, 2026-09-16 - switched to Italian.** Carola is an Italian
+  contact, per Alex's explicit instruction. Redrafted in Italian, same
+  content, casual WhatsApp register, no signature block:
+
+  "Ciao Carola! Sono Alex di AI Central - sto organizzando un evento a
+  Londra il 26 ottobre sulla distribuzione come nuovo vantaggio
+  competitivo per il B2B (un panel più demo live di AI builder), e
+  penso che Luma sarebbe perfetta per la lineup di speaker. Ti
+  interessa? Si parte dalle 18:30 al The Ministry, South London 😊"
