@@ -32,7 +32,12 @@
   minutes each, on-screen walkthroughs not slides), then networking.
   Target attendance about 150. Vasi suggested AI Central speak rather
   than moderate, to better showcase expertise. AI Central held off
-  contacting speakers until format was agreed. Action items: Vasi to
+  contacting speakers until format was agreed.
+
+  **Venue and start time, per Alex, 2026-09-16.** Always at The
+  Ministry, Borough (South London) - RareFounders' usual venue.
+  Starting from 18:30, Alex's own estimate ("credo"), not yet
+  confirmed with Vasi in writing. Action items: Vasi to
   send AI Central the Instinct AI link, AI Central to try it; AI
   Central to identify panel speakers and demo companies and send to
   Vasi; both to clarify full event details by next week; Vasi to help
