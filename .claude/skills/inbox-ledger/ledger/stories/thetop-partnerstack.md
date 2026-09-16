@@ -6,15 +6,19 @@
   Central as the promoter, not the sponsor)
 - people: Emma Conroy (Director of Growth Partnerships & Content,
   TheTop, emma@thetop.com)
-- status: open - Alex forwarded to himself, no reply sent yet
+- status: open - draft replied, ball is Emma's
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: 2026-09-16 10:48 (chatgptcentral@gmail.com, self-forward
   to alex@thecentral.ai, thread `1a0a9d5982b9fc87`, message
   `1a0a9d5982b9fc87` - original from emma@thetop.com to
   chatgptcentral@gmail.com, 2026-09-15 14:02)
-- next-action: Alex to decide whether to join TheTop's affiliate program
-  on PartnerStack
+- last-outbound: drafted 2026-09-16, new thread `1a0aa49bd703267a`
+  (message `1a0aa49bd703267a`), to emma@thetop.com - not sent yet.
+  Accepted the affiliate invite, pivoted to pitch the reverse deal
+  (Main Ad + ebook, the same hybrid model as ElevenLabs/Gamma per
+  Alex), offered the media kit
+- next-action: none - draft ready for Alex to review and send
 - commitments: none
 - threads: `1a0a9d5982b9fc87` (self-forward only - the original message
   from emma@thetop.com to chatgptcentral@gmail.com is quoted inside it,
@@ -31,8 +35,18 @@
   invite URL
   (`dash.partnerstack.com/invite/86b92b43f6734d1e97183cd1648e365a`).
 
-  No reply sent on this thread yet. Same open, unlinked overlap as
-  ExpertEx: the generic `ledger_tasks` item "Decide what to do with all
-  the new affiliate deals" (Channel: Partnerstack) may cover this same
-  decision - not merged here since that task doesn't name TheTop
-  specifically.
+  Same open, unlinked overlap as ExpertEx: the generic `ledger_tasks`
+  item "Decide what to do with all the new affiliate deals" (Channel:
+  Partnerstack) may cover this same decision - not merged here since
+  that task doesn't name TheTop specifically.
+
+  **Reply drafted, 2026-09-16, per Alex.** He asked for a reusable
+  approach to this exact situation - see the new "Inbound PartnerStack
+  Affiliate Invite (Reverse-Sell)" template in `alex-writing-style`
+  SKILL.md, template 8. Accepted the affiliate invite, then pivoted:
+  AI Central runs hybrid partnerships with ElevenLabs and Gamma
+  (affiliate on PartnerStack *and* paid media partner), and offered a
+  Main Ad + ebook package to TheTop on the same model. Media kit not
+  attached - the current one is a multi-MB Drive PDF, too large to
+  attach through this agent's tooling in one pass. Not sent - Alex's
+  to review
