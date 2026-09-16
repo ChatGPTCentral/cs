@@ -35,3 +35,10 @@
   the WhatsApp text. "Hey Jessica - hope this email did not get buried
   in your inbox." **Sent 10:09 UTC, message `1a08acb7ae093472`,** thread
   `19ef907493db26ba`, cc Elizabeth
+
+  **Per Alex, 2026-09-16.** Asked again for the WhatsApp text - the
+  email bump above got no reply either, 6 days on. Treated as his
+  current decision superseding the 09-10 pivot, not a duplicate ask.
+  Text given in chat (WhatsApp has no send tool here, Alex sends it
+  himself): short, friendly, references the Cannes recording and the
+  amplification offer, asks for a timing update. Not yet confirmed sent
