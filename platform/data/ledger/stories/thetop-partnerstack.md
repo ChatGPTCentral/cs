@@ -6,19 +6,18 @@
   Central as the promoter, not the sponsor)
 - people: Emma Conroy (Director of Growth Partnerships & Content,
   TheTop, emma@thetop.com)
-- status: open - draft replied, ball is Emma's
+- status: open - replied and sent, ball is Emma's
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: 2026-09-16 10:48 (chatgptcentral@gmail.com, self-forward
   to alex@thecentral.ai, thread `1a0a9d5982b9fc87`, message
   `1a0a9d5982b9fc87` - original from emma@thetop.com to
   chatgptcentral@gmail.com, 2026-09-15 14:02)
-- last-outbound: drafted 2026-09-16, new thread `1a0aa49bd703267a`
-  (message `1a0aa49bd703267a`), to emma@thetop.com - not sent yet.
-  Accepted the affiliate invite, pivoted to pitch the reverse deal
-  (Main Ad + ebook, the same hybrid model as ElevenLabs/Gamma per
-  Alex), offered the media kit
-- next-action: none - draft ready for Alex to review and send
+- last-outbound: 2026-09-16 13:09 (alex@thecentral.ai, thread
+  `1a0a9d5982b9fc87`, message `1a0aa56a4a86513a`, to emma@thetop.com,
+  cc liz@thecentral.ai - accepted the affiliate invite, pitched the
+  reverse deal, attached the real media kit PDF)
+- next-action: none - wait for Emma's reply
 - commitments: none
 - threads: `1a0a9d5982b9fc87` (self-forward only - the original message
   from emma@thetop.com to chatgptcentral@gmail.com is quoted inside it,
@@ -46,7 +45,13 @@
   SKILL.md, template 8. Accepted the affiliate invite, then pivoted:
   AI Central runs hybrid partnerships with ElevenLabs and Gamma
   (affiliate on PartnerStack *and* paid media partner), and offered a
-  Main Ad + ebook package to TheTop on the same model. Media kit not
-  attached - the current one is a multi-MB Drive PDF, too large to
-  attach through this agent's tooling in one pass. Not sent - Alex's
-  to review
+  Main Ad + ebook package to TheTop on the same model.
+
+  **Sent, 2026-09-16 13:09 - on the original thread, not this agent's
+  draft.** Alex replied directly on the self-forward thread
+  (`1a0a9d5982b9fc87`) rather than using the separate draft this agent
+  created (thread `1a0aa49bd703267a`, message `1a0aa49bd703267a` - now
+  orphaned, needs manual cleanup like other superseded drafts). His
+  real sent version kept the same structure and pitch, added Liz to
+  cc, and attached the actual "AI Central - Media Kit (2026).pdf" -
+  something this agent's draft could not do

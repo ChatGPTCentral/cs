@@ -3,13 +3,16 @@
 - label-id: `Label_4787366530861469637`
 - kind: person
 - people: Marc Duke (marcduke@dukeconnect.co.uk), bulandundonnelly@gmail.com
-- status: dormant
-- last-inbound: 2025-12-10 (bulandundonnelly@gmail.com)
-- last-outbound: not in the live thread
-- idle: 252 days
-- next-action: **respond to Marc's Intelligence.com invite - overdue.**
-  Alex targeted Saturday 5 Sep 2026, thread `1a03974c17cfac28`; today is
-  2026-09-08, 3 days past that self-set date with no reply seen
+- status: open - Alex replied on the Intelligence.com thread, ball is
+  Marc's
+- last-inbound: 2026-08-25 (connectors@intelligence.com, thread
+  `1a03974c17cfac28` - Marc's Intelligence.com invite)
+- last-outbound: 2026-09-16 12:48 (alex@thecentral.ai, thread
+  `1a03974c17cfac28`, message `1a0aa42feef4a6a4`, to
+  marcduke@dukeconnect.co.uk - "are you using it? is it somehow
+  useful?")
+- idle: 0 days
+- next-action: none - wait for Marc's reply
 - commitments: none recorded
 - threads: `19b0331c16b4afff` (live), 8 more unread
 - notes: an introductions relationship that went quiet in December. 37 messages
@@ -31,3 +34,10 @@
   Aug 2026 (`connectors@intelligence.com`, thread `1a03974c17cfac28`).
   Alex wants to respond and use it as the way back into this relationship
   - tackling it Saturday 5 Sep
+
+  **Replied, 2026-09-16 12:48.** Alex answered directly on the same
+  thread, asking Marc whether he actually uses Intelligence.com and
+  whether it's useful - a real, live question, not a bump. Reply went
+  to marcduke@dukeconnect.co.uk (Gmail resolved the reply-to address
+  from the connectors@intelligence.com notification to Marc's real
+  address). Waiting on his answer

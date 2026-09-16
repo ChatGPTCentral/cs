@@ -7,11 +7,11 @@
   their business) - request submitted via Passionfroot, Alex has no direct
   email for him yet, only the platform thread. Also Joe (hello@leapd.ai),
   same company, reached out separately by Gmail - see notes
-- status: open - $1,500 single-ad proposal sent, upsell sent, waiting
-  on Cyrus
+- status: open - $1,500 single-ad proposal sent, upsell sent to both
+  Cyrus and Joe, waiting on a reply
 - start: 2026-09-14
 - end: (ongoing)
-- next-action: none - wait for Cyrus's reply to the upsell
+- next-action: none - wait for a reply on either channel
 - commitments: none
 - threads: none (Passionfroot only, no MCP connector for it in this
   session - Alex relays requests here by pasting them in chat). Passionfroot
@@ -76,6 +76,14 @@
   channel. Source: thread `1a0a092f23083465`, message `1a0a092f23083465`.
   Treating this as the same Leapd relationship, not a second lead -
   Alex's upsell above answers both, whichever channel he replies on
+
+  **Joe's channel answered too, 2026-09-16 13:07.** Alex replied
+  directly on the Gmail thread (`1a0a092f23083465`, message
+  `1a0aa542b5949902`, to hello@leapd.ai): told Joe he's also following
+  up on the same request from Cyrus via Passionfroot, pasted the exact
+  $3,000/$5,499 upsell message quoted above, and re-attached the media
+  kit. Both channels now carry the same real offer, whichever one Joe
+  or Cyrus replies on
 
   Confirmed sent, not a draft - superseded the two tiers/numbers this
   agent had drafted ($3,000/$5,999, Beehiiv Main Ad + 3 or 5 Carousels).
