@@ -37,6 +37,17 @@
 - notes: **Per Alex, 2026-09-10.** Alex is working on the whitepaper
   himself this morning - the draft due "at lunch" per yesterday's call
 
+  **Draft prepared, 2026-09-16, per Alex.** He asked for the reply to
+  Russ himself since he had the full context - drafted on the live
+  thread `1a0a4cc916057961` (message `1a0a9efdb33d1b4e`, reply to
+  Russ's `1a0a53625efcc133`). Timing proposed: this week, Thursday or
+  Friday - a suggestion for Alex to confirm, not a fact from Russ or
+  Marc. Key points proposed: Russ's own read on where GTA/TLA members
+  are landing on AI right now, tying the piece back to the real
+  conversations behind it (his, Zoltan's, Tsvetelin's, Ganapathy's)
+  rather than framing it as a generic survey, and flagging this as the
+  first of a recurring quarterly piece. Not sent - Alex's to review
+
   **Lead-up, 2026-09-14/15, thread `19f60e9ebd451424`.** Zoltan
   replied first: "Thanks for this and it looks great. I will send you
   my tweaks later this week" (2026-09-14 14:49, message
