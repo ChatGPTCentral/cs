@@ -8,10 +8,12 @@
   per his LinkedIn) - a third Luma contact, distinct from Trevor/
   Eugenio in [[luma-ai-followup]] and from Carola Dixon in
   [[luma-carola-speaker]]
-- status: open - sent, ball is Jason's
+- status: open - Jason replied, ball is Alex's
 - start: 2026-09-16
 - end: (ongoing)
-- last-inbound: none - no prior thread with this address
+- last-inbound: 2026-09-16 14:46 (jasonday@lumalabs.ai, cc
+  eugenio.delaoliva@lumalabs.ai, thread `1a0aa6f11795ee6d`, message
+  `1a0aaaf41eb832cc`)
 - last-outbound: 2026-09-16 13:41 (alex@thecentral.ai, **sent**, message
   `1a0aa7349b6e177b`, thread `1a0aa6f11795ee6d`)
 - next-action: none - wait for Jason's reply
@@ -46,3 +48,9 @@
   unlike Mat, has no prior relationship with Alex. Worth folding into
   the reference template for any future speaker invite to a contact
   who doesn't already know AI Central.
+
+  **Pulse check, 2026-09-16.** Jason ha risposto via `1a0aaaf41eb832cc`
+  - "Thanks Alex. Adding Eugenio to look at this," cc'ing
+  eugenio.delaoliva@lumalabs.ai. Same Eugenio (EMEA partnerships) as
+  [[luma-ai-followup]] - the speaker-invite and the sponsorship-revival
+  threads have converged on one Luma contact. Ball is Alex's
