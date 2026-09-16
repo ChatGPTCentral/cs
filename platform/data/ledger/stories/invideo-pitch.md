@@ -5,18 +5,20 @@
 - kind: project (inbound collaboration pitch, real negotiation)
 - people: Siddharth Sen, siddharth.sen@invideo.io, Partnerships Lead at
   invideo (agentic AI video creation platform)
-- last-touch: Alex - answered Siddharth's question, 2026-09-04, ball is
+- last-touch: Alex - sent the bump nudge, 2026-09-16 12:06, ball is
   theirs
 - start: 2026-08-10
 - last-inbound: 2026-08-20 09:24 (siddharth.sen@invideo.io, thread
   `1a010543442f0320`, message `1a01e7caf528b6da`)
-- last-outbound: 2026-09-15 (nudge drafted, not yet sent - see below).
-  Real answer sent 2026-09-04 12:54 (alex@thecentral.ai, cc
+- last-outbound: 2026-09-16 12:06 (alex@thecentral.ai, cc
   liz@thecentral.ai, thread `1a010543442f0320`, message
-  `1a06c7bb815df810`)
+  `1a0aa1c619c84baa` - "just bumping this, did you get a chance to
+  think about the budget for the proposal?"). Real answer sent
+  2026-09-04 12:54 (alex@thecentral.ai, cc liz@thecentral.ai, thread
+  `1a010543442f0320`, message `1a06c7bb815df810`)
 - idle: 0 days
-- next-action: none - wait for Siddharth's reply on budget. A nudge is
-  drafted (not sent), per Alex, 2026-09-15
+- next-action: none - wait for Siddharth's reply on budget. The nudge
+  drafted 2026-09-15 was sent 2026-09-16
 - commitments: none
 - threads: `1a010543442f0320` (live)
 - notes: cold pitch, 10 Aug - wants invideo Agent mentioned in 5 named

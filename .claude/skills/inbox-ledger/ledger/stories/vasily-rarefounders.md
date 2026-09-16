@@ -37,7 +37,15 @@
   **Venue and start time, per Alex, 2026-09-16.** Always at The
   Ministry, Borough (South London) - RareFounders' usual venue.
   Starting from 18:30, Alex's own estimate ("credo"), not yet
-  confirmed with Vasi in writing. Action items: Vasi to
+  confirmed with Vasi in writing.
+
+  **Speaker outreach started, 2026-09-16.** Alex picked a title from
+  the drafted options - "The Distribution Edge: Founders & Builders on
+  What Actually Works" - paired with a description built around "You've
+  built the product. Now what?", plus When/Where and a RareFounders
+  boilerplate. First speaker invited: Mat Zucker (Prophet's CMO) - see
+  [[prophet-tonileepr]] for that thread. This finalized copy is now the
+  reference template for inviting further speakers Action items: Vasi to
   send AI Central the Instinct AI link, AI Central to try it; AI
   Central to identify panel speakers and demo companies and send to
   Vasi; both to clarify full event details by next week; Vasi to help

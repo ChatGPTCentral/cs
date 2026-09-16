@@ -7,19 +7,17 @@
 - people: Belle Lenz (belle@tonileepr.com, Toni Lee PR, PR agency based in
   Los Angeles, representing Prophet), Mat Zucker (mzucker@prophet.com,
   CMO of Prophet, based in New York)
-- last-touch: Mat Zucker - asked how long Alex is in London and who
-  from Prophet should meet him, plus whether any Q4 media budget could
-  free up, 2026-09-15 12:38. Ball is Alex's
+- last-touch: Alex - told Mat his London window, then pivoted to
+  invite Prophet to speak at the Oct 26 RareFounders x AI Central
+  event, 2026-09-16 12:05. Ball is Mat's
 - start: 2026-09-02
 - last-inbound: 2026-09-15 12:38 (mzucker@prophet.com, cc
   belle@tonileepr.com, thread `1a0a4eb5231b699e`, message
   `1a0a5137c25f0ea4`)
-- last-outbound: 2026-09-15 12:20 (alex@thecentral.ai, to
-  mzucker@prophet.com, cc belle@tonileepr.com, thread `1a0a4eb5231b699e`,
-  message `1a0a502a81da78fa`)
-- next-action: answer Mat directly - how long Alex is in London, and
-  react to his note that most Q4 media is booked but he'll check for
-  an opening
+- last-outbound: 2026-09-16 12:05 (alex@thecentral.ai, to
+  mzucker@prophet.com, cc belle@tonileepr.com, thread
+  `1a0a4eb5231b699e`, message `1a0aa1bcd8dfe2b0`)
+- next-action: none - wait for Mat's answer on speaking at the event
 - commitments: send the media kit - done
 - threads: none found
 - notes: **Auto-genesis, 2026-09-03.** Google Calendar event "Discovery
@@ -90,3 +88,14 @@
   anything unbooked or movable "for a test of some sort." This is the
   live commercial angle Alex has been building toward since the
   2026-09-12 note on the real purpose of the interview offer
+
+  **Pivoted to a speaker ask, 2026-09-16 12:05.** Alex told Mat his
+  London window (in town until tomorrow lunchtime, then back 21 Oct
+  for two weeks), then invited Prophet to speak at the October 26
+  "distribution as the new moat for B2B" event - see
+  [[vasily-rarefounders]] for the event itself. Sent the finalized
+  event copy: title "The Distribution Edge: Founders & Builders on
+  What Actually Works," When/Where (Oct 26 from 18:30, The Ministry,
+  South London), and a RareFounders boilerplate blurb. This is the
+  first real speaker outreach for that event and the reference
+  template for inviting others
