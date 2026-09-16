@@ -16,20 +16,36 @@
   sitting unsent since 2026-09-10
 - last-inbound: 2026-09-15 18:05 (apatel@netline.com, cc alex@thecentral.ai,
   thread `19cf6dc21ce7fabd`, message `1a0a63fc6f74d481`)
-- last-outbound: 2026-09-08 13:21 (alex@thecentral.ai, thread
-  `1a067b9a68290465`, message `1a0812e179cd482b`, to Awais.Shahid@informa.com)
+- last-outbound: 2026-09-15 12:15 (elizabeth@theaicentral.net, thread
+  `1a067b9a68290465`, message `1a0a4fee98dc52d3`, to
+  Awais.Shahid@informa.com, cc alex@thecentral.ai - signed contract
+  attached, asked for intros to senior leaders/speakers)
 - idle: 0 days
 - next-action: **send the draft reply to Aneeka** - message
   `1a08b4f67cc55d18` on thread `19cf6dc21ce7fabd`, ready since 2026-09-10,
   confirming the link swap and the ChatGPT Central pause. She's now
-  chased twice (8 Sep, 15 Sep) with no reply. Separately: sign and
-  return the prospective agreement Awais sent, message `1a081524904c09c5` -
-  Alex is handling that one himself, per his own message, not this
-  agent's job
+  chased twice (8 Sep, 15 Sep) with no reply. Separately: **Alex and
+  Elizabeth both need to register for AI Summit New York press
+  passes** via the registration link Awais sent, message
+  `1a0a5cf9bfb8ca0c` (2026-09-15 16:03) - press passes cover every room
+  except the VIP lounge, which is press-restricted this year
 
   **Per Alex, 2026-09-13.** Plans to close and sign the Awais/Informa
   agreement tomorrow, 14 Sep. Logged as a task, not a next-action
   invented by this agent - see `ledger_tasks`
+
+  **Signed and closed, 2026-09-14/15, thread `1a067b9a68290465`.**
+  Awais confirmed no press in the VIP lounge this year, press passes
+  only, but offered to arrange intros to speakers and senior
+  executives via his PR team (2026-09-14 13:49, message
+  `1a0a02e6324b2dd1`). Elizabeth accepted, sent the signed contract and
+  the AI Central partner kit (2026-09-15 12:15, message
+  `1a0a4fee98dc52d3`). Awais confirmed AI Central is now listed on
+  Informa's media partners page for The AI Summit New York and asked
+  Alex and Elizabeth to register for press passes via their link
+  (2026-09-15 16:03, message `1a0a5cf9bfb8ca0c`). The Awais/Informa
+  agreement Alex flagged on 2026-09-13 is done - per the 2026-09-12
+  sequencing note, Rory Crone / [[cannes-lions-2026]] is next
 
   **Sequencing note, per Alex, 2026-09-12.** Once the Awais/Informa
   agreement above is signed and closed, the next move is

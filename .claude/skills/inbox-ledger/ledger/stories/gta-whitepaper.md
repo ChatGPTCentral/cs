@@ -16,9 +16,10 @@
   liz@thecentral.ai, matic.boh@wearesevenhills.com,
   mboh@sevenhillsbpigroup.com, gta@wearesevenhills.com, thread
   `1a0a4cc916057961`, message `1a0a53625efcc133`)
-- last-outbound: 2026-09-09 12:39 (alex@thecentral.ai, thread
-  `1a086153670818f1`, message `1a0862e30dbee527`, to marcduke@dukeconnect.co.uk,
-  cc tsvetelin@thinkrevops.com)
+- last-outbound: 2026-09-15 10:20 (alex@thecentral.ai, thread
+  `19f60e9ebd451424`, message `1a0a4956bc2c8245`, to
+  marcduke@dukeconnect.co.uk - "not yet, would you do it or would you
+  prefer me to do it?")
 - idle: 0 days
 - next-action: **give Russ two things: timing for his intro, and the
   key points Alex wants him to make.** He said yes immediately and is
@@ -35,6 +36,19 @@
   `19edf85ff0a1f34e`
 - notes: **Per Alex, 2026-09-10.** Alex is working on the whitepaper
   himself this morning - the draft due "at lunch" per yesterday's call
+
+  **Lead-up, 2026-09-14/15, thread `19f60e9ebd451424`.** Zoltan
+  replied first: "Thanks for this and it looks great. I will send you
+  my tweaks later this week" (2026-09-14 14:49, message
+  `1a0a065640d50045`) - his edits to the draft are still owed. Marc
+  Duke then asked "Looks great, particularly like the layout. Have you
+  shared with Russ?" (2026-09-14 22:43, message `1a0a216d17bf78d3`).
+  Alex replied "not yet. Would you do it, or would you prefer me to do
+  it?" (2026-09-15 10:20, message `1a0a4956bc2c8245`). Marc agreed:
+  "I will ask but will make it v clear that you are the man that has
+  transformed a conversation into a cracking piece of content"
+  (2026-09-15 10:41, message `1a0a4a8d766c42cf`) - this is what led to
+  the Russ Shaw email below
 
   **Resolved, 2026-09-15.** Marc Duke emailed Russ Shaw (cc Tsvetelin,
   Ganapathy, Zoltan, Swetha, Liz, and Seven Hills PR's Matic Boh at
