@@ -8,13 +8,13 @@
   Eugenio in [[luma-ai-followup]], that story's contacts are the
   Passionfroot/EMEA-partnerships side, this is a separate personal
   contact of Alex's)
-- status: open - invite text drafted, waiting for Alex to send
+- status: open - sent, ball is Carola's
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: none
-- last-outbound: none yet - drafted in chat 2026-09-16, Alex sends via
-  WhatsApp himself (no WhatsApp tool here)
-- next-action: Alex to send the text, then wait for Carola's answer
+- last-outbound: 2026-09-16 (WhatsApp, **sent** per Alex, no tool here
+  to verify - Italian text below)
+- next-action: none - sent, wait for Carola's answer
 - commitments: none
 - threads: none (WhatsApp only)
 - notes: Second and third round of speaker invites for the Oct 26 event,

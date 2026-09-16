@@ -47,10 +47,11 @@
   [[prophet-tonileepr]] for that thread. This finalized copy is now the
   reference template for inviting further speakers.
 
-  **More speaker invites, 2026-09-16.** Two more, texts drafted in chat
-  (Alex sends both himself, neither channel has a tool here): Nuria at
-  Canva via LinkedIn DM, and Carola Dixon at Luma via WhatsApp. See
-  [[canva-nuria-speaker]] and [[luma-carola-speaker]]. Action items: Vasi to
+  **More speaker invites, 2026-09-16.** Nuria at Canva via LinkedIn DM
+  and Carola Dixon at Luma via WhatsApp, both sent by Alex himself
+  (neither channel has a tool here). A third, Jason Day at Luma, drafted
+  as a Gmail draft for Alex to review. See [[canva-nuria-speaker]],
+  [[luma-carola-speaker]] and [[luma-jasonday-speaker]]. Action items: Vasi to
   send AI Central the Instinct AI link, AI Central to try it; AI
   Central to identify panel speakers and demo companies and send to
   Vasi; both to clarify full event details by next week; Vasi to help
