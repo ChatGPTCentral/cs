@@ -9,21 +9,25 @@
   being promoted) via the PartnerStack affiliate network. On AI Central's
   side: Alex (handed off), Elizabeth (owns affiliate strategy, now the
   contact)
-- last-touch: Randy - sent call follow-up notes with a 9-point action
-  list, 2026-09-14, ball is Elizabeth/Alex's
+- last-touch: Alex - jumped into the thread directly, 2026-09-16
+  12:19, ball is Randy's
 - start: 2026-09-01
 - last-inbound: 2026-09-14 19:29 (randy.harinandan@partnerstack.com,
   thread `1a05d4a6d24bca49`, to elizabeth@theaicentral.net, forwarded
   to alex@thecentral.ai by Elizabeth 2026-09-15 11:04, message
   `1a0a4bd5079bf914`)
-- last-outbound: 2026-09-14 (elizabeth@theaicentral.net to Randy,
-  during/around the call - exact message not on file, inferred from
-  Randy's "great speaking with you today")
-- next-action: work through Randy's 9-point list (below) - the two
-  items needing Alex specifically: (1) help Elizabeth shape a specific
-  Emergent package with benchmarking/performance data, (2) tell
-  Elizabeth the preferred commission type (upfront, hybrid, CPL, or
-  rev share) so she can tell Randy
+- last-outbound: 2026-09-16 12:19 (alex@thecentral.ai, thread
+  `1a05d4a6d24bca49`, message `1a0aa286f669d0be`, to
+  randy.harinandan@partnerstack.com, cc elizabeth@theaicentral.net -
+  three real asks: whether the Fathom main-ad request on the content
+  marketplace is Randy's/PartnerStack's doing, whether AI Central can
+  reach out directly to brands on other portals like Passionfroot or
+  should stay in-platform, and who to talk to about PartnerStack's own
+  blog/content partnerships)
+- next-action: none - wait for Randy's reply. Separately, still work
+  through the rest of his 9-point list (below) - the item needing
+  Alex specifically: tell Elizabeth the preferred commission type
+  (upfront, hybrid, CPL, or rev share) so she can tell Randy
 - **Pulse check, 2026-09-03.** Elizabeth ha risposto a Randy via
   `1a0675c747b0523a` - in attesa di risposta
 - commitments: none
@@ -81,3 +85,12 @@
   the 15 Sep revenue recap - real next steps exist now, most of them
   Elizabeth's to run, two need Alex's input (package benchmarking data,
   commission-type preference)
+
+  **Alex jumped in directly, 2026-09-16 12:19.** Rather than working
+  the 9-point list first, he raised three live questions with Randy:
+  a Fathom request for a content-marketplace main ad arrived right
+  after the call - is that Randy's merit; can AI Central reach out
+  directly to brands on other portals (e.g. Passionfroot) or should
+  everything stay in-platform; and who handles PartnerStack's own
+  blog/content partnerships. See [[fathom-partnerstack]] for the
+  Fathom side of this
