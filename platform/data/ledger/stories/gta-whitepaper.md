@@ -40,6 +40,26 @@
   landing on AI, first of a recurring quarterly series) - in attesa di
   risposta.
 
+  **Draft vs sent, diffed per Alex's own request, 2026-09-16.** He
+  kept the three-point structure and the overall thrust, but changed
+  three things worth carrying into future drafts on his behalf:
+  1. **Firmer timing beats a range.** The draft offered "Thursday or
+     Friday"; Alex picked one single date ("next Wednesday") instead of
+     leaving the choice open to the other side
+  2. **Lead with mission, not personal opinion.** The draft's first key
+     point was framed as "your own read on AI trends" (an opinion ask);
+     Alex reframed it as "your perspective on the GTA/TLA mission, why
+     they exist, why this piece matters" - grounding the ask in the
+     organization's purpose rather than a personal take, then moved the
+     "read on AI trends" point to second
+  3. **Open the floor to the group.** Alex added "Marc and others,
+     please feel free to add your takes as well" - inviting the wider
+     cc list to contribute, not just Russ
+  He also added a P.S. with a direct phone/WhatsApp number and his
+  calendar link - his own choice to include a link in his own edit,
+  not a contradiction of the no-hyperlink rule for drafts written on
+  his behalf
+
   **Draft prepared, 2026-09-16, per Alex.** He asked for the reply to
   Russ himself since he had the full context - drafted on the live
   thread `1a0a4cc916057961` (message `1a0a9efdb33d1b4e`, reply to
