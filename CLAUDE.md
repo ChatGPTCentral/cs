@@ -54,7 +54,7 @@ batch of 27 templated cold-outreach drafts. It runs before
 actually cold (not an existing contact), researches the company for real,
 picks a selling angle, then hands off to `alex-writing-style` for the
 draft itself. It depends on the Appeared.in MCP for sponsorship-history
-research, which is not connected yet - see the skill's "Open item".
+research - connected 2026-09-16.
 
 ## Non-obvious things that will bite you
 

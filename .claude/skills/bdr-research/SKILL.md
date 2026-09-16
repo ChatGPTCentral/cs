@@ -60,13 +60,17 @@ For the company:
   they actually say about themselves
 - Check ICP fit against `alex-writing-style`'s IDEAL CUSTOMER PROFILE
   (good/medium/bad fit, and why)
-- **Newsletter sponsorship history - currently blocked.** This is meant to
-  run through the Appeared.in MCP (tracks where a company has sponsored
-  newsletters/creators before), which is not connected yet - Alex needs to
-  authorize it via claude.ai connector settings (this session cannot do
-  OAuth). Until then, skip this check explicitly and say so in the
-  research brief - do not guess at sponsorship history or silently drop
-  the question
+- **Newsletter sponsorship history - connected, 2026-09-16.** Alex
+  authorized the Appeared.in (Lighthouse) MCP. Look up the prospect
+  with `mcp__Appeared_in__search_sponsors` or `get_sponsors` to find
+  their sponsor slug, then call
+  `mcp__Appeared_in__get_sponsor_linked_media` with that slug to see
+  which newsletters/podcasts they've sponsored before - real
+  ammunition for the angle in Step 3 (e.g. "you've run with X and Y
+  before, here's what a Beehiiv/LinkedIn placement adds"). Read-only,
+  MCP-side pagination is capped (max 50 records/page, 5 pages) - it is
+  built for lookups on a named company, not bulk export. If a lookup
+  genuinely returns nothing, say so plainly rather than guessing
 
 ## Step 3 - Pick the angle
 
@@ -96,8 +100,7 @@ only, that has broken threading before). Never send.
 ## Step 5 - Log
 
 Append one line per prospect to `log/research-runs.md`: date, company,
-angle chosen, ICP fit, draft id, and what research was skipped (the
-Appeared.in gap, mainly, until it's connected).
+angle chosen, ICP fit, draft id, and what research was skipped, if any.
 
 ## Output format
 
@@ -108,5 +111,4 @@ plus a one-line summary at the end.
 
 ## Open item
 
-Appeared.in MCP connection - see Step 2. Ask Alex to authorize it in
-claude.ai connector settings; nothing to do on this side until then.
+None currently - the Appeared.in MCP connection (Step 2) is live.
