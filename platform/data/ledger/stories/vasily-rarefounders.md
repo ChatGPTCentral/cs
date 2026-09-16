@@ -49,9 +49,24 @@
 
   **More speaker invites, 2026-09-16.** Nuria at Canva via LinkedIn DM
   and Carola Dixon at Luma via WhatsApp, both sent by Alex himself
-  (neither channel has a tool here). A third, Jason Day at Luma, drafted
-  as a Gmail draft for Alex to review. See [[canva-nuria-speaker]],
-  [[luma-carola-speaker]] and [[luma-jasonday-speaker]]. Action items: Vasi to
+  (neither channel has a tool here). A third, Jason Day at Luma, sent by
+  email. See [[canva-nuria-speaker]], [[luma-carola-speaker]] and
+  [[luma-jasonday-speaker]].
+
+  **Template update, 2026-09-16.** For Jason (no prior relationship,
+  unlike Mat), Alex added a new "About AI Central Media" boilerplate
+  paragraph to the p.s. block, before "About RareFounders" - use it for
+  any future speaker invite to a contact who doesn't already know AI
+  Central: "Headquartered in London, AI Central Media is an e-learning
+  and media company reaching more than 300,000 readers across the US,
+  UK and Europe. Through its publications and original content, it
+  teaches C-suite leaders, managers and knowledge workers the tools,
+  prompts and workflows that help them put AI to work. The team also
+  provides live coverage of leading AI and tech events, including
+  Cannes Lions, London Tech Week, SXSW and The AI Summit. Since 2023, it
+  has worked with more than 100 AI companies, SaaS platforms and
+  education brands to reach senior decision-makers and turn attention
+  into pipeline." Action items: Vasi to
   send AI Central the Instinct AI link, AI Central to try it; AI
   Central to identify panel speakers and demo companies and send to
   Vasi; both to clarify full event details by next week; Vasi to help

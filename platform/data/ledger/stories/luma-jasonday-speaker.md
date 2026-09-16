@@ -8,13 +8,13 @@
   per his LinkedIn) - a third Luma contact, distinct from Trevor/
   Eugenio in [[luma-ai-followup]] and from Carola Dixon in
   [[luma-carola-speaker]]
-- status: open - draft ready, waiting for Alex to review and send
+- status: open - sent, ball is Jason's
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: none - no prior thread with this address
-- last-outbound: none yet - draft created, message `1a0aa6f11795ee6d`,
-  thread `1a0aa6f11795ee6d`
-- next-action: Alex to review and send the draft
+- last-outbound: 2026-09-16 13:41 (alex@thecentral.ai, **sent**, message
+  `1a0aa7349b6e177b`, thread `1a0aa6f11795ee6d`)
+- next-action: none - wait for Jason's reply
 - commitments: none
 - threads: `1a0aa6f11795ee6d` (new thread, no prior history with this
   address)
@@ -34,3 +34,15 @@
   of it before now, taken as ground truth per his own account, same
   pattern as the Nuria/Guideline-AI-yacht detail he supplied for
   [[canva-nuria-speaker]].
+
+  **Sent, 2026-09-16 13:41 - real text, two real edits over the
+  draft.** Added "through Passionfroot" to the past-results line
+  (matches the real channel documented in [[luma-ai-followup]]).
+  Changed "we were at your villa" to "we covered your event at your
+  villa" - AI Central gave it media coverage, not just attendance, a
+  correction this agent had no way to know. Also added a new "About AI
+  Central Media" boilerplate paragraph before "About RareFounders" -
+  not in the Mat Zucker reference template, likely because Jason,
+  unlike Mat, has no prior relationship with Alex. Worth folding into
+  the reference template for any future speaker invite to a contact
+  who doesn't already know AI Central.
