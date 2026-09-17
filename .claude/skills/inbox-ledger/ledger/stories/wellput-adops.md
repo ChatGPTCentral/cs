@@ -94,3 +94,11 @@
   `1a0a59d3ec32c3b8`, message `1a0a59d3ec32c3b8`. Not yet forwarded to
   Elizabeth as of this pass - same pattern as Galactic Fed, her call
   whether to reserve it once he does
+
+  **Pulse check, 2026-09-17.** Ankita sent another new campaign pitch,
+  "Eberjey" (women's luxury lifestyle/fashion/wellness, 25-54,
+  first-come-first-served, limited budget). Alex bcc'd, thread
+  `1a0afa886d55e7d4`, message `1a0afa886d55e7d4`. Same pattern as
+  Galactic Fed/LeadPost - not a reply to the Craig/Q4 ask, a separate
+  parallel pitch. Not yet forwarded to Elizabeth as of this pass. The
+  Craig/Q4-monetization ball stays where it was - this doesn't move it
