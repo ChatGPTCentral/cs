@@ -6,11 +6,9 @@
 - people: `casucci.studiogaldieri@sirev.it` ("Danilo") and
   `valentina.studiogaldieri@gmail.com` - two people, one shared surname/firm
   fragment in both local-parts
-- last-touch: Alex - forwarded two rejected F24 payment notices, asking
-  why he wasn't warned, 2026-09-17 09:36. Ball is Danilo's
-- last-inbound: 2026-09-17 03:20 (support@qonto.com, automated -
-  Danilo/Alessio's Qonto F24 payment rejected for insufficient funds,
-  thread `1a0ad2ab5daf65d1`)
+- last-touch: Danilo - replied 2026-09-17 11:20. Ball is Alex's
+- last-inbound: 2026-09-17 11:20 (casucci.studiogaldieri@sirev.it,
+  thread `1a0ad2ab5daf65d1`, message `1a0aee26d977e935`)
 - last-outbound: 2026-09-17 09:36 (alex@thecentral.ai, **sent**, message
   `1a0aeb9e7f5974a6`, thread `1a0ad2ab5daf65d1`, to
   casucci.studiogaldieri@sirev.it - forwarded the Qonto rejection,
@@ -65,3 +63,11 @@
   Danilo asking what they are and why there was no advance warning -
   in attesa di risposta. Real money/cashflow issue, not routine
   paperwork like the note above
+
+  **Pulse check, 2026-09-17 (bis).** Danilo ha risposto via
+  `1a0aee26d977e935` - dice che si riferisce alle comunicazioni
+  pre-estive sugli F24 rateizzati, che l'addebito di oggi dovrebbe
+  essere quello nel PDF allegato ("f24 ai rett del 16.09.26.pdf"),
+  che confermera' una volta arrivate le ricevute telematiche oggi, e
+  che dalla mail di Alex non vede addebiti per 8 mila euro. In attesa
+  di risposta di Alex
