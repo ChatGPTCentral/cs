@@ -13,7 +13,9 @@
 - last-inbound: 2026-09-16 20:58 (hello@leapd.ai, thread
   `1a0a092f23083465`, message `1a0ac0391e40763a` - Cyrus, replying on
   Joe's Gmail thread)
-- next-action: none - wait for a reply on either channel
+- next-action: decide whether to accept Cyrus's $400 secondary test
+  placement before the Main Ad, or push back toward the Main Ad
+  directly
 - commitments: none
 - threads: none (Passionfroot only, no MCP connector for it in this
   session - Alex relays requests here by pasting them in chat). Passionfroot

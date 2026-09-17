@@ -28,11 +28,13 @@
   proposed a call this week to coordinate, added Liz as the AI
   Central-side release owner)
 - idle: 0 days
-- next-action: none - wait for Russ's actual intro text and for the
+- next-action: (1) wait for Russ's actual intro text and for the
   coordination call to get scheduled. Seven Hills PR (Matic Boh,
   mboh@sevenhillsbpigroup.com) is already cc'd throughout, so the
   "reach out to Seven Hills" item below is effectively done via cc,
-  though Alex may still want a direct word with them
+  though Alex may still want a direct word with them. (2) apply
+  Zoltan's edited case-study text to the whitepaper draft, then let
+  him review it again - he asked explicitly, message `1a0abdb56fecf8c9`
 - commitments: Alex asked when Tsvetelin's part will be ready and proposed a
   group call next week (Alex is back in the office) to assess where the
   whitepaper stands

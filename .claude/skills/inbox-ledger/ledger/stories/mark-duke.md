@@ -12,7 +12,7 @@
   marcduke@dukeconnect.co.uk - "are you using it? is it somehow
   useful?")
 - idle: 0 days
-- next-action: none - wait for Marc's reply
+- next-action: none - Marc answered the question, nothing further asked
 - commitments: none recorded
 - threads: `19b0331c16b4afff` (live), 8 more unread
 - notes: an introductions relationship that went quiet in December. 37 messages
