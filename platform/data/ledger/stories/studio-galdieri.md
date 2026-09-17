@@ -6,11 +6,17 @@
 - people: `casucci.studiogaldieri@sirev.it` ("Danilo") and
   `valentina.studiogaldieri@gmail.com` - two people, one shared surname/firm
   fragment in both local-parts
-- last-touch: Alex
-- last-inbound: 2026-08-06 (casucci.studiogaldieri@sirev.it)
-- last-outbound: 2026-08-06 (alex@thecentral.ai)
-- idle: 13 days
-- next-action: unknown - bodies not read for the most recent threads
+- last-touch: Alex - forwarded two rejected F24 payment notices, asking
+  why he wasn't warned, 2026-09-17 09:36. Ball is Danilo's
+- last-inbound: 2026-09-17 03:20 (support@qonto.com, automated -
+  Danilo/Alessio's Qonto F24 payment rejected for insufficient funds,
+  thread `1a0ad2ab5daf65d1`)
+- last-outbound: 2026-09-17 09:36 (alex@thecentral.ai, **sent**, message
+  `1a0aeb9e7f5974a6`, thread `1a0ad2ab5daf65d1`, to
+  casucci.studiogaldieri@sirev.it - forwarded the Qonto rejection,
+  "cosa sono? e perche non sono stato avvisato?")
+- idle: 0 days
+- next-action: none - wait for Danilo's reply
 - commitments: none recorded
 - threads: six threads 21 July - 6 August, plus at least nine more found
   reaching back to January (`19cb36adcbe0beed` "f24 vidimazione libri sociali",
@@ -52,3 +58,10 @@
   d'acconto for his own invoice (PDF attached), thread
   `1a0a5133561ac75f`. Routine administrative document, no action
   requested beyond filing it
+
+  **Pulse check, 2026-09-17.** Two Qonto F24 payments bounced overnight
+  for insufficient funds - one visible at €3.886,95 (16/9), Alex's own
+  message says "due addebiti per oltre 8 mila euro" total. Forwarded to
+  Danilo asking what they are and why there was no advance warning -
+  in attesa di risposta. Real money/cashflow issue, not routine
+  paperwork like the note above
