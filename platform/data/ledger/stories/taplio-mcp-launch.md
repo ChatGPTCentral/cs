@@ -5,11 +5,12 @@
 - kind: project (re-engagement, real past relationship - see notes)
 - people: Patrice (patrice@taplio.com, Taplio by lempire), Annika
   Bautista (annika@lempire.co, plans Taplio's media investments)
-- status: open - sent, ball is Annika's
+- status: open - Annika replied, ball is Alex's
 - start: 2026-09-16
 - end: (ongoing)
-- last-inbound: 2026-09-16 14:06 (patrice@taplio.com, thread
-  `1a0a5c7613874554`, message `1a0aa8ac0582e853`)
+- last-inbound: 2026-09-17 08:10 (annika@lemlist.com, cc
+  patrice@taplio.com, thread `1a0a5c7613874554`, message
+  `1a0ae6a887abb1c0`)
 - last-outbound: 2026-09-16 16:15 (alex@thecentral.ai, **sent**, message
   `1a0ab005d99c17bf`, thread `1a0a5c7613874554`, to patrice@taplio.com,
   cc annika@lempire.co)
@@ -51,3 +52,11 @@
   **Pulse check, 2026-09-16 (bis).** Alex ha risposto via
   `1a0ab005d99c17bf` - in attesa di risposta (si presenta ad Annika,
   offre di accelerare le campagne di fine Q3 e Q4)
+
+  **Pulse check, 2026-09-17.** Annika ha risposto via
+  `1a0ae6a887abb1c0` - risposta soft: al momento lavorano con influencer
+  individuali per le campagne di fine anno, farà sapere se emergono
+  opportunità in linea. Non un rifiuto netto ma nemmeno un'apertura
+  concreta. Nota: risponde da annika@lemlist.com, non
+  annika@lempire.co come indicato da Patrice - stesso nome, indirizzo
+  diverso
