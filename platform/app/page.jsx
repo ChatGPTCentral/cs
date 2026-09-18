@@ -27,7 +27,7 @@ export default async function TodayPage() {
                 modifica su <a href="/brief">/brief</a>
               </span>
             </div>
-            <BriefBlocks content={brief.content} />
+            <BriefBlocks briefId={brief.id} content={brief.content} />
           </>
         ) : (
           <p style={{ paddingTop: 16 }}>Nessun brief ancora per oggi - arriva nei giorni feriali, la mattina.</p>

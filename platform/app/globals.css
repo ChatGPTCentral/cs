@@ -1433,3 +1433,32 @@ p .field-label { display: inline-block; min-width: 60px; }
   color: var(--ink-faint);
   margin: 0 0 14px;
 }
+
+/* Brief bullets - each one actionable in place (check/x/pencil). */
+.brief-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+.brief-item-text { flex: 1; min-width: 0; }
+.brief-item-done { color: var(--ink-faint); text-decoration: line-through; }
+.brief-item-edit-form { flex: 1; }
+.brief-item-edit-input {
+  width: 100%;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  padding: 2px 6px;
+}
+.brief-item-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.today-brief li { list-style: none; }
+.today-brief ul { padding-left: 14px; }
+.today-brief ul ul { padding-left: 18px; margin: 2px 0; }
+.brief-line { display: flex; align-items: flex-start; gap: 6px; }
+.brief-marker { color: var(--ink-faint); flex-shrink: 0; }

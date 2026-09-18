@@ -24,10 +24,14 @@ function escapeHtml(s) {
 }
 
 function inlineFormat(s) {
-  return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+  return escapeHtml(s)
+    .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+    .replace(/~~(.+?)~~/g, "<s>$1</s>");
 }
 
-const BULLET_RE = /^(?:- )+/;
+// Exported so app/brief/lineActions.js can find/preserve a bullet's
+// "- " / "- - " prefix when it edits, toggles or removes one exact line.
+export const BULLET_RE = /^(?:- )+/;
 
 // Parses the plain-text convention described above into a flat block
 // list - shared by the email renderer below and by any other view that
@@ -38,7 +42,7 @@ export function parseBriefContent(content) {
   const blocks = [];
   let currentList = null;
 
-  for (const rawLine of lines) {
+  lines.forEach((rawLine, index) => {
     const line = rawLine.trimEnd();
     const bulletMatch = line.match(BULLET_RE);
 
@@ -58,14 +62,17 @@ export function parseBriefContent(content) {
         currentList = { type: "list", items: [] };
         blocks.push(currentList);
       }
-      currentList.items.push({ depth, text });
+      // line: the item's 0-based index in content.split("\n") - lets a
+      // caller (BriefTaskItem) address this exact line for an edit,
+      // a done-toggle or a removal without re-parsing the whole thing.
+      currentList.items.push({ depth, text, line: index });
     } else if (line.trim() === "") {
       currentList = null;
     } else {
       currentList = null;
       blocks.push({ type: "text", text: line.trim() });
     }
-  }
+  });
 
   return blocks;
 }
