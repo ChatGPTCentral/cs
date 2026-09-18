@@ -996,13 +996,80 @@ p .field-label { display: inline-block; min-width: 60px; }
   gap: 2px;
   margin-top: 6px;
 }
-.nba-task {
+
+/* Task rows - check/x/pencil inline actions, used both in the
+   cross-cutting list and nested under a story's next-action. */
+.task-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 3px 0;
   font-size: 12.5px;
   color: var(--ink-dim);
-  text-decoration: none;
 }
-.nba-task:hover { text-decoration: underline; }
-.nba-task-urgent { color: var(--danger); }
+.task-row-urgent .task-row-text { color: var(--danger); }
+.task-row-text { flex: 1; min-width: 0; overflow-wrap: break-word; }
+.task-row-kind { color: var(--ink-faint); margin-right: 4px; }
+.task-row-kind::after { content: " - "; }
+.task-row-due { color: var(--ink-faint); }
+.task-row-edit-form { flex: 1; }
+.task-row-edit-input {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  padding: 2px 6px;
+}
+.task-row-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.task-row-btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink-faint);
+  cursor: pointer;
+}
+.task-row-btn-done:hover { border-color: var(--success); color: var(--success); }
+.task-row-btn-remove:hover { border-color: var(--danger); color: var(--danger); }
+.task-row-btn-edit:hover { border-color: var(--accent); color: var(--accent-ink); }
+
+.add-task-form {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0 10px;
+}
+.add-task-input {
+  flex: 1;
+  max-width: 360px;
+  font: inherit;
+  font-size: 13px;
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--ink);
+}
+.add-task-input:focus { outline: none; border-color: var(--accent); }
+.add-task-btn {
+  font-size: 12.5px;
+  padding: 5px 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+.add-task-btn:hover { background: var(--accent-ink); }
+.add-task-btn:disabled { opacity: .5; cursor: default; }
 
 /* Second-brain link layer */
 .wiki-missing {

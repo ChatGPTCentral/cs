@@ -4,6 +4,8 @@ import { parseAttendees } from "../../lib/people";
 import TableCellInput from "../people/TableCellInput";
 import SavedToast from "../people/SavedToast";
 import Avatar from "../people/Avatar";
+import TaskRow from "./TaskRow";
+import AddTaskForm from "./AddTaskForm";
 
 export const dynamic = "force-dynamic";
 
@@ -13,16 +15,11 @@ function daysBetween(fromIso, toIso) {
 
 // One line per open ledger_tasks row - the same table /brief reads
 // "Priorities"/"Open tasks" from and /closing marks Done/Dropped on.
-// No link to click through to (unlike the old Notion task board rows) -
-// just a plain flag of what's open.
+// Check/x/pencil act immediately via TaskRow's own server actions.
 function TaskLine({ t, today }) {
   const overdue = t.due_date && t.due_date < today;
-  return (
-    <div className={`nba-task${overdue ? " nba-task-urgent" : ""}`}>
-      {t.kind} - {t.title}
-      {t.due_date ? ` (${overdue ? "in ritardo dal " : "entro il "}${t.due_date})` : ""}
-    </div>
-  );
+  const dueNote = t.due_date ? ` (${overdue ? "in ritardo dal " : "entro il "}${t.due_date})` : "";
+  return <TaskRow id={t.id} title={t.title} kind={t.kind} dueNote={dueNote} urgent={overdue} />;
 }
 
 function StoryRow({ item, today }) {
@@ -310,19 +307,18 @@ export default async function NbaPage() {
         </Section>
       )}
 
-      {boardOnly.length > 0 && (
-        <Section
-          title="Task trasversali - non legati a una storia"
-          count={boardOnly.length}
-          note="Da ledger_tasks, ordinati per scadenza. Segnali Done o Dropped su /closing."
-        >
-          <div className="nba-tasks">
-            {boardOnly.map((t) => (
-              <TaskLine key={t.id} t={t} today={today} />
-            ))}
-          </div>
-        </Section>
-      )}
+      <Section
+        title="Task trasversali - non legati a una storia"
+        count={boardOnly.length}
+        note="Da ledger_tasks. ✓ segna fatto, ✕ rimuove, ✎ rinomina - tutto subito, senza Save."
+      >
+        <AddTaskForm />
+        <div className="nba-tasks">
+          {boardOnly.map((t) => (
+            <TaskLine key={t.id} t={t} today={today} />
+          ))}
+        </div>
+      </Section>
 
       <SavedToast />
     </>
