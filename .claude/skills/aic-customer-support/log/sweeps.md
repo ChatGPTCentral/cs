@@ -22,6 +22,53 @@ deliberately left alone last time so it does not get re-triaged.
 
 ## Runs
 
+## 2026-09-18 - scoped sweep, Feedback + AI 101 only, goodwill template for plain fans
+
+Alex asked specifically for this run to skip Issues, and to use the exact
+"reach out to people who like us" template (verbatim, sent to three people on
+2026-09-13) for anyone simply being warm/positive with no real complaint,
+rather than the heavier playbook treatment.
+
+- window: newer_than:30d, Feedback and AI 101 only (Issues skipped this run
+  per Alex's request)
+- scanned: 23 threads (feedback 15 / ai101 8 / issues 0)
+- skipped: 2 already answered (Christian Dressel `1a052751a7c9b516` and Amy
+  Hickman `1a03fb7c47392ad6`, both sent the goodwill template on 2026-09-13,
+  most recent message in each thread is ours)
+- drafted: 19
+- escalated: 2
+  - Antonio Abad `1a063c5de8e97c0c` - thanks someone named "Juanita" by name,
+    not us - looks like a misdirected reply meant for a colleague. Not
+    drafted
+  - Christian Dressel (older thread) `1a04cf2d0b058367` - happy update on
+    2/9, superseded by his later 3/9 reply which already got the full
+    goodwill template plus review ask on 2026-09-13. Sending a second one
+    would be redundant. Not drafted
+- new candidates: `news.vague-interest` (t.kuijlen, "I am interested" with no
+  named referent)
+- promotions proposed: none this run
+- notes for the next run:
+  - Stripe was not authenticated this session - every billing-adjacent
+    thread in Group D went out unverified against Stripe. Re-check before
+    sending: Edmond Fung's CVC concern, and confirm no active Library
+    purchase already exists for any of the "paid" mentions
+  - Pat Serrano, Bill (gallewilliam), Aliya, Jeff Kushner, Christian
+    (Day 3/4), and Brian Kerr all carry `[NEEDS FROM ALEX: ...]` markers -
+    real links, badge fixes or resends this skill cannot supply
+  - Russell Cavanagh's draft was sent `to` his new gmail address per
+    `news.address-change` doctrine, not the old legalaid.nsw.gov.au address
+    he wrote from
+  - the goodwill-template drafts (5 in Group A, plus Jay's short personal
+    follow-up) kept the real "xoxo" sign-off from the verified 2026-09-13
+    sends rather than "Love, krissy" - but still carry the standard
+    signature block, since SKILL.md requires it on every draft and the
+    verified sends did not settle that question either way
+  - names guessed from an email handle rather than read from a signature:
+    "Steven" (stevengilreath10), "Ed" (edfung, thread `1a03382c14c9d681`
+    only - flagged to Alex as "likely Ed Fung", not certain). Where no name
+    was derivable with any confidence (cnewell, t.kuijlen, martens_tundras,
+    sdehaast) the draft opens "Hi sweetie" per SKILL.md's no-name rule
+
 ## 2026-08-07 - first live run, worked one thread at a time with Alex
 
 Not a `/support-sweep` run. Alex reviewed each reply in chat before any draft was
