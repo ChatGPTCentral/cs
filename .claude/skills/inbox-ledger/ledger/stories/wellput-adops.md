@@ -6,14 +6,11 @@
   `arajput@wellput.io`, plus a third address that varies -
   `avelhankar@wellput.io` on some threads, `awadghule@wellput.io` on others
 - ours: Elizabeth runs it, Alex is bcc'd on their inbound and cc'd on replies
-- last-touch: Abhijit (adops@wellput.io) - replied 2026-09-16 14:30.
-  Ball is Craig's (Abhijit explicitly says he's leaving it to Craig to
-  reach out, not asking Alex for anything - corrected from the pulse
-  check's mechanical flip, per auto-genesis judgment)
-- last-inbound: 2026-09-16 14:30 (adops@wellput.io, thread
-  `1a09208d69e06fb0`, message `1a0aaa0276a10705`, Abhijit routing to
-  Craig Swerdloff, Wellput's CEO, for the Q4 monetization chat - Craig
-  already cc'd on the thread)
+- last-touch: Ankita (adops@wellput.io) - replied 2026-09-18 14:33.
+  Ball is Alex's (pulse check, mechanical - see note below)
+- last-inbound: 2026-09-18 14:33 (adops@wellput.io, thread
+  `1a09208d69e06fb0`, message `1a0b4f0c4beb3674`, Ankita re-sent the
+  Trolley request for AI Central's payout details, per Alex's ask)
 - last-outbound: 2026-09-16 11:13 (alex@thecentral.ai, thread
   `1a09208d69e06fb0`, message `1a0a9ebd1b0f63cf`, to adops@wellput.io,
   cc elizabeth+cswerdloff+arajput+avelhankar - confirmed the LinkedIn
@@ -94,6 +91,12 @@
   `1a0a59d3ec32c3b8`, message `1a0a59d3ec32c3b8`. Not yet forwarded to
   Elizabeth as of this pass - same pattern as Galactic Fed, her call
   whether to reserve it once he does
+
+  **Pulse check, 2026-09-18.** Ankita ha risposto via `1a09208d69e06fb0`
+  (message `1a0b4f0c4beb3674`) - in attesa di Alex. Nota: la sua risposta
+  riguarda la richiesta Trolley per i dati di payout (thread separato dal
+  Q4-monetization/Craig sotto next-action, che resta invariato in attesa
+  del prossimo sweep completo)
 
   **Pulse check, 2026-09-17.** Ankita sent another new campaign pitch,
   "Eberjey" (women's luxury lifestyle/fashion/wellness, 25-54,
