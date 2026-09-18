@@ -48,6 +48,12 @@ const ICONS = {
       <path d="M10 6h4M10 10h4M10 14h4M10 18h4" />
     </>
   ),
+  deals: (
+    <>
+      <line x1="12" y1="1" x2="12" y2="23" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    </>
+  ),
   genesis: (
     <>
       <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
@@ -134,6 +140,7 @@ export default function BrainRail({ counts }) {
         { href: "/stories", icon: "stories", label: "Stories", count: counts.stories },
         { href: "/people", icon: "people", label: "People", count: counts.people },
         { href: "/clienti", icon: "companies", label: "Companies", count: counts.companies },
+        { href: "/deals", icon: "deals", label: "Deals" },
         { href: "/genesis", icon: "genesis", label: "Genesis" },
         { href: "/network", icon: "network", label: "Network" },
       ],

@@ -1220,3 +1220,103 @@ p .field-label { display: inline-block; min-width: 60px; }
 @media (max-width: 860px) {
   .rail { display: none; }
 }
+
+/* ---------- /deals: kanban of open sales conversations ---------- */
+
+.deals-board {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.deals-col {
+  flex: 0 0 auto;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+.deals-col-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--sale);
+}
+.deals-col-head h2 {
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--sale-ink);
+  margin: 0 0 3px;
+}
+.deals-col-head p {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  margin: 0;
+  max-width: 26ch;
+}
+.deals-col-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+.deals-cards { display: flex; flex-direction: column; gap: 10px; }
+.deals-empty { font-size: 12.5px; color: var(--ink-faint); font-style: italic; margin: 0; }
+
+.deals-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sale);
+  padding: 10px 12px;
+}
+.deals-card-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.deals-card-title:hover { text-decoration: underline; }
+.deals-card-action {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-dim);
+  margin: 0 0 8px;
+}
+.deals-card-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.deals-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.deals-pill {
+  font-size: 10.5px;
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 2px 7px;
+  border-radius: 0;
+}
+.deals-pill-money { background: var(--accent-wash); color: var(--accent-ink); }
+.deals-pill-overdue { background: var(--danger-wash); color: var(--danger); }
+
+.deals-stage-form { margin: 0; }
+.deals-stage-select {
+  width: 100%;
+  font-size: 11.5px;
+  font-family: inherit;
+  color: var(--ink-dim);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 4px 6px;
+}
+.deals-stage-select:focus { outline: none; border-color: var(--sale); }
+
+@media (max-width: 860px) {
+  .deals-col { width: 240px; }
+}
