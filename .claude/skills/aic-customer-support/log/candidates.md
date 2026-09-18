@@ -22,7 +22,19 @@ note why in the log below.
 
 ## Open candidates
 
-_None open._
+### course.certificate-legitimacy
+- domain: ai101-course
+- seen: 1
+- first-seen: 2026-09-18
+- last-seen: 2026-09-18
+- summary: a graduate wants the completion certificate to look officially
+  signed (not a template with a blank signature line) so it holds up as
+  proof of CPD, and suggests we only issue it on request with real scores
+- threads: 19fe12b2977f7020
+- draft-approach: thanked him for the score jump, took the suggestion
+  seriously, did not promise a signed-certificate process that was never
+  confirmed. Marked `[NEEDS FROM ALEX: whether a properly signed
+  certificate is possible]` rather than guess
 
 ## Removed
 

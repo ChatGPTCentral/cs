@@ -22,6 +22,66 @@ deliberately left alone last time so it does not get re-triaged.
 
 ## Runs
 
+## 2026-09-18 - full backlog clear, Feedback + AI 101, Alex watching live
+
+Alex asked for the entire unread backlog cleared in one pass (not the usual
+30-day window), skipped Issues by design, and lifted the ~20-draft cap for
+this run only. Thread IDs were supplied directly rather than re-derived from
+`search_threads`.
+
+- window: full unread backlog, Feedback + AI 101 only (Issues out of scope
+  this run)
+- scanned: 63 unique threads (feedback 36 / ai101 28, minus 1 dual-labeled
+  thread counted once - Adam Song, `19fb909f4c26a6aa`)
+- skipped: 7
+  - Antonio Abad `1a063c5de8e97c0c` - thanks someone named "Juanita", not us
+    - misdirected reply
+  - `1a019426670ce474` - internal self-forward (chatgptcentral@gmail.com to
+    alex@thecentral.ai) of a customer complaint (Freddie Martin Gillogly) that
+    lives in a different thread not in this batch. Last message is from our
+    own address, and there is no customer thread here to reply into
+  - `1a00154804eefb9e` - two copies of our own campaign send plus an
+    out-of-office autoreply, no real customer content
+  - `19ff76fb74588d37` - an automated vendor autoresponder (Sipsavvy support),
+    not a person replying
+  - Carol Boudreaux `19fdd6f320fdd07f` - her "am I in the first 50" question
+    is superseded by her own later message in `19fddd27f405048a` showing
+    she's already enrolled and excited. Drafted once, on the later thread
+  - `19ffcc73ad863425`, `19fb4ada8cd8196b` - copies of the AI 101 campaign
+    itself landing in the labeled folder, not customer replies
+- drafted: 55
+- escalated: 1 - `rm@pasto.se`, `19fd98313123ac96`, `news.data-privacy-complaint`
+  (unchanged from the prior flag, still not drafted)
+- new candidates: `course.certificate-legitimacy` (Matthew Stokes,
+  `19fe12b2977f7020`)
+- promotions proposed: none this run (no candidate hit `seen >= 3`)
+- notes for the next run:
+  - Stripe was not authenticated this session. Cheryl Wilson's billing
+    thread (`19fafa97cefbdd63`, buzzword reply + "I paid but never got
+    login") and Victor Villagomez's pricing question (`19ffc6bcade40716`)
+    both went out unverified against Stripe
+  - two different people (Ro Voelkl `19fc6bf8636dfd96`, JR Bolanos
+    `19fde83804069367`) independently hit the same missing "MCPs &
+    Connectors Guide" link for Class 5 - worth Alex fixing at the source
+    rather than per-customer
+  - Justin's `99 Claude Power Codes` link (`19f8fafb18818de3`) and
+    Elizabeth Barber's Class 6 Skills & Memory Guide link
+    (`1a000f2606ca39b1`) are both expired signed URLs with no confirmed
+    permanent article link found this run - flagged `[NEEDS FROM ALEX]`
+    rather than guessed
+  - Adam Song (`19fb909f4c26a6aa`) has a real open question - whether
+    Class 3 shipped after Class 2 - that needs a factual answer, not just
+    reassurance
+  - Stefan Weigl's enrolment saga (`19f9ebd89f8fe7de`) got a reassurance
+    reply; his separate broken-carousel-link thread
+    (`19f9fdf4cf8ae639`) was answered on its own, since it's a different
+    complaint
+  - names guessed from an email handle rather than read from a signature:
+    Roger (buenroger), Bamidele (bamidelebadiru5), Theresa (theresa2sf).
+    Where no name was derivable with any confidence, drafts open "Hi
+    sweetie" per SKILL.md's no-name rule (goh.khengheng, rkalpanalove19,
+    llsouders, vg.in2011's Gemini-superpowers thread)
+
 ## 2026-09-18 - scoped sweep, Feedback + AI 101 only, goodwill template for plain fans
 
 Alex asked specifically for this run to skip Issues, and to use the exact
