@@ -6,14 +6,17 @@
 - kind: person
 - people: richard.evans@beehiiv.com, cc juliet@beehiiv.com
 - last-touch: Richard Evans
-- last-inbound: 2026-08-31 14:40 (richard.evans@beehiiv.com, thread
-  `1a0406cba2e234d0`)
+- last-inbound: 2026-09-17 18:59 (richard.evans@beehiiv.com, thread
+  `1a0406cba2e234d0`, message `1a0b0bd7347db2b0` - another check-in,
+  asking how the October Enterprise move is coming and to flag if the
+  timeline changed)
 - last-outbound: 2026-08-31 08:28 (alex@thecentral.ai, sent - thread
   `1a0406cba2e234d0`)
-- idle: 8 days
+- idle: 17 days (since Alex's own last reply)
 - next-action: none - wait for Richard to confirm the 1 Oct Enterprise
   move. Per Alex 2026-09-01, quiet until closer to that date is expected,
-  not cold
+  not cold. Calendar reminder already covers 20 Sep - this new check-in
+  doesn't move that plan
 - **Pulse check, 2026-08-31.** Richard replied via `1a0406cba2e234d0` -
   read and respond
 - commitments: told Richard AI Central moves into Enterprise on 1
@@ -56,3 +59,9 @@
   created for 20 Sep 2026, 09:00 CEST - "Reminder: follow up with
   Richard Evans (beehiiv Enterprise move, 1 Oct)," event id
   `1htitsbpsjpt0i2fo2oq7inki4`
+
+  **Auto-genesis, 2026-09-18.** Richard sent another check-in on
+  2026-09-17, same thread, asking how things are coming along for
+  October and to let him know if the timeline changed. Nothing new
+  beyond the pattern already logged above - no reply needed before the
+  20 Sep reminder per Alex's own instruction
