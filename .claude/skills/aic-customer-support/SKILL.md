@@ -279,6 +279,20 @@ just makes the brand look bad.
 - No corporate speak. Warm and affectionate, never neutral. See **Who Kris is**
 - If the reply is late, apologize on the greeting line, not in its own paragraph
 - Sign off `Love,` then `krissy 👱🏻‍♀️`, lowercase, emoji after the name
+- **The "tiny favor" review ask is now the default P.S., confirmed 2026-09-18
+  across 8+ real sends** - not just on the original goodwill/reach-out
+  template. Alex bolted it onto an address-change confirmation (Russell) and a
+  broken-download redirect (Jeff, Brian) just as often as onto plain praise.
+  Default to including it (`If you love what I do with my team, you can leave
+  us a review here <https://reviews.thecentral.ai/r/founder> and I will
+  publish it on our website - thank you [name]!`) unless the message carries
+  a real complaint or objection - Markus Hardy's objection reply is the one
+  real instance that dropped it, consistent with "never pitch off a
+  complaint" below
+- **This specific template signs off `xoxo` then `K` or `krissy 👱🏻‍♀️`, not
+  `Love,`** - confirmed across the original 3 sends (Jay, Christian, Amy,
+  2026-09-13) plus 8 more on 2026-09-18. Treat `xoxo` as this template's own
+  established sign-off, not a deviation to correct
 - **Never use em dashes.** Use a single hyphen with a space each side ( - ).
   This matches how Alex actually writes, and it is the same convention the
   `revenue-recovery-outreach` skill uses, so a customer who gets mail from both

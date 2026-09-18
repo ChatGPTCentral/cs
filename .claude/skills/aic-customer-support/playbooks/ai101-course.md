@@ -16,6 +16,12 @@ buried in it.
   do you hear most at work?"*, which is why that lesson dominates the folder
 - The quiz-to-content handoff is the weak point. Several people completed the
   quiz and reached a landing page that did nothing
+- **AI Central also runs a second, separate email program: The AI Bootcamp**
+  (12 weeks, 3 chapters, its own campaign subject lines like "Introducing:
+  The AI Bootcamp"). Same shape as AI 101 - async, email-only, no live
+  session - just longer and a different signup. Confirmed 2026-09-18: both
+  programs are "posted here `https://thecentral.ai/ai-bootcamp`" for the
+  Bootcamp specifically (real URL, sent by Alex)
 
 ## Standing rules for this domain
 
@@ -112,19 +118,49 @@ complete the quiz and simply never enter the automation.
 - examples: `19fb5562ae54f800`, `19fb1aefe5e52f14`, `19faf44c1f4d808e`
 
 ### course.how-to-start
-- status: seeded
-- seen: 2
-- last-seen: 2026-07-27
+- status: established (calibrated from 2 real sent replies, 2026-09-18)
+- seen: 4
+- last-seen: 2026-09-18
 - signals: "how do the courses start, a separate email?", "where are the spots
-  for the course?". Pre-enrolment confusion, sometimes reading "course" as a live
-  class with limited seats
+  for the course?", "am I too late to register", "missed the first class, is
+  there a replay link". Pre-enrolment or missed-class confusion, reading the
+  course (AI 101 or the Bootcamp) as a live class with limited seats or a
+  replay to catch up on
 - move: correct the mental model plainly. It is an email sequence, not a live
-  cohort, nothing fills up, nothing is missed by being late. That misconception
-  drives the urgency in several of these messages
-- draft-shape: state the format in one line, state what arrives when, give the
-  quiz link if they have not started. Warm, three lines
-- needs-from-alex: the quiz signup link
-- examples: `19fa4f7606da57b5`, `19fa4e3e3444d283`
+  cohort - nothing fills up, nothing is missed by being late, and there is no
+  "replay" because nothing was ever live. Point at the real archive rather
+  than resending individual lessons
+- draft-shape: one line stating the format ("isn't a live class - it lands as
+  email lessons you work through at your own pace, so nothing closes and
+  nothing is missed by starting later"), one line with the archive link. Warm,
+  short
+- needs-from-alex: nothing for the Bootcamp - the archive link is confirmed:
+  `https://thecentral.ai/ai-bootcamp`. Still open for plain AI 101: no
+  confirmed archive link seen yet, use `[NEEDS FROM ALEX: AI 101 archive/quiz
+  link]` if no sibling link is findable
+- examples: `19fa4f7606da57b5`, `19fa4e3e3444d283`, `1a064fd92155faef`
+  (William "Bill" Galle, missed class 1, wants replay), `1a063a898c6be9e0`
+  (Pat Serrano, too late to register)
+
+### course.missing-materials
+- status: established (calibrated from 1 real sent reply, 2026-09-18 - watch
+  for a second instance before treating the move as fully settled)
+- seen: 1
+- last-seen: 2026-09-18
+- signals: a lesson references materials for multiple items (e.g. "setup for
+  all four providers") but the customer only received some of them - a
+  partial-delivery gap, not a fully broken link
+- move: do not try to track down or resend the specific missing file. Point at
+  the permanent archive page instead, where everything for that program ends
+  up published - same move as `news.lead-magnet-not-received`'s "point to the
+  web article, not the expiring signed URL" rule, just for course materials
+  instead of newsletter lead magnets
+- draft-shape: apologize briefly for the late reply if it is one, ask if they
+  now have it via the archive, give the link. Two to three lines
+- needs-from-alex: nothing for the Bootcamp (`https://thecentral.ai/ai-bootcamp`
+  is confirmed). Ask Alex for the equivalent AI 101 archive if this recurs
+  there
+- examples: `1a01ac224ea1ac3d` (Brian Kerr, only 2 of 4 provider setup guides)
 
 ### course.logistics
 - status: seeded
@@ -195,4 +231,8 @@ Scan for: "I paid", "purchase", "receipt", "charged", "subscription", "login",
 
 ## Changelog
 
+- 2026-09-18 - `/support-learn` calibration from 19 real sent replies.
+  `course.how-to-start` promoted to established, broadened to cover the
+  Bootcamp and missed-class/replay confusion, archive link confirmed. New
+  entry `course.missing-materials`, same archive-link move
 - 2026-08-07 - seeded from the AI 101 folder backfill, 18 threads

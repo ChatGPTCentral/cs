@@ -22,18 +22,11 @@ note why in the log below.
 
 ## Open candidates
 
-### news.vague-interest
-- domain: newsletter-ops
-- seen: 1
-- first-seen: 2026-09-18
-- last-seen: 2026-09-18
-- summary: replies "I am interested" (or similarly bare) to a campaign with
-  no object named - unclear which tool, resource or offer they mean
-- threads: `1a041a393ea3129d`
-- draft-approach: asked a clarifying question naming the likely referents
-  (one of the 55 AI tools, the AI Library) instead of guessing which one or
-  reaching for the goodwill template
+_None open._
 
 ## Removed
 
-_Nothing removed yet._
+- **news.vague-interest** - promoted to `playbooks/newsletter-ops.md`,
+  2026-09-18. A second real instance (`1a0590e5cbd1ea51`) landed the same day
+  and Alex named the pattern directly, clearing both the `seen >= 3` bar's
+  intent and the "or Alex says so" exception in `references/learning.md`.

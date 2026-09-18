@@ -177,9 +177,9 @@ real duplicate has never been reported. Both shapes exist, neither is the
 default, and the only way to know is to look.
 
 ### news.address-change
-- status: seeded
-- seen: 1
-- last-seen: 2026-07-30
+- status: established (calibrated from 1 real sent reply, 2026-09-18)
+- seen: 2
+- last-seen: 2026-09-18
 - signals: changing jobs, retiring, "please update my address to". A subscriber
   actively asking to keep receiving us. Rare and worth handling well
 - move: **check beehiiv for both addresses first.** They may already be
@@ -189,9 +189,53 @@ default, and the only way to know is to look.
 - draft-shape: confirm the switch, confirm which address it now goes to, one warm
   line. **Send to the new address, not the one that wrote in** - by the time
   anyone replies, the old mailbox is often already closed, and a reply into a
-  dead mailbox looks identical to being ignored
+  dead mailbox looks identical to being ignored. Alex's real send kept it to one
+  line ("Got it - switching your subscription over to this address now") plus
+  the default review-ask P.S. - a purely mechanical fix still gets the P.S.,
+  see the Tone section in SKILL.md
 - needs-from-alex: the beehiiv-side removal of the old address
-- examples: `19fb44cfe276c61c`
+- examples: `19fb44cfe276c61c`, `1a0791cb98304cb2` (Russell Cavanagh)
+
+### news.vague-interest
+- status: established (promoted 2026-09-18, per Alex directly - two real
+  instances, both calibrated against his own sent replies)
+- seen: 2
+- last-seen: 2026-09-18
+- signals: a bare, object-less reply to a campaign - "I am interested", "do
+  you have assets on X" with no clear referent. The job is figuring out what
+  they actually mean before answering, not guessing or defaulting to the
+  goodwill template
+- move: never guess which thing they mean and never apply the goodwill/review
+  template to paper over the ambiguity. Ask one short clarifying question that
+  names the 2-3 likely referents from the campaign they replied to (a specific
+  tool, the AI Library, etc.), so answering is a one-tap choice for them
+- draft-shape: acknowledge briefly ("thanks for writing in - '[their word]'
+  caught my eye"), name 2-3 concrete options pulled from what they replied to,
+  ask which one. Three lines
+- needs-from-alex: nothing
+- examples: `1a041a393ea3129d` (Ton Kuijlen, "I am interested"),
+  `1a0590e5cbd1ea51` (0.martens_tundras, "Claude Full Stack" assets)
+
+### news.negative-feedback-ally
+- status: established (new, per Alex directly, 2026-09-18 - single real
+  instance so far, watch for a second before treating the shape as settled)
+- seen: 1
+- last-seen: 2026-09-18
+- signals: the customer pushes back on what AI Central actually is or does -
+  "a newsletter isn't enough for my business", an expectations mismatch or a
+  real critique, not a simple question
+- move: **do not argue and do not oversell.** State plainly and honestly what
+  AI Central is and is not, once. Then flip the exchange: ask them directly
+  what we could do better, framed as helping the whole readership, not just
+  them. This turns a negative reply into editorial input instead of a dead
+  end - the same principle as `course.assignment-reply`'s "collect the
+  answers, don't just reply to them," applied to criticism instead of praise
+- draft-shape: one honest line on what we are/are not, one line inviting
+  suggestions ("do you have any suggestions or feedback? this will help us
+  improve how we deliver to all our readers"). No review-ask P.S. here - a
+  real objection does not get the pitch, see SKILL.md's Tone section
+- needs-from-alex: nothing
+- examples: `1a071e6c3f85022a` (Markus Hardy, AIMindSync)
 
 ### news.data-privacy-complaint
 - status: seeded
@@ -305,4 +349,8 @@ Flag for Alex, do not draft:
 
 ## Changelog
 
+- 2026-09-18 - `/support-learn` calibration from 19 real sent replies, plus 5
+  cases Alex named directly. Promoted `news.vague-interest` from candidate to
+  established. New entry `news.negative-feedback-ally`. `news.address-change`
+  promoted to established with a real example
 - 2026-08-07 - seeded from the Feedback folder backfill, 25 threads

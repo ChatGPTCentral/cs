@@ -22,6 +22,51 @@ observation; two independent instances make it a proposal.
 
 ## Runs
 
+## 2026-09-18 - calibration from 19 real sent replies, plus Alex naming 5 cases directly
+
+- window: since 2026-08-07 (first real Loop 3 run since then), triggered by
+  Alex asking to map patterns from today's sweep sends against the 28 AI 101
+  + 36 Feedback threads still in the backlog
+- sent replies read: 19 (every draft from today's `/support-sweep` that Alex
+  sent), covering all three folders in scope that day
+- topics with no playbook (gaps, applied): `news.negative-feedback-ally` -
+  Markus Hardy's objection got "state what we are/aren't, then ask what we
+  could do better" - a real reframe-negative-into-editorial-input move with
+  no prior entry
+- promoted from candidate: `news.vague-interest` (was seen:1, now seen:2 with
+  0.martens_tundras as the second instance) - Alex named this exact pattern
+  directly ("persone che hanno scritto un messaggio vago e il nostro lavoro è
+  capire cosa vogliono")
+- policy drift found:
+  - `course.how-to-start` - broadened to cover a second program (The AI
+    Bootcamp, 12 weeks, separate from AI 101's 9 emails) and missed-class/
+    replay confusion, not just pre-enrolment confusion. Real archive link
+    confirmed: `https://thecentral.ai/ai-bootcamp`, closing a needs-from-alex
+    that was previously open
+  - `news.address-change` - confirmed real example, promoted to established
+- voice notes:
+  - the "tiny favor" review-ask P.S. is now the default closer across almost
+    every reply in these two folders, not just the original 3
+    goodwill-template sends - it rode along on a plain address-change fix and
+    two broken-download redirects. The one reply that dropped it was the one
+    real objection (Markus Hardy) - confirms the existing "never pitch off a
+    complaint" rule rather than contradicting it
+  - the goodwill/reach-out template's own sign-off is `xoxo` + `K` or
+    `krissy`, distinct from the default `Love, krissy` - both are now
+    confirmed real patterns, recorded as separate rules rather than resolving
+    one into the other
+- applied: all of the above, written into `playbooks/ai101-course.md`
+  (`course.how-to-start` broadened, new `course.missing-materials`),
+  `playbooks/newsletter-ops.md` (`news.address-change` promoted,
+  `news.vague-interest` promoted, new `news.negative-feedback-ally`), and
+  `SKILL.md` (review-ask-as-default-P.S. and the `xoxo` sign-off carve-out)
+- observations: Jeff Kushner's and Brian Kerr's redirects (case "can't find
+  the download link") turned out to be the existing `news.lead-magnet-not-
+  received` / archive-link move already documented, just confirmed against a
+  course-materials instance too (`course.missing-materials`) rather than a
+  new pattern - the underlying move (point to the permanent archive page, not
+  the expiring signed URL) was already right
+
 ## 2026-08-07 - operator correction, not a full run
 
 Alex corrected a belief mid-draft. Logging it here because it is Loop 3 input
