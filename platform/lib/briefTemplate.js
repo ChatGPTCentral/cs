@@ -29,7 +29,11 @@ function inlineFormat(s) {
 
 const BULLET_RE = /^(?:- )+/;
 
-export function renderBriefBody(content) {
+// Parses the plain-text convention described above into a flat block
+// list - shared by the email renderer below and by any other view that
+// wants to render a brief's content (e.g. the /  "Today" page). Kept
+// framework-agnostic (no HTML, no JSX) on purpose.
+export function parseBriefContent(content) {
   const lines = String(content || "").split("\n");
   const blocks = [];
   let currentList = null;
@@ -62,6 +66,12 @@ export function renderBriefBody(content) {
       blocks.push({ type: "text", text: line.trim() });
     }
   }
+
+  return blocks;
+}
+
+export function renderBriefBody(content) {
+  const blocks = parseBriefContent(content);
 
   return blocks
     .map((block) => {

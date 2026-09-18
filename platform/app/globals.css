@@ -1320,3 +1320,49 @@ p .field-label { display: inline-block; min-width: 60px; }
 @media (max-width: 860px) {
   .deals-col { width: 240px; }
 }
+
+/* ---------- Today (home): the morning brief rendered inline ---------- */
+
+.today-brief h2 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 22px 0 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.today-brief h2:first-child { margin-top: 0; }
+.today-brief h3 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-dim);
+  margin: 14px 0 4px;
+}
+.today-brief h4 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--accent-ink);
+  margin: 10px 0 4px;
+}
+.today-brief p { color: var(--ink-dim); margin: 0 0 8px; font-size: 14px; }
+.today-brief ul { margin: 0 0 8px; padding-left: 20px; color: var(--ink-dim); font-size: 13.5px; }
+.today-brief ul ul { margin: 2px 0 2px; }
+.today-brief li { margin-bottom: 3px; }
+.today-brief strong { color: var(--ink); }
+
+.today-secondary { margin-top: 28px; }
+.today-secondary summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 4px 0;
+  list-style: revert;
+}
+.today-secondary[open] summary { margin-bottom: 12px; }
+.today-secondary-note {
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: 0 0 14px;
+}
