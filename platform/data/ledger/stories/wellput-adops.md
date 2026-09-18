@@ -6,8 +6,8 @@
   `arajput@wellput.io`, plus a third address that varies -
   `avelhankar@wellput.io` on some threads, `awadghule@wellput.io` on others
 - ours: Elizabeth runs it, Alex is bcc'd on their inbound and cc'd on replies
-- last-touch: Ankita (adops@wellput.io) - replied 2026-09-18 14:33.
-  Ball is Alex's (pulse check, mechanical - see note below)
+- last-touch: Alex - per Alex directly, 2026-09-18: filled in the Trolley
+  payout details Ankita re-sent. Nothing further owed on this specific ask
 - last-inbound: 2026-09-18 14:33 (adops@wellput.io, thread
   `1a09208d69e06fb0`, message `1a0b4f0c4beb3674`, Ankita re-sent the
   Trolley request for AI Central's payout details, per Alex's ask)
