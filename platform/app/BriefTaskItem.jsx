@@ -1,23 +1,24 @@
 "use client";
 
 import { useRef, useState, useTransition } from "react";
-import { toggleBriefLineDone, removeBriefLine, editBriefLine } from "./brief/lineActions";
+import { toggleBriefLineDone, toggleBriefLineRemoved, editBriefLine } from "./brief/lineActions";
 
-// One bullet in the rendered brief - check marks it done (struck through
-// in place, click again to undo), x removes the line entirely, pencil
-// edits its text. Every click writes straight to ledger_briefs.content,
-// the same field /brief's own textarea edits - no separate data model.
-export default function BriefTaskItem({ briefId, line, text, done, children }) {
+// One bullet in the rendered brief. Check marks it done (struck through
+// in place, click again to undo). X marks it removed (faded, only a
+// restore button shows, click to bring it back) - nothing is ever
+// actually deleted from the brief's content, both are toggles. Pencil
+// edits the text in place. Every click writes straight to
+// ledger_briefs.content, the same field /brief's own textarea edits.
+export default function BriefTaskItem({ briefId, line, done, removed, plainText, children }) {
   const [editing, setEditing] = useState(false);
-  const rawText = done ? text.slice(2, -2) : text;
-  const [value, setValue] = useState(rawText);
+  const [value, setValue] = useState(plainText);
   const [isPending, startTransition] = useTransition();
   const editFormRef = useRef(null);
 
   function saveEdit() {
     const trimmed = value.trim();
-    if (!trimmed || trimmed === rawText) {
-      setValue(rawText);
+    if (!trimmed || trimmed === plainText) {
+      setValue(plainText);
       setEditing(false);
       return;
     }
@@ -25,6 +26,23 @@ export default function BriefTaskItem({ briefId, line, text, done, children }) {
       await editBriefLine(new FormData(editFormRef.current));
       setEditing(false);
     });
+  }
+
+  if (removed) {
+    return (
+      <span className="brief-item">
+        <span className="brief-item-text brief-item-removed">{children}</span>
+        <span className="brief-item-actions">
+          <form action={toggleBriefLineRemoved}>
+            <input type="hidden" name="briefId" value={briefId} />
+            <input type="hidden" name="line" value={line} />
+            <button type="submit" className="task-row-btn task-row-btn-restore" title="Restore">
+              ↺
+            </button>
+          </form>
+        </span>
+      </span>
+    );
   }
 
   return (
@@ -46,7 +64,7 @@ export default function BriefTaskItem({ briefId, line, text, done, children }) {
                 e.preventDefault();
                 saveEdit();
               } else if (e.key === "Escape") {
-                setValue(rawText);
+                setValue(plainText);
                 setEditing(false);
               }
             }}
@@ -64,7 +82,7 @@ export default function BriefTaskItem({ briefId, line, text, done, children }) {
             ✓
           </button>
         </form>
-        <form action={removeBriefLine}>
+        <form action={toggleBriefLineRemoved}>
           <input type="hidden" name="briefId" value={briefId} />
           <input type="hidden" name="line" value={line} />
           <button type="submit" className="task-row-btn task-row-btn-remove" title="Remove">

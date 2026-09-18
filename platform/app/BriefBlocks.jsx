@@ -20,6 +20,10 @@ function isDone(text) {
   return text.startsWith("~~") && text.endsWith("~~") && text.length > 4;
 }
 
+function isRemoved(text) {
+  return text.startsWith("%%") && text.endsWith("%%") && text.length > 4;
+}
+
 // Turns a flat, depth-tagged item list ("- " = depth 1, "- - " = depth 2,
 // ...) into a real nested tree so it can render as nested <ul><li>. Each
 // node keeps its own source line index for the action buttons.
@@ -38,17 +42,23 @@ function buildTree(items) {
 function BriefList({ nodes, briefId }) {
   return (
     <ul>
-      {nodes.map((n) => (
-        <li key={n.line}>
-          <div className="brief-line">
-            <span className="brief-marker">-</span>
-            <BriefTaskItem briefId={briefId} line={n.line} text={n.text} done={isDone(n.text)}>
-              {renderInline(isDone(n.text) ? n.text.slice(2, -2) : n.text)}
-            </BriefTaskItem>
-          </div>
-          {n.children.length > 0 && <BriefList nodes={n.children} briefId={briefId} />}
-        </li>
-      ))}
+      {nodes.map((n) => {
+        const removed = isRemoved(n.text);
+        const innerText = removed ? n.text.slice(2, -2) : n.text;
+        const done = isDone(innerText);
+        const displayText = done ? innerText.slice(2, -2) : innerText;
+        return (
+          <li key={n.line}>
+            <div className="brief-line">
+              <span className="brief-marker">-</span>
+              <BriefTaskItem briefId={briefId} line={n.line} done={done} removed={removed} plainText={displayText}>
+                {renderInline(displayText)}
+              </BriefTaskItem>
+            </div>
+            {n.children.length > 0 && <BriefList nodes={n.children} briefId={briefId} />}
+          </li>
+        );
+      })}
     </ul>
   );
 }

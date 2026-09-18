@@ -33,6 +33,18 @@ function toggleDone(line) {
   return prefix + `~~${text}~~`;
 }
 
+// %%text%% marks a bullet removed - same wrap/unwrap idea as done, but a
+// separate marker so a removed item can be told apart from a done one
+// and restored on its own. Nothing is ever deleted from the content by
+// this - "remove" is non-destructive, same as "done".
+function toggleRemoved(line) {
+  const [prefix, text] = splitPrefix(line);
+  if (text.startsWith("%%") && text.endsWith("%%") && text.length > 4) {
+    return prefix + text.slice(2, -2);
+  }
+  return prefix + `%%${text}%%`;
+}
+
 function setText(line, newText) {
   const [prefix] = splitPrefix(line);
   return prefix + newText;
@@ -45,12 +57,7 @@ async function mutateLine(briefId, lineIndex, mutate) {
   const content = await getContent(briefId);
   const lines = content.split("\n");
   if (lineIndex < 0 || lineIndex >= lines.length) return;
-  const result = mutate(lines[lineIndex]);
-  if (result === null) {
-    lines.splice(lineIndex, 1);
-  } else {
-    lines[lineIndex] = result;
-  }
+  lines[lineIndex] = mutate(lines[lineIndex]);
   await writeContent(briefId, lines.join("\n"));
 }
 
@@ -61,11 +68,11 @@ export async function toggleBriefLineDone(formData) {
   await mutateLine(briefId, line, toggleDone);
 }
 
-export async function removeBriefLine(formData) {
+export async function toggleBriefLineRemoved(formData) {
   const briefId = (formData.get("briefId") || "").toString();
   const line = parseInt((formData.get("line") || "").toString(), 10);
   if (!briefId || Number.isNaN(line)) return;
-  await mutateLine(briefId, line, () => null);
+  await mutateLine(briefId, line, toggleRemoved);
 }
 
 export async function editBriefLine(formData) {

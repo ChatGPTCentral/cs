@@ -1457,6 +1457,8 @@ p .field-label { display: inline-block; min-width: 60px; }
   padding: 2px 6px;
 }
 .brief-item-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.brief-item-removed { color: var(--ink-faint); font-style: italic; opacity: 0.7; }
+.task-row-btn-restore:hover { border-color: var(--accent); color: var(--accent-ink); }
 .today-brief li { list-style: none; }
 .today-brief ul { padding-left: 14px; }
 .today-brief ul ul { padding-left: 18px; margin: 2px 0; }
