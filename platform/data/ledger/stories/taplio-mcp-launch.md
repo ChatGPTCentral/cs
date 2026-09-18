@@ -5,15 +5,14 @@
 - kind: project (re-engagement, real past relationship - see notes)
 - people: Patrice (patrice@taplio.com, Taplio by lempire), Annika
   Bautista (annika@lempire.co, plans Taplio's media investments)
-- status: open - Annika replied, ball is Alex's
+- status: open - Alex replied, ball is theirs
 - start: 2026-09-16
 - end: (ongoing)
 - last-inbound: 2026-09-17 08:10 (annika@lemlist.com, cc
   patrice@taplio.com, thread `1a0a5c7613874554`, message
   `1a0ae6a887abb1c0`)
-- last-outbound: 2026-09-16 16:15 (alex@thecentral.ai, **sent**, message
-  `1a0ab005d99c17bf`, thread `1a0a5c7613874554`, to patrice@taplio.com,
-  cc annika@lempire.co)
+- last-outbound: 2026-09-18 16:17 (alex@thecentral.ai, **sent**, message
+  `1a0b54ed90162be0`, thread `1a0a5c7613874554`, to annika@lemlist.com)
 - next-action: none - wait for their reply
 - commitments: none
 - threads: `1a0a5c7613874554`
@@ -60,3 +59,6 @@
   concreta. Nota: risponde da annika@lemlist.com, non
   annika@lempire.co come indicato da Patrice - stesso nome, indirizzo
   diverso
+
+  **Pulse check, 2026-09-18.** Alex ha risposto via `1a0b54ed90162be0`
+  - in attesa di risposta.

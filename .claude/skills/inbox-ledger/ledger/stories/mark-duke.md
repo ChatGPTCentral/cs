@@ -3,16 +3,15 @@
 - label-id: `Label_4787366530861469637`
 - kind: person
 - people: Marc Duke (marcduke@dukeconnect.co.uk), bulandundonnelly@gmail.com
-- status: open - Marc replied, ball is Alex's
+- status: open - Alex replied, ball is theirs
 - last-inbound: 2026-09-16 21:15 (marcduke@dukeconnect.co.uk, thread
   `1a03974c17cfac28`, message `1a0ac130dc2d4a30` - "I have set up the
   account but not used it yet")
-- last-outbound: 2026-09-16 12:48 (alex@thecentral.ai, thread
-  `1a03974c17cfac28`, message `1a0aa42feef4a6a4`, to
-  marcduke@dukeconnect.co.uk - "are you using it? is it somehow
-  useful?")
+- last-outbound: 2026-09-18 16:11 (alex@thecentral.ai, thread
+  `1a03974c17cfac28`, message `1a0b549c96efbbda`, to
+  marcduke@dukeconnect.co.uk)
 - idle: 0 days
-- next-action: none - Marc answered the question, nothing further asked
+- next-action: none - wait for their reply
 - commitments: none recorded
 - threads: `19b0331c16b4afff` (live), 8 more unread
 - notes: an introductions relationship that went quiet in December. 37 messages
@@ -45,3 +44,6 @@
   **Pulse check, 2026-09-16.** Marc ha risposto via `1a0ac130dc2d4a30`
   - "I have set up the account but not used it yet." In attesa di
   risposta
+
+  **Pulse check, 2026-09-18.** Alex ha risposto via `1a0b549c96efbbda`
+  - in attesa di risposta.
