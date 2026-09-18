@@ -1,11 +1,15 @@
-# Luke Ambray // ElevenLabs (Oct 26 speaker invite)
+# Luke // ElevenLabs GTM (Oct 26 speaker invite)
 
 - query: none - no Gmail label
 - label-id: none
 - kind: project (speaker outreach for the Oct 26 RareFounders x AI
   Central event - see [[vasily-rarefounders]])
-- people: Luke Ambray (luke@elevenlabs.io) - runs ElevenLabs' side of
-  the Passionfroot sponsorship relationship, see [[elevenlabs-sponsorship]]
+- people: Luke (luke@elevenlabs.io) - ElevenLabs GTM contact, met by
+  Alex in person at Cannes, at the Luma AI event. **Not the same
+  person as Luke Ambray**, who is Passionfroot's contact managing
+  ElevenLabs' account and budget on the Passionfroot side - see
+  [[elevenlabs-sponsorship]]. Two different Lukes, corrected by Alex
+  2026-09-18 after this story first conflated them
 - status: open - drafted, waiting for Alex to send
 - start: 2026-09-18
 - end: (ongoing)
@@ -28,14 +32,17 @@
 
   Built on the Mat Zucker reference template verbatim (event pitch,
   then When/Where + description + RareFounders boilerplate), since
-  Luke - like Mat - already has a real relationship with AI Central
-  and doesn't need the "About AI Central Media" paragraph used for
-  cold contacts (Jason Day, etc).
+  this Luke - like Mat - already has a real relationship with AI
+  Central and doesn't need the "About AI Central Media" paragraph used
+  for cold contacts (Jason Day, etc).
 
-  Real grounding used: Luke is ElevenLabs' day-to-day contact on the
-  live Passionfroot sponsorship (see [[elevenlabs-sponsorship]] -
-  Main Ad rounds, $3,900 and $2,080, summer 2026), and he and Alex met
-  in person at Cannes, at the Luma AI event (per the July interview
-  thread `19f4b92ab426f599`, where Luke wrote "appreciate the follow
-  up Alex" after declining an interview - friendly, not a dead
-  contact).
+  **Correction, 2026-09-18, per Alex.** The draft's body line ("great
+  working with you and the team on the Passionfroot side this year")
+  is wrong - this Luke is the GTM person met at Cannes, not the
+  Passionfroot account manager. That's a different real person, Luke
+  Ambray, at Passionfroot, who runs ElevenLabs' account and budget
+  there (see [[elevenlabs-sponsorship]]). Alex separately sent
+  something on the actual ElevenLabs/Passionfroot thread himself -
+  not detailed here, since I have no real record of what it said. Do
+  not merge these two Lukes again - different company, different role,
+  same first name only

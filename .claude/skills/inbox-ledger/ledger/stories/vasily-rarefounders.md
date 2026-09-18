@@ -88,10 +88,10 @@
   `3dc656dd7b67811685fed79c835e070b`, calendar event
   `1isdeojkrl3cff0ekb62db6r9o`
 
-  **Sixth speaker invite, 2026-09-18.** Luke Ambray at ElevenLabs
-  (runs their Passionfroot sponsorship relationship) - drafted, Mat
-  Zucker template verbatim, real Cannes/Luma AI event grounding. See
-  [[elevenlabs-luke-speaker]].
+  **Sixth speaker invite, 2026-09-18.** Luke at ElevenLabs (the GTM
+  contact met at Cannes, at the Luma AI event - not Luke Ambray, who
+  is Passionfroot's account manager for ElevenLabs) - drafted, Mat
+  Zucker template verbatim. See [[elevenlabs-luke-speaker]].
 
   **Notion call sweep, 2026-08-26.** 16 Jul 2026: a group planning call
   (Vasily, Fraya Brinkman - "Freya" in the transcript, Alex, others) for an

@@ -68,6 +68,13 @@
     proposal (2 open Main Ads + Sep-Oct package + AI Summit NY feature).
     No next step is Alex's until one of those comes back
 
+  **Per Alex, 2026-09-18.** Sent something to Luke Ambray on the
+  Passionfroot side today - real content not captured here, since
+  Passionfroot has no tool in this session and Alex did not paste the
+  text. Flagged so the next sweep checks with him rather than
+  assuming the "waiting on Luke/Connie" next-action above is still
+  accurate as-is
+
   **Passionfroot data, 2026-08-27.** Confirms the relationship is live and
   recurring: a Main Ad slot ran on repeat through summer 2026 ($3,900 and
   $2,080 rounds, Jul-Aug 2026). No "paid invoice" system message exists for
