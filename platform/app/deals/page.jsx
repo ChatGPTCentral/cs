@@ -50,7 +50,7 @@ export default async function DealsPage() {
   }, 0);
 
   return (
-    <>
+    <div className="wide-content">
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 16, marginBottom: 18, flexWrap: "wrap" }}>
         <p style={{ fontSize: 13.5, color: "var(--ink-faint)", margin: 0, maxWidth: "60ch" }}>
           Every open sales conversation on file. Move a card between columns with its dropdown -
@@ -93,6 +93,6 @@ export default async function DealsPage() {
       </div>
 
       <SavedToast />
-    </>
+    </div>
   );
 }
