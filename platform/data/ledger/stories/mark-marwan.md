@@ -4,14 +4,16 @@
 - kind: person, internal
 - people: Mark (mark@theaicentral.net / mark@thecentral.ai), Elizabeth
   (elizabeth@theaicentral.net), Alex on cc
-- last-touch: Alex - nudged the invoice thread himself, 2026-09-09
+- last-touch: Elizabeth - update to Alex, 2026-09-10, on the same invoice
+  thread
 - last-inbound: 2026-09-03 16:11 (mark@theaicentral.net, thread
   `1a05382e2fe260ce`, to elizabeth@theaicentral.net, cc mark@thecentral.ai,
   alex@thecentral.ai)
-- last-outbound: 2026-09-09 15:54 (alex@thecentral.ai, thread
-  `1a05382e2fe260ce`, message `1a086e0dc5e9ac31`, to
-  elizabeth@theaicentral.net, cc mark@theaicentral.net, mark@thecentral.ai)
-- idle: 0 days
+- last-outbound: 2026-09-10 11:43 (elizabeth@theaicentral.net, thread
+  `1a05382e2fe260ce`, message `1a08b21775f470e4`, to alex@thecentral.ai,
+  cc mark@theaicentral.net, mark@thecentral.ai - content not re-read this
+  pass, metadata only)
+- idle: 9 days (since 2026-09-10)
 - next-action: **stale, corrected 2026-09-14** - the invoice below was
   resolved 2026-09-10. Current open items, per the 2026-09-12 call: wait
   for Marwan to send his library UX fixes (structured text format), his
@@ -100,3 +102,9 @@
   Saturday; Marwan to attend that call with feedback; Marwan to start
   exploring Claude Design. Source: Notion transcript above, cross-checked
   against the calendar event
+
+  **Auto-genesis, 2026-09-19 - refresh.** Thread re-queried; newest message
+  is Elizabeth's 2026-09-10 11:43 note to Alex (cc both Mark addresses),
+  9 days idle now. No reply from Marwan found on the three action items
+  (library UX fixes, Gmail address, friend invites) in this metadata-only
+  pass - still waiting on him, not Alex's move

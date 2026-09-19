@@ -12,9 +12,7 @@
   October
 - start: 2026-06-20
 - end: (ongoing)
-- next-action: decide the next carousel batch's content, in a "Ruben
-  Hassid" style/angle per Alex, 2026-09-15 (overdue since 7 Sep). Also:
-  3-month compensation review, end of October 2026
+- next-action: 3-month compensation review, end of October 2026
 - commitments: base about $1,200/month package (see below), reviewed end of
   October
 - threads: `1a05382e2fe260ce` (live - monthly payout, Elizabeth-run)
@@ -64,7 +62,10 @@
   "next batch of documents" task and this carousel-batch task are the
   same thing
 
-  **Per Alex, 2026-09-15 - creative direction for the next batch.**
-  Wants the next carousel batch done "alla Ruben Hassid" - his style as
-  the reference/angle, not a specific brief yet. Next-action updated to
-  reflect this instead of a generic "decide the batch"
+  **Split off, 2026-09-19, per Alex.** The recurring carousel batch
+  itself ("il task nuovo batch di caroselli marwan non fa parte di
+  acquihire ma design che è un'altra storia") is monthly production
+  work, not a deal term - moved to [[marwan-design]], including the
+  2026-09-15 "alla Ruben Hassid" creative-direction note. This story
+  keeps only the deal itself: terms, payout mechanic, compensation
+  review

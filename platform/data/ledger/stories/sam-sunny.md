@@ -9,8 +9,10 @@
 - last-outbound: 2026-09-09 14:59 (alex@thecentral.ai, thread
   `1a086978c6a3f203`, to sam@theaicentral.net, cc elizabeth@theaicentral.net)
 - idle: 0 days
-- next-action: none for Alex - wait for a reply on the unsent
-  performance-review draft below, still unsent
+- next-action: **conflict - see 2026-09-19 note below.** The performance-
+  review draft this file has been tracking as unsent is no longer in Gmail
+  Drafts at all. Needs Alex to say whether it was sent another way,
+  discarded on purpose, or lost
 - next-action-superseded (unconfirmed): **unsent draft in Gmail** - "Newsletter
   Performance Check - - 5 Sep - - opens sliding, nothing scheduled" (thread
   `1a070e3dac6da7b6`, alex@thecentral.ai to sam@thecentral.ai cc elizabeth,
@@ -70,3 +72,12 @@
   presenting it. Newsletter issues for Thu/Fri/Sun must close by 6pm.
   Liz to finish sharing the remaining AI Bootcamp chapters with Sunny in
   Notion. Source: Notion transcript above
+
+  **Conflict, 2026-09-19 full refresh - draft no longer in Gmail.** Ran
+  `list_drafts` (full account, 6 drafts total): the "Newsletter Performance
+  Check" draft (thread `1a070e3dac6da7b6`) is not among them. Not confirmed
+  sent (no matching sent message found on that thread either) or
+  discarded - same shape as the InVideo and anything.com conflicts already
+  in `_index.md`. Not editing the story's substance on a guess; flagging
+  for Alex to say what happened to it. No new activity on the label
+  otherwise since the 09-11 call transcript - idle recomputed to 8 days

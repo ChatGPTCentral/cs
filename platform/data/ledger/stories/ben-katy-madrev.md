@@ -3,21 +3,23 @@
 - label-id: `Label_5586594889512562982`
 - kind: person
 - people: Ben (ben@madrev.co), Katy (katy@madrev.co), Liz (liz@thecentral.ai) cc
-- last-touch: Alex - chased, no reply since
-- last-inbound: 2026-06-22 (ben@madrev.co)
-- last-outbound: 2026-08-19 (alex@thecentral.ai, to Ben, cc Katy - "closing
-  some sponsors for early sept, are you guys working on any placements in
-  the same period?")
-- idle: 12 days, not 105 - **correction, 2026-08-31, per Alex.** The old
-  105-day/caveat read came from an incomplete thread fetch that stopped at
-  the 6 May message. The full thread (`19d2b84483f6e46b`) runs a real
-  back-and-forth through 22 Jun (a Framer carousel + main-ad deal, 5x
-  bundle discussion) then Alex's own unanswered 19 Aug chase - so the old
-  "may not be addressed to Alex" caveat no longer applies; the most recent
-  message is his, sent directly to Ben
-- next-action: none - draft left in Gmail, thread `19d2b84483f6e46b`,
-  2026-08-31, per Alex's ask ("hope you're both well - - did the framer
-  deal (or anything else) end up moving forward?")
+- last-touch: Ben - replied same day, 2026-08-31 21:43, five minutes after
+  Alex's nudge went out. **Correction, 2026-09-19 full refresh: the
+  2026-08-31 "draft left in Gmail" was actually sent** (thread
+  `19d2b84483f6e46b`, message `1a059c254869edcc`, SENT 21:38) **and Ben
+  replied** (message `1a059c70b61ae1f2`, 21:43) - neither the send nor the
+  reply had been picked up by the ledger until this pass. 19 days sitting
+  unanswered
+- last-inbound: 2026-08-31 21:43 (ben@madrev.co, thread `19d2b84483f6e46b`,
+  message `1a059c70b61ae1f2`, to alex@thecentral.ai, cc katy@madrev.co,
+  elizabeth@theaicentral.net - content not read this pass, metadata only)
+- last-outbound: 2026-08-31 21:38 (alex@thecentral.ai, thread
+  `19d2b84483f6e46b`, message `1a059c254869edcc`, to ben@madrev.co, cc
+  katy@madrev.co, elizabeth@theaicentral.net - "did the framer deal (or
+  anything else) end up moving forward?")
+- idle: 19 days (since 2026-08-31)
+- next-action: **read Ben's 08-31 reply and answer it** - it has sat
+  unanswered and unacknowledged by the ledger for 19 days
 - commitments: none recorded
 - threads: `19d2b84483f6e46b` (live), 1 more unread
 - notes: MadRev never closed the Framer deal (5x LinkedIn Carousels,
@@ -31,3 +33,9 @@
   working together shortly after, but nothing was ever actually closed.
   Per Alex: MadRev doesn't sell for much on their own - the May 2026
   activity was probably him pushing them, not the reverse.
+
+  **Auto-genesis, 2026-09-19 - real find, full refresh.** Moved from
+  "Waiting on them" to "Your move." The story file previously assumed the
+  08-31 nudge was still an unsent draft; a fresh metadata read of the
+  thread shows it sent, and Ben answered within 5 minutes. Nobody has
+  looked at his reply since.

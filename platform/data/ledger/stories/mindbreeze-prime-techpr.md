@@ -16,7 +16,8 @@
   `1a06288d9ac1f207`, message `1a08bd18a464dd09` - postponed the thread)
 - idle: 0 days
 - next-action: **postponed 1 week, per Alex - revisit around 2026-09-17.
-  Do not restart before then**
+  Do not restart before then. Overdue as of 2026-09-19 - see the
+  2026-09-19 note: a calendar reminder now covers this instead**
 - commitments: 14 Jul 2026, Alex agreed to two of five pitched topics -
   "The 360-Degree View: Why Dashboards Are Dead and Context Is the New
   KPI" and "Workflow Automation That Actually Works." Terms he quoted: an
@@ -70,3 +71,12 @@
   8 Sep call itself - flagging the ambiguity rather than picking one.
   Source: thread `1a06288d9ac1f207`, messages `1a08b132459cd237` and
   `1a08bd18a464dd09`
+
+  **Delegated instruction, 2026-09-19, per Alex.** First live test of the
+  new task-instruction box on `/nba`: "Nicola di Prime Tech PR mi ha
+  ghosted - metti un reminder sul calendario per metà della prossima
+  settimana." Executed directly - Google Calendar event created,
+  Wednesday 23 Sep 2026, 10:00-10:15 CEST, "Follow up: Nicolia (Prime
+  Tech PR) - ghosted, revisit" (event id `0rhqbggkebv7an26nl0pr5g670`).
+  The exact day/time within "mid next week" was chosen, not stated by
+  Alex - move it if it doesn't work

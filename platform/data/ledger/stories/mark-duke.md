@@ -10,7 +10,7 @@
 - last-outbound: 2026-09-18 16:11 (alex@thecentral.ai, thread
   `1a03974c17cfac28`, message `1a0b549c96efbbda`, to
   marcduke@dukeconnect.co.uk)
-- idle: 0 days
+- idle: 1 day (refreshed 2026-09-19, no reply yet)
 - next-action: none - wait for their reply
 - commitments: none recorded
 - threads: `19b0331c16b4afff` (live), 8 more unread

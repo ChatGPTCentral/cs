@@ -9,7 +9,9 @@
 - last-outbound: 2026-09-08 15:12 (alex@thecentral.ai, to
   hugo@passionfroot.me, cc support@passionfroot.me and
   elizabeth@theaicentral.net, thread `1a0818eae85e82cd`)
-- idle: 0 days
+- idle: 11 days (since 2026-09-08, refreshed 2026-09-19 - label and
+  unlabelled `support@passionfroot.me` threads both re-queried, no reply
+  since)
 - next-action: **check whether `support@passionfroot.me` (3 unlabelled threads,
   14 Jul - 13 Aug, already flagged in the full sweep) is a continuation of this
   same relationship under a different address.** If so, this story is far more

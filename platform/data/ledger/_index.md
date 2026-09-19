@@ -6,190 +6,156 @@ month, per Alex - checked against open stories below where relevant
 (New Media Summit Austin ↔ Mindbreeze/Prime Tech PR, AI Summit NY ↔
 Netline/Prophet).
 
-**Full sweep, 2026-09-08.** Requested by Alex directly ("a full sweep and
-re-assessment of the board"). This refreshed whose-move/idle on the 20 live
-labelled stories in the registry (`references/stories.md`), ran a discovery
-delta pass (last 10 days of inbound, since the 2026-08-19/09-03 passes
-already cover the account's full history back to April 2025), read the
-feedback loop (empty), checked `ledger_people` for new Background rows, and
-re-ran the commitment scanner since 2026-08-19. Full coverage note at the
-bottom.
+**Refresh, 2026-09-19.** Scope this pass: the 20 live labelled stories in
+`references/stories.md`'s registry, plus five stories Alex named directly
+as having moved from recent work - `elevenlabs-luke-speaker`,
+`elevenlabs-sponsorship`, `wellput-adops`, `mark-duke`,
+`taplio-mcp-launch`. Stories outside that scope (AI Hackathon Bristol,
+Spacebar Studios, Newsletter Traffic Network, GTA whitepaper, Mya Bishop,
+etc.) are carried forward **unverified** from the 2026-09-08 full sweep -
+their numbers below are 11 days stale and marked as such, not
+re-confirmed this pass.
 
-**Two whose-move corrections found this pass** (both mechanical errors in
-the prior refresh, not new mail):
-- **Jorge** - the story file recorded `last-touch: Jorge` (he wrote 1 Sep,
-  team hasn't replied) but its own next-action read "ball is with Jorge" -
-  backwards. Moved from "Waiting on them" to "Your move"
-- **GTA whitepaper** - same shape. Tsvetelin sent a calendar invite today
-  asking for Alex's availability; the file read "wait for Tsvetelin." Moved
-  to "Your move"
+**Two real finds this pass, both mechanical misses in prior refreshes:**
+- **Ben + Katy (MadRev)** - the 2026-08-31 nudge to Ben was recorded as an
+  unsent draft. It was actually sent, and Ben replied five minutes later.
+  Nobody had looked at his reply in 19 days. Moved to "Your move"
+- **Jorge** - still unanswered since his 2026-09-01 message, now 18 days,
+  unusually long for this relationship's normal cadence (see `jorge.md`)
 
-**Two real, fresh finds**, both from today:
-- **Netline** - Awais Shahid (Informa) replied today with next steps on the
-  AI Summit New York media-partner slot. Ball is Alex's
-- **AI Hackathon Bristol** - Richard replied 6 days ago (2 Sep) on two
-  threads; still unanswered. The tote-bag address he asked for was sent
-  01 Sep (commitment kept), but his own questions about Antidote and the
-  Istanbul GTA Leaders conference are still open
+**Two drafts vanished from Gmail this pass**, both now logged as
+conflicts below: the Sam (Sunny) performance-review draft, and the
+ElevenLabs/Luke speaker-invite draft (its second confirmed disappearance).
 
-**Drafts largely cleared out of Gmail since the last refresh** - only one
-draft remains in the account (an internal Sam performance-review email, see
-below). AI Hackathon Bristol, Screenpipe and Hugo/Passionfroot's drafts were
-sent (confirmed in each story file). The **anything.com** draft
-(`1a067f08380931ff`) is not accounted for - not in Drafts, no matching sent
-message either. Logged as a pending fact for Alex to check, same shape as
-the standing InVideo conflict below.
+**Confirmed per Alex directly, incorporated as-is (not independently
+verified against Gmail/Passionfroot, no tool for that platform in this
+session):**
+- `wellput-adops` - Trolley/payout sub-thread closed 2026-09-18; the
+  separate Craig/Q4-monetization ask stays open, idle 1d
+- `elevenlabs-sponsorship` - Alex sent something to Luke Ambray on
+  Passionfroot 2026-09-18; content and outcome not captured here
+- `mark-duke` / `taplio-mcp-launch` - both flipped to "waiting on them"
+  after Alex's own replies on 2026-09-18, idle 1d each
 
-**A stale entry corrected**: `dominik-refind.md` was already corrected
-2026-09-01 (active running ad campaign, not stalled) but this board still
-listed it at 209 days idle under "Old and unanswered." Removed.
-
-**Last full sweep: 2026-08-19** (34 stories, 26/26 labels, ~500 unlabelled
-threads back to the account's April 2025 floor). **Delta refresh:
-2026-09-03.** Both narratives are preserved below for history; this pass
-sits on top of them, not a replacement.
+**Last full sweep: 2026-08-19** (34 stories, 26/26 labels). **Delta
+refresh: 2026-09-03. Full sweep: 2026-09-08.** All three narratives are
+preserved in git history; this pass sits on top of them.
 
 ## ✏️ Drafted, blocked on Alex
 
-Only one live draft in Gmail as of this sweep.
-
-| Story | What's missing | Draft |
-| --- | --- | --- |
-| [Sam (Sunny)](stories/sam-sunny.md) | review and send - a detailed newsletter-performance review for Sam, with 3 questions and 3 deadlines (Sat/Sun/Mon, all already past) | `1a070e3dac6da7b6`, created 2026-09-05 |
+**Zero.** `list_drafts` returned 6 drafts total, all support-domain (5
+AI 101/newsletter replies from today's support sweep, one "hi katie"
+Jobstream reply, 2026-09-15) - none tied to a ledger story that was
+expecting one. See "Conflicts" below for the two that should exist and
+don't.
 
 Pulled earlier, still not ready, per Alex: **Box** (Kat McMahon) and
 **Markup Hero** (Jeff Solomon).
 
-## 📋 Tasks (not email)
-
-`ledger_tasks` in Supabase. Two added by Alex directly since the last
-refresh (2026-09-06, in Italian in the source). All dates below recomputed
-against today, 2026-09-08.
-
-| Task | Kind | Story | Due | Status |
-| --- | --- | --- | --- | --- |
-| Cancel Breakcold (or lock the annual rate, code GOTLUCKY) | action | [Breakcold](stories/breakcold-crm-adoption.md) | 2026-09-09 | price jump is tomorrow, not today - corrected this pass |
-| Finalize the media kit and case studies | action | - | 2026-09-06 | **2d overdue** - blocks the three sends below |
-| Send media kit to Belle + Mat (Prophet) | action | [Prophet](stories/prophet-tonileepr.md) | 2026-09-07 | **1d overdue** - no send found |
-| Send media kit to Becca (Antidote) | action | [Antidote](stories/antidote-partnership.md) | 2026-09-07 | **1d overdue** - no send found |
-| Send media kit to Randy (Emergent/PartnerStack) | action | [Emergent](stories/emergent-partnerstack.md) | 2026-09-07 | **1d overdue** - no send found |
-| Respond to Marc Duke's Intelligence.com invite | action | [Mark Duke](stories/mark-duke.md) | 2026-09-05 | **3d overdue** |
-| Send the WhatsApp follow-up to Jessica Doss | action | [Guideline AI / Jessica](stories/guideline-ai-jessica.md) | 2026-09-07 | **1d overdue** |
-| Resume applying to Passionfroot Discover briefs | action | - | 2026-09-07 | **1d overdue** |
-| Decidere il nuovo batch di caroselli per Marwan | decision | [Marwan acquihire](stories/marwan-acquihire.md) | 2026-09-07 | **1d overdue** - new, per Alex 2026-09-06 |
-| Smarcare il whitepaper GTA | decision | [GTA whitepaper](stories/gta-whitepaper.md) | 2026-09-07 | **1d overdue** - new, per Alex 2026-09-06 |
-| Weekend support sweep: AI 101, Feedback, Issues | action | - | 2026-09-06 | 2d overdue - `aic-customer-support` territory |
-| Get Mitali's replacement contact at GrowthSchool | action | [Mitali // Outskill](stories/mitali-outskill.md) | - | new this sweep - her address hard-bounced 2026-09-04 |
-| Bulk-delete the ~26 blanked cold drafts | action | - | - | open |
-| Delete the old Guidde draft by hand | action | [Hod // Guidde](stories/hod-guidde.md) | - | open |
-| Delete the superseded blanked Screenpipe draft | action | [Screenpipe](stories/screenpipe-pitch.md) | - | likely already gone - no such draft found in Gmail this pass |
-| Connect Appeared.in MCP | wait | - | - | open |
-| Revive TechEx / Samuel Paternoster | decision | [TechEx / Paternoster](stories/techex-paternoster.md) | - | open |
-
-## 📅 Reminders set
-
-| Story | Due | What |
-| --- | --- | --- |
-| [Sponsor Radar](stories/sponsor-radar-pitch.md) | 2026-09-07 | add a payment card to claim the $30/600-pitch credit - **1d past deadline, likely expired, no confirmation found** |
-| [PickAndPartner](stories/pickandpartner-pitch.md) | 2026-09-05 | reply or decline the newsletter swap - **3d overdue, still no reply** |
-| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-09-08 | discovery call with Nicolia, 16:00-16:30 Europe/Rome - **today** |
-
 ## ⛔ Conflicts awaiting Alex
 
-`ledger_pending_facts` in Supabase - story NOT touched per the write-gate
-rule. Needs Alex's word before either the story or this list changes.
+Story NOT touched on the substance per the write-gate rule - needs
+Alex's word before either the story or this list changes.
 
 | Story | Conflict |
 | --- | --- |
-| [InVideo](stories/invideo-pitch.md) | Alex said (2026-09-04) he'd sent Siddharth a reply; no sent message exists and the draft is gone. Needs Alex to check |
-| [anything.com](stories/anything-com-ads-pitch.md) | **New this sweep.** The revival draft (`1a067f08380931ff`) no longer appears in Gmail Drafts and no matching sent message was found. Needs Alex to check whether it went out or needs recreating |
+| [Sam (Sunny)](stories/sam-sunny.md) | **New this pass.** The "Newsletter Performance Check" draft (thread `1a070e3dac6da7b6`), tracked as unsent since 2026-09-05, is no longer in Gmail Drafts. No matching sent message found either. Needs Alex to say what happened to it |
+| [ElevenLabs / Luke (speaker)](stories/elevenlabs-luke-speaker.md) | **Confirmed missing a second time.** The Oct 26 speaker-invite draft to luke@elevenlabs.io (`1a0b58d14f0c2250`) is still not in Gmail Drafts, still no matching sent message. Needs Alex directly - sent elsewhere, deleted on purpose, or lost |
+| [InVideo](stories/invideo-pitch.md) | Carried from 2026-09-08, not rechecked this pass - Alex said (09-04) he'd sent Siddharth a reply; no sent message existed then and the draft was gone |
+| [anything.com](stories/anything-com-ads-pitch.md) | Carried from 2026-09-08, not rechecked this pass - the revival draft (`1a067f08380931ff`) was missing from Drafts with no matching sent message |
 
 ## 🔴 Your move
 
-The last word was theirs and nobody replied. Oldest first.
+The last word was theirs and nobody replied. Oldest first. Rows marked
+**(verified 09-19)** were re-queried this pass; the rest carry the
+2026-09-08 numbers forward unverified (now 11 days staler than shown).
 
 | Story | Waiting since | Idle | Who |
 | --- | --- | --- | --- |
-| [Jorge](stories/jorge.md) | 2026-09-01 | 7d | jorge@groou.xyz - wrote to Elizabeth cc Alex, unanswered. **Corrected this sweep** - previously miscategorized as waiting on him |
-| [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) | 2026-09-02 | 6d | Richard@hewlettrand.com - two threads, both unanswered; the tote-bag address was already sent (commitment kept) |
-| [Spacebar Studios](stories/spacebarstudios-crosspromo.md) | 2026-09-02 | 6d | ivana@spacebarstudios.co - needs Alex to pick a newsletter for the swap |
-| [Newsletter Traffic Network](stories/newsletter-traffic-network.md) | 2026-09-04 | 4d | alexander@newslettertrafficnetwork.com - wants to catch up end of month + CPC campaigns. Elizabeth already sent a calendar link 07 Sep, not urgent |
-| [GTA whitepaper](stories/gta-whitepaper.md) | 2026-09-08 | 0d | tsvetelin@thinkrevops.com - calendar invite for Wed 9 Sep, asked directly for Alex's slots. **Corrected this sweep** - previously read as waiting on Tsvetelin |
-| [Netline](stories/netline.md) | 2026-09-08 | 0d | Awais.Shahid@informa.com - replied with next steps on the AI Summit New York media-partner slot |
+| [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-08-31 | **19d** | ben@madrev.co - **verified 09-19, new find.** His reply to Alex's own 08-31 nudge sat unanswered in the ledger; real content unread |
+| [Jorge](stories/jorge.md) | 2026-09-01 | **18d** | jorge@groou.xyz - **verified 09-19.** Still unanswered since his 09-01 message, both the label and his raw address re-queried |
+| [Aneeka / Netline](stories/netline.md) | 2026-09-15 | **4d** | apatel@netline.com - **verified 09-19.** Chased twice (8 Sep, 15 Sep) on a drafted reply that is still sitting unsent |
+| [AI Hackathon Bristol](stories/ai-hackathon-bristol.md) | 2026-09-02 | 6d (09-08 figure, stale) | Richard@hewlettrand.com - not in this pass's scope, not rechecked |
+| [Spacebar Studios](stories/spacebarstudios-crosspromo.md) | 2026-09-02 | 6d (09-08 figure, stale) | ivana@spacebarstudios.co - not in this pass's scope, not rechecked |
+| [Newsletter Traffic Network](stories/newsletter-traffic-network.md) | 2026-09-04 | 4d (09-08 figure, stale) | alexander@newslettertrafficnetwork.com - not in this pass's scope, not rechecked |
+| [GTA whitepaper](stories/gta-whitepaper.md) | 2026-09-16 | 3d (incidental, not this pass's scope) | zoltan@futureofwork.uk - an unread, starred message from Zoltan surfaced during discovery; not independently verified as this story's true state, flagging rather than asserting |
+| [Netline / Awais (AI Summit NY)](stories/netline.md) | 2026-09-08 | 0d (09-08 figure, stale) | Awais.Shahid@informa.com - per `netline.md`'s own notes this sub-thread is already signed and closed as of 09-15; kept here only because the 09-08 board hadn't been corrected yet |
 
-## ⏳ Waiting on them
-
-Ball is legitimately in their court. Idle recomputed against today.
-
-| Story | Last chased | Idle | Who owes |
-| --- | --- | --- | --- |
-| [Mindbreeze / Prime Tech PR](stories/mindbreeze-prime-techpr.md) | 2026-09-04 | 4d | call booked for today, 8 Sep - nothing to chase |
-| [Sponsor Scout](stories/sponsor-scout-nick-hughes.md) | 2026-09-04 | 4d | jnickhughes@gmail.com |
-| [interviews](stories/interviews.md) | 2026-08-25 | 14d | Elizabeth's pipeline - healthy, a newer guest thread found this pass |
-| [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-08-31 | 8d | jazmin@getjobstream.com |
-| [beehiiv // Richard Evans](stories/beehiiv-richard-evans.md) | 2026-08-31 | 8d | expected quiet until 1 Oct, per Alex |
-| [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | 2026-08-19 | 20d | ben@madrev.co / katy@madrev.co - the story file's own "08-31 draft" note is unresolved against Gmail, flagged for a future pass |
-| [Mya Bishop (Informa)](stories/mya-bishop-informa.md) | 2026-08-17 | 22d | Mya.Bishop@informa.com |
-| [Hugo // Passionfroot](stories/hugo-passionfroot.md) | 2026-09-08 | 0d | 0% response-rate flag sent today, ball is theirs |
-| [Studio Galdieri](stories/studio-galdieri.md) | 2026-08-06 | 33d | casucci.studiogaldieri@sirev.it |
-| [Sunny >> Deals](stories/sunny-deals.md) | 2026-04-02 | 159d | pipeline, 27 reactivation drafts still sitting in Gmail per `sunny-deals.md` (not confirmed by this pass's draft check - recheck next sweep) |
-| [Digital Boost](stories/digital-boost.md) | 2026-07-02 | 68d | unconfirmed whether it was ever answered |
-| [Glide (Andy)](stories/glide-andy.md) | 2026-05-05 | 126d | andy@heyglide.com |
-| [Hod // Guidde](stories/hod-guidde.md) | 2026-05-11 | 120d | chased six times, no reply ever |
-| [Ad Astra Media](stories/ad-astra-media.md) | 2026-03-26 | 166d | ian@adastramedia.biz |
-| [Cozora](stories/cozora.md) | 2025-12-17 | 265d | jajasalinas@gmail.com |
-| [Mark Duke (Intros)](stories/mark-duke.md) | - | 272d | dormant - separate from the overdue Intelligence.com task above |
-| [GenAI Collective](stories/genai-collective.md) | 2025-05-20 | 476d | historical, right at the sweep's floor |
-
-## 🏠 Internal
+## 🏠 Internal - waiting on a colleague, not a counterparty
 
 | Story | Last activity | Idle | Note |
 | --- | --- | --- | --- |
-| [Mark (Marwan)](stories/mark-marwan.md) | 2026-09-04 | 4d | Elizabeth is running the invoice thread directly, not Alex's move |
-| [Sam (Sunny)](stories/sam-sunny.md) | 2026-07-28 | 42d | unsent performance-review draft sitting since 05 Sep, see "Drafted" above |
+| [Mark (Marwan)](stories/mark-marwan.md) | 2026-09-10 | 9d | Elizabeth updated Alex on the invoice thread; real open items are Marwan's - library UX fixes, his Gmail address, friend invites. Not Alex's move |
+| [Sam (Sunny)](stories/sam-sunny.md) | 2026-09-11 | 8d | see conflict above re: the vanished draft |
+
+## ⏳ Waiting on them
+
+Ball is legitimately in their court. Verified rows recomputed against
+today; the rest carry the last confirmed idle count forward.
+
+| Story | Last chased | Idle | Who owes |
+| --- | --- | --- | --- |
+| [Mark Duke (Intros)](stories/mark-duke.md) | 2026-09-18 | 1d | marcduke@dukeconnect.co.uk - verified 09-19, Alex answered directly, waiting on his reply |
+| [Taplio](stories/taplio-mcp-launch.md) | 2026-09-18 | 1d | annika@lemlist.com - verified 09-19 |
+| [wellput adops](stories/wellput-adops.md) | 2026-09-18 | 1d | Craig Swerdloff - verified 09-19, Trolley sub-thread closed, Q4-monetization ask still open |
+| [ElevenLabs (Sponsorship)](stories/elevenlabs-sponsorship.md) | 2026-09-18 | - | Luke Ambray, via Passionfroot - per Alex, not independently verified (no tool for that platform) |
+| [Hugo // Passionfroot](stories/hugo-passionfroot.md) | 2026-09-08 | 11d | verified 09-19, both label and unlabelled `support@passionfroot.me` threads re-queried, no reply |
+| [Cannes 2026 Follow-up](stories/cannes-2026.md) | 2026-09-03 | 16d | al@wavelength.now (Alistair) - verified 09-19, no reply |
+| [interviews](stories/interviews.md) | 2026-08-25 | 25d | Elizabeth's pipeline - verified 09-19, healthy, no newer thread found |
+| [Sponsor Scout](stories/sponsor-scout-nick-hughes.md) | 2026-09-04 | - | jnickhughes@gmail.com - **note:** a new message from him surfaced 2026-09-18 during discovery, unread; not this pass's scope, worth a look |
+| [Austin Conference / Jobstream](stories/austin-jobstream.md) | 2026-05-14 | 128d | amanda@getjobstream.com - verified 09-19 against both the Amanda and Austin Conference labels; same thread, no newer activity |
+| [beehiiv // Richard Evans](stories/beehiiv-richard-evans.md) | 2026-08-11 | 39d | verified 09-19 - expected quiet until 1 Oct, per Alex, not yet due |
+| [Ben + Katy (MadRev)](stories/ben-katy-madrev.md) | - | - | **moved to "Your move" above, 09-19** |
+| [Mya Bishop (Informa)](stories/mya-bishop-informa.md) | 2026-08-17 | 33d (09-08 figure, stale) | not in this pass's scope |
+| [Studio Galdieri](stories/studio-galdieri.md) | 2026-08-06 | 44d (09-08 figure, stale) | not in this pass's scope - note: fresh activity (Alex replied 09-17) surfaced during discovery, worth a dedicated check next run |
+| [Sunny >> Deals](stories/sunny-deals.md) | 2026-04-02 | 170d | pipeline, verified idle recompute only - 27 reactivation drafts not re-checked against Gmail this pass |
+| [Digital Boost](stories/digital-boost.md) | 2026-07-02 | 79d | verified 09-19 - still unconfirmed whether their July message was ever answered, the body read this needs is still outstanding |
+| [Glide (Andy)](stories/glide-andy.md) | 2026-05-05 | 137d (09-08 figure, stale) | not in this pass's scope |
+| [Hod // Guidde](stories/hod-guidde.md) | 2026-05-11 | 131d (09-08 figure, stale) | not in this pass's scope |
+| [Ad Astra Media](stories/ad-astra-media.md) | 2026-03-26 | 177d (09-08 figure, stale) | not in this pass's scope |
+| [Cozora](stories/cozora.md) | 2025-12-17 | 276d | verified 09-19 - idle recompute only |
+| [Mitch // Sparkloop](stories/mitch-sparkloop.md) | 2026-05-06 | 136d | verified 09-19 - idle recompute only |
+| [Mitali // Outskill](stories/mitali-outskill.md) | 2026-05-04 | 138d | verified 09-19 - her address hard-bounced 09-04, still needs a replacement contact |
+| [Dominik (Refind)](stories/dominik-refind.md) | 2026-01-23 | 239d | verified 09-19 - per Alex's 09-01 correction this is an active running ad campaign, not stalled |
+| [GenAI Collective](stories/genai-collective.md) | 2025-05-20 | 487d (09-08 figure, stale) | not in this pass's scope |
 
 ## 🤝 Open commitments
 
 Full log in `log/commitment-runs.md`. Re-scanned this sweep,
-`in:sent after:2026/08/19` - no new commitments opened.
+`in:sent newer_than:11d` - no new commitments opened.
 
 | Promise | To | Made | Age | Status |
 | --- | --- | --- | --- | --- |
-| "I'll go back to them and ask what happened to your details. I'll let you know what they say" | Sue Sutcliffe | 2026-08-07 | 32d | **open** - support-owned (`aic-customer-support`), not re-verified this pass |
-| "Our team will start working on it and I'll let you know when we plan to publish the interview" | Faizan Alvi + Tahmid | 2026-08-02 | 37d | **open** - no publish date sent |
-| "i'll follow-up in the other thread regarding the progress on the XML integration" | Aneeka Velummylum (Netline) | 2026-06-29 | - | **fulfilled 2026-08-31** - closed out this pass |
-| "we wanted to send you some nice AI Central swag" | Richard Lowe | 2026-08-17 | - | **kept 2026-09-01** - shipping address sent |
+| "I'll go back to them and ask what happened to your details. I'll let you know what they say" | Sue Sutcliffe | 2026-08-07 | 43d | **open** - support-owned (`aic-customer-support`), not re-verified this pass |
+| "Our team will start working on it and I'll let you know when we plan to publish the interview" | Faizan Alvi + Tahmid | 2026-08-02 | 48d | **open** - no publish date sent, not re-verified this pass |
+| "i'll follow-up in the other thread regarding the progress on the XML integration" | Aneeka Velummylum (Netline) | 2026-06-29 | - | **fulfilled 2026-08-31** |
+| "we wanted to send you some nice AI Central swag" | Richard Lowe | 2026-08-17 | - | **kept 2026-09-01** |
 
-**Deliberately excluded:** five commitments in a 19 June email to Tsvetelin,
-downgraded to historical - see `references/commitments.md` and
+**Near-miss, not a quoted promise but flagged:** Aneeka's own two chases
+(8 Sep, 15 Sep) on the drafted link-fix reply, still unsent - see
+`netline.md` and "Your move" above.
+
+**Deliberately excluded:** five commitments in a 19 June email to
+Tsvetelin, downgraded to historical - see `references/commitments.md` and
 `gta-whitepaper.md`.
 
 ## 📇 Old and unanswered - yours, low priority
 
 | Story | Idle | Who |
 | --- | --- | --- |
-| [Mitch // Sparkloop](stories/mitch-sparkloop.md) | 180d | mitch@sparkloop.app |
-| [Support - addsync.io](stories/support-vendors.md) | 265d | support@addsync.io |
-| [Reader's feedback](stories/readers-feedback.md) | 9-11 months | 3 individual readers, grouped |
-| [M&A exploration](stories/ma-exploration.md) | 148d | support@justwebsitebrokerage.com (Joe Burrill) |
-| Luke McCgwire (beehiiv) | 196d | luke.mccgwire@beehiiv.com |
-
-**Removed this sweep:** [Dominik (Refind)](stories/dominik-refind.md) -
-already corrected 2026-09-01 to an active running ad campaign; this table
-had gone stale and still listed it as 209-day-idle. [Mitali //
-Outskill](stories/mitali-outskill.md) - not actually "yours and unanswered,"
-her address hard-bounced; converted to a task above instead.
+| [Support - addsync.io](stories/support-vendors.md) | 276d (09-08 figure, stale) | support@addsync.io - not in this pass's scope |
+| [Reader's feedback](stories/readers-feedback.md) | 9-11 months | 3 individual readers, grouped - not in this pass's scope |
+| [M&A exploration](stories/ma-exploration.md) | 159d (09-08 figure, stale) | support@justwebsitebrokerage.com (Joe Burrill) - not in this pass's scope |
+| Luke McCgwire (beehiiv) | 207d (09-08 figure, stale) | luke.mccgwire@beehiiv.com - not in this pass's scope |
 
 ## 🔍 Below the story threshold - flagged, not filed
 
-Unchanged this pass except sponsorscout.io (Alex answered 2026-09-04, see
-`sponsor-scout-nick-hughes.md` above - graduated to its own story).
+Unchanged this pass - not part of the registry/flagged scope.
 
 | Who | Pattern | Worth knowing |
 | --- | --- | --- |
-| support@passionfroot.me | 3 unlabelled threads | likely the same relationship as Hugo // Passionfroot, unmerged |
-| indianae@canneslions.com | 5 messages, Aug 2026 (one more found this pass) | a second, distinct Cannes contact, Alex replied 28 Aug |
-| belle@tonileepr.com / mzucker@prophet.com | now its own story, see [Prophet](stories/prophet-tonileepr.md) | - |
+| support@passionfroot.me | 3 unlabelled threads | same relationship as Hugo // Passionfroot, still unmerged - both re-verified 09-19, no reply |
+| indianae@canneslions.com | 5 messages, Aug 2026 | a second, distinct Cannes contact, Alex replied 28 Aug |
 | kristinegan0822@gmail.com | 2 threads, 16 May | personal, not yet read in full |
 | bryan@recruitics.com | 1 discovery call, late Apr | single touch so far |
 | liza@recraft.ai | contract negotiation, Jun-Jul 2025 | stalled when Alex asked for a call |
@@ -207,18 +173,20 @@ Unchanged this pass except sponsorscout.io (Alex answered 2026-09-04, see
 
 | What | Why |
 | --- | --- |
-| Affiliate Payout | last activity is a `dub.co` notification, no counterparty |
+| Affiliate Payout | last activity re-verified 09-19, still a `dub.co` notification feed, no counterparty |
 | `testimonials` (34 threads) | 100% automated `senja.io` notifications |
 | `Sparkloop` (104 threads) | 100% automated `support@sparkloop.app` reports |
 | `TRAVEL` (46 threads) | booking confirmations, operational not relational |
-| daniel@dbusta.com | one-way newsletter-tips broadcast Alex is subscribed to - wrote again 07 Sep, still not a story |
+| daniel@dbusta.com | one-way newsletter-tips broadcast Alex is subscribed to - wrote again 16 Sep, still not a story |
 | growmynewsletter.com, newsletterevents.com, whosponsorsstuff.com, growletter.co, and similar | subscribed newsletters, no reply expected |
 
 ## 📮 Support domain
 
-Owned by `aic-customer-support`. Not re-swept as part of this run - the
-"Weekend support sweep" task above (2d overdue) is that skill's own backlog,
-flagged here for visibility, not actioned by this refresh.
+Owned by `aic-customer-support`. Not re-swept as part of this run - per
+Alex's own note, the AI 101 and Feedback unread backlogs dropped from
+28→5 and 36→8 today (2026-09-19) after a separate sweep, and 5 of the 6
+live Gmail drafts right now are from that sweep. Flagged here for
+visibility only.
 
 ## 🕸️ Graph
 
@@ -228,40 +196,49 @@ pending rows to apply.
 
 ## 💬 Feedback loop
 
-`ledger_feedback` had no rows in `new` or `seen` status this pass - nothing
-to action, nothing left waiting on Alex.
+`ledger_feedback` had no rows in `new` or `seen` status this pass -
+nothing to action, nothing left waiting on Alex.
 
 ## 🗂️ Background (`ledger_people`)
 
-**Flagged, not integrated.** `ledger_people` now holds 629 rows, up from
-the 197-person roster as of 2026-08-20. The growth is a single 2026-09-04
-bulk import (30+ rows sampled, all identical timestamp) of Breakcold CRM
-contacts - prospect data with no `identity` (email) and no `stories` tie on
-any row sampled. Per `references/background.md`'s hard rule, a row with no
-`stories` value and no confirmed identity cannot be placed into a story
-file or `graph/people.md` without guessing. Not pulled into ledger markdown
-this pass - this is BDR/prospecting data, a different kind of table content
-than the person-level notes Alex writes on `/people`. Flagged for Alex:
-confirm whether this import needs a different destination (it reads like
-`bdr-research` intake, not this skill's CRM layer).
+Queried rows added since the 09-08 sweep (`created_at > 2026-09-08`):
+**zero new rows.** The 22 rows dated 2026-09-10 (the Bristol AI Hackathon
+Roundtable cohort's web-intel enrichment) were already flagged before this
+pass's window and are still not pulled into `ai-hackathon-bristol.md` -
+that story is outside this run's scope, and the content is automated
+research write-up, not Alex-stated background, so per `references/
+background.md`'s hard rule ("record only what Alex actually states") it
+does not belong in a `## Background (Alex-provided)` section anyway.
+Flagged for whoever next runs a full sweep on `ai-hackathon-bristol`, not
+acted on here. `ledger_people` total unchanged at 629 rows (the
+Breakcold/BDR import flagged 09-08 is still unresolved as to its correct
+destination).
 
 ## Coverage
 
-- **20 of 20 live-story labels re-queried** this pass (the 26-label
-  registry minus 6 confirmed automated/non-conversation labels -
-  testimonials, Sparkloop, TRAVEL, Affiliate Payout, Gamma AI, Hamed, plus
-  Support routed to `aic-customer-support`)
-- **Discovery**: a 10-day inbound delta (not a full historical re-run - the
-  2026-08-19 and 2026-09-03 passes already cover the account's full history
-  to its April 2025 floor). No new unlabelled story clusters found beyond
-  what surfaced already-tracked stories moving (Netline, AI Hackathon
-  Bristol, Newsletter Traffic Network, GTA whitepaper)
-- **Commitment scanner**: `in:sent after:2026/08/19`, 3 hits, none newly
+- **20 of 20 live-story labels re-queried** this pass, plus the 5 stories
+  Alex named directly as having moved from recent work
+  (`elevenlabs-luke-speaker`, `elevenlabs-sponsorship`, `wellput-adops`,
+  `mark-duke`, `taplio-mcp-launch`)
+- **Discovery**: an 11-day inbound delta (`in:inbox newer_than:11d`,
+  automated senders excluded). No new unlabelled story clusters found -
+  every real cluster in the results maps to an already-tracked story
+  (GTA whitepaper, Prophet, Antidote, Studio Galdieri, Sponsor Scout,
+  wellput, InVideo, Mindbreeze/Prime Tech PR, interviews-label threads).
+  Several of those show fresher activity than their last recorded state
+  (Studio Galdieri, Sponsor Scout, GTA whitepaper) - flagged inline above,
+  not fully re-verified since they sit outside this run's formal scope
+- **Commitment scanner**: `in:sent newer_than:11d`, ~13 hits, none newly
   opened - see `log/commitment-runs.md`
 - **Feedback**: `ledger_feedback` empty
-- **Background**: `ledger_people` checked, 629 rows, flagged above as not
-  integrable this pass
-- Remaining coverage gap is the same as before: mail under labels outside
-  the original 26, and non-Gmail channels this ledger can't see directly
-  (calls, Slack, LinkedIn, WhatsApp) except where a Notion transcript or
-  Alex's own account brings them in
+- **Background**: `ledger_people` checked, zero new rows since 09-08,
+  629 total, prior flags unchanged
+- **List drafts**: full account, 6 total - 2 fewer than the "only 1 live
+  draft" state recorded 09-08 would suggest even accounting for the 5 new
+  support drafts, because the Sam (Sunny) draft that was the "only 1" is
+  now itself missing - see Conflicts above
+- Remaining coverage gap, unchanged from prior sweeps: mail under labels
+  outside the original 26, non-Gmail channels (calls, Slack, LinkedIn,
+  WhatsApp, Passionfroot) except where a Notion transcript or Alex's own
+  account brings them in, and every story flagged above as "not in this
+  pass's scope" - due a full re-verify next full sweep
