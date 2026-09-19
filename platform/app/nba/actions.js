@@ -49,3 +49,27 @@ export async function addTask(formData) {
   });
   refresh();
 }
+
+// A free-text instruction on a task or a story's next-action that isn't a
+// simple done/drop - e.g. "Nicola at Prime Tech PR ghosted me, put a
+// reminder on my calendar for mid next week" instead of a status change.
+// Queued in ledger_task_instructions (against a ledger_tasks row, or a
+// story slug directly for stories that only carry a next_action, not a
+// separate task row); a background worker (the "Task instruction worker"
+// trigger) picks up pending rows, actually carries them out with whatever
+// tool the instruction calls for, and writes back status + a one-line
+// result. Added 2026-09-19, per Alex.
+export async function sendInstruction(formData) {
+  const taskId = (formData.get("task_id") || "").toString();
+  const storySlug = (formData.get("story_slug") || "").toString();
+  const instruction = (formData.get("instruction") || "").toString().trim();
+  if ((!taskId && !storySlug) || !instruction) return;
+
+  await supabaseInsert("ledger_task_instructions", {
+    task_id: taskId || null,
+    story_slug: storySlug || null,
+    instruction,
+    status: "pending",
+  });
+  refresh();
+}

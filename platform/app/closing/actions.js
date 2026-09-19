@@ -1,18 +1,9 @@
 "use server";
 
-import { supabaseUpdate, supabaseInsert } from "../../lib/supabase";
+import { supabaseInsert } from "../../lib/supabase";
 import { revalidatePath } from "next/cache";
 
 export async function saveClosing(formData) {
-  const ids = formData.getAll("task_id");
-
-  for (const id of ids) {
-    const status = (formData.get(`status_${id}`) || "open").toString();
-    if (status !== "open") {
-      await supabaseUpdate("ledger_tasks", `?id=eq.${id}`, { status });
-    }
-  }
-
   const newTitle = (formData.get("new_title") || "").toString().trim();
   if (newTitle) {
     await supabaseInsert("ledger_tasks", {

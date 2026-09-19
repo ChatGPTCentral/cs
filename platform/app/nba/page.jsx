@@ -6,6 +6,7 @@ import SavedToast from "../people/SavedToast";
 import Avatar from "../people/Avatar";
 import TaskRow from "./TaskRow";
 import AddTaskForm from "./AddTaskForm";
+import InstructionBox from "./InstructionBox";
 
 export const dynamic = "force-dynamic";
 
@@ -15,14 +16,20 @@ function daysBetween(fromIso, toIso) {
 
 // One line per open ledger_tasks row - the same table /brief reads
 // "Priorities"/"Open tasks" from and /closing marks Done/Dropped on.
-// Check/x/pencil act immediately via TaskRow's own server actions.
-function TaskLine({ t, today }) {
+// Check/x/pencil act immediately via TaskRow's own server actions. Below
+// it, a free-text instruction box for tasks that aren't a plain done/drop.
+function TaskLine({ t, today, instructionsByTask }) {
   const overdue = t.due_date && t.due_date < today;
   const dueNote = t.due_date ? ` (${overdue ? "in ritardo dal " : "entro il "}${t.due_date})` : "";
-  return <TaskRow id={t.id} title={t.title} kind={t.kind} dueNote={dueNote} urgent={overdue} />;
+  return (
+    <div>
+      <TaskRow id={t.id} title={t.title} kind={t.kind} dueNote={dueNote} urgent={overdue} />
+      <InstructionBox taskId={t.id} latest={instructionsByTask.get(t.id)} />
+    </div>
+  );
 }
 
-function StoryRow({ item, today }) {
+function StoryRow({ item, today, instructionsByTask, instructionsByStory }) {
   const overdueDays = item.date && item.date < today ? daysBetween(item.date, today) : 0;
   return (
     <div className="nba-row">
@@ -71,6 +78,7 @@ function StoryRow({ item, today }) {
               rows={2}
             />
           </details>
+          <InstructionBox storySlug={item.slug} latest={instructionsByStory.get(item.slug)} />
         </>
       ) : (
         item.action && <p className="nba-action">{item.action}</p>
@@ -78,7 +86,7 @@ function StoryRow({ item, today }) {
       {item.tasks.length > 0 && (
         <div className="nba-tasks">
           {item.tasks.map((t) => (
-            <TaskLine key={t.id} t={t} today={today} />
+            <TaskLine key={t.id} t={t} today={today} instructionsByTask={instructionsByTask} />
           ))}
         </div>
       )}
@@ -147,7 +155,7 @@ function Section({ title, note, children, count }) {
 
 export default async function NbaPage() {
   const nowIso = new Date().toISOString();
-  const [stories, tasks, meetings, meetingPeople] = await Promise.all([
+  const [stories, tasks, meetings, meetingPeople, instructions] = await Promise.all([
     supabaseSelect(
       "ledger_stories",
       "?select=id,slug,title,kind,next_action,next_action_date,strategy&or=(next_action.not.is.null,next_action_date.not.is.null)"
@@ -161,10 +169,24 @@ export default async function NbaPage() {
       `?start_time=gte.${nowIso}&order=start_time.asc&select=event_id,title,start_time,attendees,story_slug,notes`
     ).catch(() => []),
     supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,identity,photo_url,background"),
+    // Latest free-text instruction per task or story, if any - see InstructionBox.
+    supabaseSelect("ledger_task_instructions", "?order=created_at.desc&select=task_id,story_slug,instruction,status,result,created_at,executed_at"),
   ]);
   const peopleByEmail = new Map(
     meetingPeople.filter((p) => p.identity).map((p) => [p.identity.toLowerCase(), p])
   );
+  // Rows arrive newest-first, so the first one seen per key is the latest.
+  // task_id-linked rows key instructionsByTask; story-only rows (no task_id,
+  // a story's own next-action instead) key instructionsByStory.
+  const instructionsByTask = new Map();
+  const instructionsByStory = new Map();
+  for (const row of instructions) {
+    if (row.task_id) {
+      if (!instructionsByTask.has(row.task_id)) instructionsByTask.set(row.task_id, row);
+    } else if (row.story_slug) {
+      if (!instructionsByStory.has(row.story_slug)) instructionsByStory.set(row.story_slug, row);
+    }
+  }
 
   const today = new Date().toISOString().slice(0, 10);
   const weekOut = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
@@ -262,7 +284,7 @@ export default async function NbaPage() {
       {overdue.length > 0 && (
         <Section title="In ritardo" count={overdue.length} note="La scadenza è passata. Prima i più vecchi.">
           {overdue.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} />
+            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
           ))}
         </Section>
       )}
@@ -270,7 +292,7 @@ export default async function NbaPage() {
       {dueSoon.length > 0 && (
         <Section title="Oggi e prossimi 7 giorni" count={dueSoon.length}>
           {dueSoon.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} />
+            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
           ))}
         </Section>
       )}
@@ -282,7 +304,7 @@ export default async function NbaPage() {
           note="C'è una cosa da fare ma nessuna scadenza - metti una data e entrano nel radar."
         >
           {undated.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} />
+            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
           ))}
         </Section>
       )}
@@ -294,7 +316,7 @@ export default async function NbaPage() {
           note="ledger_tasks li traccia già - la genesi ancora no. Scrivi l'azione qui per allinearle."
         >
           {taskOnlyStories.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} />
+            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
           ))}
         </Section>
       )}
@@ -302,7 +324,7 @@ export default async function NbaPage() {
       {later.length > 0 && (
         <Section title="Più avanti" count={later.length}>
           {later.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} />
+            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
           ))}
         </Section>
       )}
@@ -315,7 +337,7 @@ export default async function NbaPage() {
         <AddTaskForm />
         <div className="nba-tasks">
           {boardOnly.map((t) => (
-            <TaskLine key={t.id} t={t} today={today} />
+            <TaskLine key={t.id} t={t} today={today} instructionsByTask={instructionsByTask} />
           ))}
         </div>
       </Section>

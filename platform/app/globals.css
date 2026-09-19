@@ -1042,6 +1042,53 @@ p .field-label { display: inline-block; min-width: 60px; }
 .task-row-btn-remove:hover { border-color: var(--danger); color: var(--danger); }
 .task-row-btn-edit:hover { border-color: var(--accent); color: var(--accent-ink); }
 
+/* Free-text instruction box under a task - "+ istruzione" toggles into a
+   textarea + Send, or shows the queued/done state once one exists. */
+.instruction-toggle {
+  margin: 2px 0 6px 2px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  cursor: pointer;
+}
+.instruction-toggle:hover { color: var(--accent-ink); }
+.instruction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 2px 0 10px;
+}
+.instruction-form textarea {
+  font: inherit;
+  font-size: 12.5px;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 6px 8px;
+  resize: vertical;
+}
+.instruction-form textarea:focus { outline: none; border-color: var(--accent); }
+.instruction-form button {
+  font-size: 12px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.instruction-form button[type="button"] { background: none; color: var(--ink-faint); }
+.instruction-form button:disabled { opacity: 0.6; cursor: default; }
+.instruction-status {
+  margin: 2px 0 8px 2px;
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+.instruction-status p { margin: 0; }
+.instruction-result { color: var(--ink-dim); margin-top: 2px !important; }
+
 .add-task-form {
   display: flex;
   gap: 8px;
