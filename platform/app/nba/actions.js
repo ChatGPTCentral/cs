@@ -23,6 +23,20 @@ export async function setTaskStatus(formData) {
   refresh();
 }
 
+// Pins/unpins a task into Today's agenda - "+ aggiungi a oggi" moves it
+// out of Pending tasks and into the agenda column; the unpin button there
+// sends it back. One field, one source of truth - a pinned task simply
+// stops matching the Pending/Reminders query, same mechanism as ✓/✕.
+// Added 2026-09-19, per Alex.
+export async function setTaskPinnedToday(formData) {
+  const id = (formData.get("id") || "").toString();
+  const pinned = (formData.get("pinned") || "").toString() === "true";
+  if (!id) return;
+
+  await supabaseUpdate("ledger_tasks", `?id=eq.${id}`, { pinned_today: pinned });
+  refresh();
+}
+
 export async function updateTaskTitle(formData) {
   const id = (formData.get("id") || "").toString();
   const title = (formData.get("title") || "").toString().trim();

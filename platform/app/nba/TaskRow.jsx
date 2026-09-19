@@ -1,14 +1,16 @@
 "use client";
 
 import { useRef, useState, useTransition } from "react";
-import { setTaskStatus, updateTaskTitle } from "./actions";
+import { setTaskStatus, updateTaskTitle, setTaskPinnedToday } from "./actions";
 
 // One task line, everywhere a task appears (the cross-cutting list and
 // the tasks nested under a story) - a check to mark it done, an x to
 // drop it, a pencil to rename it in place. No Save button: each click
 // submits its own tiny form immediately, same "no visible save needed"
-// spirit as TableCellInput.
-export default function TaskRow({ id, title, kind, dueNote, urgent }) {
+// spirit as TableCellInput. `pinned` + `showPin` add a 4th button -
+// "+ oggi" to pull a task into Today's agenda, or "− oggi" to send it
+// back - added 2026-09-19, per Alex.
+export default function TaskRow({ id, title, kind, dueNote, urgent, pinned = false, showPin = true }) {
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState(title);
   const [isPending, startTransition] = useTransition();
@@ -86,6 +88,19 @@ export default function TaskRow({ id, title, kind, dueNote, urgent }) {
         >
           ✎
         </button>
+        {showPin && (
+          <form action={setTaskPinnedToday}>
+            <input type="hidden" name="id" value={id} />
+            <input type="hidden" name="pinned" value={String(!pinned)} />
+            <button
+              type="submit"
+              className="task-row-btn task-row-btn-pin"
+              title={pinned ? "Togli da oggi" : "Aggiungi a oggi"}
+            >
+              {pinned ? "− oggi" : "+ oggi"}
+            </button>
+          </form>
+        )}
       </span>
     </div>
   );

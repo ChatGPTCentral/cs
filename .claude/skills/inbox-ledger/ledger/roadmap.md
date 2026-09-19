@@ -23,7 +23,7 @@ or changed items; note the date of each update.
     `claude/admin-balance-sheet-tool-3lkfdl` branch). **Currency
     mismatch, flagged not resolved:** the target is stated in $15,000,
     the view reports EUR bank inflows (Qonto/Wise/Stripe payouts). The
-    brief reports the EUR figure as-is with a one-line note rather than
+    panel reports the EUR figure as-is with a one-line note rather than
     converting or picking a rate - Alex to say whether the target
     should be restated in EUR or the figure converted, and at what rate
   - **AI Library Trials** - gross count of `trial_ledger` rows with
@@ -32,6 +32,26 @@ or changed items; note the date of each update.
     `ai-central-quiz` repo, `claude/great-volta-PaEPx` branch). Gross
     per that project's own standing rule ("trials are counted GROSS,
     everywhere") - not filtered by `trial_refunded`
+  - **How it's actually wired, 2026-09-19:** `bank_transactions` and
+    `trial_ledger` both sit behind real row-level security - neither
+    grants the app's publishable key direct read access, on purpose.
+    Rather than weaken that, each side got one SECURITY DEFINER
+    Postgres function that hands back only the one aggregate number:
+    `targets_revenue_mtd()` on the ledger project, `trials_mtd_count()`
+    on the quiz project (migrations `targets_revenue_mtd_rpc` /
+    `trials_mtd_rpc`). `platform/app/TargetsPanel.jsx` calls both on
+    every load of `/` - this is the one live render, the brief's own
+    text no longer repeats these numbers (see the "Morning brief
+    (daily)" trigger prompt, updated the same day)
+  - **The €10,000 bug, found and fixed 2026-09-19:** the brief's
+    static Revenue text briefly read €11,364.28, exactly €10,000 too
+    high. Cause: a €10,000 transfer between AI Central's own accounts
+    (`bank_transactions.id = cb442498-6f26-4052-b3e9-c8549e702d98`)
+    got correctly reclassified `is_transfer = true` - excluding it
+    from revenue - after the figure had already been typed into the
+    brief as static text. The live panel above can't go stale the
+    same way, since it queries fresh on every load instead of once at
+    generation time
 
 ## October 2026
 

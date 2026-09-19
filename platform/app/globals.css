@@ -1046,6 +1046,13 @@ p .field-label { display: inline-block; min-width: 60px; }
 .task-row-btn-done:hover { border-color: var(--success); color: var(--success); }
 .task-row-btn-remove:hover { border-color: var(--danger); color: var(--danger); }
 .task-row-btn-edit:hover { border-color: var(--accent); color: var(--accent-ink); }
+.task-row-btn-pin {
+  width: auto;
+  padding: 0 6px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.task-row-btn-pin:hover { border-color: var(--accent); color: var(--accent-ink); }
 
 /* Free-text instruction box under a task - "+ istruzione" toggles into a
    textarea + Send, or shows the queued/done state once one exists. */
@@ -1502,6 +1509,43 @@ p .field-label { display: inline-block; min-width: 60px; }
   letter-spacing: normal;
 }
 .today-col .content { height: 100%; box-sizing: border-box; }
+
+/* Live Targets panel - added 2026-09-19, replacing static "Current"
+   text baked into the brief (see TargetsPanel.jsx for why). */
+.targets-panel { margin: 0 0 16px; }
+.targets-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13.5px;
+  margin: 3px 0;
+}
+.targets-label { color: var(--ink-dim); min-width: 110px; }
+.targets-value { color: var(--ink); font-weight: 600; }
+.targets-current { color: var(--ink-faint); font-weight: 400; font-size: 12.5px; }
+.targets-subhead {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 6px;
+}
+
+/* Pending tasks, grouped by story - added 2026-09-19, per Alex ("group
+   them by category"). Category is the story a task links to, or
+   "Generale" for cross-cutting tasks. */
+.pending-group { margin: 0 0 16px; }
+.pending-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  margin: 0 0 4px;
+}
+.pending-group-label a { color: var(--ink-faint); }
+.pending-group-label a:hover { color: var(--accent-ink); }
+
 .today-stale-note {
   margin: 0 0 14px;
   padding: 10px 14px;

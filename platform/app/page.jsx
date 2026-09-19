@@ -2,26 +2,32 @@
 // quello che devo fare della mia giornata (cioè il brief) e poi voglio
 // avere altri task secondari che potrei comunque tacklare." Per Alex,
 // 2026-09-19: /brief and /closing are retired, everything unified into
-// this one page - then, same day, rebuilt again into three columns,
-// full width: "full width, with the panel divided into 3 vertical
-// sections: today's agenda, pending tasks, reminders."
+// this one page - then, same day, rebuilt into three columns, full
+// width: "full width, with the panel divided into 3 vertical sections:
+// today's agenda, pending tasks, reminders." Then, same day again:
+// Targets went live (was frozen text in the brief, went stale within
+// hours - see TargetsPanel), and Pending tasks got grouped by category
+// with a "+ oggi" pin that pulls an item into this column's own
+// "Picked for today" list.
 //
-// - Today's agenda: today's calendar events, then the brief itself
-//   (Targets, Editorial tasks, editable per line, with a Send bar) -
-//   what's actually scheduled or planned for today specifically.
+// - Today's agenda: TargetsPanel (live), today's calendar events, items
+//   pinned "+ oggi" from the other two columns, then the brief itself
+//   (Editorial tasks, editable per line, with a Send bar).
 // - Pending tasks: the unified backlog (ledger_tasks minus
-//   kind='reminder', plus every story's live next_action) - the main
-//   work list, sorted by due date.
+//   kind='reminder' minus pinned, plus every story's live next_action),
+//   grouped by the story it belongs to, or "Generale" for cross-cutting
+//   tasks.
 // - Reminders: ledger_tasks with kind='reminder', plus calendar events
 //   beyond today (including the ones the "+ istruzione" delegate
-//   feature creates) - things to come back to, not to do right now.
+//   feature creates).
 //
-// All three read from the same query (nba/data.js's getBacklogData),
-// which /nba (the full unsplit list) also uses, so nothing here can
-// drift from what /nba shows.
+// All three, plus "Picked for today", read from the same query
+// (nba/data.js's getBacklogData), which /nba (the full unsplit list)
+// also uses, so nothing here can drift from what /nba shows.
 import { supabaseSelect } from "../lib/supabase";
 import BriefBlocks from "./BriefBlocks";
 import BriefSendBar from "./BriefSendBar";
+import TargetsPanel from "./TargetsPanel";
 import TodayNote from "./TodayNote";
 import AddTaskForm from "./nba/AddTaskForm";
 import { TaskLine, StoryActionRow, MeetingLine } from "./nba/Rows";
@@ -56,6 +62,25 @@ function ColumnHeader({ title, count }) {
   );
 }
 
+function BacklogRow({ r, today, instructionsByTask, instructionsByStory, storyTitleBySlug }) {
+  return r.type === "task" ? (
+    <TaskLine
+      key={`t-${r.data.id}`}
+      t={r.data}
+      today={today}
+      instructionsByTask={instructionsByTask}
+      storyTitleBySlug={storyTitleBySlug}
+    />
+  ) : (
+    <StoryActionRow
+      key={`s-${r.data.id}`}
+      s={r.data}
+      today={today}
+      instructionsByStory={instructionsByStory}
+    />
+  );
+}
+
 export default async function TodayPage() {
   const [briefs, recentNotes, backlog] = await Promise.all([
     supabaseSelect("ledger_briefs", "?kind=eq.morning&order=brief_date.desc&limit=1"),
@@ -65,14 +90,15 @@ export default async function TodayPage() {
   const brief = briefs[0];
   const todayDate = todayISO();
   // The brief generates every day now (was Mon-Fri until 2026-09-19).
-  // On a missed run the most recent row is not today's - the page used
-  // to render it with no indication of that, which reads as "today"
-  // even when it is not.
+  // On a missed run the most recent row is not today's - flag it rather
+  // than silently rendering yesterday's brief as if it were today's.
   const isStale = brief && brief.brief_date !== todayDate;
 
   const {
     today,
-    pendingRows,
+    pickedToday,
+    pendingGroups,
+    pendingCount,
     reminderRows,
     meetingsToday,
     meetingsUpcoming,
@@ -82,19 +108,33 @@ export default async function TodayPage() {
     instructionsByStory,
   } = backlog;
 
+  const rowProps = { today, instructionsByTask, instructionsByStory, storyTitleBySlug };
+
   return (
     <div className="wide-content">
       <div className="today-columns">
         <section className="today-col">
           <ColumnHeader title="Today's agenda" />
           <div className="content">
+            <TargetsPanel />
+
             {meetingsToday.length > 0 && (
-              <div style={{ marginBottom: 12 }}>
+              <div style={{ margin: "14px 0" }}>
                 {meetingsToday.map((m) => (
                   <MeetingLine key={m.event_id} m={m} peopleByEmail={peopleByEmail} />
                 ))}
               </div>
             )}
+
+            {pickedToday.length > 0 && (
+              <div style={{ margin: "14px 0" }}>
+                <p className="targets-subhead">Picked for today</p>
+                {pickedToday.map((r) => (
+                  <BacklogRow key={`${r.type}-${r.data.id}`} r={r} {...rowProps} />
+                ))}
+              </div>
+            )}
+
             {brief ? (
               <>
                 {isStale && (
@@ -114,30 +154,22 @@ export default async function TodayPage() {
         </section>
 
         <section className="today-col">
-          <ColumnHeader title="Pending tasks" count={pendingRows.length} />
+          <ColumnHeader title="Pending tasks" count={pendingCount} />
           <div className="content">
             <div style={{ marginBottom: 10 }}>
               <AddTaskForm />
             </div>
-            {pendingRows.length === 0 && <p>Niente di aperto in questo momento.</p>}
-            {pendingRows.map((r) =>
-              r.type === "task" ? (
-                <TaskLine
-                  key={`t-${r.data.id}`}
-                  t={r.data}
-                  today={today}
-                  instructionsByTask={instructionsByTask}
-                  storyTitleBySlug={storyTitleBySlug}
-                />
-              ) : (
-                <StoryActionRow
-                  key={`s-${r.data.id}`}
-                  s={r.data}
-                  today={today}
-                  instructionsByStory={instructionsByStory}
-                />
-              )
-            )}
+            {pendingGroups.length === 0 && <p>Niente di aperto in questo momento.</p>}
+            {pendingGroups.map((g) => (
+              <div key={g.key} className="pending-group">
+                <p className="pending-group-label">
+                  {g.storySlug ? <a href={`/story/${g.storySlug}`}>{g.label}</a> : g.label}
+                </p>
+                {g.rows.map((r) => (
+                  <BacklogRow key={`${r.type}-${r.data.id}`} r={r} {...rowProps} />
+                ))}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -148,13 +180,7 @@ export default async function TodayPage() {
               <p>Niente in programma oltre oggi.</p>
             )}
             {reminderRows.map((r) => (
-              <TaskLine
-                key={`t-${r.data.id}`}
-                t={r.data}
-                today={today}
-                instructionsByTask={instructionsByTask}
-                storyTitleBySlug={storyTitleBySlug}
-              />
+              <BacklogRow key={`${r.type}-${r.data.id}`} r={r} {...rowProps} />
             ))}
             {meetingsUpcoming.length > 0 && (
               <div style={{ marginTop: reminderRows.length > 0 ? 10 : 0 }}>

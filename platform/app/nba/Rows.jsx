@@ -1,4 +1,4 @@
-import { updateStoryNextAction, updateStoryNextActionDate, clearStoryNextAction } from "../story/actions";
+import { updateStoryNextAction, updateStoryNextActionDate, clearStoryNextAction, setStoryPinnedToday } from "../story/actions";
 import { parseAttendees } from "../../lib/people";
 import TableCellInput from "../people/TableCellInput";
 import TaskRow from "./TaskRow";
@@ -10,15 +10,24 @@ import InstructionBox from "./InstructionBox";
 // it's shown. Split out of nba/page.jsx 2026-09-19 when Today moved to
 // its own 3-column layout.
 
-// A task row - title, due date, ✓/✕/✎ instant actions, a tag naming the
-// story it's linked to (if any), and a delegate-instruction box below.
-export function TaskLine({ t, today, instructionsByTask, storyTitleBySlug }) {
+// A task row - title, due date, ✓/✕/✎/pin instant actions, a tag naming
+// the story it's linked to (if any), and a delegate-instruction box
+// below.
+export function TaskLine({ t, today, instructionsByTask, storyTitleBySlug, showPin = true }) {
   const overdue = t.due_date && t.due_date < today;
   const dueNote = t.due_date ? ` (${overdue ? "in ritardo dal " : "entro il "}${t.due_date})` : "";
   const storyTitle = t.story_slug ? storyTitleBySlug.get(t.story_slug) : null;
   return (
     <div className="nba-flat-row">
-      <TaskRow id={t.id} title={t.title} kind={t.kind} dueNote={dueNote} urgent={overdue} />
+      <TaskRow
+        id={t.id}
+        title={t.title}
+        kind={t.kind}
+        dueNote={dueNote}
+        urgent={overdue}
+        pinned={!!t.pinned_today}
+        showPin={showPin}
+      />
       {storyTitle && (
         <a href={`/story/${t.story_slug}`} className="nba-flat-tag">
           {storyTitle}
@@ -30,11 +39,13 @@ export function TaskLine({ t, today, instructionsByTask, storyTitleBySlug }) {
 }
 
 // A story's next-action, styled to read as the same kind of row as a
-// task: title, the action itself, a due date, one-click clear. The
-// action text and date are still editable in place (autosave on blur,
-// same as everywhere else) - clear (✕) blanks both fields at once.
-export function StoryActionRow({ s, today, instructionsByStory }) {
+// task: title, the action itself, a due date, one-click clear, pin to
+// Today. The action text and date are still editable in place (autosave
+// on blur, same as everywhere else) - clear (✕) blanks both fields at
+// once.
+export function StoryActionRow({ s, today, instructionsByStory, showPin = true }) {
   const overdue = s.next_action_date && s.next_action_date < today;
+  const pinned = !!s.pinned_today;
   return (
     <div className="nba-flat-row">
       <div className={`task-row${overdue ? " task-row-urgent" : ""}`}>
@@ -68,6 +79,19 @@ export function StoryActionRow({ s, today, instructionsByStory }) {
               ✕
             </button>
           </form>
+          {showPin && (
+            <form action={setStoryPinnedToday}>
+              <input type="hidden" name="id" value={s.id} />
+              <input type="hidden" name="pinned" value={String(!pinned)} />
+              <button
+                type="submit"
+                className="task-row-btn task-row-btn-pin"
+                title={pinned ? "Togli da oggi" : "Aggiungi a oggi"}
+              >
+                {pinned ? "− oggi" : "+ oggi"}
+              </button>
+            </form>
+          )}
         </span>
       </div>
       <InstructionBox storySlug={s.slug} latest={instructionsByStory.get(s.slug)} />

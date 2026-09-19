@@ -61,6 +61,23 @@ export async function supabaseUpsert(table, rows, conflictColumn) {
   return res.json();
 }
 
+// Calls a Postgres function exposed via PostgREST. Used for figures that
+// live behind real row-level security (bank_transactions - is_member()
+// only) where the function itself is SECURITY DEFINER and hands back one
+// aggregate number, never the underlying rows. See targets_revenue_mtd().
+export async function supabaseRpc(fn, args = {}) {
+  const res = await fetch(`${REST_URL}/rpc/${fn}`, {
+    method: "POST",
+    headers: HEADERS,
+    body: JSON.stringify(args),
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error(`Supabase rpc failed on ${fn}: ${res.status} ${await res.text()}`);
+  }
+  return res.json();
+}
+
 export async function supabaseUpdate(table, query, patch) {
   const res = await fetch(`${REST_URL}/${table}${query}`, {
     method: "PATCH",

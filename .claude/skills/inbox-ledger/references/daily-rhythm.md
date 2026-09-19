@@ -21,20 +21,38 @@ section at the bottom for exactly what moved where.
 same day, per Alex** ("full width, with the panel divided into 3
 vertical sections: today's agenda, pending tasks, reminders"):
 
-- **Today's agenda** (left) - today's calendar events, then the brief
-  itself (Targets, Editorial tasks, editable per line, with the Send
-  bar)
+- **Today's agenda** (left) - the live Targets panel (see below), then
+  today's calendar events, then anything pinned "+ oggi" from the
+  other two columns ("Picked for today"), then the brief itself
+  (Editorial tasks, editable per line, with the Send bar)
 - **Pending tasks** (middle) - every open `ledger_tasks` row except
-  `kind='reminder'`, plus every story's live `next_action`, sorted by
-  due date. The main work list
-- **Reminders** (right) - `ledger_tasks` rows with `kind='reminder'`,
-  plus calendar events beyond today (including the ones the "+
-  istruzione" delegate feature creates - see below). Things to come
-  back to, not to do right now
+  `kind='reminder'` and anything pinned, plus every story's live
+  `next_action`, grouped by the story it belongs to (or "Generale" for
+  cross-cutting tasks) - added 2026-09-19, per Alex ("group them by
+  category"). Each row has a "+ oggi" button that pulls it into
+  "Picked for today" in the left column instead
+- **Reminders** (right) - `ledger_tasks` rows with `kind='reminder'`
+  and not pinned, plus calendar events beyond today (including the
+  ones the "+ istruzione" delegate feature creates - see below).
+  Things to come back to, not to do right now. Same "+ oggi" pin
+  available here too
 
 All three columns, plus `/nba` (the full unsplit reference list), read
 from one shared query (`platform/app/nba/data.js`'s `getBacklogData`)
-so they can never show different things for the same data.
+so they can never show different things for the same data. Pin state
+lives on `pinned_today` (a boolean on both `ledger_tasks` and
+`ledger_stories`) via `setTaskPinnedToday` / `setStoryPinnedToday` -
+one flag, not a separate "today list" table, so nothing can drift
+between what's pinned and what the item itself still says.
+
+**Targets panel, added 2026-09-19, per Alex** (`platform/app/
+TargetsPanel.jsx`, rendered at the top of Today's agenda): the fixed
+monthly targets from `roadmap.md`, each with a live "Current" figure
+queried fresh on every page load - never typed into the brief as
+static text again, after that text going stale caused a real
+€10,000 revenue discrepancy the same day (see `roadmap.md`'s "Current
+figures" note for the full root cause and the SECURITY DEFINER
+functions each figure is read through).
 
 **Times below are defaults, not confirmed by Alex - flag them as
 adjustable whenever this doc is referenced, and update this file the
@@ -64,18 +82,16 @@ and story next-actions that the Pending tasks / Reminders columns
 already show live on `/`, and having both meant one could drift stale
 while the other stayed current (exactly what happened - see the
 2026-09-19 note above about `/` showing Friday's brief). Now there is
-one list, not two. Write in English, in this exact order and nesting:
+one list, not two. **Targets dropped from the brief's own text too,
+same day** - it moved into the live `TargetsPanel` above the brief
+(see the "Today's agenda" bullet above) after the exact same
+staleness bug hit it: the static "Current" figure baked into the
+brief text was briefly wrong by €10,000 (see `roadmap.md`'s "Current
+figures" note). Write in English, in this exact order and nesting:
 
 1. Opening line: "Hey there, today is {weekday}, this is what we need
    to do:"
-2. `## September's Targets:` (rename per current month) - the fixed
-   monthly targets from `roadmap.md` (e.g. Revenue, AI Library Trials),
-   each as `- Metric: $X (Current: $Y)`. **The target is fixed and
-   comes from `roadmap.md`. The "Current" figure is pulled live, per
-   Alex, 2026-09-19 - see `roadmap.md`'s "Current figures" note for the
-   exact query and Supabase project for each metric.** Never guess a
-   figure that query can't answer - say so in the placeholder instead
-3. `## Editorial tasks` - beehiiv, LinkedIn newsletter, Substack, idea
+2. `## Editorial tasks` - beehiiv, LinkedIn newsletter, Substack, idea
    generation, the editorial calendar, and the AI Central Voices
    pipeline (new interviews to send/source - use `### `-free bullets,
    `[New Interview] :: ...` style is Alex's own convention, keep it).
@@ -85,7 +101,7 @@ one list, not two. Write in English, in this exact order and nesting:
    2026-09-19 note on the `[New Interview]` bullet naming 4 people
    already decided and asking for 20 sourced candidates to pick 6 from
    - not itself a request to action immediately
-4. One closing line pointing at the other two columns: something like
+3. One closing line pointing at the other two columns: something like
    "The rest of what's open is in the Pending tasks and Reminders
    columns alongside this one - no separate list any more." Never
    re-enumerate tasks here even in short form - that is exactly the
@@ -112,11 +128,11 @@ Write in the plain-text convention `/` (Today) renders into HTML (see
 group), `- - item` for a nested bullet (one level per repeated `- `),
 `**text**` for inline bold (e.g. to mark "Overdue:").
 
-Sources for the Editorial tasks section and the Targets figures, same
-discipline as before - never invent a fact or a date:
+Sources for the Editorial tasks section, same discipline as before -
+never invent a fact or a date:
 
 - `ledger_tasks` (`status = open`) filtered to real editorial/content
-  items, and `roadmap.md` for the monthly targets
+  items
 - Anything editorial that moved overnight the auto-genesis sweep
   already found - don't repeat its digest verbatim, just fold in what
   Alex needs to think about today specifically

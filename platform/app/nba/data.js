@@ -3,19 +3,20 @@ import { supabaseSelect } from "../../lib/supabase";
 // Shared fetch + shape for the unified backlog - one place both /nba
 // and Today's 3-column layout read from, so "pending tasks" and
 // "reminders" never drift into two different queries of the same data.
-// Split out of nba/page.jsx 2026-09-19 when Today grew its own layout.
+// Split out of nba/page.jsx 2026-09-19 when Today grew its own layout;
+// grouping + pinning added the same day.
 export async function getBacklogData() {
   const nowIso = new Date().toISOString();
   const [storiesWithAction, allStories, tasks, meetingPeople, instructions] = await Promise.all([
     supabaseSelect(
       "ledger_stories",
-      "?select=id,slug,title,kind,next_action,next_action_date&or=(next_action.not.is.null,next_action_date.not.is.null)"
+      "?select=id,slug,title,kind,next_action,next_action_date,pinned_today&or=(next_action.not.is.null,next_action_date.not.is.null)"
     ),
     // Title lookup only, for tagging a task with the story it belongs to.
     supabaseSelect("ledger_stories", "?select=slug,title"),
     // The same backlog the brief used to duplicate in prose - now the
     // one live source for every open task.
-    supabaseSelect("ledger_tasks", "?status=eq.open&select=id,title,kind,story_slug,due_date"),
+    supabaseSelect("ledger_tasks", "?status=eq.open&select=id,title,kind,story_slug,due_date,pinned_today"),
     supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,identity"),
     // Latest free-text instruction per task or story, if any - see InstructionBox.
     supabaseSelect(
@@ -57,13 +58,6 @@ export async function getBacklogData() {
   const today = new Date().toISOString().slice(0, 10);
   const dueRank = (key) => key || "9999-99-99";
 
-  // Every task and every story action, as one shape, sorted by due date
-  // (undated last). Split into "reminder"-kind tasks vs everything else
-  // downstream - kept together here so both /nba (the full list) and
-  // Today (split into columns) build off one sort.
-  const reminderTasks = tasks.filter((t) => t.kind === "reminder");
-  const otherTasks = tasks.filter((t) => t.kind !== "reminder");
-
   function toRows(taskList, storyList) {
     return [
       ...taskList.map((t) => ({ type: "task", key: dueRank(t.due_date), title: t.title, data: t })),
@@ -76,11 +70,75 @@ export async function getBacklogData() {
     ].sort((a, b) => a.key.localeCompare(b.key) || a.title.localeCompare(b.title));
   }
 
+  // /nba's full reference list - everything, pinned or not, every kind.
+  const allRows = toRows(tasks, storiesWithAction);
+
+  // Today's agenda picks up anything pinned, task or story, regardless
+  // of kind - "+ oggi" pulls it out of Pending/Reminders below.
+  const pickedToday = toRows(
+    tasks.filter((t) => t.pinned_today),
+    storiesWithAction.filter((s) => s.pinned_today)
+  );
+
+  const reminderRows = toRows(
+    tasks.filter((t) => t.kind === "reminder" && !t.pinned_today),
+    []
+  );
+
+  // Pending tasks - everything else, grouped by category: per Alex,
+  // 2026-09-19 ("group them by category"). Category is the story a task
+  // is linked to (its own row leads the group), or "Generale" for
+  // cross-cutting tasks with no story. Groups sort by their earliest due
+  // date; "Generale" always last since it has no one deadline.
+  const pendingTasks = tasks.filter((t) => t.kind !== "reminder" && !t.pinned_today);
+  const pendingStories = storiesWithAction.filter((s) => !s.pinned_today);
+
+  const groupsBySlug = new Map();
+  for (const s of pendingStories) {
+    groupsBySlug.set(s.slug, {
+      key: `story:${s.slug}`,
+      label: s.title,
+      storySlug: s.slug,
+      rows: toRows([], [s]),
+    });
+  }
+  const generalTasks = [];
+  for (const t of pendingTasks) {
+    if (t.story_slug && groupsBySlug.has(t.story_slug)) {
+      groupsBySlug.get(t.story_slug).rows.push(...toRows([t], []));
+    } else if (t.story_slug && storyTitleBySlug.has(t.story_slug)) {
+      // Story exists but has no live next_action of its own - still its
+      // own group, led by its tasks alone.
+      if (!groupsBySlug.has(t.story_slug)) {
+        groupsBySlug.set(t.story_slug, {
+          key: `story:${t.story_slug}`,
+          label: storyTitleBySlug.get(t.story_slug),
+          storySlug: t.story_slug,
+          rows: [],
+        });
+      }
+      groupsBySlug.get(t.story_slug).rows.push(...toRows([t], []));
+    } else {
+      generalTasks.push(t);
+    }
+  }
+  for (const g of groupsBySlug.values()) {
+    g.rows.sort((a, b) => a.key.localeCompare(b.key) || a.title.localeCompare(b.title));
+  }
+  const pendingGroups = [...groupsBySlug.values()].sort(
+    (a, b) => a.rows[0].key.localeCompare(b.rows[0].key) || a.label.localeCompare(b.label)
+  );
+  if (generalTasks.length > 0) {
+    pendingGroups.push({ key: "general", label: "Generale", storySlug: null, rows: toRows(generalTasks, []) });
+  }
+
   return {
     today,
-    allRows: toRows(tasks, storiesWithAction),
-    pendingRows: toRows(otherTasks, storiesWithAction),
-    reminderRows: toRows(reminderTasks, []),
+    allRows,
+    pickedToday,
+    pendingGroups,
+    pendingCount: pendingTasks.length + pendingStories.length,
+    reminderRows,
     meetingsToday,
     meetingsUpcoming,
     peopleByEmail,

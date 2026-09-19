@@ -92,6 +92,18 @@ export async function updateStoryNextActionDate(formData) {
   revalidatePath("/");
 }
 
+// Pins/unpins a story's next-action into Today's agenda - same idea as
+// setTaskPinnedToday, story side. Added 2026-09-19, per Alex.
+export async function setStoryPinnedToday(formData) {
+  const id = (formData.get("id") || "").toString();
+  const pinned = (formData.get("pinned") || "").toString() === "true";
+  if (!id) return;
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, { pinned_today: pinned });
+  revalidatePath("/nba");
+  revalidatePath("/");
+}
+
 // One-click clear for a story's next-action, same instant feel as a
 // task's ✕ - blanks both fields at once instead of clearing two text
 // boxes by hand. Added 2026-09-19, per Alex's Today unification.
