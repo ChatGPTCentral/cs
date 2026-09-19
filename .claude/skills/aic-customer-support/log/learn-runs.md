@@ -22,6 +22,34 @@ observation; two independent instances make it a proposal.
 
 ## Runs
 
+## 2026-09-19 - operator correction, from deleted drafts, not a full run
+
+- window: since 2026-09-18
+- sent replies read: 0 - this run is calibrated against drafts Alex deleted
+  from the ai101/feedback sweep, not against replies he sent
+- topics with no playbook: none - this is a skip-criteria and process
+  correction, not a new topic
+- policy drift found: the sweep had no rule against drafting a reply to a
+  bare keyword, to a message with no real ask, or to a paid subscriber
+  without checking their status first. All three caused Alex to delete
+  drafts rather than send them
+- voice notes: none - this is a triage correction, not a tone one
+- applied: three changes, per Alex directly, 2026-09-19, not inferred -
+  1. Skip a bare-keyword reply with no context (his examples: "prompt",
+     "fable") - not a real inquiry, do not draft
+  2. Skip a genuinely ambiguous reply where a full read still does not
+     surface a clear ask - do not invent a follow-up
+  3. Check paid-subscriber status before drafting on every topic, not only
+     billing - a paid subscriber needs more care in how we answer them
+
+  All three written into `SKILL.md` (Hard rules, Step 0) and
+  `references/inbox.md` (sweep step 3)
+- observations: Alex did not name which specific threads he deleted or give
+  thread ids, so no individual example is logged here. If a specific
+  bare-keyword or ambiguous thread turns up in the next sweep, log its
+  thread id against the matching rule above rather than leaving these three
+  points unexampled indefinitely
+
 ## 2026-09-18 - calibration from 19 real sent replies, plus Alex naming 5 cases directly
 
 - window: since 2026-08-07 (first real Loop 3 run since then), triggered by

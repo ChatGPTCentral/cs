@@ -147,11 +147,31 @@ These are the ones that cause real damage if broken:
 - **Never argue with a customer who has clearly decided to leave**
 - If a message is a legal threat, a chargeback notice, a press inquiry, or a
   partnership pitch, do not draft a reply. Flag it for Alex
+- **Never draft a reply to a bare keyword with no context.** A lone "prompt",
+  "fable", or similar single-word reply to a campaign is not a real inquiry.
+  Skip it - confirmed by Alex, 2026-09-19, after he deleted several drafts
+  answering exactly this kind of message
+- **Never draft a reply to a message with no clear ask.** If a full read of
+  the thread still does not tell you what the person wants, skip it rather
+  than inventing a follow-up. Flag it in the report if it seems worth a human
+  look, but do not guess at an intent that is not on the page - same
+  2026-09-19 correction
+- **Always check whether the sender is a paid subscriber before drafting -
+  on every topic, not only billing.** See Step 0 below. Confirmed by Alex,
+  2026-09-19: he deleted drafts sent to paid subscribers where this check was
+  skipped. A paid subscriber gets more care than a free one, and the draft
+  has to reflect their real status, not an assumption
 
-## Step 0 - Load the customer's payment record first
+## Step 0 - Check who they are before drafting anything
 
-Before drafting anything billing-related, try to pull up the customer's Stripe
-record by name or email. Their history changes the right move:
+Before drafting **any** reply, check whether the sender is a paid subscriber
+(Stripe or beehiiv record by name or email) - not only on billing threads.
+Their status changes the right tone and the right offer, and answering a
+paying customer as if they were a free subscriber is a real mistake, not just
+a missed upsell.
+
+For anything billing-related specifically, pull the full Stripe record. Their
+history changes the right move:
 
 - How long they've been a subscriber (long-timers get the lifetime-conversion offer)
 - Whether the purchase is recent (<30 days gets the money-back guarantee)

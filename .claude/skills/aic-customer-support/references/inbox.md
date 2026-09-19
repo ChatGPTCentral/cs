@@ -82,6 +82,20 @@ voice signed Kris.
      a broken login, a 30-day-guarantee refund request. Read them to understand
      what goes wrong and to seed playbooks. Do not draft replies and do not
      re-raise them in a report
+   - **it is a bare keyword with no context** - a lone "prompt", "fable", or
+     similar single-word reply to a campaign. Not a real inquiry, do not draft
+     - confirmed by Alex, 2026-09-19, after he deleted several drafts on
+     exactly this pattern
+   - **it is a genuinely ambiguous reply with no clear ask**, even after
+     reading the full thread. Do not invent a follow-up to answer. Skip it,
+     and mention it in the report only if it seems worth a human look - same
+     2026-09-19 correction
+
+   **Before drafting anything that survives this filter, check whether the
+   sender is a paid subscriber** (Stripe or beehiiv), on every topic, not
+   just billing threads. Note their status at the top of the proposal. Alex
+   deleted drafts on 2026-09-19 that answered paid subscribers without this
+   check - treat it as part of step 3, not an optional extra in Step 0
 4. **Read the real body.** The snippet in search results is truncated and often
    cuts off before the actual ask. Call `get_thread` with `FULL_CONTENT` on every
    thread you intend to draft for. Several tickets in this inbox hide the request
