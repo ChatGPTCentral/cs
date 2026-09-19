@@ -168,15 +168,27 @@ where the note implies something checkable), then mark them
 Alex to `/closing` now points to `/` instead - see Delivery below.
 
 **Delegated instructions - added 2026-09-19, per Alex.** Not every
-open item is a plain done/drop. A "+ istruzione" box under every task
-and every story next-action on `/` lets Alex delegate a real action in
-free text instead ("put a reminder on my calendar for mid next week")
-- queued in Supabase `ledger_task_instructions` (`task_id` or
-`story_slug`, `status` pending/done/failed, `result`), picked up by the
-hourly "Task instruction worker" trigger, which actually carries it
-out (a real Calendar event, a Gmail draft - never sent, a ledger edit)
-within the skill's standing hard rules, and never closes the linked
-task itself - that stays Alex's own ✓.
+open item is a plain done/drop. A "+ istruzione" box under every task,
+every story next-action, and every brief bullet on `/` lets Alex
+delegate a real action in free text instead ("put a reminder on my
+calendar for mid next week"), or leave context that redefines the real
+job (e.g. "I already decided these 4, source candidates for the rest")
+- queued in Supabase `ledger_task_instructions` (`task_id`,
+`story_slug`, or `brief_id`+`brief_line`, `status`
+pending/done/failed, `result`), picked up by the hourly "Task
+instruction worker" trigger, which actually carries it out (a real
+Calendar event, a Gmail draft - never sent, a ledger edit, real
+research grounded in real sources) within the skill's standing hard
+rules, and never closes the linked task/story/bullet itself - that
+stays Alex's own ✓.
+
+**Notification, added 2026-09-19, per Alex** ("fai in modo che la
+piattaforma mi dice quando è eseguita perché altrimenti devo
+controllare"): whenever the worker actually executes at least one
+instruction (done or failed, not an empty queue), it sends both a
+short chat message and a `PushNotification` call under 200 characters
+naming what it did - not just a status change he'd have to notice on
+his own.
 
 ## Delivery
 
