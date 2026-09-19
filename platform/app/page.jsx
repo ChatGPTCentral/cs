@@ -34,9 +34,10 @@ export default async function TodayPage() {
   const briefs = await supabaseSelect("ledger_briefs", "?kind=eq.morning&order=brief_date.desc&limit=1");
   const brief = briefs[0];
   const today = todayISO();
-  // The brief only generates Mon-Fri, so on a weekend (or a missed run)
-  // the most recent row is not today's - the page used to render it with
-  // no indication of that, which reads as "today" even when it is not.
+  // The brief generates every day now (was Mon-Fri until 2026-09-19).
+  // On a missed run the most recent row is not today's - the page used
+  // to render it with no indication of that, which reads as "today"
+  // even when it is not.
   const isStale = brief && brief.brief_date !== today;
 
   return (
@@ -57,7 +58,7 @@ export default async function TodayPage() {
                 }}
               >
                 Nessun brief per oggi, {formatItalianDate(today)} - qui sotto l'ultimo disponibile,{" "}
-                {formatItalianDate(brief.brief_date)}. Arrivano nei giorni feriali, la mattina.
+                {formatItalianDate(brief.brief_date)}. Dovrebbe arrivare ogni mattina, anche nel weekend.
               </p>
             )}
             <div style={{ display: "flex", justifyContent: "flex-end", paddingTop: 14 }}>
@@ -69,7 +70,7 @@ export default async function TodayPage() {
             <BriefBlocks briefId={brief.id} content={brief.content} />
           </>
         ) : (
-          <p style={{ paddingTop: 16 }}>Nessun brief ancora per oggi - arriva nei giorni feriali, la mattina.</p>
+          <p style={{ paddingTop: 16 }}>Nessun brief ancora per oggi - dovrebbe arrivare ogni mattina, anche nel weekend.</p>
         )}
       </div>
 

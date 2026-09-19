@@ -5,13 +5,22 @@ certainty about what is happening without having to ask, and a rhythm
 he can rely on - not a rigid week-long plan, since things change every
 day. These replace nothing already running (pulse check, auto-genesis,
 Notion sweep, revenue recap); they are the Alex-facing narrative layer
-on top of that mechanical data, on weekdays only for now.
+on top of that mechanical data. Midday update and closing recap stay
+weekdays only for now. **The morning brief runs every day, including
+Saturday and Sunday - changed 2026-09-19, per Alex, after he found the
+`/` page still showing Friday's brief on a Saturday.**
 
 **Times below are defaults, not confirmed by Alex - flag them as
 adjustable whenever this doc is referenced, and update this file the
 moment he gives a real preference.**
 
-## 1. Morning brief (~07:30 UTC / 09:30 CEST, Mon-Fri)
+## 1. Morning brief (~07:30 UTC / 09:30 CEST, every day)
+
+**Every day, including weekends - changed 2026-09-19, per Alex.** The
+trigger (`trig_013xpb3ArbHfHKvSqatx5wrT`, "Morning brief (daily)") now
+fires `30 7 * * *` instead of `30 7 * * 1-5`. Opening line item 1 below
+still reads "today is {weekday}" - Saturday and Sunday are real weekday
+values there too, nothing else in the structure changes on a weekend.
 
 Answers "what's on my plate today." Not a single ordered plan - a menu,
 sized to a real day (Alex can do more than 3 things, said explicitly
