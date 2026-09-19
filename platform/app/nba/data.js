@@ -122,8 +122,17 @@ export async function getBacklogData() {
       generalTasks.push(t);
     }
   }
+  // Within a group, tasks and decisions first, a story's own
+  // next_action last - per Alex, 2026-09-19 ("prima le decision e i
+  // task e poi le cose dove devo lavorare di piu, tipo stale deals").
+  // A task is a crisp, checkable item; a story's next_action is more
+  // often the slower chase (reviving a cold thread) - surfacing it
+  // after the quick items keeps the group's top from being buried.
+  const typeRank = (r) => (r.type === "task" ? 0 : 1);
   for (const g of groupsBySlug.values()) {
-    g.rows.sort((a, b) => a.key.localeCompare(b.key) || a.title.localeCompare(b.title));
+    g.rows.sort(
+      (a, b) => typeRank(a) - typeRank(b) || a.key.localeCompare(b.key) || a.title.localeCompare(b.title)
+    );
   }
   const pendingGroups = [...groupsBySlug.values()].sort(
     (a, b) => a.rows[0].key.localeCompare(b.rows[0].key) || a.label.localeCompare(b.label)
