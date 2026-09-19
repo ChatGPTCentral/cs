@@ -25,7 +25,9 @@ import { quizSupabaseRpc } from "../lib/quizSupabase";
 // rows (amount_eur = amount * fx_rate for a non-EUR row), not assumed.
 // Trials comes from trial_ledger (same RLS shape) via trials_mtd_count().
 // See migrations "targets_revenue_expenses_usd" / "trials_mtd_rpc".
-const TARGETS = { revenue: 15000, trials: 150, expenses: 10000 };
+//
+// Expenses benchmark changed $10,000 -> $8,000, 2026-09-19, per Alex.
+const TARGETS = { revenue: 15000, trials: 150, expenses: 8000 };
 
 async function getRevenueMTD() {
   const value = await supabaseRpc("targets_revenue_mtd").catch(() => null);
@@ -46,12 +48,25 @@ function usd(n) {
   return `$${Math.round(n).toLocaleString("en-US")}`;
 }
 
-function TargetRow({ label, current, benchmark, format }) {
+// Colors the "current" figure - red/green per Alex, 2026-09-19: revenue
+// red under benchmark (missing the target is bad), expenses green under
+// benchmark (spending less is good). `direction` names which side of
+// the benchmark is good; a row with no direction (Trials) stays plain.
+function currentClass(current, benchmark, direction) {
+  if (current == null || !direction) return "";
+  const good = direction === "higher-better" ? current >= benchmark : current <= benchmark;
+  return good ? "targets-current-good" : "targets-current-bad";
+}
+
+function TargetRow({ label, current, benchmark, format, direction }) {
   return (
     <div className="targets-row">
       <span className="targets-label">{label}</span>
       <span className="targets-value">
-        {current == null ? "—" : format(current)} / {format(benchmark)}
+        <span className={currentClass(current, benchmark, direction)}>
+          {current == null ? "—" : format(current)}
+        </span>{" "}
+        / {format(benchmark)}
       </span>
     </div>
   );
@@ -67,8 +82,20 @@ export default async function TargetsPanel() {
   return (
     <div className="targets-panel">
       <div className="today-col-header">September&apos;s Targets</div>
-      <TargetRow label="Revenue" current={revenue} benchmark={TARGETS.revenue} format={usd} />
-      <TargetRow label="Expenses" current={expenses} benchmark={TARGETS.expenses} format={usd} />
+      <TargetRow
+        label="Revenue"
+        current={revenue}
+        benchmark={TARGETS.revenue}
+        format={usd}
+        direction="higher-better"
+      />
+      <TargetRow
+        label="Expenses"
+        current={expenses}
+        benchmark={TARGETS.expenses}
+        format={usd}
+        direction="lower-better"
+      />
       <TargetRow
         label="AI Library Trials"
         current={trials}

@@ -189,7 +189,7 @@ export default function BrainRail({ counts }) {
   return (
     <aside className="rail">
       <div className="rail-brand">
-        <img src="/logo-dark.svg" alt="" />
+        <img src="/logo-dark.png" alt="" />
         <div className="rail-brand-text">
           <div className="rail-brand-name">Second brain</div>
           <div className="rail-brand-eyebrow">AI Central · mission control</div>

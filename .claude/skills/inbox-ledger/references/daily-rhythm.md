@@ -73,6 +73,12 @@ targets are in $) - see `roadmap.md`'s "Current figures" note for the
 conversion, the full €10,000 root cause, and the SECURITY DEFINER
 functions each figure is read through.
 
+**Color, per Alex, same day:** the "current" figure turns red when
+it is on the wrong side of the benchmark - under for Revenue (missing
+the target), over for Expenses (spending past it) - and green on the
+right side. Trials has no color rule (not asked for). Same file,
+`currentClass()`.
+
 **Times below are defaults, not confirmed by Alex - flag them as
 adjustable whenever this doc is referenced, and update this file the
 moment he gives a real preference.**

@@ -13,9 +13,10 @@ or changed items; note the date of each update.
 - Re-adjust sales targets and pipeline
 - **Targets, per Alex, 2026-09-12 (fixed for the month, revised by
   Alex himself the same day when he edited the brief on `/brief`):**
-  Revenue $15,000, AI Library Trials 150. **Expenses $10,000, added
-  2026-09-19, per Alex** - same live-panel treatment as the other two,
-  no history before this date.
+  Revenue $15,000, AI Library Trials 150. **Expenses, added 2026-09-19,
+  per Alex** - same live-panel treatment as the other two, no history
+  before this date: $10,000 at first, revised down to **$8,000** by
+  Alex the same day.
 - **Current figures, changed 2026-09-19, per Alex - now pulled
   automatically, not typed by hand.** Supersedes the 2026-09-12 note
   above that the "Current" line was Alex's own to fill in. Displayed
