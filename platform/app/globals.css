@@ -1575,3 +1575,43 @@ p .field-label { display: inline-block; min-width: 60px; }
   cursor: pointer;
 }
 .today-note-form button:disabled { opacity: 0.6; cursor: default; }
+
+/* Unified Today backlog - one flat row shape for a task, a story
+   action, or a meeting, instead of nested sections. Added 2026-09-19. */
+.nba-flat-row {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+}
+.nba-flat-row:last-child { border-bottom: none; }
+.nba-flat-tag {
+  display: inline-block;
+  margin: 2px 0 0 2px;
+  font-size: 11px;
+  color: var(--ink-faint);
+  border: 1px solid var(--line);
+  padding: 0 5px;
+}
+.nba-story-link {
+  font-weight: 600;
+  color: var(--ink);
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+.task-row-story-date { flex-shrink: 0; }
+.task-row-story-date .table-cell-input {
+  width: 120px;
+  font-size: 11.5px;
+  padding: 2px 4px;
+}
+.task-row .table-cell-input {
+  font-size: 12.5px;
+  padding: 1px 4px;
+  background: transparent;
+  border: 1px solid transparent;
+}
+.task-row .table-cell-input:hover,
+.task-row .table-cell-input:focus {
+  background: var(--surface-2);
+  border-color: var(--line);
+  outline: none;
+}

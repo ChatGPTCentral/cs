@@ -1,183 +1,149 @@
 import { supabaseSelect } from "../../lib/supabase";
-import { updateStoryNextAction, updateStoryNextActionDate, updateStoryStrategy } from "../story/actions";
+import { updateStoryNextAction, updateStoryNextActionDate, clearStoryNextAction } from "../story/actions";
 import { parseAttendees } from "../../lib/people";
 import TableCellInput from "../people/TableCellInput";
 import SavedToast from "../people/SavedToast";
-import Avatar from "../people/Avatar";
 import TaskRow from "./TaskRow";
 import AddTaskForm from "./AddTaskForm";
 import InstructionBox from "./InstructionBox";
 
 export const dynamic = "force-dynamic";
 
-function daysBetween(fromIso, toIso) {
-  return Math.round((new Date(toIso) - new Date(fromIso)) / 86400000);
-}
+// Rebuilt 2026-09-19, per Alex, after the previous version (7 separate
+// sections - meetings, overdue, due-soon, undated, task-only, later,
+// cross-cutting - plus a per-story "strategia" accordion) read as
+// fragmented rather than "una visione d'insieme su cosa fare." One flat
+// list now: every open ledger_tasks row and every story with a live
+// next_action, sorted together by date (overdue and dated first,
+// undated last), each row the same shape. Strategy moved out entirely -
+// it already has a home on /story/[slug] ("la tua strategia su questo
+// deal"), a deal-level field, not a daily-overview one.
 
-// One line per open ledger_tasks row - the same table /brief reads
-// "Priorities"/"Open tasks" from and /closing marks Done/Dropped on.
-// Check/x/pencil act immediately via TaskRow's own server actions. Below
-// it, a free-text instruction box for tasks that aren't a plain done/drop.
-function TaskLine({ t, today, instructionsByTask }) {
+// A task row - unchanged shape, now just one row among peers instead of
+// nested under its story or split into a "cross-cutting" section. A
+// small tag names the story it's linked to, if any.
+function TaskLine({ t, today, instructionsByTask, storyTitleBySlug }) {
   const overdue = t.due_date && t.due_date < today;
   const dueNote = t.due_date ? ` (${overdue ? "in ritardo dal " : "entro il "}${t.due_date})` : "";
+  const storyTitle = t.story_slug ? storyTitleBySlug.get(t.story_slug) : null;
   return (
-    <div>
+    <div className="nba-flat-row">
       <TaskRow id={t.id} title={t.title} kind={t.kind} dueNote={dueNote} urgent={overdue} />
+      {storyTitle && (
+        <a href={`/story/${t.story_slug}`} className="nba-flat-tag">
+          {storyTitle}
+        </a>
+      )}
       <InstructionBox taskId={t.id} latest={instructionsByTask.get(t.id)} />
     </div>
   );
 }
 
-function StoryRow({ item, today, instructionsByTask, instructionsByStory }) {
-  const overdueDays = item.date && item.date < today ? daysBetween(item.date, today) : 0;
+// A story's next-action, styled to read as the same kind of row as a
+// task: title, the action itself, a due date, one-click clear. The
+// action text and date are still editable in place (autosave on blur,
+// same as everywhere else) - clear (✕) blanks both fields at once.
+function StoryActionRow({ s, today, instructionsByStory }) {
+  const overdue = s.next_action_date && s.next_action_date < today;
   return (
-    <div className="nba-row">
-      <div className="nba-row-head">
-        <a href={`/story/${item.slug}`} className="nba-title">
-          {item.title}
-        </a>
-        {item.kind === "sale" && <span className="nba-chip nba-chip-sale">cliente</span>}
-        {overdueDays > 0 && (
-          <span className="genesis-next-action-flag">in ritardo da {overdueDays}g</span>
-        )}
-        {item.date && overdueDays <= 0 && (
-          <span className="nba-chip">entro {item.date}</span>
-        )}
+    <div className="nba-flat-row">
+      <div className={`task-row${overdue ? " task-row-urgent" : ""}`}>
+        <span className="task-row-text">
+          <a href={`/story/${s.slug}`} className="nba-story-link">
+            {s.title}
+          </a>
+          {s.kind === "sale" && <span className="nba-chip nba-chip-sale">cliente</span>}
+          <TableCellInput
+            action={updateStoryNextAction}
+            id={s.id}
+            name="next_action"
+            defaultValue={s.next_action || ""}
+            placeholder="prossima azione..."
+          />
+        </span>
+        <span className="task-row-story-date">
+          <TableCellInput
+            action={updateStoryNextActionDate}
+            id={s.id}
+            name="next_action_date"
+            defaultValue={s.next_action_date || ""}
+            type="date"
+            placeholder="data"
+          />
+        </span>
+        <span className="task-row-actions">
+          <form action={clearStoryNextAction}>
+            <input type="hidden" name="id" value={s.id} />
+            <button type="submit" className="task-row-btn task-row-btn-remove" title="Pulisci la prossima azione">
+              ✕
+            </button>
+          </form>
+        </span>
       </div>
-      {item.id ? (
-        <>
-          <div className="genesis-next-action" style={{ marginTop: 4 }}>
-            <TableCellInput
-              action={updateStoryNextAction}
-              id={item.id}
-              name="next_action"
-              defaultValue={item.action || ""}
-              placeholder="prossima azione..."
-            />
-            <TableCellInput
-              action={updateStoryNextActionDate}
-              id={item.id}
-              name="next_action_date"
-              defaultValue={item.date || ""}
-              type="date"
-              placeholder="data"
-            />
-          </div>
-          <details className="nba-strategy" open={!!item.strategy}>
-            <summary>
-              {item.strategy ? "strategia" : "aggiungi la tua strategia"}
-            </summary>
-            <TableCellInput
-              action={updateStoryStrategy}
-              id={item.id}
-              name="strategy"
-              defaultValue={item.strategy || ""}
-              placeholder="come vuoi giocarla, parole tue - le bozze partono da qui"
-              multiline
-              rows={2}
-            />
-          </details>
-          <InstructionBox storySlug={item.slug} latest={instructionsByStory.get(item.slug)} />
-        </>
-      ) : (
-        item.action && <p className="nba-action">{item.action}</p>
-      )}
-      {item.tasks.length > 0 && (
-        <div className="nba-tasks">
-          {item.tasks.map((t) => (
-            <TaskLine key={t.id} t={t} today={today} instructionsByTask={instructionsByTask} />
-          ))}
-        </div>
-      )}
+      <InstructionBox storySlug={s.slug} latest={instructionsByStory.get(s.slug)} />
     </div>
   );
 }
 
-function MeetingRow({ m, peopleByEmail }) {
+// A calendar event today - simplified to one line, no attendee cards.
+// The people worth showing (with background context) are still one tap
+// away on /people.
+function MeetingLine({ m, peopleByEmail }) {
   const when = new Date(m.start_time);
   const attendees = parseAttendees(m.attendees);
   return (
-    <div className="nba-row">
-      <div className="nba-row-head">
-        <span className="nba-title">{m.title}</span>
-        <span className="nba-chip">
-          {when.toLocaleDateString("it-IT", { weekday: "short", day: "numeric", month: "short" })}
-          {" · "}
+    <div className="nba-flat-row">
+      <div className="task-row">
+        <span className="task-row-text">
+          <strong>{m.title}</strong>
+          {" - "}
+          {attendees
+            .map((a) => (a.email ? peopleByEmail.get(a.email)?.name : null) || a.name)
+            .join(", ")}
+        </span>
+        <span className="task-row-due">
           {when.toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit" })}
         </span>
+        {m.story_slug && (
+          <a href={`/story/${m.story_slug}`} className="nba-flat-tag">
+            storia
+          </a>
+        )}
       </div>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, margin: "6px 0" }}>
-        {attendees.map((a) => {
-          const p = a.email ? peopleByEmail.get(a.email) : null;
-          return (
-            <span key={a.email || a.name} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
-              <Avatar name={p?.name || a.name} photoUrl={p?.photo_url} size={20} />
-              {p ? (
-                <a href={`/people/${p.id}`}>{p.name}</a>
-              ) : (
-                a.name
-              )}
-            </span>
-          );
-        })}
-      </div>
-      {m.notes && <p className="nba-action" style={{ margin: "0 0 4px" }}>{m.notes}</p>}
-      {attendees
-        .map((a) => (a.email ? peopleByEmail.get(a.email) : null))
-        .filter((p) => p?.background)
-        .map((p) => (
-          <p key={p.id} style={{ fontSize: 12.5, color: "var(--ink-dim)", margin: "2px 0" }}>
-            <strong>{p.name}</strong> - {p.background}
-          </p>
-        ))}
-      {m.story_slug && (
-        <p style={{ margin: "4px 0 0" }}>
-          <a href={`/story/${m.story_slug}`}>Vedi la storia collegata &rarr;</a>
-        </p>
-      )}
+      {m.notes && <p className="nba-action" style={{ margin: "2px 0 0" }}>{m.notes}</p>}
     </div>
-  );
-}
-
-function Section({ title, note, children, count }) {
-  return (
-    <section className="content" style={{ marginBottom: 20 }}>
-      <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 4 }}>
-        <h2 style={{ fontWeight: 700, fontSize: 17, margin: 0 }}>{title}</h2>
-        <span style={{ fontSize: 13, color: "var(--ink-faint)" }}>{count}</span>
-      </div>
-      {note && <p style={{ fontSize: 13, color: "var(--ink-faint)", margin: "0 0 10px" }}>{note}</p>}
-      {children}
-    </section>
   );
 }
 
 export default async function NbaPage() {
   const nowIso = new Date().toISOString();
-  const [stories, tasks, meetings, meetingPeople, instructions] = await Promise.all([
+  const todayEnd = new Date(new Date().setHours(23, 59, 59, 999)).toISOString();
+  const [storiesWithAction, allStories, tasks, meetings, meetingPeople, instructions] = await Promise.all([
     supabaseSelect(
       "ledger_stories",
-      "?select=id,slug,title,kind,next_action,next_action_date,strategy&or=(next_action.not.is.null,next_action_date.not.is.null)"
+      "?select=id,slug,title,kind,next_action,next_action_date&or=(next_action.not.is.null,next_action_date.not.is.null)"
     ),
-    // The same backlog /brief pulls "Priorities"/"Open tasks" from and
-    // /closing marks Done/Dropped on - this page is meant to be that
-    // backlog's live view, shrinking and growing as those two touch it.
+    // Title lookup only, for tagging a task with the story it belongs to.
+    supabaseSelect("ledger_stories", "?select=slug,title"),
+    // The same backlog /brief used to duplicate in prose - now the one
+    // live source for every open task.
     supabaseSelect("ledger_tasks", "?status=eq.open&select=id,title,kind,story_slug,due_date"),
     supabaseSelect(
       "ledger_upcoming_meetings",
-      `?start_time=gte.${nowIso}&order=start_time.asc&select=event_id,title,start_time,attendees,story_slug,notes`
+      `?start_time=gte.${nowIso}&start_time=lte.${todayEnd}&order=start_time.asc&select=event_id,title,start_time,attendees,story_slug,notes`
     ).catch(() => []),
-    supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,identity,photo_url,background"),
+    supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,identity"),
     // Latest free-text instruction per task or story, if any - see InstructionBox.
-    supabaseSelect("ledger_task_instructions", "?order=created_at.desc&select=task_id,story_slug,instruction,status,result,created_at,executed_at"),
+    supabaseSelect(
+      "ledger_task_instructions",
+      "?order=created_at.desc&select=task_id,story_slug,instruction,status,result,created_at,executed_at"
+    ),
   ]);
   const peopleByEmail = new Map(
     meetingPeople.filter((p) => p.identity).map((p) => [p.identity.toLowerCase(), p])
   );
-  // Rows arrive newest-first, so the first one seen per key is the latest.
-  // task_id-linked rows key instructionsByTask; story-only rows (no task_id,
-  // a story's own next-action instead) key instructionsByStory.
+  const storyTitleBySlug = new Map(allStories.map((s) => [s.slug, s.title]));
+
   const instructionsByTask = new Map();
   const instructionsByStory = new Map();
   for (const row of instructions) {
@@ -189,157 +155,63 @@ export default async function NbaPage() {
   }
 
   const today = new Date().toISOString().slice(0, 10);
-  const weekOut = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
 
-  const tasksBySlug = new Map();
-  const boardOnly = [];
-  for (const t of tasks) {
-    if (t.story_slug) {
-      if (!tasksBySlug.has(t.story_slug)) tasksBySlug.set(t.story_slug, []);
-      tasksBySlug.get(t.story_slug).push(t);
-    } else {
-      boardOnly.push(t);
-    }
-  }
-  const dueRank = (t) => (t.due_date ? t.due_date : "9999-99-99");
-  for (const list of tasksBySlug.values()) {
-    list.sort((a, b) => dueRank(a).localeCompare(dueRank(b)));
-  }
-  boardOnly.sort((a, b) => dueRank(a).localeCompare(dueRank(b)) || a.title.localeCompare(b.title));
-
-  const actionSlugs = new Set();
-  const items = stories.map((s) => {
-    actionSlugs.add(s.slug);
-    return {
-      id: s.id,
-      slug: s.slug,
+  // One flat, sorted list: every task and every story action, peers.
+  // Sort key is the due date (undated sorts last), so overdue and
+  // soon-due items surface at the top without a separate section for
+  // each bucket.
+  const rows = [
+    ...tasks.map((t) => ({ type: "task", key: t.due_date || "9999-99-99", title: t.title, data: t })),
+    ...storiesWithAction.map((s) => ({
+      type: "story",
+      key: s.next_action_date || "9999-99-99",
       title: s.title,
-      kind: s.kind,
-      action: s.next_action,
-      date: s.next_action_date,
-      strategy: s.strategy,
-      tasks: tasksBySlug.get(s.slug) || [],
-    };
-  });
-
-  const overdue = items
-    .filter((i) => i.date && i.date < today)
-    .sort((a, b) => (a.date < b.date ? -1 : 1));
-  const dueSoon = items
-    .filter((i) => i.date && i.date >= today && i.date <= weekOut)
-    .sort((a, b) => (a.date < b.date ? -1 : 1));
-  const later = items
-    .filter((i) => i.date && i.date > weekOut)
-    .sort((a, b) => (a.date < b.date ? -1 : 1));
-  const undated = items.filter((i) => !i.date && i.action);
-
-  // Stories that carry an open ledger_tasks row but no next_action of
-  // their own - the task layer knows something the genesis field doesn't yet.
-  const taskOnlySlugs = [...tasksBySlug.keys()].filter((slug) => !actionSlugs.has(slug));
-  let taskOnlyStories = [];
-  if (taskOnlySlugs.length > 0) {
-    const rows = await supabaseSelect(
-      "ledger_stories",
-      `?select=id,slug,title,kind,strategy&slug=in.(${taskOnlySlugs.map(encodeURIComponent).join(",")})`
-    );
-    taskOnlyStories = rows
-      .map((s) => ({
-        id: s.id,
-        slug: s.slug,
-        title: s.title,
-        kind: s.kind,
-        action: null,
-        date: null,
-        strategy: s.strategy,
-        tasks: tasksBySlug.get(s.slug) || [],
-      }))
-      .sort(
-        (a, b) => dueRank(a.tasks[0]).localeCompare(dueRank(b.tasks[0])) || a.title.localeCompare(b.title)
-      );
-  }
+      data: s,
+    })),
+  ].sort((a, b) => a.key.localeCompare(b.key) || a.title.localeCompare(b.title));
 
   return (
     <>
       <p style={{ fontSize: 13.5, color: "var(--ink-faint)", margin: "0 0 20px" }}>
-        Il backlog - ogni storia con una prossima azione, più ogni task
-        aperto in <code>ledger_tasks</code>. ✓ segna fatto e sparisce, il
-        resto si aggiunge qui sotto o dal box "+ istruzione" - questa
-        pagina non fa altro che leggerlo dal vivo. I campi si modificano qui
-        e valgono ovunque.
+        Una lista sola - ogni task aperto in <code>ledger_tasks</code> e ogni
+        storia con una prossima azione, insieme, ordinati per scadenza. ✓
+        segna fatto e sparisce, ✕ rimuove o pulisce, ✎ rinomina - tutto
+        subito, senza Save. I campi si modificano qui e valgono ovunque.
       </p>
 
       {meetings.length > 0 && (
-        <Section
-          title="Prossimi meeting"
-          count={meetings.length}
-          note="Dal calendario, con chi ci sarà e cosa sai già su di loro."
-        >
+        <div className="content" style={{ marginBottom: 12 }}>
           {meetings.map((m) => (
-            <MeetingRow key={m.event_id} m={m} peopleByEmail={peopleByEmail} />
-          ))}
-        </Section>
-      )}
-
-      {overdue.length > 0 && (
-        <Section title="In ritardo" count={overdue.length} note="La scadenza è passata. Prima i più vecchi.">
-          {overdue.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
-          ))}
-        </Section>
-      )}
-
-      {dueSoon.length > 0 && (
-        <Section title="Oggi e prossimi 7 giorni" count={dueSoon.length}>
-          {dueSoon.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
-          ))}
-        </Section>
-      )}
-
-      {undated.length > 0 && (
-        <Section
-          title="Con azione, senza data"
-          count={undated.length}
-          note="C'è una cosa da fare ma nessuna scadenza - metti una data e entrano nel radar."
-        >
-          {undated.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
-          ))}
-        </Section>
-      )}
-
-      {taskOnlyStories.length > 0 && (
-        <Section
-          title="Task aperti, senza next-action in genesi"
-          count={taskOnlyStories.length}
-          note="ledger_tasks li traccia già - la genesi ancora no. Scrivi l'azione qui per allinearle."
-        >
-          {taskOnlyStories.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
-          ))}
-        </Section>
-      )}
-
-      {later.length > 0 && (
-        <Section title="Più avanti" count={later.length}>
-          {later.map((i) => (
-            <StoryRow key={i.slug} item={i} today={today} instructionsByTask={instructionsByTask} instructionsByStory={instructionsByStory} />
-          ))}
-        </Section>
-      )}
-
-      <Section
-        title="Task trasversali - non legati a una storia"
-        count={boardOnly.length}
-        note="Da ledger_tasks. ✓ segna fatto, ✕ rimuove, ✎ rinomina - tutto subito, senza Save."
-      >
-        <AddTaskForm />
-        <div className="nba-tasks">
-          {boardOnly.map((t) => (
-            <TaskLine key={t.id} t={t} today={today} instructionsByTask={instructionsByTask} />
+            <MeetingLine key={m.event_id} m={m} peopleByEmail={peopleByEmail} />
           ))}
         </div>
-      </Section>
+      )}
+
+      <div className="content" style={{ marginBottom: 12 }}>
+        <AddTaskForm />
+      </div>
+
+      <div className="content">
+        {rows.length === 0 && <p>Niente di aperto in questo momento.</p>}
+        {rows.map((r) =>
+          r.type === "task" ? (
+            <TaskLine
+              key={`t-${r.data.id}`}
+              t={r.data}
+              today={today}
+              instructionsByTask={instructionsByTask}
+              storyTitleBySlug={storyTitleBySlug}
+            />
+          ) : (
+            <StoryActionRow
+              key={`s-${r.data.id}`}
+              s={r.data}
+              today={today}
+              instructionsByStory={instructionsByStory}
+            />
+          )
+        )}
+      </div>
 
       <SavedToast />
     </>

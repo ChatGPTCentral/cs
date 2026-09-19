@@ -73,6 +73,8 @@ export async function updateStoryNextAction(formData) {
 
   revalidatePath("/genesis");
   revalidatePath("/story");
+  revalidatePath("/nba");
+  revalidatePath("/");
 }
 
 export async function updateStoryNextActionDate(formData) {
@@ -86,6 +88,27 @@ export async function updateStoryNextActionDate(formData) {
 
   revalidatePath("/genesis");
   revalidatePath("/story");
+  revalidatePath("/nba");
+  revalidatePath("/");
+}
+
+// One-click clear for a story's next-action, same instant feel as a
+// task's ✕ - blanks both fields at once instead of clearing two text
+// boxes by hand. Added 2026-09-19, per Alex's Today unification.
+export async function clearStoryNextAction(formData) {
+  const id = (formData.get("id") || "").toString();
+  if (!id) return;
+
+  await supabaseUpdate("ledger_stories", `?id=eq.${id}`, {
+    next_action: null,
+    next_action_date: null,
+    updated_at: new Date().toISOString(),
+  });
+
+  revalidatePath("/genesis");
+  revalidatePath("/story");
+  revalidatePath("/nba");
+  revalidatePath("/");
 }
 
 // Which axis a story reads on: "moment" (a bounded event, can run
