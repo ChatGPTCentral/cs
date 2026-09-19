@@ -4,7 +4,7 @@ import BrainRail from "./BrainRail";
 import ShellTopBar from "./ShellTopBar";
 
 export const metadata = {
-  title: "Second brain",
+  title: "AI Central - Second Brain",
   description: "Alex's correspondence stories - whose move it is, what's promised, what's gone cold.",
 };
 
