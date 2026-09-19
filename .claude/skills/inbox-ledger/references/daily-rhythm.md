@@ -29,8 +29,24 @@ vertical sections: today's agenda, pending tasks, reminders"):
   `kind='reminder'` and anything pinned, plus every story's live
   `next_action`, grouped by the story it belongs to (or "Generale" for
   cross-cutting tasks) - added 2026-09-19, per Alex ("group them by
-  category"). Each row has a "+ oggi" button that pulls it into
-  "Picked for today" in the left column instead
+  category"). Within a group, task rows sort before the story's own
+  `next_action` row - per Alex, same day ("prima le decision e i task
+  e poi le cose dove devo lavorare di piu, tipo stale deals"). Each
+  row has a "+ oggi" button that pulls it into "Picked for today" in
+  the left column instead
+
+**A `ledger_tasks` row and a story's `next_action` describing the
+same thing is a real duplication, not a display quirk - found
+2026-09-19, per Alex, after pinning two of them into Today showed the
+identical decision twice.** When a task already carries the full
+content, clear the story's `next_action` (and date) rather than
+leaving both - the task is the one with real ✓/✕ status tracking.
+When `next_action` bundles a second, genuinely separate action the
+task doesn't cover, trim it down to just that remainder instead of
+clearing it outright, and broaden the task's own title first if that
+second thing would otherwise be silently dropped. Watch for this
+pattern whenever creating a decision/action task tied to a story that
+already has a live `next_action` - don't write the same fact twice.
 - **Reminders** (right) - `ledger_tasks` rows with `kind='reminder'`
   and not pinned, plus calendar events beyond today (including the
   ones the "+ istruzione" delegate feature creates - see below).
