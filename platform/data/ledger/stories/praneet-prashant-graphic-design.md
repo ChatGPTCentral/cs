@@ -5,12 +5,12 @@
 - kind: project (inbound freelance pitch)
 - people: Praneet Prashant (praneet.ux@gmail.com), freelance graphic
   designer
-- status: open - Alex replied, ball is Praneet's
+- status: open - Praneet replied, ball is Alex's
 - start: 2026-09-18
-- last-touch: Alex - replied again, 09-19 (pulse check, metadata only -
-  content not re-read this pass)
-- last-inbound: 2026-09-19 13:58 (praneet.ux@gmail.com, thread
-  `1a0b24fb5ef13cc0`, message `1a0b9f69dbd65fc1`, to alex@thecentral.ai)
+- last-touch: Praneet - replied again, 09-19 (pulse check, metadata
+  only - content not re-read this pass)
+- last-inbound: 2026-09-19 18:04 (praneet.ux@gmail.com, thread
+  `1a0b24fb5ef13cc0`, message `1a0bad779da3bf7c`, to alex@thecentral.ai)
 - last-outbound: 2026-09-19 14:00 (alex@thecentral.ai, thread
   `1a0b24fb5ef13cc0`, message `1a0b9f7b9bd82342`, to praneet.ux@gmail.com
   - content not re-read this pass, metadata only)
