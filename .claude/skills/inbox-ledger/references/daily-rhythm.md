@@ -62,13 +62,16 @@ one flag, not a separate "today list" table, so nothing can drift
 between what's pinned and what the item itself still says.
 
 **Targets panel, added 2026-09-19, per Alex** (`platform/app/
-TargetsPanel.jsx`, rendered at the top of Today's agenda): the fixed
-monthly targets from `roadmap.md`, each with a live "Current" figure
-queried fresh on every page load - never typed into the brief as
-static text again, after that text going stale caused a real
-€10,000 revenue discrepancy the same day (see `roadmap.md`'s "Current
-figures" note for the full root cause and the SECURITY DEFINER
-functions each figure is read through).
+TargetsPanel.jsx`, rendered at the top of Today's agenda): Revenue,
+Expenses and AI Library Trials, each row a bare "current / benchmark"
+- no parenthetical notes, per Alex the same day. The fixed benchmarks
+live in `roadmap.md`; "current" is queried fresh on every page load,
+never typed into the brief as static text again, after that text
+going stale caused a real €10,000 revenue discrepancy the same day.
+Revenue and Expenses are converted EUR -> USD (the ledger is EUR, the
+targets are in $) - see `roadmap.md`'s "Current figures" note for the
+conversion, the full €10,000 root cause, and the SECURITY DEFINER
+functions each figure is read through.
 
 **Times below are defaults, not confirmed by Alex - flag them as
 adjustable whenever this doc is referenced, and update this file the

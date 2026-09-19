@@ -13,36 +13,44 @@ or changed items; note the date of each update.
 - Re-adjust sales targets and pipeline
 - **Targets, per Alex, 2026-09-12 (fixed for the month, revised by
   Alex himself the same day when he edited the brief on `/brief`):**
-  Revenue $15,000, AI Library Trials 150.
+  Revenue $15,000, AI Library Trials 150. **Expenses $10,000, added
+  2026-09-19, per Alex** - same live-panel treatment as the other two,
+  no history before this date.
 - **Current figures, changed 2026-09-19, per Alex - now pulled
   automatically, not typed by hand.** Supersedes the 2026-09-12 note
-  above that the "Current" line was Alex's own to fill in.
-  - **Revenue** - `v_monthly_cashflow.entrate_eur` for the current
-    month, Supabase project `hvzmgpdfznjdxnruiqmy` (same project as
-    this ledger; the view lives in the `admin` repo,
-    `claude/admin-balance-sheet-tool-3lkfdl` branch). **Currency
-    mismatch, flagged not resolved:** the target is stated in $15,000,
-    the view reports EUR bank inflows (Qonto/Wise/Stripe payouts). The
-    panel reports the EUR figure as-is with a one-line note rather than
-    converting or picking a rate - Alex to say whether the target
-    should be restated in EUR or the figure converted, and at what rate
+  above that the "Current" line was Alex's own to fill in. Displayed
+  as bare "current / benchmark", no parenthetical notes - per Alex,
+  same day.
+  - **Revenue and Expenses** - `bank_transactions`, current month,
+    `side = 'in'` / `'out'` respectively, excluding `is_transfer` rows,
+    Supabase project `hvzmgpdfznjdxnruiqmy`. **Currency, resolved
+    2026-09-19 (was flagged unresolved earlier the same day):** the
+    targets are stated in $, `bank_transactions` is EUR - both figures
+    are now converted EUR -> USD using that day's `fx_rates.USD` row
+    (`effective_rate`, ECB-sourced). Conversion direction was verified
+    empirically against real `bank_transactions` rows
+    (`amount_eur = amount * fx_rate` for a non-EUR row) rather than
+    assumed, so EUR -> USD is `eur / fx_rate`
   - **AI Library Trials** - gross count of `trial_ledger` rows with
     `trial_at` in the current month, Supabase project
     `jcciwvaqbkxwtufvtiog` ("AI Central // Quiz (Prod)", the
     `ai-central-quiz` repo, `claude/great-volta-PaEPx` branch). Gross
     per that project's own standing rule ("trials are counted GROSS,
-    everywhere") - not filtered by `trial_refunded`
-  - **How it's actually wired, 2026-09-19:** `bank_transactions` and
-    `trial_ledger` both sit behind real row-level security - neither
-    grants the app's publishable key direct read access, on purpose.
-    Rather than weaken that, each side got one SECURITY DEFINER
-    Postgres function that hands back only the one aggregate number:
-    `targets_revenue_mtd()` on the ledger project, `trials_mtd_count()`
-    on the quiz project (migrations `targets_revenue_mtd_rpc` /
-    `trials_mtd_rpc`). `platform/app/TargetsPanel.jsx` calls both on
-    every load of `/` - this is the one live render, the brief's own
-    text no longer repeats these numbers (see the "Morning brief
-    (daily)" trigger prompt, updated the same day)
+    everywhere") - not filtered by `trial_refunded`. No currency
+    conversion - it is already a plain count
+  - **How it's actually wired, 2026-09-19:** `bank_transactions`,
+    `fx_rates` and `trial_ledger` all sit behind real row-level
+    security - none grant the app's publishable key direct read
+    access, on purpose. Rather than weaken that, each figure got one
+    SECURITY DEFINER Postgres function that hands back only the one
+    aggregate number, already converted where relevant:
+    `targets_revenue_mtd()` and `targets_expenses_mtd()` on the ledger
+    project, `trials_mtd_count()` on the quiz project (migrations
+    `targets_revenue_expenses_usd` / `trials_mtd_rpc`).
+    `platform/app/TargetsPanel.jsx` calls all three on every load of
+    `/` - this is the one live render, the brief's own text no longer
+    repeats these numbers (see the "Morning brief (daily)" trigger
+    prompt, updated 2026-09-19)
   - **The €10,000 bug, found and fixed 2026-09-19:** the brief's
     static Revenue text briefly read €11,364.28, exactly €10,000 too
     high. Cause: a €10,000 transfer between AI Central's own accounts
