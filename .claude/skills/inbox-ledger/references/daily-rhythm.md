@@ -35,8 +35,10 @@ in English, in this exact order and nesting:
 2. `## September's Targets:` (rename per current month) - the fixed
    monthly targets from `roadmap.md` (e.g. Revenue, AI Library Trials),
    each as `- Metric: $X (Current: $Y)`. **The target is fixed and
-   comes from `roadmap.md`; the "Current" figure is Alex's own to type
-   each day - never compute or guess it**
+   comes from `roadmap.md`. The "Current" figure is pulled live, per
+   Alex, 2026-09-19 - see `roadmap.md`'s "Current figures" note for the
+   exact query and Supabase project for each metric.** Never guess a
+   figure that query can't answer - say so in the placeholder instead
 3. `## Priorities` - real near-term priorities, not the whole roadmap -
    pull from `ledger_tasks` (`status = open`, cross-cutting, no
    story_slug) rather than reproducing `roadmap.md` verbatim

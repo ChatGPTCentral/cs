@@ -13,9 +13,25 @@ or changed items; note the date of each update.
 - Re-adjust sales targets and pipeline
 - **Targets, per Alex, 2026-09-12 (fixed for the month, revised by
   Alex himself the same day when he edited the brief on `/brief`):**
-  Revenue $15,000, AI Library Trials 150. The daily "current" figures
-  against these targets are Alex's own to update each morning on
-  `/brief` - not pulled automatically from any source
+  Revenue $15,000, AI Library Trials 150.
+- **Current figures, changed 2026-09-19, per Alex - now pulled
+  automatically, not typed by hand.** Supersedes the 2026-09-12 note
+  above that the "Current" line was Alex's own to fill in.
+  - **Revenue** - `v_monthly_cashflow.entrate_eur` for the current
+    month, Supabase project `hvzmgpdfznjdxnruiqmy` (same project as
+    this ledger; the view lives in the `admin` repo,
+    `claude/admin-balance-sheet-tool-3lkfdl` branch). **Currency
+    mismatch, flagged not resolved:** the target is stated in $15,000,
+    the view reports EUR bank inflows (Qonto/Wise/Stripe payouts). The
+    brief reports the EUR figure as-is with a one-line note rather than
+    converting or picking a rate - Alex to say whether the target
+    should be restated in EUR or the figure converted, and at what rate
+  - **AI Library Trials** - gross count of `trial_ledger` rows with
+    `trial_at` in the current month, Supabase project
+    `jcciwvaqbkxwtufvtiog` ("AI Central // Quiz (Prod)", the
+    `ai-central-quiz` repo, `claude/great-volta-PaEPx` branch). Gross
+    per that project's own standing rule ("trials are counted GROSS,
+    everywhere") - not filtered by `trial_refunded`
 
 ## October 2026
 
