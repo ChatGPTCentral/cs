@@ -1482,6 +1482,7 @@ p .field-label { display: inline-block; min-width: 60px; }
 }
 
 /* Brief bullets - each one actionable in place (check/x/pencil). */
+.brief-item-wrap { flex: 1; min-width: 0; }
 .brief-item {
   display: flex;
   align-items: flex-start;

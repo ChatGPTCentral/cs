@@ -1,4 +1,5 @@
 import { parseBriefContent } from "../lib/briefTemplate";
+import { supabaseSelect } from "../lib/supabase";
 import BriefTaskItem from "./BriefTaskItem";
 import BriefAddTask from "./BriefAddTask";
 
@@ -39,7 +40,7 @@ function buildTree(items) {
   return root;
 }
 
-function BriefList({ nodes, briefId }) {
+function BriefList({ nodes, briefId, instructionsByLine }) {
   return (
     <ul>
       {nodes.map((n) => {
@@ -51,11 +52,20 @@ function BriefList({ nodes, briefId }) {
           <li key={n.line}>
             <div className="brief-line">
               <span className="brief-marker">-</span>
-              <BriefTaskItem briefId={briefId} line={n.line} done={done} removed={removed} plainText={displayText}>
+              <BriefTaskItem
+                briefId={briefId}
+                line={n.line}
+                done={done}
+                removed={removed}
+                plainText={displayText}
+                latest={instructionsByLine.get(n.line)}
+              >
                 {renderInline(displayText)}
               </BriefTaskItem>
             </div>
-            {n.children.length > 0 && <BriefList nodes={n.children} briefId={briefId} />}
+            {n.children.length > 0 && (
+              <BriefList nodes={n.children} briefId={briefId} instructionsByLine={instructionsByLine} />
+            )}
           </li>
         );
       })}
@@ -63,8 +73,21 @@ function BriefList({ nodes, briefId }) {
   );
 }
 
-export default function BriefBlocks({ briefId, content }) {
+// Every bullet the brief renders can carry a delegated instruction too,
+// same as a ledger_tasks row or a story next-action - added 2026-09-19,
+// per Alex, after he pointed out the brief's own bullets (Priorities,
+// Open tasks, Follow-up...) had no "+ istruzione" box, only the backlog
+// section below did.
+export default async function BriefBlocks({ briefId, content }) {
   const blocks = parseBriefContent(content);
+  const instructions = await supabaseSelect(
+    "ledger_task_instructions",
+    `?brief_id=eq.${briefId}&order=created_at.desc&select=brief_line,instruction,status,result,created_at,executed_at`
+  );
+  const instructionsByLine = new Map();
+  for (const row of instructions) {
+    if (!instructionsByLine.has(row.brief_line)) instructionsByLine.set(row.brief_line, row);
+  }
 
   return (
     <div className="today-brief">
@@ -73,7 +96,15 @@ export default function BriefBlocks({ briefId, content }) {
         if (block.type === "h1") return <h2 key={i}>{block.text}</h2>;
         if (block.type === "h2") return <h3 key={i}>{block.text}</h3>;
         if (block.type === "h3") return <h4 key={i}>{block.text}</h4>;
-        if (block.type === "list") return <BriefList key={i} nodes={buildTree(block.items)} briefId={briefId} />;
+        if (block.type === "list")
+          return (
+            <BriefList
+              key={i}
+              nodes={buildTree(block.items)}
+              briefId={briefId}
+              instructionsByLine={instructionsByLine}
+            />
+          );
         return <p key={i}>{renderInline(block.text)}</p>;
       })}
     </div>

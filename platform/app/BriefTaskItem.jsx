@@ -2,6 +2,7 @@
 
 import { useRef, useState, useTransition } from "react";
 import { toggleBriefLineDone, toggleBriefLineRemoved, editBriefLine } from "./brief/lineActions";
+import InstructionBox from "./nba/InstructionBox";
 
 // One bullet in the rendered brief. Check marks it done (struck through
 // in place, click again to undo). X marks it removed (faded, only a
@@ -10,7 +11,11 @@ import { toggleBriefLineDone, toggleBriefLineRemoved, editBriefLine } from "./br
 // edits the text in place. Every click writes straight to
 // ledger_briefs.content - this and BriefSendBar are the whole editing
 // surface now that /brief itself is retired (2026-09-19, per Alex).
-export default function BriefTaskItem({ briefId, line, done, removed, plainText, children }) {
+// Below the row, an InstructionBox for delegating this bullet instead of
+// just checking it off - added 2026-09-19, per Alex, so every task-shaped
+// line on Today carries the same delegate option, not just the ones in
+// the live backlog section.
+export default function BriefTaskItem({ briefId, line, done, removed, plainText, latest, children }) {
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState(plainText);
   const [isPending, startTransition] = useTransition();
@@ -47,6 +52,7 @@ export default function BriefTaskItem({ briefId, line, done, removed, plainText,
   }
 
   return (
+    <div className="brief-item-wrap">
     <span className="brief-item">
       {editing ? (
         <form ref={editFormRef} className="brief-item-edit-form">
@@ -95,5 +101,7 @@ export default function BriefTaskItem({ briefId, line, done, removed, plainText,
         </button>
       </span>
     </span>
+    <InstructionBox briefId={briefId} briefLine={line} latest={latest} />
+    </div>
   );
 }

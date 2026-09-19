@@ -9,15 +9,17 @@ const STATUS_LABEL = {
   done: "fatta",
 };
 
-// A free-text instruction box for a task (or a story's own next-action)
-// that isn't a simple done/drop - e.g. "Nicola at Prime Tech PR ghosted
-// me, put a reminder on my calendar for mid next week" instead of a
-// checkbox. Pass either `taskId` (a ledger_tasks row) or `storySlug` (a
-// story with only a next_action, no separate task row). `latest` is the
-// most recent ledger_task_instructions row for this target, fetched by
-// the parent page (one query for everything, not one per row). Added
-// 2026-09-19, per Alex.
-export default function InstructionBox({ taskId, storySlug, latest }) {
+// A free-text instruction box for a task, a story's own next-action, or a
+// bullet inside the morning brief, that isn't a simple done/drop - e.g.
+// "Nicola at Prime Tech PR ghosted me, put a reminder on my calendar for
+// mid next week" instead of a checkbox. Pass exactly one target: `taskId`
+// (a ledger_tasks row), `storySlug` (a story with only a next_action, no
+// separate task row), or `briefId`+`briefLine` (a bullet in the brief
+// text with no row of its own). `latest` is the most recent
+// ledger_task_instructions row for this target, fetched by the parent
+// page (one query for everything, not one per row). Added 2026-09-19,
+// per Alex.
+export default function InstructionBox({ taskId, storySlug, briefId, briefLine, latest }) {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
   const [isPending, startTransition] = useTransition();
@@ -51,6 +53,8 @@ export default function InstructionBox({ taskId, storySlug, latest }) {
     const fd = new FormData();
     if (taskId) fd.set("task_id", taskId);
     if (storySlug) fd.set("story_slug", storySlug);
+    if (briefId) fd.set("brief_id", briefId);
+    if (briefLine != null) fd.set("brief_line", briefLine);
     fd.set("instruction", trimmed);
     startTransition(async () => {
       await sendInstruction(fd);
