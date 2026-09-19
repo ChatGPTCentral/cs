@@ -21,7 +21,7 @@
   Awais.Shahid@informa.com, cc elizabeth - asked who coordinates the
   joint announcement and whether he has an intro list of
   executives/speakers/thought leaders yet)
-- idle: 0 days
+- idle: 4 days (since Aneeka's 2026-09-15 chase)
 - next-action: **send the draft reply to Aneeka** - message
   `1a08b4f67cc55d18` on thread `19cf6dc21ce7fabd`, ready since 2026-09-10,
   confirming the link swap and the ChatGPT Central pause. She's now
@@ -136,6 +136,13 @@
   there any other links that are not working?" Message `1a0a63fc6f74d481`,
   cc Alex. The 10 Sep draft reply (`1a08b4f67cc55d18`) is still sitting
   unsent - this is her second chase on it
+
+  **Auto-genesis, 2026-09-19 - refresh.** No newer message on this thread
+  than Aneeka's 09-15 chase - the draft reply is now 9 days unsent against
+  two chases. Flag for Alex: this is close to becoming a real broken
+  promise (the 29 June "I'll follow-up" commitment was marked fulfilled
+  31 Aug, but Aneeka's own follow-up work since then has gone
+  unacknowledged for over a week)
 
 - **Intel cross-reference, 2026-09-10.** Awais Shahid (Associate
   Marketing Manager, The AI Summit Series | Informa) is on the same

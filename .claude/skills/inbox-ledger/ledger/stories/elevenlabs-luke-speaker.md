@@ -10,7 +10,8 @@
   ElevenLabs' account and budget on the Passionfroot side - see
   [[elevenlabs-sponsorship]]. Two different Lukes, corrected by Alex
   2026-09-18 after this story first conflated them
-- status: open - drafted, waiting for Alex to send
+- status: **conflict - draft missing from Gmail, confirmed a second time,
+  2026-09-19.** See dated note below
 - start: 2026-09-18
 - end: (ongoing)
 - last-inbound: none on this ask
@@ -46,3 +47,12 @@
   not detailed here, since I have no real record of what it said. Do
   not merge these two Lukes again - different company, different role,
   same first name only
+
+  **Conflict, second confirmation, 2026-09-19 full refresh.** Ran
+  `list_drafts` again (full account, 6 drafts total, all support/AI101
+  plus one Jobstream draft) - message `1a0b58d14f0c2250` is not among
+  them, and no matching sent message to luke@elevenlabs.io was found
+  either. Confirmed missing on two separate passes now. Needs Alex
+  directly: was this speaker invite sent some other way, deleted on
+  purpose, or genuinely lost - the draft cannot be recreated from a guess
+  at what it said

@@ -6,7 +6,9 @@
 - last-touch: Alex - not dormant
 - last-inbound: 2026-07-02 (digitalboost@digitalboost.org.uk) - **not August 2025**
 - last-outbound: unknown - not yet checked whether Alex replied to the July message
-- idle: 68 days since their July message, pending a reply check
+- idle: 79 days since their July message (refreshed 2026-09-19), pending a
+  reply check - still not done, the body read this next-action calls for
+  was out of scope for a metadata-only refresh
 - next-action: read thread `19f22fe62fcf5343` in full and confirm whether it was
   answered
 - commitments: none recorded

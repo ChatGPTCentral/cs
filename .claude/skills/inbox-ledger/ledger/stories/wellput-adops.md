@@ -14,7 +14,7 @@
 - last-outbound: 2026-09-18 16:11 (alex@thecentral.ai, thread
   `1a09208d69e06fb0`, message `1a0b54933fafe54a`, to adops@wellput.io -
   "payout details added", closing the Trolley sub-thread)
-- idle: 0 days
+- idle: 1 day (refreshed 2026-09-19, no change)
 - next-action: none - wait for Craig Swerdloff to reach out directly
   (per Abhijit's message, not Ankita's)
 

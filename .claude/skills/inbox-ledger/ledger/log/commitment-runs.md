@@ -2,6 +2,40 @@
 
 One entry per sweep. Newest first.
 
+## 2026-09-19 - full sweep
+
+- window: `in:sent newer_than:11d` (since 2026-09-08)
+- search: phrase set in `references/commitments.md`
+- hits: ~13 threads
+
+### Opened
+
+None new. Read the sender/subject metadata on every hit: several are
+automated (Stripe/rstore.it receipts, Informa `aievents@` blasts), several
+are already-tracked stories with no fresh "I'll..." language inside the
+window (GTA whitepaper zoltan/marcduke thread, Prophet/Antidote media-kit
+threads, TechEx/Paternoster, thetop.com, beehiiv legal/Stripe merchant
+name), and none contained a new quoted AI Central promise on our side.
+
+### Carried forward, not re-verified this pass
+
+| Promise | To | Made | Age (as of 09-19) | Status |
+| --- | --- | --- | --- | --- |
+| "I'll go back to them and ask what happened to your details. I'll let you know what they say" | Sue Sutcliffe | 2026-08-07 | 43d | **open** - support-owned, `aic-customer-support` territory |
+| "Our team will start working on it and I'll let you know when we plan to publish the interview" | Faizan Alvi + Tahmid | 2026-08-02 | 48d | **open** - no publish date sent yet, not re-checked this pass |
+
+### Near-miss, flagged but not added as a quoted commitment
+
+Aneeka (Netline) chased twice (8 Sep, 15 Sep) on a drafted reply that is
+still unsent as of this pass - 9 days now. Not a quoted AI Central promise
+(the actual "I'll follow-up" commitment to her was marked fulfilled
+2026-08-31), so it is not added to the open-commitments table, but it is
+the same shape as one and is flagged in `netline.md` and on the board.
+
+### Next run
+
+Default to since-2026-09-19.
+
 ## 2026-09-08 - full sweep
 
 - window: `in:sent after:2026/08/19` (since last run)

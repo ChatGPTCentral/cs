@@ -6,9 +6,11 @@
 - last-touch: Jorge
 - last-inbound: 2026-09-01 10:22 (jorge@groou.xyz, thread `19ed0311ba3d51a0`, to elizabeth@theaicentral.net cc alex@thecentral.ai)
 - last-outbound: 2026-08-05 (alex@thecentral.ai)
-- idle: 7 days
+- idle: 18 days (as of 2026-09-19)
 - next-action: **reply to Jorge** - he wrote to Elizabeth (cc Alex) on
-  2026-09-01 and nobody on the team has answered yet
+  2026-09-01 and nobody on the team has answered yet - now 18 days,
+  unusual for a relationship this active (see historical-depth note
+  below)
 - commitments: none recorded
 - threads: `19fccf36f95ad9c0` (live, **unlabelled**), `19d2ab514c83a274` (labelled, 21 more unread)
 - notes: **correction, 2026-09-08 full sweep.** Previous version of this file
@@ -40,3 +42,8 @@
   built over several months, September 2025 into February 2026). Treat
   those as the specific projects; this file stays the general relationship
   thread.
+
+  **Auto-genesis, 2026-09-19 - refresh.** Re-queried both the labelled
+  thread and `from:jorge@groou.xyz OR to:jorge@groou.xyz` directly - no
+  reply since his 2026-09-01 message. Still unanswered, still "Your move,"
+  now 18 days idle

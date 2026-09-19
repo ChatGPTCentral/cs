@@ -14,6 +14,7 @@
 - last-outbound: 2026-09-18 16:17 (alex@thecentral.ai, **sent**, message
   `1a0b54ed90162be0`, thread `1a0a5c7613874554`, to annika@lemlist.com)
 - next-action: none - wait for their reply
+- idle: 1 day (refreshed 2026-09-19, no reply yet)
 - commitments: none
 - threads: `1a0a5c7613874554`
 - notes: Alex asked for a reply telling Patrice "we worked together in
