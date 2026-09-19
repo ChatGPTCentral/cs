@@ -1550,6 +1550,38 @@ html.rail-collapsed .rail-toggle-icon { transform: rotate(180deg); }
 .targets-value { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
 .targets-current-good { color: var(--success); }
 .targets-current-bad { color: var(--danger); }
+
+/* Revenue/Expenses hover breakdown, added 2026-09-19, per Alex - pure
+   CSS :hover, no client component needed just for a tooltip. */
+.targets-hover {
+  position: relative;
+  border-bottom: 1px dotted var(--ink-faint);
+  cursor: default;
+}
+.targets-tooltip {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 30;
+  margin-top: 6px;
+  min-width: 180px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: 8px 10px;
+  font-weight: 400;
+}
+.targets-hover:hover .targets-tooltip { display: flex; flex-direction: column; gap: 2px; }
+.targets-tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--ink-body);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
 .targets-subhead {
   font-size: 11px;
   font-weight: 700;
@@ -1572,6 +1604,30 @@ html.rail-collapsed .rail-toggle-icon { transform: rotate(180deg); }
 }
 .pending-group-label a { color: var(--ink-faint); }
 .pending-group-label a:hover { color: var(--accent-ink); }
+
+/* Next milestones - the big upcoming initiatives, added 2026-09-19,
+   per Alex ("la section reminder non è davvero un reminder ma next
+   milestones"). One line per story: title, date if there is one. */
+.milestone-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.milestone-row:last-child { border-bottom: none; }
+.milestone-row:hover .milestone-title { color: var(--accent-ink); text-decoration: underline; }
+.milestone-title { font-weight: 600; }
+.milestone-date {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
 
 .today-stale-note {
   margin: 0 0 14px;

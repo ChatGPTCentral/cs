@@ -47,11 +47,17 @@ clearing it outright, and broaden the task's own title first if that
 second thing would otherwise be silently dropped. Watch for this
 pattern whenever creating a decision/action task tied to a story that
 already has a live `next_action` - don't write the same fact twice.
-- **Reminders** (right) - `ledger_tasks` rows with `kind='reminder'`
-  and not pinned, plus calendar events beyond today (including the
-  ones the "+ istruzione" delegate feature creates - see below).
-  Things to come back to, not to do right now. Same "+ oggi" pin
-  available here too
+- **Next milestones** (right, labeled "Reminders" until 2026-09-19 -
+  per Alex, "la section 'reminder' non è davvero un reminder ma 'next
+  milestones'") - an "Add a reminder" quick-add at the top, then the
+  big upcoming initiatives (`ledger_stories.is_milestone`: GTA
+  whitepaper, Vasily Event, Black Friday, Cyber Monday, the AI Summit
+  NY, the Xmas/NYE campaign, Start 2027 - 7 stories Alex named
+  explicitly, see the "stories_is_milestone" migration), then real
+  `ledger_tasks` rows with `kind='reminder'` and not pinned, then
+  calendar events beyond today (including the ones the "+ istruzione"
+  delegate feature creates - see below). Same "+ oggi" pin available
+  on the reminder tasks
 
 All three columns, plus `/nba` (the full unsplit reference list), read
 from one shared query (`platform/app/nba/data.js`'s `getBacklogData`)
@@ -78,6 +84,12 @@ it is on the wrong side of the benchmark - under for Revenue (missing
 the target), over for Expenses (spending past it) - and green on the
 right side. Trials has no color rule (not asked for). Same file,
 `currentClass()`.
+
+**Hover breakdown, added 2026-09-19, per Alex:** Revenue and Expenses
+show a per-category breakdown on hover (pure CSS `:hover`, no client
+component) - `targets_revenue_breakdown_mtd()` /
+`targets_expenses_breakdown_mtd()`, same SECURITY DEFINER shape,
+already converted to USD, sorted highest-first.
 
 **Times below are defaults, not confirmed by Alex - flag them as
 adjustable whenever this doc is referenced, and update this file the

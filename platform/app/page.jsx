@@ -17,9 +17,12 @@
 //   kind='reminder' minus pinned, plus every story's live next_action),
 //   grouped by the story it belongs to, or "Generale" for cross-cutting
 //   tasks.
-// - Reminders: ledger_tasks with kind='reminder', plus calendar events
-//   beyond today (including the ones the "+ istruzione" delegate
-//   feature creates).
+// - Reminders (really "Next milestones" - per Alex, 2026-09-19, this
+//   column was never actually about reminders): the big upcoming
+//   initiatives (ledger_stories.is_milestone), then real
+//   ledger_tasks with kind='reminder', then calendar events beyond
+//   today (including the ones the "+ istruzione" delegate feature
+//   creates). An "Add a reminder" quick-add sits at the top.
 //
 // All three, plus "Picked for today", read from the same query
 // (nba/data.js's getBacklogData), which /nba (the full unsplit list)
@@ -30,6 +33,7 @@ import BriefSendBar from "./BriefSendBar";
 import TargetsPanel from "./TargetsPanel";
 import TodayNote from "./TodayNote";
 import AddTaskForm from "./nba/AddTaskForm";
+import AddReminderForm from "./nba/AddReminderForm";
 import { TaskLine, StoryActionRow, MeetingLine } from "./nba/Rows";
 import { getBacklogData } from "./nba/data";
 
@@ -100,6 +104,7 @@ export default async function TodayPage() {
     pendingGroups,
     pendingCount,
     reminderRows,
+    milestones,
     meetingsToday,
     meetingsUpcoming,
     peopleByEmail,
@@ -174,9 +179,24 @@ export default async function TodayPage() {
         </section>
 
         <section className="today-col">
-          <ColumnHeader title="Reminders" count={reminderRows.length + meetingsUpcoming.length} />
+          <ColumnHeader title="Next milestones" count={reminderRows.length + meetingsUpcoming.length} />
           <div className="content">
-            {reminderRows.length === 0 && meetingsUpcoming.length === 0 && (
+            <div style={{ marginBottom: 10 }}>
+              <AddReminderForm />
+            </div>
+
+            {milestones.length > 0 && (
+              <div style={{ marginBottom: 14 }}>
+                {milestones.map((m) => (
+                  <a key={m.slug} href={`/story/${m.slug}`} className="milestone-row">
+                    <span className="milestone-title">{m.title}</span>
+                    {m.dateLabel && <span className="milestone-date">{m.dateLabel}</span>}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {reminderRows.length === 0 && meetingsUpcoming.length === 0 && milestones.length === 0 && (
               <p>Niente in programma oltre oggi.</p>
             )}
             {reminderRows.map((r) => (

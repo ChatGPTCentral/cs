@@ -63,6 +63,21 @@ export async function addTask(formData) {
   refresh();
 }
 
+// Same quick-add, kind="reminder" - lands in the Reminders column
+// instead of Pending tasks. Added 2026-09-19, per Alex.
+export async function addReminder(formData) {
+  const title = (formData.get("title") || "").toString().trim();
+  if (!title) return;
+
+  await supabaseInsert("ledger_tasks", {
+    title,
+    kind: "reminder",
+    status: "open",
+    source: `per Alex, Today ${new Date().toISOString().slice(0, 10)}`,
+  });
+  refresh();
+}
+
 // A free-text instruction on a task, a story's next-action, or a bullet
 // inside the morning brief itself, that isn't a simple done/drop - e.g.
 // "Nicola at Prime Tech PR ghosted me, put a reminder on my calendar for

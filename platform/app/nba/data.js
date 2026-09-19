@@ -7,23 +7,32 @@ import { supabaseSelect } from "../../lib/supabase";
 // grouping + pinning added the same day.
 export async function getBacklogData() {
   const nowIso = new Date().toISOString();
-  const [storiesWithAction, allStories, tasks, meetingPeople, instructions] = await Promise.all([
-    supabaseSelect(
-      "ledger_stories",
-      "?select=id,slug,title,kind,next_action,next_action_date,pinned_today&or=(next_action.not.is.null,next_action_date.not.is.null)"
-    ),
-    // Title lookup only, for tagging a task with the story it belongs to.
-    supabaseSelect("ledger_stories", "?select=slug,title"),
-    // The same backlog the brief used to duplicate in prose - now the
-    // one live source for every open task.
-    supabaseSelect("ledger_tasks", "?status=eq.open&select=id,title,kind,story_slug,due_date,pinned_today"),
-    supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,identity"),
-    // Latest free-text instruction per task or story, if any - see InstructionBox.
-    supabaseSelect(
-      "ledger_task_instructions",
-      "?order=created_at.desc&select=task_id,story_slug,instruction,status,result,created_at,executed_at"
-    ),
-  ]);
+  const [storiesWithAction, allStories, tasks, meetingPeople, instructions, milestoneStories] =
+    await Promise.all([
+      supabaseSelect(
+        "ledger_stories",
+        "?select=id,slug,title,kind,next_action,next_action_date,pinned_today&or=(next_action.not.is.null,next_action_date.not.is.null)"
+      ),
+      // Title lookup only, for tagging a task with the story it belongs to.
+      supabaseSelect("ledger_stories", "?select=slug,title"),
+      // The same backlog the brief used to duplicate in prose - now the
+      // one live source for every open task.
+      supabaseSelect("ledger_tasks", "?status=eq.open&select=id,title,kind,story_slug,due_date,pinned_today"),
+      supabaseSelect("ledger_people", "?archived=eq.false&select=id,name,identity"),
+      // Latest free-text instruction per task or story, if any - see InstructionBox.
+      supabaseSelect(
+        "ledger_task_instructions",
+        "?order=created_at.desc&select=task_id,story_slug,instruction,status,result,created_at,executed_at"
+      ),
+      // Big upcoming initiatives, not literal reminders - per Alex,
+      // 2026-09-19 ("la section 'reminder' non è davvero un reminder ma
+      // 'next milestones'"). A plain flag, same pattern as pinned_today -
+      // see the "stories_is_milestone" migration for the 7 he named.
+      supabaseSelect(
+        "ledger_stories",
+        "?is_milestone=eq.true&select=slug,title,start_date,end_date,next_action_date&order=start_date.asc.nullslast"
+      ).catch(() => []),
+    ]);
 
   // Meetings today and meetings coming up later, fetched separately so
   // Today's agenda column and Reminders column each get the right slice
@@ -141,6 +150,22 @@ export async function getBacklogData() {
     pendingGroups.push({ key: "general", label: "Generale", storySlug: null, rows: toRows(generalTasks, []) });
   }
 
+  // Best available date to show next to a milestone - a real start date
+  // if there is one (a range, if there's an end date too), else the
+  // next_action_date if that's the only date on file, else none. Never
+  // guessed beyond what the story file itself says.
+  const milestones = milestoneStories.map((s) => {
+    let dateLabel = null;
+    if (s.start_date && s.end_date && s.end_date !== s.start_date) {
+      dateLabel = `${s.start_date} – ${s.end_date}`;
+    } else if (s.start_date) {
+      dateLabel = s.start_date;
+    } else if (s.next_action_date) {
+      dateLabel = s.next_action_date;
+    }
+    return { slug: s.slug, title: s.title, dateLabel };
+  });
+
   return {
     today,
     allRows,
@@ -148,6 +173,7 @@ export async function getBacklogData() {
     pendingGroups,
     pendingCount: pendingTasks.length + pendingStories.length,
     reminderRows,
+    milestones,
     meetingsToday,
     meetingsUpcoming,
     peopleByEmail,

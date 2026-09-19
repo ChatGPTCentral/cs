@@ -44,6 +44,20 @@ async function getTrialsMTD() {
   return value == null ? null : Number(value);
 }
 
+// Per-category breakdown for the Revenue/Expenses hover, added
+// 2026-09-19, per Alex. Same bank_transactions/categories/fx_rates
+// SECURITY DEFINER shape as the totals above - see
+// targets_revenue_breakdown_mtd() / targets_expenses_breakdown_mtd().
+async function getRevenueBreakdown() {
+  const rows = await supabaseRpc("targets_revenue_breakdown_mtd").catch(() => []);
+  return Array.isArray(rows) ? rows : [];
+}
+
+async function getExpensesBreakdown() {
+  const rows = await supabaseRpc("targets_expenses_breakdown_mtd").catch(() => []);
+  return Array.isArray(rows) ? rows : [];
+}
+
 function usd(n) {
   return `$${Math.round(n).toLocaleString("en-US")}`;
 }
@@ -58,14 +72,34 @@ function currentClass(current, benchmark, direction) {
   return good ? "targets-current-good" : "targets-current-bad";
 }
 
-function TargetRow({ label, current, benchmark, format, direction }) {
+// Pure-CSS hover popup (:hover reveals .targets-tooltip) - no client
+// component needed just to show a breakdown on hover. `breakdown` is
+// [{category, usd}], already sorted highest-first by the RPC.
+function TargetRow({ label, current, benchmark, format, direction, breakdown }) {
+  const valueNode = (
+    <span className={currentClass(current, benchmark, direction)}>
+      {current == null ? "—" : format(current)}
+    </span>
+  );
   return (
     <div className="targets-row">
       <span className="targets-label">{label}</span>
       <span className="targets-value">
-        <span className={currentClass(current, benchmark, direction)}>
-          {current == null ? "—" : format(current)}
-        </span>{" "}
+        {breakdown && breakdown.length > 0 ? (
+          <span className="targets-hover">
+            {valueNode}
+            <span className="targets-tooltip">
+              {breakdown.map((b) => (
+                <span className="targets-tooltip-row" key={b.category}>
+                  <span>{b.category}</span>
+                  <span>{usd(b.usd)}</span>
+                </span>
+              ))}
+            </span>
+          </span>
+        ) : (
+          valueNode
+        )}{" "}
         / {format(benchmark)}
       </span>
     </div>
@@ -73,10 +107,12 @@ function TargetRow({ label, current, benchmark, format, direction }) {
 }
 
 export default async function TargetsPanel() {
-  const [revenue, expenses, trials] = await Promise.all([
+  const [revenue, expenses, trials, revenueBreakdown, expensesBreakdown] = await Promise.all([
     getRevenueMTD(),
     getExpensesMTD(),
     getTrialsMTD(),
+    getRevenueBreakdown(),
+    getExpensesBreakdown(),
   ]);
 
   return (
@@ -88,6 +124,7 @@ export default async function TargetsPanel() {
         benchmark={TARGETS.revenue}
         format={usd}
         direction="higher-better"
+        breakdown={revenueBreakdown}
       />
       <TargetRow
         label="Expenses"
@@ -95,6 +132,7 @@ export default async function TargetsPanel() {
         benchmark={TARGETS.expenses}
         format={usd}
         direction="lower-better"
+        breakdown={expensesBreakdown}
       />
       <TargetRow
         label="AI Library Trials"
