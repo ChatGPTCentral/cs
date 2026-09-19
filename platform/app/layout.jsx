@@ -30,6 +30,18 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        {/* Sets the collapsed-sidebar class before hydration, from
+            localStorage - otherwise a returning visitor who collapsed
+            the rail sees it flash open on every load. See
+            BrainRail.jsx's toggleRail for the other half. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(localStorage.getItem('rail-collapsed')==='1')document.documentElement.classList.add('rail-collapsed')}catch(e){}",
+          }}
+        />
+      </head>
       <body>
         <div className="shell">
           <BrainRail counts={counts} />

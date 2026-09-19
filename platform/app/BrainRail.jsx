@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 // The left rail shell - replaces the old header.top + .topnav.
@@ -123,8 +124,35 @@ function isActive(pathname, href) {
   return pathname === href || pathname.startsWith(href + "/");
 }
 
+// Collapsed state lives as a class on <html>, not React state - set
+// synchronously by an inline script in layout.jsx before hydration (see
+// there for why), then just toggled here. That keeps every visual
+// change (width, hidden labels) pure CSS, off html.rail-collapsed, so
+// there is nothing for server and client renders to disagree about.
+function toggleRail(e) {
+  const collapsed = document.documentElement.classList.toggle("rail-collapsed");
+  try {
+    localStorage.setItem("rail-collapsed", collapsed ? "1" : "0");
+  } catch {
+    // Private window or blocked storage - the toggle still works for
+    // this load, it just won't be remembered next time.
+  }
+  e.currentTarget.title = collapsed ? "Expand sidebar" : "Collapse sidebar";
+}
+
 export default function BrainRail({ counts }) {
   const pathname = usePathname();
+  const toggleRef = useRef(null);
+
+  // Sync the tooltip to the real state on mount - the button always
+  // renders server-side as "Collapse sidebar" since the server can't
+  // see localStorage, this corrects it after hydration without touching
+  // any DOM the toggle's own CSS already controls.
+  useEffect(() => {
+    if (toggleRef.current && document.documentElement.classList.contains("rail-collapsed")) {
+      toggleRef.current.title = "Expand sidebar";
+    }
+  }, []);
 
   const groups = [
     {
@@ -162,7 +190,7 @@ export default function BrainRail({ counts }) {
     <aside className="rail">
       <div className="rail-brand">
         <img src="/logo-dark.svg" alt="" />
-        <div>
+        <div className="rail-brand-text">
           <div className="rail-brand-name">Second brain</div>
           <div className="rail-brand-eyebrow">AI Central · mission control</div>
         </div>
@@ -177,14 +205,6 @@ export default function BrainRail({ counts }) {
         <span className="rail-kbd">⌘K</span>
       </a>
 
-      <button type="button" className="rail-capture" disabled title="Quick capture is not built yet">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-        </svg>
-        <span>Capture</span>
-        <span className="rail-kbd">C</span>
-      </button>
-
       <nav className="rail-nav">
         {groups.map((g, i) => (
           <div key={i}>
@@ -197,10 +217,16 @@ export default function BrainRail({ counts }) {
       </nav>
 
       <div className="rail-footer">
+        <button type="button" ref={toggleRef} className="rail-item rail-toggle" onClick={toggleRail} title="Collapse sidebar">
+          <svg className="rail-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+          <span className="rail-item-label">Collapse</span>
+        </button>
         <RailItem href="/settings" icon="settings" label="Settings" active={activeHref === "/settings"} />
         <div className="rail-identity">
           <span className="rail-identity-mark">AF</span>
-          <div>
+          <div className="rail-identity-text">
             <div className="rail-identity-name">Alex Fiore</div>
             <div className="rail-identity-email">alex@thecentral.ai</div>
           </div>

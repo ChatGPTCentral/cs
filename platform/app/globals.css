@@ -1257,12 +1257,11 @@ p .field-label { display: inline-block; min-width: 60px; }
 .rail-brand-name { font-size: 13.5px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
 .rail-brand-eyebrow { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-faint); margin-top: 2px; }
 
-.rail-search,
-.rail-capture {
+.rail-search {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 0 14px 6px;
+  margin: 0 14px 10px;
   height: 30px;
   padding: 0 9px;
   cursor: pointer;
@@ -1273,15 +1272,6 @@ p .field-label { display: inline-block; min-width: 60px; }
   width: calc(100% - 28px);
 }
 .rail-search span { font-size: 12px; color: var(--ink-muted); }
-.rail-capture {
-  margin-bottom: 10px;
-  border: 1px dashed var(--chip-border);
-  background: transparent;
-}
-.rail-capture span { font-size: 12px; font-weight: 600; color: var(--ink-body); }
-.rail-capture:hover { border-color: var(--accent); background: var(--latte); }
-.rail-capture:disabled { cursor: not-allowed; opacity: 0.6; }
-.rail-capture:disabled:hover { border-color: var(--chip-border); background: transparent; }
 .rail-kbd {
   margin-left: auto;
   font-size: 9.5px;
@@ -1330,6 +1320,15 @@ p .field-label { display: inline-block; min-width: 60px; }
 .rail-item.active:hover { background: var(--latte); }
 
 .rail-footer { border-top: 1px solid var(--line); padding: 8px 0 12px; }
+.rail-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  font: inherit;
+  text-align: left;
+}
+.rail-toggle-icon { transition: transform 0.15s ease; }
 .rail-identity { display: flex; align-items: center; gap: 9px; padding: 10px 14px 0 17px; }
 .rail-identity-mark {
   width: 24px; height: 24px;
@@ -1342,6 +1341,33 @@ p .field-label { display: inline-block; min-width: 60px; }
 }
 .rail-identity-name { font-size: 12px; font-weight: 600; color: var(--ink); }
 .rail-identity-email { font-size: 10.5px; color: var(--ink-faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Collapsed sidebar - added 2026-09-19, per Alex. The class lives on
+   <html>, set by an inline script before hydration (layout.jsx) and
+   toggled from BrainRail.jsx, so this is the only place the visual
+   change happens - no React state involved. Icon-only rail, same
+   width the settings/identity icons already use. */
+html.rail-collapsed .rail { width: 56px; min-width: 56px; }
+html.rail-collapsed .rail-brand { justify-content: center; padding: 16px 0 12px; }
+html.rail-collapsed .rail-brand-text,
+html.rail-collapsed .rail-search span,
+html.rail-collapsed .rail-kbd,
+html.rail-collapsed .rail-group-label,
+html.rail-collapsed .rail-item-label,
+html.rail-collapsed .rail-count,
+html.rail-collapsed .rail-identity-text {
+  display: none;
+}
+html.rail-collapsed .rail-search {
+  width: 28px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  justify-content: center;
+}
+html.rail-collapsed .rail-item { justify-content: center; padding: 0; gap: 0; }
+html.rail-collapsed .rail-identity { justify-content: center; padding: 10px 0 0; }
+html.rail-collapsed .rail-toggle-icon { transform: rotate(180deg); }
 
 @media (max-width: 860px) {
   .rail { display: none; }
