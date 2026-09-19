@@ -1,14 +1,20 @@
 // Today - the landing page. Per Alex, 2026-09-18: "in today io voglio
 // quello che devo fare della mia giornata (cioè il brief) e poi voglio
-// avere altri task secondari che potrei comunque tacklare." So this page
-// is now two things stacked, not the old NBA-as-home from 2026-08-29:
-// the latest morning brief rendered inline (no click-through to /brief
-// needed just to read it - /brief is still where you edit and send it),
-// then the live backlog (what used to be the whole home page) as a
-// secondary, clearly-labeled section underneath.
+// avere altri task secondari che potrei comunque tacklare." Per Alex,
+// 2026-09-19: /brief and /closing are retired - "non abbiamo bisogno
+// né del brief né del closing, stiamo portando tutte le funzionalità
+// nel today." So this page is now everything: the morning brief
+// rendered inline and editable per-line (BriefBlocks), a Send bar
+// (BriefSendBar - the one thing /brief had that this page didn't), the
+// live backlog with instant task actions (NbaPage, which already had
+// its own quick-add - /closing's "what's new today"), and a free-text
+// note capture (TodayNote - /closing's other half, "anything else that
+// happened today").
 import { supabaseSelect } from "../lib/supabase";
 import BriefBlocks from "./BriefBlocks";
+import BriefSendBar from "./BriefSendBar";
 import NbaPage from "./nba/page";
+import TodayNote from "./TodayNote";
 
 export const dynamic = "force-dynamic";
 
@@ -31,7 +37,10 @@ function todayISO() {
 }
 
 export default async function TodayPage() {
-  const briefs = await supabaseSelect("ledger_briefs", "?kind=eq.morning&order=brief_date.desc&limit=1");
+  const [briefs, recentNotes] = await Promise.all([
+    supabaseSelect("ledger_briefs", "?kind=eq.morning&order=brief_date.desc&limit=1"),
+    supabaseSelect("ledger_closing_notes", "?order=created_at.desc&limit=5"),
+  ]);
   const brief = briefs[0];
   const today = todayISO();
   // The brief generates every day now (was Mon-Fri until 2026-09-19).
@@ -61,12 +70,7 @@ export default async function TodayPage() {
                 {formatItalianDate(brief.brief_date)}. Dovrebbe arrivare ogni mattina, anche nel weekend.
               </p>
             )}
-            <div style={{ display: "flex", justifyContent: "flex-end", paddingTop: 14 }}>
-              <span style={{ fontSize: 12, color: "var(--ink-faint)" }}>
-                {brief.status === "draft" ? "bozza, non ancora inviata - " : "già inviato - "}
-                modifica su <a href="/brief">/brief</a>
-              </span>
-            </div>
+            <BriefSendBar brief={brief} />
             <BriefBlocks briefId={brief.id} content={brief.content} />
           </>
         ) : (
@@ -81,6 +85,23 @@ export default async function TodayPage() {
         </p>
         <NbaPage />
       </details>
+
+      <div className="content" style={{ marginTop: 20 }}>
+        <h2 style={{ marginTop: 0, fontSize: 15 }}>Nota di giornata</h2>
+        <TodayNote />
+        {recentNotes.length > 0 && (
+          <div style={{ marginTop: 14 }}>
+            {recentNotes.map((n) => (
+              <div key={n.id} className="entry">
+                <p style={{ margin: 0 }}>{n.note}</p>
+                <div className="entry-meta">
+                  {n.log_date} {n.processed ? "- integrata nel ledger" : "- in attesa del prossimo giro"}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </>
   );
 }

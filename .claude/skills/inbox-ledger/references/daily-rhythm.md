@@ -5,10 +5,17 @@ certainty about what is happening without having to ask, and a rhythm
 he can rely on - not a rigid week-long plan, since things change every
 day. These replace nothing already running (pulse check, auto-genesis,
 Notion sweep, revenue recap); they are the Alex-facing narrative layer
-on top of that mechanical data. Midday update and closing recap stay
-weekdays only for now. **The morning brief runs every day, including
-Saturday and Sunday - changed 2026-09-19, per Alex, after he found the
-`/` page still showing Friday's brief on a Saturday.**
+on top of that mechanical data. Midday update stays weekdays only for
+now. **The morning brief runs every day, including Saturday and
+Sunday - changed 2026-09-19, per Alex, after he found the `/` page
+still showing Friday's brief on a Saturday.**
+
+**`/brief` and `/closing` are retired as separate pages - changed
+2026-09-19, per Alex: "non abbiamo bisogno né del brief né del
+closing, stiamo portando tutte le funzionalità nel today."** Both
+sections below describe what still happens; only the surface changed -
+everything now lives on `/` (Today). See the rewritten Delivery
+section at the bottom for exactly what moved where.
 
 **Times below are defaults, not confirmed by Alex - flag them as
 adjustable whenever this doc is referenced, and update this file the
@@ -81,7 +88,7 @@ backs it. "La regola è che ogni giorno cerchiamo di fare il possibile"
 sections above are one pool, not a forecast of which day each item gets
 done.
 
-Write in the plain-text convention `/brief` renders into HTML (see
+Write in the plain-text convention `/` (Today) renders into HTML (see
 `platform/lib/briefTemplate.js`): `## Section`, `### Subsection`,
 `#### LABEL` for headers at three levels, `- item` for a bullet
 (consecutive bullet lines group into one list, a blank line ends the
@@ -136,32 +143,45 @@ second full brief:
 - Anything genuinely new and worth flagging (a hot inbound, a call that
   happened)
 
-## 3. Closing recap (~16:00 UTC / 18:00 CEST, Mon-Fri)
+## 3. Closing (no fixed time any more - a standing capability on `/`)
 
 Answers "what's still open, what's done, what's new today" - not a
 prose recap. **Changed 2026-09-12, per Alex**, after the morning
 brief's first run showed the real problem with free-text editing: he
 has to rewrite prose to correct it, and I have to diff his rewrite
 against mine and guess what each change meant. A checklist has no
-ambiguity - so closing is a real page, not an email to edit.
+ambiguity - so closing became a real page (`/closing`), not an email
+to edit. **Changed again 2026-09-19, per Alex: `/closing` itself is
+retired, folded into `/` (Today) - see Delivery below.** The
+underlying behaviour is unchanged, only the page.
 
-`/closing` on the platform (`https://cs-taupe-omega.vercel.app/closing`)
-lists every open `ledger_tasks` row with a three-way control (Still
-open / Done / Dropped, defaulting to Still open), a small form to add
-a task that came up today, and a free-text box for anything that
-doesn't reduce to a task (a story detail, a call, a reply) - that note
-is saved into Supabase `ledger_closing_notes` for the next real sweep
-to read and fold into the right story file properly (with Gmail
-verification, real thread ids), not applied blind from the note text
-alone.
+`/` (Today, `https://cs-taupe-omega.vercel.app`) lets Alex mark any
+open `ledger_tasks` row done or dropped instantly (✓ / ✕, no batch
+Save), add a task that came up today, and drop a free-text note for
+anything that doesn't reduce to a task (a story detail, a call, a
+reply) - that note is saved into Supabase `ledger_closing_notes` for
+the next real sweep to read and fold into the right story file
+properly (with Gmail verification, real thread ids), not applied
+blind from the note text alone.
 
-The trigger's job at closing time is narrower than before: open
-`/closing` is Alex's job, not something to email him. The agent's part
-is the **next** morning or pulse-check sweep - read any unprocessed
+Nothing about the follow-through changed: the agent's part is the
+**next** morning or pulse-check sweep - read any unprocessed
 `ledger_closing_notes` rows, apply them to the right story files with
 the same discipline as any other sweep (verify against Gmail/Calendar
 where the note implies something checkable), then mark them
-`processed = true`.
+`processed = true`. The weekday-afternoon trigger that used to point
+Alex to `/closing` now points to `/` instead - see Delivery below.
+
+**Delegated instructions - added 2026-09-19, per Alex.** Not every
+open item is a plain done/drop. A "+ istruzione" box under every task
+and every story next-action on `/` lets Alex delegate a real action in
+free text instead ("put a reminder on my calendar for mid next week")
+- queued in Supabase `ledger_task_instructions` (`task_id` or
+`story_slug`, `status` pending/done/failed, `result`), picked up by the
+hourly "Task instruction worker" trigger, which actually carries it
+out (a real Calendar event, a Gmail draft - never sent, a ledger edit)
+within the skill's standing hard rules, and never closes the linked
+task itself - that stays Alex's own ✓.
 
 ## Delivery
 
@@ -181,7 +201,10 @@ route that sends via Resend directly as **"AI Secretary"**
 independent of any agent session. Whatever is in the box at send time
 is exactly what goes out, verbatim - Alex's edit is absolute, nothing
 rewrites it afterward. Still send the same content as a chat message
-too, with a note that the draft is waiting on `/brief`.
+too, with a note that the draft is waiting on `/` (Today) - **not
+`/brief`, retired 2026-09-19**, the review/edit/send surface moved to
+Today itself (per-line edit via the existing checklist rendering, plus
+a compact send bar for subject + "Invia ora").
 
 **Reply-to the sent email - asked about 2026-09-12, not built.** Alex
 asked whether someone (e.g. Liz) could reply to the email itself and
@@ -190,12 +213,14 @@ email parsing (a receiving route + webhook that reads the reply and
 updates the `ledger_briefs` row or logs a `ledger_pending_facts` entry),
 but real added complexity - parsing free text back into structured
 ledger edits, threading, and validating a reply is really from Alex/Liz
-and not spoofed. Not built - `/brief` already covers pre-send editing;
+and not spoofed. Not built - `/` already covers pre-send editing;
 revisit only if Alex explicitly asks for post-send editing by reply.
 
-**Closing recap - moved off email entirely, 2026-09-12, per Alex.**
-No `ledger_briefs` row, no Resend send - see section 3 above. It is a
-page Alex fills himself at `/closing`, not a document sent to him.
+**Closing - moved off email entirely, 2026-09-12, per Alex; moved off
+its own page, 2026-09-19, per Alex.** No `ledger_briefs` row, no
+Resend send - see section 3 above. It is a capability Alex uses
+himself on `/` (Today), not a document sent to him and not a separate
+page any more.
 
 **Midday update - still parked, 2026-09-12, per Alex.** Untouched -
 he asked to do this "one piece at a time," morning first, then closing.

@@ -12,7 +12,6 @@ async function getContent(briefId) {
 async function writeContent(briefId, content) {
   await supabaseUpdate("ledger_briefs", `?id=eq.${briefId}`, { content });
   revalidatePath("/");
-  revalidatePath("/brief");
 }
 
 function splitPrefix(line) {

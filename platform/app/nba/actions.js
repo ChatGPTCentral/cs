@@ -6,7 +6,6 @@ import { revalidatePath } from "next/cache";
 function refresh() {
   revalidatePath("/");
   revalidatePath("/nba");
-  revalidatePath("/closing");
 }
 
 // Check / x on a task row - same two statuses /closing's radios write,

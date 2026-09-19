@@ -128,11 +128,7 @@ export default function BrainRail({ counts }) {
 
   const groups = [
     {
-      items: [
-        { href: "/", icon: "today", label: "Today" },
-        { href: "/brief", icon: "brief", label: "Brief" },
-        { href: "/closing", icon: "closing", label: "Closing" },
-      ],
+      items: [{ href: "/", icon: "today", label: "Today" }],
     },
     {
       label: "Brain",

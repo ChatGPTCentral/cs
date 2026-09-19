@@ -8,7 +8,8 @@ import { toggleBriefLineDone, toggleBriefLineRemoved, editBriefLine } from "./br
 // restore button shows, click to bring it back) - nothing is ever
 // actually deleted from the brief's content, both are toggles. Pencil
 // edits the text in place. Every click writes straight to
-// ledger_briefs.content, the same field /brief's own textarea edits.
+// ledger_briefs.content - this and BriefSendBar are the whole editing
+// surface now that /brief itself is retired (2026-09-19, per Alex).
 export default function BriefTaskItem({ briefId, line, done, removed, plainText, children }) {
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState(plainText);

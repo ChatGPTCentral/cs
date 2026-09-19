@@ -262,9 +262,8 @@ export default async function NbaPage() {
     <>
       <p style={{ fontSize: 13.5, color: "var(--ink-faint)", margin: "0 0 20px" }}>
         Il backlog - ogni storia con una prossima azione, più ogni task
-        aperto in <code>ledger_tasks</code>. Cala quando <a href="/closing">/closing</a>{" "}
-        segna qualcosa Done, cresce quando <a href="/brief">/brief</a> o{" "}
-        <a href="/closing">/closing</a> aggiungono qualcosa di nuovo - questa
+        aperto in <code>ledger_tasks</code>. ✓ segna fatto e sparisce, il
+        resto si aggiunge qui sotto o dal box "+ istruzione" - questa
         pagina non fa altro che leggerlo dal vivo. I campi si modificano qui
         e valgono ovunque.
       </p>
