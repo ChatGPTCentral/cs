@@ -254,8 +254,8 @@ export default async function PeoplePage({ searchParams }) {
                       </form>
                     </td>
                     <td>
-                      <a href={`/people/${p.id}`} style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
-                        <Avatar name={p.name} photoUrl={p.photo_url} size={22} />
+                      <a href={`/people/${p.id}`} style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
+                        <Avatar name={p.name} photoUrl={p.photo_url} size={40} />
                         <strong style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{p.name}</strong>
                       </a>
                     </td>

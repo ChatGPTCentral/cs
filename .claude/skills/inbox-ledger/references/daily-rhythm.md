@@ -17,6 +17,25 @@ sections below describe what still happens; only the surface changed -
 everything now lives on `/` (Today). See the rewritten Delivery
 section at the bottom for exactly what moved where.
 
+**`/` is a full-width, 3-column layout - changed again 2026-09-19,
+same day, per Alex** ("full width, with the panel divided into 3
+vertical sections: today's agenda, pending tasks, reminders"):
+
+- **Today's agenda** (left) - today's calendar events, then the brief
+  itself (Targets, Editorial tasks, editable per line, with the Send
+  bar)
+- **Pending tasks** (middle) - every open `ledger_tasks` row except
+  `kind='reminder'`, plus every story's live `next_action`, sorted by
+  due date. The main work list
+- **Reminders** (right) - `ledger_tasks` rows with `kind='reminder'`,
+  plus calendar events beyond today (including the ones the "+
+  istruzione" delegate feature creates - see below). Things to come
+  back to, not to do right now
+
+All three columns, plus `/nba` (the full unsplit reference list), read
+from one shared query (`platform/app/nba/data.js`'s `getBacklogData`)
+so they can never show different things for the same data.
+
 **Times below are defaults, not confirmed by Alex - flag them as
 adjustable whenever this doc is referenced, and update this file the
 moment he gives a real preference.**
@@ -36,15 +55,16 @@ not re-derive from scratch.
 
 **Fixed content structure - changed 2026-09-19, per Alex** ("sì
 unifica... concettualmente quando dico unificare intendo dire
-unificare la lista Altro che potresti tacklare"). Sections 3 and 5-8
-below (Priorities, Open tasks, the three Follow-up sections) are
-**retired from the brief's own text** - they were a hand-written prose
-mirror of the exact same `ledger_tasks` rows and story next-actions
-that "Altro che potresti tacklare" already shows live on `/`, and
-having both meant one could drift stale while the other stayed
-current (exactly what happened - see the 2026-09-19 note above about
-`/` showing Friday's brief). Now there is one list, not two. Write in
-English, in this exact order and nesting:
+unificare la lista Altro che potresti tacklare" - superseded the same
+day by the 3-column layout above, but the brief-content decision
+stands). Sections 3 and 5-8 below (Priorities, Open tasks, the three
+Follow-up sections) are **retired from the brief's own text** - they
+were a hand-written prose mirror of the exact same `ledger_tasks` rows
+and story next-actions that the Pending tasks / Reminders columns
+already show live on `/`, and having both meant one could drift stale
+while the other stayed current (exactly what happened - see the
+2026-09-19 note above about `/` showing Friday's brief). Now there is
+one list, not two. Write in English, in this exact order and nesting:
 
 1. Opening line: "Hey there, today is {weekday}, this is what we need
    to do:"
@@ -65,11 +85,11 @@ English, in this exact order and nesting:
    2026-09-19 note on the `[New Interview]` bullet naming 4 people
    already decided and asking for 20 sourced candidates to pick 6 from
    - not itself a request to action immediately
-4. One closing line pointing at the unified list: something like "The
-   rest of what's open is unified below, in 'Altro che potresti
-   tacklare' - no separate list any more." Never re-enumerate tasks
-   here even in short form - that is exactly the duplication that got
-   removed
+4. One closing line pointing at the other two columns: something like
+   "The rest of what's open is in the Pending tasks and Reminders
+   columns alongside this one - no separate list any more." Never
+   re-enumerate tasks here even in short form - that is exactly the
+   duplication that got removed
 
 **Full enumeration, never a curated subset - per Alex, 2026-09-14**
 still governs the unified list itself (and the weekly plan,
@@ -101,10 +121,12 @@ discipline as before - never invent a fact or a date:
   already found - don't repeat its digest verbatim, just fold in what
   Alex needs to think about today specifically
 
-Calendar events, overdue next-actions, "your move" stories, and the
-general task backlog no longer feed brief *content* - they are exactly
-what the unified "Altro che potresti tacklare" list on `/` already
-shows live, so the brief does not re-derive them.
+Overdue next-actions, "your move" stories, and the general task
+backlog no longer feed brief *content* - they are exactly what the
+Pending tasks and Reminders columns on `/` already show live, so the
+brief does not re-derive them. Today's calendar events do still show
+on `/`, just in the Today's agenda column, not inside the brief text
+itself.
 
 **On the first real run (2026-09-12), Alex's own rewrite of the draft
 surfaced several ledger corrections this doc's earlier version had

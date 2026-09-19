@@ -1,26 +1,31 @@
 // Today - the landing page. Per Alex, 2026-09-18: "in today io voglio
 // quello che devo fare della mia giornata (cioè il brief) e poi voglio
 // avere altri task secondari che potrei comunque tacklare." Per Alex,
-// 2026-09-19: /brief and /closing are retired - "non abbiamo bisogno
-// né del brief né del closing, stiamo portando tutte le funzionalità
-// nel today." So this page is now everything: the morning brief
-// rendered inline and editable per-line (BriefBlocks), a Send bar
-// (BriefSendBar - the one thing /brief had that this page didn't), the
-// live backlog with instant task actions (NbaPage, which already had
-// its own quick-add - /closing's "what's new today"), and a free-text
-// note capture (TodayNote - /closing's other half, "anything else that
-// happened today"). Unified again 2026-09-19, same day, per Alex: the
-// brief used to independently re-list every open task as prose
-// (Priorities/Open tasks/Follow-up sections) while NbaPage listed the
-// exact same ledger_tasks rows live - two copies of one truth, one of
-// which could go stale. The brief's content structure (see
-// daily-rhythm.md) dropped those sections; NbaPage's list is now the
-// one and only task list.
+// 2026-09-19: /brief and /closing are retired, everything unified into
+// this one page - then, same day, rebuilt again into three columns,
+// full width: "full width, with the panel divided into 3 vertical
+// sections: today's agenda, pending tasks, reminders."
+//
+// - Today's agenda: today's calendar events, then the brief itself
+//   (Targets, Editorial tasks, editable per line, with a Send bar) -
+//   what's actually scheduled or planned for today specifically.
+// - Pending tasks: the unified backlog (ledger_tasks minus
+//   kind='reminder', plus every story's live next_action) - the main
+//   work list, sorted by due date.
+// - Reminders: ledger_tasks with kind='reminder', plus calendar events
+//   beyond today (including the ones the "+ istruzione" delegate
+//   feature creates) - things to come back to, not to do right now.
+//
+// All three read from the same query (nba/data.js's getBacklogData),
+// which /nba (the full unsplit list) also uses, so nothing here can
+// drift from what /nba shows.
 import { supabaseSelect } from "../lib/supabase";
 import BriefBlocks from "./BriefBlocks";
 import BriefSendBar from "./BriefSendBar";
-import NbaPage from "./nba/page";
 import TodayNote from "./TodayNote";
+import AddTaskForm from "./nba/AddTaskForm";
+import { TaskLine, StoryActionRow, MeetingLine } from "./nba/Rows";
+import { getBacklogData } from "./nba/data";
 
 export const dynamic = "force-dynamic";
 
@@ -42,58 +47,125 @@ function todayISO() {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Rome" }).format(new Date());
 }
 
+function ColumnHeader({ title, count }) {
+  return (
+    <div className="today-col-header">
+      <span>{title}</span>
+      {count != null && <span className="today-col-count">{count}</span>}
+    </div>
+  );
+}
+
 export default async function TodayPage() {
-  const [briefs, recentNotes] = await Promise.all([
+  const [briefs, recentNotes, backlog] = await Promise.all([
     supabaseSelect("ledger_briefs", "?kind=eq.morning&order=brief_date.desc&limit=1"),
     supabaseSelect("ledger_closing_notes", "?order=created_at.desc&limit=5"),
+    getBacklogData(),
   ]);
   const brief = briefs[0];
-  const today = todayISO();
+  const todayDate = todayISO();
   // The brief generates every day now (was Mon-Fri until 2026-09-19).
   // On a missed run the most recent row is not today's - the page used
   // to render it with no indication of that, which reads as "today"
   // even when it is not.
-  const isStale = brief && brief.brief_date !== today;
+  const isStale = brief && brief.brief_date !== todayDate;
+
+  const {
+    today,
+    pendingRows,
+    reminderRows,
+    meetingsToday,
+    meetingsUpcoming,
+    peopleByEmail,
+    storyTitleBySlug,
+    instructionsByTask,
+    instructionsByStory,
+  } = backlog;
 
   return (
-    <>
-      <div className="content" style={{ marginBottom: 28 }}>
-        {brief ? (
-          <>
-            {isStale && (
-              <p
-                style={{
-                  margin: "14px 0 0",
-                  padding: "10px 14px",
-                  fontSize: 13,
-                  color: "var(--accent-ink)",
-                  background: "var(--accent-wash)",
-                  border: "1px solid var(--border-hair)",
-                  borderRadius: 6,
-                }}
-              >
-                Nessun brief per oggi, {formatItalianDate(today)} - qui sotto l'ultimo disponibile,{" "}
-                {formatItalianDate(brief.brief_date)}. Dovrebbe arrivare ogni mattina, anche nel weekend.
-              </p>
+    <div className="wide-content">
+      <div className="today-columns">
+        <section className="today-col">
+          <ColumnHeader title="Today's agenda" />
+          <div className="content">
+            {meetingsToday.length > 0 && (
+              <div style={{ marginBottom: 12 }}>
+                {meetingsToday.map((m) => (
+                  <MeetingLine key={m.event_id} m={m} peopleByEmail={peopleByEmail} />
+                ))}
+              </div>
             )}
-            <BriefSendBar brief={brief} />
-            <BriefBlocks briefId={brief.id} content={brief.content} />
-          </>
-        ) : (
-          <p style={{ paddingTop: 16 }}>Nessun brief ancora per oggi - dovrebbe arrivare ogni mattina, anche nel weekend.</p>
-        )}
-      </div>
+            {brief ? (
+              <>
+                {isStale && (
+                  <p className="today-stale-note">
+                    Nessun brief per oggi, {formatItalianDate(todayDate)} - qui sotto l'ultimo
+                    disponibile, {formatItalianDate(brief.brief_date)}. Dovrebbe arrivare ogni
+                    mattina, anche nel weekend.
+                  </p>
+                )}
+                <BriefSendBar brief={brief} />
+                <BriefBlocks briefId={brief.id} content={brief.content} />
+              </>
+            ) : (
+              <p>Nessun brief ancora per oggi - dovrebbe arrivare ogni mattina, anche nel weekend.</p>
+            )}
+          </div>
+        </section>
 
-      <details className="today-secondary" open>
-        <summary>Altro che potresti tacklare</summary>
-        <p className="today-secondary-note">
-          La lista unificata di tutto quello che è aperto - task trasversali
-          e prossime azioni di storia insieme, dal vivo. Cambiato 2026-09-19,
-          per Alex: il brief qui sopra non ripete più gli stessi task in
-          prosa, questa è l'unica lista.
-        </p>
-        <NbaPage />
-      </details>
+        <section className="today-col">
+          <ColumnHeader title="Pending tasks" count={pendingRows.length} />
+          <div className="content">
+            <div style={{ marginBottom: 10 }}>
+              <AddTaskForm />
+            </div>
+            {pendingRows.length === 0 && <p>Niente di aperto in questo momento.</p>}
+            {pendingRows.map((r) =>
+              r.type === "task" ? (
+                <TaskLine
+                  key={`t-${r.data.id}`}
+                  t={r.data}
+                  today={today}
+                  instructionsByTask={instructionsByTask}
+                  storyTitleBySlug={storyTitleBySlug}
+                />
+              ) : (
+                <StoryActionRow
+                  key={`s-${r.data.id}`}
+                  s={r.data}
+                  today={today}
+                  instructionsByStory={instructionsByStory}
+                />
+              )
+            )}
+          </div>
+        </section>
+
+        <section className="today-col">
+          <ColumnHeader title="Reminders" count={reminderRows.length + meetingsUpcoming.length} />
+          <div className="content">
+            {reminderRows.length === 0 && meetingsUpcoming.length === 0 && (
+              <p>Niente in programma oltre oggi.</p>
+            )}
+            {reminderRows.map((r) => (
+              <TaskLine
+                key={`t-${r.data.id}`}
+                t={r.data}
+                today={today}
+                instructionsByTask={instructionsByTask}
+                storyTitleBySlug={storyTitleBySlug}
+              />
+            ))}
+            {meetingsUpcoming.length > 0 && (
+              <div style={{ marginTop: reminderRows.length > 0 ? 10 : 0 }}>
+                {meetingsUpcoming.map((m) => (
+                  <MeetingLine key={m.event_id} m={m} peopleByEmail={peopleByEmail} showDate />
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      </div>
 
       <div className="content" style={{ marginTop: 20 }}>
         <h2 style={{ marginTop: 0, fontSize: 15 }}>Nota di giornata</h2>
@@ -111,6 +183,6 @@ export default async function TodayPage() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
