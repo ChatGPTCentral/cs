@@ -1,12 +1,21 @@
 import { parseBriefContent } from "../lib/briefTemplate";
 import { supabaseSelect } from "../lib/supabase";
 import BriefTaskItem from "./BriefTaskItem";
-import BriefAddTask from "./BriefAddTask";
 
 // Renders a ledger_briefs row's plain-text content as native page markup
 // (not the email-HTML table renderBriefBody builds) - same parser, a
 // different target. Used by the Today page to show the morning brief
 // inline, with each bullet actionable (done/remove/edit) in place.
+//
+// No add-task form here any more - removed 2026-09-19, per Alex's
+// unification. BriefAddTask used to write straight into this content as
+// text under a "## Added today" heading, never into ledger_tasks, so
+// anything added that way was invisible to "Altro che potresti
+// tacklare" below - a real bug, caught reconciling his own edits today
+// (two tasks, "AI After 5" and "Manuel Bleve beehiiv", existed only as
+// brief text and had to be migrated into ledger_tasks by hand). One
+// add-task entry point now: NbaPage's AddTaskForm, which always writes
+// to ledger_tasks.
 
 // Bold only - a done item's ~~wrapper~~ is stripped before this runs (see
 // BriefList below) and struck through via CSS instead, so it stays a
@@ -91,7 +100,6 @@ export default async function BriefBlocks({ briefId, content }) {
 
   return (
     <div className="today-brief">
-      <BriefAddTask briefId={briefId} />
       {blocks.map((block, i) => {
         if (block.type === "h1") return <h2 key={i}>{block.text}</h2>;
         if (block.type === "h2") return <h3 key={i}>{block.text}</h3>;

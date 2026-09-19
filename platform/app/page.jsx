@@ -9,7 +9,13 @@
 // live backlog with instant task actions (NbaPage, which already had
 // its own quick-add - /closing's "what's new today"), and a free-text
 // note capture (TodayNote - /closing's other half, "anything else that
-// happened today").
+// happened today"). Unified again 2026-09-19, same day, per Alex: the
+// brief used to independently re-list every open task as prose
+// (Priorities/Open tasks/Follow-up sections) while NbaPage listed the
+// exact same ledger_tasks rows live - two copies of one truth, one of
+// which could go stale. The brief's content structure (see
+// daily-rhythm.md) dropped those sections; NbaPage's list is now the
+// one and only task list.
 import { supabaseSelect } from "../lib/supabase";
 import BriefBlocks from "./BriefBlocks";
 import BriefSendBar from "./BriefSendBar";
@@ -81,7 +87,10 @@ export default async function TodayPage() {
       <details className="today-secondary" open>
         <summary>Altro che potresti tacklare</summary>
         <p className="today-secondary-note">
-          Il resto del backlog - non è nel brief di oggi, ma è lì se hai tempo o voglia.
+          La lista unificata di tutto quello che è aperto - task trasversali
+          e prossime azioni di storia insieme, dal vivo. Cambiato 2026-09-19,
+          per Alex: il brief qui sopra non ripete più gli stessi task in
+          prosa, questa è l'unica lista.
         </p>
         <NbaPage />
       </details>

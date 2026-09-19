@@ -34,8 +34,17 @@ sized to a real day (Alex can do more than 3 things, said explicitly
 2026-09-12). Pull from data the mechanical sweeps already maintain, do
 not re-derive from scratch.
 
-**Fixed content structure, per Alex's own rewrite, 2026-09-12** - write
-in English, in this exact order and nesting:
+**Fixed content structure - changed 2026-09-19, per Alex** ("sì
+unifica... concettualmente quando dico unificare intendo dire
+unificare la lista Altro che potresti tacklare"). Sections 3 and 5-8
+below (Priorities, Open tasks, the three Follow-up sections) are
+**retired from the brief's own text** - they were a hand-written prose
+mirror of the exact same `ledger_tasks` rows and story next-actions
+that "Altro che potresti tacklare" already shows live on `/`, and
+having both meant one could drift stale while the other stayed
+current (exactly what happened - see the 2026-09-19 note above about
+`/` showing Friday's brief). Now there is one list, not two. Write in
+English, in this exact order and nesting:
 
 1. Opening line: "Hey there, today is {weekday}, this is what we need
    to do:"
@@ -46,38 +55,26 @@ in English, in this exact order and nesting:
    Alex, 2026-09-19 - see `roadmap.md`'s "Current figures" note for the
    exact query and Supabase project for each metric.** Never guess a
    figure that query can't answer - say so in the placeholder instead
-3. `## Priorities` - real near-term priorities, not the whole roadmap -
-   pull from `ledger_tasks` (`status = open`, cross-cutting, no
-   story_slug) rather than reproducing `roadmap.md` verbatim
-4. `## Editorial tasks` - beehiiv, LinkedIn newsletter, Substack, idea
+3. `## Editorial tasks` - beehiiv, LinkedIn newsletter, Substack, idea
    generation, the editorial calendar, and the AI Central Voices
    pipeline (new interviews to send/source - use `### `-free bullets,
-   `[New Interview] :: ...` style is Alex's own convention, keep it)
-5. `## Open tasks` - any other open task that is not sales and not
-   partnership, grouped into `### ` subsections by area (Website,
-   a person/project name, Admin, etc. - whatever `ledger_tasks` groups
-   naturally into that day)
-6. `## Follow-up // Sales conversations` - grouped into `### `
-   subsections (e.g. Affiliate, Brand Deals), and Brand Deals further
-   grouped into `#### ` state labels: OPEN, TO CREATE, STUCK, REVIVE.
-   An empty label under a header is fine - never invent an item to
-   fill it
-7. `## Follow-up // Partnerships & Events` - partnerships,
-   collaborations, events, external stakeholders. Nested nested bullets
-   (`- - `, `- - -`) are fine for grouping sub-items like a list of
-   contacts under one initiative
-8. `## Follow-up // Others` - anything left over. Say plainly when
-   nothing is left, never leave the section out silently and never
-   invent content to fill it
+   `[New Interview] :: ...` style is Alex's own convention, keep it).
+   **This one stays as real narrative content, not a `ledger_tasks`
+   mirror** - it is where Alex leaves job-to-be-done context via the
+   "+ istruzione" box (see `## Delegated instructions` above), like his
+   2026-09-19 note on the `[New Interview]` bullet naming 4 people
+   already decided and asking for 20 sourced candidates to pick 6 from
+   - not itself a request to action immediately
+4. One closing line pointing at the unified list: something like "The
+   rest of what's open is unified below, in 'Altro che potresti
+   tacklare' - no separate list any more." Never re-enumerate tasks
+   here even in short form - that is exactly the duplication that got
+   removed
 
-**Full enumeration, never a curated subset - per Alex, 2026-09-14.**
-"Ogni report deve avere tutti i task, non una selezione - sta a noi poi
-fare una selezione tra quelli più vicini ai soldi." Every open
-`ledger_tasks` row that belongs in a section goes in, in full - deciding
-which ones matter most this run is Alex's own read of the complete
-list, not a filter this job applies on his behalf. Same rule for the
-weekly plan (`weekly-plan.md`) and any other report built from this
-backlog.
+**Full enumeration, never a curated subset - per Alex, 2026-09-14**
+still governs the unified list itself (and the weekly plan,
+`weekly-plan.md`) - it no longer applies to the brief's own text,
+which does not enumerate tasks any more.
 
 **Do not force-split tasks across days that have no real date behind
 them - per Alex, 2026-09-14**, same feedback, aimed first at
@@ -95,21 +92,19 @@ Write in the plain-text convention `/` (Today) renders into HTML (see
 group), `- - item` for a nested bullet (one level per repeated `- `),
 `**text**` for inline bold (e.g. to mark "Overdue:").
 
-Sources for the sections above, same discipline as before - never
-invent a fact or a date:
+Sources for the Editorial tasks section and the Targets figures, same
+discipline as before - never invent a fact or a date:
 
-- Real calendar events today (`ledger_upcoming_meetings` / a fresh
-  Calendar check) - with a one-line prep note for each if the story it
-  connects to has one
-- Stories with `next_action_date` = today or already overdue
-- "Your move" stories with a real, live ask (not the whole stale
-  backlog every day - surface the backlog on a slower cadence, see
-  `weekly-recap.md`, not every morning)
-- Anything that moved overnight the auto-genesis sweep already found -
-  don't repeat its digest verbatim, just fold in anything Alex needs to
-  act on today specifically
-- `ledger_tasks` (`status = open`) and `roadmap.md` for the
-  cross-cutting programs and monthly targets above
+- `ledger_tasks` (`status = open`) filtered to real editorial/content
+  items, and `roadmap.md` for the monthly targets
+- Anything editorial that moved overnight the auto-genesis sweep
+  already found - don't repeat its digest verbatim, just fold in what
+  Alex needs to think about today specifically
+
+Calendar events, overdue next-actions, "your move" stories, and the
+general task backlog no longer feed brief *content* - they are exactly
+what the unified "Altro che potresti tacklare" list on `/` already
+shows live, so the brief does not re-derive them.
 
 **On the first real run (2026-09-12), Alex's own rewrite of the draft
 surfaced several ledger corrections this doc's earlier version had

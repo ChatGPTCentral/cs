@@ -82,33 +82,7 @@ export async function editBriefLine(formData) {
   await mutateLine(briefId, line, (raw) => setText(raw, text));
 }
 
-const ADDED_HEADING = "## Added today";
-
-// New tasks land under a dedicated "## Added today" section - created
-// once, at the end of the content, the first time this is called; every
-// call after that appends to the end of that same section's bullet run.
-export async function addBriefTask(formData) {
-  const briefId = (formData.get("briefId") || "").toString();
-  const text = (formData.get("text") || "").toString().trim();
-  if (!briefId || !text) return;
-
-  const content = await getContent(briefId);
-  const lines = content.split("\n");
-  const headingIndex = lines.findIndex((l) => l.trim() === ADDED_HEADING);
-
-  if (headingIndex === -1) {
-    if (lines.length > 0 && lines[lines.length - 1].trim() !== "") lines.push("");
-    lines.push(ADDED_HEADING);
-    lines.push(`- ${text}`);
-  } else {
-    let insertAt = headingIndex + 1;
-    let i = headingIndex + 1;
-    while (i < lines.length && BULLET_RE.test(lines[i])) {
-      insertAt = i + 1;
-      i++;
-    }
-    lines.splice(insertAt, 0, `- ${text}`);
-  }
-
-  await writeContent(briefId, lines.join("\n"));
-}
+// addBriefTask removed 2026-09-19, per Alex's unification - it wrote a
+// new task as brief text only, never into ledger_tasks, so it was
+// invisible to "Altro che potresti tacklare." Use NbaPage's AddTaskForm
+// (-> ledger_tasks) instead, the one add-task entry point now.
