@@ -11,11 +11,9 @@
 - last-inbound: 2026-09-18 14:33 (adops@wellput.io, thread
   `1a09208d69e06fb0`, message `1a0b4f0c4beb3674`, Ankita re-sent the
   Trolley request for AI Central's payout details, per Alex's ask)
-- last-outbound: 2026-09-16 11:13 (alex@thecentral.ai, thread
-  `1a09208d69e06fb0`, message `1a0a9ebd1b0f63cf`, to adops@wellput.io,
-  cc elizabeth+cswerdloff+arajput+avelhankar - confirmed the LinkedIn
-  Newsletter context, asked if Ankita is the right person for a Q4
-  monetization chat)
+- last-outbound: 2026-09-18 16:11 (alex@thecentral.ai, thread
+  `1a09208d69e06fb0`, message `1a0b54933fafe54a`, to adops@wellput.io -
+  "payout details added", closing the Trolley sub-thread)
 - idle: 0 days
 - next-action: none - wait for Craig Swerdloff to reach out directly
   (per Abhijit's message, not Ankita's)
@@ -97,6 +95,15 @@
   riguarda la richiesta Trolley per i dati di payout (thread separato dal
   Q4-monetization/Craig sotto next-action, che resta invariato in attesa
   del prossimo sweep completo)
+
+  **Auto-genesis, 2026-09-19 - corrected stale mechanical field.** The
+  last-outbound field had not been updated past 2026-09-16. Full read of
+  thread `1a09208d69e06fb0` shows: Alex asked Ankita to resend the
+  Trolley payout-details request (`1a0b438ae904a4f3`, 09-18 11:13),
+  Ankita resent it (`1a0b4f0c4beb3674`, 09-18 14:33), Alex confirmed the
+  payout details were added (`1a0b54933fafe54a`, 09-18 16:11). The
+  Trolley/payout sub-thread is closed. The separate Craig/Q4-monetization
+  ask is unaffected and stays open - Craig has not replied
 
   **Pulse check, 2026-09-17.** Ankita sent another new campaign pitch,
   "Eberjey" (women's luxury lifestyle/fashion/wellness, 25-54,
